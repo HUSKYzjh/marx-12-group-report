@@ -4,12 +4,12 @@
 
 ## 第一次加入
 
-1. 本项目仓库为[HUSKYzjh/zhongma-12-group-report](https://github.com/HUSKYzjh/zhongma-12-group-report)，中文名称“中马-12组汇报”。仓库所有者将同学加入协作者后，各自克隆仓库；以含`AGENTS.md`、`.build/`和本文件的目录为工作根目录。
-2. 在仓库`Settings → Collaborators → Add people`邀请同学；同学接受邀请后即可参与。GitHub Free支持私有仓库协作者。[官方说明](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository)
+1. 本项目仓库为[HUSKYzjh/zhongma-12-group-report](https://github.com/HUSKYzjh/zhongma-12-group-report)，中文名称“中马-12组汇报”。仓库已公开，查看、克隆和下载无需协作者邀请；以含`AGENTS.md`、`.build/`和本文件的目录为工作根目录。
+2. 若需直接向本仓库推送分支，由所有者在`Settings → Collaborators → Add people`邀请同学；同学登录并接受邀请后获得协作权限。未获写入权限的用户也可以在自己的fork中修改，再提出PR。[官方说明](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository)
 3. 每人克隆到自己的工作目录，再让Codex打开该目录，依次阅读`AGENTS.md`、本文件和`README.md`。
 4. 使用README的依赖说明运行`python .build/project.py doctor`。当前生成器需要Codex自带运行库；只有GitHub网页或普通Node.js环境时，可以修改文本源码和补资料，渲染交给有完整环境的同学，并在PR中说明。
 
-接受仓库邀请后，首次克隆可执行：
+首次克隆可直接执行：
 
 ```powershell
 git clone https://github.com/HUSKYzjh/zhongma-12-group-report.git
@@ -59,7 +59,7 @@ git diff
 
 普通内容PR提交源码、必要资料及相关协作说明；不运行`deliver`后提交整套生成物，也不夹带本地缓存。这样能减少成品、讲稿和图片在多个分支间同时变化。需要的预览放在PR中供核对。正式发布由整合负责人处理。
 
-建议每个PR至少由另一位同学查看观点与页面效果，再由整合负责人合并。这是组内协作约定；是否能用分支保护强制执行，取决于仓库套餐。GitHub Free私有仓库不具备与付费套餐相同的受保护分支能力。[官方说明](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches)
+建议每个PR至少由另一位同学查看观点与页面效果，再由整合负责人合并。这是组内协作约定；GitHub Free支持为公开仓库设置受保护分支，所有者可按需要配置强制审查。本文的约定本身不表示已启用这些设置。[官方说明](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches)
 
 若两个PR改到同一处，在任务分支合并最新`main`后逐项处理冲突，再重新检查受影响页面。不要用“全部采用我的版本”覆盖另一项内容；保留有效改动并确认章节衔接。
 
