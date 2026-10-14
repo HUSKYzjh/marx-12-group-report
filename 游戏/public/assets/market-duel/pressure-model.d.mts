@@ -1,0 +1,17 @@
+export type PressureChoice='hold'|'price'|'follow';
+export type PressureFirm={id:number;cash:number;wage:number;price:number;fast:boolean;workers:number[];bread:{id:string;day:number}[];debt:number};
+export type PressurePerson={id:number;cash:number;home:number|null};
+export type PressureReceipt={from:string;to:string;amount:number;reason:string};
+export type PressureReport={day:number;action:PressureChoice;before:Omit<PressureWorld,'history'>;receipts:PressureReceipt[];made:number[];sold:number[];stock:number[];spoiled:number[];closed:boolean[];wages:number[];visits:{person:number;shop:number;success:boolean;reason:string;bread?:string}[];fed:number;shortOfMoney:number;stockOut:number;cashBefore:number[];cashAfter:number[];walletBefore:number[];walletAfter:number[];paid:number[];support?:{requested:number[];paid:number[];opening:number;remaining:number}};
+export type PressureWorld={version:1;seed:number;day:number;firms:PressureFirm[];people:PressurePerson[];history:PressureReport[]};
+export const PRESSURE_DAYS:number;
+export const PRESSURE_ACTIONS:PressureChoice[];
+export function initialPressure(seed?:number):PressureWorld;
+export function pressureMoney(s:PressureWorld):number;
+export function pressurePlan(s:PressureWorld,a:PressureChoice):{wage:number;price:number;fast:boolean;workers:number[]};
+export function pressureCost(s:PressureWorld,a:PressureChoice):number;
+export function pressureIssue(s:PressureWorld,a:PressureChoice):string;
+export function pressureRound(s:PressureWorld,a:PressureChoice,options?:{support?:number[]}):PressureWorld;
+export function assertPressure(s:PressureWorld):PressureWorld;
+export function rewindPressure(s:PressureWorld,day:number):PressureWorld;
+export function restorePressure(s:unknown):PressureWorld|null;

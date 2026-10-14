@@ -1,0 +1,13 @@
+{
+  "family": "Workshop Hand",
+  "css_family": "WorkshopHand",
+  "license": "OFL-1.1",
+  "upstream": "https://github.com/lxgw/LxgwWenKai-Screen/releases/download/v1.522/LXGWWenKaiGBScreen.ttf",
+  "upstream_sha256": "23ec023913e1851925eb94462c4b0ccd1d78bb89533745aaa8cc682ccd339dc0",
+  "upstream_version": "1.522",
+  "modified": "Renamed and WOFF2 conversion; all upstream character mappings and glyph outlines retained.",
+  "generator": "fontTools 4.66.1; Brotli quality 8",
+  "codepoints": 47449,
+  "bytes": 10851784,
+  "sha256": "854a98e67135a27a15f41ef2528fd827190793ffae2b5f6ed7b67fd0a28c3000"
+}

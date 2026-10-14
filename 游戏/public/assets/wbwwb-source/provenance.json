@@ -1,0 +1,494 @@
+{
+  "creator": "Nicky Case",
+  "repository": "https://github.com/ncase/wbwwb",
+  "commit": "7c68c7e44e66b5be95ebd07d22391de707090397",
+  "retrievedOn": "2026-10-03",
+  "license": "CC0-1.0 (author-owned art/code; third-party sounds excluded)",
+  "scope": "Character/action resource library only; reference JS is not executed or bundled into the game",
+  "files": [
+    {
+      "path": "public/assets/wbwwb-source/body_red.json",
+      "upstreamPath": "sprites/peeps/body_red.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/body_red.json",
+      "bytes": 545,
+      "sha256": "aeeab281bb4a4db85510b6f1af72ac9e0d9ac224c6abce4c184d247156158a62",
+      "gitBlobSha": "94185cb6a3c2e45eff676693cd987c75750a4fe8"
+    },
+    {
+      "path": "public/assets/wbwwb-source/body_red.png",
+      "upstreamPath": "sprites/peeps/body_red.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/body_red.png",
+      "bytes": 2010,
+      "sha256": "1c1022c72cd0649f01865378ddd848d44c7f76e0dc2bc4c01d452414fa715332",
+      "gitBlobSha": "2687c5b3182a286f132c11fcb7f5c7fb716c72e9",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "public/assets/wbwwb-source/body.json",
+      "upstreamPath": "sprites/peeps/body.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/body.json",
+      "bytes": 533,
+      "sha256": "287db16bab3318e2cc1927df94e7b1f7c1d142244c3be3b7e029232e88f3ea7f",
+      "gitBlobSha": "9ab3244e370d52c947d25c6486233f7ca6dea408"
+    },
+    {
+      "path": "public/assets/wbwwb-source/body.png",
+      "upstreamPath": "sprites/peeps/body.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/body.png",
+      "bytes": 4314,
+      "sha256": "f39d93fc1085df1f7b62a1e20fe673152461f07cf1f96b8d6c45cacc0f8b528f",
+      "gitBlobSha": "c2241b715e8a159887806f54bd32e7040dce9017",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "public/assets/wbwwb-source/cam/cam-flash.png",
+      "upstreamPath": "sprites/cam/cam-flash.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/cam/cam-flash.png",
+      "bytes": 1133,
+      "sha256": "602936230d055cbfa78667d630114b13928ec7fe2a56d76e09dbf40b4b486aeb",
+      "gitBlobSha": "52f3010fbe02d1824d30856be1bab6a7f83e46a6",
+      "width": 480,
+      "height": 270
+    },
+    {
+      "path": "public/assets/wbwwb-source/cam/cam-instructions.png",
+      "upstreamPath": "sprites/cam/cam-instructions.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/cam/cam-instructions.png",
+      "bytes": 6883,
+      "sha256": "c27c6aaa042a5ba4d4261a2167bdff3de131a5067eb5b52786e6eac4dc90f0aa",
+      "gitBlobSha": "471a372603f5e4b563b10ec5a0e0afe9d28cf9aa",
+      "width": 480,
+      "height": 69
+    },
+    {
+      "path": "public/assets/wbwwb-source/cam/cam.png",
+      "upstreamPath": "sprites/cam/cam.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/cam/cam.png",
+      "bytes": 973,
+      "sha256": "f19b54577399d53b493dd7d89efb563100da7272604534974d583f1455ec6517",
+      "gitBlobSha": "0fbc31b3758eb295d8c7b77ad65de5f465dde4ba",
+      "width": 480,
+      "height": 270
+    },
+    {
+      "path": "public/assets/wbwwb-source/candlelight.json",
+      "upstreamPath": "sprites/misc/candlelight.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/misc/candlelight.json",
+      "bytes": 1089,
+      "sha256": "933d83f8a0a2598d91a4e8e15c1f19d124c59bf42ca19e973b428804722dd39f",
+      "gitBlobSha": "a1e85bb3f7123e48abb3efcf88d7155dde32baaf"
+    },
+    {
+      "path": "public/assets/wbwwb-source/candlelight.png",
+      "upstreamPath": "sprites/misc/candlelight.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/misc/candlelight.png",
+      "bytes": 659,
+      "sha256": "5b8ec8d31b0d4bb42bf1a8039b7d08c8088413a4a728bdaa4717e086a2cdaaa4",
+      "gitBlobSha": "b5306a8c9a383a4b257353160efcb22bcc2ffc84",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "path": "public/assets/wbwwb-source/face_angry.json",
+      "upstreamPath": "sprites/peeps/face_angry.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face_angry.json",
+      "bytes": 5120,
+      "sha256": "85e60faff22ecd72f5092938ab297304eb21dedc83a913ab18c87fd1295d5063",
+      "gitBlobSha": "9f1427a493d91f5ff78e1eff1854a23086611cf4"
+    },
+    {
+      "path": "public/assets/wbwwb-source/face_angry.png",
+      "upstreamPath": "sprites/peeps/face_angry.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face_angry.png",
+      "bytes": 29558,
+      "sha256": "4f73f8fba365d39155b25050c42f0a534910e9684b1ebd451b4191e07f19f0fc",
+      "gitBlobSha": "17fe1d2cb53872779e6ece7b6830ea10a863a7ab",
+      "width": 512,
+      "height": 1024
+    },
+    {
+      "path": "public/assets/wbwwb-source/face_nervous.json",
+      "upstreamPath": "sprites/peeps/face_nervous.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face_nervous.json",
+      "bytes": 5945,
+      "sha256": "e3f0be4609307c1119a2dd799d8b56110e5ab6c4e1058b7e892dded50a636a60",
+      "gitBlobSha": "3b3bed1e77c05481709ed3eb089a4b91d84c60ce"
+    },
+    {
+      "path": "public/assets/wbwwb-source/face_nervous.png",
+      "upstreamPath": "sprites/peeps/face_nervous.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face_nervous.png",
+      "bytes": 19478,
+      "sha256": "321ad8e4d985675f4c0b31fc7f94d88c6bcf8f24e5798479ac5f806db0924380",
+      "gitBlobSha": "cbada2018a181d070f5a5ef8100087c11b1f5e3d",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "public/assets/wbwwb-source/face_snobby_hmph.json",
+      "upstreamPath": "sprites/peeps/face_snobby_hmph.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face_snobby_hmph.json",
+      "bytes": 961,
+      "sha256": "9b98d94357555b3c49d5c812aa9280602cedda6e03e4ead19e65e65f6507035f",
+      "gitBlobSha": "88f12229947e9337801766d7d918970d5962e634"
+    },
+    {
+      "path": "public/assets/wbwwb-source/face_snobby_hmph.png",
+      "upstreamPath": "sprites/peeps/face_snobby_hmph.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face_snobby_hmph.png",
+      "bytes": 2766,
+      "sha256": "d227be2a29d289bda71b44613156c206f2598e8b1da76f282e58517bc3aaac22",
+      "gitBlobSha": "769fe48da73eec74611cc08257d6607edd1a7c44",
+      "width": 256,
+      "height": 512
+    },
+    {
+      "path": "public/assets/wbwwb-source/face_snobby.json",
+      "upstreamPath": "sprites/peeps/face_snobby.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face_snobby.json",
+      "bytes": 5914,
+      "sha256": "998a950340708c02859f23365bdf253dec2f05769a9b9db112bb851840c97fb0",
+      "gitBlobSha": "6cc412540685ff34ea688566eb8ad2f42f971164"
+    },
+    {
+      "path": "public/assets/wbwwb-source/face_snobby.png",
+      "upstreamPath": "sprites/peeps/face_snobby.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face_snobby.png",
+      "bytes": 26872,
+      "sha256": "54db3443c301357cd55e2db6c44f68b78bb1d584f6430332520a94ddae4c5f43",
+      "gitBlobSha": "5140bed4a9c3947af31beec7fcf7c8fbd51b3094",
+      "width": 1024,
+      "height": 1024
+    },
+    {
+      "path": "public/assets/wbwwb-source/face.json",
+      "upstreamPath": "sprites/peeps/face.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face.json",
+      "bytes": 2557,
+      "sha256": "d31ca645b0f845d4f97b240685246593882d2f199d1bbc171fd47c6ac6227295",
+      "gitBlobSha": "02afb43e24036cf44a2857c03d6f6f66ccf3a5e6"
+    },
+    {
+      "path": "public/assets/wbwwb-source/face.png",
+      "upstreamPath": "sprites/peeps/face.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/face.png",
+      "bytes": 10639,
+      "sha256": "d1cb90790f92179359d12000f6c8aa591070e11a388bab38975b111bc31b96e6",
+      "gitBlobSha": "0637e9a948581acc541b21b997397efce69b039b",
+      "width": 256,
+      "height": 1024
+    },
+    {
+      "path": "public/assets/wbwwb-source/hangry.json",
+      "upstreamPath": "sprites/peeps/hangry.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/hangry.json",
+      "bytes": 4079,
+      "sha256": "d4f4deebb045a97638a00d3c3d7d7a023a199f836a5001d9d43df795c221685c",
+      "gitBlobSha": "73402409855c7d5a5006daa45e648d16de845a95"
+    },
+    {
+      "path": "public/assets/wbwwb-source/hangry.png",
+      "upstreamPath": "sprites/peeps/hangry.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/hangry.png",
+      "bytes": 122191,
+      "sha256": "86f8eac0d099f4fa7be8d6b1eed239b758d84609e5ea68a9c0f373af4cf88949",
+      "gitBlobSha": "8504f1d81e1cc92b810cb78a80606ea2a115cf52",
+      "width": 512,
+      "height": 1024
+    },
+    {
+      "path": "public/assets/wbwwb-source/happy_weirdo.json",
+      "upstreamPath": "sprites/peeps/happy_weirdo.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/happy_weirdo.json",
+      "bytes": 1516,
+      "sha256": "4dd92250d41a7e112cc8764bb3ad4df2d2c2dcd3445dbe7f9ee2e93f0d60934b",
+      "gitBlobSha": "334b385a40a509b0b9b727a776b312eaf68a7c3c"
+    },
+    {
+      "path": "public/assets/wbwwb-source/happy_weirdo.png",
+      "upstreamPath": "sprites/peeps/happy_weirdo.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/happy_weirdo.png",
+      "bytes": 34235,
+      "sha256": "774ef1bc8fbee3bce7aa5c6040404b481ff683824732ecfeb0c1c834ad431b7d",
+      "gitBlobSha": "dad920fa5444479bb488dbb3a98c0692d1877bdd",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "public/assets/wbwwb-source/hat.json",
+      "upstreamPath": "sprites/peeps/hat.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/hat.json",
+      "bytes": 5115,
+      "sha256": "adeacb2d6f16ede879efac351c15136faeebb8603faa41295a37d53d258722b1",
+      "gitBlobSha": "881261f3c157fc440070920bd08c2cceb86a6ad7"
+    },
+    {
+      "path": "public/assets/wbwwb-source/hat.png",
+      "upstreamPath": "sprites/peeps/hat.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/hat.png",
+      "bytes": 15781,
+      "sha256": "23ce71c34cd8f123c071f390b3af6a79b977322a69126227479bdae9ee5ec5f4",
+      "gitBlobSha": "1f4e2324001356c25b34daac60c93ff2f7ac59ad",
+      "width": 512,
+      "height": 1024
+    },
+    {
+      "path": "public/assets/wbwwb-source/hatguy.json",
+      "upstreamPath": "sprites/peeps/hatguy.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/hatguy.json",
+      "bytes": 354,
+      "sha256": "47d3a3dfa00f47637c115c4278a43f236394100f38e558a7d4c051c7e9db23be",
+      "gitBlobSha": "0a0fc7e4717decd2e7023bf65ebc82b28c6e4512"
+    },
+    {
+      "path": "public/assets/wbwwb-source/hatguy.png",
+      "upstreamPath": "sprites/peeps/hatguy.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/hatguy.png",
+      "bytes": 3533,
+      "sha256": "c25b0ab4258a7a48b9295b87193db6639755e04101319d29504bb975c4e91a90",
+      "gitBlobSha": "2983e9c12d9b0c5a9c24a509cf94af915631f5e4",
+      "width": 128,
+      "height": 256
+    },
+    {
+      "path": "public/assets/wbwwb-source/helping.json",
+      "upstreamPath": "sprites/peeps/helping.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/helping.json",
+      "bytes": 21286,
+      "sha256": "92202fb16c9b2ae3d98c4cb5d1b98f3e6134649a9d941e0804a09269b9806fde",
+      "gitBlobSha": "6f92cb6d5c5d9b827e71a075a8db7a5bedc22070"
+    },
+    {
+      "path": "public/assets/wbwwb-source/helping.png",
+      "upstreamPath": "sprites/peeps/helping.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/helping.png",
+      "bytes": 885314,
+      "sha256": "8ed7961e498addec12917187f38cca73d8291b684e00e55e0aa6f8e501b979c5",
+      "gitBlobSha": "11162399ba3fad531893cc1fea1b0ab145c8c2b6",
+      "width": 2048,
+      "height": 4096
+    },
+    {
+      "path": "public/assets/wbwwb-source/lovehat.json",
+      "upstreamPath": "sprites/peeps/lovehat.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/lovehat.json",
+      "bytes": 356,
+      "sha256": "0ffb60134e8a040fbd5f6c6f810db44fbef2497108e714c21fcc7c633942d8b6",
+      "gitBlobSha": "6a208058299ce2144b3525d2f1f55efd84fd36c1"
+    },
+    {
+      "path": "public/assets/wbwwb-source/lovehat.png",
+      "upstreamPath": "sprites/peeps/lovehat.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/lovehat.png",
+      "bytes": 1861,
+      "sha256": "0c11bc3fd4622521c7f0eeb0c895de0ddf48d52020bf3d6cb42bd8eb868c34c0",
+      "gitBlobSha": "cdd9840a64430e612b1a80aa69fad901d79d51a2",
+      "width": 128,
+      "height": 256
+    },
+    {
+      "path": "public/assets/wbwwb-source/lover_panic.json",
+      "upstreamPath": "sprites/peeps/lover_panic.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/lover_panic.json",
+      "bytes": 554,
+      "sha256": "dcf05bf43a124fd62cf8c583957cd7a9e3ba7a1eb841e3770aeedf6fc29c47e3",
+      "gitBlobSha": "4f33db81c2ae14bd4b145ce697964f9467e84ed0"
+    },
+    {
+      "path": "public/assets/wbwwb-source/lover_panic.png",
+      "upstreamPath": "sprites/peeps/lover_panic.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/lover_panic.png",
+      "bytes": 9768,
+      "sha256": "908060f6ac5ca8c80a33734668c0e873f553e375ee1ea37a3acf6c04ea66c745",
+      "gitBlobSha": "a0657b2e1b19c4424d80f378b8d0a4afedf011fa",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "public/assets/wbwwb-source/lover_shirt.json",
+      "upstreamPath": "sprites/peeps/lover_shirt.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/lover_shirt.json",
+      "bytes": 554,
+      "sha256": "82839a69c0eaa9bae78753930c0e068280a236f414604dae756e79904ffbc342",
+      "gitBlobSha": "f964131b51c94d87ff8449ec6944f13bdfa963b4"
+    },
+    {
+      "path": "public/assets/wbwwb-source/lover_shirt.png",
+      "upstreamPath": "sprites/peeps/lover_shirt.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/lover_shirt.png",
+      "bytes": 1992,
+      "sha256": "1740c087aa037076d7b24c9c3214396bfaef285a04a05cb4bb1942c12937484a",
+      "gitBlobSha": "5fd60e4389b4dd7c99d6edd7b34bf83ca2b959f5",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "path": "public/assets/wbwwb-source/lovers_watching.json",
+      "upstreamPath": "sprites/misc/lovers_watching.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/misc/lovers_watching.json",
+      "bytes": 566,
+      "sha256": "42f9af6dcbb8e1e47f38165975fdf3db70523747eb8f734f74de22a498b38511",
+      "gitBlobSha": "481ebd7377f3ea8e36e78991805d2f8464027395"
+    },
+    {
+      "path": "public/assets/wbwwb-source/lovers_watching.png",
+      "upstreamPath": "sprites/misc/lovers_watching.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/misc/lovers_watching.png",
+      "bytes": 4828,
+      "sha256": "eafdf02c7accb4e5db4883271fe67a2c259d1c66bf3a62187a5ed56a4fffa80f",
+      "gitBlobSha": "b107f8748ae09876b901f59ae75d8c202da6bd67",
+      "width": 128,
+      "height": 256
+    },
+    {
+      "path": "public/assets/wbwwb-source/peace.json",
+      "upstreamPath": "sprites/peeps/peace.json",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/peace.json",
+      "bytes": 6296,
+      "sha256": "ac07240ca15d3a0876784c7bae7babf1101fce4f54d5086e6b34ea94c8691dea",
+      "gitBlobSha": "4260b74544c414a127a53b3616076f3bb6ab1811"
+    },
+    {
+      "path": "public/assets/wbwwb-source/peace.png",
+      "upstreamPath": "sprites/peeps/peace.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/peeps/peace.png",
+      "bytes": 348043,
+      "sha256": "c54ebc92d706c04e5862720d2a4ef63d7fbd6076f9772867118c77eb6d1a125f",
+      "gitBlobSha": "86f171dc128dc1ecf021cec5cd6948fd09ce3fad",
+      "width": 2048,
+      "height": 2048
+    },
+    {
+      "path": "public/assets/wbwwb-source/tv.png",
+      "upstreamPath": "sprites/tv.png",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/sprites/tv.png",
+      "bytes": 4157,
+      "sha256": "62e7f2669caa90f20dd9bc0eddb3c59a661b691de927bdb0149a5b77c2799167",
+      "gitBlobSha": "eb193639fa0ee9f630d3b29fc55dde7cbc0d9ceb",
+      "width": 300,
+      "height": 360
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/game/AnimationProp.js",
+      "upstreamPath": "js/game/AnimationProp.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/game/AnimationProp.js",
+      "bytes": 1138,
+      "sha256": "1415a51cfc1c3aa2bb9d1656aa5b0fbb44dcd9cf8893ce60f76cb43c4a659ad2",
+      "gitBlobSha": "11088ce86540306346027e3d07aa38dee827da6b"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/game/Peep.js",
+      "upstreamPath": "js/game/Peep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/game/Peep.js",
+      "bytes": 6971,
+      "sha256": "abcaf06e0d71f5fb86801dac680fb6c0afac3520a913ddc20003c46a2a8ea87c",
+      "gitBlobSha": "a92426e666af216a95537f3f38d381d858accfa3"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/lib/helpers.js",
+      "upstreamPath": "js/lib/helpers.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/lib/helpers.js",
+      "bytes": 1029,
+      "sha256": "4660a9f32d72fdfcea1e16a1da6becaa51f12b49f98a477a735ee58f3aee70e9",
+      "gitBlobSha": "d255d3365bfb118f839e986357ef1560b00176af"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/AngryPeep.js",
+      "upstreamPath": "js/peeps/AngryPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/AngryPeep.js",
+      "bytes": 6448,
+      "sha256": "6ab595c985004172b4348bf7532b1d155bab3268a938227d2451c22be7023ddf",
+      "gitBlobSha": "8777d227bd41bc8234257638f860f481b5d7c49f"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/CrazyPeep.js",
+      "upstreamPath": "js/peeps/CrazyPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/CrazyPeep.js",
+      "bytes": 4024,
+      "sha256": "05fe83d0e3406b699ce54824eaea962fa2c85cc0a420c2064dbcab7f772d5e00",
+      "gitBlobSha": "fc8f28f569f1e4cd3043defcd6c12a94200f2d21"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/HappyWeirdoPeep.js",
+      "upstreamPath": "js/peeps/HappyWeirdoPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/HappyWeirdoPeep.js",
+      "bytes": 3030,
+      "sha256": "565c4521cb856b64ead4ead849d73f982ee50270e387f28e371958308edbf77e",
+      "gitBlobSha": "e6b2884da5e8b19bde22e4923d4342935881a0cc"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/HatPeep.js",
+      "upstreamPath": "js/peeps/HatPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/HatPeep.js",
+      "bytes": 864,
+      "sha256": "e0ea7b4d76d39640116b74e134d97d98d0260eef66cf268f91583bca15ea4d76",
+      "gitBlobSha": "d1c43493b0d91886a375d47e90f486189c0282d6"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/HelpingAnim.js",
+      "upstreamPath": "js/peeps/HelpingAnim.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/HelpingAnim.js",
+      "bytes": 3389,
+      "sha256": "e0110ba1ae3bad06379f0ef2875eb5b6e1ebb8e7c3c4f6e7c6cea5484756ba6a",
+      "gitBlobSha": "88c06eeeef6a721e05303897d8f25ae366758aa4"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/LoverPeep.js",
+      "upstreamPath": "js/peeps/LoverPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/LoverPeep.js",
+      "bytes": 3875,
+      "sha256": "f35d36f1a9a497271be25df48d3aa44906366c6385e95aeaa56d66cfcbfa0156",
+      "gitBlobSha": "1ceee607d6a6d1f8179cebb6e0c587a7ef0948c4"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/NervousPeep.js",
+      "upstreamPath": "js/peeps/NervousPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/NervousPeep.js",
+      "bytes": 5779,
+      "sha256": "869aca68575fe936c861590afef40a4e8ba0b6b0f1bc7090d5e59de301581524",
+      "gitBlobSha": "245a3e2ebcd418d35abb0bca08cf8638f8e12fd1"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/NormalPeep.js",
+      "upstreamPath": "js/peeps/NormalPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/NormalPeep.js",
+      "bytes": 8286,
+      "sha256": "a79501e5ac893d175ccc2a5c5dc0747a5907c2173ac70fb7dae716409ee2736a",
+      "gitBlobSha": "f3601f39de4fd584b0c3e6d32949e6d7ff723d3b"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/PanicPeep.js",
+      "upstreamPath": "js/peeps/PanicPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/PanicPeep.js",
+      "bytes": 3683,
+      "sha256": "3eff4fe462389a6c3e49050c55649d2614b8f4638f56d18630480a0d8e3fd87f",
+      "gitBlobSha": "ba927edafb6f139283126e5462ee5209adbdebea"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/ProtestAnim.js",
+      "upstreamPath": "js/peeps/ProtestAnim.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/ProtestAnim.js",
+      "bytes": 1104,
+      "sha256": "f42156cf6845e508995f6fce18f322acbc5af9b25751bfda03763e6b71027052",
+      "gitBlobSha": "2be62ca849ea20bbca5c02af64eac17e6e4574a7"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/js/peeps/SnobbyPeep.js",
+      "upstreamPath": "js/peeps/SnobbyPeep.js",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/js/peeps/SnobbyPeep.js",
+      "bytes": 6364,
+      "sha256": "941f09eca5724bb96dfe2ea98f663b9a534d2b31cdc5f56da1dd60a863002d9a",
+      "gitBlobSha": "92fe911bb02da83fc820b82a972554949a8b97bf"
+    },
+    {
+      "path": "vendor/ncase-wbwwb/README.md",
+      "upstreamPath": "README.md",
+      "sourceUrl": "https://raw.githubusercontent.com/ncase/wbwwb/7c68c7e44e66b5be95ebd07d22391de707090397/README.md",
+      "bytes": 2408,
+      "sha256": "782851e69c8d7723f32f95dd5dc5644847b02440ce1afc4c3a2fd20ecc27e612",
+      "gitBlobSha": "322839efa1471b976040462cbd884cf3846e0079"
+    }
+  ]
+}

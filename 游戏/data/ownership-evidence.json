@@ -1,0 +1,45 @@
+{
+ "checked":"2026-10-05",
+ "regulatoryChecked":"2026-10-07",
+ "method":"Primary HTML and explicitly identified primary-source indexed excerpts; manually extracted aggregates, not microdata. No causal regression performed.",
+ "sources":[
+  {"id":"stanford2026","branch":"concentration","title":"Stanford HAI AI Index 2026, official takeaways","published":"2026; observations mainly 2025","url":"https://hai.stanford.edu/ai-index/2026-ai-index-report","access":"HTML正文；industry份额为大于90%，不是精确市场份额"},
+  {"id":"ftc2025","branch":"concentration","title":"FTC AI partnerships staff study","published":"2025-01; information through January 2025","url":"https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-issues-staff-report-ai-partnerships-investments-study","access":"HTML发布说明；员工研究，不是法院判决；未提取PDF全报告"},
+  {"id":"cma2025","branch":"concentration","title":"CMA cloud services final investigation case","published":"2025-07-31","url":"https://www.gov.uk/cma-cases/cloud-services-market-investigation","access":"HTML案件页；使用2025年最终调查及建议，不声称2026年已完成SMS指定；份额表另列附录来源"},
+  {"id":"cma-cloud-actions2026","branch":"concentration","title":"CMA actions on business software and cloud services","published":"2026-03-31","checkedAt":"2026-10-07","url":"https://www.gov.uk/government/news/cma-announces-package-of-actions-on-business-software-and-cloud-services","access":"官方HTML正文；CMA报告出口费用与互操作已有改进、仍需进一步行动，不是量化客户节省或所有锁定已消除"},
+  {"id":"cma-microsoft-sms2026","branch":"concentration","title":"Microsoft’s business software ecosystem SMS investigation","published":"2026-05-14; page updated 2026-06-23","checkedAt":"2026-10-07","url":"https://www.gov.uk/cma-cases/microsofts-business-software-ecosystem","access":"官方HTML案件页，状态Open；启动调查不是完成SMS指定，指示性日程不是已作决定，软件生态调查不等同AWS云已被指定"},
+  {"id":"cma-appendix","branch":"concentration","title":"CMA final Appendix D: UK supply shares by revenue","published":"2025-08-01; observations 2024","url":"https://assets.publishing.service.gov.uk/media/688b7ffafc784fa12a08906e/Appendix_D_-_Market_structure_and_concentration_methodology_and_UK_share_of_supply_by_revenue.pdf","access":"原PDF印刷页2—3完整文字与渲染表格已核对，D.6(a)/D.10；只提取英国2024披露区间，非UK+EEA或全球AI市场","localFile":"data/evidence/cma-cloud-2025-appendix-d.pdf","sha256":"3f2b0573293c22ec9413c34a29fcdfadc6f2b212b8ec38d92fabf4094398cb0d"},
+  {"id":"miit2026","branch":"concentration","title":"2026—2028工业互联网平台行动计划，国务院英文网官方转载","published":"2026-01-13","url":"https://english.www.gov.cn/news/202601/13/content_WS6966464cc6d00ca5f9a088c4.html","access":"HTML正文；目标与当前数量分开；不是企业市场份额"},
+  {"id":"deepseek","branch":"concentration","title":"DeepSeek-R1 official repository license section","published":"2025 model; repository checked 2026-10-05","url":"https://github.com/deepseek-ai/DeepSeek-R1","access":"官方README许可段；区分原模型与蒸馏模型底座许可；未把开权重等同公共所有"},
+  {"id":"ruc2025","branch":"concentration","title":"彭俞超、王南萱、梁钰茼：数字化转型、劳动收入份额与技术溢价——来自供应链视角的证据","published":"2025-01-16, 39(1):85—97","url":"https://xuebao.ruc.edu.cn/CN/Y2025/V39/I1/85","access":"期刊HTML索引核对书目信息；官方PDF搜索索引提取研究概述，2012—2019年A股样本。直接HTML超时，未读全文表格，未复现回归"},
+  {"id":"mondragon-figures","branch":"sharing","title":"MONDRAGON annual report 2025, figures","published":"2025 annual results; HTML checked 2026-10-05","url":"https://www.mondragon-corporation.com/informe-anual/en-cifras/","access":"HTML正文；公司自报；人数按网页取整，不把全部员工等同合作社成员"},
+  {"id":"mondragon-letter","branch":"sharing","title":"MONDRAGON annual report 2025, presidents’ letters","published":"2025 annual results; HTML checked 2026-10-05","url":"https://www.mondragon-corporation.com/informe-anual/cartas-presidencia/","access":"HTML正文明确2025；网页SEO标题残留2024，以正文年度为准；公司自述不是独立因果证据"},
+  {"id":"huawei-facts","branch":"sharing","title":"Huawei corporate fact sheet","published":"updated April 2026; 2025 results","url":"https://www.huawei.com/en/media-center/company-facts","access":"HTML正文；公司自报；受益人数包括退休人员，不是当前员工参与率"},
+  {"id":"huawei-governance","branch":"sharing","title":"Huawei corporate governance, 2025 commission election","published":"2025 governance; checked 2026-10-05","url":"https://www.huawei.com/en/corporate-governance","access":"HTML正文；股东会、代表会、不同层级票权需分别读取"},
+  {"id":"nber2025","branch":"sharing","title":"Freeman and Xu, Happier at Work? NBER WP 34231","published":"2025-09","url":"https://www.nber.org/papers/w34231","access":"正文页面403；官方working-paper PDF搜索索引读到摘要。NLSY97和GSS，包含个体固定效应；未读系数表、未下载微观数据，工作论文不是已确认同行评审论文"},
+  {"id":"dol-types","branch":"sharing","title":"US Department of Labor, types of employee ownership","published":"undated official guide; checked 2026-10-05","url":"https://www.dol.gov/agencies/ebsa/about-ebsa/our-activities/programs-and-initiatives/employee-ownership-initiative/tools-and-resources/employee-ownership","access":"官方HTML搜索索引返回类型对照表；直接打开失败；仅作概念区分，不提供法律意见"}
+ ],
+ "regulatoryEvents":[
+  {"source":"cma-cloud-actions2026","date":"2026-03-31","kind":"regulator-reported-progress","measure":"CMA reports Microsoft and Amazon progress on egress fees and interoperability, with further action expected","scope":"UK cloud services; qualitative progress, not a measured customer saving or ownership transfer"},
+  {"source":"cma-microsoft-sms2026","date":"2026-05-14","kind":"investigation-opened","measure":"Initial SMS investigation into Microsoft’s business software ecosystem launched","scope":"Case open at 2026-10-07 check; no final designation inferred from indicative timetable"}
+ ],
+ "observations":[
+  {"id":"frontier-industry","source":"stanford2026","year":2025,"kind":"lower-bound","measure":"industry-produced share of notable frontier models","value":90,"unit":"percent; strictly greater than; not revenue market share"},
+  {"id":"us-private","source":"stanford2026","year":2025,"kind":"estimate","measure":"US private AI investment","value":285.9,"unit":"billion USD"},
+  {"id":"cn-private","source":"stanford2026","year":2025,"kind":"estimate","measure":"China private AI investment; excludes full public-funding picture","value":12.4,"unit":"billion USD"},
+  {"id":"uk-iaas-two","source":"cma-appendix","year":2024,"kind":"disclosure-band","measure":"UK IaaS AWS and Microsoft combined revenue share, D.6(a)","value":[70,90],"unit":"percent; published band, not confidence interval or point value"},
+  {"id":"uk-paas-two","source":"cma-appendix","year":2024,"kind":"disclosure-band","measure":"UK PaaS AWS and Microsoft combined revenue share, D.10","value":[40,60],"unit":"percent; published band, not confidence interval or point value"},
+  {"id":"cn-platform-now","source":"miit2026","year":2026,"kind":"lower-bound","measure":"current influential industrial internet platforms","value":340,"unit":"platforms; more than, not ownership concentration"},
+  {"id":"cn-platform-target","source":"miit2026","year":2028,"kind":"target-lower-bound","measure":"planned influential industrial internet platforms","value":450,"unit":"platforms; more than, not achieved"},
+  {"id":"cn-devices-target","source":"miit2026","year":2028,"kind":"target-lower-bound","measure":"industrial platform connected devices target","value":120,"unit":"million devices; surpass, not people or achieved"},
+  {"id":"cn-adoption-target","source":"miit2026","year":2028,"kind":"target-lower-bound","measure":"platform adoption target","value":55,"unit":"percent; above, not achieved"},
+  {"id":"mond-sales","source":"mondragon-figures","year":2025,"kind":"company-reported","measure":"corporation sales","value":11322,"unit":"million EUR"},
+  {"id":"mond-employees","source":"mondragon-figures","year":2025,"kind":"company-reported-rounded","measure":"people in workforce, not all worker-members","value":71400,"unit":"people; rounded webpage figure"},
+  {"id":"mond-profit","source":"mondragon-letter","year":2025,"kind":"company-reported","measure":"corporation profit","value":618.8,"unit":"million EUR"},
+  {"id":"hw-sales","source":"huawei-facts","year":2025,"kind":"company-reported","measure":"Huawei revenue","value":880.9,"unit":"billion CNY"},
+  {"id":"hw-profit","source":"huawei-facts","year":2025,"kind":"company-reported","measure":"Huawei net profit","value":68,"unit":"billion CNY"},
+  {"id":"hw-rd","source":"huawei-facts","year":2025,"kind":"company-reported","measure":"Huawei R&D spending","value":192.3,"unit":"billion CNY"},
+  {"id":"hw-beneficiaries","source":"huawei-facts","year":2025,"kind":"company-reported","measure":"employees and retired beneficiaries described as owners","value":169054,"unit":"people; not all current employees"},
+  {"id":"hw-election","source":"huawei-governance","year":2025,"kind":"company-reported","measure":"voting shareholding employees participating in commission election","value":127909,"unit":"people; different denominator from all beneficiaries"}
+ ]
+}

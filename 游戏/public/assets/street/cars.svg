@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="310" height="260" viewBox="0 0 310 260">
+ <g stroke="#626262" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+  <path fill="#e4e4de" d="M20 217 290 218 288 237 21 237Z"/>
+  <path fill="none" d="M29 244 42 244M269 245 282 245"/>
+  <g fill="#f6f5ef" stroke-width="3"><circle cx="41" cy="227" r="5"/><circle cx="75" cy="227" r="5"/><circle cx="110" cy="227" r="5"/><circle cx="145" cy="227" r="5"/><circle cx="179" cy="227" r="5"/><circle cx="215" cy="227" r="5"/><circle cx="252" cy="227" r="5"/><circle cx="279" cy="227" r="5"/></g>
+  <path fill="#e4e4de" d="M32 158 55 147 85 106Q91 99 103 99L188 103Q198 104 205 114L227 146 272 155Q281 158 282 173L280 199 32 198Z"/>
+  <path fill="#f6f5ef" d="M94 113 70 146 133 148 132 113Z M144 114 146 149 211 150 189 115Z"/>
+  <path fill="none" d="M61 157 233 160M136 112 139 186M214 154 220 184M101 167 116 167M154 169 170 169" stroke-width="3"/>
+  <path fill="#c9b694" d="M263 166 280 169 279 180 264 178Z" stroke-width="3"/>
+  <path fill="#f6f5ef" d="M32 167 45 165 45 180 32 182Z M29 191 53 192 52 200 30 200Z M258 194 285 193 285 202 259 202Z" stroke-width="3"/>
+  <path fill="#d0d0c8" d="M64 197Q64 173 88 173Q111 174 112 198M215 200Q216 176 239 178Q261 178 264 199"/>
+  <circle fill="#53534f" cx="88" cy="199" r="19"/><circle fill="#53534f" cx="239" cy="201" r="19"/>
+  <circle fill="#f6f5ef" cx="88" cy="199" r="9"/><circle fill="#f6f5ef" cx="239" cy="201" r="9"/>
+  <path fill="none" d="M88 191 88 207M80 199 96 199M239 193 239 209M231 201 247 201" stroke-width="2"/>
+  <path fill="#e4e4de" d="M32 84 33 32 49 33 50 84Z M42 37 107 48 102 64 41 53Z M104 51 148 76 141 89 99 63Z"/>
+  <circle fill="#f6f5ef" cx="105" cy="56" r="10"/>
+  <path fill="none" d="M147 81 160 95M160 95 153 102M160 95 168 99" stroke-width="3"/>
+  <path fill="none" stroke="#a4a49c" stroke-width="2.5" d="M244 118 253 125M250 113 260 115M161 39 272 42 273 111M161 39 161 55M195 41 195 58"/>
+  <path fill="#f6f5ef" d="M182 59 208 60 209 79 181 78Z" stroke-width="3"/>
+ </g>
+</svg>

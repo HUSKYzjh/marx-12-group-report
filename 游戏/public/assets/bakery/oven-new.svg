@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="310" height="260" viewBox="0 0 310 260">
+  <g stroke="#626262" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#e4e4de" d="M23 31 Q25 19 40 20 L270 24 Q286 24 287 39 L289 225 22 228Z"/>
+    <path fill="#f6f5ef" d="M30 26 L31 51 281 53 281 30Z"/>
+    <path fill="#53534f" d="M40 67 L235 68 237 131 39 131Z M39 148 L237 150 235 209 41 210Z"/>
+    <path fill="#c9b694" stroke-width="3" d="M44 115 L232 116 232 126 44 126Z M45 194 L231 195 231 205 45 205Z"/>
+    <path fill="none" stroke-width="3" d="M51 82 L51 101 M52 162 L52 184 M102 134 L176 134 M100 214 L177 214"/>
+    <circle fill="#faf9f3" cx="260" cy="87" r="12"/>
+    <circle fill="#faf9f3" cx="261" cy="165" r="12"/>
+    <path fill="none" stroke-width="3" d="M260 87 L264 79 M261 165 L256 158"/>
+    <circle fill="#a9b09b" cx="260" cy="119" r="4" stroke-width="2"/>
+    <circle fill="#a9b09b" cx="260" cy="198" r="4" stroke-width="2"/>
+    <path fill="#b9b9b0" d="M32 228 L33 249 58 249 59 228 M250 228 L250 249 275 250 274 226Z"/>
+    <path fill="#bcaa88" stroke-width="2" d="M64 113 Q66 98 84 99 Q104 98 106 113Z M119 113 Q121 97 140 99 Q160 98 162 113Z M173 113 Q175 99 195 99 Q213 99 215 113Z M64 191 Q65 177 84 177 Q103 176 106 191Z M119 191 Q120 177 140 177 Q159 176 162 191Z M173 191 Q175 177 195 177 Q213 178 215 191Z"/>
+    <path fill="none" stroke-width="2" d="M80 103 L84 109 M136 103 L140 109 M191 103 L195 109 M80 181 L84 187 M136 181 L140 187 M191 181 L195 187"/>
+  </g>
+</svg>

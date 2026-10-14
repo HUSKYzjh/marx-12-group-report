@@ -1,0 +1,84 @@
+THIRD-PARTY NOTICES — THE EVOLUTION OF TRUST ENGINE LIBRARIES
+
+Source repository: https://github.com/ncase/trust
+Pinned source commit: 6ec45d73befdb922bd40654dd1c1c903a953562f
+
+The repository's CC0 dedication applies to Nicky Case's original work.
+It does not replace the following libraries' MIT licenses. The library files
+are retained byte-for-byte; their original notices are reproduced below.
+These libraries are the only third-party libraries included from this source
+copy. Q, Howler, Pegasus, fonts and audio recordings are not included here.
+
+ORIGINAL AUTHOR CODE — CC0-1.0
+
+The unmodified js/sims/Splash.js source is also retained under Nicky Case's
+CC0 dedication at the pinned commit. The adaptation includes only the text
+from function SplashPeep(config) through the end of that file, reusing
+SplashPeep and SplashEdge for the opening's character network. It does not
+start the original Splash application, Loader registration or sound paths.
+The complete CC0 dedication is preserved in the adjacent LICENSE file.
+This added author code does not change any third-party license below.
+
+1. Pixi.js — js/lib/pixi.min.js
+
+Preserved source-header notice:
+
+/*!
+ * pixi.js - v4.4.3
+ * Compiled Thu, 23 Mar 2017 12:28:18 UTC
+ *
+ * pixi.js is licensed under the MIT License.
+ * http://www.opensource.org/licenses/mit-license
+ */
+
+The copied file's top-level header does not state a copyright holder or year;
+no additional copyright attribution is invented in this notice.
+
+2. TweenJS — js/lib/tweenjs-0.6.2.min.js
+
+Preserved source-header notice:
+
+/*!
+* @license TweenJS
+* Visit http://createjs.com/ for documentation, updates and examples.
+*
+* Copyright (c) 2011-2015 gskinner.com, inc.
+*
+* Distributed under the terms of the MIT license.
+* http://www.opensource.org/licenses/mit-license.html
+*
+* This notice shall be included in all copies or substantial portions of the Software.
+*/
+
+3. MinPubSub — js/lib/minpubsub.src.js
+
+Preserved source-header notice:
+
+/*!
+ * MinPubSub
+ * Copyright(c) 2011 Daniel Lamb <daniellmb.com>
+ * MIT Licensed
+ */
+
+MIT LICENSE TERMS
+
+The following complete MIT permission and disclaimer terms apply to each of
+the MIT-licensed libraries above, with its corresponding preserved notice.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

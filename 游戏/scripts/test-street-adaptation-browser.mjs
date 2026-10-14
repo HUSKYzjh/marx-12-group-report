@@ -1,0 +1,80 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import http from 'node:http';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {fileURLToPath} from 'node:url';
+import {initialPrologue,PROLOGUE_STORAGE_KEY} from '../lib/prologue-state.ts';
+import {createStreetGame,createStreetStory,streetReducer,streetMoney} from '../lib/street-game.ts';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const {loadPlaywright,browserLaunchOptions}=createRequire(import.meta.url)('./playwright-runtime.cjs');
+const bytes=await fs.readFile(path.join(root,'build/index.html'));
+const server=http.createServer((req,res)=>{res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});res.end(bytes);});await new Promise(r=>server.listen(0,'127.0.0.1',r));
+const url='http://127.0.0.1:'+server.address().port+'/',browser=await loadPlaywright().chromium.launch(browserLaunchOptions()),errors=[],external=[];
+const output=path.join(root,'outputs/street-adaptation-qa');await fs.mkdir(output,{recursive:true});
+let g={...createStreetGame(),phase:'manage'};for(let i=0;i<7;i++)g=streetReducer(g,{type:'ROUND',expectedRound:g.world.round});
+// Fixture is only this isolated test context, never the user's saved street.
+const initial=initialPrologue();
+try{
+ for(const width of [1280,390]){
+  const context=await browser.newContext({viewport:{width,height:1100},reducedMotion:'reduce'});
+  await context.route('**/*',r=>{if(r.request().url().startsWith(url))return r.continue();external.push(r.request().url());return r.abort();});
+  const saved={...initial,scene:'street',street:g};
+  await context.addInitScript(({key,saved})=>{if(window===top&&!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(saved));},{key:PROLOGUE_STORAGE_KEY,saved});
+  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(url);
+  const f=await(await page.getByTestId('trust-frame').elementHandle()).contentFrame();await f.locator('body[data-ready="true"]').waitFor();
+  await f.waitForFunction(()=>window.__trustStage.street.time===8&&!document.body.dataset.transition);
+  const state=await f.evaluate(()=>window.__trustStage.street.game);assert.equal(state.world.round,7);assert.equal(streetMoney(state.world),g.world.initialMoney);
+  assert.equal(await f.locator('.street-firm-decisions button').count(),2);
+  assert.equal(await f.locator('.street-reaction').getAttribute('data-firm'),'cars');
+  assert.equal(await f.locator('[data-street-action="OTHER_LAYOFFS"]').count(),0);assert.equal(await f.locator('[data-street-action="RESPONSE"]').count(),0);
+  await f.getByRole('button',{name:'车厂 · 降价 ↗',exact:true}).click();const dialog=f.getByRole('dialog',{name:'车厂',exact:true});await dialog.waitFor();
+  assert.equal(await f.locator('.street-reaction').isVisible(),false);
+  await dialog.getByText('老板最近怎么调整',{exact:true}).click();assert((await dialog.innerText()).includes('40枚 → 36枚'));assert((await dialog.innerText()).includes('库存持续卖不动'));
+  await page.screenshot({path:path.join(output,width+'-accounts.png'),fullPage:true});
+  await dialog.getByRole('button',{name:'关闭店铺账本'}).click();await f.getByRole('button',{name:'烤炉厂 · 降价 ↗',exact:true}).click();
+  assert((await f.getByRole('dialog',{name:'烤炉厂',exact:true}).innerText()).includes('22枚'));
+  await f.getByRole('button',{name:'关闭店铺账本'}).click();
+  assert.equal(await f.locator('.street-management,.street-responses').count(),0);
+  assert.equal(await f.locator('.street-ledger').count(),0);
+  assert.equal(await f.locator('[data-street-action="BUY_OVEN"],[data-street-action="HIRE"],[data-street-action="PREVIEW_LAYOFF"]').count(),0);
+  assert(!((await f.locator('#controls').innerText()).includes('别家怎么做')));
+  await f.locator('.street-person[data-person="bakery-owner"]').click();await f.getByRole('button',{name:'看钱包 →',exact:true}).click();
+  assert((await f.locator('.street-thought').innerText()).includes('店内可代付'));
+  assert((await f.locator('.street-wallet-lines').allTextContents()).join(' ').includes('店内代付'));
+  await page.screenshot({path:path.join(output,width+'-owner-funds.png'),fullPage:true});await f.getByRole('button',{name:'关闭心声',exact:true}).click();
+  await f.locator('.street-shop-hit[data-firm="bakery"]').click({position:{x:10,y:15}});await f.getByRole('tab',{name:'钱的去向',exact:true}).click();
+  assert((await f.locator('.shop-ledger-panel:visible').innerText()).includes('老板个人消费代付'));await f.getByRole('button',{name:'关闭店铺账本'}).click();
+  assert((await f.evaluate(()=>document.documentElement.scrollWidth))<=await f.evaluate(()=>innerWidth)+1);
+  await page.screenshot({path:path.join(output,width+'-street.png'),fullPage:true});await context.close();
+  const storyContext=await browser.newContext({viewport:{width,height:1100},reducedMotion:'reduce'});
+  const story=streetReducer(createStreetStory(),{type:'ROUND',expectedRound:0}),storySaved={...initial,scene:'street',street:story};
+  await storyContext.route('**/*',r=>{if(r.request().url().startsWith(url))return r.continue();external.push(r.request().url());return r.abort();});
+  await storyContext.addInitScript(({key,saved})=>{if(window===top&&!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(saved));},{key:PROLOGUE_STORAGE_KEY,saved:storySaved});
+  const storyPage=await storyContext.newPage();storyPage.on('pageerror',e=>errors.push(e.message));await storyPage.goto(url);
+  const sf=await(await storyPage.getByTestId('trust-frame').elementHandle()).contentFrame();await sf.locator('body[data-ready="true"]').waitFor();await sf.waitForFunction(()=>window.__trustStage.street.time===8&&!document.body.dataset.transition);
+  assert.equal(await sf.locator('.street-ledger').count(),0);assert(!((await sf.locator('#controls').innerText()).includes('这轮的钱和炉子')));
+  await sf.getByRole('button',{name:'添炉、招人 →',exact:true}).waitFor();assert.equal(await sf.locator('.street-shop-hit').count(),6);
+  assert(!(await sf.locator('#readout').innerText()).includes('全街做'));
+  assert(!(await sf.locator('#readout').innerText()).includes('点店看账'));
+  assert((await sf.locator('.street-story-result').innerText()).includes('库存'));
+  assert.deepEqual(await sf.evaluate(()=>window.__trustStage.street.game.world),story.world);
+  await storyPage.screenshot({path:path.join(output,width+'-story-clean.png'),fullPage:true});await storyContext.close();
+  const endContext=await browser.newContext({viewport:{width,height:1100},reducedMotion:'reduce'});
+  await endContext.route('**/*',r=>{if(r.request().url().startsWith(url))return r.continue();external.push(r.request().url());return r.abort();});
+  const endSaved={...initial,scene:'street',street:{...g,phase:'social'}};
+  await endContext.addInitScript(({key,saved})=>{if(window===top&&!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify(saved));},{key:PROLOGUE_STORAGE_KEY,saved:endSaved});
+  const endPage=await endContext.newPage();endPage.on('pageerror',e=>errors.push(e.message));await endPage.goto(url);
+  const ef=await(await endPage.getByTestId('trust-frame').elementHandle()).contentFrame();await ef.locator('body[data-ready="true"]').waitFor();
+  for(const phase of ['social','private','overproduction','limits']){
+   await ef.waitForFunction(phase=>window.__trustStage.street.game.phase===phase,phase);
+   const copy=await ef.locator('#readout').innerText();assert(copy.length<240);assert(!copy.includes('模型参数'));assert(!copy.includes('购物规则'));
+   if(phase!=='limits')await ef.getByRole('button',{name:'再看一层 →',exact:true}).click();
+  }
+  const bounds=await ef.locator('#readout').innerText();assert(bounds.includes('一次剩货不等于全面危机'));assert(bounds.includes('不能直接代指社会主义国家'));
+  assert.equal(await ef.locator('#notes details').count(),0);
+  assert.deepEqual((await ef.evaluate(()=>window.__trustStage.street.game)).world,g.world);
+  await endPage.screenshot({path:path.join(output,width+'-ending-clean.png'),fullPage:true});await endContext.close();
+ }
+ assert.deepEqual(errors,[]);assert.deepEqual(external,[]);console.log('PASS: desktop/mobile autonomous decisions, accounts, no wage-copy or management menus');
+}finally{await browser.close();await new Promise(r=>server.close(r));}

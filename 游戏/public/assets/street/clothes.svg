@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="310" height="260" viewBox="0 0 310 260">
+ <g stroke="#626262" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+  <path fill="#e4e4de" d="M31 236 35 48Q36 40 44 41L251 45 252 235M22 238 57 238M237 238 270 238"/>
+  <path fill="none" d="M43 57 239 60M86 57 86 72M184 60 184 75" stroke-width="3"/>
+  <path fill="none" d="M85 70Q99 60 93 53M85 70 53 88 118 88Z M183 73Q197 62 190 55M183 73 148 91 216 91Z" stroke-width="3"/>
+  <path fill="#dddcd5" d="M163 94 146 113 158 144 166 136 161 194 207 195 202 136 211 143 221 112 203 95 192 105 179 105Z"/>
+  <path fill="#f6f5ef" d="M68 89 44 112 59 135 71 126 69 188 110 189 108 126 119 135 133 112 107 89Q89 108 68 89Z"/>
+  <path fill="none" d="M71 93Q88 119 108 93M78 119 78 178M69 180 111 181M52 118 61 129M119 119 112 126M180 108 183 180M162 185 206 185" stroke-width="2.5"/>
+  <path fill="#eeede6" d="M96 128 111 130 110 146Q101 153 96 145Z" stroke-width="2.5"/>
+  <path fill="#d1cabc" d="M58 216 151 216 157 235 53 235Z"/>
+  <path fill="#f6f5ef" d="M64 205 145 206 150 216 58 216Z"/>
+  <path fill="#e4e4de" d="M71 194 137 195 144 205 64 205Z"/>
+  <path fill="none" d="M95 198 95 210M82 223 133 223" stroke-width="2.5"/>
+  <path fill="#f6f5ef" d="M215 190 224 185 243 191 244 230 215 229Z"/>
+  <path fill="none" d="M219 196 238 197M219 205 235 206M219 215 237 216" stroke-width="2.5"/>
+  <path fill="#c9b694" d="M267 194 282 194 282 224 267 224Z"/>
+  <path fill="none" d="M263 193 287 193M263 225 287 225M269 203 280 204M269 212 280 213" stroke-width="3"/>
+ </g>
+</svg>
