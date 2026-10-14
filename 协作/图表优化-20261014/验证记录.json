@@ -1,0 +1,116 @@
+{
+  "sha256": "2346c21825e1cad0c49c384cf54bb0dd496ac4b5b8290ce2a641ebdf60517585",
+  "slide_count": 36,
+  "body_slides": 26,
+  "divider_slides": 6,
+  "cover_slides": 1,
+  "appendices": 3,
+  "minutes": 30,
+  "sources_in_notes": true,
+  "native_chart_count": 9,
+  "native_chart_data": {
+    "investment": {
+      "count": 25,
+      "verified_against_saved_data": true,
+      "series_count": 3
+    },
+    "debt": {
+      "count": 24,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "consumption": {
+      "count": 24,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "exports": {
+      "count": 25,
+      "verified_against_saved_data": true,
+      "series_count": 3
+    },
+    "balance": {
+      "count": 3,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "renewables": {
+      "count": 3,
+      "verified_against_saved_data": true,
+      "series_count": 2
+    },
+    "ai_productivity": {
+      "count": 2,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "energy": {
+      "count": 2,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "labor_scenario": {
+      "count": 4,
+      "verified_against_saved_data": true,
+      "series_count": 3
+    }
+  },
+  "native_connectors": 83,
+  "tables": 0,
+  "text_fit_estimate_warnings": 0,
+  "body_pages_light": true,
+  "package_validation": "pass",
+  "first_party_import": "pass",
+  "native_powerpoint_tested": false,
+  "build_revision": "charts-d9",
+  "baseline_commit": "00e37fd",
+  "main_data_values_checked": 115,
+  "comparison": {
+    "changed_pages_vs_baseline": [
+      9,
+      10,
+      11,
+      21,
+      24,
+      25,
+      26
+    ],
+    "other_pages_pixel_identical": 29,
+    "final_pages_identical_to_visually_checked_previews": [
+      9,
+      10,
+      11,
+      21,
+      24,
+      25,
+      26
+    ],
+    "data_source_bytes_unchanged": true
+  },
+  "visual_review": {
+    "passed": true,
+    "sha256": "2346c21825e1cad0c49c384cf54bb0dd496ac4b5b8290ce2a641ebdf60517585",
+    "checked_pages": [
+      9,
+      10,
+      11,
+      21,
+      24,
+      25,
+      26
+    ],
+    "checked": [
+      "七页图表按1280×720原尺寸检查，重点读数、图例、单位、轴刻度和脚注可读",
+      "修正曲线标签未显示、客服图15%标签缺失及工时图标签压线",
+      "最终七页与已查看的预览逐像素相同；其余29页与原正式预览逐像素相同"
+    ],
+    "native_powerpoint_tested": false
+  },
+  "source_sha256": {
+    ".build/dense-layout.mjs": "662a78b166772439a5adaaf67a18f7e6a7ea3b7bf027cab5ef7c814af13b89bf",
+    ".build/dense-pages.mjs": "1c7ff357fa19e0734e46403371f6065c860f32373035f633e82b22930af41a5a",
+    ".build/restructure-pages.mjs": "22b4f09abc6a824fb478019c1cc35e04be731c3dd3ea196779eb34cc9c8ab6e8",
+    ".build/dense-content.json": "565c61ff39e96bf1c1668c1804ed0a287a3aae70dcbfcf1edde61eb6af4fdb11",
+    ".build/dense-charts.json": "d142d42aade93dabee70de6c6c33b9a76380e7cf935cac1d24fe1efdcbf2ddbe"
+  }
+}
