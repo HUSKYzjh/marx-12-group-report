@@ -673,7 +673,7 @@
         "R14",
         "R43"
       ],
-      "layout": "IRENA成对柱图重绘＋价格传导",
+      "layout": "IRENA成对条形图重绘＋价格传导",
       "legacy_page": 14,
       "kind": "body",
       "footer": "IRENA 2025：摘要表S1、图S1端点重绘；2024美元/kWh；发电LCOE不等于居民电价"

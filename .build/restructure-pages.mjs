@@ -8,14 +8,15 @@ export function renderRestructure(sl,d,t,h,data){
   text(a,x+17,y+12,w-34,38,size,t.accent,true);if(b)text(b,x+17,y+50,w-34,hh-55,bodySize,t.ink);return q;
  };
  const none={style:'solid',fill:'none',width:0};
- function trend(key,x,y,w,hh,{ymin,ymax,ystep,xmin,xmax,xstep,quarter=false,size=17,format='0',color=t.accent,events=[]}={}){
+ function trend(key,x,y,w,hh,{ymin,ymax,ystep,xmin,xmax,xstep,quarter=false,size=18,format='0',color=t.accent,events=[],labels=[]}={}){
   const ds=data[key];
   const xs=ds.categories.map(s=>quarter?Number(s.slice(0,4))+(Number(s.slice(-1))-1)/4:Number(s));
   const ch=sl.charts.add('scatter',{
-   position:{left:x,top:y,width:w,height:hh},hasLegend:false,scatterOptions:{style:'line'},
-   series:[...events.map(v=>({name:'事件年份标记 '+v,xValues:[v,v],values:[ymin,ymax],line:{style:'dash',fill:t.line,width:1},marker:{symbol:'none'}})),{name:ds.unit,xValues:xs,values:ds.values,line:{style:'solid',fill:color,width:3.2},marker:{symbol:'none'}}],
+   position:{left:x,top:y,width:w,height:hh},hasLegend:false,scatterOptions:{style:'lineWithMarkers'},
+   // Labels belong to the complete series; the chart remains editable and is audited against the source values.
+   series:[...events.map(v=>({name:'事件年份标记 '+v,xValues:[v,v],values:[ymin,ymax],line:{style:'dash',fill:t.line,width:1},marker:{symbol:'none'}})),{name:ds.unit,xValues:xs,values:ds.values,line:{style:'solid',fill:color,width:3.5},marker:{symbol:'circle',size:3,fill:color},dataLabels:{showValue:false},dataLabelOverrides:labels.map(({idx,text:label,position='top'})=>({idx,text:label,position,showValue:false,textStyle:{typeface:F,fontSize:20,fill:color,bold:true}}))}],
    xAxis:{min:xmin??xs[0],max:xmax??xs.at(-1),majorUnit:xstep??5,numberFormatCode:'0',position:'bottom',tickLabelPosition:'low',textStyle:{typeface:F,fontSize:size,fill:t.muted},line:{style:'solid',fill:t.line,width:.8}},
-   yAxis:{min:ymin,max:ymax,majorUnit:ystep,numberFormatCode:format,position:'left',textStyle:{typeface:F,fontSize:size,fill:t.muted},line:none,majorGridlines:{style:'solid',fill:t.line,width:.5}},
+   yAxis:{min:ymin,max:ymax,majorUnit:ystep,numberFormatCode:format,position:'left',textStyle:{typeface:F,fontSize:size,fill:t.muted},line:none,majorGridlines:{style:'solid',fill:t.line,width:.4}},
    chartFill:'none',plotAreaFill:'none',chartLine:none,plotAreaLine:none
   });applyChartFont(ch,{fontFamily:F});return ch;
  }
@@ -80,41 +81,40 @@ export function renderRestructure(sl,d,t,h,data){
  case 'investment':{
   title('投资创造当期需求，新增产能仍须由未来需求承接','美国全社会固定资本形成总额：私人＋政府；不含存货和金融资产交易');
   text('万亿美元 · 2015年不变价',65,232,785,36,24,t.ink,true);
-  trend('investment',65,285,776,291,{ymin:0,ymax:6,ystep:2,events:[2009,2020]});
-  text('2008—09金融危机',289,267,197,27,17,t.muted,true,'center');
-  text('2020疫情',645,267,153,27,17,t.muted,true,'center');
-  text('2007：3.43  →  2009：2.87  →  2024：5.02',85,569,756,33,22,t.accent,true);
+  trend('investment',65,285,776,291,{ymin:0,ymax:6,ystep:2,xstep:4,xmax:2025,events:[2009,2020],labels:[{idx:7,text:'3.43',position:'top'},{idx:9,text:'2.87',position:'bottom'},{idx:24,text:'5.02',position:'top'}]});
+  text('2008—09金融危机',261,267,197,27,17,t.muted,true,'center');
+  text('2020疫情',605,267,153,27,17,t.muted,true,'center');
+  text('2007—2009年累计下降16.2%，随后恢复并继续扩张',85,575,756,30,21,t.accent,true);
   const vals=[['建设期','设备、工程和用工\n形成订单与收入'],['投产期','供给扩大\n需要新增客户和配套'],['回收期','销售与回款\n决定偿债和后续投资']];
   const ns=vals.map((v,i)=>card(v[0],v[1],894,232+i*123,321,103,{size:25,bodySize:21}));
   for(let i=0;i<2;i++)edge(sl,ns[i],ns[i+1],t,'bottom','top');
   band('2009年实际投资同比下降12.5%；危机后可以恢复，投资规模与有效用途仍须相互匹配。',612,23);return true;}
  case 'consumption':{
   title('消费能否持续，取决于稳定收入与偿债负担','收入保障支持购买力；信用提前支出，也带来后续还本付息');
-  card('收入路径','工资、社保与税收转移\n→ 可支配收入 → 日常消费',65,232,416,137,{size:27,bodySize:24});
-  text('约 1/4',84,386,391,61,40,t.accent,true);
-  text('工作年龄人口收入差距的\n税收转移平均缩减幅度',85,448,394,63,23,t.ink);
-  text('OECD：2014年或最近年份，\n比较再分配前后基尼；非收入增幅。',85,518,395,57,20,t.muted);
-  text('信用不能永久替代收入增长，\n金融结构会放大或缓冲冲击。',85,587,391,68,23,t.accent,true);
-  text('家庭债务偿付 / 可支配收入（%）',548,231,667,34,23,t.ink,true);
-  trend('debt',541,270,672,149,{ymin:10,ymax:17,ystep:2,xmin:2007,xmax:2013,xstep:1,quarter:true,size:16,format:'0'});
-  text('2007Q4：15.85%　｜　包含房贷与消费债务',572,416,641,28,19,t.muted);
-  text('实际个人消费支出（2007Q4＝100）',548,455,667,34,23,t.ink,true);
-  trend('consumption',541,493,672,138,{ymin:96,ymax:110,ystep:4,xmin:2007,xmax:2013,xstep:1,quarter:true,size:16,color:t.gold});
-  text('2009Q2：97.7；两图均为2007Q1—2012Q4，展示危机前后变化。',548,635,667,28,18,t.muted);return true;}
+  text('家庭债务偿付 / 可支配收入（%）',65,232,551,34,23,t.accent,true);
+  text('实际个人消费支出（2007Q4＝100）',665,232,551,34,22,t.accent,true);
+  trend('debt',65,280,551,253,{ymin:10,ymax:18,ystep:2,xmin:2007,xmax:2012.75,xstep:1,quarter:true,labels:[{idx:3,text:'15.85%',position:'top'},{idx:23,text:'11.75%',position:'top'}]});
+  trend('consumption',665,280,551,253,{ymin:96,ymax:106,ystep:2,xmin:2007,xmax:2012.75,xstep:1,quarter:true,color:t.gold,labels:[{idx:9,text:'97.7',position:'bottom'},{idx:23,text:'103.6',position:'top'}]});
+  text('峰值：2007Q4；包含房贷与消费债务。',80,541,536,28,18,t.muted);
+  text('谷值：2009Q2；两图均为2007Q1—2012Q4。',680,541,536,28,18,t.muted);
+  rect(sl,65,586,1150,75,t.light);
+  text('收入保障',82,601,153,34,25,t.accent,true);
+  text('工资、社保与税收转移 → 可支配收入 → 消费',254,595,941,31,23,t.ink,true);
+  text('OECD：工作年龄人口基尼平均缩减约1/4（2014或最近年份），不是收入增幅。',254,632,941,25,18,t.muted);return true;}
  case 'trade':{
   title('出口扩大市场，全球衰退却会同时压缩外部需求','国际分工可以共同获益，各国却不能同时依靠净出口顺差');
   text('全球货物与服务实际出口',65,232,699,36,26,t.accent,true);
   text('万亿美元 · 2015年不变价',65,274,699,30,21,t.muted);
-  trend('exports',65,320,699,247,{ymin:0,ymax:30,ystep:10,events:[2009,2020]});
-  text('2008—09金融危机',262,302,196,26,17,t.muted,true,'center');
-  text('2020疫情',582,302,133,26,17,t.muted,true,'center');
+  trend('exports',65,320,699,247,{ymin:0,ymax:30,ystep:10,xstep:4,xmax:2025,events:[2009,2020],labels:[{idx:9,text:'15.90',position:'bottom'},{idx:20,text:'22.14',position:'bottom'},{idx:24,text:'27.01',position:'top'}]});
+  text('2008—09金融危机',239,302,196,26,17,t.muted,true,'center');
+  text('2020疫情',555,302,133,26,17,t.muted,true,'center');
   text('2009年 −9.6%　｜　2020年 −8.5%',85,567,667,35,24,t.accent,true);
   text('2024年货物与服务差额 / GDP',814,232,401,66,25,t.accent,true);
   const ch=sl.charts.add('bar',{
    position:{left:794,top:315,width:420,height:250},categories:data.balance.categories,
-   series:[{name:'外贸差额占GDP（%）',values:data.balance.values,points:[{idx:0,fill:t.gold},{idx:1,fill:t.accent},{idx:2,fill:'#867B6D'}],dataLabelOverrides:[0,1,2].map(idx=>({idx,showValue:true,position:'center',textStyle:{typeface:F,fontSize:24,fill:idx===0?t.ink:'#FFF9EE',bold:true}}))}],
+   series:[{name:'外贸差额占GDP（%）',values:data.balance.values,points:[{idx:0,fill:t.gold},{idx:1,fill:t.gold},{idx:2,fill:t.accent}],dataLabelOverrides:[0,1,2].map(idx=>({idx,showValue:true,position:'center',textStyle:{typeface:F,fontSize:24,fill:idx===2?'#FFF9EE':t.ink,bold:true}}))}],
    hasLegend:false,barOptions:{direction:'column',grouping:'clustered',gapWidth:95},
-   dataLabels:{showValue:true,position:'center',numberFormatCode:'0.0',textStyle:{typeface:F,fontSize:24,fill:t.ink,bold:true}},
+   dataLabels:{showValue:true,position:'center',numberFormatCode:'+0.0;-0.0;0',textStyle:{typeface:F,fontSize:24,fill:t.ink,bold:true}},
    xAxis:{tickLabelPosition:'low',textStyle:{typeface:F,fontSize:23,fill:t.ink},line:{style:'solid',fill:t.line,width:.7}},
    yAxis:{min:-4,max:6,majorUnit:2,numberFormatCode:'0',textStyle:{typeface:F,fontSize:17,fill:t.muted},line:none,majorGridlines:{style:'solid',fill:t.line,width:.4}},
    chartFill:'none',plotAreaFill:'none',chartLine:none,plotAreaLine:none});applyChartFont(ch,{fontFamily:F});

@@ -92,8 +92,9 @@ function firstHalf(sl,d,t){
 }
 
 function energyChart(sl,t){
+ tx(sl,'2030年预测约为2025年估计的2倍',789,288,426,31,21,t.accent,true);
  const ch=sl.charts.add('bar',{position:{left:785,top:326,width:420,height:276},categories:['2025（估计）','2030（预测）'],
-  series:[{name:'全部数据中心用电',values:[485,950],points:[{idx:0,fill:t.accent},{idx:1,fill:t.gold}]}],
+  series:[{name:'全部数据中心用电',values:[485,950],points:[{idx:0,fill:t.accent},{idx:1,fill:t.gold+'/18',line:{style:'dash',fill:t.gold,width:2}}]}],
   hasLegend:false,barOptions:{direction:'column',grouping:'clustered',gapWidth:165},
   dataLabels:{showValue:true,position:'outEnd',numberFormatCode:'0',textStyle:{typeface:F,fontSize:26,fill:t.ink,bold:true}},
   xAxis:{textStyle:{typeface:F,fontSize:20,fill:t.ink},line:{fill:t.line,width:.8}},
