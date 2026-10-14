@@ -1,0 +1,102 @@
+[
+  {
+    "source": "商品败物价",
+    "replacement": "商品拜物教",
+    "count": 1
+  },
+  {
+    "source": "马克思韦博",
+    "replacement": "马克斯·韦伯",
+    "count": 1
+  },
+  {
+    "source": "马克思微博",
+    "replacement": "马克斯·韦伯",
+    "count": 1
+  },
+  {
+    "source": "马克思·伟伯",
+    "replacement": "马克斯·韦伯",
+    "count": 1
+  },
+  {
+    "source": "学员派Academia",
+    "replacement": "学院派Academia",
+    "count": 1
+  },
+  {
+    "source": "私密",
+    "replacement": "斯密",
+    "count": 51
+  },
+  {
+    "source": "私命",
+    "replacement": "斯密",
+    "count": 1
+  },
+  {
+    "source": "四密",
+    "replacement": "斯密",
+    "count": 1
+  },
+  {
+    "source": "国附论",
+    "replacement": "国富论",
+    "count": 1
+  },
+  {
+    "source": "国复论",
+    "replacement": "国富论",
+    "count": 1
+  },
+  {
+    "source": "国服论",
+    "replacement": "国富论",
+    "count": 1
+  },
+  {
+    "source": "国夫论",
+    "replacement": "国富论",
+    "count": 1
+  },
+  {
+    "source": "国父论",
+    "replacement": "国富论",
+    "count": 2
+  },
+  {
+    "source": "伟博",
+    "replacement": "韦伯",
+    "count": 6
+  },
+  {
+    "source": "伟伯",
+    "replacement": "韦伯",
+    "count": 7
+  },
+  {
+    "source": "韦博",
+    "replacement": "韦伯",
+    "count": 3
+  },
+  {
+    "source": "微博",
+    "replacement": "韦伯",
+    "count": 6
+  },
+  {
+    "source": "维伯",
+    "replacement": "韦伯",
+    "count": 2
+  },
+  {
+    "source": "卫博",
+    "replacement": "韦伯",
+    "count": 1
+  },
+  {
+    "source": "地质中国",
+    "replacement": "帝制中国",
+    "count": 3
+  }
+]

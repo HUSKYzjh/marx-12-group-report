@@ -1,0 +1,412 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 25,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2024",
+      "value": 27011666254118.9,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2023",
+      "value": 26259255591093.7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2022",
+      "value": 26060792892351.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2021",
+      "value": 24346143273750.9,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2020",
+      "value": 22136115503947.6,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2019",
+      "value": 24196447508134.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2018",
+      "value": 23890905014631,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2017",
+      "value": 22943658520604,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2016",
+      "value": 21815728002378.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2015",
+      "value": 21272611247725.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2014",
+      "value": 20582558728239.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2013",
+      "value": 19892234869732.9,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2012",
+      "value": 19284762289196.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2011",
+      "value": 18769930314533.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2010",
+      "value": 17788386792750.7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2009",
+      "value": 15904200509424.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2008",
+      "value": 17592407968587.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2007",
+      "value": 17084975736096.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2006",
+      "value": 16018541943761.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2005",
+      "value": 14764748224361.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2004",
+      "value": 13802686876659,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2003",
+      "value": 12523867240663.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2002",
+      "value": 12012217062944.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2001",
+      "value": 11690280536255.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "NE.EXP.GNFS.KD",
+        "value": "Exports of goods and services (constant 2015 US$)"
+      },
+      "country": {
+        "id": "1W",
+        "value": "World"
+      },
+      "countryiso3code": "WLD",
+      "date": "2000",
+      "value": 11612978068337.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ]
+]

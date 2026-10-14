@@ -1,0 +1,21 @@
+{
+  "bvid": "BV1bk4y1e7Jp",
+  "aid": 739967671,
+  "cid": 1094823798,
+  "title": "【百万粉献礼】AI会带来赛博朋克，还是解放全人类？",
+  "author": "学院派Academia",
+  "author_mid": 96639395,
+  "url": "https://www.bilibili.com/video/BV1bk4y1e7Jp/",
+  "part": "【百万粉献礼】AI会带来赛博朋克，还是解放全人类？",
+  "page": 1,
+  "pages_total": 1,
+  "duration": 2937,
+  "published_unix": 1681465500,
+  "description": "AI革命会带来赛博朋克，还是会解放全人类？\n准备了近两个月、两万余字文稿的百万粉丝献礼视频。我们将细数三大理论流派、百年思想演变，从经济、就业、政治、文化四个维度系统剖析AI对社会影响。\n这50分钟，也许会影响你余生的所有选择。",
+  "method": "faster-whisper small CPU int8 batch8 beam5; OpenCC t2s",
+  "status": "machine transcription, not manually verified",
+  "audio_duration": 2936.2346875,
+  "segments": 108,
+  "last_segment_end": 2926.48,
+  "character_count": 16573
+}

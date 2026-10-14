@@ -1,0 +1,21 @@
+{
+  "bvid": "BV1Jt4y1B72f",
+  "aid": 628949812,
+  "cid": 291441808,
+  "title": "【硬核社会学】资本主义的本质是什么？",
+  "author": "学院派Academia",
+  "author_mid": 96639395,
+  "url": "https://www.bilibili.com/video/BV1Jt4y1B72f/",
+  "part": "资本主义三幻神",
+  "page": 1,
+  "pages_total": 1,
+  "duration": 3286,
+  "published_unix": 1612250147,
+  "description": "资本主义的本质是什么？它究竟从何而来？亚当斯密、马克思、韦伯三幻神亲身下场，创立现代经济学、政治经济学和社会学以求证得大道。这是一场横跨百年、决定人类真正命运的大辩论！",
+  "method": "faster-whisper small CPU int8 batch8 beam5; OpenCC t2s",
+  "status": "machine transcription, not manually verified",
+  "audio_duration": 3285.0346875,
+  "segments": 120,
+  "last_segment_end": 3265.65,
+  "character_count": 17612
+}

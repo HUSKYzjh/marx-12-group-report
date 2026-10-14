@@ -1,0 +1,35 @@
+# Current source modules live beside generated builds. Keep the source files.
+/.build/*
+!/.build/dense-layout.mjs
+!/.build/dense-pages.mjs
+!/.build/restructure-pages.mjs
+!/.build/information-pages.mjs
+!/.build/logic-content.mjs
+!/.build/logic-pages.mjs
+!/.build/dense-content.json
+!/.build/dense-charts.json
+!/.build/deduplicate-pptx-media.py
+!/.build/review-dense.py
+!/.build/deliver-dense.py
+!/.build/project-runtime.mjs
+!/.build/project.py
+!/.build/preview_font.py
+
+# Machine configuration, dependencies, caches, and delivery backups.
+runtime.local.json
+.env
+.env.*
+!.env.example
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+/.chart-data-*/
+/制作/
+/项目交接/
+*.log
+~$*
+Thumbs.db
+desktop.ini
+.DS_Store

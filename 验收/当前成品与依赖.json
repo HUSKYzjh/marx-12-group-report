@@ -1,0 +1,124 @@
+{
+  "packaged_date": "2026-10-14",
+  "content_revision": "2026-10-13 信息深化与图形重绘版 · 逻辑链优化",
+  "ppt": "成品/科学技术与资本主义基本矛盾-古罗马斗兽场-信息深化与图形重绘版.pptx",
+  "ppt_sha256": "7adb4f62a3b378976024245505f48bb0375a5ed02c7a575fa69d7bd73c0d6220",
+  "slides": 36,
+  "native_charts": 9,
+  "references": 51,
+  "transcripts": [
+    {
+      "reference": "V1",
+      "bvid": "BV1NK4y1L7gw",
+      "title": "【游戏社会学】赛博朋克是资本主义的终极形态吗？控制论革命的残酷真相",
+      "files": [
+        "文字稿.md",
+        "transcript.txt",
+        "transcript.srt",
+        "metadata.json",
+        "文字稿_术语整理版.md",
+        "术语修订记录.json"
+      ]
+    },
+    {
+      "reference": "V2",
+      "bvid": "BV1Jt4y1B72f",
+      "title": "【硬核社会学】资本主义的本质是什么？",
+      "files": [
+        "文字稿.md",
+        "transcript.txt",
+        "transcript.srt",
+        "metadata.json",
+        "文字稿_术语整理版.md",
+        "术语修订记录.json"
+      ]
+    },
+    {
+      "reference": "V3",
+      "bvid": "BV1bk4y1e7Jp",
+      "title": "【百万粉献礼】AI会带来赛博朋克，还是解放全人类？",
+      "files": [
+        "文字稿.md",
+        "transcript.txt",
+        "transcript.srt",
+        "metadata.json",
+        "文字稿_术语整理版.md",
+        "术语修订记录.json"
+      ]
+    },
+    {
+      "reference": "V4",
+      "bvid": "BV1X5fgBfEFp",
+      "title": "【AI社会学】AGI通用人工智能，正如何成为一种新宗教？",
+      "files": [
+        "文字稿.md",
+        "transcript.txt",
+        "transcript.srt",
+        "metadata.json",
+        "文字稿_术语整理版.md",
+        "术语修订记录.json"
+      ]
+    },
+    {
+      "reference": "V5",
+      "bvid": "BV1Xb421b74B",
+      "title": "【学院谈】“科学向善”何以可能？从3M年度科学现状洞察报告谈起",
+      "files": [
+        "文字稿.md",
+        "transcript.txt",
+        "transcript.srt",
+        "metadata.json",
+        "文字稿_术语整理版.md",
+        "术语修订记录.json"
+      ]
+    },
+    {
+      "reference": "V6",
+      "bvid": "BV1MHuS6yEMk",
+      "title": "【AI 社会学】DeepSeek拒绝成为一家伟大的公司：梁文锋究竟想要什么？",
+      "files": [
+        "文字稿.md",
+        "transcript.txt",
+        "transcript.srt",
+        "metadata.json"
+      ]
+    },
+    {
+      "reference": "V7",
+      "bvid": "BV1KVwGe6EGK",
+      "title": "【互联网社会学3】从全民发钱到AI沙皇，Sam Altman是硅谷的未来吗？",
+      "files": [
+        "文字稿.md",
+        "transcript.txt",
+        "transcript.srt",
+        "metadata.json"
+      ]
+    }
+  ],
+  "source_files": [
+    "dense-layout.mjs",
+    "dense-pages.mjs",
+    "restructure-pages.mjs",
+    "information-pages.mjs",
+    "logic-content.mjs",
+    "logic-pages.mjs",
+    "dense-content.json",
+    "dense-charts.json",
+    "deduplicate-pptx-media.py",
+    "review-dense.py",
+    "deliver-dense.py",
+    "project-runtime.mjs",
+    "project.py",
+    "preview_font.py"
+  ],
+  "runtime_bundle": "26.1011.11113",
+  "artifact_tool": "2.8.93",
+  "node": "24.19.0",
+  "fonts": [
+    "Microsoft YaHei",
+    "SimSun",
+    "Georgia"
+  ],
+  "native_powerpoint_tested": false,
+  "runtime_not_bundled": true
+}

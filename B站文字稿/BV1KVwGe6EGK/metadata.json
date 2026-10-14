@@ -1,0 +1,21 @@
+{
+  "bvid": "BV1KVwGe6EGK",
+  "aid": 113836665413413,
+  "cid": 27897760958,
+  "title": "【互联网社会学3】从全民发钱到AI沙皇，Sam Altman是硅谷的未来吗？",
+  "author": "学院派Academia",
+  "url": "https://www.bilibili.com/video/BV1KVwGe6EGK/",
+  "part": "【互联网社会学3】从全民发钱到AI沙皇，Sam Altman是硅谷的未来吗？",
+  "page": 1,
+  "pages_total": 1,
+  "duration": 2781,
+  "description": "【这期稿子写的好累，推迟了一个月、推翻了四版稿件，但绝对是全网最深度GPT之父山姆·奥特曼解读】\n大家在网上常说，V我50看看实力。但如果是V你1000、美金、每月呢？这不是杀猪盘，而是奥特曼在创造GPT之前就在硅谷实行的“YC全民基本收入实验”。\n然而，为什么如今的奥特曼名利双全、却鲜少再有人谈到这个“仍未完结”的实验？而当硅谷正在加速右转时，这个实验和当下最重要的大模型GPT之间的爱恨纠葛又会如何影响或者反映出硅谷乃至整个美国的政治气候和左右派实践？",
+  "published_unix": 1737010838,
+  "status": "machine transcription, not manually verified",
+  "anonymous_subtitle_requires_login": null,
+  "anonymous_subtitle_tracks": 0,
+  "method": "faster-whisper small CPU int8 batch8 beam5",
+  "audio_duration": 2780.07875,
+  "segments": 109,
+  "last_segment_end": 2773.52
+}

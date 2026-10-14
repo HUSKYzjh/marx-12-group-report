@@ -1,0 +1,107 @@
+[
+  {
+    "source": "学业派Academia",
+    "replacement": "学院派Academia",
+    "count": 1
+  },
+  {
+    "source": "Chance GPT",
+    "replacement": "ChatGPT",
+    "count": 1
+  },
+  {
+    "source": "TATGPT",
+    "replacement": "ChatGPT",
+    "count": 1
+  },
+  {
+    "source": "Chest CPT",
+    "replacement": "ChatGPT",
+    "count": 2
+  },
+  {
+    "source": "ChatCBT",
+    "replacement": "ChatGPT",
+    "count": 1
+  },
+  {
+    "source": "ChatGBT",
+    "replacement": "ChatGPT",
+    "count": 1
+  },
+  {
+    "source": "ChatCpt4",
+    "replacement": "ChatGPT-4",
+    "count": 1
+  },
+  {
+    "source": "ChatGPT3",
+    "replacement": "ChatGPT-3",
+    "count": 1
+  },
+  {
+    "source": "AI归讯论",
+    "replacement": "AI规训论",
+    "count": 2
+  },
+  {
+    "source": "AI归训论",
+    "replacement": "AI规训论",
+    "count": 2
+  },
+  {
+    "source": "AI规讯论",
+    "replacement": "AI规训论",
+    "count": 3
+  },
+  {
+    "source": "AI规矩论",
+    "replacement": "AI规训论",
+    "count": 3
+  },
+  {
+    "source": "AI辩革论",
+    "replacement": "AI变革论",
+    "count": 1
+  },
+  {
+    "source": "AI变额论",
+    "replacement": "AI变革论",
+    "count": 1
+  },
+  {
+    "source": "格莱西",
+    "replacement": "葛兰西",
+    "count": 2
+  },
+  {
+    "source": "格莱希",
+    "replacement": "葛兰西",
+    "count": 1
+  },
+  {
+    "source": "格兰西",
+    "replacement": "葛兰西",
+    "count": 1
+  },
+  {
+    "source": "菲德里希",
+    "replacement": "费德里奇",
+    "count": 3
+  },
+  {
+    "source": "费德里希",
+    "replacement": "费德里奇",
+    "count": 3
+  },
+  {
+    "source": "尼克斯内克",
+    "replacement": "尼克·斯尔尼切克",
+    "count": 1
+  },
+  {
+    "source": "阿列克斯威廉",
+    "replacement": "亚历克斯·威廉姆斯",
+    "count": 1
+  }
+]

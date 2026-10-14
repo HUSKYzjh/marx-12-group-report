@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "sha256": "7adb4f62a3b378976024245505f48bb0375a5ed02c7a575fa69d7bd73c0d6220",
+  "changed_pages": [
+    2,
+    7,
+    8,
+    12,
+    13,
+    18,
+    19,
+    22,
+    23,
+    28,
+    29,
+    33
+  ],
+  "final_divider_contact_review": [
+    2,
+    8,
+    13,
+    19,
+    23,
+    29
+  ],
+  "transition_and_conclusion_contact_review": [
+    7,
+    12,
+    18,
+    22,
+    28,
+    33
+  ],
+  "full_size_review_final": [
+    13
+  ],
+  "full_size_review_d7_pixel_identical": [
+    33
+  ],
+  "full_size_review_d7_before_navigation_label_change": [
+    2,
+    29
+  ],
+  "other_24_pages_pixel_identical_to_d6": true,
+  "checked": [
+    "parallel routes use branches",
+    "theory explanations converge without being serial causes",
+    "crisis and employment conditions explicit",
+    "each section has a bridge to next topic",
+    "six navigation nodes match six sections",
+    "UBI and public AI linked to distinct problems",
+    "conclusion distinguishes conditional outcomes",
+    "no text overflow or connector collisions"
+  ],
+  "native_powerpoint_tested": false
+}

@@ -1,0 +1,21 @@
+{
+  "bvid": "BV1MHuS6yEMk",
+  "aid": 117065776176954,
+  "cid": 40752906393,
+  "title": "【AI 社会学】DeepSeek拒绝成为一家伟大的公司：梁文锋究竟想要什么？",
+  "author": "学院派Academia",
+  "url": "https://www.bilibili.com/video/BV1MHuS6yEMk/",
+  "part": "DeepSeek拒绝成为一家伟大的公司：梁文锋究竟想要什么？【AI社会学】",
+  "page": 1,
+  "pages_total": 1,
+  "duration": 1074,
+  "description": "在2025年的DeepSeek时刻之后，梁文锋本可以抓住全球流量，建立超级App，把技术优势变成用户、订阅和平台壁垒。但DeepSeek却不断反着走：它开源模型、压低API价格、克制商业化，也不急着做最赚钱的产品。\n因为梁文锋真正想要的，可能从来不是一家像苹果那样“伟大的公司”，而是实现AGI：通用人工智能。梁文锋有着强大的自信，只要给他足够的时间和资金，他就能够摘下这个人工智能领域的圣杯。公司、产品、融资、用户和利润，都只是为这项科学工程争取算力、人才与时间的工具。\n他想要的，是成为AI领域的牛顿。\n本期【AI社会学】，就从那份已经下架的DeepSeek文件出发，解释为什么对梁文锋来说，克制不是防守，而是一种更激进的进攻。",
+  "published_unix": 1786858200,
+  "status": "machine transcription, not manually verified",
+  "anonymous_subtitle_requires_login": null,
+  "anonymous_subtitle_tracks": 0,
+  "method": "faster-whisper small CPU int8 batch8 beam5",
+  "audio_duration": 1073.1093125,
+  "segments": 42,
+  "last_segment_end": 1073.11
+}

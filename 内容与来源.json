@@ -1,0 +1,1245 @@
+{
+  "title": "科学技术是缓和还是加剧了资本主义基本矛盾？",
+  "date": "2026-10-13",
+  "main_slides": 33,
+  "appendix_slides": 3,
+  "minutes": 30,
+  "sources": {
+    "Z1": {
+      "text": "遨游之舟，《通俗地讲解一下资本主义基本矛盾？》回答，用户提供全文，网页标注编辑于2023年10月10日。[原链接](https://www.zhihu.com/question/264895929/answer/1906437501)。采用企业博弈的切入方式，以及投资、消费、出口三条路径。",
+      "urls": [
+        "https://www.zhihu.com/question/264895929/answer/1906437501"
+      ]
+    },
+    "V1": {
+      "text": "[赛博朋克是资本主义的终极形态吗？](https://www.bilibili.com/video/BV1NK4y1L7gw/)：共同生产、技术组织与公共生活。",
+      "urls": [
+        "https://www.bilibili.com/video/BV1NK4y1L7gw/"
+      ]
+    },
+    "V2": {
+      "text": "[资本主义的本质是什么？](https://www.bilibili.com/video/BV1Jt4y1B72f/)：竞争、机械化与危机，重点32:25—34:43与37:30—52:01。",
+      "urls": [
+        "https://www.bilibili.com/video/BV1Jt4y1B72f/"
+      ]
+    },
+    "V3": {
+      "text": "[AI会带来赛博朋克，还是解放全人类？](https://www.bilibili.com/video/BV1bk4y1e7Jp/)：知识劳动、隐藏劳动、工资与消费、AI公共安排；重点10:00—23:50、25:14—27:19、39:44—42:48。",
+      "urls": [
+        "https://www.bilibili.com/video/BV1bk4y1e7Jp/"
+      ]
+    },
+    "V4": {
+      "text": "[AGI通用人工智能，正如何成为一种新宗教？](https://www.bilibili.com/video/BV1X5fgBfEFp/)：未来愿景与当前制度行动，使用29:18—31:12的讨论线索；以观点材料使用。",
+      "urls": [
+        "https://www.bilibili.com/video/BV1X5fgBfEFp/"
+      ]
+    },
+    "V5": {
+      "text": "[“科学向善”何以可能？](https://www.bilibili.com/video/BV1Xb421b74B/)：科学能力与公共需要；品牌宣传不作独立证据。",
+      "urls": [
+        "https://www.bilibili.com/video/BV1Xb421b74B/"
+      ]
+    },
+    "V6": {
+      "text": "[DeepSeek拒绝成为一家伟大的公司：梁文锋究竟想要什么？](https://www.bilibili.com/video/BV1MHuS6yEMk/)：开放路线与公司决策，重点02:21、13:52之后；人物动机保留为作者解释。",
+      "urls": [
+        "https://www.bilibili.com/video/BV1MHuS6yEMk/"
+      ]
+    },
+    "V7": {
+      "text": "[从全民发钱到AI沙皇，Sam Altman是硅谷的未来吗？](https://www.bilibili.com/video/BV1KVwGe6EGK/)：商业竞争、公共收入与技术权力；人物评价与政策效果分开核对。",
+      "urls": [
+        "https://www.bilibili.com/video/BV1KVwGe6EGK/"
+      ]
+    },
+    "R1": {
+      "text": "恩格斯，《反杜林论》社会主义篇第二章。[原文](https://www.marxists.org/archive/marx/works/1877/anti-duhring/ch24.htm)：基本概念及企业组织、社会协调。",
+      "urls": [
+        "https://www.marxists.org/archive/marx/works/1877/anti-duhring/ch24.htm"
+      ]
+    },
+    "R2": {
+      "text": "IMF，[财政政策](https://www.imf.org/en/publications/fandd/issues/series/back-to-basics/fiscal-policy)、[凯恩斯主义](https://www.imf.org/external/pubs/ft/fandd/2014/09/basics.htm)：公共支出、税收和私人需求。",
+      "urls": [
+        "https://www.imf.org/en/publications/fandd/issues/series/back-to-basics/fiscal-policy",
+        "https://www.imf.org/external/pubs/ft/fandd/2014/09/basics.htm"
+      ]
+    },
+    "R3": {
+      "text": "OECD，Good Jobs for All in a Changing World of Work，2018，图10.5。[报告章节](https://www.oecd.org/en/publications/good-jobs-for-all-in-a-changing-world-of-work_9789264308817-en/full-report/component-15.html)：既有材料采用劳动年龄人口、2014年或最近年份的口径。",
+      "urls": [
+        "https://www.oecd.org/en/publications/good-jobs-for-all-in-a-changing-world-of-work_9789264308817-en/full-report/component-15.html"
+      ]
+    },
+    "R4": {
+      "text": "Federal Reserve History，The Great Recession and Its Aftermath。[原文](https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath)：住房、信用和金融风险传导。",
+      "urls": [
+        "https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath"
+      ]
+    },
+    "R5": {
+      "text": "WTO，2010年3月26日新闻稿Press/598。[原文](https://www.wto.org/english/news_e/pres10_e/pr598_e.htm)：2009年货物贸易量下降12.2%，采用该次发布口径。",
+      "urls": [
+        "https://www.wto.org/english/news_e/pres10_e/pr598_e.htm"
+      ]
+    },
+    "R6": {
+      "text": "Roger W. Ferguson Jr.，Reflections on the Capital Goods Overhang，2001年7月18日。[美联储原文](https://www.federalreserve.gov/boarddocs/speeches/2001/20010718/default.htm)：信息通信投资与局部过剩、短缺并存。",
+      "urls": [
+        "https://www.federalreserve.gov/boarddocs/speeches/2001/20010718/default.htm"
+      ]
+    },
+    "R7": {
+      "text": "IRENA，Renewable Power Generation Costs in 2024，2025年发布。[报告及摘要](https://www.irena.org/Publications/2025/Jun/Renewable-Power-Generation-Costs-in-2024)：2024年新投运公用事业级可再生能源装机中，91%的LCOE低于最廉价的新建化石燃料替代方案。发电侧成本不等于终端电价；2026年10月13日重核。",
+      "urls": [
+        "https://www.irena.org/Publications/2025/Jun/Renewable-Power-Generation-Costs-in-2024"
+      ]
+    },
+    "R8": {
+      "text": "WTO，Digitally Delivered Services Trade Dataset。[官方数据说明](https://data.wto.org/en/dataset/dideliveredservices)：服务的跨境数字交付，不混同AI专属出口。",
+      "urls": [
+        "https://data.wto.org/en/dataset/dideliveredservices"
+      ]
+    },
+    "R9": {
+      "text": "Brynjolfsson、Li、Raymond，Generative AI at Work，QJE，2025。[论文](https://academic.oup.com/qje/article/140/2/889/7990658)：客服场景的生产率效果。 [作者公开稿](https://arxiv.org/html/2304.11771v2)：摘要与引言报告平均提效15%、较少经验和较低技能者约30%；重绘为摘要级对比，不把两类样本当作互斥群体。",
+      "urls": [
+        "https://academic.oup.com/qje/article/140/2/889/7990658",
+        "https://arxiv.org/html/2304.11771v2"
+      ]
+    },
+    "R10": {
+      "text": "OpenAI，Sharing AI Progress in Mathematics，2026年10月6日。[发布说明](https://openai.com/index/sharing-ai-progress-in-mathematics/)、[math仓库](https://github.com/openai/math)：2026年10月13日重核719篇稿件、372组及验证状态。",
+      "urls": [
+        "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+        "https://github.com/openai/math"
+      ]
+    },
+    "R11": {
+      "text": "IEA，Key Questions on Energy and AI，2026。[摘要](https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary)：2026年10月13日重核485 TWh、950 TWh及融资条件说明。",
+      "urls": [
+        "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary"
+      ]
+    },
+    "R12": {
+      "text": "[DeepSeek-R1官方仓库与许可](https://github.com/deepseek-ai/DeepSeek-R1)：具体权重、衍生模型与许可分别核对。",
+      "urls": [
+        "https://github.com/deepseek-ai/DeepSeek-R1"
+      ]
+    },
+    "R13": {
+      "text": "OpenResearch现金转移研究。[研究说明](https://www.openresearchlab.org/projects/unconditional-cash-study)、[消费结果](https://www.openresearchlab.org/findings/key-findings-spending)、[劳动供给研究](https://www.nber.org/papers/w32719)：2020—2023年两州试验，不与早期YC试点合并。",
+      "urls": [
+        "https://www.openresearchlab.org/projects/unconditional-cash-study",
+        "https://www.openresearchlab.org/findings/key-findings-spending",
+        "https://www.nber.org/papers/w32719"
+      ]
+    },
+    "R14": {
+      "text": "马克思，《资本论》第一卷，相对剩余价值的概念（中文第十章、英文第十二章）。[原文](https://www.marxists.org/archive/marx/works/1867-c1/ch12.htm)：超额与相对剩余价值、必要生活资料的传导条件。",
+      "urls": [
+        "https://www.marxists.org/archive/marx/works/1867-c1/ch12.htm"
+      ]
+    },
+    "R15": {
+      "text": "马克思，《资本论》第一卷，剩余价值率和剩余价值量（英文第十一章）。[原文](https://www.marxists.org/archive/marx/works/1867-c1/ch11.htm)：比率、可变资本和总量关系。",
+      "urls": [
+        "https://www.marxists.org/archive/marx/works/1867-c1/ch11.htm"
+      ]
+    },
+    "R16": {
+      "text": "马克思，《资本论》第一卷，机器和大工业（英文第十五章），第三节B、C。[原文](https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm)：工作日延长、劳动强化及其区别。",
+      "urls": [
+        "https://www.marxists.org/archive/marx/works/1867-c1/ch15.htm"
+      ]
+    },
+    "R17": {
+      "text": "韦伯，The Theory of Social and Economic Organization，第一部分。此英译选本来自《经济与社会》。[CUNY原著文本](https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/32cfd699-aa78-497a-8c37-5b3ebcda932f)：社会行动、理想类型、四种行动取向。",
+      "urls": [
+        "https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/32cfd699-aa78-497a-8c37-5b3ebcda932f"
+      ]
+    },
+    "R18": {
+      "text": "韦伯，同上，第二部分关于劳动分工与资本核算的章节。[CUNY原著文本](https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/e6862775-ec62-424b-8a1f-e29ac8b9e4ee)：资本核算的制度与技术条件。",
+      "urls": [
+        "https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/e6862775-ec62-424b-8a1f-e29ac8b9e4ee"
+      ]
+    },
+    "R19": {
+      "text": "韦伯，同上，第二部分，经济行动的形式与实质合理性。[CUNY原著文本](https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/75d03604-d3b0-4c14-8e1b-4f0624c668f2)。",
+      "urls": [
+        "https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/75d03604-d3b0-4c14-8e1b-4f0624c668f2"
+      ]
+    },
+    "R20": {
+      "text": "韦伯，同上，第三部分，支配类型、法理型支配与政党。[CUNY原著文本](https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/84482b92-0d5b-401f-b1dd-de1d85b65a00)。",
+      "urls": [
+        "https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/84482b92-0d5b-401f-b1dd-de1d85b65a00"
+      ]
+    },
+    "R21": {
+      "text": "韦伯，《新教伦理与资本主义精神》，第五章。[原文](https://www.marxists.org/reference/archive/weber/protestant-ethic/ch05.htm)：入世禁欲、积累、铁笼及反对单因解释的说明。",
+      "urls": [
+        "https://www.marxists.org/reference/archive/weber/protestant-ethic/ch05.htm"
+      ]
+    },
+    "R22": {
+      "text": "韦伯，The Theory of Social and Economic Organization，第四部分。[CUNY原著文本](https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/a9ae4dda-70d5-4a31-8829-dd0fd4ffa5e2)：阶级处境与身份群体。",
+      "urls": [
+        "https://cuny.manifoldapp.org/read/the-theory-of-social-and-economic-organization/section/a9ae4dda-70d5-4a31-8829-dd0fd4ffa5e2"
+      ]
+    },
+    "R23": {
+      "text": "马克思，《资本论》第一卷，剩余价值转化为资本（英文第二十四章）。[原文](https://www.marxists.org/archive/marx/works/1867-c1/ch24.htm)：资本积累与扩大再生产。",
+      "urls": [
+        "https://www.marxists.org/archive/marx/works/1867-c1/ch24.htm"
+      ]
+    },
+    "R24": {
+      "text": "Sam Altman，Moore’s Law for Everything，2021年3月16日。[作者原文](https://moores.samaltman.com/)：全民分享资本收益及改良资本主义的设想，属于政策提案，不是已实施的公有AI制度。",
+      "urls": [
+        "https://moores.samaltman.com/"
+      ]
+    },
+    "R25": {
+      "text": "Alaska Permanent Fund Corporation，[基金结构与分配](https://apfc.org/the-fund/fund-structure/)、[基金说明](https://apfc.org/the-fund/)、[官方历史](https://apfc.org/about/history/)：公共财富、可分配收益、居民分红与公共服务；1976年设立基金，1982年首次分红由石油收入结余支付。2026年10月13日核对。",
+      "urls": [
+        "https://apfc.org/the-fund/fund-structure/",
+        "https://apfc.org/the-fund/",
+        "https://apfc.org/about/history/"
+      ]
+    },
+    "R26": {
+      "text": "ETH Zurich，Apertus: a fully open, transparent, multilingual language model，2025年9月2日。[发布说明](https://ethz.ch/en/news-and-events/eth-news/news/2025/09/press-release-apertus-a-fully-open-transparent-multilingual-language-model.html)：公共科研机构、CSCS计算设施及合作伙伴参与，不表述为已实现强AI。",
+      "urls": [
+        "https://ethz.ch/en/news-and-events/eth-news/news/2025/09/press-release-apertus-a-fully-open-transparent-multilingual-language-model.html"
+      ]
+    },
+    "R27": {
+      "text": "英国政府，Sovereign AI首批股权投资与算力支持，2026年4月16日。[官方说明](https://www.gov.uk/government/news/ai-firms-pioneering-drug-discovery-cheaper-supercomputing-and-more-get-first-backing-through-uks-sovereign-ai)：国家投资和私人企业共同发展的政策实例，不等于整个AI行业公有化。",
+      "urls": [
+        "https://www.gov.uk/government/news/ai-firms-pioneering-drug-discovery-cheaper-supercomputing-and-more-get-first-backing-through-uks-sovereign-ai"
+      ]
+    },
+    "R28": {
+      "text": "FDR Presidential Library & Museum，[FDR Biography](https://www.fdrlibrary.org/fdr-biography)：1933年新政救济与就业措施，1935年公共工程与《社会保障法》，用于政策时间线。",
+      "urls": [
+        "https://www.fdrlibrary.org/fdr-biography"
+      ]
+    },
+    "R29": {
+      "text": "WTO，[GATT签署与临时适用](https://www.wto.org/english/tratop_e/gatt_e/task_of_signing_e.htm)、[75周年说明](https://www.wto.org/english/news_e/news22_e/hist_02nov22_e.htm)：1947年10月30日签署，签署日期与1948年开始临时适用分别说明。",
+      "urls": [
+        "https://www.wto.org/english/tratop_e/gatt_e/task_of_signing_e.htm",
+        "https://www.wto.org/english/news_e/news22_e/hist_02nov22_e.htm"
+      ]
+    },
+    "R30": {
+      "text": "Federal Reserve History，[大通胀及政策事件](https://www.federalreservehistory.org/time-period/great-inflation)、[1978—1979年石油冲击](https://www.federalreservehistory.org/essays/oil-shock-of-1978-79)：油价冲击、1979年反通胀措施与1981—1982年衰退；政策时间线选择1973—1982年的局部过程，不将其改写为整个大通胀时期。",
+      "urls": [
+        "https://www.federalreservehistory.org/time-period/great-inflation",
+        "https://www.federalreservehistory.org/essays/oil-shock-of-1978-79"
+      ]
+    },
+    "R31": {
+      "text": "U.S. Department of the Treasury，[Economic Impact Payments](https://home.treasury.gov/policy-issues/coronavirus/assistance-for-american-families-and-workers/economic-impact-payments)：2020年CARES Act居民现金救助；临时、具有资格条件，不作为永久UBI实例。",
+      "urls": [
+        "https://home.treasury.gov/policy-issues/coronavirus/assistance-for-american-families-and-workers/economic-impact-payments"
+      ]
+    },
+    "R32": {
+      "text": "OpenAI，[Introducing ChatGPT](https://openai.com/index/chatgpt/)，2022年11月30日：研究预览发布节点，不作为全部生成式AI的起点。",
+      "urls": [
+        "https://openai.com/index/chatgpt/"
+      ]
+    },
+    "R33": {
+      "text": "DeepSeek，[官方更新日志](https://api-docs.deepseek.com/zh-cn/updates/)、[R1发布说明](https://api-docs.deepseek.com/zh-cn/news/news250120/)：2025年1月20日发布R1及开放权重，与[R12]许可材料配合使用。以上新增日期于2026年10月13日核对。",
+      "urls": [
+        "https://api-docs.deepseek.com/zh-cn/updates/",
+        "https://api-docs.deepseek.com/zh-cn/news/news250120/"
+      ]
+    },
+    "R34": {
+      "text": "WTO，Global Trade Outlook and Statistics，2024年4月。[官方数据说明](https://www.wto.org/english/blogs_e/ce_ralph_ossa_e/blog_ro_11apr24_e.htm)：2023年数字交付服务出口4.25万亿美元，同比增长9.0%，占全球货物与服务出口13.8%；历史估计口径，非AI专属数据。",
+      "urls": [
+        "https://www.wto.org/english/blogs_e/ce_ralph_ossa_e/blog_ro_11apr24_e.htm"
+      ]
+    },
+    "R35": {
+      "text": "欧盟理事会，2024年10月14日，Platform workers: Council adopts new rules to improve their working conditions。[正式通过说明](https://www.consilium.europa.eu/en/press/press-releases/2024/10/14/platform-workers-council-adopts-new-rules-to-improve-their-working-conditions/)：算法透明、人工监督、解释和复核；不将指令通过表述为所有成员国已实施完毕。",
+      "urls": [
+        "https://www.consilium.europa.eu/en/press/press-releases/2024/10/14/platform-workers-council-adopts-new-rules-to-improve-their-working-conditions/"
+      ]
+    },
+    "R36": {
+      "text": "Counterpoint Research, 2023-02-13, iPhone 14 Pro Max BoM analysis。128GB毫米波型号物料估计最高474美元，sub-6型号454美元，混合口径约464美元；不能把物料成本与售价之差视为利润。https://counterpointresearch.com/en/insights/producing-a-128gb-iphone-14-pro-max-mmwave-smartphone-costs-apple-up-to-474",
+      "urls": [
+        "https://counterpointresearch.com/en/insights/producing-a-128gb-iphone-14-pro-max-mmwave-smartphone-costs-apple-up-to-474"
+      ]
+    },
+    "R37": {
+      "text": "Apple, 2022-09-07, Apple debuts iPhone 14 Pro and iPhone 14 Pro Max。美国128GB起售价1099美元，采用发布时税前标价，不含折抵与运营商补贴。https://www.apple.com/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/",
+      "urls": [
+        "https://www.apple.com/newsroom/2022/09/apple-debuts-iphone-14-pro-and-iphone-14-pro-max/"
+      ]
+    },
+    "R38": {
+      "text": "World Bank WDI, USA, 2000—2024。固定资本形成总额：NE.GDI.FTOT.KD（2015年不变美元）和NE.GDI.FTOT.CD（现价美元）；全经济口径，包括私人和政府固定资产投资，不含存货和金融资产交易。2026-10-13下载，数据库更新2026-10-08。https://data.worldbank.org/indicator/NE.GDI.FTOT.KD?locations=US；https://api.worldbank.org/v2/country/USA/indicator/NE.GDI.FTOT.KD?format=json&date=2000:2024&per_page=100；https://api.worldbank.org/v2/country/USA/indicator/NE.GDI.FTOT.CD?format=json&date=2000:2024&per_page=100",
+      "urls": [
+        "https://data.worldbank.org/indicator/NE.GDI.FTOT.KD?locations=US",
+        "https://api.worldbank.org/v2/country/USA/indicator/NE.GDI.FTOT.KD?format=json&date=2000:2024&per_page=100",
+        "https://api.worldbank.org/v2/country/USA/indicator/NE.GDI.FTOT.CD?format=json&date=2000:2024&per_page=100"
+      ]
+    },
+    "R39": {
+      "text": "Federal Reserve Board / FRED, TDSP。家庭债务偿付额占可支配个人收入比例，季度、季调；使用2024年开始公布的新方法回溯序列，不能与旧方法约13%的峰值混用。正文展示2007Q1—2012Q4，2026-10-13下载。https://fred.stlouisfed.org/series/TDSP；https://www.federalreserve.gov/releases/DSR/about.htm；https://fred.stlouisfed.org/graph/fredgraph.csv?id=TDSP&cosd=2000-01-01&coed=2015-12-31",
+      "urls": [
+        "https://fred.stlouisfed.org/series/TDSP",
+        "https://www.federalreserve.gov/releases/DSR/about.htm",
+        "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TDSP&cosd=2000-01-01&coed=2015-12-31"
+      ]
+    },
+    "R40": {
+      "text": "BEA / FRED, PCEC96。实际个人消费支出，2017年链式美元、季调年率；将月度数据取季度平均，再设2007Q4=100。正文展示2007Q1—2012Q4，2026-10-13下载；是支出总量而非人均消费。https://fred.stlouisfed.org/series/PCEC96；https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCEC96&cosd=2005-01-01&coed=2015-12-31",
+      "urls": [
+        "https://fred.stlouisfed.org/series/PCEC96",
+        "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCEC96&cosd=2005-01-01&coed=2015-12-31"
+      ]
+    },
+    "R41": {
+      "text": "World Bank WDI, WLD, NE.EXP.GNFS.KD。2000—2024全球货物与服务出口，2015年不变美元；包含服务，与WTO货物贸易量口径不同。2026-10-13下载。https://data.worldbank.org/indicator/NE.EXP.GNFS.KD；https://api.worldbank.org/v2/country/WLD/indicator/NE.EXP.GNFS.KD?format=json&date=2000:2024&per_page=100",
+      "urls": [
+        "https://data.worldbank.org/indicator/NE.EXP.GNFS.KD",
+        "https://api.worldbank.org/v2/country/WLD/indicator/NE.EXP.GNFS.KD?format=json&date=2000:2024&per_page=100"
+      ]
+    },
+    "R42": {
+      "text": "World Bank WDI, NE.RSB.GNFS.ZS。货物与服务外贸差额占GDP比例，2024年中国、德国、美国。不同国家GDP分母不同，三个百分比不可相加验证全球净出口恒等式。2026-10-13下载。https://data.worldbank.org/indicator/NE.RSB.GNFS.ZS；https://api.worldbank.org/v2/country/USA;CHN;DEU/indicator/NE.RSB.GNFS.ZS?format=json&date=2000:2024&per_page=100",
+      "urls": [
+        "https://data.worldbank.org/indicator/NE.RSB.GNFS.ZS",
+        "https://api.worldbank.org/v2/country/USA;CHN;DEU/indicator/NE.RSB.GNFS.ZS?format=json&date=2000:2024&per_page=100"
+      ]
+    },
+    "R43": {
+      "text": "IRENA (2025), Renewable Power Generation Costs in 2024, Executive Summary, Table S1及Figure S1，第4—5页。[原报告](https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Jul/IRENA_TEC_RPGC_in_2024_Summary_2025.pdf)。按2010和2024端点重绘，单位为2024年美元/kWh；仅比较全球加权平均新建公用事业级项目LCOE，不代表逐年路径或居民电价。",
+      "urls": [
+        "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Jul/IRENA_TEC_RPGC_in_2024_Summary_2025.pdf"
+      ]
+    }
+  },
+  "slides": [
+    {
+      "page": 1,
+      "title": "科学技术是缓和还是加剧了资本主义基本矛盾？",
+      "minutes": 0.25,
+      "section": "封面",
+      "notes": "- 封面副题：从投资、消费、出口到人工智能。\n- 开场明确对象：技术发展如何改变生产，以及资本主义怎样组织、分配和使用这些生产能力。\n- 画面沿用古罗马斗兽场主题，仅保留主题与副题。",
+      "refs": [],
+      "layout": "封面",
+      "legacy_page": 1,
+      "kind": "cover",
+      "display_title": "科学技术是缓和\n还是加剧了\n资本主义基本矛盾？",
+      "screen_text": "马克思主义理论课程汇报\n科学技术是缓和\n还是加剧了\n资本主义基本矛盾？\n从投资、消费、出口到人工智能\n生产能力 · 收益分配 · 决策权\n2026.10"
+    },
+    {
+      "refs": [
+        "R1",
+        "R2"
+      ],
+      "notes": "社会化生产与私人占有构成结构性张力 → 企业按利润预期扩产并压缩成本 → 供给计划与购买力可能失衡 → 当其他支出未能承接产出时，销售困难通过裁员、收入与信用收缩形成反馈。\n\n推理条件：社会协作并不导致私人占有，两者构成需要解释的结构关系。生产过剩是这一矛盾的一种经济表现，还须满足需求、竞争与协调等条件；不能由利润存在直接推出每期必然过剩。\n\n章节衔接：销售与就业承压，使扩大需求成为政策调整的直接着力点。",
+      "page": 2,
+      "legacy_page": null,
+      "kind": "divider",
+      "minutes": 0.125,
+      "section": "I  基本矛盾与经济表现",
+      "chain": [
+        "社会化生产与私人占有",
+        "企业逐利决策",
+        "供给与购买力失衡",
+        "需求未承接时的危机反馈"
+      ],
+      "subtitle": "企业逐利不保证社会协调，扩产与购买力之间可能出现失衡。",
+      "active_nodes": [
+        0
+      ],
+      "section_index": 1,
+      "layout": "黑色章节页：conditional_chain",
+      "title": "共同生产，仍由资本主导",
+      "logic_text": "社会化生产与私人占有构成结构性张力 → 企业按利润预期扩产并压缩成本 → 供给计划与购买力可能失衡 → 当其他支出未能承接产出时，销售困难通过裁员、收入与信用收缩形成反馈。",
+      "bridge": "销售与就业承压，使扩大需求成为政策调整的直接着力点。",
+      "clarification": "社会协作并不导致私人占有，两者构成需要解释的结构关系。生产过剩是这一矛盾的一种经济表现，还须满足需求、竞争与协调等条件；不能由利润存在直接推出每期必然过剩。",
+      "diagram": "conditional_chain",
+      "ribbon": [
+        "基本矛盾\n与经济表现",
+        "投资、消费\n与出口",
+        "增殖动力\n韦伯的解释",
+        "技术作用于\n三条路径",
+        "AI重组劳动\n与能力控制",
+        "UBI与\n公有AI"
+      ],
+      "display_title": "共同生产，仍由资本主导",
+      "screen_text": "I\n第一节\n共同生产，仍由资本主导\n企业逐利不保证社会协调，扩产与购买力之间可能出现失衡。\n结构性张力\n生产依赖社会协作\n关键权利由资本支配\n企业行为\n竞争驱动扩产\n压缩本企业成本\n供需张力\n供给计划不断扩张\n购买力受分配制约\n危机反馈\n销售困难与裁员\n收入和需求再收缩\n影响决策\n汇成总量\n需求未承接\n销售与就业承压，使扩大需求成为政策调整的直接着力点。\n全篇递进：矛盾 → 应对 → 动力与组织 → 技术传导 → AI → 制度回应\n基本矛盾\n与经济表现\n→\n投资、消费\n与出口\n→\n增殖动力\n韦伯的解释\n→\n技术作用于\n三条路径\n→\nAI重组劳动\n与能力控制\n→\nUBI与\n公有AI\n\n02"
+    },
+    {
+      "page": 3,
+      "title": "社会共同生产一部手机，资本掌握关键决定权",
+      "minutes": 1.2,
+      "section": "I  基本矛盾与经济表现",
+      "notes": "以2022年iPhone 14 Pro Max 128GB美国毫米波型号为例。Apple公布税前起售价1099美元；Counterpoint在2023年2月估计其物料清单成本最高约474美元。按474计算，售价差额为625美元；这是估计物料以外的差额，覆盖组装、运输、研发、软件、销售、售后和利润等，不能当成净利润，也不能直接换算为剩余价值率。供应链材料可说明苹果芯片设计、专业零部件供应与制造、组装和销售共同参与，教育和公共基础设施又支撑整个网络。公司产权赋予股东及治理机构资本收益和决策权，雇员与供应商通过不同合同获得收入；共同参与生产并不自动得到共同决定投资和利润用途的权利。价格结构在这里说明协作与收入分配的复杂性，不能单凭一个较高差额证明剥削率。\n论证落点：生产社会化与资本主义私人占有之间的矛盾，体现在社会协作与关键资产、投资及剩余用途决定权的分离。\n\n补充论证：图中把社会协作拆成设计、零部件、制造组装、流通服务和公共基础五个环节，再与投资、劳动组织、剩余处置三类权利对应。价格数据只能拆为估计物料与其余差额；没有公开可比细项时，不虚构研发、营销和净利润各占多少。",
+      "refs": [
+        "R1",
+        "R36",
+        "R37"
+      ],
+      "layout": "价格构成＋五环节协作网络",
+      "legacy_page": 2,
+      "kind": "apple",
+      "footer": "Apple 2022发布价格；Counterpoint 2023拆解估计；美国128GB毫米波型号",
+      "display_title": "社会共同生产一部手机，资本掌握关键决定权",
+      "screen_text": "I  基本矛盾与经济表现\n社会共同生产一部手机，资本掌握关键决定权\n基本矛盾：生产社会化与资本主义私人占有之间的矛盾\n设计与系统\n苹果：芯片、软件、产品\n专业零部件\n显示、存储、影像、材料\n制造与组装\n设备、工程师与一线劳动\n物流与服务\n运输、渠道、维修与售后\n共同基础：教育、科研、基础设施与跨企业分工，支撑上述全部环节。\niPhone 14 Pro Max · 128GB · 美国毫米波型号\n$1,099\n2022年发布时税前起售价\n物料 $474 · 43.1%\n其余 $625 · 56.9%\n按物料估计上限计算。其余包含组装、研发、运输、销售、售后及利润，\n公开估计未逐项拆分；625美元不能视为净利润或剩余价值。\n投资权\n产品、工厂、技术与采购投向\n组织权\n用工、工时、考核与承包规则\n剩余处置权\n分红、再投资与平台控制\n协作依赖整个社会，投资和剩余用途却由相应资本产权与公司治理结构决定。\nApple 2022发布价格；Counterpoint 2023拆解估计；美国128GB毫米波型号\n03"
+    },
+    {
+      "page": 4,
+      "title": "企业希望压低自身成本，又需要其他企业的员工购买",
+      "minutes": 0.9,
+      "section": "I  基本矛盾与经济表现",
+      "notes": "- 采用知乎回答中企业博弈的直观切口：汽车、手机、食品企业都希望本企业降本，同时希望别家企业的劳动者有足够的购买力。每家的个体理性并不保证整体协调。[Z1][R1][V2]\n- 当普遍压低劳动收入或裁员，而投资、利润消费、公共支出及外需未补上时，销售可能受到制约。投资者预期和信用收缩会进一步改变总支出。\n- 总需求的核算框架为Y＝C＋I＋G＋(X−M)：C包括不同收入群体消费，I包括存货变动，G为政府购买，转移支付通过可支配收入影响消费。这是核算恒等式，不是危机定理。\n- 矛盾的落点是企业把工资视为成本，社会再生产又需要收入支撑需求；不能仅凭工资低于产品价值就断言商品必然卖不完。[R2]\n符号明确：Y为GDP，C为私人最终消费（家庭及为家庭服务的非营利机构），I为私人国内总投资（固定投资与存货变动），G为政府消费与总投资，X为货物和服务出口，M为进口。这里采用美国NIPA式分组，政府投资计入G；后文全社会固定资本形成统计覆盖私人固定投资和政府固定投资，不能与这里的I混同。进口被扣除，是为移除C、I、G中包含的境外生产。转移支付不是政府购买，而是通过收入影响C。",
+      "refs": [
+        "Z1",
+        "R1",
+        "V2",
+        "R2"
+      ],
+      "layout": "企业博弈＋核算符号释义",
+      "legacy_page": 3,
+      "kind": "firms",
+      "display_title": "企业希望压低自身成本，又需要其他企业的员工购买",
+      "screen_text": "I  基本矛盾与经济表现\n企业希望压低自身成本，又需要其他企业的员工购买\n工资是单个企业的支出，也是社会消费能力的重要来源\n汽车企业\n少付工资、扩大产量\n手机企业\n降低成本、争夺市场\n食品企业\n压缩开支、增加销量\n普遍压低劳动收入 ＋ 其他需求未补上 → 共同市场承压\nY＝C＋I＋G＋(X−M)\nY\n国内生产总值\nC\n私人最终消费\nI\n私人总投资\n含固定与存货\nG\n政府消费与投资\nX\n货物与服务出口\nM\n货物与服务进口\n采用美国NIPA式分组：政府投资计入G；转移支付经收入影响C。核算恒等式本身不是危机定理。\n遨游之舟（知乎）；《资本论》与视频观点的条件化整理\n04"
+    },
+    {
+      "page": 5,
+      "title": "生产过剩与生活匮乏，来自需要和支付能力的分离",
+      "minutes": 0.65,
+      "section": "I  基本矛盾与经济表现",
+      "notes": "- 生产过剩相对于有支付能力的需求，并不意味着人的需要已经满足。[R1][V2]\n- 粮食的实物示例为人为设定：收获50袋，当期工人消费20袋、资本家消费5袋、种子饲料等生产性使用15袋，10袋未按预期售出，形成非意愿库存。这里并列的是实物用途，包含生产投入，不作GDP核算；库存不是剩余价值的定义，也不是所有经济体必然具有的固定缺口。\n- 将例子中的库存与危机反馈连接：销售不畅→减产裁员→工资与订单减少→需求进一步收缩→更多销售困难。信用紧缩和悲观预期可放大回路。\n- 参考《资本主义的本质是什么？》32:25—34:43的机械化与危机论述。订正术语：不变资本/可变资本与固定资本/流动资本是不同划分；机器转移其价值，不能直接当作剩余价值的独立来源。[R16]\n\n补充论证：50袋粮食的用途是实物假设，收入分配不与实物袋数作价值论上的直接等同。若需求、流通或信用条件调整，库存可能被吸收；能否转为生产和生活实际使用，比单纯销毁实物更重要。对反馈环节分别可以采用就业与收入保障、信用修复，以及面向真实用途的生产调整，成效取决于政策条件。",
+      "refs": [
+        "R1",
+        "V2",
+        "R16"
+      ],
+      "layout": "实物分配＋收缩回路＋干预环节",
+      "legacy_page": 4,
+      "kind": "body",
+      "display_title": "生产过剩与生活匮乏，来自需要和支付能力的分离",
+      "screen_text": "I  基本矛盾与经济表现\n生产过剩与生活匮乏，来自需要和支付能力的分离\n过剩是商品在既定价格下难以售出；仍有人需要粮食、住房与服务\n假设收获50袋粮食，其中10袋没有按预期售出\n劳动者消费\n20袋\n资本家消费\n5袋\n种子、饲料等\n投入15袋\n非意愿库存\n10袋\n需要：人想获得生活资料。有效需求：愿意且能够按现行条件购买。上图为实物用途假设。\n销售困难\n库存、降价、回款变慢\n减产与裁员\n工资和上游订单减少\n收入收缩\n居民与企业削减支出\n信用趋紧\n贷款、投资进一步收缩\n收入保障阻断消费收缩\n信用修复减轻集中偿债\n生产调整对接真实用途\n消化库存只是一个环节；持续恢复还依赖收入、信用与生产用途共同调整。\n马克思主义危机分析；B站《资本主义的本质是什么？》\n05"
+    },
+    {
+      "refs": [
+        "R1",
+        "R2",
+        "R23",
+        "Z1"
+      ],
+      "notes": "生产过剩的形成需要把竞争、分配和协调放在同一条链上。第一，企业按利润前景和市场份额分别扩产，集体供给可能在建设时滞后集中出现。第二，企业压缩劳动成本与收入、财富集中可能限制多数人的消费，但利润消费、投资与政府支出也会形成需求，因而不能从工资低于产值推出必然缺口。第三，分散生产通过事后价格和销售来验证，而信贷可以提前放大扩张；当预期需求没有兑现，出现非意愿库存、价格和利润下降。随后减产、失业与信用收缩又压低需求。生产过剩并非物质需要已经满足，而是既定价格和收入分配下的销售困难。\n这里解释危机的内生机制与发生条件，不把核算恒等式或利润存在本身当作每期商品必然卖不完的证明。\n\n补充论证：危机形成要经过销售检验。供给计划过多、购买力不足与信用放大可以共同作用，并不意味着每个行业、每个时期必然过剩。有效需求、利润率、债务到期和库存信息相互作用，决定扩张何时转为收缩。",
+      "page": 6,
+      "legacy_page": null,
+      "kind": "why",
+      "minutes": 0.85,
+      "section": "I  基本矛盾与经济表现",
+      "title": "分散扩张与购买力约束，在销售环节汇成过剩",
+      "footer": "马克思：积累与社会再生产；供给、分配和协调机制的条件分析",
+      "layout": "供给、分配、信贷汇流",
+      "display_title": "分散扩张与购买力约束，在销售环节汇成过剩",
+      "screen_text": "I  基本矛盾与经济表现\n分散扩张与购买力约束，在销售环节汇成过剩\n企业各自按利润预期生产，市场事后检验这些计划能否同时实现\n竞争：各家都想多卖\n争市场、上设备、扩大份额；\n技术与信贷使多家企业同时扩张。\n分配：产能快于支出\n工资和保障未跟上产出；\n高收入者储蓄增加，其他支出未必补足。\n时滞：今天建、明天卖\n建设和销售跨期，信息不完整；\n乐观预期也可能随融资一起放大。\n计划供给 ＞ 实际购买\n预期价格下销售不足\n→ 非意愿库存、利润与回款承压\n→ 减产、失业和违约风险\n需求也可能被补上\n利润消费、投资、政府购买和外需\n都能吸收产品；效果取决于规模、\n时点及与供给的匹配。\n工资低于产值不足以证明危机；要检验总支出是否能够承接竞争推动的扩张。\n马克思：积累与社会再生产；供给、分配和协调机制的条件分析\n06"
+    },
+    {
+      "refs": [
+        "R1"
+      ],
+      "notes": "在解释基本矛盾及经济表现后，正式提出报告主题。科技既能提高生产能力、降低成本，也会被企业用来竞争、扩大收益和加强管理。因此评价不能只看技术性能，必须追踪新增能力经由投资、消费与出口如何实现，劳动者怎样受益，以及关键资源和剩余用途由谁决定。\n\n本节归纳与衔接：需求怎样承接产出 → 技术怎样改变劳动 → 收益与决定权怎样分配",
+      "page": 7,
+      "legacy_page": null,
+      "kind": "question",
+      "minutes": 0.4,
+      "section": "I  基本矛盾与经济表现",
+      "title": "科学技术是缓和还是加剧了资本主义基本矛盾？",
+      "footer": "问题由前述矛盾引出：生产能力、实际生活与权利分配",
+      "layout": "浅色问题提出与评价尺度",
+      "transition": "需求怎样承接产出 → 技术怎样改变劳动 → 收益与决定权怎样分配",
+      "display_title": "科学技术是缓和\n还是加剧了资本主义基本矛盾？",
+      "screen_text": "I  基本矛盾与经济表现\n科学技术是缓和\n还是加剧了资本主义基本矛盾？\n生产能力的一面\n更多产品、更低成本、\n更广泛的协作与服务。\n资本积累的一面\n竞争优势、劳动替代、\n收益分配与控制权变化。\n分析顺序\n需求怎样承接产出 → 技术怎样改变劳动 → 收益与决定权怎样分配\n问题由前述矛盾引出：生产能力、实际生活与权利分配\n07"
+    },
+    {
+      "refs": [
+        "R2",
+        "R3",
+        "R4",
+        "R5"
+      ],
+      "notes": "需求承压 → 并行调整投资、消费与出口 → 承接产出、支持就业；投资同时形成未来产能，信用消费伴随偿付，出口依赖外部需求，因此当期缓和仍需跨期与全球协调。\n\n推理条件：三条路径不是先投资、再消费、后出口的阶段史，也不是三个必然失败的药方。工资保障、再分配、公共购买和金融安排具有不同机制，应分别判断成效与约束。\n\n章节衔接：需求政策之外，企业也通过技术改造争取利润与市场。",
+      "page": 8,
+      "legacy_page": null,
+      "kind": "divider",
+      "minutes": 0.125,
+      "section": "II  投资、消费、出口",
+      "chain": [
+        "销售与就业承压",
+        "投资／消费／出口并行承接",
+        "当期压力得到缓和",
+        "新增产能、债务与外需约束"
+      ],
+      "subtitle": "投资、消费、出口是并行路径；政府购买、税收和转移可共同作用于这些路径。",
+      "active_nodes": [
+        1
+      ],
+      "section_index": 2,
+      "layout": "黑色章节页：three_parallel_paths",
+      "title": "扩大需求，仍须协调产能",
+      "logic_text": "需求承压 → 并行调整投资、消费与出口 → 承接产出、支持就业；投资同时形成未来产能，信用消费伴随偿付，出口依赖外部需求，因此当期缓和仍需跨期与全球协调。",
+      "bridge": "需求政策之外，企业也通过技术改造争取利润与市场。",
+      "clarification": "三条路径不是先投资、再消费、后出口的阶段史，也不是三个必然失败的药方。工资保障、再分配、公共购买和金融安排具有不同机制，应分别判断成效与约束。",
+      "diagram": "three_parallel_paths",
+      "ribbon": [
+        "基本矛盾\n与经济表现",
+        "投资、消费\n与出口",
+        "增殖动力\n韦伯的解释",
+        "技术作用于\n三条路径",
+        "AI重组劳动\n与能力控制",
+        "UBI与\n公有AI"
+      ],
+      "display_title": "扩大需求，仍须协调产能",
+      "screen_text": "II\n第二节\n扩大需求，仍须协调产能\n投资、消费、出口是并行路径；政府购买、税收和转移可共同作用于这些路径。\n销售与就业承压\n政策与企业\n共同调整需求\n缓和当期压力\n新增产能、债务\n与外需仍受约束\n投资：增加当期订单，也形成未来产能\n消费：收入支持购买，信贷伴随后续偿付\n出口：拓展境外市场，受全球需求约束\n需求政策之外，企业也通过技术改造争取利润与市场。\n全篇递进：矛盾 → 应对 → 动力与组织 → 技术传导 → AI → 制度回应\n基本矛盾\n与经济表现\n→\n投资、消费\n与出口\n→\n增殖动力\n韦伯的解释\n→\n技术作用于\n三条路径\n→\nAI重组劳动\n与能力控制\n→\nUBI与\n公有AI\n\n08"
+    },
+    {
+      "page": 9,
+      "title": "投资创造当期需求，新增产能仍须由未来需求承接",
+      "minutes": 1.4,
+      "section": "II  投资、消费、出口",
+      "notes": "- 投资的双重作用沿时间展开：t₀购买设备、建设工厂和公共工程，形成当期订单、就业和收入；t₁投产后形成新供给；t₂销售回款决定后续生产和偿债。[R2]\n- 企业扩产、设备更新、公共工程都能增加需求，但其目的、资金来源和收益核算不同。补足交通、能源和公共服务短板，可以同时创造需求与实际使用价值。\n- 若多家企业根据相似的利润预期同向扩张，而后续有效需求不足，新增能力可能闲置，债务又压缩下一轮支出。因此问题不在于投资必然有害，而在投资结构、规模、时滞和分配能否协调。\n- 当前订单增加与未来需求足够，是两个需要分别验证的判断。\n数据图使用美国全社会固定资本形成总额，含私人和政府固定资产，不含存货与证券交易。单位为2015年不变价万亿美元，2007年3.43、2009年2.87、2024年5.02。2009年同比下降12.5%，2007至2009年累计下降16.2%；2020年亦有回落。2024年现价规模为6.26万亿美元，与图中的实际价格口径不同。危机后投资恢复显示投资能重建需求和能力，但总量曲线不能独立识别某一政策的因果效果。",
+      "refs": [
+        "R2",
+        "R38"
+      ],
+      "layout": "实际投资时间序列＋跨期机制",
+      "legacy_page": 5,
+      "kind": "investment",
+      "footer": "World Bank WDI；美国全社会固定资本形成；2000—2024，2015年不变美元",
+      "display_title": "投资创造当期需求，新增产能仍须由未来需求承接",
+      "screen_text": "II  投资、消费、出口\n投资创造当期需求，新增产能仍须由未来需求承接\n美国全社会固定资本形成总额：私人＋政府；不含存货和金融资产交易\n万亿美元 · 2015年不变价\n2008—09金融危机\n2020疫情\n2007：3.43  →  2009：2.87  →  2024：5.02\n建设期\n设备、工程和用工\n形成订单与收入\n投产期\n供给扩大\n需要新增客户和配套\n回收期\n销售与回款\n决定偿债和后续投资\n2009年实际投资同比下降12.5%；危机后可以恢复，投资规模与有效用途仍须相互匹配。\nWorld Bank WDI；美国全社会固定资本形成；2000—2024，2015年不变美元\n09"
+    },
+    {
+      "page": 10,
+      "title": "消费能否持续，取决于稳定收入与偿债负担",
+      "minutes": 1.4,
+      "section": "II  投资、消费、出口",
+      "notes": "- 工资、社保与税收转移通过可支配收入支持消费；公共服务还能降低家庭必须自付的生活成本。信用使购买提前发生，却伴随后续还本付息。[R2]\n- OECD《Good Jobs for All》2018年报告图10.5：2014年或最近可得年份，税收和转移平均使工作年龄人口的收入不平等下降约四分之一。指标是市场收入基尼与可支配收入基尼的相对差，不能写成收入提高25%。[R3]\n- 2007—2009年美国大衰退：住房与信贷风险向金融和实体经济传递，美联储历史资料记载GDP从峰值到谷底下降4.3%，失业率由不足5%升至10%。住房按揭不能全部视为消费信贷。[R4]\n- 收入再分配能够真实改善分配；高杠杆、资产价格下跌与脆弱金融结构结合，则可能形成债务反馈。两条路径的成效和风险应分别判断。\n右侧上下两图采用相同季度范围2007Q1—2012Q4。上图为债务偿付额占可支配个人收入比例，2007Q4为15.85%；FRED TDSP现行序列来自美联储2024年起的新方法回溯，不与旧方法峰值混用。下图将BEA实际个人消费支出月度数据取季度平均，以2007Q4为100；2009Q2为97.7。两图显示金融危机前后偿债负担与实际消费的共同变化，不能仅凭同步曲线认定单一因果。GDP下降4.3%是不同指标，不写成消费下降4.3%。",
+      "refs": [
+        "R2",
+        "R3",
+        "R4",
+        "R39",
+        "R40"
+      ],
+      "layout": "收入路径＋偿债与消费双图",
+      "legacy_page": 6,
+      "kind": "consumption",
+      "footer": "OECD 2018；美联储TDSP（新方法回溯）；BEA实际PCE；2007Q1—2012Q4",
+      "display_title": "消费能否持续，取决于稳定收入与偿债负担",
+      "screen_text": "II  投资、消费、出口\n消费能否持续，取决于稳定收入与偿债负担\n收入保障支持购买力；信用提前支出，也带来后续还本付息\n收入路径\n工资、社保与税收转移\n→ 可支配收入 → 日常消费\n约 1/4\n工作年龄人口收入差距的\n税收转移平均缩减幅度\nOECD：2014年或最近年份，\n比较再分配前后基尼；非收入增幅。\n信用不能永久替代收入增长，\n金融结构会放大或缓冲冲击。\n家庭债务偿付 / 可支配收入（%）\n2007Q4：15.85%　｜　包含房贷与消费债务\n实际个人消费支出（2007Q4＝100）\n2009Q2：97.7；两图均为2007Q1—2012Q4，展示危机前后变化。\nOECD 2018；美联储TDSP（新方法回溯）；BEA实际PCE；2007Q1—2012Q4\n10"
+    },
+    {
+      "page": 11,
+      "title": "出口扩大市场，全球衰退却会同时压缩外部需求",
+      "minutes": 1.4,
+      "section": "II  投资、消费、出口",
+      "notes": "- 出口使一国生产连接国外居民、企业和公共部门的需求，国际分工还可能增加双方可获得的产品和收入。[R5]\n- 但一国出口对应他国进口，全球净出口加总不能同时为正。贸易创造共同收益与各国不能同时依靠净出口顺差，是两个可以同时成立的判断。\n- WTO在2010年公布：2009年世界货物贸易量下降12.2%。全球衰退中，家庭、企业和金融条件同步恶化，外需本身也会收缩。[R5]\n- 技术可以扩大可交易范围、降低协作成本，却无法使世界经济摆脱收入与需求约束；贸易冲突是否转化为战争还需独立解释，不采用必然战争论。\n本次图表采用世界银行2000—2024年全球货物与服务出口，2015年不变价。2009年同比-9.6%，2020年同比-8.5%；包含服务，不能与WTO仅货物贸易量的−12.2%混用。右图为2024年货物与服务差额占本国GDP：中国2.9%、德国3.8%、美国-3.1%。不同国家GDP作分母，三根柱不能相加证明全球恒等式；且三国不覆盖全世界。全球净出口加总为零指相同货币和核算边界下的名义金额，忽略统计差异。国际贸易可通过分工共同获益，这与全球不能同时净出口为正并不冲突。",
+      "refs": [
+        "R5",
+        "R41",
+        "R42"
+      ],
+      "layout": "全球出口趋势＋国家净出口对比",
+      "legacy_page": 7,
+      "kind": "trade",
+      "footer": "World Bank WDI：全球货物与服务实际出口；2024年各国货物与服务差额/GDP",
+      "display_title": "出口扩大市场，全球衰退却会同时压缩外部需求",
+      "screen_text": "II  投资、消费、出口\n出口扩大市场，全球衰退却会同时压缩外部需求\n国际分工可以共同获益，各国却不能同时依靠净出口顺差\n全球货物与服务实际出口\n万亿美元 · 2015年不变价\n2008—09金融危机\n2020疫情\n2009年 −9.6%　｜　2020年 −8.5%\n2024年货物与服务差额 / GDP\n单位：%；各国GDP分母不同，不直接相加。\n全球净出口金额加总约为零；扩大出口需要他国购买力，不能替代全球收入与需求。\nWorld Bank WDI：全球货物与服务实际出口；2024年各国货物与服务差额/GDP\n11"
+    },
+    {
+      "page": 12,
+      "title": "政策不断调整，三条需求路径长期并存",
+      "minutes": 0.8,
+      "section": "II  投资、消费、出口",
+      "notes": "- 时间线以美国政策和多边贸易制度为代表性线索，并非所有国家共同经历的单一阶段史。\n- 1933—1935年：新政救济、就业与公共工程扩展，1935年通过《社会保障法》。公共干预扩大了投资和生活保障，但不能由此推断危机永久消失。[R28]\n- 1947年：GATT签署，通过关税减让和贸易规则改善市场联系；1948年起临时适用。贸易规则扩大了交易机会，实际销售仍需收入支持。[R29]\n- 1973—1982年：能源冲击、既有通胀与政策选择交织；1979年后美国反通胀紧缩，1981—1982年衰退表现出就业与投资代价。[R30]\n- 2008年：金融救助、降息与资产购买缓解信用紧缩，风险沿家庭、银行和企业传播。[R4]\n- 2020年：CARES Act向合资格居民发放现金救助，缓冲收入冲击；这是临时救助，具有资格条件。[R31]\n- 政策改变需求规模、分配和风险承担方式；投资、消费、贸易长期并存，制度可以调整，生产与分配仍须协调。\n\n本节归纳与衔接：扩大需求改变销售条件；企业争取持续利润，又推动技术改造与组织管理。",
+      "refs": [
+        "R28",
+        "R29",
+        "R30",
+        "R4",
+        "R31"
+      ],
+      "layout": "历史政策时间线",
+      "legacy_page": 8,
+      "kind": "body",
+      "transition": "扩大需求改变销售条件；企业争取持续利润，又推动技术改造与组织管理。",
+      "display_title": "政策不断调整，三条需求路径长期并存",
+      "screen_text": "II  投资、消费、出口\n政策不断调整，三条需求路径长期并存\n历史经验：缓和危机有成效，也会受到供给、分配和金融条件的限制\n1933—1935\n大萧条与失业\n公共工程、就业\n社会保障扩展\n投资与消费\n公共干预扩大\n危机未永久消失\n1947\n市场壁垒\nGATT签署\n推动关税减让\n贸易与分工\n市场联系增强\n销售仍需需求\n1973—1982\n能源与通胀\n能源冲击交织\n后期紧缩抑通胀\n价格与就业\n物价逐步稳定\n衰退代价显著\n2008\n金融危机\n金融救助、降息\n资产购买\n信用与需求\n缓解信用紧缩\n损失跨部门传递\n2020\n疫情收入冲击\n向合资格居民\n发放现金补助\n收入与消费\n缓冲生活冲击\n属于临时救助\n扩大需求改变销售条件；企业争取持续利润，又推动技术改造与组织管理。\nFDR图书馆；WTO；Federal Reserve History；美国财政部\n12"
+    },
+    {
+      "refs": [
+        "R14",
+        "R16",
+        "R18",
+        "R20",
+        "R21"
+      ],
+      "notes": "马克思的增殖动力分析与韦伯的组织条件分析 → 共同解释企业怎样持续比较成本与预期收益 → 在回报条件满足时采用技术、替代部分人工。超额剩余价值与相对剩余价值是需要分别论证的机制。\n\n推理条件：超额剩余价值不是必然转化为相对剩余价值的前一阶段。后者须经过生活资料价值、劳动力价值与必要劳动的传导。韦伯解释核算、法律、伦理与组织条件，并不接替或推出马克思的价值理论。\n\n章节衔接：企业降本能否形成持续收益，还要经过投资、消费和出口的社会联系。",
+      "page": 13,
+      "legacy_page": null,
+      "kind": "divider",
+      "minutes": 0.125,
+      "section": "III  技术增殖与理性经营",
+      "chain": [
+        "增殖动力＋组织条件",
+        "比较工资节约与新增成本",
+        "选择技术与自动化路线"
+      ],
+      "subtitle": "剩余价值机制解释采用动力；韦伯解释持续经营；成本核算影响具体替代选择。",
+      "active_nodes": [
+        2
+      ],
+      "section_index": 3,
+      "layout": "黑色章节页：complementary_explanations",
+      "title": "利润驱动技术，组织落实选择",
+      "logic_text": "马克思的增殖动力分析与韦伯的组织条件分析 → 共同解释企业怎样持续比较成本与预期收益 → 在回报条件满足时采用技术、替代部分人工。超额剩余价值与相对剩余价值是需要分别论证的机制。",
+      "bridge": "企业降本能否形成持续收益，还要经过投资、消费和出口的社会联系。",
+      "clarification": "超额剩余价值不是必然转化为相对剩余价值的前一阶段。后者须经过生活资料价值、劳动力价值与必要劳动的传导。韦伯解释核算、法律、伦理与组织条件，并不接替或推出马克思的价值理论。",
+      "diagram": "complementary_explanations",
+      "ribbon": [
+        "基本矛盾\n与经济表现",
+        "投资、消费\n与出口",
+        "增殖动力\n韦伯的解释",
+        "技术作用于\n三条路径",
+        "AI重组劳动\n与能力控制",
+        "UBI与\n公有AI"
+      ],
+      "display_title": "利润驱动技术，组织落实选择",
+      "screen_text": "III\n第三节\n利润驱动技术，组织落实选择\n剩余价值机制解释采用动力；韦伯解释持续经营；成本核算影响具体替代选择。\n马克思：增殖动力\n先行价值差／必要劳动缩短\n韦伯：组织条件\n核算、法律、伦理与科层组织\n核算采用门槛\n比较工资节约\n与设备、算力等成本\n选择技术路线\n满足回报条件时\n替代部分人工\n企业降本能否形成持续收益，还要经过投资、消费和出口的社会联系。\n全篇递进：矛盾 → 应对 → 动力与组织 → 技术传导 → AI → 制度回应\n基本矛盾\n与经济表现\n→\n投资、消费\n与出口\n→\n增殖动力\n韦伯的解释\n→\n技术作用于\n三条路径\n→\nAI重组劳动\n与能力控制\n→\nUBI与\n公有AI\n\n13"
+    },
+    {
+      "page": 14,
+      "title": "技术先行产生价值差，技术普及又消除价值差",
+      "minutes": 1,
+      "section": "III  技术增殖与理性经营",
+      "notes": "- 资本采用新技术的直接动力之一，是让商品的个别价值低于社会价值，从而争取超额剩余价值。[R14]\n- 用统一货币表达价值的条件示例：单位商品社会价值为12，先行企业个别价值为10；若仍能按12售出，差额2体现该企业的先行优势。这不是一项行业实测，也不把全部售价当作利润。\n- 竞争者随后采用同一技术，社会必要劳动时间下降，原有价值差缩小。企业于是继续创新，形成采用—扩散—再创新的压力。\n- 个别企业获得优势、全社会实物产量增加、全社会剩余价值增加，需要分别论证。先行收益只有通过销售才能实现。\n\n补充论证：图示为条件算例：个别价值保持10，社会价值随技术普及由12经11降至10。每件可获得的价值差依次为2、1、0；并非某一企业的实际时间序列。单位优势乘以可销售数量，仍须扣除技术采用相关额外成本，不能将价值差直接当作会计净利润。",
+      "refs": [
+        "R14"
+      ],
+      "layout": "三阶段价值差重绘",
+      "legacy_page": 9,
+      "kind": "body",
+      "display_title": "技术先行产生价值差，技术普及又消除价值差",
+      "screen_text": "III  技术增殖与理性经营\n技术先行产生价值差，技术普及又消除价值差\n个别价值低于社会价值，是超额剩余价值的条件；出售产品才能实现收益\n率先采用\n单位价值（假设）\n社会\n12\n个别\n10\n差额2\n同行跟进\n单位价值（假设）\n社会\n11\n个别\n10\n差额1\n普遍采用\n单位价值（假设）\n社会\n10\n个别\n10\n差额0\n扩散使社会必要劳动时间下降，原有单位优势缩小\n技术条件\n效率优势超过新增采用成本\n销售条件\n质量、价格与实际销量可维持\n竞争结果\n领先者获益，同行被迫跟进\n个别资本追逐暂时优势，使技术更新成为持续竞争；局部多得与社会总量要分别核算。\n马克思《资本论》第一卷：相对剩余价值；图为概念示意\n14"
+    },
+    {
+      "page": 15,
+      "title": "必要劳动缩短，同一劳动日提供更多剩余劳动",
+      "minutes": 1.5,
+      "section": "III  技术增殖与理性经营",
+      "notes": "- 劳动日由必要劳动和剩余劳动构成：m′＝m/v＝(T−tₙ)/tₙ。[R14]\n- 技术通向相对剩余价值的完整路径：生活资料及相关生产资料部门生产率提高→生活资料价值下降→既定生活标准下劳动力价值下降→必要劳动缩短。一般办公任务提效不能跳过这条传导链。\n- 条件示例：8小时劳动日由必要4小时、剩余4小时，变为必要2小时、剩余6小时；剩余价值率由100%升到300%。实际生活资料标准、劳动日、强度以及每小时新价值的表达保持不变，劳动力按价值交换。\n- 同样条件下每人的剩余价值由4λ增至6λ，增幅50%；比率变为三倍不意味着总量也增为三倍。若劳动人数下降，总量还会变化，详见附录A1。[R15]\n- 技术扩大剩余价值，既可能通过超额优势，也可能通过社会范围内必要劳动缩短；机器本身不独立创造新价值。\n\n补充论证：相对剩余价值的路径具有部门条件：新技术降低工人必要生活资料、或其生产资料的价值，才会进一步降低劳动力价值。只提高奢侈品生产率不直接完成这条路径。另需区别延长工作日的绝对剩余价值生产、提高劳动强度与提高劳动生产率；提高强度是单位时间劳动支出增加，不等同于工具效率提高。",
+      "refs": [
+        "R14",
+        "R15"
+      ],
+      "layout": "劳动日重绘＋剩余价值的三种机制",
+      "legacy_page": 10,
+      "kind": "body",
+      "display_title": "必要劳动缩短，同一劳动日提供更多剩余劳动",
+      "screen_text": "III  技术增殖与理性经营\n必要劳动缩短，同一劳动日提供更多剩余劳动\n生活资料及其生产资料的生产率提高 → 生活资料价值下降 → 劳动力价值下降\n8小时劳动日\nm′＝剩余劳动时间 ÷ 必要劳动时间\n原来\n必要 4小时\n剩余 4小时\n100%\n变化后\n必要 2小时\n剩余 6小时\n300%\n每人剩余价值：4λ → 6λ，增加50%；剩余价值率：100% → 300%。\n相对剩余价值\n劳动日不变，必要劳动缩短。\n须经过必要生活资料的价值变化。\n绝对剩余价值\n必要劳动给定，延长工作日。\n例如4＋4小时 → 4＋6小时。\n劳动强化\n单位时间支出的劳动增加。\n与工具带来的生产率提高有别。\n算例保持生活标准、劳动强度和每小时新价值λ不变；社会总量还取决于就业人数。\n马克思《资本论》第一卷；8小时劳动日为条件示例\n15"
+    },
+    {
+      "page": 16,
+      "title": "韦伯解释获利如何成为持续、可计算的经营",
+      "minutes": 1.3,
+      "section": "III  技术增殖与理性经营",
+      "notes": "- 韦伯解释现代资本主义如何把获利组织为持续经营：核算、制度、伦理动机和组织形式相互支撑。[R18][V2]\n- 核算：企业与家庭收支分离，以资本核算持续比较成本、收益与投资结果。\n- 制度：市场交换、形式自由的雇佣劳动、生产条件占有和可预期法律，使长期合同与计算成为可能。形式自由不意味着双方拥有相同资源和议价能力。[R18]\n- 动机：天职观、入世禁欲和系统化劳动与节制消费、再投资存在历史联系；宗教并非资本主义的唯一原因。[R21]\n- 组织：专业资格、明确职权、书面记录与层级监督使企业和国家获得连续执行能力，也形成对专业管理者的依赖。[R20]\n- 马克思侧重剩余劳动、占有与积累，韦伯侧重行动意义及理性经营的制度条件。两者在此互补提问，不将韦伯解释冒充劳动价值论。\n\n补充论证：韦伯并未把资本主义简化为贪欲。核算为经营提供比较标准，可预期的制度支持长期组织，伦理动机帮助纪律和再投资成为生活实践，科层组织使人员更替后规则仍能执行。伦理是一种历史解释条件，不是适用于所有社会的充分或必要单因。",
+      "refs": [
+        "R18",
+        "V2",
+        "R21",
+        "R20"
+      ],
+      "layout": "韦伯四支点关系图",
+      "legacy_page": 11,
+      "kind": "body",
+      "display_title": "韦伯解释获利如何成为持续、可计算的经营",
+      "screen_text": "III  技术增殖与理性经营\n韦伯解释获利如何成为持续、可计算的经营\n资本主义并非只有逐利欲望，还依赖可核算、可预期和可执行的经营秩序\n资本核算：比较投入与回报\n企业与家庭收支分离；连续记录账目。\n投资据成本、风险与预期收益作比较。\n技术改造因此成为可反复计算的选择。\n制度条件：形成稳定预期\n产权、合同、法律与市场秩序；\n形式自由的劳动雇佣及可交易资源。\n这些条件支持跨期投资与协作。\n伦理动机：纪律与积累\n天职观、入世禁欲与自我约束；\n节制消费、持续工作、将收益再投资。\n解释历史联系，不能化约为单一原因。\n科层组织：执行不依赖个人\n资格分工、层级职权、书面规则；\n人员更替后仍能监督与连续经营。\n也使组织依赖专业知识和管理者。\n理性经营\n持续获利\n马克思分析剩余劳动与占有；韦伯分析行动、制度和组织，二者在技术管理问题上相接。\n韦伯《经济与社会》《新教伦理与资本主义精神》\n16"
+    },
+    {
+      "page": 17,
+      "title": "算法把目标算得更精确，目标本身仍须由人决定",
+      "minutes": 0.8,
+      "section": "III  技术增殖与理性经营",
+      "notes": "- 形式合理性关心计算是否精确、规则是否稳定；实质合理性按特定价值标准评价结果。两者并非目的理性/价值理性行动分类的简单同义词。[R19]\n- 用配送算法作机制示意：订单成本、准时率、单位时间单量容易进入优化目标，休息时间、职业安全、收入稳定和申诉权则需要明确纳入约束。此例为当代应用，非韦伯原话。\n- 如果只压缩配送时间，节约的时间可能被转化为更紧的劳动节奏；若设定可执行的休息、安全和报酬底线，技术也可用于减轻劳动负担。\n- 科层规则可以减少随意性并提高连续性，但共同体的价值选择不能由单一效率指标代替。公共机构同样需要参与和问责。[R20]\n\n补充论证：配送模型是本报告机制示意：目标函数可以最小化每单成本，但必须另行规定休息下限、安全约束与人工复核。速度、安全和收入的权衡不会被算法自动消除；参与规则制定、查询评价依据和申诉渠道是管理权分配的具体环节。",
+      "refs": [
+        "R19",
+        "R20"
+      ],
+      "layout": "目标函数与保障约束",
+      "legacy_page": 12,
+      "kind": "body",
+      "display_title": "算法把目标算得更精确，目标本身仍须由人决定",
+      "screen_text": "III  技术增殖与理性经营\n算法把目标算得更精确，目标本身仍须由人决定\n形式合理性看计算与程序；实质合理性按安全、公平、生活等价值标准评价结果\n配送平台的目标函数\n降低每单成本、提高准时率和单量\n→ 拆分任务、预测时间、匹配订单\n→ 记录位置、等待、评分与接单行为\n需要写入系统的保障约束\n休息下限、安全缓冲与稳定报酬\n→ 限制连续工作、异常天气留出余量\n→ 保留拒单、人工复核与申诉渠道\n预测与调度\n考核与奖惩\n劳动节奏\n谁选指标：只看速度，还是兼顾安全？\n谁能纠错：评价依据、数据争议与人工解释。\n同一技术可把节约时间转成更多订单，也可转成休息、培训与风险降低；结果取决于规则制定权。\n公共机构也需要透明、参与和问责；计算能力本身不能替代对社会目标的选择。\n韦伯：形式与实质合理性、科层制；右侧为当代应用\n17"
+    },
+    {
+      "refs": [
+        "R14",
+        "R15",
+        "R16",
+        "R23"
+      ],
+      "notes": "可变资本v是用于购买劳动力的资本，其可变性在于活劳动创造的新价值可以超过劳动力自身价值；并不是工资可以任意变化。不变资本c包括投入生产的机器、原材料等，其已有价值随消耗转移到产品中，固定资本与流动资本是另一套分类。资本采用机器并非为了追求抽象的人类劳动量最少，而是比较新增机器等成本与节约的工资及可实现收益。\n条件算例：产量、质量、其他成本与销售条件给定；原来每件工资支出20元，自动化后每件工资8元，新增设备折旧、算力和维护支出9元，因此本例相关成本由20降至17元，节约3元。只要预期收益可实现，企业有替代激励；工资低、需求不足或改造成本高时，替代未必合算。图上的工资、折旧和服务费是企业成本项目，不将购买AI服务的全部价格机械归入不变资本：供应商也有自己的c、v和m。\n局部用工需求下降与全社会总就业变化不同；新增任务、需求扩张和缩短工作日可能改变结果。资本节约工资的选择，可能同时削弱劳动者收入与消费，从这里转入技术对投资、消费和出口的影响。\n\n补充论证：采用成本图示不把机器视为新价值的独立创造者。企业的用工替代阈值由工资节约、设备折旧、服务费、改造磨合、质量风险等构成，需求规模又影响固定成本分摊。人工便宜或销量较小时，即使技术可行，也未必立即采用。\n\n本节归纳与衔接：企业节约工资只是一个环节；投资扩张、价格传导和跨境交易共同决定社会后果。",
+      "page": 18,
+      "legacy_page": null,
+      "kind": "variable",
+      "minutes": 1.4,
+      "section": "III  技术增殖与理性经营",
+      "title": "资本按工资节约与新增成本，选择AI和自动化",
+      "footer": "马克思《资本论》：不变资本、可变资本与机器；单件成本为假设示例",
+      "layout": "单位成本堆叠图＋采用阈值",
+      "transition": "企业节约工资只是一个环节；投资扩张、价格传导和跨境交易共同决定社会后果。",
+      "display_title": "资本按工资节约与新增成本，选择AI和自动化",
+      "screen_text": "III  技术增殖与理性经营\n资本按工资节约与新增成本，选择AI和自动化\n可变资本v购买劳动力；不变资本c以生产资料形式转移已有价值\nv的“可变”来自活劳动创造新价值\n工资购买劳动力，活劳动创造v＋m。\n机器和材料随消耗转移原有价值；\n固定／流动资本是另一套分类。\n企业采用技术的成本门槛\n节约的工资 ＞ 新增折旧、服务与改造成本\n销售规模越大，固定成本越易分摊；\n质量、可靠性和磨合风险也影响选择。\n单件相关成本（产量、质量及其他成本不变）\n人工方案\n工资 20元\n合计20\n自动化后\n工资 8元\n新增成本 9元\n合计17 · 节约3\n企业节约工资只是一个环节；投资扩张、价格传导和跨境交易共同决定社会后果。\n马克思《资本论》：不变资本、可变资本与机器；单件成本为假设示例\n18"
+    },
+    {
+      "refs": [
+        "R6",
+        "R7",
+        "R8",
+        "R14"
+      ],
+      "notes": "技术进步 → 并行改变投资机会和未来产能、成本价格和购买力、数字交付和市场边界 → 共同接受需求承接与收益分配的检验。技术效果必须分别追踪，不能把三条路径连成因果接力。\n\n推理条件：新产业并不会依次导致商品降价和数字出口。三者是技术在不同经济联系中的作用；扩大能力与改善生活之间仍有价格、收入、组织和权利安排。\n\n章节衔接：AI把同样的盈利与分配机制，进一步带入认知劳动和知识服务。",
+      "page": 19,
+      "legacy_page": null,
+      "kind": "divider",
+      "minutes": 0.125,
+      "section": "IV  新技术的三条作用路径",
+      "chain": [
+        "技术进步",
+        "投资／消费／出口三路传导",
+        "需求承接与收益分配"
+      ],
+      "subtitle": "投资、消费、出口同时受到影响；结果受实际需求、价格传导与控制权约束。",
+      "active_nodes": [
+        3
+      ],
+      "section_index": 4,
+      "layout": "黑色章节页：three_parallel_transmissions",
+      "title": "技术改变三条路径的收益与风险",
+      "logic_text": "技术进步 → 并行改变投资机会和未来产能、成本价格和购买力、数字交付和市场边界 → 共同接受需求承接与收益分配的检验。技术效果必须分别追踪，不能把三条路径连成因果接力。",
+      "bridge": "AI把同样的盈利与分配机制，进一步带入认知劳动和知识服务。",
+      "clarification": "新产业并不会依次导致商品降价和数字出口。三者是技术在不同经济联系中的作用；扩大能力与改善生活之间仍有价格、收入、组织和权利安排。",
+      "diagram": "three_parallel_transmissions",
+      "ribbon": [
+        "基本矛盾\n与经济表现",
+        "投资、消费\n与出口",
+        "增殖动力\n韦伯的解释",
+        "技术作用于\n三条路径",
+        "AI重组劳动\n与能力控制",
+        "UBI与\n公有AI"
+      ],
+      "display_title": "技术改变三条路径的收益与风险",
+      "screen_text": "IV\n第四节\n技术改变三条路径的收益与风险\n投资、消费、出口同时受到影响；结果受实际需求、价格传导与控制权约束。\n技术进步\n扩大生产能力\n降低部分成本\n共同检验\n需求承接能力\n收益分配方式\n投资：新产业、设备更新与未来产能\n消费：降价潜力、工资变化与购买力\n出口：数字交付、市场扩展与平台入口\nAI把同样的盈利与分配机制，进一步带入认知劳动和知识服务。\n全篇递进：矛盾 → 应对 → 动力与组织 → 技术传导 → AI → 制度回应\n基本矛盾\n与经济表现\n→\n投资、消费\n与出口\n→\n增殖动力\n韦伯的解释\n→\n技术作用于\n三条路径\n→\nAI重组劳动\n与能力控制\n→\nUBI与\n公有AI\n\n19"
+    },
+    {
+      "page": 20,
+      "title": "技术投资创造产业机会，也会积累新的回报压力",
+      "minutes": 0.95,
+      "section": "IV  新技术的三条作用路径",
+      "notes": "- 技术创造新产业和设备更新需求，已实现的剩余价值可转化为追加资本，信用又可能放大扩张。[R23]\n- 竞争压力使企业不仅根据当前用途投资，也担心错失未来市场：新技术机会→争夺先行地位→相似投资同时启动→产能集中形成。\n- 案例：Ferguson于2001年分析信息通信投资时指出，前期乐观预期和强劲资本投入之后，部分通信设施出现过剩；同时仍有局部瓶颈。不能把所有网络建设概括为无用投资。[R6]\n- 相同新增能力可能分流为两种结果：需求与配套到位，形成持续应用；收入和需求不及预期，出现闲置、资产减值与偿债压力。\n- 技术先进与投资可持续并不等价：除性能外，还要检验利用率、客户付费和长期运维、融资成本。\n\n补充论证：技术投资可以沿有用产能与回报失灵两条路径发展。技术性能、资本市场估值与商业收入是三种不同信号；投资不能只以性能进步和融资能力判断。需求、并网或数据接入、人才与运维等互补条件可能让已建能力闲置。",
+      "refs": [
+        "R23",
+        "R6"
+      ],
+      "layout": "投资链与产能分叉",
+      "legacy_page": 13,
+      "kind": "body",
+      "display_title": "技术投资创造产业机会，也会积累新的回报压力",
+      "screen_text": "IV  新技术的三条作用路径\n技术投资创造产业机会，也会积累新的回报压力\n技术性能、融资估值与可持续收入，是三个需要分别检验的信号\n技术突破\n降低成本或创造新用途\n抢占先机\n融资、采购与基础设施建设\n集中投产\n同向扩张，供给跨期释放\n1990年代末—2001年：信息通信投资\n互联网和通信需求推动设备投入。\n部分通信设施随后闲置，局部又有短缺；\n应用有价值，不能保证每项投资按期回本。\n融资、建设时滞与配套条件共同影响利用。\n需求与互补条件到位\n客户、网络、人才和付费能力形成\n→ 利用率提高 → 回款支持继续更新\n预期需求落空\n利用率和价格低于预期\n→ 现金流承压 → 减值、债务与缩支\n检验新技术投资：用途、利用率、收入来源、长期运维和设备更新，须与性能一起核算。\nFerguson，美联储，2001；马克思：剩余价值转化为资本\n20"
+    },
+    {
+      "page": 21,
+      "title": "发电成本显著下降，生活改善仍要经过价格与分配",
+      "minutes": 1,
+      "section": "IV  新技术的三条作用路径",
+      "notes": "- 技术降本要经由市场定价和收入分配，才能转成居民实际购买力；生产成本下降与生活成本下降不是同一指标。\n- IRENA《Renewable Power Generation Costs in 2024》（2025年发布）：2024年新投运公用事业级可再生能源装机中，91%的平准化发电成本低于最廉价的新建化石燃料替代方案。这里使用可直接核验的历史口径，不作为2025或2026年当期数据。[R7]\n- 发电侧成本还需经过电网、储能和系统运行，以及市场与零售定价安排，才传到终端电价。LCOE不能直接当作家庭电费。\n- 分配存在两条可能同时成立的路径：商品降价改善实际消费；若劳动力价值相应下降、必要劳动缩短，则剩余价值率也可能提高。工资、就业、公共服务决定劳动者能否持续受益。[R14]\n\n补充论证：依据IRENA 2025摘要表S1和图S1重绘端点比较：2010至2024，光伏LCOE从0.417降至0.043，陆上风电从0.113降至0.034，海上风电从0.208降至0.079，单位均为2024年美元/kWh，约下降90%、70%、62%。柱形图只展示两个年份，不虚构中间年度数据。LCOE是发电项目全寿命平均成本，电网、储能、系统平衡、融资与零售规则仍影响电费；发电降本经由价格和收入分配，才影响劳动者实际消费与必要劳动时间。",
+      "refs": [
+        "R7",
+        "R14",
+        "R43"
+      ],
+      "layout": "IRENA成对柱图重绘＋价格传导",
+      "legacy_page": 14,
+      "kind": "body",
+      "footer": "IRENA 2025：摘要表S1、图S1端点重绘；2024美元/kWh；发电LCOE不等于居民电价",
+      "display_title": "发电成本显著下降，生活改善仍要经过价格与分配",
+      "screen_text": "IV  新技术的三条作用路径\n发电成本显著下降，生活改善仍要经过价格与分配\n2010与2024年的全球加权平均LCOE：新建公用事业级项目，单位为2024美元/kWh\n光伏 −90%　陆上风电 −70%　海上风电 −62%\n2010\n2024\nLCOE：项目全寿命平均发电成本。两端年份比较，\n不能把发电侧降幅直接视为居民电费降幅。\n① 技术与规模\n设备效率、供应链、建设与融资\n② 系统与价格\n电网、储能、调度、零售定价\n③ 实际生活\n电费、工资、就业与公共服务\n2024新增可再生装机中，91%\n的LCOE低于最廉价新建化石替代。\n降本可提高实际消费，也可降低必要生活资料价值；劳动者分享多少取决于价格和收入。\nIRENA 2025：摘要表S1、图S1端点重绘；2024美元/kWh；发电LCOE不等于居民电价\n21"
+    },
+    {
+      "page": 22,
+      "title": "数字交付扩大市场，收益沿平台与能力链重新分配",
+      "minutes": 1.05,
+      "section": "IV  新技术的三条作用路径",
+      "notes": "- 数字交付把部分跨境交易从货物运输扩展为软件、云服务、流媒体和远程专业服务，市场边界随技术变化。[R8]\n- WTO 2024年发布的历史估计：2023年全球数字交付服务出口达4.25万亿美元，同比增长9.0%，占全球货物和服务出口13.8%。这是整个数字交付服务口径，并非AI专属出口。[R34]\n- 交易机会增加，同时出现新的收益控制节点：平台入口影响客户接触，接口和许可影响持续使用，结算与数据规则影响经营成本和议价关系。\n- 出口扩大支持价值实现和扩大再生产；单纯改变销售地点，不等于独立创造新的剩余价值。数字技术缓解空间距离约束，却保留需求和控制权问题。[R23]\n\n补充论证：数字化降低交付和搜索的一些成本，却保留计算、许可、合规和平台抽成等成本。出口额不是国内增加值或劳动者所得；同一笔跨境收入还要分配给模型、算力、应用组织和劳动。是否拥有客户关系与切换供应商的能力，会影响议价。\n\n本节归纳与衔接：数字交付扩大市场；AI进一步进入认知任务，并把劳动与资源控制带到同一条生产链上。",
+      "refs": [
+        "R8",
+        "R34",
+        "R23"
+      ],
+      "layout": "数字交易链＋收入分流",
+      "legacy_page": 15,
+      "kind": "body",
+      "transition": "数字交付扩大市场；AI进一步进入认知任务，并把劳动与资源控制带到同一条生产链上。",
+      "display_title": "数字交付扩大市场，收益沿平台与能力链重新分配",
+      "screen_text": "IV  新技术的三条作用路径\n数字交付扩大市场，收益沿平台与能力链重新分配\n从货物运输转向远程提供软件、云服务和专业任务，市场边界与交易成本同时改变\n4.25万亿美元\n2023年全球数字交付服务出口\n同比＋9.0%　｜　占货物与服务出口13.8%\n包含云计算、流媒体、在线金融、远程咨询等。\n此项是跨境服务总额；国内增加值、企业利润\n和劳动者所得还要分别核算。\n收益归属取决于三项能力\n获得客户　｜　切换供应商　｜　决定价格与条款\n客户入口\n搜索、平台排名与客户关系\n能力交付\n模型、软件许可、API与云资源\n结算与收入\n抽成、支付、定价与跨境规则\n计算、许可和平台费用仍影响收入分配。\n数字交付扩大市场；AI进一步进入认知任务，并把劳动与资源控制带到同一条生产链上。\nWTO 2024年发布：2023年数字交付服务出口估计；非AI专属出口\n22"
+    },
+    {
+      "refs": [
+        "R9",
+        "R10",
+        "R11",
+        "R16",
+        "R35"
+      ],
+      "notes": "AI进入认知任务 → 劳动侧出现替代、新任务与工时调整，能力侧依赖算力、能源、资金与许可 → 收入分享、资源接入和管理规则共同影响就业、消费与议价。\n\n推理条件：任务提效不等于同比例失业，成果公开不等于公共控制。就业判断须看需求和工时，公共能力判断须看持续部署资源与实际决策权；算法管理还需要劳动者参与、透明和申诉。\n\n章节衔接：收入保障与能力接入，成为制度回应的两个着力点。",
+      "page": 23,
+      "legacy_page": null,
+      "kind": "divider",
+      "minutes": 0.125,
+      "section": "V  AI、劳动与能力控制",
+      "chain": [
+        "认知任务提效",
+        "劳动重组／资源与规则约束",
+        "就业、消费、接入与议价变化"
+      ],
+      "subtitle": "任务提效须经需求和工时安排才影响就业；规模化部署仍依赖资源、资产与规则。",
+      "active_nodes": [
+        4
+      ],
+      "section_index": 5,
+      "layout": "黑色章节页：labor_and_control",
+      "title": "AI重组劳动、收入与控制权",
+      "logic_text": "AI进入认知任务 → 劳动侧出现替代、新任务与工时调整，能力侧依赖算力、能源、资金与许可 → 收入分享、资源接入和管理规则共同影响就业、消费与议价。",
+      "bridge": "收入保障与能力接入，成为制度回应的两个着力点。",
+      "clarification": "任务提效不等于同比例失业，成果公开不等于公共控制。就业判断须看需求和工时，公共能力判断须看持续部署资源与实际决策权；算法管理还需要劳动者参与、透明和申诉。",
+      "diagram": "labor_and_control",
+      "ribbon": [
+        "基本矛盾\n与经济表现",
+        "投资、消费\n与出口",
+        "增殖动力\n韦伯的解释",
+        "技术作用于\n三条路径",
+        "AI重组劳动\n与能力控制",
+        "UBI与\n公有AI"
+      ],
+      "display_title": "AI重组劳动、收入与控制权",
+      "screen_text": "V\n第五节\nAI重组劳动、收入与控制权\n任务提效须经需求和工时安排才影响就业；规模化部署仍依赖资源、资产与规则。\n认知任务提效\n辅助生成与推理\n部分流程自动化\n劳动侧：替代与新任务并存\n需求增长、工时安排与收入分享\n能力侧：部署依赖关键资源\n算力、能源、资金、许可与规则\n收入与权利\n就业与消费\n接入与议价\n收入保障与能力接入，成为制度回应的两个着力点。\n全篇递进：矛盾 → 应对 → 动力与组织 → 技术传导 → AI → 制度回应\n基本矛盾\n与经济表现\n→\n投资、消费\n与出口\n→\n增殖动力\n韦伯的解释\n→\n技术作用于\n三条路径\n→\nAI重组劳动\n与能力控制\n→\nUBI与\n公有AI\n\n23"
+    },
+    {
+      "page": 24,
+      "title": "AI改变认知任务，能力展示与岗位变化之间仍有环节",
+      "minutes": 1.2,
+      "section": "V  AI、劳动与能力控制",
+      "notes": "- 以三个发布节点说明认知工具扩散：2022年11月ChatGPT研究预览、2025年1月DeepSeek-R1发布并开放权重、2026年10月OpenAI公开数学研究材料。[R32][R33][R12][R10]\n- OpenAI math仓库于2026年10月13日核验，收录719篇稿件、372组相关结果，验证状态不同；公开研究材料不等于公开内部模型，也不能把稿件数当成已确认的独立突破数。[R10]\n- 工作场景证据：QJE 2025年论文研究5,172名客服人员，AI辅助使每小时解决问题数平均提高15%，较低技能和较少经验人员受益更大。AI向人工提供实时建议，人工仍负责对话并可修改或忽略建议。[R9]\n- 两类证据分别表明知识劳动的辅助能力和研究产出的扩展；从任务提效到流程重组、再到职业需求，还要检验需求、质量、验证成本和组织安排。结合[V3]对知识与劳动关系的讨论。\n\n补充论证：客服研究采用5172名客服的分期上线数据，主要结果是每小时解决问题数提高约15%，较少经验和较低技能者约30%。对比图重绘作者摘要级结果；后者属于总体，不是额外增加的独立样本，且是约数。更高技能者收益较小，个别质量指标还可能下降。研究测量辅助条件下的任务效率，没有证明全部岗位被替代或所有行业同幅提效。",
+      "refs": [
+        "R32",
+        "R33",
+        "R12",
+        "R10",
+        "R9",
+        "V3"
+      ],
+      "layout": "AI时间线＋客服提效图",
+      "legacy_page": 16,
+      "kind": "body",
+      "footer": "OpenAI、DeepSeek；Brynjolfsson等，QJE 2025及作者公开稿；提效图为摘要级约数",
+      "display_title": "AI改变认知任务，能力展示与岗位变化之间仍有环节",
+      "screen_text": "V  AI、劳动与能力控制\nAI改变认知任务，能力展示与岗位变化之间仍有环节\n发布说明、现场研究与就业统计，回答的是不同层次的问题\n2022.11\nChatGPT\n对话式入口普及\n2025.01\nDeepSeek-R1\n推理与开放权重\n2026.10\nOpenAI数学材料\n719篇稿件／372组\n客服研究：每小时解决问题数的增幅\n5,172名客服，分期上线；30%为约数，子群体包含在总体内。\n从任务能力到社会结果\n知识传播：新手更快获得成熟处理办法。\n流程重组：人工仍须核验、解释和负责。\n岗位变化：还取决于需求、工时与新任务。\n数学稿件有不同验证状态；研究材料开放，\n与内部模型、算力和资产控制分属不同层次。\nOpenAI、DeepSeek；Brynjolfsson等，QJE 2025及作者公开稿；提效图为摘要级约数\n24"
+    },
+    {
+      "page": 25,
+      "title": "认知成果更易复制，规模化仍依赖资源与回报",
+      "minutes": 1.05,
+      "section": "V  AI、劳动与能力控制",
+      "notes": "- AI投资把芯片、电力、数据中心、网络、模型研发和行业部署连接为新的投资链。前台按次调用，背后仍有建设、能耗、运维与更新投入。[R11]\n- IEA 2026报告估计：全球全部数据中心用电从2025年的485 TWh，增至2030年预测的950 TWh。预测并非观测值，且覆盖全部数据中心，不能全计为AI耗电。[R11]\n- 资源约束决定部署能力，回报约束决定投资能否持续：模型性能要转成稳定使用，使用还要转成收入或可持续公共预算。\n- 条件推论：即使部分认知成果更容易复制，瓶颈仍可能转向算力、能源、资金和组织验证能力。因此应考察这些资源由谁持有、谁可接入、费用怎样分摊。\n- 接回投资路径：收入持续、配套齐备时形成新能力；收入兑现不足而重资产已经投入时，则面临利用率和偿债压力。\n- 接入[V4]29:18—31:12对技术愿景的讨论：未来富足的承诺可能动员投资，但资源接入、收益权和可持续收入须由现行制度落实，不能由许诺替代。此处采纳问题意识，不以视频中对人物动机的推测作事实证据。",
+      "refs": [
+        "R11",
+        "V4"
+      ],
+      "layout": "投资回路＋用电图",
+      "legacy_page": 17,
+      "kind": "body",
+      "display_title": "认知成果更易复制，规模化仍依赖资源与回报",
+      "screen_text": "V  AI、劳动与能力控制\n认知成果更易复制，规模化仍依赖资源与回报\n芯片、电力、算力和资金决定部署条件；实际使用与付费决定持续性\n物质投入\n芯片、机房、电力与网络\n知识与应用\n训练、推理、行业部署\n收入或公共预算\n客户付费、公共采购、长期投入\n承担运维、能源与设备更新\n全部数据中心用电 / TWh\n2025为估计，2030为预测；包括非AI负荷。\n技术愿景推动投入；持续回报需要应用收入。\n资源接入和收益权，不能只依赖未来的承诺。\nIEA，Key Questions on Energy and AI，2026；全部数据中心\n25"
+    },
+    {
+      "page": 26,
+      "title": "效率节约工时，需求扩张决定是否形成岗位减少",
+      "minutes": 1.1,
+      "section": "V  AI、劳动与能力控制",
+      "notes": "- 对同质且质量不变的任务，设所需总工时H＝Q/a，其中Q为实际需要完成的任务量，a为每小时完成量。这是局部条件模型，不是对总就业的预测。\n- 算例：a提高25%，如果Q不变，H变为原来的80%，下降20%；若Q同时提高25%，H不变。新任务增加或缩短工作日，也会改变人数与总工时的关系。\n- Q由销售和使用需求决定，不能仅凭技术供给能力设定。因此效率提升后的就业，要同时看需求扩张、新任务和工时安排。[R9]\n- 依据[V3]39:44—42:48提出的工人同时也是消费者这一关系：工资、降价、再分配和公共服务若让劳动者分享增益，消费可扩张；若岗位和收入下降而补偿不足，增产可能遭遇购买力约束。\n- 企业节约工时不直接等同于社会剩余价值率提高，应接回生活资料、劳动力价值和劳动规模的传导。[R14][R15]\n\n补充论证：工时敏感性图是条件模型：效率提高25%，任务需求增长0%、10%、25%、40%时，总工时分别为原来的80%、88%、100%、112%。人数还由人均工时决定，即N=H/h。AI可以通过新任务和需求扩张增加工作，也可以通过裁员或缩短工作日消化节约时间；收入分享又会改变任务需求。",
+      "refs": [
+        "R9",
+        "V3",
+        "R14",
+        "R15"
+      ],
+      "layout": "工时敏感性点线图",
+      "legacy_page": 18,
+      "kind": "body",
+      "footer": "H＝Q/a，N＝H/h；效率提高25%的条件算例，图中各点不是经验估计",
+      "display_title": "效率节约工时，需求扩张决定是否形成岗位减少",
+      "screen_text": "V  AI、劳动与能力控制\n效率节约工时，需求扩张决定是否形成岗位减少\n总工时 H＝任务量 Q / 效率 a；就业人数 N＝H / 人均工时 h\n假设效率提高25%：H₁/H₀＝(Q₁/Q₀) / 1.25\n所需总工时（原来＝100）\n任务需求增幅\n需求不变：工时−20%　｜　需求＋25%：工时不变\n同一效率，三种用法\n裁员：工作向更少劳动者集中。\n缩时：人数保持，减少人均工时。\n扩张：新任务和新客户吸收能力。\n分配会反过来改变需求\n工资、降价和公共转移支持消费。\n岗位和收入缩减且补偿不足，\n可能让任务增长赶不上效率。\n这里假设任务同质、质量不变；识别就业效应还须看劳动重组、收入分配和实际需求。\nH＝Q/a，N＝H/h；效率提高25%的条件算例，图中各点不是经验估计\n26"
+    },
+    {
+      "page": 27,
+      "title": "成果可以传播，部署能力与决策权仍可能集中",
+      "minutes": 1.05,
+      "section": "V  AI、劳动与能力控制",
+      "notes": "- AI服务的跨境链包含客户、应用开发者、模型供应商和算力提供者；各层承担不同任务，并通过产品、接口和设施使用权分配收入。[R8][R12]\n- 权利安排有三个不同问题：能否取得成果、能否部署和修改模型、能否决定关键资产及其收益。开放文本、开放权重和公共所有不能相互替代。\n- DeepSeek-R1仓库说明代码和主要模型权重按MIT许可开放；蒸馏模型还需核对各自基础模型许可。开放部署减少对单一托管接口的依赖，但算力、维护和人才仍有成本。[R12]\n- OpenAI数学案例公开稿件和部分证明材料；产生结果的内部模型未因此公开。这说明知识传播与核心能力的控制可以并存。[R10]\n- 结合[V6]02:21与13:52的开放路线和治理疑问：创始人的自我约束可以改变经营选择，但持续公共权利要通过资产、许可和治理制度保障。[V7]\n\n补充论证：开放应分别核验成果可读、代码权重可取、商业或科研使用许可、可持续部署资源，以及重大决策和净收益的控制权。结果开放能扩大知识传播，模型开放能降低接入障碍，但两者都不自动给出公共资产与民主治理。",
+      "refs": [
+        "R8",
+        "R12",
+        "R10",
+        "V6",
+        "V7"
+      ],
+      "layout": "开放层次与控制权",
+      "legacy_page": 19,
+      "kind": "body",
+      "display_title": "成果可以传播，部署能力与决策权仍可能集中",
+      "screen_text": "V  AI、劳动与能力控制\n成果可以传播，部署能力与决策权仍可能集中\n把“开放”分解为具体权利，才能判断知识扩散是否改变资本控制\n成果可读\n论文、报告、证明材料\n模型可用\n代码、权重、使用许可\n能力可部署\n算力、人才、数据与维护\n重大事项可决定\n投资、更新、接入与收益处置\nDeepSeek-R1：扩大模型接入\n主要代码与权重按MIT许可开放；\n可自行部署并组织应用，仍须承担算力、\n运维和人才成本；衍生模型许可另核。\nOpenAI数学材料：扩大成果获取\n公开稿件和部分验证材料，便于外部检查。\n其生产模型、推理资源和资产控制权，\n并不随材料公开一并转移。\n公有AI要进一步回答：谁持有资产、\n谁可使用、谁有预算与规则的决定权。\n可读、可运行、可持续部署与共同决定，是四个不同层次；改革须落实到相应权利。\nDeepSeek-R1许可；WTO数字服务；相关B站文字稿\n27"
+    },
+    {
+      "page": 28,
+      "title": "算法重组管理权，自动化背后仍有持续劳动",
+      "minutes": 1.1,
+      "section": "V  AI、劳动与能力控制",
+      "notes": "- 依据[V3]10:00—23:50，AI系统背后仍有数据整理、标注、审核、设备运维和再生产劳动。前台输出自动化，不代表整个生产网络不再依赖劳动。\n- 算法管理的机制为记录位置、时长和评分→分配任务与时限→比较绩效和报酬→反馈到下一轮派单。这里的配送环节是机制示意，不是对某一平台实际规则的实测。\n- 马克思的提问：节约的时间归谁，是否变成更长劳动日或更强劳动？韦伯的提问：谁制定指标、解释规则并处理申诉？[R16][R20]\n- 制度回应的实例：欧盟理事会2024年10月14日通过平台工作新规则，要求算法管理透明、人工监督，并保障相关自动决策的解释和复核。此处陈述指令设计，不声称所有成员国已完成实施或效果已经确证。[R35]\n- 劳动者知情、协商和申诉权可以进入技术规则，从而将效率目标与安全、报酬及自主性连接起来。\n\n补充论证：隐性劳动包括训练数据整理、标注、审核、设施运行和纠错，自动化系统并不脱离持续劳动。派单算法既能缓解协调困难，也可改变报酬、拒单代价和申诉成本。图中将透明、人工复核和数据争议分别接入记录、考核及奖惩环节。\n\n本节归纳与衔接：收入保障回应生活与需求风险，公共能力回应技术接入；两者都需要参与和问责。",
+      "refs": [
+        "V3",
+        "R16",
+        "R20",
+        "R35"
+      ],
+      "layout": "隐性劳动＋算法管理闭环",
+      "legacy_page": 20,
+      "kind": "body",
+      "transition": "收入保障回应生活与需求风险，公共能力回应技术接入；两者都需要参与和问责。",
+      "display_title": "算法重组管理权，自动化背后仍有持续劳动",
+      "screen_text": "V  AI、劳动与能力控制\n算法重组管理权，自动化背后仍有持续劳动\n标注、审核、纠错与设施维护支撑AI；记录、派单和奖惩又改变劳动的组织方式\n被遮蔽的劳动环节\n训练前：采集、清理、标注与授权。\n运行中：审核、纠错、人工接管。\n设施端：设备、能源、运维和安全。\n劳动分散在不同企业与地区。\n两条理论线相接\n马克思：节约的劳动由谁占有？\n韦伯：谁制定、解释并执行规则？\n算法把经营目标写成持续的考核。\n记录\n位置、时间、质量与评分\n分配\n任务、路线、时限与接单\n评价\n达标、报酬、拒单与违规\n反馈\n奖惩再影响下一轮任务\n数据可查询\n可申请更正\n决定可解释\n可人工复核\n2024欧盟平台工作指令\n算法透明、人工监督、自动决定的解释与复核；\n成效还须由各国落实、劳动者使用和执法来检验。\n收入保障回应生活与需求风险，公共能力回应技术接入；两者都需要参与和问责。\n马克思；韦伯；相关B站文字稿；欧盟理事会2024.10.14平台工作指令说明\n28"
+    },
+    {
+      "refs": [
+        "R13",
+        "R20",
+        "R24",
+        "R25"
+      ],
+      "notes": "劳动收入与需求承压 → UBI支持基本购买力；关键AI能力接入受限 → 公有AI扩大公共供给。两项安排的实施需要持续财源、支持联盟和治理，再以生活改善、劳动受益与共同决定权检验改革深度。\n\n推理条件：UBI与公有AI是可讨论的组合方案，不是从AI能力直接推出的唯一制度。它们可以缓和资本主义内部冲突；是否改变占有关系，须看投资、使用和收益处置权，而不能只看发钱或模型开放。\n\n章节衔接：生活改善、劳动受益和共同决定权，是检验改革深度的三项标准。",
+      "page": 29,
+      "legacy_page": null,
+      "kind": "divider",
+      "minutes": 0.125,
+      "section": "VI  UBI与公有AI",
+      "chain": [
+        "收入风险／能力接入受限",
+        "UBI／公有AI分别回应",
+        "财源、改革联盟与公共治理",
+        "实际权利变化"
+      ],
+      "subtitle": "UBI回应收入风险，公有AI回应能力接入；两者可与私人经营并存，实施须有财源和治理。",
+      "active_nodes": [
+        5
+      ],
+      "section_index": 6,
+      "layout": "黑色章节页：matched_institutional_responses",
+      "title": "收入保障与公共能力共同回应矛盾",
+      "logic_text": "劳动收入与需求承压 → UBI支持基本购买力；关键AI能力接入受限 → 公有AI扩大公共供给。两项安排的实施需要持续财源、支持联盟和治理，再以生活改善、劳动受益与共同决定权检验改革深度。",
+      "bridge": "生活改善、劳动受益和共同决定权，是检验改革深度的三项标准。",
+      "clarification": "UBI与公有AI是可讨论的组合方案，不是从AI能力直接推出的唯一制度。它们可以缓和资本主义内部冲突；是否改变占有关系，须看投资、使用和收益处置权，而不能只看发钱或模型开放。",
+      "diagram": "matched_institutional_responses",
+      "ribbon": [
+        "基本矛盾\n与经济表现",
+        "投资、消费\n与出口",
+        "增殖动力\n韦伯的解释",
+        "技术作用于\n三条路径",
+        "AI重组劳动\n与能力控制",
+        "UBI与\n公有AI"
+      ],
+      "display_title": "收入保障与公共能力共同回应矛盾",
+      "screen_text": "VI\n第六节\n收入保障与公共能力共同回应矛盾\nUBI回应收入风险，公有AI回应能力接入；两者可与私人经营并存，实施须有财源和治理。\n劳动收入与需求承压\n关键AI能力接入受限\nUBI：基本收入\n与具体岗位分离的收入保障\n公有AI：公共能力\n公共资产、普惠接入与公共服务\n实施与改革深度\n财源、联盟与公共治理\n投资、使用和收益权\n生活改善、劳动受益和共同决定权，是检验改革深度的三项标准。\n全篇递进：矛盾 → 应对 → 动力与组织 → 技术传导 → AI → 制度回应\n基本矛盾\n与经济表现\n→\n投资、消费\n与出口\n→\n增殖动力\n韦伯的解释\n→\n技术作用于\n三条路径\n→\nAI重组劳动\n与能力控制\n→\nUBI与\n公有AI\n\n29"
+    },
+    {
+      "page": 30,
+      "title": "UBI与公有AI可能形成改革联盟，也会遇到利益阻力",
+      "minutes": 1.35,
+      "section": "VI  UBI与公有AI",
+      "notes": "- UBI与公有AI可以作为资本主义内部改革出现：私人经营、雇佣劳动和市场竞争仍占主导时，局部公共资产和普遍收入保障在制度上能够共存。[R24][R25]\n- 经济动因：劳动收入承压时，基本收入为消费提供与特定岗位分离的支持；公共AI为公共服务与企业提供可负担能力，降低部分市场进入成本。[R13]\n- 潜在支持基础：劳动者重视生活保障和退出空间；应用企业重视稳定市场与低成本技术；国家重视公共能力、技术自主与稳定。它们可能形成改革联盟，但并非利益天然一致。\n- 阻力同样具体：垄断供应商可能反对公共竞争，资产所有者可能反对新增税负，依赖廉价劳动的企业可能不愿劳动者退出能力提高。因此经济功能需要组织、立法和财政制度才能落实。\n- Altman于2021年3月16日提出通过企业股权和土地税组成全民收益安排，并把它定位为改良资本主义。这是内部改革的思想证据，不是公有AI已经实现的事实。[R24]\n- 结合[V3]25:14—27:38与[V7]20:29—23:55，将公有AI和分配主张从预定终局改写为具有支持者、成本和阻力的制度选择。\n\n补充论证：改革的支持联盟并非单一整体。劳动者关注保障与议价，应用企业关注接入成本和需求，国家关注科研、财政和基础能力。税负与公共竞争可能遭到部分资本反对，而公共供给也可能受大企业采购和技术依赖牵制；因此要分析联盟、筹资与执行三项条件。",
+      "refs": [
+        "R24",
+        "R25",
+        "R13",
+        "V3",
+        "V7"
+      ],
+      "layout": "改革联盟与阻力",
+      "legacy_page": 21,
+      "kind": "body",
+      "display_title": "UBI与公有AI可能形成改革联盟，也会遇到利益阻力",
+      "screen_text": "VI  UBI与公有AI\nUBI与公有AI可能形成改革联盟，也会遇到利益阻力\n收入保障与局部公共资产，可以同私人企业、雇佣劳动和市场竞争并存\n劳动者\n保障生活，降低对雇主的依赖。\n留出培训、转岗和协商的空间。\n谈判焦点\n金额、物价与领取稳定性。\n应用企业\n获得可负担、可切换的AI能力；\n降低接入门槛，稳定消费市场。\n谈判焦点\n使用费用、税负；\n与公共供给之间的竞争关系。\n国家\n支撑科研、教育和公共服务；\n缓冲需求冲击，减少技术依赖。\n谈判焦点\n财源、运维能力；\n公开透明与实际问责。\n2021 Altman提案：以企业股权与土地税支持全民分享资本收益，属于资本主义内部改革设想。\n形成条件：支持联盟能够组织起来；税负与公共竞争阻力可以协调；预算和治理能够持续执行。\nAltman，2021；OpenResearch；相关B站文字稿\n30"
+    },
+    {
+      "page": 31,
+      "title": "公共AI提供能力，基本收入把部分收益转成购买力",
+      "minutes": 1.5,
+      "section": "VI  UBI与公有AI",
+      "notes": "- 将公有强AI作为一种未来制度情景：强AI指能够广泛承担认知任务的能力假设；具体建设可以从现有模型、公共算力和行业应用起步。\n- 生产端：公共投入取得算力、模型资产、使用规则和收益权；公共AI向公共部门提供服务，也向私人企业提供基础能力。公共购买私人API与取得公共资产是不同安排。\n- 分配端：稳定税收与公共资产的可分配净收益，支持按个人、定期、普遍和无条件发放的基本收入。居民消费再形成企业订单，生产与分配相互联系。[R13][R25]\n- 财政端：净收益须先扣除维护、研发、更新和必要再投资；公共AI低价普惠与高额利润分红之间有取舍，不能假定算力投入会自动成为永续财源。\n- 治理端：预算公开、独立审计、使用者和劳动者参与、可执行申诉，使公共所有落实为实际权利。[R20]\n- 该组合能缓和需求和接入问题，但私人企业依然可以经营获利。转化程度取决于公共成员实际取得多少投资、使用和分配决定权。\n\n补充论证：机制图将实物服务流与资金流分别标明。公共AI先提供算力、模型与应用能力，企业和公共机构将其用于生产。税收与公共资产净收益为基本收入供资，居民消费形成订单。公共净收益须扣运维、研发、设备更新与必要再投资；不能把营业收入、资产估值或融资金额当作可分红现金。",
+      "refs": [
+        "R13",
+        "R25",
+        "R20"
+      ],
+      "layout": "公共能力与资金双回路",
+      "legacy_page": 22,
+      "kind": "body",
+      "display_title": "公共AI提供能力，基本收入把部分收益转成购买力",
+      "screen_text": "VI  UBI与公有AI\n公共AI提供能力，基本收入把部分收益转成购买力\n生产条件与收入分配需要分别安排，再通过服务、税收和消费连接起来\n生产与服务流\n公共AI\n算力、模型和应用\n公共资产与接入规则\n企业／公共机构\n组织生产与服务\n承担行业流程与责任\n居民生活\n消费与公共服务\n更多选择与保障\n资金回路\n税收＋公共净收益\n基本收入\n运营后可分配部分\n消费形成订单\n财政约束\n净收益先扣运维、\n研发与必要更新；\n低价普惠与高额\n分红存在取舍。\n治理约束\n预算公开、审计；\n使用者与劳动者\n参与规则制定；\n支持解释与申诉。\n公有强AI是未来制度情景；现阶段可从公共算力、开放模型与行业服务逐步建设。\n本文制度方案；财政与权利条件见附录A3\n31"
+    },
+    {
+      "page": 32,
+      "title": "公共资产、现金分配与公共AI，已有分别运行的先例",
+      "minutes": 1.25,
+      "section": "VI  UBI与公有AI",
+      "notes": "- 将制度先例分成资产分红、现金保障与公共能力，而不是当作一个已经成功的完整制度。\n- 阿拉斯加1976年设立永久基金，1982年首次居民分红。首笔分红来自石油收入结余；后来基金分配支持居民与公共服务。案例证明公共财富与居民分配可以存在于资本主义经济，不等于足以维持生活的UBI。[R25]\n- OpenResearch在伊利诺伊与得克萨斯两州实施2020—2023年现金转移试验：1,000名领取者每月1,000美元，2,000名对照者每月50美元。项目2024年消费结果显示每月支出平均增加310美元，其中食品67美元、房租52美元、交通50美元；这是试验估计，不能当作全国永久UBI的预算或宏观效果。[R13]\n- 2025年9月瑞士ETH、EPFL与CSCS发布Apertus，说明公共研究与计算设施能参与模型供给；2026年4月英国Sovereign AI首批股权投资与算力支持展示公共投资和私人经营并存。[R26][R27]\n- 两类路径能为组合方案提供制度部件，但全覆盖财源、长期效果和治理仍须另行验证。时间线不按年份等比例，连接只表示先后和比较。",
+      "refs": [
+        "R25",
+        "R13",
+        "R26",
+        "R27"
+      ],
+      "layout": "制度先例时间线＋现金转移证据",
+      "legacy_page": 23,
+      "kind": "body",
+      "display_title": "公共资产、现金分配与公共AI，已有分别运行的先例",
+      "screen_text": "VI  UBI与公有AI\n公共资产、现金分配与公共AI，已有分别运行的先例\n这些案例提供可组合的制度部件；完整方案仍须验证财源、规模与治理\n收益与收入\n1976 → 1982\n阿拉斯加公共基金\n设立 → 首次居民分红\n2020—2023\nOpenResearch\n两州现金转移试验\n公共能力\n2025.09\n瑞士Apertus\n公共科研与模型供给\n2026.04\n英国Sovereign AI\n公共股权与算力支持\n现金转移试验的具体效果\n1,000人：每月$1,000\n2,000人：每月$50作对照\n+$310 / 月\n平均支出增量；食品+$67、\n房租+$52、交通+$50。\n有限期、有限样本；支持消费机制，\n未验证全民永久UBI的整体效果。\n阿拉斯加首笔分红来自石油结余；各节点为不同案例，间距不按年份比例。\nAPFC；OpenResearch 2024消费结果；ETH Zurich；英国政府2026\n32"
+    },
+    {
+      "page": 33,
+      "title": "科技扩大生产能力，收益与控制权决定社会结果",
+      "minutes": 1.4,
+      "section": "VI  UBI与公有AI",
+      "notes": "- 核心回答：科技缓和物质供给和协作的限制；当节约的劳动与新增收益被少数所有者支配时，它也可能加剧生产社会化与私人占有之间的矛盾。\n- 投资：技术创造新产业和基础设施需求，同时增加未来产能、资源需求与回报压力；消费：降本改善生活的可能性，要通过价格、工资和公共分配实现；出口：数字交付扩大市场，全球需求和技术入口仍约束收益。[R6][R7][R8][R11]\n- 剩余价值机制说明资本为什么持续采用技术；韦伯说明这种增殖活动怎样被核算、法律与组织管理稳定下来。[R14][R18][R20]\n- UBI能够支持收入，公共AI能够改变部分生产条件的归属，两者可以稳定资本主义，也可以扩大共同权利；是否更深地改变占有关系，要看谁决定投资、使用规则和剩余用途。[R24][R25]\n- 应当把科技效果评价落在三个可观察方面：生活是否改善、劳动是否获得收益与自由时间、社会成员是否获得持续的决定权。\n\n补充论证：结论区分三个层次：产量和成本的物质改善；工资、服务、工时和税收转移的分配改善；投资、使用和收益处置决定权的制度变化。前两个层次的真实缓解可以与第三层次的延续并存，不能把局部改革等同于基本矛盾已消失。\n\n总结图以两条有条件的传导路径回答主题：降本收益通过价格、收入、工时和公共供给向社会传递时，具体冲突可得到缓和；新增收益与控制权集中、劳动收入损失未获补偿且能力接入受限时，需求约束和依附关系可能加深。两种效应可以在不同行业、群体和时期同时存在。最后并列检验生活改善、劳动受益和共同决定，三项指标不是必然逐级完成的阶段。",
+      "refs": [
+        "R6",
+        "R7",
+        "R8",
+        "R11",
+        "R14",
+        "R18",
+        "R20",
+        "R24",
+        "R25"
+      ],
+      "layout": "技术能力经由分配与控制形成不同结果＋三项改革标准",
+      "legacy_page": 24,
+      "kind": "body",
+      "display_title": "科技扩大生产能力，收益与控制权决定社会结果",
+      "screen_text": "VI  UBI与公有AI\n科技扩大生产能力，收益与控制权决定社会结果\n能力扩大提供缓和条件；新增收益转化为生活与劳动改善，需要相应的制度安排。\n新技术与AI\n生产能力扩大\n部分成本降低\n降本收益向社会传递\n降价、收入分享、工时改善与公共供给\n收益与控制权集中\n收入损失未获补偿，能力接入受限\n缓和具体冲突\n生活改善\n需求更稳定\n可能加剧矛盾\n需求受压\n依附关系增强\n生活改善\n价格与公共服务\n劳动受益\n收入与自由时间\n共同决定\n投资、使用与分配权\nUBI支撑收入，公有AI扩展能力；改革深度取决于实际权利，缓和与加剧的效应也可能并存。\n综合前述理论与案例；完整链接见每页备注及配套来源文档\n33"
+    },
+    {
+      "page": 34,
+      "title": "剩余价值率、总量和利润率，反映不同关系",
+      "minutes": 0,
+      "section": "附录  A1",
+      "notes": "设同一期间、劳动强度和复杂程度不变，单个劳动者的劳动日为T，必要劳动时间为t_n，每小时新价值的货币表达为λ，生产性劳动者数量为N：\n\n- 单个劳动者：v＝λt_n，m＝λ(T−t_n)，m′＝m/v＝(T−t_n)/t_n。\n- 同质劳动条件下的总量：M＝Nm＝m′V，V＝Nv。[R15]\n- 在λ不变、T＝8、t_n从4降到2的示例中，m′由100%升至300%，每名劳动者的m由4λ升至6λ。若N不变，M增加50%；若N减少一半，M反而下降25%。这是构造的条件示例，不是经验测量。\n- 在这个示例中，平均劳动日创造的新价值仍为8λ；改变的是其中必要劳动与剩余劳动的分配。不能从更多商品推出更多社会总新价值，也不能从利润增加直接读出剥削率。\n- 绝对剩余价值：必要劳动时间给定时延长劳动日。劳动强度提高涉及单位钟表时间耗费的劳动量，不能与生产率提高混算。[R16]\n- 新增剩余价值用于生产性再投资，扩大资本积累和下一轮生产；剩余价值是否转为货币收入，还需销售实现。[R23]\n\n补充利润率条件算例：同一期间、周转口径一致且按价值售出，原来c＝300、v＝100、m＝100，p′＝100/(300＋100)＝25%；改进后c＝700、v＝50、m＝150，m′升至300%，p′却降至20%。这是人为设定的不变资本增加场景，说明比率、总量和利润率不能混为一谈，不是利润率必然下降的证明。\n\n补充论证：统一算例取每小时新价值λ=1、劳动人数N=25、劳动日8小时。原先必要4小时，v=100、m=100；必要降为2小时且人数不变，v=50、m=150。若人数减半为12.5个全时等价劳动者，则v=25、m=75。利润率算例中的c、v、m按一致周转口径设定，c上升300至700时，利润率从25%降至20%。不是预测，也不证明利润率在现实中必然单调下降。",
+      "refs": [
+        "R15",
+        "R16",
+        "R23"
+      ],
+      "layout": "统一剩余价值算例",
+      "legacy_page": 25,
+      "kind": "appendix",
+      "display_title": "剩余价值率、总量和利润率，反映不同关系",
+      "screen_text": "附录  A1\n剩余价值率、总量和利润率，反映不同关系\n统一算例：25个全时劳动者、每天8小时、每小时新价值λ＝1；条件变化分别列明\n原来\n必要4h／剩余4h\nv＝100　m＝100\nm′＝100%\nc＝300 → p′＝25%\n必要劳动缩短\n必要2h／剩余6h\nv＝50　m＝150\nm′＝300%\n若c＝700 → p′＝20%\n同时将人数减半\n12.5个全时等价劳动者\nv＝25　m＝75\nm′＝300%\n总量仅为原来的75%\nm′＝m/v　　｜　M＝Nλ(T−tₙ)　　｜　p′＝m/(c＋v)\nN为人数，T为劳动日，tₙ为必要劳动；假定强度、生活标准与λ不变，周转口径一致、按价值售出。\n马克思《资本论》第一卷；所有数值均为条件示例\nA1"
+    },
+    {
+      "page": 35,
+      "title": "韦伯把行动、制度、支配和分层联系起来分析",
+      "minutes": 0,
+      "section": "附录  A2",
+      "notes": "1. **理解社会学与理想类型。** 从行动者赋予行动的意义出发解释社会关系；区分目的理性、价值理性、情感和传统行动。理想类型是分析工具，不是现实必然遵循的阶段表。用于解释企业行为不能只靠一个天然逐利的人性假设。[R17]\n2. **理性经营与制度条件。** 资本核算、法律可预期性、市场、形式自由劳动与生产条件占有共同支撑现代资本主义。理性化包括多个领域，并不意味着历史必然沿单一路径进步。[R18]\n3. **形式合理性与实质合理性。** 前者考察计算与程序，后者按特定价值标准评价结果。它们与行动层面的目的理性、价值理性有关，但不是可以直接互换的两组概念。[R19]\n4. **合法支配与科层制。** 合法性来源的理想类型包括传统型、卡里斯玛型与法理型；科层制借助专业资格、职权分工、层级和记录维持连续组织。描述一种支配被认为正当，不等于在道德上赞同它。[R20]\n5. **新教伦理与资本主义精神。** 天职、入世禁欲和系统化劳动可以与持续积累发生历史联系；韦伯明确反对用单一精神原因替代单一物质原因。“铁笼”则提示经济秩序形成后可以脱离最初动机而约束个人。[R21]\n6. **阶级、身份群体与政党。** 市场处境和经济机会、社会荣誉和生活方式、组织化权力分别揭示不同的不平等关系。国家、专业人员、企业所有者和劳动者的关系应具体分析。[R22][R20]\n\n本报告用马克思解释剩余价值及资本积累，用韦伯分析理性化和支配的组织条件。韦伯不以劳动价值论说明利润，科层制也不只存在于资本主义；因此，两条分析线不能互相冒充或被说成完全等同。[V2]中的观点按原著核对，不采用“韦伯取代马克思”等未经论证的总判断。关于算法的论述是本报告的当代应用。\n\n补充论证：四类行动、三类支配和三维分层是不同分析工具。目的理性或价值理性描述行动取向；形式与实质合理性用于评价经营秩序；法理型支配与科层制解释命令何以有效；阶级、身份与政党分别对应市场机会、荣誉与组织化权力。",
+      "refs": [
+        "R17",
+        "R18",
+        "R19",
+        "R20",
+        "R21",
+        "R22",
+        "V2"
+      ],
+      "layout": "韦伯理论概念关系",
+      "legacy_page": 26,
+      "kind": "appendix",
+      "display_title": "韦伯把行动、制度、支配和分层联系起来分析",
+      "screen_text": "附录  A2\n韦伯把行动、制度、支配和分层联系起来分析\n理想类型是比较工具；行动取向、组织规则与权力分布属于不同分析层次\n行动：理解意义\n目的理性：比较手段与后果。\n价值理性：遵循被认定的价值。\n情感与传统：情绪、习惯也会导向行动。\n制度：形成可预期秩序\n资本核算、产权、合同与雇佣劳动；\n形式合理性看计算和程序，\n实质合理性按价值标准评价结果。\n支配：解释命令何以有效\n传统型、卡里斯玛型、法理型。\n科层制依靠职权、资格、层级和文书；\n提高连续性，也可能强化专业控制。\n分层：区分不同权力来源\n阶级：市场机会与经济处境。\n身份群体：社会荣誉与生活方式。\n政党：争取组织化支配与影响力。\n伦理与积累存在历史联系；“铁笼”揭示理性经营秩序也会反过来约束个人。\n韦伯《经济与社会》《新教伦理与资本主义精神》\nA2"
+    },
+    {
+      "page": 36,
+      "title": "基本收入要有持续财源，公共AI要有实际公共权利",
+      "minutes": 0,
+      "section": "附录  A3",
+      "notes": "本节讨论一种有条件的制度可能性：当AI广泛提高生产能力，同时使部分收入来源从劳动转向资产时，资本主义可以通过公共生产条件和普遍分配进行内部调整。“合理性”指它具有可解释的经济功能、可辨认的制度形式和可能的社会支持，不等于其必然出现、必然优于其他方案或已经获得完整实证验证。\n\n**制度上能够容纳。** 资本主义并不以每项资产都归私人所有为定义。私人企业、雇佣劳动和市场竞争仍居主导时，可以存在公共企业、公共科研、公共财富基金和社会保障。局部公共AI加上普遍收入，是混合所有和分配制度的一种进一步组合。它改变部分生产条件与收益权的归属，却不凭这一变化就自动消除整个资本主义关系。公有AI可以通过公共研发和建设、带股权与回报条件的投资、依法收购等途径形成，无须把全部私人经济先行改造。\n\n**经济上能够回应内生问题。** 若自动化收益主要进入资产所有者，而劳动收入下降且新任务不足，增加供给不一定形成相应消费。UBI把部分收益转为居民可支配收入，公共AI则提供生产和公共服务能力，使分配安排有一定的资产与供给基础。二者分别作用于购买力与生产条件，因此具有互补性，但彼此都不是唯一可行的政策工具。公共服务、缩短工时、社会保险和劳动协商也应纳入同一制度讨论。\n\n**公共供给也可能服务于私人积累。** 对缺少算力或模型的企业，公共AI可以降低进入成本和对垄断供应商的依赖；对国家，它可以提供科研、公共服务及战略能力。把部分收益用于居民收入还可能稳定市场。这些功能解释了为什么某些私人企业和国家行动者可能支持该方案。资本所有者的利益并不统一：技术垄断者可能反对公共竞争，高度依赖廉价劳动者可能反对劳动者退出能力提高。实施仍取决于组织、立法与政治力量，功能上的需要不会自动变成政策。\n\n**公共投入与公共回报可以连接。** 公共科研、基础设施和知识积累为AI提供条件，公共投资由此可以提出取得资产、收益与治理权的政策要求。其具体形式可包括公共模型与算力机构、持有AI及相关产业资产的社会财富基金、带明确回报条款的公共投资。Altman的2021年全民资本收益方案证明改良资本主义的分配主张可以从其内部提出；它本身没有主张所有AI公有化。[R24]\n\n**制度部件已有先例，完整组合仍是推论。** 阿拉斯加证明公共财富收益与广泛居民分配能够长期嵌入市场经济；Apertus证明公共机构能建设开放AI模型与计算基础；英国股权投资和算力支持证明国家资本与私人企业可以共同进入AI产业。[R25][R26][R27] 这些案例分别支持制度兼容性，不证明公有强AI已实现，也不证明其收益足以支付生活水平的UBI。\n\n**财政与资源约束须闭合。** 设P为覆盖人口，b为年度人均支付，F为保护其他公共服务和既定投入后可用于UBI的税收资金，D_AI为扣除运营、研发、设备更新及必要再投资后的公共AI可分配收益，D_other为其他公共财富基金依规则可分配金额。稳定运行至少需要检验：\n\nP × b ≤ F ＋ D_AI ＋ D_other。\n\n这是预算可行性约束，不是效果或最优性证明。同一笔收入不能重复记账，资产估值不等于可支用现金。公共AI若主要以低价提供服务，其直接分红可能有限，社会收益更多体现为公共服务改善或使用者成本下降；不能同时假定服务近乎免费且产生足以支撑全民收入的垄断利润。公共设施短期可能需要净财政投入，持续的支付承诺应有可持续税基和储备。\n\n需求效果也应按净转移判断。若净转移X从高收入群体流向较低收入群体，边际消费倾向分别为c_h和c_l，在价格、其他收入及投资不变的简化条件下，ΔC＝(c_l−c_h)X。只有在c_l大于c_h时，这一渠道才增加当期消费；UBI的总发放额不是X。实际结果还受到劳动供给、进口、投资和供给瓶颈等影响。\n\n**公共名义需要落实为实际权利。** 公共所有不同于开放下载或政府采购；模型、算力、收益权和决策权应分别核实。UBI需要稳定、可执行的资格和支付规则；公共AI需要透明预算、独立审计、劳动者和使用者参与、申诉与问责。依韦伯的分析，专业管理与官僚组织也会形成权力集中，国家持有并不自动等于社会共同支配。[R20]\n\n因此，本文的结论是：UBI加公有强AI具有作为资本主义内部改革出现的合理性。它可以维护需求和社会稳定，也可以增强劳动者的生活保障、议价能力与共同资产权益。究竟主要用于维持既有积累，还是进一步推动生产关系转化，应根据生产条件、收益和决策权的实际变化判断。若未来强AI成为主导生产条件，公共控制的范围和方式将成为判断制度性质的重要问题。\n\n**与视频的对话。** [V3]提出AI公有化与基本收入的组合，[V7]呈现硅谷改革设想与市场、财政和政治之间的张力。本文据此讨论其在现有制度中的形成路径，不沿用“它只能在后资本主义出现”或“它是唯一出路”的断言。[V4]关于AGI叙事的讨论转入本节：未来富足的承诺不能替代当前的财政和权利安排；这一提醒也适用于公共AI方案自身。\n\n预算算例：100万人，每人每月1000元，全年毛支出120亿元。财政评估还须计入税收回收、既有支出安排和公共资产实际净收益，不能直接以资产估值支付。消费示例：其他条件不变，若低收入群体边际消费倾向为0.9、高收入群体为0.5，净转移100单位则消费增加40单位；这不是把UBI总支出乘上一个普遍固定乘数。\n\n补充论证：财政预算用人数P、每月金额b与年度12Pb表示；资金来自税收T和可分配净收益D。公共AI净收益D=经营收入−运维−研发−更新−必要再投资，必须避免同一支出重复扣除。公式为预算框架，不保证净收益为正。税收回收后的净受益和不同家庭福利需要分别测算，不能用UBI毛支出直接代替净再分配。",
+      "refs": [
+        "R24",
+        "R25",
+        "R26",
+        "R27",
+        "R20",
+        "V3",
+        "V7",
+        "V4"
+      ],
+      "layout": "UBI年度预算与公共净收益",
+      "legacy_page": 27,
+      "kind": "appendix",
+      "display_title": "基本收入要有持续财源，公共AI要有实际公共权利",
+      "screen_text": "附录  A3\n基本收入要有持续财源，公共AI要有实际公共权利\n年度预算：12Pb ≤ T＋D；P为人口、b为月金额、T为可用税收、D为可分配净收益\n毛支出与净受益分别核算\n100万人 × 每月1000元 × 12\n＝每年120亿元毛支出。\n再核算税收回收、原有保障的衔接，\n以及不同家庭的实际净受益。\n公共AI净收益的计算\nD＝经营收入−运维−研发−更新−必要再投资\n各扣除项避免重复，D也可能为负。\n低价普惠会减少可分红利润；\n资产估值与融资额不能直接发现金。\n再分配怎样支持消费\nΔC＝(c低−c高)X\n若边际消费倾向分别为0.9和0.5，\n净转移100，在其他条件不变时消费增加40。\n公共所有怎样落实\n资产持有 → 接入规则 → 预算与更新决定\n公开审计 → 劳动者与使用者参与 → 可执行申诉\n现金受益与生产决策权，需要分别落实。\nX为从高收入向低收入群体的净转移；这是一组条件模型，须再检验税基、供给和治理。\n本文条件模型；APFC、OpenResearch、韦伯等资料\nA3"
+    }
+  ],
+  "outline": "基本矛盾及其经济表现 → 投资、消费、出口的应对 → 技术增殖与韦伯的组织解释 → 技术对三条路径的影响 → AI对劳动与控制的重组 → UBI与公有AI的制度回应",
+  "presentation_file": "成品\\科学技术与资本主义基本矛盾-古罗马斗兽场-信息深化与图形重绘版.pptx",
+  "presentation_revision": "2026-10-13 信息深化与图形重绘版 · 逻辑链优化",
+  "build_entry": ".build/dense-layout.mjs",
+  "heading_font_px": 37,
+  "slide_size_px": [
+    1280,
+    720
+  ],
+  "pages_entry": ".build/logic-pages.mjs + .build/dense-pages.mjs + .build/restructure-pages.mjs + .build/information-pages.mjs",
+  "body_font_px_range": [
+    23,
+    26
+  ],
+  "body_slides": 26,
+  "divider_slides": 6,
+  "sections": [
+    "I  基本矛盾与经济表现",
+    "II  投资、消费、出口",
+    "III  技术增殖与理性经营",
+    "IV  新技术的三条作用路径",
+    "V  AI、劳动与能力控制",
+    "VI  UBI与公有AI"
+  ],
+  "density_revision": {
+    "pages": [
+      3,
+      5,
+      6,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      21,
+      22,
+      24,
+      26,
+      27,
+      28,
+      30,
+      31,
+      33,
+      34,
+      35,
+      36
+    ],
+    "body_font_px": "20—23",
+    "heading_font_px": 34,
+    "kept_pages": "封面、章节页及信息已充分的数据页",
+    "main_minutes": 30
+  },
+  "logic_revision": {
+    "date": "2026-10-13",
+    "pages": [
+      2,
+      7,
+      8,
+      12,
+      13,
+      18,
+      19,
+      22,
+      23,
+      28,
+      29,
+      33
+    ],
+    "chapters": [
+      {
+        "page": 2,
+        "title": "共同生产，仍由资本主导",
+        "logic_text": "社会化生产与私人占有构成结构性张力 → 企业按利润预期扩产并压缩成本 → 供给计划与购买力可能失衡 → 当其他支出未能承接产出时，销售困难通过裁员、收入与信用收缩形成反馈。",
+        "bridge": "销售与就业承压，使扩大需求成为政策调整的直接着力点。",
+        "clarification": "社会协作并不导致私人占有，两者构成需要解释的结构关系。生产过剩是这一矛盾的一种经济表现，还须满足需求、竞争与协调等条件；不能由利润存在直接推出每期必然过剩。"
+      },
+      {
+        "page": 8,
+        "title": "扩大需求，仍须协调产能",
+        "logic_text": "需求承压 → 并行调整投资、消费与出口 → 承接产出、支持就业；投资同时形成未来产能，信用消费伴随偿付，出口依赖外部需求，因此当期缓和仍需跨期与全球协调。",
+        "bridge": "需求政策之外，企业也通过技术改造争取利润与市场。",
+        "clarification": "三条路径不是先投资、再消费、后出口的阶段史，也不是三个必然失败的药方。工资保障、再分配、公共购买和金融安排具有不同机制，应分别判断成效与约束。"
+      },
+      {
+        "page": 13,
+        "title": "利润驱动技术，组织落实选择",
+        "logic_text": "马克思的增殖动力分析与韦伯的组织条件分析 → 共同解释企业怎样持续比较成本与预期收益 → 在回报条件满足时采用技术、替代部分人工。超额剩余价值与相对剩余价值是需要分别论证的机制。",
+        "bridge": "企业降本能否形成持续收益，还要经过投资、消费和出口的社会联系。",
+        "clarification": "超额剩余价值不是必然转化为相对剩余价值的前一阶段。后者须经过生活资料价值、劳动力价值与必要劳动的传导。韦伯解释核算、法律、伦理与组织条件，并不接替或推出马克思的价值理论。"
+      },
+      {
+        "page": 19,
+        "title": "技术改变三条路径的收益与风险",
+        "logic_text": "技术进步 → 并行改变投资机会和未来产能、成本价格和购买力、数字交付和市场边界 → 共同接受需求承接与收益分配的检验。技术效果必须分别追踪，不能把三条路径连成因果接力。",
+        "bridge": "AI把同样的盈利与分配机制，进一步带入认知劳动和知识服务。",
+        "clarification": "新产业并不会依次导致商品降价和数字出口。三者是技术在不同经济联系中的作用；扩大能力与改善生活之间仍有价格、收入、组织和权利安排。"
+      },
+      {
+        "page": 23,
+        "title": "AI重组劳动、收入与控制权",
+        "logic_text": "AI进入认知任务 → 劳动侧出现替代、新任务与工时调整，能力侧依赖算力、能源、资金与许可 → 收入分享、资源接入和管理规则共同影响就业、消费与议价。",
+        "bridge": "收入保障与能力接入，成为制度回应的两个着力点。",
+        "clarification": "任务提效不等于同比例失业，成果公开不等于公共控制。就业判断须看需求和工时，公共能力判断须看持续部署资源与实际决策权；算法管理还需要劳动者参与、透明和申诉。"
+      },
+      {
+        "page": 29,
+        "title": "收入保障与公共能力共同回应矛盾",
+        "logic_text": "劳动收入与需求承压 → UBI支持基本购买力；关键AI能力接入受限 → 公有AI扩大公共供给。两项安排的实施需要持续财源、支持联盟和治理，再以生活改善、劳动受益与共同决定权检验改革深度。",
+        "bridge": "生活改善、劳动受益和共同决定权，是检验改革深度的三项标准。",
+        "clarification": "UBI与公有AI是可讨论的组合方案，不是从AI能力直接推出的唯一制度。它们可以缓和资本主义内部冲突；是否改变占有关系，须看投资、使用和收益处置权，而不能只看发钱或模型开放。"
+      }
+    ],
+    "ribbon": [
+      "基本矛盾\n与经济表现",
+      "投资、消费\n与出口",
+      "增殖动力\n韦伯的解释",
+      "技术作用于\n三条路径",
+      "AI重组劳动\n与能力控制",
+      "UBI与\n公有AI"
+    ]
+  },
+  "data_file": ".build/dense-charts.json"
+}

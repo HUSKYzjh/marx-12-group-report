@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-14",
+  "purpose": "组内通过Codex或GitHub协作修改源码",
+  "new_or_updated_files": [
+    "AGENTS.md",
+    "README.md",
+    "CONTRIBUTING.md",
+    ".gitignore",
+    ".gitattributes",
+    ".github/ISSUE_TEMPLATE/change.md",
+    ".github/pull_request_template.md",
+    "协作/分工表.md"
+  ],
+  "source_files_unchanged": {
+    ".build/deduplicate-pptx-media.py": true,
+    ".build/deliver-dense.py": true,
+    ".build/dense-charts.json": true,
+    ".build/dense-content.json": true,
+    ".build/dense-layout.mjs": true,
+    ".build/dense-pages.mjs": true,
+    ".build/information-pages.mjs": true,
+    ".build/logic-content.mjs": true,
+    ".build/logic-pages.mjs": true,
+    ".build/preview_font.py": true,
+    ".build/project-runtime.mjs": true,
+    ".build/project.py": true,
+    ".build/restructure-pages.mjs": true,
+    ".build/review-dense.py": true
+  },
+  "latest_ppt_sha256": "7adb4f62a3b378976024245505f48bb0375a5ed02c7a575fa69d7bd73c0d6220",
+  "latest_ppt_unchanged": true,
+  "all_package_files_visible_to_git": true,
+  "local_caches_and_runtime_config_ignored": true,
+  "original_snapshot_and_zip_preserved": true,
+  "rendering_repeated": false,
+  "rendering_basis": "沿用验收/交接验证.json；14个必要源码及PPT字节未变化",
+  "github_repository_created": false,
+  "uploaded": false,
+  "collaborators_invited": false
+}

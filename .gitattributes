@@ -1,0 +1,8 @@
+# Preserve snapshot bytes; new text files should be UTF-8.
+* -text
+*.pptx binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.zip binary

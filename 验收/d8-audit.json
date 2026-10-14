@@ -1,0 +1,392 @@
+{
+  "file": ".build\\roman-structure-d8\\deliverable\\科学技术与资本主义基本矛盾-古罗马斗兽场-信息深化与图形重绘版.pptx",
+  "sha256": "7adb4f62a3b378976024245505f48bb0375a5ed02c7a575fa69d7bd73c0d6220",
+  "slide_count": 36,
+  "body_slides": 26,
+  "divider_slides": 6,
+  "cover_slides": 1,
+  "appendices": 3,
+  "minutes": 30,
+  "sources_in_notes": true,
+  "native_chart_count": 9,
+  "native_chart_data": {
+    "investment": {
+      "count": 25,
+      "verified_against_saved_data": true,
+      "series_count": 3
+    },
+    "debt": {
+      "count": 24,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "consumption": {
+      "count": 24,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "exports": {
+      "count": 25,
+      "verified_against_saved_data": true,
+      "series_count": 3
+    },
+    "balance": {
+      "count": 3,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "renewables": {
+      "count": 3,
+      "verified_against_saved_data": true,
+      "series_count": 2
+    },
+    "ai_productivity": {
+      "count": 2,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "energy": {
+      "count": 2,
+      "verified_against_saved_data": true,
+      "series_count": 1
+    },
+    "labor_scenario": {
+      "count": 4,
+      "verified_against_saved_data": true,
+      "series_count": 2
+    }
+  },
+  "native_connectors": 83,
+  "tables": 0,
+  "text_fit_estimate_warnings": 0,
+  "body_pages_light": true,
+  "package_validation": "pass",
+  "first_party_import": "pass",
+  "native_powerpoint_tested": false,
+  "per_slide": [
+    {
+      "page": 1,
+      "kind": "cover",
+      "layout": "封面",
+      "text_characters": 76,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 2,
+      "kind": "divider",
+      "layout": "黑色章节页：conditional_chain",
+      "text_characters": 298,
+      "connectors": 3,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 3,
+      "kind": "apple",
+      "layout": "价格构成＋五环节协作网络",
+      "text_characters": 455,
+      "connectors": 3,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 4,
+      "kind": "firms",
+      "layout": "企业博弈＋核算符号释义",
+      "text_characters": 286,
+      "connectors": 2,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 5,
+      "kind": "body",
+      "layout": "实物分配＋收缩回路＋干预环节",
+      "text_characters": 330,
+      "connectors": 6,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 6,
+      "kind": "why",
+      "layout": "供给、分配、信贷汇流",
+      "text_characters": 355,
+      "connectors": 4,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 7,
+      "kind": "question",
+      "layout": "浅色问题提出与评价尺度",
+      "text_characters": 162,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 8,
+      "kind": "divider",
+      "layout": "黑色章节页：three_parallel_paths",
+      "text_characters": 298,
+      "connectors": 6,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 9,
+      "kind": "investment",
+      "layout": "实际投资时间序列＋跨期机制",
+      "text_characters": 294,
+      "connectors": 2,
+      "native_charts": 1,
+      "tables": 0
+    },
+    {
+      "page": 10,
+      "kind": "consumption",
+      "layout": "收入路径＋偿债与消费双图",
+      "text_characters": 337,
+      "connectors": 0,
+      "native_charts": 2,
+      "tables": 0
+    },
+    {
+      "page": 11,
+      "kind": "trade",
+      "layout": "全球出口趋势＋国家净出口对比",
+      "text_characters": 261,
+      "connectors": 0,
+      "native_charts": 2,
+      "tables": 0
+    },
+    {
+      "page": 12,
+      "kind": "body",
+      "layout": "历史政策时间线",
+      "text_characters": 377,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 13,
+      "kind": "divider",
+      "layout": "黑色章节页：complementary_explanations",
+      "text_characters": 299,
+      "connectors": 3,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 14,
+      "kind": "body",
+      "layout": "三阶段价值差重绘",
+      "text_characters": 304,
+      "connectors": 1,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 15,
+      "kind": "body",
+      "layout": "劳动日重绘＋剩余价值的三种机制",
+      "text_characters": 357,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 16,
+      "kind": "body",
+      "layout": "韦伯四支点关系图",
+      "text_characters": 392,
+      "connectors": 4,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 17,
+      "kind": "body",
+      "layout": "目标函数与保障约束",
+      "text_characters": 358,
+      "connectors": 2,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 18,
+      "kind": "variable",
+      "layout": "单位成本堆叠图＋采用阈值",
+      "text_characters": 340,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 19,
+      "kind": "divider",
+      "layout": "黑色章节页：three_parallel_transmissions",
+      "text_characters": 296,
+      "connectors": 6,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 20,
+      "kind": "body",
+      "layout": "投资链与产能分叉",
+      "text_characters": 369,
+      "connectors": 7,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 21,
+      "kind": "body",
+      "layout": "IRENA成对柱图重绘＋价格传导",
+      "text_characters": 360,
+      "connectors": 2,
+      "native_charts": 1,
+      "tables": 0
+    },
+    {
+      "page": 22,
+      "kind": "body",
+      "layout": "数字交易链＋收入分流",
+      "text_characters": 373,
+      "connectors": 2,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 23,
+      "kind": "divider",
+      "layout": "黑色章节页：labor_and_control",
+      "text_characters": 297,
+      "connectors": 4,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 24,
+      "kind": "body",
+      "layout": "AI时间线＋客服提效图",
+      "text_characters": 365,
+      "connectors": 0,
+      "native_charts": 1,
+      "tables": 0
+    },
+    {
+      "page": 25,
+      "kind": "body",
+      "layout": "投资回路＋用电图",
+      "text_characters": 267,
+      "connectors": 4,
+      "native_charts": 1,
+      "tables": 0
+    },
+    {
+      "page": 26,
+      "kind": "body",
+      "layout": "工时敏感性点线图",
+      "text_characters": 340,
+      "connectors": 0,
+      "native_charts": 1,
+      "tables": 0
+    },
+    {
+      "page": 27,
+      "kind": "body",
+      "layout": "开放层次与控制权",
+      "text_characters": 385,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 28,
+      "kind": "body",
+      "layout": "隐性劳动＋算法管理闭环",
+      "text_characters": 418,
+      "connectors": 4,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 29,
+      "kind": "divider",
+      "layout": "黑色章节页：matched_institutional_responses",
+      "text_characters": 312,
+      "connectors": 4,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 30,
+      "kind": "body",
+      "layout": "改革联盟与阻力",
+      "text_characters": 370,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 31,
+      "kind": "body",
+      "layout": "公共能力与资金双回路",
+      "text_characters": 320,
+      "connectors": 10,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 32,
+      "kind": "body",
+      "layout": "制度先例时间线＋现金转移证据",
+      "text_characters": 408,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 33,
+      "kind": "body",
+      "layout": "技术能力经由分配与控制形成不同结果＋三项改革标准",
+      "text_characters": 297,
+      "connectors": 4,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 34,
+      "kind": "appendix",
+      "layout": "统一剩余价值算例",
+      "text_characters": 323,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 35,
+      "kind": "appendix",
+      "layout": "韦伯理论概念关系",
+      "text_characters": 354,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    },
+    {
+      "page": 36,
+      "kind": "appendix",
+      "layout": "UBI年度预算与公共净收益",
+      "text_characters": 444,
+      "connectors": 0,
+      "native_charts": 0,
+      "tables": 0
+    }
+  ]
+}

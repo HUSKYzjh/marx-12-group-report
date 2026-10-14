@@ -1,0 +1,21 @@
+{
+  "bvid": "BV1Xb421b74B",
+  "aid": 1804562478,
+  "cid": 1548785763,
+  "title": "【学院谈】“科学向善”何以可能？从3M年度科学现状洞察报告谈起",
+  "author": "学院派Academia",
+  "author_mid": 96639395,
+  "url": "https://www.bilibili.com/video/BV1Xb421b74B/",
+  "part": "【学院谈】“科学向善”何以可能？从3M年度科学现状洞察报告谈起",
+  "page": 1,
+  "pages_total": 1,
+  "duration": 991,
+  "published_unix": 1716022800,
+  "description": "如3M年度科学现状洞察报告所说，97%的中国人十分信任科学和技术，超过世界平均值。但科学崇拜的背后，我们是否真正理解了科学的内涵？当生态危机和技术异化的阴云日益笼罩，人类还能把握自己的命运吗？让我们以3M报告为起点，重新审视人与自然、人与技术的关系,探寻“科学向善”的可能。",
+  "method": "faster-whisper small CPU int8 batch8 beam5; OpenCC t2s",
+  "status": "machine transcription, not manually verified",
+  "audio_duration": 990.3775,
+  "segments": 37,
+  "last_segment_end": 990.38,
+  "character_count": 5030
+}

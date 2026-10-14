@@ -1,0 +1,12 @@
+{
+  "investment_us_real.json": "https://api.worldbank.org/v2/country/USA/indicator/NE.GDI.FTOT.KD?format=json&date=2000:2024&per_page=100",
+  "investment_us_nominal.json": "https://api.worldbank.org/v2/country/USA/indicator/NE.GDI.FTOT.CD?format=json&date=2000:2024&per_page=100",
+  "investment_cn_real.json": "https://api.worldbank.org/v2/country/CHN/indicator/NE.GDI.FTOT.KD?format=json&date=2000:2024&per_page=100",
+  "exports_world_real.json": "https://api.worldbank.org/v2/country/WLD/indicator/NE.EXP.GNFS.KD?format=json&date=2000:2024&per_page=100",
+  "exports_country_pct.json": "https://api.worldbank.org/v2/country/USA;CHN;DEU/indicator/NE.RSB.GNFS.ZS?format=json&date=2000:2024&per_page=100",
+  "TDSP.csv": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TDSP&cosd=2000-01-01&coed=2015-12-31",
+  "PCEC96.csv": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCEC96&cosd=2005-01-01&coed=2015-12-31",
+  "counterpoint.html": "https://counterpointresearch.com/cn/insights/bom-analysis-iphone-15-pro-max-costs-37-7",
+  "iphone-bom-source.jpeg": "https://static.counterpointresearch.com/statics/content/image/BoM-Analysis-iPhone-15-Pro-Max-Costs-37.7-More-Than-iPhone-14-Pro-Max.jpeg",
+  "iphone-bom-total.png": "https://static.counterpointresearch.com/statics/content/image/bom-final.png"
+}

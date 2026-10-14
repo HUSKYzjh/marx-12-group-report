@@ -1,0 +1,21 @@
+{
+  "bvid": "BV1X5fgBfEFp",
+  "aid": 116102025713617,
+  "cid": 36174103106,
+  "title": "【AI社会学】AGI通用人工智能，正如何成为一种新宗教？",
+  "author": "学院派Academia",
+  "author_mid": 96639395,
+  "url": "https://www.bilibili.com/video/BV1X5fgBfEFp/",
+  "part": "【AI社会学】AGI通用人工智能，正如何成为一种新宗教？",
+  "page": 1,
+  "pages_total": 1,
+  "duration": 2936,
+  "published_unix": 1771576621,
+  "description": "50分钟硬核解析——AGI通用人工智能，正如何成为一种新宗教：\n从负债累累的小镇做题家到世界首富马斯克，为何号称会“消灭工作”、“改变一切”的通用人工智能AGI成为了各阶级人群共同的信仰？AGI的机械降临真的能解决人类社会发展至今的一切问题吗？如果AGI带来的“大变革时刻”永远不会到来，幻灭后的人类将何去何从？",
+  "method": "faster-whisper small CPU int8 batch8 beam5; OpenCC t2s",
+  "status": "machine transcription, not manually verified",
+  "audio_duration": 2935.9775,
+  "segments": 107,
+  "last_segment_end": 2935.79,
+  "character_count": 14872
+}

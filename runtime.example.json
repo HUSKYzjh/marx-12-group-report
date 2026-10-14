@@ -1,0 +1,7 @@
+{
+  "dependencies": "填写load_workspace_dependencies返回的dependencies目录",
+  "helpers": "填写presentations/版本号/skills/presentations/container_tools目录",
+  "node": "可选：Node可执行文件的绝对路径",
+  "python": "可选：包含Pillow的Python可执行文件的绝对路径",
+  "node_modules": "可选：包含@oai/artifact-tool与@napi-rs/canvas的node_modules目录"
+}

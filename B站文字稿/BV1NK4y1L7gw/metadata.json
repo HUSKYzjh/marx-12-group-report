@@ -1,0 +1,19 @@
+{
+  "title": "【游戏社会学】赛博朋克是资本主义的终极形态吗？控制论革命的残酷真相",
+  "author": "学院派Academia",
+  "url": "https://www.bilibili.com/video/BV1NK4y1L7gw/",
+  "bvid": "BV1NK4y1L7gw",
+  "cid": 265621273,
+  "part": "音频修正版",
+  "duration": 1933,
+  "method": "faster-whisper small CPU int8 batch8 beam5; OpenCC t2s",
+  "audio_duration": 1932.8853125,
+  "segments": 70,
+  "last_segment_end": 1923.22,
+  "status": "machine transcription, not manually verified",
+  "published_unix": 1607735708,
+  "aid": 885560009,
+  "author_mid": 96639395,
+  "page": 1,
+  "pages_total": 2
+}
