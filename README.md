@@ -2,7 +2,7 @@
 
 **科学技术是缓和还是加剧了资本主义基本矛盾？**
 
-结合当代科技发展与资本主义新变化的组内汇报项目。仓库采用私有协作方式，组员通过分支与PR修改源码。
+结合当代科技发展与资本主义新变化的组内汇报项目。仓库已公开，任何人均可通过链接查看、克隆和下载，无需先接受邀请。组员通过分支与PR修改源码；直接向本仓库推送分支仍需协作者权限。
 
 [协作方法](CONTRIBUTING.md) · [章节分工](协作/分工表.md) · [修改任务](https://github.com/HUSKYzjh/zhongma-12-group-report/issues) · [成品与项目包](https://github.com/HUSKYzjh/zhongma-12-group-report/releases)
 
