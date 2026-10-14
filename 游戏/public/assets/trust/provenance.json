@@ -1,0 +1,38 @@
+[
+  {
+    "file": "peep_characters.png",
+    "original": "assets/tournament/peep_characters.png",
+    "commit": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "git_blob_sha": "6fe48f8b700569876c6699451bf759f7d0115ecd",
+    "sha256": "72ac77f02afc0c310bac7b54a73ba253e6d33c39a15e1863b11e55a59f867832",
+    "license": "CC0-1.0",
+    "creator": "Nicky Case"
+  },
+  {
+    "file": "iterated_machine.png",
+    "original": "assets/iterated/iterated_machine.png",
+    "commit": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "git_blob_sha": "dcef4c201540c057553d4c387e609a5ccbaae5b9",
+    "sha256": "02a81f0c3362587f44dcb35a53e03daa6ce2594986fd43df5d3b5cca1998e7c5",
+    "license": "CC0-1.0",
+    "creator": "Nicky Case"
+  },
+  {
+    "file": "iterated_coin.png",
+    "original": "assets/iterated/iterated_coin.png",
+    "commit": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "git_blob_sha": "21dfc1611746c8840e6a80fe5f154f410c285b0f",
+    "sha256": "67ac157c701c8bc24ce56347400a2d458329e0e22e1cb74e2a4de0ffe24ec7cf",
+    "license": "CC0-1.0",
+    "creator": "Nicky Case"
+  },
+  {
+    "file": "LICENSE.txt",
+    "original": "LICENSE",
+    "commit": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "git_blob_sha": "3bbbc1ee92562e6a2eebfc6a366f4309d06c7d54",
+    "sha256": "5537d4d10b76b81b6e8dfd8b644480a4b1efa332fbb0cdb61126c5be781ef7b4",
+    "license": "CC0-1.0",
+    "creator": "Nicky Case"
+  }
+]

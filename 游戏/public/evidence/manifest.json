@@ -1,0 +1,41 @@
+[
+  {
+    "file": "ai-paper.png",
+    "source_url": "https://arxiv.org/pdf/2304.11771v2",
+    "source_sha256": "146dcc7459824f0f1fe4a1f9ac7e8be06ee098b8b34e686a75131b77e42ce951",
+    "pdf_page": 1,
+    "crop_points": [
+      100,
+      100,
+      510,
+      244
+    ],
+    "note": "PDF第1页，标题、作者与机构；2024年作者稿，非2025年期刊版截图"
+  },
+  {
+    "file": "cloud-report.png",
+    "source_url": "https://assets.publishing.service.gov.uk/media/688b20e6ff8c05468cb7b120/summary_of_final_decision.pdf",
+    "source_sha256": "98b48c4874420f6fa8a5066ac79ea626cde0409af7dc08c306a2a0dfa3b59fe0",
+    "pdf_page": 1,
+    "crop_points": [
+      75,
+      48,
+      550,
+      316
+    ],
+    "note": "PDF第1页，2025-07-31最终决定摘要封面"
+  },
+  {
+    "file": "board-paper.png",
+    "source_url": "https://eml.berkeley.edu/~schoefer/schoefer_files/Labor_in_the_Boardroom_Final_QJE_Forthcoming.pdf",
+    "source_sha256": "892a3ed95decfa7f6c1c75e6ffc5530950762d1212a7fe8d83fa7cc0cdec08be",
+    "pdf_page": 1,
+    "crop_points": [
+      150,
+      85,
+      462,
+      264
+    ],
+    "note": "PDF第1页，标题、作者、2020-10-20稿件日期；研究2021年正式发表"
+  }
+]

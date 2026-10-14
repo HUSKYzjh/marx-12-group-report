@@ -1,0 +1,2833 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-14",
+  "scope": "资源整理，不是美术制作完成或发布批准",
+  "baseDirectory": "..",
+  "families": [
+    {
+      "id": "A01",
+      "name": "人物与身份",
+      "status": "adapt",
+      "priority": "P0",
+      "format": "PNG图集＋独立文字标签",
+      "size": "96×112；小型48×56",
+      "existingPaths": [
+        "public/assets/trust/peep_characters.png"
+      ],
+      "states": [
+        "静止",
+        "被选中",
+        "焦点",
+        "历史影像"
+      ],
+      "brief": "仅用0、2两位劳动者；所有者为可替换中性身份节点，帽型不映射善恶。身体保持比例，不制作受伤、哭泣或失业帧。",
+      "productionStatus": "prototype-original-reuse",
+      "usedBy": [
+        "p01-e01",
+        "p03-e05",
+        "p07-e05",
+        "p26-e02",
+        "p35-e01"
+      ],
+      "productionOutputs": [
+        "public/assets/workshop-v6/trust-kit.mjs",
+        "public/assets/workshop-v6/trust-kit.css",
+        "public/assets/workshop-v6/index.html"
+      ],
+      "productionNote": "原作iterated_peep身体、眼睛、帽子分层，静止/眨眼；未映射原策略性格。"
+    },
+    {
+      "id": "A02",
+      "name": "旧机与新机",
+      "status": "adapt",
+      "priority": "P0",
+      "format": "两张独立透明PNG＋显示裁片＋外置文字",
+      "size": "源图均1774×887；响应式等高显示",
+      "existingPaths": [
+        "public/assets/trust/iterated_machine.png"
+      ],
+      "states": [
+        "旧机",
+        "新机",
+        "只读基准",
+        "预览"
+      ],
+      "brief": "旧机突出手摇飞轮和外露连杆，新机突出封闭电机与传送带；不靠倍数标签区分，不使用AI脑形。",
+      "productionStatus": "prototype-generated-machines",
+      "usedBy": [
+        "p01-e02",
+        "p02-e01",
+        "p03-e01",
+        "p18-e01",
+        "p26-e05",
+        "p35-e01"
+      ],
+      "productionOutputs": [
+        "public/assets/workshop-v6/trust-kit.mjs",
+        "public/assets/workshop-v6/trust-kit.css",
+        "public/assets/workshop-v6/index.html"
+      ],
+      "generatedAssets": [
+        "public/assets/workshop-v6/machine-old-v1.png",
+        "public/assets/workshop-v6/machine-new-v1.png"
+      ],
+      "productionNote": "内置图像生成工具新绘两张机器；当前样张已接入，原作机器PNG保留未改写。过程与提示词见07_新旧机器绘制.md。"
+    },
+    {
+      "id": "A03",
+      "name": "工厂组合与产品托盘",
+      "status": "adapt",
+      "priority": "P0",
+      "format": "HTML/CSS＋SVG",
+      "size": "主场景960×420；手机流式",
+      "existingPaths": [
+        "components/factory-story.tsx"
+      ],
+      "states": [
+        "工作",
+        "产品待售",
+        "已售",
+        "库存",
+        "冻结"
+      ],
+      "brief": "FactoryStage和MiniFactory只作拆分参考；不继承旧版人物加入即增产逻辑。产品方块带件数，不使用金币替代产品。",
+      "productionStatus": "prototype-original-reuse",
+      "usedBy": [
+        "p01-e05",
+        "p02-e05",
+        "p04-e01",
+        "p11-e01",
+        "p11-e04",
+        "p13-e05",
+        "p14-e03",
+        "p16-e01",
+        "p21-e01",
+        "p31-e01",
+        "p35-e01"
+      ],
+      "productionOutputs": [
+        "public/assets/workshop-v6/trust-kit.mjs",
+        "public/assets/workshop-v6/trust-kit.css",
+        "public/assets/workshop-v6/index.html"
+      ],
+      "productionNote": "工厂组合与原作计分框的显示裁片；裁片用作抽象产品标记，不称原作产品托盘。"
+    },
+    {
+      "id": "A04",
+      "name": "货币筹码与收入袋",
+      "status": "adapt",
+      "priority": "P0",
+      "format": "PNG金币＋HTML数值／SVG袋",
+      "size": "币24×24；收入袋112×96",
+      "existingPaths": [
+        "public/assets/trust/iterated_coin.png"
+      ],
+      "states": [
+        "空袋",
+        "分配预览",
+        "到账",
+        "撤销",
+        "负值"
+      ],
+      "brief": "仅表示货币；小时、能力与人次不用金币。总额用文本兜底，负值不画负数枚硬币。",
+      "productionStatus": "prototype-original-reuse",
+      "usedBy": [
+        "p02-e03",
+        "p03-e02",
+        "p03-e03",
+        "p04-e02",
+        "p15-e04",
+        "p16-e04",
+        "p17-e03",
+        "p17-e04",
+        "p19-e02"
+      ],
+      "productionOutputs": [
+        "public/assets/workshop-v6/trust-kit.mjs",
+        "public/assets/workshop-v6/trust-kit.css",
+        "public/assets/workshop-v6/index.html"
+      ],
+      "productionNote": "原作金币组成收入区；已撤下自绘收入袋。收入袋独立插画仍待补，不能将组件当其完成。"
+    },
+    {
+      "id": "A05",
+      "name": "关系线系统",
+      "status": "new",
+      "priority": "P0",
+      "format": "原作PNG线条与筹码＋CSS关系符号＋可点击图例",
+      "size": "52×44符号；响应式横向／纵向关系",
+      "existingPaths": [],
+      "states": [
+        "协作",
+        "产权",
+        "管理",
+        "付款",
+        "待验证"
+      ],
+      "brief": "协作用互扣圆环与双端圆点；产权用钥匙与方端虚线；控制用调节杆与单向箭头；付款用金币与点线箭头；未知保留问号。不能靠颜色或符号单独判定所有制。",
+      "productionStatus": "prototype-semantic-relations",
+      "usedBy": [
+        "p01-e02",
+        "p01-e03",
+        "p01-e04",
+        "p04-e04",
+        "p10-e05",
+        "p11-e03",
+        "p18-e05",
+        "p21-e03",
+        "p25-e04",
+        "p25-e05",
+        "p26-e04",
+        "p27-e02",
+        "p27-e05",
+        "p29-e02",
+        "p34-e05"
+      ],
+      "productionOutputs": [
+        "public/assets/workshop-v6/trust-kit.mjs",
+        "public/assets/workshop-v6/trust-kit.css",
+        "public/assets/workshop-v6/index.html"
+      ],
+      "relationStylesheet": "public/assets/workshop-v6/relation-marks.css",
+      "sceneIntegration": [
+        "public/assets/workshop-v6/factory-relations.mjs",
+        "public/assets/workshop-v6/factory-relations.css",
+        "美术资源/verify-factory-relations.mjs"
+      ],
+      "productionNote": "四种关系已接入同一工厂场景，两人和机器常驻；产权连设备，控制和付款分别连两位劳动者。付款显示样张模型的每人工资，16种组合通过本地与窄屏交互校验。原作PNG未改写，尚非正式游戏全流程。"
+    },
+    {
+      "id": "A06",
+      "name": "社会协作节点",
+      "status": "new",
+      "priority": "P0",
+      "format": "SVG节点图标＋HTML名称",
+      "size": "图标48×48；节点96×72",
+      "existingPaths": [],
+      "states": [
+        "供应",
+        "科研",
+        "运输",
+        "公共利益",
+        "可连接"
+      ],
+      "brief": "用箱、实验器具、搬运、公共空间等中性图形；不拿真实机构logo代替权利证据。",
+      "productionStatus": "prototype-original-reuse",
+      "usedBy": [
+        "p01-e03",
+        "p18-e05",
+        "p21-e04",
+        "p27-e02",
+        "p27-e04",
+        "p29-e02"
+      ],
+      "productionOutputs": [
+        "public/assets/workshop-v6/trust-kit.mjs",
+        "public/assets/workshop-v6/trust-kit.css",
+        "public/assets/workshop-v6/index.html"
+      ],
+      "productionNote": "原作中性人物＋供应/科研/运输标签；具体题材图标仍待补。"
+    },
+    {
+      "id": "A07",
+      "name": "时间尺与空档",
+      "status": "new",
+      "priority": "P0",
+      "format": "SVG刻度＋HTML交互把手",
+      "size": "480×72；手机纵向或折行",
+      "existingPaths": [],
+      "states": [
+        "合同4/8小时",
+        "任务6/8小时",
+        "空档",
+        "历史影线"
+      ],
+      "brief": "合同与任务各有单位和名称；空白本身就是空档，不加闲暇奖励星。",
+      "productionStatus": "prototype-original-reuse",
+      "usedBy": [
+        "p02-e02",
+        "p02-e04",
+        "p03-e04",
+        "p03-e05",
+        "p05-e04",
+        "p06-e05",
+        "p07-e02",
+        "p07-e03",
+        "p08-e03",
+        "p08-e05",
+        "p09-e05",
+        "p12-e01",
+        "p16-e04",
+        "p17-e04",
+        "p18-e02",
+        "p18-e03",
+        "p22-e05",
+        "p24-e01",
+        "p24-e03"
+      ],
+      "productionOutputs": [
+        "public/assets/workshop-v6/trust-kit.mjs",
+        "public/assets/workshop-v6/trust-kit.css",
+        "public/assets/workshop-v6/index.html"
+      ],
+      "productionNote": "原作滑条和把手＋中文刻度；任务/合同在文字层区分。"
+    },
+    {
+      "id": "A08",
+      "name": "任务块",
+      "status": "new",
+      "priority": "P1",
+      "format": "SVG/HTML模块块",
+      "size": "单块最小96×56",
+      "existingPaths": [],
+      "states": [
+        "加工",
+        "检验",
+        "搬运",
+        "新增复检",
+        "生成",
+        "核验",
+        "返工"
+      ],
+      "brief": "所有文字外置；前20幕不出现AI任务变体。现检验与新增复检有不同名称。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p05-e02",
+        "p06-e01",
+        "p06-e02",
+        "p06-e03",
+        "p07-e01",
+        "p07-e04"
+      ]
+    },
+    {
+      "id": "A09",
+      "name": "条件与政策卡",
+      "status": "adapt",
+      "priority": "P0",
+      "format": "HTML/CSS卡＋可选小SVG",
+      "size": "160×96起，自适应文字",
+      "existingPaths": [
+        "components/factory-story.tsx"
+      ],
+      "states": [
+        "中性",
+        "选中",
+        "预览",
+        "已应用",
+        "未知"
+      ],
+      "brief": "复用卡片布局，不沿用旧政策模型。卡不盖住成本、条件或来源，不能一套绿卡代表正确政策。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p01-e04",
+        "p05-e01",
+        "p07-e05",
+        "p12-e02",
+        "p12-e04",
+        "p15-e02",
+        "p15-e03",
+        "p16-e05",
+        "p17-e02",
+        "p18-e01",
+        "p20-e03",
+        "p20-e04",
+        "p26-e05",
+        "p30-e05",
+        "p31-e03",
+        "p35-e04"
+      ]
+    },
+    {
+      "id": "A10",
+      "name": "插槽、门与阈值",
+      "status": "new",
+      "priority": "P0",
+      "format": "SVG框＋原生按钮等价操作",
+      "size": "目标至少44×44；常用112×64",
+      "existingPaths": [],
+      "states": [
+        "合法目标",
+        "不适用",
+        "瓶颈",
+        "已放置",
+        "取消"
+      ],
+      "brief": "用边框/端点表示可接关系；错误只给说明，不爆炸、不闪烁惩罚。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p05-e02",
+        "p05-e03",
+        "p08-e02",
+        "p14-e02",
+        "p23-e04",
+        "p25-e02",
+        "p32-e05",
+        "p34-e02",
+        "p34-e03"
+      ]
+    },
+    {
+      "id": "A11",
+      "name": "预测、实际与状态标记",
+      "status": "new",
+      "priority": "P0",
+      "format": "SVG小标＋HTML短标签",
+      "size": "视觉16–24；点击区至少44",
+      "existingPaths": [],
+      "states": [
+        "空心预测",
+        "实心实际",
+        "选中",
+        "过期",
+        "示范"
+      ],
+      "brief": "不能只靠颜色；预测准确也有反馈。过期不抹掉当时历史。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p02-e02",
+        "p02-e03",
+        "p05-e05",
+        "p12-e03",
+        "p15-e05",
+        "p18-e04",
+        "p19-e05",
+        "p23-e05",
+        "p25-e05",
+        "p29-e05",
+        "p35-e05"
+      ]
+    },
+    {
+      "id": "A12",
+      "name": "对照窗与观察透镜",
+      "status": "new",
+      "priority": "P0",
+      "format": "HTML叠层＋SVG边界",
+      "size": "桌面双栏；手机前后纵列",
+      "existingPaths": [],
+      "states": [
+        "局部/完整",
+        "前后",
+        "事实/教学",
+        "未覆盖"
+      ],
+      "brief": "同一单位才共轴；窗口开关不改经济状态；基准影线与真实记录明确区分。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p02-e05",
+        "p03-e01",
+        "p04-e03",
+        "p06-e04",
+        "p06-e05",
+        "p07-e02",
+        "p09-e04",
+        "p12-e05",
+        "p13-e01",
+        "p13-e03",
+        "p14-e04",
+        "p15-e01",
+        "p15-e05",
+        "p16-e02",
+        "p16-e03",
+        "p17-e05",
+        "p19-e03",
+        "p20-e05",
+        "p22-e05",
+        "p26-e01",
+        "p28-e04",
+        "p31-e02",
+        "p31-e05",
+        "p32-e03",
+        "p33-e04"
+      ]
+    },
+    {
+      "id": "A13",
+      "name": "时间轴与历史轨",
+      "status": "new",
+      "priority": "P1",
+      "format": "SVG线＋HTML节点",
+      "size": "桌面640×140；手机纵向",
+      "existingPaths": [],
+      "states": [
+        "两期",
+        "三期",
+        "2007—2009",
+        "双历史轨"
+      ],
+      "brief": "线性先后不等于因果箭头；真实日期不是玩家可拖动改写的事实。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p08-e04",
+        "p12-e03",
+        "p17-e01",
+        "p20-e01",
+        "p29-e03",
+        "p29-e04",
+        "p31-e02",
+        "p31-e04"
+      ]
+    },
+    {
+      "id": "A14",
+      "name": "账本与分配盘",
+      "status": "adapt",
+      "priority": "P0",
+      "format": "HTML表＋SVG托盘",
+      "size": "桌面560×220；手机分块",
+      "existingPaths": [
+        "components/factory-story.tsx"
+      ],
+      "states": [
+        "收付展开",
+        "物量层",
+        "会计层",
+        "理论层"
+      ],
+      "brief": "Ledger是样式候选；不沿用旧公式。价值层不出现自动从利润换算的新价值。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p03-e02",
+        "p04-e02",
+        "p11-e05",
+        "p12-e04",
+        "p13-e04",
+        "p21-e01",
+        "p22-e03",
+        "p22-e04",
+        "p26-e01"
+      ]
+    },
+    {
+      "id": "A15",
+      "name": "统计群体与样本外区域",
+      "status": "new",
+      "priority": "P1",
+      "format": "SVG人群分组＋HTML计数",
+      "size": "桌面600×220；手机分组纵列",
+      "existingPaths": [],
+      "states": [
+        "在样本",
+        "退出样本",
+        "未覆盖",
+        "分母改变"
+      ],
+      "brief": "使用中性简化轮廓而非放大原作8个人冒充100种个体；退出者保持可见，不默认收入零。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p09-e01",
+        "p09-e02",
+        "p09-e03",
+        "p09-e04",
+        "p27-e03",
+        "p28-e05"
+      ]
+    },
+    {
+      "id": "A16",
+      "name": "流量池、闸门与出口",
+      "status": "adapt",
+      "priority": "P1",
+      "format": "SVG流图＋原生控件",
+      "size": "桌面600×240；手机纵向",
+      "existingPaths": [
+        "components/playful-scenes.tsx"
+      ],
+      "states": [
+        "能力池",
+        "收入分流",
+        "消费",
+        "储蓄",
+        "辅导"
+      ],
+      "brief": "SkillFlow仅参考流图布局；能力、人数和资金单位不能混用，数据全部由新契约驱动。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p08-e01",
+        "p08-e02",
+        "p10-e01",
+        "p10-e02",
+        "p10-e03",
+        "p10-e05"
+      ]
+    },
+    {
+      "id": "A17",
+      "name": "订单市场与双厂对照",
+      "status": "adapt",
+      "priority": "P1",
+      "format": "HTML格子＋SVG配对路径",
+      "size": "桌面720×280；手机分区",
+      "existingPaths": [
+        "components/factory-story.tsx"
+      ],
+      "states": [
+        "订单24/32",
+        "两轮封存",
+        "库存",
+        "配对"
+      ],
+      "brief": "MiniFactory等仅作构图参考；需要、订单、产品三个对象分形状，不用闪红代表全社会危机。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p10-e04",
+        "p11-e01",
+        "p11-e02",
+        "p11-e03",
+        "p12-e01",
+        "p13-e01",
+        "p13-e02",
+        "p14-e01",
+        "p14-e02",
+        "p15-e01",
+        "p15-e04",
+        "p16-e02",
+        "p16-e03"
+      ]
+    },
+    {
+      "id": "A18",
+      "name": "资产负债与到期条",
+      "status": "new",
+      "priority": "P1",
+      "format": "HTML表／SVG堆叠",
+      "size": "桌面560×240；手机上下栏",
+      "existingPaths": [],
+      "states": [
+        "资产100/94/88",
+        "现金",
+        "到期",
+        "借款",
+        "净资产"
+      ],
+      "brief": "现金属于资产，不再叠到资产总额之外；透支不靠把条长画成绝对值遮掉符号。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p19-e01",
+        "p19-e02"
+      ]
+    },
+    {
+      "id": "A19",
+      "name": "逐笔付款链与缓冲",
+      "status": "new",
+      "priority": "P1",
+      "format": "SVG节点路径＋HTML余额",
+      "size": "桌面640×200；手机纵向",
+      "existingPaths": [],
+      "states": [
+        "待支付",
+        "已支付",
+        "延迟",
+        "缓冲奏效",
+        "未付承诺"
+      ],
+      "brief": "流水箭头指示模型里的实际支付，宏观衰退不由动画自动生成；暂停动画可读前后帧。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p19-e04",
+        "p19-e05"
+      ]
+    },
+    {
+      "id": "A20",
+      "name": "AI排班与权限",
+      "status": "new",
+      "priority": "P2",
+      "format": "HTML排班表＋SVG权限端口",
+      "size": "桌面560×260；手机纵向",
+      "existingPaths": [],
+      "states": [
+        "草案",
+        "人工审核",
+        "授权",
+        "撤回",
+        "申诉"
+      ],
+      "brief": "首现P21；不画万能机器人或给出伪造AI性能分；草案与执行状态分开。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p21-e02",
+        "p21-e03",
+        "p21-e04"
+      ]
+    },
+    {
+      "id": "A21",
+      "name": "云服务与迁移包",
+      "status": "new",
+      "priority": "P2",
+      "format": "SVG服务盒／接口＋HTML账单",
+      "size": "服务盒128×96；迁移包64×64",
+      "existingPaths": [],
+      "states": [
+        "留用",
+        "迁移",
+        "接口开放",
+        "期限对照"
+      ],
+      "brief": "使用无商标基础设施图形，低单价和总成本分列；锁图标只标实际受限条件。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p22-e01",
+        "p22-e02"
+      ]
+    },
+    {
+      "id": "A22",
+      "name": "服务可及性瓶颈",
+      "status": "new",
+      "priority": "P2",
+      "format": "SVG四门＋HTML计数",
+      "size": "桌面640×220；手机四层",
+      "existingPaths": [],
+      "states": [
+        "需求",
+        "制造",
+        "临床",
+        "预算",
+        "单独/组合放宽"
+      ],
+      "brief": "服务上界不是治愈人数；不用患者悲惨照片或虚构医疗过程。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p23-e03",
+        "p23-e04",
+        "p23-e05"
+      ]
+    },
+    {
+      "id": "A23",
+      "name": "生态单位、规模与责任边界",
+      "status": "adapt",
+      "priority": "P2",
+      "format": "SVG点阵／边界＋HTML标签",
+      "size": "桌面600×240；手机分段",
+      "existingPaths": [
+        "components/playful-scenes.tsx"
+      ],
+      "states": [
+        "单位下降",
+        "规模增加",
+        "总量",
+        "责任内/外"
+      ],
+      "brief": "BurdenDots只作图形参考；三个指标独立，面积计量需校准，规模变化不画成自动反弹因果。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p24-e01",
+        "p24-e02",
+        "p24-e03",
+        "p24-e04"
+      ]
+    },
+    {
+      "id": "A24",
+      "name": "公共预算与负担追踪",
+      "status": "new",
+      "priority": "P2",
+      "format": "HTML三槽＋SVG数量块",
+      "size": "桌面540×220；手机纵向",
+      "existingPaths": [],
+      "states": [
+        "预算100",
+        "用途调整",
+        "法定付款方",
+        "未知最终负担"
+      ],
+      "brief": "不用金币雨表现政策成功；每块面额外置，最终负担未知必须留空且标未知。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p25-e01",
+        "p25-e02",
+        "p25-e03"
+      ]
+    },
+    {
+      "id": "A25",
+      "name": "议事席位与参与结构",
+      "status": "new",
+      "priority": "P2",
+      "format": "SVG座位／桌＋HTML名称",
+      "size": "桌面520×260；手机分层",
+      "existingPaths": [],
+      "states": [
+        "席位",
+        "提案",
+        "协商",
+        "监事会",
+        "职工委员会"
+      ],
+      "brief": "有席位不等于所有权或多数票；德国两类结构分开，不画成同一圆桌。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p26-e02",
+        "p26-e03",
+        "p28-e02",
+        "p28-e03"
+      ]
+    },
+    {
+      "id": "A26",
+      "name": "范围框与制度层级",
+      "status": "new",
+      "priority": "P2",
+      "format": "SVG范围＋HTML分层",
+      "size": "桌面640×320；手机垂直层",
+      "existingPaths": [],
+      "states": [
+        "企业内/社会",
+        "四制度层",
+        "理论覆层"
+      ],
+      "brief": "中国与资本主义国家使用明确文字语境，不靠红蓝阵营或旗帜颜色判好坏；社会共同支配不是所有图标变绿。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p09-e03",
+        "p20-e02",
+        "p24-e04",
+        "p27-e01",
+        "p27-e05",
+        "p28-e05",
+        "p30-e01",
+        "p30-e02",
+        "p30-e03",
+        "p30-e04",
+        "p35-e03"
+      ]
+    },
+    {
+      "id": "A27",
+      "name": "来源与研究证据卡",
+      "status": "adapt",
+      "priority": "P1",
+      "format": "HTML语义卡＋可选现有PNG",
+      "size": "标题卡320×140；截图按原比例",
+      "existingPaths": [
+        "public/evidence/manifest.json"
+      ],
+      "states": [
+        "H/T/E/D",
+        "国别",
+        "时期",
+        "样本",
+        "方法",
+        "未核验"
+      ],
+      "brief": "来源照片不是装饰底纹；截图只用于识别，主要指标用可读文本；缺截图可用真实来源文字卡而非生成伪论文。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p20-e03",
+        "p21-e05",
+        "p23-e01",
+        "p24-e05",
+        "p28-e01",
+        "p28-e04",
+        "p29-e01",
+        "p29-e03",
+        "p29-e05",
+        "p30-e05",
+        "p31-e03",
+        "p31-e05",
+        "p32-e01",
+        "p32-e02",
+        "p32-e03",
+        "p32-e04",
+        "p32-e05",
+        "p35-e05"
+      ]
+    },
+    {
+      "id": "A28",
+      "name": "冻结数据与统计图",
+      "status": "new",
+      "priority": "P2",
+      "format": "SVG图表＋HTML数据表",
+      "size": "桌面640×320；手机分图",
+      "existingPaths": [],
+      "states": [
+        "共同100基线",
+        "季度/年均",
+        "两序列",
+        "对数分解"
+      ],
+      "brief": "按冻结数据重绘而非手画曲线；public/evidence/bls-recalculation.png仅历史参考，不作为交互图的权威数据。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p29-e04",
+        "p33-e02",
+        "p33-e03",
+        "p33-e04",
+        "p33-e05"
+      ]
+    },
+    {
+      "id": "A29",
+      "name": "论证链与回扣轨迹",
+      "status": "new",
+      "priority": "P2",
+      "format": "SVG关系＋HTML卡",
+      "size": "桌面640×280；手机纵向",
+      "existingPaths": [],
+      "states": [
+        "支持",
+        "挑战",
+        "待证",
+        "示范",
+        "有效/过期经历"
+      ],
+      "brief": "引用observationId，不另存经济副本；理论层与体验层分栏，不给政治观点正确率。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p34-e01",
+        "p34-e02",
+        "p34-e03",
+        "p34-e05",
+        "p35-e02",
+        "p35-e04"
+      ]
+    },
+    {
+      "id": "A30",
+      "name": "身份条与模型切换提示",
+      "status": "new",
+      "priority": "P0",
+      "format": "HTML文字＋SVG小标",
+      "size": "整行自适应；最小正文14px",
+      "existingPaths": [],
+      "states": [
+        "虚构工厂",
+        "独立放大镜",
+        "现实案例",
+        "冻结日期"
+      ],
+      "brief": "持续显示关键单位、模型身份、国家/时期；不以背景同色暗示模型和现实同一事实。",
+      "productionStatus": "not-produced-for-v6",
+      "usedBy": [
+        "p05-e05",
+        "p11-e05",
+        "p14-e05",
+        "p16-e05",
+        "p19-e03",
+        "p21-e05",
+        "p23-e01",
+        "p23-e02",
+        "p28-e01",
+        "p29-e01",
+        "p31-e04",
+        "p32-e02",
+        "p33-e01",
+        "p34-e04"
+      ]
+    },
+    {
+      "id": "A31",
+      "name": "导航、手势与阅读控件",
+      "status": "adapt",
+      "priority": "P0",
+      "format": "原生HTML控件＋CSS焦点",
+      "size": "点击区至少44×44",
+      "existingPaths": [
+        "components/ui/button.tsx"
+      ],
+      "states": [
+        "默认",
+        "焦点",
+        "选中",
+        "禁用原因",
+        "撤销",
+        "返回",
+        "展开"
+      ],
+      "brief": "沿用系统字体，不将中文烘焙进图片；拖动提供点选/键盘替代，button.png备用图不作为按钮正文。",
+      "productionStatus": "prototype-original-reuse",
+      "usedBy": [
+        "p04-e05",
+        "p23-e02"
+      ],
+      "productionOutputs": [
+        "public/assets/workshop-v6/trust-kit.mjs",
+        "public/assets/workshop-v6/trust-kit.css",
+        "public/assets/workshop-v6/index.html"
+      ],
+      "productionNote": "原作三态按钮＋原生HTML按钮语义；未引入原游戏代码、音效和字体。"
+    }
+  ],
+  "elements": [
+    {
+      "id": "p01-e01",
+      "name": "两名劳动者",
+      "duty": "固定工位，保留身份而不标效率排名",
+      "source": "重构方案/逐幕内容/P01_共同生产.md",
+      "familyIds": [
+        "A01"
+      ]
+    },
+    {
+      "id": "p01-e02",
+      "name": "旧机器",
+      "duty": "显示8件产出，带产权线接口",
+      "source": "重构方案/逐幕内容/P01_共同生产.md",
+      "familyIds": [
+        "A02",
+        "A05"
+      ]
+    },
+    {
+      "id": "p01-e03",
+      "name": "协作节点",
+      "duty": "供应、科研、运输分别可连接",
+      "source": "重构方案/逐幕内容/P01_共同生产.md",
+      "familyIds": [
+        "A06",
+        "A05"
+      ]
+    },
+    {
+      "id": "p01-e04",
+      "name": "所有者标签",
+      "duty": "只连产权线",
+      "source": "重构方案/逐幕内容/P01_共同生产.md",
+      "familyIds": [
+        "A09",
+        "A05"
+      ]
+    },
+    {
+      "id": "p01-e05",
+      "name": "产品托盘",
+      "duty": "只读，避免连线增加产品",
+      "source": "重构方案/逐幕内容/P01_共同生产.md",
+      "familyIds": [
+        "A03"
+      ]
+    },
+    {
+      "id": "p02-e01",
+      "name": "可替换机器",
+      "duty": "旧／新两个离散状态",
+      "source": "重构方案/逐幕内容/P02_机器与合同.md",
+      "familyIds": [
+        "A02"
+      ]
+    },
+    {
+      "id": "p02-e02",
+      "name": "工资预测标记",
+      "duty": "空心且注明预测",
+      "source": "重构方案/逐幕内容/P02_机器与合同.md",
+      "familyIds": [
+        "A11",
+        "A07"
+      ]
+    },
+    {
+      "id": "p02-e03",
+      "name": "实际工资标记",
+      "duty": "实心、各4",
+      "source": "重构方案/逐幕内容/P02_机器与合同.md",
+      "familyIds": [
+        "A04",
+        "A11"
+      ]
+    },
+    {
+      "id": "p02-e04",
+      "name": "工作日尺",
+      "duty": "固定8小时",
+      "source": "重构方案/逐幕内容/P02_机器与合同.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p02-e05",
+      "name": "产品计数托盘",
+      "duty": "8与16的前后影像",
+      "source": "重构方案/逐幕内容/P02_机器与合同.md",
+      "familyIds": [
+        "A03",
+        "A12"
+      ]
+    },
+    {
+      "id": "p03-e01",
+      "name": "新机基准影像",
+      "duty": "16件、结余28",
+      "source": "重构方案/逐幕内容/P03_工资或闲暇.md",
+      "familyIds": [
+        "A02",
+        "A12"
+      ]
+    },
+    {
+      "id": "p03-e02",
+      "name": "结余分配盘",
+      "duty": "可取出的4枚",
+      "source": "重构方案/逐幕内容/P03_工资或闲暇.md",
+      "familyIds": [
+        "A04",
+        "A14"
+      ]
+    },
+    {
+      "id": "p03-e03",
+      "name": "两只收入袋",
+      "duty": "各接2枚",
+      "source": "重构方案/逐幕内容/P03_工资或闲暇.md",
+      "familyIds": [
+        "A04"
+      ]
+    },
+    {
+      "id": "p03-e04",
+      "name": "工作日右边界",
+      "duty": "8／4小时吸附",
+      "source": "重构方案/逐幕内容/P03_工资或闲暇.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p03-e05",
+      "name": "下班后的留白区",
+      "duty": "表现空出的时间，不奖励积分",
+      "source": "重构方案/逐幕内容/P03_工资或闲暇.md",
+      "familyIds": [
+        "A07",
+        "A01"
+      ]
+    },
+    {
+      "id": "p04-e01",
+      "name": "产品层",
+      "duty": "件数不带货币符号",
+      "source": "重构方案/逐幕内容/P04_财富价值与结余.md",
+      "familyIds": [
+        "A03"
+      ]
+    },
+    {
+      "id": "p04-e02",
+      "name": "会计层",
+      "duty": "收入与三只支出／结余托盘",
+      "source": "重构方案/逐幕内容/P04_财富价值与结余.md",
+      "familyIds": [
+        "A14",
+        "A04"
+      ]
+    },
+    {
+      "id": "p04-e03",
+      "name": "透视片",
+      "duty": "物量、账目、价值三档",
+      "source": "重构方案/逐幕内容/P04_财富价值与结余.md",
+      "familyIds": [
+        "A12"
+      ]
+    },
+    {
+      "id": "p04-e04",
+      "name": "劳动关系箭头",
+      "duty": "理论层显示",
+      "source": "重构方案/逐幕内容/P04_财富价值与结余.md",
+      "familyIds": [
+        "A05"
+      ]
+    },
+    {
+      "id": "p04-e05",
+      "name": "概念说明入口",
+      "duty": "不在画面堆公式",
+      "source": "重构方案/逐幕内容/P04_财富价值与结余.md",
+      "familyIds": [
+        "A31"
+      ]
+    },
+    {
+      "id": "p05-e01",
+      "name": "同一研发资源牌",
+      "duty": "定性约束，不显示假金额",
+      "source": "重构方案/逐幕内容/P05_技术为谁而选.md",
+      "familyIds": [
+        "A09"
+      ]
+    },
+    {
+      "id": "p05-e02",
+      "name": "提速方案槽",
+      "duty": "加工提速任务",
+      "source": "重构方案/逐幕内容/P05_技术为谁而选.md",
+      "familyIds": [
+        "A10",
+        "A08"
+      ]
+    },
+    {
+      "id": "p05-e03",
+      "name": "安全方案槽",
+      "duty": "核验任务",
+      "source": "重构方案/逐幕内容/P05_技术为谁而选.md",
+      "familyIds": [
+        "A10"
+      ]
+    },
+    {
+      "id": "p05-e04",
+      "name": "评价尺",
+      "duty": "产量／安全条件／劳动负担",
+      "source": "重构方案/逐幕内容/P05_技术为谁而选.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p05-e05",
+      "name": "待验证标签",
+      "duty": "替代无来源效果分数",
+      "source": "重构方案/逐幕内容/P05_技术为谁而选.md",
+      "familyIds": [
+        "A11",
+        "A30"
+      ]
+    },
+    {
+      "id": "p06-e01",
+      "name": "加工任务段",
+      "duty": "4／2小时离散折叠，不更改批次",
+      "source": "重构方案/逐幕内容/P06_机器更快整个工作日呢.md",
+      "familyIds": [
+        "A08"
+      ]
+    },
+    {
+      "id": "p06-e02",
+      "name": "检验任务段",
+      "duty": "固定2小时，完整范围才突出",
+      "source": "重构方案/逐幕内容/P06_机器更快整个工作日呢.md",
+      "familyIds": [
+        "A08"
+      ]
+    },
+    {
+      "id": "p06-e03",
+      "name": "搬运协作段",
+      "duty": "固定2小时，不因收起窗口而消失",
+      "source": "重构方案/逐幕内容/P06_机器更快整个工作日呢.md",
+      "familyIds": [
+        "A08"
+      ]
+    },
+    {
+      "id": "p06-e04",
+      "name": "观察范围窗口",
+      "duty": "加工／完整任务，独立于数值状态",
+      "source": "重构方案/逐幕内容/P06_机器更快整个工作日呢.md",
+      "familyIds": [
+        "A12"
+      ]
+    },
+    {
+      "id": "p06-e05",
+      "name": "原8小时与现6小时影线",
+      "duty": "显示2小时空档，不自动改合同",
+      "source": "重构方案/逐幕内容/P06_机器更快整个工作日呢.md",
+      "familyIds": [
+        "A07",
+        "A12"
+      ]
+    },
+    {
+      "id": "p07-e01",
+      "name": "P06已完成的6小时包",
+      "duty": "加工、检验、搬运协作各2，不再提速",
+      "source": "重构方案/逐幕内容/P07_任务不等于岗位.md",
+      "familyIds": [
+        "A08"
+      ]
+    },
+    {
+      "id": "p07-e02",
+      "name": "原8小时影框",
+      "duty": "只表示原任务总量，不等于可修改合同",
+      "source": "重构方案/逐幕内容/P07_任务不等于岗位.md",
+      "familyIds": [
+        "A07",
+        "A12"
+      ]
+    },
+    {
+      "id": "p07-e03",
+      "name": "2小时空档",
+      "duty": "可保留未安排或放新增任务",
+      "source": "重构方案/逐幕内容/P07_任务不等于岗位.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p07-e04",
+      "name": "新增质量复检块",
+      "duty": "另加2小时，不与已有检验重复标名",
+      "source": "重构方案/逐幕内容/P07_任务不等于岗位.md",
+      "familyIds": [
+        "A08"
+      ]
+    },
+    {
+      "id": "p07-e05",
+      "name": "人物与合同标签",
+      "duty": "工资岗位合同均冻结",
+      "source": "重构方案/逐幕内容/P07_任务不等于岗位.md",
+      "familyIds": [
+        "A01",
+        "A09"
+      ]
+    },
+    {
+      "id": "p08-e01",
+      "name": "能力池100",
+      "duty": "与人数区分",
+      "source": "重构方案/逐幕内容/P08_谁培养下一代.md",
+      "familyIds": [
+        "A16"
+      ]
+    },
+    {
+      "id": "p08-e02",
+      "name": "新人闸门10／8",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P08_谁培养下一代.md",
+      "familyIds": [
+        "A16",
+        "A10"
+      ]
+    },
+    {
+      "id": "p08-e03",
+      "name": "效果尺1／1.25",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P08_谁培养下一代.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p08-e04",
+      "name": "三期时间游标",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P08_谁培养下一代.md",
+      "familyIds": [
+        "A13"
+      ]
+    },
+    {
+      "id": "p08-e05",
+      "name": "培养资源10／8／12的独立条",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P08_谁培养下一代.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p09-e01",
+      "name": "低工资组50人与高工资组50人",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P09_平均工资的陷阱.md",
+      "familyIds": [
+        "A15"
+      ]
+    },
+    {
+      "id": "p09-e02",
+      "name": "可移出的25人块",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P09_平均工资的陷阱.md",
+      "familyIds": [
+        "A15"
+      ]
+    },
+    {
+      "id": "p09-e03",
+      "name": "仍可见的退出样本区",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P09_平均工资的陷阱.md",
+      "familyIds": [
+        "A15",
+        "A26"
+      ]
+    },
+    {
+      "id": "p09-e04",
+      "name": "均值窗口与人数分母",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P09_平均工资的陷阱.md",
+      "familyIds": [
+        "A12",
+        "A15"
+      ]
+    },
+    {
+      "id": "p09-e05",
+      "name": "工资总额条与不变的个人工资条",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P09_平均工资的陷阱.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p10-e01",
+      "name": "100单位收入池",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P10_工资也是需求.md",
+      "familyIds": [
+        "A16"
+      ]
+    },
+    {
+      "id": "p10-e02",
+      "name": "工资／资本收入分流闸",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P10_工资也是需求.md",
+      "familyIds": [
+        "A16"
+      ]
+    },
+    {
+      "id": "p10-e03",
+      "name": "两组消费倾向阀门",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P10_工资也是需求.md",
+      "familyIds": [
+        "A16"
+      ]
+    },
+    {
+      "id": "p10-e04",
+      "name": "消费订单出口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P10_工资也是需求.md",
+      "familyIds": [
+        "A17"
+      ]
+    },
+    {
+      "id": "p10-e05",
+      "name": "储蓄出口与总额校验线",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P10_工资也是需求.md",
+      "familyIds": [
+        "A16",
+        "A05"
+      ]
+    },
+    {
+      "id": "p11-e01",
+      "name": "左右两厂",
+      "duty": "各16件",
+      "source": "重构方案/逐幕内容/P11_两厂进入同一市场.md",
+      "familyIds": [
+        "A03",
+        "A17"
+      ]
+    },
+    {
+      "id": "p11-e02",
+      "name": "统一市场24格订单",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P11_两厂进入同一市场.md",
+      "familyIds": [
+        "A17"
+      ]
+    },
+    {
+      "id": "p11-e03",
+      "name": "自动比例配对轨道",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P11_两厂进入同一市场.md",
+      "familyIds": [
+        "A17",
+        "A05"
+      ]
+    },
+    {
+      "id": "p11-e04",
+      "name": "每厂余货托盘",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P11_两厂进入同一市场.md",
+      "familyIds": [
+        "A03"
+      ]
+    },
+    {
+      "id": "p11-e05",
+      "name": "各厂结余标签与新基准说明",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P11_两厂进入同一市场.md",
+      "familyIds": [
+        "A14",
+        "A30"
+      ]
+    },
+    {
+      "id": "p12-e01",
+      "name": "玩家工厂排产尺12／16",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P12_相互竞争的两轮.md",
+      "familyIds": [
+        "A07",
+        "A17"
+      ]
+    },
+    {
+      "id": "p12-e02",
+      "name": "对手预封存决定",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P12_相互竞争的两轮.md",
+      "familyIds": [
+        "A09"
+      ]
+    },
+    {
+      "id": "p12-e03",
+      "name": "双向揭晓封条",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P12_相互竞争的两轮.md",
+      "familyIds": [
+        "A11",
+        "A13"
+      ]
+    },
+    {
+      "id": "p12-e04",
+      "name": "两轮独立结果卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P12_相互竞争的两轮.md",
+      "familyIds": [
+        "A14",
+        "A09"
+      ]
+    },
+    {
+      "id": "p12-e05",
+      "name": "四格对照入口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P12_相互竞争的两轮.md",
+      "familyIds": [
+        "A12"
+      ]
+    },
+    {
+      "id": "p13-e01",
+      "name": "都12与都16两层快照",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P13_私人合理与集体结果.md",
+      "familyIds": [
+        "A12",
+        "A17"
+      ]
+    },
+    {
+      "id": "p13-e02",
+      "name": "统一市场背景",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P13_私人合理与集体结果.md",
+      "familyIds": [
+        "A17"
+      ]
+    },
+    {
+      "id": "p13-e03",
+      "name": "对照分隔线",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P13_私人合理与集体结果.md",
+      "familyIds": [
+        "A12"
+      ]
+    },
+    {
+      "id": "p13-e04",
+      "name": "每厂结余6／4",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P13_私人合理与集体结果.md",
+      "familyIds": [
+        "A14"
+      ]
+    },
+    {
+      "id": "p13-e05",
+      "name": "合计库存0／8",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P13_私人合理与集体结果.md",
+      "familyIds": [
+        "A03"
+      ]
+    },
+    {
+      "id": "p14-e01",
+      "name": "固定的两厂32件供给",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P14_需求充足的反例.md",
+      "familyIds": [
+        "A17"
+      ]
+    },
+    {
+      "id": "p14-e02",
+      "name": "可伸展订单框24／32",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P14_需求充足的反例.md",
+      "familyIds": [
+        "A17",
+        "A10"
+      ]
+    },
+    {
+      "id": "p14-e03",
+      "name": "随订单移动的余货",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P14_需求充足的反例.md",
+      "familyIds": [
+        "A03"
+      ]
+    },
+    {
+      "id": "p14-e04",
+      "name": "基准影线",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P14_需求充足的反例.md",
+      "familyIds": [
+        "A12"
+      ]
+    },
+    {
+      "id": "p14-e05",
+      "name": "外生需求标签",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P14_需求充足的反例.md",
+      "familyIds": [
+        "A30"
+      ]
+    },
+    {
+      "id": "p15-e01",
+      "name": "原共同结果基准层",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P15_分配与协调分开改.md",
+      "familyIds": [
+        "A12",
+        "A17"
+      ]
+    },
+    {
+      "id": "p15-e02",
+      "name": "工资协议卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P15_分配与协调分开改.md",
+      "familyIds": [
+        "A09"
+      ]
+    },
+    {
+      "id": "p15-e03",
+      "name": "生产约定卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P15_分配与协调分开改.md",
+      "familyIds": [
+        "A09"
+      ]
+    },
+    {
+      "id": "p15-e04",
+      "name": "收入袋与排产接口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P15_分配与协调分开改.md",
+      "familyIds": [
+        "A04",
+        "A17"
+      ]
+    },
+    {
+      "id": "p15-e05",
+      "name": "组合态标记与冻结快照",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P15_分配与协调分开改.md",
+      "familyIds": [
+        "A11",
+        "A12"
+      ]
+    },
+    {
+      "id": "p16-e01",
+      "name": "32件产品托盘",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P16_东西太多还是买不起.md",
+      "familyIds": [
+        "A03"
+      ]
+    },
+    {
+      "id": "p16-e02",
+      "name": "32格需要层",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P16_东西太多还是买不起.md",
+      "familyIds": [
+        "A17",
+        "A12"
+      ]
+    },
+    {
+      "id": "p16-e03",
+      "name": "24格能付款订单层",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P16_东西太多还是买不起.md",
+      "familyIds": [
+        "A17",
+        "A12"
+      ]
+    },
+    {
+      "id": "p16-e04",
+      "name": "预算48／64刻度",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P16_东西太多还是买不起.md",
+      "familyIds": [
+        "A07",
+        "A04"
+      ]
+    },
+    {
+      "id": "p16-e05",
+      "name": "新增16的资金来源空牌",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P16_东西太多还是买不起.md",
+      "familyIds": [
+        "A09",
+        "A30"
+      ]
+    },
+    {
+      "id": "p17-e01",
+      "name": "两期家庭日历",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P17_借来的繁荣能持续吗.md",
+      "familyIds": [
+        "A13"
+      ]
+    },
+    {
+      "id": "p17-e02",
+      "name": "收入48与66的条件牌",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P17_借来的繁荣能持续吗.md",
+      "familyIds": [
+        "A09"
+      ]
+    },
+    {
+      "id": "p17-e03",
+      "name": "贷款方40现金钱包",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P17_借来的繁荣能持续吗.md",
+      "familyIds": [
+        "A04"
+      ]
+    },
+    {
+      "id": "p17-e04",
+      "name": "本金16与利息2条",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P17_借来的繁荣能持续吗.md",
+      "familyIds": [
+        "A04",
+        "A07"
+      ]
+    },
+    {
+      "id": "p17-e05",
+      "name": "两期消费对照窗口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P17_借来的繁荣能持续吗.md",
+      "familyIds": [
+        "A12"
+      ]
+    },
+    {
+      "id": "p18-e01",
+      "name": "机器采购单",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P18_有需要为什么不投资.md",
+      "familyIds": [
+        "A09",
+        "A02"
+      ]
+    },
+    {
+      "id": "p18-e02",
+      "name": "投入120／60尺",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P18_有需要为什么不投资.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p18-e03",
+      "name": "预期年结余12／6尺",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P18_有需要为什么不投资.md",
+      "familyIds": [
+        "A07"
+      ]
+    },
+    {
+      "id": "p18-e04",
+      "name": "门槛8%标签",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P18_有需要为什么不投资.md",
+      "familyIds": [
+        "A11"
+      ]
+    },
+    {
+      "id": "p18-e05",
+      "name": "供应商等待订单接口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P18_有需要为什么不投资.md",
+      "familyIds": [
+        "A06",
+        "A05"
+      ]
+    },
+    {
+      "id": "p19-e01",
+      "name": "独立资产负债堆叠",
+      "duty": "现金含在资产内",
+      "source": "重构方案/逐幕内容/P19_一处断流怎样传遍网络.md",
+      "familyIds": [
+        "A18"
+      ]
+    },
+    {
+      "id": "p19-e02",
+      "name": "到期条与过桥借款",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P19_一处断流怎样传遍网络.md",
+      "familyIds": [
+        "A18",
+        "A04"
+      ]
+    },
+    {
+      "id": "p19-e03",
+      "name": "模块切换门",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P19_一处断流怎样传遍网络.md",
+      "familyIds": [
+        "A30",
+        "A12"
+      ]
+    },
+    {
+      "id": "p19-e04",
+      "name": "A—B—C支付链",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P19_一处断流怎样传遍网络.md",
+      "familyIds": [
+        "A19"
+      ]
+    },
+    {
+      "id": "p19-e05",
+      "name": "期初缓冲与未付承诺标签",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P19_一处断流怎样传遍网络.md",
+      "familyIds": [
+        "A19",
+        "A11"
+      ]
+    },
+    {
+      "id": "p20-e01",
+      "name": "2007—2009现实时间轨道",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P20_危机为何爆发又为何缓解.md",
+      "familyIds": [
+        "A13"
+      ]
+    },
+    {
+      "id": "p20-e02",
+      "name": "根源／机制／触发／传导／应对五层",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P20_危机为何爆发又为何缓解.md",
+      "familyIds": [
+        "A26"
+      ]
+    },
+    {
+      "id": "p20-e03",
+      "name": "有出处的事件卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P20_危机为何爆发又为何缓解.md",
+      "familyIds": [
+        "A27",
+        "A09"
+      ]
+    },
+    {
+      "id": "p20-e04",
+      "name": "三类政策作用卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P20_危机为何爆发又为何缓解.md",
+      "familyIds": [
+        "A09"
+      ]
+    },
+    {
+      "id": "p20-e05",
+      "name": "宏观与个人恢复窗口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P20_危机为何爆发又为何缓解.md",
+      "familyIds": [
+        "A12"
+      ]
+    },
+    {
+      "id": "p21-e01",
+      "name": "原工厂与冻结账目",
+      "duty": "承接人物，不带入危机债务",
+      "source": "重构方案/逐幕内容/P21_从机器提速到算法管理.md",
+      "familyIds": [
+        "A03",
+        "A14"
+      ]
+    },
+    {
+      "id": "p21-e02",
+      "name": "AI辅助排班草案",
+      "duty": "标待核验，无性能分数",
+      "source": "重构方案/逐幕内容/P21_从机器提速到算法管理.md",
+      "familyIds": [
+        "A20"
+      ]
+    },
+    {
+      "id": "p21-e03",
+      "name": "审核／授权两条接口",
+      "duty": "同一草案只能接一条，显示决定路径",
+      "source": "重构方案/逐幕内容/P21_从机器提速到算法管理.md",
+      "familyIds": [
+        "A20",
+        "A05"
+      ]
+    },
+    {
+      "id": "p21-e04",
+      "name": "撤回与申诉节点",
+      "duty": "授权也存在边界，不画成绝对控制",
+      "source": "重构方案/逐幕内容/P21_从机器提速到算法管理.md",
+      "familyIds": [
+        "A20",
+        "A06"
+      ]
+    },
+    {
+      "id": "p21-e05",
+      "name": "英国Uber现实透镜",
+      "duty": "独立合同、控制线及来源，非AI性能案例",
+      "source": "重构方案/逐幕内容/P21_从机器提速到算法管理.md",
+      "familyIds": [
+        "A27",
+        "A30"
+      ]
+    },
+    {
+      "id": "p22-e01",
+      "name": "原云与新云接口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P22_云服务与退出成本.md",
+      "familyIds": [
+        "A21"
+      ]
+    },
+    {
+      "id": "p22-e02",
+      "name": "数据应用迁移包",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P22_云服务与退出成本.md",
+      "familyIds": [
+        "A21"
+      ]
+    },
+    {
+      "id": "p22-e03",
+      "name": "单期成本8／6",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P22_云服务与退出成本.md",
+      "familyIds": [
+        "A14"
+      ]
+    },
+    {
+      "id": "p22-e04",
+      "name": "一次成本12／2",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P22_云服务与退出成本.md",
+      "familyIds": [
+        "A14"
+      ]
+    },
+    {
+      "id": "p22-e05",
+      "name": "期限2／8尺与总成本对照",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P22_云服务与退出成本.md",
+      "familyIds": [
+        "A07",
+        "A12"
+      ]
+    },
+    {
+      "id": "p23-e01",
+      "name": "先进治疗现实卡与案例身份",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P23_创新权利与治疗可及.md",
+      "familyIds": [
+        "A27",
+        "A30"
+      ]
+    },
+    {
+      "id": "p23-e02",
+      "name": "教学模式入口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P23_创新权利与治疗可及.md",
+      "familyIds": [
+        "A30",
+        "A31"
+      ]
+    },
+    {
+      "id": "p23-e03",
+      "name": "合格需求、制造、临床、预算四道门",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P23_创新权利与治疗可及.md",
+      "familyIds": [
+        "A22"
+      ]
+    },
+    {
+      "id": "p23-e04",
+      "name": "成本与临床能力闸",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P23_创新权利与治疗可及.md",
+      "familyIds": [
+        "A22",
+        "A10"
+      ]
+    },
+    {
+      "id": "p23-e05",
+      "name": "可服务上界而非实际患者计数",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P23_创新权利与治疗可及.md",
+      "familyIds": [
+        "A22",
+        "A11"
+      ]
+    },
+    {
+      "id": "p24-e01",
+      "name": "单位负担尺1／0.7",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P24_绿色技术与总量负担.md",
+      "familyIds": [
+        "A23",
+        "A07"
+      ]
+    },
+    {
+      "id": "p24-e02",
+      "name": "产量范围1／1.5",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P24_绿色技术与总量负担.md",
+      "familyIds": [
+        "A23"
+      ]
+    },
+    {
+      "id": "p24-e03",
+      "name": "总量标尺100／70／105",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P24_绿色技术与总量负担.md",
+      "familyIds": [
+        "A23",
+        "A07"
+      ]
+    },
+    {
+      "id": "p24-e04",
+      "name": "责任内外分界30%／70%",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P24_绿色技术与总量负担.md",
+      "familyIds": [
+        "A23",
+        "A26"
+      ]
+    },
+    {
+      "id": "p24-e05",
+      "name": "独立真实研究卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P24_绿色技术与总量负担.md",
+      "familyIds": [
+        "A27"
+      ]
+    },
+    {
+      "id": "p25-e01",
+      "name": "100单位公共支持预算",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P25_改善由谁付账.md",
+      "familyIds": [
+        "A24"
+      ]
+    },
+    {
+      "id": "p25-e02",
+      "name": "支付50、能力30、准备20三槽",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P25_改善由谁付账.md",
+      "familyIds": [
+        "A24",
+        "A10"
+      ]
+    },
+    {
+      "id": "p25-e03",
+      "name": "可移动10单位块",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P25_改善由谁付账.md",
+      "familyIds": [
+        "A24"
+      ]
+    },
+    {
+      "id": "p25-e04",
+      "name": "法定付款方线",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P25_改善由谁付账.md",
+      "familyIds": [
+        "A05"
+      ]
+    },
+    {
+      "id": "p25-e05",
+      "name": "最终负担追踪线与未知标签",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P25_改善由谁付账.md",
+      "familyIds": [
+        "A05",
+        "A11"
+      ]
+    },
+    {
+      "id": "p26-e01",
+      "name": "P15冻结经济快照",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P26_收入参与和占有.md",
+      "familyIds": [
+        "A12",
+        "A14"
+      ]
+    },
+    {
+      "id": "p26-e02",
+      "name": "劳动者代表席",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P26_收入参与和占有.md",
+      "familyIds": [
+        "A25",
+        "A01"
+      ]
+    },
+    {
+      "id": "p26-e03",
+      "name": "提案讨论桌",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P26_收入参与和占有.md",
+      "familyIds": [
+        "A25"
+      ]
+    },
+    {
+      "id": "p26-e04",
+      "name": "协商／控制／占有三类线",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P26_收入参与和占有.md",
+      "familyIds": [
+        "A05"
+      ]
+    },
+    {
+      "id": "p26-e05",
+      "name": "机器归属标签",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P26_收入参与和占有.md",
+      "familyIds": [
+        "A09",
+        "A02"
+      ]
+    },
+    {
+      "id": "p27-e01",
+      "name": "企业内部范围框",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P27_社会共同支配的边界.md",
+      "familyIds": [
+        "A26"
+      ]
+    },
+    {
+      "id": "p27-e02",
+      "name": "供应科研运输协作节点",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P27_社会共同支配的边界.md",
+      "familyIds": [
+        "A06",
+        "A05"
+      ]
+    },
+    {
+      "id": "p27-e03",
+      "name": "外包者与未来入职者",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P27_社会共同支配的边界.md",
+      "familyIds": [
+        "A15"
+      ]
+    },
+    {
+      "id": "p27-e04",
+      "name": "公共利益节点",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P27_社会共同支配的边界.md",
+      "familyIds": [
+        "A06"
+      ]
+    },
+    {
+      "id": "p27-e05",
+      "name": "社会共同占有理论覆层及问责线",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P27_社会共同支配的边界.md",
+      "familyIds": [
+        "A26",
+        "A05"
+      ]
+    },
+    {
+      "id": "p28-e01",
+      "name": "德国现实案例身份",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P28_资本主义内部改革.md",
+      "familyIds": [
+        "A27",
+        "A30"
+      ]
+    },
+    {
+      "id": "p28-e02",
+      "name": "监事会参与结构",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P28_资本主义内部改革.md",
+      "familyIds": [
+        "A25"
+      ]
+    },
+    {
+      "id": "p28-e03",
+      "name": "职工委员会结构",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P28_资本主义内部改革.md",
+      "familyIds": [
+        "A25"
+      ]
+    },
+    {
+      "id": "p28-e04",
+      "name": "各自研究窗口与样本边界",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P28_资本主义内部改革.md",
+      "familyIds": [
+        "A12",
+        "A27"
+      ]
+    },
+    {
+      "id": "p28-e05",
+      "name": "未入职者的未覆盖区",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P28_资本主义内部改革.md",
+      "familyIds": [
+        "A15",
+        "A26"
+      ]
+    },
+    {
+      "id": "p29-e01",
+      "name": "中国政策与时期身份条",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P29_中国保障如何兑现.md",
+      "familyIds": [
+        "A30",
+        "A27"
+      ]
+    },
+    {
+      "id": "p29-e02",
+      "name": "缴费、订单、认定、支付四节点",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P29_中国保障如何兑现.md",
+      "familyIds": [
+        "A06",
+        "A05"
+      ]
+    },
+    {
+      "id": "p29-e03",
+      "name": "真实个案记录轨",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P29_中国保障如何兑现.md",
+      "familyIds": [
+        "A13",
+        "A27"
+      ]
+    },
+    {
+      "id": "p29-e04",
+      "name": "两期累计覆盖统计轨",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P29_中国保障如何兑现.md",
+      "familyIds": [
+        "A28",
+        "A13"
+      ]
+    },
+    {
+      "id": "p29-e05",
+      "name": "足额性与及时性未知卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P29_中国保障如何兑现.md",
+      "familyIds": [
+        "A27",
+        "A11"
+      ]
+    },
+    {
+      "id": "p30-e01",
+      "name": "国家基本制度层",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P30_国家性质与具体机制.md",
+      "familyIds": [
+        "A26"
+      ]
+    },
+    {
+      "id": "p30-e02",
+      "name": "企业与权利层",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P30_国家性质与具体机制.md",
+      "familyIds": [
+        "A26"
+      ]
+    },
+    {
+      "id": "p30-e03",
+      "name": "政策目标层",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P30_国家性质与具体机制.md",
+      "familyIds": [
+        "A26"
+      ]
+    },
+    {
+      "id": "p30-e04",
+      "name": "运行结果层",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P30_国家性质与具体机制.md",
+      "familyIds": [
+        "A26"
+      ]
+    },
+    {
+      "id": "p30-e05",
+      "name": "美国公共支付与中国民营平台观察卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P30_国家性质与具体机制.md",
+      "familyIds": [
+        "A27",
+        "A09"
+      ]
+    },
+    {
+      "id": "p31-e01",
+      "name": "保持可辨的工厂主体",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P31_历史上答案怎样变化.md",
+      "familyIds": [
+        "A03"
+      ]
+    },
+    {
+      "id": "p31-e02",
+      "name": "三时代关系图",
+      "duty": "工场／机器工厂、数字平台、AI辅助逐次显示；不是同一个人的人生或同一经济基准",
+      "source": "重构方案/逐幕内容/P31_历史上答案怎样变化.md",
+      "familyIds": [
+        "A12",
+        "A13"
+      ]
+    },
+    {
+      "id": "p31-e03",
+      "name": "协作、产权和控制观察层",
+      "duty": "每幅图揭示劳动组织与权利，不能只替换背景；规则调整卡明确国家、时期与来源",
+      "source": "重构方案/逐幕内容/P31_历史上答案怎样变化.md",
+      "familyIds": [
+        "A27",
+        "A09"
+      ]
+    },
+    {
+      "id": "p31-e04",
+      "name": "独立中国认识轨道",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P31_历史上答案怎样变化.md",
+      "familyIds": [
+        "A13",
+        "A30"
+      ]
+    },
+    {
+      "id": "p31-e05",
+      "name": "双时代比较槽与来源入口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P31_历史上答案怎样变化.md",
+      "familyIds": [
+        "A12",
+        "A27"
+      ]
+    },
+    {
+      "id": "p32-e01",
+      "name": "研究对象轨",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P32_国内外研究怎样对读.md",
+      "familyIds": [
+        "A27"
+      ]
+    },
+    {
+      "id": "p32-e02",
+      "name": "发表期与数据期双标签",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P32_国内外研究怎样对读.md",
+      "familyIds": [
+        "A30",
+        "A27"
+      ]
+    },
+    {
+      "id": "p32-e03",
+      "name": "指标对照轨",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P32_国内外研究怎样对读.md",
+      "familyIds": [
+        "A27",
+        "A12"
+      ]
+    },
+    {
+      "id": "p32-e04",
+      "name": "方法与区间卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P32_国内外研究怎样对读.md",
+      "familyIds": [
+        "A27"
+      ]
+    },
+    {
+      "id": "p32-e05",
+      "name": "暂不能比较停靠区",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P32_国内外研究怎样对读.md",
+      "familyIds": [
+        "A10",
+        "A27"
+      ]
+    },
+    {
+      "id": "p33-e01",
+      "name": "美国非农商业部门身份条",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P33_亲手拆开生产率差距.md",
+      "familyIds": [
+        "A30"
+      ]
+    },
+    {
+      "id": "p33-e02",
+      "name": "生产率和实际小时报酬冻结序列",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P33_亲手拆开生产率差距.md",
+      "familyIds": [
+        "A28"
+      ]
+    },
+    {
+      "id": "p33-e03",
+      "name": "统一100基线",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P33_亲手拆开生产率差距.md",
+      "familyIds": [
+        "A28"
+      ]
+    },
+    {
+      "id": "p33-e04",
+      "name": "季度／年均成组窗口",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P33_亲手拆开生产率差距.md",
+      "familyIds": [
+        "A12",
+        "A28"
+      ]
+    },
+    {
+      "id": "p33-e05",
+      "name": "对数差的份额项与余项条",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P33_亲手拆开生产率差距.md",
+      "familyIds": [
+        "A28"
+      ]
+    },
+    {
+      "id": "p34-e01",
+      "name": "实际体验中的判断卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P34_什么证据会改变判断.md",
+      "familyIds": [
+        "A29"
+      ]
+    },
+    {
+      "id": "p34-e02",
+      "name": "支持条件槽",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P34_什么证据会改变判断.md",
+      "familyIds": [
+        "A29",
+        "A10"
+      ]
+    },
+    {
+      "id": "p34-e03",
+      "name": "削弱条件槽",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P34_什么证据会改变判断.md",
+      "familyIds": [
+        "A29",
+        "A10"
+      ]
+    },
+    {
+      "id": "p34-e04",
+      "name": "H模型与E观察标签",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P34_什么证据会改变判断.md",
+      "familyIds": [
+        "A30"
+      ]
+    },
+    {
+      "id": "p34-e05",
+      "name": "待证据区与可撤回论证线",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P34_什么证据会改变判断.md",
+      "familyIds": [
+        "A29",
+        "A05"
+      ]
+    },
+    {
+      "id": "p35-e01",
+      "name": "开场机器与两位劳动者回归",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P35_形成有条件的结论.md",
+      "familyIds": [
+        "A03",
+        "A01",
+        "A02"
+      ]
+    },
+    {
+      "id": "p35-e02",
+      "name": "真实体验轨迹",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P35_形成有条件的结论.md",
+      "familyIds": [
+        "A29"
+      ]
+    },
+    {
+      "id": "p35-e03",
+      "name": "能力／规则／社会关系三层框",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P35_形成有条件的结论.md",
+      "familyIds": [
+        "A26"
+      ]
+    },
+    {
+      "id": "p35-e04",
+      "name": "改善、限制、制度边界卡",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P35_形成有条件的结论.md",
+      "familyIds": [
+        "A29",
+        "A09"
+      ]
+    },
+    {
+      "id": "p35-e05",
+      "name": "未知项与可回看出处",
+      "duty": "按名称承担本幕观察或操作功能，具体变化见状态表",
+      "source": "重构方案/逐幕内容/P35_形成有条件的结论.md",
+      "familyIds": [
+        "A27",
+        "A11"
+      ]
+    }
+  ],
+  "globalNeeds": [
+    {
+      "id": "g01",
+      "name": "全局键盘/触屏/展开文章/撤销控件",
+      "familyIds": [
+        "A31",
+        "A11"
+      ],
+      "scope": "P01–P35"
+    },
+    {
+      "id": "g02",
+      "name": "模型身份、来源层、示范与失效标签",
+      "familyIds": [
+        "A30",
+        "A11"
+      ],
+      "scope": "P01–P35"
+    },
+    {
+      "id": "g03",
+      "name": "S4的21个子状态",
+      "familyIds": [
+        "A13",
+        "A17",
+        "A18",
+        "A19",
+        "A27"
+      ],
+      "scope": "P16–P20；状态由组件组合，不额外制作21张背景"
+    },
+    {
+      "id": "g04",
+      "name": "七章开场与章末回扣",
+      "familyIds": [
+        "A03",
+        "A07",
+        "A05",
+        "A29",
+        "A30"
+      ],
+      "scope": "S1–S7；复用主场景，不新增七套背景"
+    },
+    {
+      "id": "g05",
+      "name": "P32完整生成/核验/返工任务链",
+      "familyIds": [
+        "A08",
+        "A12",
+        "A27"
+      ],
+      "scope": "P32；补足其元素表未单列的文章/交互需求"
+    }
+  ],
+  "inventory": [
+    {
+      "path": "public/assets/trust/button.png",
+      "bytes": 12155,
+      "width": 500,
+      "height": 750,
+      "sha256": "5201f6fc8b099cb049b5f1524dcd28eb6045f3f69d315ce0ed9e252c735ee622",
+      "provenanceMatch": null,
+      "disposition": "hold-or-metadata",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/iterated_coin.json",
+      "bytes": 370,
+      "width": null,
+      "height": null,
+      "sha256": "d12809378ceb9449e7a655ccf09c5b39e66911afc0e821b26a548e04b10b0b6f",
+      "provenanceMatch": null,
+      "disposition": "hold-or-metadata",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/iterated_coin.png",
+      "bytes": 1649,
+      "width": 128,
+      "height": 128,
+      "sha256": "67ac157c701c8bc24ce56347400a2d458329e0e22e1cb74e2a4de0ffe24ec7cf",
+      "provenanceMatch": true,
+      "disposition": "local-provenance-matched",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/iterated_machine.json",
+      "bytes": 381,
+      "width": null,
+      "height": null,
+      "sha256": "1d623c719967679ff6613d031fd06c626ffccde0ae0acd590f6384eaf79aec6b",
+      "provenanceMatch": null,
+      "disposition": "hold-or-metadata",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/iterated_machine.png",
+      "bytes": 24555,
+      "width": 2048,
+      "height": 2048,
+      "sha256": "02a81f0c3362587f44dcb35a53e03daa6ce2594986fd43df5d3b5cca1998e7c5",
+      "provenanceMatch": true,
+      "disposition": "local-provenance-matched",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/iterated_peep.json",
+      "bytes": 4644,
+      "width": null,
+      "height": null,
+      "sha256": "e382b0f9445edcad919af0391793d7125dc8253c30af6dba19da2ca5938778a2",
+      "provenanceMatch": null,
+      "disposition": "hold-or-metadata",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/iterated_peep.png",
+      "bytes": 95022,
+      "width": 2048,
+      "height": 2048,
+      "sha256": "c2c069f8c789af2e19f946fa2440bd375e6e9a6fc31b0933641a788296083c3f",
+      "provenanceMatch": null,
+      "disposition": "hold-or-metadata",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/LICENSE.txt",
+      "bytes": 6554,
+      "width": null,
+      "height": null,
+      "sha256": "5537d4d10b76b81b6e8dfd8b644480a4b1efa332fbb0cdb61126c5be781ef7b4",
+      "provenanceMatch": true,
+      "disposition": "local-provenance-matched",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/peep_characters.png",
+      "bytes": 65845,
+      "width": 2400,
+      "height": 325,
+      "sha256": "72ac77f02afc0c310bac7b54a73ba253e6d33c39a15e1863b11e55a59f867832",
+      "provenanceMatch": true,
+      "disposition": "local-provenance-matched",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/assets/trust/provenance.json",
+      "bytes": 1394,
+      "width": null,
+      "height": null,
+      "sha256": "e8e1059bb312ef6e9a7fd3bbd50e8f0862a73e60fa60d5ec59e7c8bcb16c3ad0",
+      "provenanceMatch": null,
+      "disposition": "hold-or-metadata",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/evidence/ai-paper.png",
+      "bytes": 3839,
+      "width": 911,
+      "height": 320,
+      "sha256": "c64ea2944be2e08844584d57e1ba929cb387d1066f758b7e927aacbc877de389",
+      "provenanceMatch": null,
+      "disposition": "evidence-only-review-before-release",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/evidence/bls-recalculation.png",
+      "bytes": 117795,
+      "width": 1400,
+      "height": 900,
+      "sha256": "1275b27f4dfeef5b40171a477172a17e77f83addfad45e3980956c6d034f1b01",
+      "provenanceMatch": null,
+      "disposition": "evidence-only-review-before-release",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/evidence/board-paper.png",
+      "bytes": 4099,
+      "width": 693,
+      "height": 397,
+      "sha256": "ba5e960ab095bb801e13c65fa5a3e4cb47bd14526e4ea981d103891ab5803a63",
+      "provenanceMatch": null,
+      "disposition": "evidence-only-review-before-release",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/evidence/cloud-report.png",
+      "bytes": 9112,
+      "width": 1056,
+      "height": 595,
+      "sha256": "7fc878983d166df909925728abd88d5d68b8a63a952eec082e4ff15c936e50a8",
+      "provenanceMatch": null,
+      "disposition": "evidence-only-review-before-release",
+      "releaseApproval": false
+    },
+    {
+      "path": "public/evidence/manifest.json",
+      "bytes": 1250,
+      "width": null,
+      "height": null,
+      "sha256": "195e1b4fa8ce4b4d94c747522f95aa5b35331297764f3a90390091a71bf11391",
+      "provenanceMatch": null,
+      "disposition": "evidence-only-review-before-release",
+      "releaseApproval": false
+    }
+  ],
+  "productionUpdate": {
+    "date": "2026-09-15",
+    "direction": "用户要求更贴近《信任的进化》，改为原作PNG与图集优先，撤下首版19个自绘SVG",
+    "specimen": "public/assets/workshop-v6/index.html",
+    "sourceProvenance": "public/assets/trust-source/provenance.json",
+    "sourceVerifier": "美术资源/verify-trust-source.mjs",
+    "deprecated": "public/assets/workshop-v6/DEPRECATED.md",
+    "scope": "开始制作：首段原作复用组件原型，不是35幕美术与玩法全部完成"
+  }
+}

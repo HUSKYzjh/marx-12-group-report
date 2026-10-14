@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "scene": "饥馑的盛宴／序章：厨房内外／第一幕·更大的烤炉：旧炉卖货、换炉分币、倍增扩张",
+  "created": "2026-10-03",
+  "status": "integrated-local-single-act-three-internal-phases",
+  "assets": [
+    {"id":"chef-hat","path":"chef-hat.svg","origin":"project-authored-svg","width":80,"height":60,"role":"仅厨师帽；叠在WBWWB原作圆头小人上"},
+    {"id":"baker-retired","path":"baker.svg","origin":"project-authored-svg","status":"retired-not-rendered","width":160,"height":200,"role":"此前的自绘完整厨师，保留但不再加载"},
+    {"id":"old-oven","path":"oven-old.svg","origin":"project-authored-svg","width":240,"height":260,"role":"老旧烤炉；拱形炉口、烟囱、砖缝与裂纹"},
+    {"id":"new-oven","path":"oven-new.svg","origin":"project-authored-svg","width":310,"height":260,"role":"更大的双层电烤炉；宽炉身、双层炉膛、两组旋钮与指示灯"},
+    {"id":"truck","path":"truck.svg","origin":"project-authored-svg","width":260,"height":150,"role":"面包货车；车内司机另由WBWWB人物层绘制"},
+    {"id":"bread","path":"bread.svg","origin":"project-authored-svg","width":64,"height":42,"role":"可复用面包；八张小图代表一车，不定义售价或经济数量"}
+  ],
+  "original_dependencies": [
+    {"role":"老板","path":"../wbwwb-source/hatguy.png","atlas":"../wbwwb-source/hatguy.json","commit":"7c68c7e44e66b5be95ebd07d22391de707090397","license":"Nicky Case author-owned art CC0"},
+    {"role":"司机与厨师身体","path":"../wbwwb-source/body.png","atlas":"../wbwwb-source/body.json","commit":"7c68c7e44e66b5be95ebd07d22391de707090397","license":"Nicky Case author-owned art CC0"},
+    {"role":"司机与厨师表情","path":"../wbwwb-source/face.png","atlas":"../wbwwb-source/face.json","commit":"7c68c7e44e66b5be95ebd07d22391de707090397","license":"Nicky Case author-owned art CC0"},
+    {"role":"厨师低工资闭嘴皱眉：第3帧；红温第5帧；按AngryPeep原作使用横向锚点1/3","path":"../wbwwb-source/face_angry.png","atlas":"../wbwwb-source/face_angry.json","commit":"7c68c7e44e66b5be95ebd07d22391de707090397","license":"Nicky Case author-owned art CC0"},
+    {"role":"金币","path":"../trust/iterated_coin.png","atlas":"../trust/iterated_coin.json","commit":"6ec45d73befdb922bd40654dd1c1c903a953562f","license":"Nicky Case author-owned art CC0"}
+  ],
+  "bounds": "同一幕的旧炉阶段收款10枚、工资5枚、留下5枚；新炉阶段收款15枚、最终工资3—7枚。越界短暂显示2或8枚，1.2秒后退回；不永久锁住加号，可反复尝试。仅保留加减操作。漫画气泡由本作CSS绘制。旧炉9.66秒、新炉9.8秒，旧炉结束停留1秒自动换炉，提问和按钮同步开放。扩张18.4秒，左侧厨师与炉从1组倍增到64组，右侧老板与金山；草图颜色仅标记位置，角色不染红蓝。此扩张先假设持续售出与不变售价工资，购炉和投入成本是演示参数，不是现实测量。低工资越界红温运行时染色仍保留，不改原图。45%/90%发言概率与谈判上下限均为剧情设定，不是统计或普遍经济规律。选择独立保存，不覆盖四企业预算。首两段未核算设备与原材料成本，留下的钱不是净利润。原PNG与JSON不改，不运行WBWWB游戏源码。新绘SVG不冒充原作素材；本登记不另行授予新绘图独立许可。"
+}

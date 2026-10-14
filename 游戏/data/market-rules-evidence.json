@@ -1,0 +1,39 @@
+{
+ "checked":"2026-10-05",
+ "method":"Manually extracted primary HTML aggregates and identified official search-index abstracts. Descriptive calculations only; teaching wallets are not calibrated to observations.",
+ "sources":[
+  {"id":"imf2026","branch":"policy","title":"IMF Fiscal Monitor April 2026","url":"https://www.imf.org/en/publications/fm/issues/2026/04/15/fiscal-monitor-april-2026","access":"官方HTML关键发现与数据截止日；未读取全报告或逐国数据库。2025接近94是估计，2029达到100是预测，不是所有国家共同债务上限"},
+  {"id":"mof2024","branch":"policy","title":"财政部：2024年全国政府采购简要情况，2025-11-12发布","url":"https://gks.mof.gov.cn/tongjishuju/202511/t20251112_3976264.htm","access":"官方搜索索引完整简报；直接打开失败。合同规模不是所有政府支出，也不是净新增需求"},
+  {"id":"ndrc2026","branch":"policy","title":"国家发展改革委：持续放大两新政策效能，2026-02-10","url":"https://www.ndrc.gov.cn/xwdt/ztzl/tddgmsbgxhxfpyjhx/gzdt/202602/t20260210_1403678_ext.html","access":"官方HTML发布说明；销售额是带动口径，非本作识别的因果净增量；人数为人次"},
+  {"id":"nber2026","branch":"policy","title":"Park, Zhou, Zubairy: Subcontracting in Federal Spending: Micro and Macro Implications, WP34686，2026-06修订","url":"https://www.nber.org/papers/w34686","access":"NBER官方搜索索引摘要，直接打开失败；分包网络改变财政传导，未读取回归系数或复现微观数据；工作论文"},
+  {"id":"nber2025","branch":"policy","title":"Howell, Rathje, Van Reenen, Wong: Opening up Military Innovation, WP28700，2025-09修订；JPE 2025正式版本","url":"https://www.nber.org/papers/w28700","publication_url":"https://www.johnvanreenen.com/major-publications","access":"NBER官方摘要与作者发表目录；正式刊于2025年11月JPE 133(11):3605—3651。未读取期刊全文系数或复现微观估计；不外推全部政府采购"},
+  {"id":"fao2025","branch":"prices","title":"FAO SDG12.3.1a Food Loss Index，2023最新全球估计","url":"https://www.fao.org/sustainable-development-goals-data-portal/data/indicators/1231-global-food-losses/en?cachebuster=true","access":"官方HTML正文；生产至零售前损失，不含消费者浪费；2023与2015微小变化在模型波动范围内"},
+  {"id":"unep2022","branch":"prices","title":"UNEP/FAO sustainable food cold chains release，2022-11-12","url":"https://www.unep.org/news-and-stories/press-release/amid-food-and-climate-crises-investing-sustainable-food-cold-chains","access":"官方HTML；2017冷链不足损失估计、项目案例及能耗约束；没有读PDF全报告，也不称随机实验"},
+  {"id":"moa2024","branch":"prices","title":"农业农村部：产地冷链物流报告2024发布说明","url":"https://scs.moa.gov.cn/sclt/202412/t20241202_6467347.htm","access":"官方HTML；2023产地低温处理率、2020差值；18项调查指标，处理率不是损失率"},
+  {"id":"cold2026","branch":"prices","title":"福建工信厅转载央视：2025冷链运行，中物联原始发布数据","url":"https://gxt.fj.gov.cn/zwgk/xw/hydt/xydt/202601/t20260128_7086292.htm","access":"政府网站转载HTML，2026-01-28；原统计发布方为中物联，未获得其原始数据集，作为有出处的行业汇总，不当作独立学术估计"}
+ ],
+ "observations":[
+  {"id":"public-debt2025","source":"imf2026","year":2025,"kind":"upper-bound-estimate","value":94,"unit":"percent GDP; just under"},
+  {"id":"public-debt2029","source":"imf2026","year":2029,"kind":"forecast","value":100,"unit":"percent GDP"},
+  {"id":"procurement","source":"mof2024","year":2024,"kind":"official-reported","value":33750.43,"unit":"100 million CNY"},
+  {"id":"sme-contracts","source":"mof2024","year":2024,"kind":"official-reported","value":24230.91,"unit":"100 million CNY"},
+  {"id":"sme-share","source":"mof2024","year":2024,"kind":"official-reported","value":71.79,"unit":"percent"},
+  {"id":"trade-sales","source":"ndrc2026","year":2025,"kind":"lower-bound","value":2.6,"unit":"trillion CNY; more than; policy-associated sales, not causal net increment"},
+  {"id":"trade-visits","source":"ndrc2026","year":2025,"kind":"lower-bound","value":360,"unit":"million claimant occasions; more than, not unique persons"},
+  {"id":"first-funds2026","source":"ndrc2026","year":2026,"kind":"allocation","value":625,"unit":"100 million CNY; first batch only"},
+  {"id":"global-loss2015","source":"fao2025","year":2015,"kind":"estimate","value":13.0,"unit":"percent; pre-retail"},
+  {"id":"global-loss2023","source":"fao2025","year":2023,"kind":"estimate","value":13.3,"unit":"percent; pre-retail"},
+  {"id":"fruit-loss2023","source":"fao2025","year":2023,"kind":"estimate","value":25.4,"unit":"percent; fruit and vegetables"},
+  {"id":"grain-loss2023","source":"fao2025","year":2023,"kind":"estimate","value":8.4,"unit":"percent; cereals and pulses"},
+  {"id":"coldloss2017","source":"unep2022","year":2017,"kind":"estimate","value":526,"unit":"million tonnes; refrigeration-related loss"},
+  {"id":"cold-emissions2017","source":"unep2022","year":2017,"kind":"estimate","value":1,"unit":"gigatonne CO2 equivalent; refrigeration-related food loss"},
+  {"id":"precooled2023","source":"moa2024","year":2023,"kind":"official-estimate","value":32,"unit":"percent; production-origin low-temperature treatment"},
+  {"id":"precooled-change","source":"moa2024","year":2023,"kind":"official-reported-change","value":11,"unit":"percentage points vs 2020"},
+  {"id":"fruit-cooled2023","source":"moa2024","year":2023,"kind":"official-estimate","value":24,"unit":"percent; fruit and vegetable origin treatment"},
+  {"id":"meat-cooled2023","source":"moa2024","year":2023,"kind":"official-estimate","value":80,"unit":"percent; meat origin treatment"},
+  {"id":"cold-demand2025","source":"cold2026","year":2025,"kind":"industry-reported","value":3.814,"unit":"100 million tonnes"},
+  {"id":"new-trucks2025","source":"cold2026","year":2025,"kind":"industry-reported","value":36769,"unit":"vehicles; new energy refrigerator trucks"},
+  {"id":"all-trucks2025","source":"cold2026","year":2025,"kind":"industry-reported","value":81969,"unit":"vehicles; all refrigerator truck sales"},
+  {"id":"new-truck-share2025","source":"cold2026","year":2025,"kind":"industry-reported","value":44.86,"unit":"percent of annual sales, not fleet share"}
+ ]
+}

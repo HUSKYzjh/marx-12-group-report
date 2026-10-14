@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>技术红利 · 工厂关系样张</title><link rel="stylesheet" href="./trust-kit.css"><link rel="stylesheet" href="./relation-marks.css"><link rel="stylesheet" href="./factory-relations.css"></head>
+<body><main>
+<header><p class="eyebrow">技术红利 / 机器对照样张</p><h1>换了机器，谁得到好处？</h1><p>机器为本作新绘；人物、金币、按钮与线条复用《信任的进化》原图。</p></header>
+<section aria-label="工厂样张">
+<div class="tr-toolbar" role="group" aria-label="选择工厂样张"><button class="tr-button" data-scenario="old" aria-pressed="true">旧机</button><button class="tr-button" data-scenario="new" aria-pressed="false">新机</button><button class="tr-button" data-scenario="pay" aria-pressed="false">加薪</button><button class="tr-button" data-scenario="time" aria-pressed="false">缩时</button></div>
+<div class="tr-main-relations"><p>观察一种关系</p><div class="tr-relations" id="relations" role="group" aria-label="选择关系类型"></div></div>
+<div class="tr-scene"><div class="tr-factory-map" id="factory-scene" role="group" aria-label="工厂与当前关系" aria-describedby="relation-explanation"></div><p class="tr-main-relation-note" id="relation-explanation" role="status" aria-live="polite"></p><div id="products-art"></div></div>
+<div class="tr-benefits" id="benefits-art"></div>
+<p class="tr-feedback" id="feedback" role="status" aria-live="polite"></p>
+<p class="tr-boundary">H · 固定条件样张，不是正式游玩流程</p>
+<details><summary>样张账目与边界</summary><div id="ledger-art"></div><p>单价3、产品全售；加薪和缩时分别从新机基准开始，不叠加。空框表示产品，金币只表示收入。原作计分框被重新用于物量标记，不沿用合作／欺骗的收益矩阵。</p></details>
+<details><summary>关系符号怎么读？</summary><p>圆环：分工协作；钥匙：产权归属；调节杆：工作安排权；金币箭头：实际付款。协作不等于共有，安排权不自动等于所有权；工资支付不能单独判定所有制。不同关系可同时存在，这里每次只突出一种。角色只表示当前关系的起点，不以帽型推断制度或善恶。</p></details>
+</section>
+<div class="tr-catalog-only">
+<img class="tr-divider" src="../trust-source/slider_bg.png" alt="">
+<section><h2 class="tr-section-title">身体、眼睛、帽子，可以分开组合。</h2><div class="tr-state-tools"><label>人物姿态 <select id="pose-select"><option value="normal">静止</option><option value="blink">眨眼帧</option></select></label><button class="tr-button" id="static-toggle" aria-pressed="false">静态模式</button><button class="tr-button" id="reset-sample">重置</button></div><p class="tr-state-message" id="pose-message" role="status">没有把原作策略性格分配给劳动者或所有者。</p></section>
+<section><h2 class="tr-section-title">原作素材，与本作新绘机器。</h2><div class="tr-catalog" id="source-catalog"></div><p class="tr-note">机器为新生成插画，圆环、钥匙与方向端点为本作界面标识；线条、人物、金币与滑条取自原作。中文和数字仍为可编辑文字。</p></section>
+<section><h2 class="tr-section-title">窄屏组合检查</h2><div class="tr-mobile"><iframe title="320像素原作素材样张" src="./index.html?embed=1" width="320" height="960" loading="lazy"></iframe><div><p>同一套素材在320像素中重排，不把整张宽屏画面缩小。</p><button class="tr-button" id="text-scale" aria-pressed="false">放大文字</button><p id="scale-state">当前100%；点击检查200%。</p></div></div></section>
+<footer><p>Nicky Case / The Evolution of Trust 原作素材。引用不代表原作者认可本作品观点。</p><a href="https://github.com/ncase/trust" target="_blank" rel="noopener">原作仓库</a> · <a href="../trust/LICENSE.txt">本地许可</a> · <a href="../trust-source/provenance.json">逐文件来源记录</a><p id="asset-health" role="status">正在核对素材载入…</p></footer>
+</div></main><script type="module" src="./trust-specimen.mjs"></script></body></html>

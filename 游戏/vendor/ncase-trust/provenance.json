@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "work": "The Evolution of Trust",
+  "author": "Nicky Case",
+  "repository": "https://github.com/ncase/trust",
+  "commit": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+  "local_source_root": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust",
+  "vendor_root": "D:/马克思主义/技术红利互动作品/vendor/ncase-trust",
+  "verification": {
+    "date": "2026-10-02",
+    "method": "Read-only Buffer.equals and SHA-256 comparison of every vendored source file against the existing local checkout; git rev-parse HEAD confirmed the pinned commit. A second comparison against git show of the pinned blobs confirmed identical text after CRLF-to-LF normalization; all nine checkout copies retain Windows line endings.",
+    "files_checked": 9,
+    "all_byte_equal": true,
+    "network_fetch_performed": false,
+    "source_files_modified": false
+  },
+  "license_note": "The author's original code is covered by the repository's CC0-1.0 dedication. The separately credited libraries remain MIT-licensed; the root CC0 LICENSE does not replace their licenses. Preserve the original headers and THIRD_PARTY_NOTICES.txt in redistributed builds.",
+  "adaptation": {
+    "entry": "lib/trust-document.ts",
+    "new_stage": "lib/trust-stage.js",
+    "execution": "Classic scripts in an isolated iframe, with a separate createjs namespace, one Pixi application and one animation tick for all actors.",
+    "original_files_executed_in_full": [
+      "js/lib/pixi.min.js",
+      "js/lib/tweenjs-0.6.2.min.js",
+      "js/lib/minpubsub.src.js",
+      "js/lib/helpers.js",
+      "js/core/Slideshow.js",
+      "js/core/TextBox.js"
+    ],
+    "character_extract": "The unchanged source text from function IteratedPeep(config) to the end of js/sims/Iterated.js is included. Its constructor, layered graphics, resetFace, update and kill interfaces are used; its playMove/PD/Q/audio paths are not called.",
+    "splash_extract": "The unchanged source text from function SplashPeep(config) to the end of js/sims/Splash.js is included. SplashPeep and SplashEdge provide the original opening's surrounding character network. The Splash application constructor, Loader manifest registration and original loading/audio paths are not started.",
+    "new_logic": "The adaptation supplies its own allocation, actor movement and money movement. It does not reuse the original Prisoner's Dilemma payoff rules or describe profit distribution as cooperate/cheat.",
+    "excluded": [
+      "The original main.js startup and window.onload handler",
+      "The original Loader.js and its network/audio loading",
+      "The original Splash application constructor and its Loader manifest registration",
+      "The Iterated simulation constructor and payoff matrix",
+      "The original PD, strategy, tournament and population models",
+      "The original Q, Howler, Pegasus, sharing and other library startup paths",
+      "The original game slides, words.html, font and sound recordings"
+    ]
+  },
+  "files": [
+    {
+      "vendor_path": "LICENSE",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/LICENSE",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/LICENSE",
+      "bytes": 6669,
+      "sha256": "084bc2aebf95358b73255bd38213fdb27bfd19c6819ae7c1d0679400cf01cea1",
+      "license": "CC0-1.0",
+      "use": "Unmodified author's public-domain dedication."
+    },
+    {
+      "vendor_path": "js/lib/pixi.min.js",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/js/lib/pixi.min.js",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/js/lib/pixi.min.js",
+      "bytes": 400050,
+      "sha256": "a65b51045467b32f43a2fe071b507771ff61393b056da909c7d4f076ef0bd10d",
+      "license": "MIT",
+      "version": "4.4.3",
+      "license_evidence": "Preserved source header identifies Pixi.js v4.4.3 and the MIT License.",
+      "use": "Unmodified rendering library; isolated CanvasRenderer stage for original layered sprites."
+    },
+    {
+      "vendor_path": "js/lib/tweenjs-0.6.2.min.js",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/js/lib/tweenjs-0.6.2.min.js",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/js/lib/tweenjs-0.6.2.min.js",
+      "bytes": 23141,
+      "sha256": "d73ff21c9c21c0914c367b30830a73930332290175f635a4b800e6732eea3a97",
+      "license": "MIT",
+      "version": "0.6.2",
+      "copyright_notice": "Copyright (c) 2011-2015 gskinner.com, inc.",
+      "license_evidence": "Preserved @license header states MIT and requires retention of the notice.",
+      "use": "Unmodified animation library in a separate createjs namespace; new movement timelines replace original payoff animations."
+    },
+    {
+      "vendor_path": "js/lib/minpubsub.src.js",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/js/lib/minpubsub.src.js",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/js/lib/minpubsub.src.js",
+      "bytes": 3021,
+      "sha256": "242c464c7950b244a091f70c5cad8c276fd6e1d3ce88ebcbf82e1d21530632fc",
+      "license": "MIT",
+      "copyright_notice": "Copyright(c) 2011 Daniel Lamb <daniellmb.com>",
+      "license_evidence": "Preserved source header states MIT Licensed.",
+      "use": "Unmodified publish/subscribe library scoped to the iframe."
+    },
+    {
+      "vendor_path": "js/lib/helpers.js",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/js/lib/helpers.js",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/js/lib/helpers.js",
+      "bytes": 4738,
+      "sha256": "e73374105f680e80f1b984c190e6a6a8e540f2d46a3eadc7acae627bf9cc02ab",
+      "license": "CC0-1.0",
+      "license_evidence": "Repository LICENSE and README public-domain dedication; author code, not a credited third-party library.",
+      "use": "Unmodified sprite/atlas, Tween and listener helpers; global names remain within the iframe."
+    },
+    {
+      "vendor_path": "js/core/Slideshow.js",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/js/core/Slideshow.js",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/js/core/Slideshow.js",
+      "bytes": 3039,
+      "sha256": "024ec3ff4fb57c78af7b6f005806b9f70f9682c1c84f2c00540c1ee36bc0a3e7",
+      "license": "CC0-1.0",
+      "license_evidence": "Repository LICENSE and README public-domain dedication.",
+      "use": "Unmodified scene lifecycle and persistent named-object container, with adaptation safeguards supplied outside the vendor source."
+    },
+    {
+      "vendor_path": "js/core/TextBox.js",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/js/core/TextBox.js",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/js/core/TextBox.js",
+      "bytes": 1439,
+      "sha256": "f073b9486ac56d176c883975ce5f04d5f448caef5d107420d951449c1d20d57a",
+      "license": "CC0-1.0",
+      "license_evidence": "Repository LICENSE and README public-domain dedication.",
+      "use": "Unmodified DOM text-object interface; new text and layouts are supplied by the adaptation."
+    },
+    {
+      "vendor_path": "js/sims/Iterated.js",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/js/sims/Iterated.js",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/js/sims/Iterated.js",
+      "bytes": 16081,
+      "sha256": "35b10733e563c8d34b8684b894aea78c92701720a54fcbe98b4c89b5fa1b28df",
+      "license": "CC0-1.0",
+      "license_evidence": "Repository LICENSE and README public-domain dedication.",
+      "use": "Unmodified source retained for provenance; runtime includes only the IteratedPeep constructor section, without invoking its PD payoff or sound paths."
+    },
+    {
+      "vendor_path": "js/sims/Splash.js",
+      "source_path": "D:/马克思主义/技术红利互动作品/tmp/ncase-trust/js/sims/Splash.js",
+      "source_url": "https://github.com/ncase/trust/blob/6ec45d73befdb922bd40654dd1c1c903a953562f/js/sims/Splash.js",
+      "bytes": 4744,
+      "sha256": "3bb389453caa0ae86c1c4c5474d35109158ae1cc9782423adad2b7dede635241",
+      "license": "CC0-1.0",
+      "license_evidence": "Repository LICENSE and README public-domain dedication.",
+      "use": "Unmodified source retained for provenance; runtime includes only the source from SplashPeep through SplashEdge at end of file. Original Splash application, Loader registration and sound paths are not started."
+    }
+  ]
+}

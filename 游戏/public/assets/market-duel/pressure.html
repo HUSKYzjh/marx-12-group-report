@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>饥馑的盛宴 · 隔壁的低价</title><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./pressure.css"></head>
+<body data-game="pressure">
+ <header><span>饥馑的盛宴</span><a href="battle.html" style="color:inherit">试玩三场回合对战 →</a><span>序章 · 隔壁的低价</span></header>
+ <main>
+  <div class="headline"><small id="day">同一条街，两个厨房</small><h1>隔壁挂出了低价。</h1><p id="prompt">裁掉两人，压低工资，再用快炉抢客。</p></div>
+  <section id="street" aria-label="面包店和员工">
+   <article class="shop" id="shop-0"><div class="owner" id="owner-0"></div><div class="speech" id="speech-0">四份工资，都还在。</div><h2>你的面包店</h2><div class="oven" id="oven-0"><img src="../bakery/oven-old.svg" alt="你的烤炉"></div><div class="shop-stats" id="stats-0"></div><div class="tag" id="tag-0"></div><div class="crew" id="crew-0"></div></article>
+   <article class="shop" id="shop-1"><div class="owner" id="owner-1"></div><div class="speech" id="speech-1">我只要更便宜！</div><h2>隔壁面包店</h2><div class="oven" id="oven-1"><img src="../bakery/oven-new.svg" alt="隔壁的快速烤炉"></div><div class="shop-stats" id="stats-1"></div><div class="tag" id="tag-1"></div><div class="crew" id="crew-1"></div></article>
+  </section>
+  <div id="cash-pressure" class="cash-pressure" aria-live="polite"></div>
+  <div id="unemployed" class="unemployed" aria-label="没了这份工作的老顾客"></div>
+  <div id="consequence" class="pressure-consequence" aria-live="polite"></div>
+  <div id="daily" aria-live="polite"></div>
+  <section id="decisions"><p id="instruction">先照原来的安排，开一天看看。</p><div class="pressure-tools"><button id="match-price"><span>把价签也换成</span><strong>1 <i class="coin" aria-label="金币"></i></strong></button><button id="follow"><span>只留两人<br>工资也降到</span><strong>1 <i class="coin" aria-label="金币"></i></strong></button></div><p id="draft"></p><div class="actions"><button id="submit" class="primary">照这个安排，开门 →</button><button id="continue" class="text-button" hidden>照此安排，继续营业 ▷</button><button id="undo" class="text-button" hidden>撤回草稿 ↶</button><button id="try-follow" class="text-button" hidden>回到第二天，试着跟进 ↶</button></div></section>
+  <section id="ending" hidden><h2 id="ending-title"></h2><p id="ending-copy"></p><div id="paths"></div><div class="actions"><button id="restart" class="primary">从第一天换条路 →</button></div></section>
+  <div id="dates" class="rewind-days"></div>
+  <details id="notes"><summary>这条街的条件</summary><p>这是刻意收紧条件的教学情景，不是“不压工资的企业都会倒闭”的定律。顾客在两店都能买到同样的面包时，先找更便宜的；这里没有品牌差异、额外订单、政府购买、借钱和外部市场。每人每天只试买一个面包，两店争同一批11人，不能凭空增加买家。</p><p>你的店原来4人、工资2、售价3，每天做6个；隔壁换了快炉，留下2人、工资1、售价1，每天做12个。快速烤炉需要8金币；隔壁开局已付，玩家更换也要实际付。快炉12个、普通炉每人1.5个是教学参数，不是行业数据。价签的1金币低于你原来的每个面包直接生产成本，但不低于隔壁卖完全部货时的直接单位成本；这里只模拟压价竞争，不作现实倾销认定。</p><p>两店原有现金各36、八位工人各6。隔壁购炉8转给合并供货商；另外两位老板初始为0。总计120金币，只在现有账户流转。员工领工资再购物；老板取最多2金币生活费。原料按每4个面包1金币向上取整，剩货每6个1金币保管费，付不起的保管款另记欠账；两天前的面包坏掉。现金不足就不能实际发工资开炉，旧货仍可出售。余额不是净利润。未核算完整设备折旧、遣散费和失业保障。</p><p>合并供货商收到设备、原料和保管款，每天也只买一个面包，其余钱存下；这里没有继续模拟供货商雇人、投资或把这些收款花到其他行业。因此这个需求上限包含“其他买家的支出也有限”这一前提，不能只凭产品超过工资就认定必然卖不掉。</p><p>先不跟：看成本与客人流向。只降价：看保留工资后的现金压力。工资、人手也跟着压：看谁不再领钱、积蓄如何耗掉。没有钱的人和没有商品可买的人分开记录，不把“没有成交”都说成“没有需求”。可以从任何已玩的一天回放；原路径保存，同一批顾客的偏好不重抽。</p><p>这里表现的是竞争压力、收入与购买之间的反馈，不是资本主义基本矛盾的完整证明。基本矛盾指生产社会化与生产资料资本主义私人占有之间的矛盾。库存、降薪、失业是可能的表现。改变劳动保护、分配、产品、需求来源或产权等条件，结果可能改变；社会主义国家不能直接套同一基本矛盾。</p><p>人物来自本项目已归档的Nicky Case《We Become What We Behold》，烤炉、面包与厨师帽沿用本项目线稿。此处没有《信任的进化》的对手竞猜、输赢排名、策略图鉴和信任收益矩阵。</p></details>
+ </main>
+ <div id="person-dialog" class="person-dialog" role="dialog" aria-modal="true" aria-labelledby="person-title" hidden><button id="close-person" aria-label="关上心声">×</button><h2 id="person-title"></h2><p id="person-wallet"></p><p id="person-wish"></p></div>
+ <script type="module" src="./pressure-game.mjs"></script>
+</body>
+</html>

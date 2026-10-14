@@ -1,0 +1,244 @@
+main{max-width:920px;padding:0 22px}header{height:48px}.journey{display:flex;justify-content:center;gap:25px;font-size:12px;color:#929185;margin:0 0 13px}.journey span{padding:5px 0;border-bottom:2px solid transparent}.journey .active{color:var(--ink);border-bottom-color:var(--ink)}.battle-frame{position:relative;border:2px solid #55594f;border-radius:9px 13px 8px 12px;padding:5px;background:#f4f5ea;box-shadow:4px 5px 0 #d6d4c6}.arena{height:395px;background:radial-gradient(ellipse at 72% 29%,#e1e5d8 0,transparent 34%),radial-gradient(ellipse at 28% 84%,#e1e5d8 0,transparent 35%),linear-gradient(#f3f5e9,#f8f8ee)}.day{font-size:11px;top:8px;opacity:.8}#round-dots{margin:5px}.status{width:34%;background:#fffff4;border:2px solid #4c534a;border-radius:3px 16px 3px 12px;box-shadow:3px 4px 0 #bdc3b4;padding:12px 15px 9px}.rival-status{left:22px;top:36px}.player-status{right:17px;bottom:57px}.status h2{font-size:21px}.status p{font-size:12px}.cash-line b{min-width:46px}.meter{height:13px;border:2px solid #4c534a;background:#fff}.meter i{background:#77a486}.fighter{width:31%;height:183px}.rival{right:47px;top:49px}.player{left:37px;bottom:30px}.figures{left:13px;bottom:43px}.player .figures{transform:scale(1.12);transform-origin:bottom left}.rival .owner{transform:scaleX(-1)}.figures .owner{width:74px;height:99px}.figures .oven{width:125px;height:118px}.crew{left:65px}.platform{height:36px;background:#d9decd;border-bottom:3px solid #aab39a;transform:rotate(-4deg)}.bubble{font-size:12px;right:0;top:-10px;max-width:169px}.player .bubble{top:-1px}.market-signal{position:absolute;left:50%;top:155px;transform:translateX(-50%);text-align:center;display:flex;flex-direction:column;gap:2px;z-index:2;padding:7px 10px;min-width:100px}.market-signal small,.market-signal span{font-size:11px;color:#7d8075}.market-signal strong{font-size:27px;font-weight:normal}.market-signal.changed strong{animation:signal-in .5s ease}.schedule{position:absolute;bottom:19px;right:21px;font-size:12px;color:#61685a;display:flex;align-items:center;gap:9px}.schedule b{font-size:16px;font-weight:normal}.schedule .next{border-bottom:1px dashed #777}.console{border:3px double #39423d;border-radius:3px 10px 3px 9px;box-shadow:none;min-height:166px;grid-template-columns:1.05fr 1fr;padding:6px;background:#fffef6;gap:0}.narration{border:0;border-right:2px solid #d4d4c7;border-radius:0;padding:15px 17px;min-height:153px}.narration h1{font-size:25px;margin:8px 0 5px}.narration p{font-size:14px}.eyebrow{font-size:11px}.command-area{padding:6px 10px 6px 16px}.moves{gap:4px 8px}.move{border:0;border-radius:3px;padding:7px 7px 7px 14px;grid-template-columns:23px 1fr;position:relative}.move:before{content:'▶';position:absolute;left:0;top:15px;opacity:0;font-size:10px}.move:hover:before,.move:focus-visible:before{opacity:1}.move:hover{transform:none;background:#eeefdf}.move strong{font-size:21px}.move small{font-size:10px}.move img,.move svg{width:22px;height:22px}.command-area>p{margin:0 0 5px;font-size:11px}#preview{min-height:110px;padding:4px 8px}#preview-copy{font-size:15px;line-height:1.65;margin:3px 0}#round-effect{font-size:15px;line-height:1.6;margin:4px 0 8px}#receipt{font-size:12px;align-self:start;padding:0}.primary{font-size:16px}.street{background:#fafbf4;padding:9px 14px 10px;border-top:1px dashed #c8cdbd}.street-label{font-size:11px}#customers{flex-wrap:wrap;justify-content:center;gap:5px}.customer{min-width:47px;min-height:54px;flex:1;max-width:69px;border-radius:6px}.customer.traceable{outline:1px dashed #929f83;background:#e8eddf}.customer.traced{outline:2px solid #7d9784}.customer .peep{width:24px;height:36px}.customer small{font-size:10px}.customer .purchase{right:4px;width:20px}.source-mode .arena{height:310px}.source-mode .player{bottom:5px}.source-mode .player-status{bottom:20px}.source-mode .market-signal{top:135px}.source-mode .rival{top:38px}.source-mode .rival-status{top:31px}.source-mode .bubble{display:none}.source-mode .schedule{display:none}#money-route{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;overflow:visible}#money-route path{fill:none;stroke:#637d67;stroke-width:2.5;stroke-dasharray:7 5;animation:flow 1.2s linear infinite}#money-route path.shopping{stroke:#ad8642}#money-route text{font:13px Workshop,KaiTi,serif;paint-order:stroke;stroke:#fffff4;stroke-width:5px;stroke-linejoin:round;fill:#3d473d}#money-route .node{fill:#d5b263;stroke:#99772c;stroke-width:1}.source-proof{font-size:13px;line-height:1.8;margin:0}.source-proof strong{font-weight:normal;font-size:18px}.source-controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.source-controls button{font-size:13px;padding:4px 10px;border:1px dashed #939e88;border-radius:4px}.source-controls button.seen{border-style:solid;background:#e7ecdf}#ending{background:#fffef6;padding:18px 25px 15px;border:2px solid #485047;border-radius:5px}.ending-actions{display:flex;justify-content:center;gap:25px}.ending-actions button{font-size:15px}#ending h2{font-size:28px;margin:7px 0}#ending p{font-size:16px;margin:9px auto;line-height:1.8}#comparison{font-size:13px}.outcome-figure{padding:7px 17px;border-right:1px solid #ddd}.outcome-figure:last-child{border:0}.outcome-figure b{display:block;font-weight:normal;font-size:24px}.trace-stat{font-size:12px!important;color:#737c6c}.queue-slip{background:#e9eddf;padding:5px 8px;display:inline-block;border-radius:3px;font-size:12px}.body-transition .battle-frame{animation:reenter .45s ease}footer{padding:8px 0;gap:14px}footer span{font-size:10px}@keyframes flow{to{stroke-dashoffset:-24}}@keyframes signal-in{40%{transform:scale(1.17)}}@keyframes reenter{from{opacity:.3;transform:translateY(6px)}}
+@media(max-width:700px){main{padding:0 10px;max-width:530px}header{font-size:11px;height:44px;gap:8px}.journey{font-size:10px;gap:10px;margin-bottom:8px}.battle-frame{padding:3px;box-shadow:2px 3px 0 #d6d4c6}.arena{height:337px}.status{width:48%;padding:9px 10px}.status h2{font-size:17px}.status p{font-size:10px}.rival-status{left:6px;top:35px}.player-status{right:6px;bottom:52px}.level{font-size:9px}.cash-line b{min-width:32px}.fighter{width:45%;height:150px}.rival{right:2px;top:71px}.player{left:9px;bottom:19px}.figures{left:0;bottom:38px}.figures .owner{width:48px;height:69px}.figures .oven{width:88px;height:85px}.player .figures{transform:scale(1.04)}.platform{bottom:34px;height:26px}.crew{left:22px;gap:4px;bottom:0}.crew .peep{width:20px;height:30px}.crew .cap{width:20px}.bubble{font-size:10px;max-width:129px;top:-17px;right:0;padding:4px 7px}.player .bubble{top:-7px}.market-signal{left:28%;top:133px;min-width:75px;padding:4px}.market-signal small,.market-signal span{font-size:9px}.market-signal strong{font-size:23px}.schedule{right:9px;bottom:20px;font-size:10px;gap:6px}.schedule b{font-size:13px}.console{min-height:0;grid-template-columns:1fr;padding:5px;border-width:3px}.narration{min-height:102px;padding:9px 11px;border-right:0;border-bottom:1px solid #d4d4c7}.narration h1{font-size:22px;margin:5px 0}.narration p{font-size:13px}.narration:has(.primary:not([hidden])){padding-top:35px}.narration .primary{font-size:14px;top:0;right:8px}.command-area{padding:9px 8px 5px}.moves{min-height:119px;gap:3px 9px}.move{padding:6px 6px 6px 12px;grid-template-columns:21px 1fr;column-gap:5px}.move strong{font-size:19px}.move small{font-size:10px}.move:before{top:14px}.move img,.move svg{width:20px;height:20px}.command-area>p{margin:0 0 4px}#preview{min-height:117px}#preview-copy,#round-effect{font-size:14px}.street{padding:8px 8px}.street-label{font-size:10px}.customer{flex:0 0 calc((100% - 25px)/6);min-width:40px;max-width:none;min-height:55px}.customer .peep{width:22px;height:33px}.customer small{font-size:10px}.customer .purchase{right:1px;width:18px}.source-mode .arena{height:310px}.source-mode .player-status{bottom:35px}.source-mode .player{bottom:13px}.source-mode .rival{top:71px}.source-mode .rival-status{top:35px}.source-mode .market-signal{top:134px}.source-mode .console .narration{min-height:115px}#money-route text{font-size:10px}.source-proof{font-size:13px}.source-proof strong{font-size:16px}.source-controls button{font-size:12px}#ending{padding:15px 12px}#ending h2{font-size:23px}#ending p{font-size:14px}.ending-actions{gap:10px;flex-wrap:wrap}.ending-actions button{font-size:14px}.outcome-figure{padding:5px 10px;font-size:12px}.outcome-figure b{font-size:21px}footer{font-size:11px;gap:8px}footer span{font-size:9px}.trace-stat{font-size:11px!important}}
+@media(max-width:350px){main{padding:0 7px}.journey{font-size:9px;gap:8px}header{font-size:10px}.status h2{font-size:15px}.status p{font-size:9px}.status{padding:8px}.figures .oven{width:76px;height:80px}.figures .owner{width:43px}.level{font-size:8px}.move strong{font-size:17px}.move small{font-size:9px}.customer{min-width:39px}.bubble{max-width:114px}.street-label{font-size:9px}.command-area{padding-left:4px;padding-right:4px}}
+@media(max-width:700px){.player .bubble{display:none}.source-mode .narration .primary{position:static;margin-top:8px;order:4}.source-mode .narration:has(.primary:not([hidden])){padding-top:9px}}
+@media(prefers-reduced-motion:reduce){#money-route path{animation:none}.body-transition .battle-frame{animation:none}}
+.has-crowd .arena{height:548px}.has-crowd .street{position:absolute;top:236px;left:18px;right:18px;z-index:3;border-top:1px dashed #c8cdbd;border-bottom:1px dashed #c8cdbd;border-radius:10px;background:#fbfcf2e8;padding:9px 10px 10px}.has-crowd .rival{top:45px}.has-crowd .player{bottom:26px}.has-crowd .player-status{bottom:57px}.has-crowd .market-signal{left:25%;top:149px}.has-crowd .schedule{bottom:19px;display:flex}.source-mode.has-crowd .schedule{display:none}.figures .owner{overflow:visible}.owner-pose{width:100%;height:100%;overflow:visible;transform-origin:50% 95%}.owner[data-mood=loss] .owner-pose{transform:rotate(-3deg) translateY(2px)}.owner[data-mood=losing] .owner-pose{transform:rotate(-7deg) translateY(4px)}.owner[data-mood=winning] .owner-pose{transform:rotate(3deg)}.owner[data-animate=true][data-mood=gain] .owner-pose{animation:owner-pleased .75s ease-out 1}.owner[data-animate=true][data-mood=winning] .owner-pose{animation:owner-laugh .32s ease-in-out 4}.owner[data-animate=true][data-mood=loss] .owner-pose{animation:owner-sink .7s ease-out 1}.owner[data-animate=true][data-mood=losing] .owner-pose{animation:owner-worry .22s ease-in-out 5}.owner[data-animate=true][data-mood=losing] .owner-sweat{animation:owner-sweat .7s ease-out 2}@keyframes owner-pleased{50%{transform:translateY(-5px) rotate(3deg)}}@keyframes owner-laugh{50%{transform:translateY(-6px) rotate(-3deg)}}@keyframes owner-sink{from{transform:translateY(-2px)}to{transform:rotate(-3deg) translateY(2px)}}@keyframes owner-worry{50%{transform:rotate(-9deg) translate(-2px,5px)}}@keyframes owner-sweat{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(3px)}}
+@media(max-width:700px){.has-crowd .arena{height:544px}.has-crowd .rival{top:64px;height:150px}.has-crowd .player{bottom:17px;height:150px}.has-crowd .player-status{bottom:45px}.has-crowd .street{top:221px;left:7px;right:7px;padding:8px 5px}.has-crowd .market-signal{top:130px;left:26%}.has-crowd .schedule{bottom:13px}.has-crowd .customer{min-width:0}.has-crowd .street-label{gap:6px}.has-crowd .street-label span{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.owner-pose,.owner-sweat{animation:none!important}}
+.street-person{display:inline-block;position:relative;width:30px;height:45px;flex-shrink:0;vertical-align:bottom}
+.street-person>.customer-body{display:block;width:100%;height:100%;overflow:visible}
+.street-person>.owner{display:block;width:100%;height:100%;overflow:visible}
+.customer .street-person{width:34px;height:51px}
+.crew .street-person{width:27px;height:40px}
+.traveller .street-person{width:36px;height:54px}
+.customer .purchase{right:0;bottom:21px;width:18px}
+@media(max-width:700px){.customer .street-person{width:30px;height:45px}.crew .street-person{width:22px;height:33px}.customer .purchase{width:15px;right:0}}
+
+/* One contour per business: people, oven and accounts share the same enclosure.
+   The opposing cut-outs leave the street separate from both owners' property. */
+.battle-frame{border:0;border-radius:0;box-shadow:none;background:transparent;padding:0}
+.battle-frame .arena{height:auto;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:215px minmax(90px,auto) 215px;padding-top:34px;background:none}
+.shop-zone{position:relative;min-width:0;isolation:isolate}
+.rival-zone{grid-area:1/1}.player-zone{grid-area:3/1}
+.shop-outline{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;overflow:visible}
+.shop-outline path{fill:#fffef8;stroke:#62665e;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.arena .shop-zone .status{width:53%;padding:8px 10px;border:0;border-radius:0;box-shadow:none;background:none}
+.arena .rival-zone .status{left:auto;right:4%;top:26px;bottom:auto}
+.arena .player-zone .status{left:4%;right:auto;top:auto;bottom:34px}
+.arena .shop-zone .fighter{width:35%;height:180px;top:16px;bottom:auto}
+.arena .rival-zone .fighter{left:2%;right:auto}
+.arena .player-zone .fighter{right:2%;left:auto}
+.arena .shop-zone .figures{left:10px;bottom:44px;transform:none;gap:2px}
+.arena .shop-zone .figures .owner{width:64px;height:89px}
+.arena .shop-zone .figures .oven{width:112px;height:108px}
+.arena .shop-zone .figures .bread-rack{position:relative;display:block;width:60px;height:96px;flex:none;margin-left:4px}
+.bread-rack .rack-frame{width:100%;height:100%;display:block}
+.bread-rack .rack-loaf{position:absolute;width:28%;height:11%;object-fit:contain}
+.arena .shop-zone .crew{left:17px;bottom:5px;gap:6px}
+.arena .shop-zone .platform{left:9px;right:15px;bottom:39px;height:24px;background:#ececdf;border-bottom:1px solid #d1d3c7}
+.arena .shop-zone .bubble{right:auto;left:8px;top:0;max-width:calc(100% - 16px);font-size:11px;line-height:1.4;padding:4px 7px}
+.arena .rival-zone .owner{transform:none}.arena .player-zone .owner{transform:scaleX(-1)}
+.arena .shop-zone .float{top:48px}
+.arena .shop-zone .fighter.lunge{animation:shop-lunge .5s ease}
+@keyframes shop-lunge{40%{transform:translateX(8px)}}
+#customer-gate{grid-area:2/1;min-height:90px;pointer-events:none;position:relative;overflow:visible;z-index:3}
+.crowd-field{position:absolute;left:0;right:0;top:-115px;bottom:-85px;overflow:hidden;pointer-events:none}
+.market-pedestrian{position:absolute;left:0;top:0;width:46px;height:68px;will-change:transform}
+.market-pedestrian .street-person{width:100%;height:100%}
+.market-pedestrian.walking .customer-body,.market-pedestrian.walking .owner{animation:street-step .33s ease-in-out infinite alternate}
+body[data-mode="steady"] #customer-gate,body[data-mode="waves"] #customer-gate{height:125px}
+.traveller .street-person{width:46px;height:68px}
+/* Real customers keep their stable, clickable wallet targets; only their artwork strolls. */
+body[data-mode="social"] .customer .street-person{animation:customer-stroll 6s ease-in-out infinite alternate;animation-play-state:paused}
+body[data-mode="social"] .customer:nth-child(3n) .street-person{animation-delay:-3s}
+body[data-mode="social"] .customer:nth-child(3n + 1) .street-person{animation-delay:-1.5s}
+body[data-mode="social"] .street-idle .customer .street-person{animation-play-state:running}
+body[data-mode="social"] .street-idle .customer:is(:hover,:focus-visible) .street-person{animation-play-state:paused}
+@keyframes street-step{from{translate:0 0;rotate:-2deg}to{translate:0 -2px;rotate:2deg}}
+@keyframes customer-stroll{0%{translate:-4px 0;rotate:-2deg}50%{translate:0 -2px;rotate:2deg}100%{translate:4px 0;rotate:-2deg}}
+.battle-frame .street{grid-area:2/1;position:relative;inset:auto;margin:0 12px;padding:8px 5px 6px;border:0;border-radius:0;background:none;z-index:3}
+.battle-frame .street-label{justify-content:center;gap:14px;padding-bottom:5px}
+.battle-frame .customer{padding-top:3px;background:none}
+.battle-frame .customer.hungry{background:#f1e3d944}
+.battle-frame .console{margin-top:8px;grid-template-columns:43% 57%;padding:0;border:2px solid #73766d;border-radius:7px 12px 9px 5px;background:#fffef8}
+.battle-frame .narration{padding:13px 17px;min-height:180px;border-right:1.5px solid #a4a69c;border-bottom:0}
+.battle-frame .market-signal{position:static;transform:none;min-width:0;padding:0 0 5px;display:grid;grid-template-columns:1fr auto;text-align:left;align-items:baseline;gap:2px 8px}
+.battle-frame .market-signal strong{font-size:27px;grid-column:2;grid-row:1/3}
+.battle-frame .market-signal small{font-size:13px;color:var(--ink)}
+.battle-frame .market-signal span{font-size:10px}
+.battle-frame .schedule{position:static;display:flex;gap:6px;font-size:11px;margin-bottom:10px;flex-wrap:wrap}
+.battle-frame .narration h1{font-size:19px;line-height:1.4;margin:5px 0}
+.battle-frame .narration p{font-size:12px;line-height:1.55}
+.battle-frame .narration .primary{position:static;align-self:end;margin-top:9px;font-size:14px}
+.battle-frame .command-area{padding:10px 12px}
+.battle-frame .moves{gap:0;border:1px solid #cecec2;border-radius:4px;overflow:hidden;min-height:146px}
+.battle-frame .move{border-radius:0;padding:10px;min-height:70px;grid-template-columns:22px 1fr}
+.battle-frame .move:nth-child(odd){border-right:1px solid #cecec2}
+.battle-frame .move:nth-child(-n+2){border-bottom:1px solid #cecec2}
+.battle-frame .move:before{display:none}.battle-frame .move strong{font-size:19px}
+.battle-frame #preview{padding:8px 2px;min-height:150px}.battle-frame #preview>div{gap:6px}
+.battle-frame.source-mode .schedule{display:none}
+@media(max-width:700px){
+ .battle-frame .arena{grid-template-rows:188px minmax(86px,auto) 188px;padding-top:30px}
+ .arena .shop-zone .fighter{height:150px;top:16px;width:36%}
+ .arena .rival-zone .fighter{left:18px}.arena .player-zone .fighter{right:18px}
+ .arena .shop-zone .figures{left:8px;bottom:42px;gap:0}
+ .arena .shop-zone .figures .owner{width:38px;height:63px}
+ .arena .shop-zone .figures .oven{width:72px;height:76px}
+ .arena .shop-zone .crew{left:8px;bottom:4px;gap:3px}
+ .arena .shop-zone .crew .street-person{width:23px;height:35px}
+ .arena .shop-zone .bubble{display:block;font-size:9px;top:0;left:8px;padding:3px 5px;max-width:calc(100% - 16px)}
+ .arena .shop-zone .bubble:empty{display:none}
+ .arena .shop-zone .status{width:53%;padding:7px 5px}
+ .arena .rival-zone .status{top:22px;right:16px}
+ .arena .player-zone .status{bottom:30px;left:16px}
+ .arena .shop-zone .status h2{font-size:17px}
+ .arena .shop-zone .level{font-size:9px}
+ .arena .shop-zone .status p{font-size:11px;line-height:1.6}
+ .arena .shop-zone .platform{left:2px;right:4px;bottom:40px}
+ .battle-frame .street{margin:0 3px;padding:7px 0}
+ .battle-frame .street-label{gap:7px;font-size:10px}
+ .battle-frame .street-label span{font-size:10px}
+ .battle-frame .customer{flex:0 0 calc((100% - 25px)/6);min-width:0}
+ .battle-frame .console{grid-template-columns:41% 59%;margin-top:4px}
+ .battle-frame .narration{padding:9px 8px;min-height:175px}
+ .battle-frame .market-signal{display:flex;gap:1px}
+ .battle-frame .market-signal strong{font-size:24px}
+ .battle-frame .market-signal small{font-size:12px}
+ .battle-frame .market-signal span{font-size:9px}
+ .battle-frame .schedule{font-size:9px;gap:3px;margin-bottom:7px}
+ .battle-frame .schedule b{font-size:11px}
+ .battle-frame .narration h1{font-size:15px}
+ .battle-frame .narration p{font-size:11px}
+ .battle-frame .narration .eyebrow{font-size:9px}
+ .battle-frame .narration .primary{font-size:12px}
+ .battle-frame .command-area{padding:9px 6px}
+ .battle-frame .moves{min-height:160px}
+ .battle-frame .move{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:7px 5px;min-width:0}
+ .battle-frame .move img,.battle-frame .move svg{display:none}
+ .battle-frame .move strong{font-size:15px}.battle-frame .move small{font-size:9px;line-height:1.5}
+ .battle-frame #preview-copy{font-size:13px}.battle-frame #preview .primary{font-size:12px}
+ .battle-frame #preview button{font-size:12px}.battle-frame .source-controls{gap:3px}.battle-frame .source-controls button{font-size:11px;padding:3px}
+}
+@media(max-width:350px){
+ .arena .shop-zone .status h2{font-size:15px}.arena .shop-zone .level{font-size:8px}
+ .arena .shop-zone .crew .street-person{width:20px;height:31px}
+ .arena .shop-zone .figures .owner{width:33px}.arena .shop-zone .figures .oven{width:64px}
+ .battle-frame .move strong{font-size:14px}.battle-frame .command-area{padding:8px 4px}
+}
+
+/* Left: market data only. Right: choose once, then one completed-day report. */
+.battle-frame .console{grid-template-columns:34% 66%}
+.battle-frame .narration{min-height:0;justify-content:center}
+.battle-frame .command-area{display:flex;flex-direction:column;min-width:0;min-height:180px}
+.battle-frame #round-report h1{font-size:21px;font-weight:normal;line-height:1.45;margin:7px 0}
+.battle-frame #round-report p{font-size:14px;line-height:1.6;margin:5px 0}
+.battle-frame #preview{min-height:0;padding:5px 0}
+.battle-frame #advance{position:static;align-self:flex-end;margin-top:auto;min-height:44px;padding:8px 3px;font-size:16px}
+.battle-frame .command-area:has(#advance:not([hidden])){gap:5px}
+.battle-frame .command-area>p:empty{display:none}
+.battle-frame .ending-actions{justify-content:flex-end}
+@media(max-width:700px){
+ .battle-frame .console{grid-template-columns:32% 68%}
+ .battle-frame .narration{padding:10px 8px}
+ .battle-frame .command-area{min-height:175px;padding:9px 8px}
+ .battle-frame #round-report h1{font-size:17px}
+ .battle-frame #round-report p{font-size:12px}
+ .battle-frame #advance{font-size:14px}
+}
+@media(max-width:700px){
+ .arena .shop-zone .figures{left:4px;gap:1px}
+ .arena .shop-zone .figures .owner{width:clamp(30px,9vw,38px);flex:none}
+ .arena .shop-zone .figures .oven{width:clamp(46px,13vw,68px);height:76px;flex:none}
+ .arena .shop-zone .figures .bread-rack{width:clamp(30px,9vw,42px);height:65px;margin-left:0}
+}
+@media(max-width:350px){
+ .arena .shop-zone .figures .oven{width:42px}
+ .arena .shop-zone .figures .bread-rack{width:26px}
+}
+@media(max-width:700px){
+ body[data-mode="steady"] #customer-gate,body[data-mode="waves"] #customer-gate{height:150px}
+ .market-pedestrian,.traveller .street-person{width:39px;height:58px}
+ .crowd-field{top:-85px;bottom:-70px}
+ .customer .street-person{width:36px;height:54px}
+}
+#opening-guide{position:fixed;top:20px;bottom:auto;margin:0 auto;width:540px;max-width:calc(100% - 24px);max-height:calc(100dvh - 40px);overflow:auto;padding:22px 25px;font-size:14px;line-height:1.6}
+body[data-rules="3"] .equipment-status{display:block;font-size:10px;line-height:1.5;white-space:normal}
+body[data-rules="3"] .battle-frame .move{border-bottom:1px solid #cecec2;min-height:62px}
+body[data-rules="3"] .battle-frame .move[data-move="hold"]{grid-column:1/-1;border:0;min-height:44px}
+.battle-frame .move:focus-visible{outline-offset:-3px;z-index:1}
+.wage-moves{grid-column:1/-1;border-bottom:1px solid #cecec2}
+.wage-moves summary{padding:10px;cursor:pointer;font-size:14px;min-height:44px}
+.wage-moves>div{display:grid;grid-template-columns:1fr 1fr}
+.oven-count{position:absolute;left:66px;bottom:1px;font-size:14px;background:#fffef8;border-radius:4px;padding:0 3px}
+.arena .shop-zone .crew.expanded-crew{width:calc(100% - 24px);display:grid;grid-template-columns:repeat(var(--crew-count),minmax(0,1fr));gap:2px}
+.arena .shop-zone .crew.expanded-crew .street-person{width:100%;max-width:27px;height:auto;aspect-ratio:2/3}
+footer{flex-wrap:wrap}
+@media(max-width:700px){.oven-count{left:40px;font-size:11px}.arena .shop-zone .crew.expanded-crew .street-person{max-width:23px}body[data-rules="3"] .equipment-status{font-size:9px}}
+#opening-guide h2{font-size:26px;margin:4px 0 12px}
+.opening-topics{display:flex;justify-content:space-between;gap:8px;list-style:none;padding:0;margin:10px 0 18px;font-size:12px;color:#65665d}
+.opening-topics li{padding:3px 0;border-bottom:2px solid transparent}
+.opening-topics [aria-current="step"]{color:inherit;border-bottom-color:currentColor}
+#opening-guide h3{font-size:16px;font-weight:normal;margin:0 0 5px}
+#opening-guide section{margin:0}
+.opening-pages{min-height:228px}
+#opening-guide p{margin:10px 0}
+#opening-guide b{font-weight:normal}
+.opening-costs{display:flex;gap:10px;justify-content:space-between;padding:12px 10px;margin:20px 0;border:1px dashed #b5b2a5;border-radius:5px}
+.opening-costs span{display:flex;flex-direction:column}.opening-costs b{font-size:21px}
+.opening-moves{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+.opening-moves b,.opening-moves span{display:block}.opening-moves b{font-size:16px}.opening-moves span{font-size:12px;color:#65665d}
+#opening-guide .opening-note{font-size:13px;color:#65665d;margin-top:16px}
+#opening-guide .opening-goal{margin-top:20px}
+.opening-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:18px;position:sticky;bottom:-1px;background:#fffef8;padding:10px 0 2px}.opening-bottom button{font-size:17px;white-space:nowrap;min-height:44px}
+.opening-forward{margin-left:auto}
+.opening-extra{font-size:13px;color:#65665d;margin-top:12px}.opening-extra summary{cursor:pointer;min-height:44px;display:list-item;padding:10px 0}.opening-extra p{padding-left:12px}
+.opening-picture,.opening-price{display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0;font-size:18px}.opening-picture span{white-space:nowrap;flex-shrink:0}.opening-picture img{flex-shrink:0}
+.opening-picture img{width:42px;height:44px;object-fit:contain}.opening-picture img:first-child{width:66px;height:58px}
+.opening-price img{width:66px;height:48px;object-fit:contain}
+.opening-example{border:1px dashed #b5b2a5;border-radius:5px;padding:8px 12px;margin:12px 0}
+.opening-example-controls{display:flex;align-items:center;justify-content:center;gap:10px}
+.opening-example-controls button{width:44px;min-height:44px;padding:0;font-size:23px}
+.opening-example-controls b{font-size:22px;min-width:18px;text-align:center}
+#opening-example-result{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;text-align:center;margin:8px 0 0}
+#opening-example-result b{display:block;font-size:20px}
+#opening-example-result small{grid-column:1/-1}
+.opening-example small{display:block;text-align:center;font-size:12px;color:#65665d}
+.opening-timing{display:grid;gap:15px;margin:15px 0}.opening-timing>div{display:grid;grid-template-columns:44px 1fr;gap:2px 10px;border-left:2px solid #b5b2a5;padding-left:10px}.opening-timing b{grid-row:span 2}.opening-timing span:last-child{font-size:12px;color:#65665d}
+@media(max-width:360px){.opening-picture{gap:4px;font-size:15px}.opening-picture img{width:32px;height:38px}.opening-picture img:first-child{width:46px;height:48px}}
+#opening-back{font-size:14px}
+#opening-guide .opening-turn-rule{font-size:17px;line-height:1.6;margin:14px 0}
+.opening-round-flow{list-style:none;counter-reset:round-step;padding:0;margin:16px 0;display:grid;gap:12px}
+.opening-round-flow li{counter-increment:round-step;position:relative;padding-left:39px;min-height:42px;font-size:16px;line-height:1.5}
+.opening-round-flow li:before{content:counter(round-step);position:absolute;left:0;top:3px;width:25px;height:25px;border:1px solid #777;border-radius:50%;text-align:center;line-height:25px}
+.opening-round-flow b,.opening-round-flow span{display:block}
+.opening-round-flow span{font-size:14px}
+#opening-guide[data-opening-step="4"] .opening-timing{gap:10px;font-size:14px}
+#opening-guide[data-opening-step="4"] .opening-timing>div{grid-template-columns:60px minmax(0,1fr)}
+#opening-guide[data-opening-step="4"] .opening-timing span{font-size:14px}
+.opening-price-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:16px;line-height:1.5;margin:8px 0 16px}
+.opening-price-table caption{text-align:left;font-size:13px;color:#65665d;padding:0 0 10px}
+.opening-price-table th,.opening-price-table td{font-weight:normal;text-align:left;padding:5px;vertical-align:middle;border-bottom:1px dashed #d4d1c5}
+.opening-price-table thead th{font-size:13px;border-bottom:1px solid #aaa}
+.opening-price-table thead th:first-child{width:62%}
+.opening-price-table td{font-size:18px}
+.opening-price-table small{display:block;font-size:12px;color:#65665d;line-height:1.5;margin-top:2px}
+.opening-price-table .opening-price-category th{padding:8px 5px 4px;font-size:14px;border:0}
+.opening-price-item{display:flex;align-items:center;gap:12px}
+.opening-price-item>img,.opening-price-item>[data-opening-worker]{display:block;width:40px;height:38px;object-fit:contain;flex:0 0 40px}
+.opening-price-item .street-person{display:block;width:25px;height:38px;margin:auto}
+@media(max-width:700px){.opening-price-table{font-size:15px}.opening-price-table td{font-size:17px}.opening-price-table thead th:first-child{width:59%}.opening-price-item{gap:7px}.opening-price-item>img,.opening-price-item>[data-opening-worker]{width:34px;height:42px;flex-basis:34px}.opening-price-table small{font-size:11px}}
+@media(max-width:700px){#opening-guide{padding:16px;font-size:13px}#opening-guide h2{font-size:23px}.opening-pages{min-height:266px}.opening-moves{gap:6px 12px}.opening-bottom{gap:8px}.opening-bottom button{font-size:15px}#opening-back{font-size:13px}}
+#opening-guide[data-opening-step="0"] h2{font-size:28px;line-height:1.4;text-align:center;margin:10px 0 16px}
+#opening-guide [data-opening-page="0"]{font-size:18px;line-height:1.8;text-align:center}
+#opening-guide [data-opening-page="0"] .opening-goal{font-size:22px;line-height:1.6;margin:18px auto 8px;max-width:400px;text-wrap:balance}
+.opening-shop-scene{position:relative;width:270px;max-width:100%;height:205px;margin:12px auto 18px}
+.opening-shop-speech{position:absolute;top:0;left:0;padding:4px 10px;border:1px solid #777;border-radius:12px 15px 10px 3px;background:#fff;font-size:14px;line-height:1.5}
+.opening-shop-props{position:absolute;left:0;right:0;bottom:38px;display:grid;grid-template-columns:65px minmax(0,1fr) 60px;gap:7px;align-items:end}
+.opening-shop-props>.owner{display:block;width:65px;height:100px;transform:scaleX(-1)}
+.opening-shop-oven{display:block;width:100%;height:140px;object-fit:contain}
+.opening-shop-rack{display:block;width:100%;height:108px;object-fit:contain}
+.opening-shop-crew{position:absolute;left:5px;bottom:0;display:flex;gap:5px}
+.opening-shop-crew .street-person{width:28px;height:43px}
+@media(max-width:700px){#opening-guide[data-opening-step="0"] h2{font-size:25px}#opening-guide [data-opening-page="0"]{font-size:17px}#opening-guide [data-opening-page="0"] .opening-goal{font-size:20px}.opening-shop-scene{height:195px}}

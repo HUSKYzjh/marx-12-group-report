@@ -1,0 +1,35 @@
+/* Original line/coin/knob PNGs plus project-authored semantic markers. */
+.tr-symbol{position:relative;display:inline-block;width:52px;height:44px;flex:none;color:#333;background:#fff;vertical-align:middle}
+.tr-symbol-cooperation i{position:absolute;top:9px;width:31px;height:24px;border:4px solid currentColor;border-radius:48% 43% 51% 45%;transform:rotate(-26deg)}
+.tr-symbol-cooperation i:first-child{left:1px}.tr-symbol-cooperation i:last-child{right:1px;top:14px}
+.tr-symbol-ownership i{position:absolute;left:3px;top:5px;width:24px;height:24px;border:5px solid currentColor;border-radius:46% 50% 43% 51%}
+.tr-symbol-ownership b{position:absolute;left:23px;top:25px;width:26px;height:5px;background:currentColor;transform:rotate(35deg);transform-origin:left center;border-radius:2px}
+.tr-symbol-ownership b:after{content:'';position:absolute;right:1px;top:-8px;width:5px;height:12px;border-right:5px solid currentColor;border-left:4px solid currentColor}
+.tr-symbol-control i{position:absolute;left:25px;top:9px;width:5px;height:28px;border-radius:3px;background:currentColor;transform:rotate(25deg);transform-origin:bottom}
+.tr-symbol-control:after{content:'';position:absolute;left:10px;bottom:3px;width:33px;height:5px;background:currentColor;border-radius:45%}
+.tr-symbol-control img{position:absolute;width:22px;height:22px;top:0;left:25px}
+.tr-symbol-payment .tr-coin{position:absolute;width:29px;height:29px;top:5px;left:5px;background:none}
+.tr-symbol-payment .tr-coin:last-child{top:14px;left:21px}
+.tr-symbol-unknown{font-size:32px;font-weight:600;text-align:center}
+.tr-relation{width:100%;max-width:240px}
+.tr-relation .tr-relation-rail{height:58px;position:relative;display:flex;align-items:center;justify-content:center}
+.tr-relation-rail>.tr-line-art{width:100%;height:7px;filter:brightness(.3)}
+.tr-relation-rail>.tr-symbol{position:absolute;left:calc(50% - 26px);top:7px;z-index:1}
+.tr-relation-rail:before,.tr-relation-rail:after{content:'';position:absolute;z-index:2}
+.tr-cooperation .tr-relation-rail:before,.tr-cooperation .tr-relation-rail:after{width:9px;height:9px;border:3px solid #333;background:#fff;border-radius:50%;top:24px}
+.tr-cooperation .tr-relation-rail:before{left:0}.tr-cooperation .tr-relation-rail:after{right:0}
+.tr-ownership .tr-relation-rail:after{right:0;width:5px;height:20px;background:#333;border-radius:2px}
+.tr-control .tr-relation-rail:after{right:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid #333}
+.tr-payment .tr-line-art{mask-image:repeating-linear-gradient(90deg,#000 0 5px,transparent 5px 11px)}
+.tr-payment .tr-relation-rail:after{right:1px;width:13px;height:13px;border-right:4px solid #333;border-top:4px solid #333;transform:rotate(45deg)}
+.tr-unknown .tr-line-art{mask-image:repeating-linear-gradient(90deg,#000 0 3px,transparent 3px 10px)}
+.tr-relation-choice{display:flex;flex-direction:column;align-items:center;gap:5px;min-height:116px;padding:10px 12px;border:2px solid transparent;border-radius:7px 10px 6px 9px;background:#fff;color:#333;min-width:0}
+.tr-relation-choice>span:not(.tr-symbol){font-size:1rem}.tr-relation-choice small{font-size:.8rem;color:#666}
+.tr-relation-choice:hover{border-color:#aaa}.tr-relation-choice[aria-pressed=true]{border-color:#333;box-shadow:2px 3px 0 #333}
+#relations{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:660px;margin:22px auto 30px}
+.tr-relation-focus{display:grid;grid-template-columns:minmax(90px,1fr) minmax(100px,1.2fr) minmax(90px,1fr);gap:16px;align-items:center;max-width:700px;margin:auto;min-height:205px}
+.tr-relation-end{min-width:0;display:flex;justify-content:center;align-items:center}.tr-relation-end .tr-machine>svg{height:130px}
+.tr-relation-focus>.tr-relation{justify-self:center}.tr-relation-focus figcaption{overflow-wrap:anywhere}
+.tr-relation-explanation{max-width:660px;margin:16px auto 8px;text-align:center;font-size:.95rem;line-height:1.7;min-height:3.4em}
+@media(max-width:650px){#relations{gap:12px}.tr-relation-focus{gap:8px;grid-template-columns:minmax(70px,1fr) minmax(70px,1fr) minmax(70px,1fr)}.tr-relation-focus .tr-person,.tr-relation-focus .tr-neutral{width:70px}.tr-relation-focus .tr-person-layers{width:70px;height:94px}.tr-relation-focus .tr-neutral>svg{width:70px;height:94px}.tr-relation-end .tr-machine>svg{height:94px}.tr-relation-focus{min-height:160px}}
+@media(max-width:410px){#relations{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tr-relation-focus{grid-template-columns:minmax(0,1fr);gap:8px}.tr-relation-focus>.tr-relation{width:170px;transform:none}.tr-relation-focus .tr-relation-rail{transform:rotate(90deg);width:80px;margin:12px auto 18px;height:52px}.tr-relation-focus .tr-symbol{transform:rotate(-90deg)}.tr-relation-focus .tr-relation figcaption{margin-top:6px}.tr-relation-end .tr-machine{width:170px}.tr-relation-end .tr-machine>svg{height:120px}.tr-relation-focus{padding:12px 0}.tr-relation-explanation{min-height:0}}

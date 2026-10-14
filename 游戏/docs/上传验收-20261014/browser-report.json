@@ -1,0 +1,25 @@
+{
+  "results": [
+    {
+      "width": 1280,
+      "offline": false,
+      "firstAct": true,
+      "battleFirstTurn": true,
+      "refresh": true,
+      "navigation": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "offline": true,
+      "firstAct": true,
+      "battleFirstTurn": true,
+      "refresh": true,
+      "navigation": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

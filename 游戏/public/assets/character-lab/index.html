@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>人物表情与动作 · 美术资源预览</title><link rel="stylesheet" href="./lab.css"></head>
+<body><main>
+  <header><p class="eyebrow">美术资源工作台 · Nicky Case 原作素材</p><h1>小人不只会变脸。</h1><p>笑、走、回头、惊慌，以及伸手帮忙。先看动作，再决定怎样用。</p></header>
+  <nav aria-label="预览方式"><button data-tab="motions" aria-pressed="true">动作试演</button><button data-tab="atlas" aria-pressed="false">逐帧查看</button><button data-tab="gallery" aria-pressed="false">动作总览</button><button data-tab="props" aria-pressed="false">原作道具</button></nav>
+  <section id="motions-panel" aria-label="动作试演">
+    <div class="selection"><label>选择动作 <select id="motion"></select></label><label id="shape-label">头部 <select id="shape"><option value="0">圆头</option><option value="1">方头</option></select></label><label id="hat-label">帽子 <select id="hat"><option value="-1">不戴</option></select></label></div>
+    <div class="quick"><button data-motion="trust-laugh">大笑</button><button data-motion="trust-grin">咧嘴狂笑</button><button data-motion="wb-walk">走路</button><button data-motion="wb-panic">惊慌</button><button data-motion="wb-shout">喊话</button><button data-motion="wb-help">帮忙</button></div>
+    <canvas id="stage" width="720" height="320" role="img" aria-label="当前人物动作"></canvas>
+    <div class="transport"><button id="play">暂停</button><button id="restart">从头播放 ↺</button><button id="mirror" aria-pressed="false">左右翻转</button><label>速度 <select id="speed"><option value=".5">半速</option><option value="1" selected>正常</option><option value="1.5">1.5倍</option></select></label></div>
+    <label class="timeline">动作位置 <input id="time" type="range" min="0" max="1" step=".005" value="0"><output id="time-output">0.00秒</output></label>
+    <label class="amplitude">摆动幅度 <input id="intensity" type="range" min="0" max="1.5" step=".1" value="1"></label>
+    <p id="motion-note" class="note"></p><a id="source" target="_blank" rel="noopener noreferrer">查看原作动作源码 ↗</a>
+  </section>
+  <section id="atlas-panel" aria-label="逐帧查看" hidden>
+    <label>选择图集 <select id="atlas"></select></label><label class="compose"><input id="compose" type="checkbox" checked>叠加基础身体</label>
+    <canvas id="atlas-stage" width="720" height="340" role="img" aria-label="原始图集单帧"></canvas>
+    <div class="transport"><button id="frame-prev">← 上一帧</button><output id="frame-output"></output><button id="frame-next">下一帧 →</button></div>
+    <label class="timeline">帧 <input id="frame" type="range" min="0" max="22" value="10" step="1"></label>
+    <p id="atlas-note" class="note"></p>
+  </section>
+  <section id="gallery-panel" aria-label="动作总览" hidden><p class="note">点击一项进入试演。图像是动作中的一刻，不是完整动画。</p><div id="gallery"></div></section>
+  <section id="props-panel" aria-label="原作道具" hidden><p class="note">只查看原图，不运行拍摄或新闻传播玩法。透明图层放在灰底上，方便看清边缘。</p><div id="props"></div></section>
+  <p id="error" role="alert" hidden></p>
+  <footer><p>原始图集未重绘；预览动作是帧序列与位移的适配，不运行原作剧情，也未接入正式游戏。</p><p>Trust 与 WBWWB 的作者自有美术以 CC0 开放；第三方音效不包含在本库。人物形状、帽子和表情不代表阶级、国籍或道德评价。</p><p><a href="https://ncase.me/trust/" target="_blank" rel="noopener noreferrer">The Evolution of Trust ↗</a> · <a href="https://ncase.itch.io/wbwwb" target="_blank" rel="noopener noreferrer">We Become What We Behold ↗</a> · <a href="../wbwwb-source/NOTICE.txt">来源与许可</a></p></footer>
+</main><script type="module" src="./lab.mjs"></script></body></html>

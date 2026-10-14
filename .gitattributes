@@ -7,3 +7,4 @@
 *.jpeg binary
 *.zip binary
 *.docx binary
+游戏/offline/*.html binary

@@ -1,0 +1,1214 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-02",
+  "scope": "V8 pack preparation plus a locally implemented prologue prototype; not complete seven-role routes or deployed",
+  "releaseApproved": false,
+  "sourcePlan": "重构计划.md",
+  "sourceRoleTable": "重构方案/13_多角色与公共治理流程.md",
+  "inventory": "美术资源/inventory-v8-20261001.json",
+  "legacyManifest": "美术资源/asset-manifest.json",
+  "prologue": "Z00",
+  "prologueInteraction": {
+    "version": "20261002-boss-allocation",
+    "status": "implemented-local-prototype",
+    "implementationSources": ["components/boss-prologue.tsx", "components/prologue-art.tsx", "lib/prologue-state.ts", "app/boss-prologue.css"],
+    "browserQaRecord": "QA-2026-10-02.md",
+    "source": "重构方案/16_序章一炉面包谁能作主.md",
+    "perspective": "company-owner-and-operator",
+    "firms": ["A", "B", "C", "D"],
+    "control": "plus-minus",
+    "allocationScope": "additional-distributable-return-plan",
+    "initialLaborShare": 50,
+    "minLaborShare": 0,
+    "maxLaborShare": 100,
+    "stepPercentagePoints": 10,
+    "shareTotal": 100,
+    "modelId": null,
+    "expressionBands": [
+      {"min": 0, "max": 20, "labor": "strong-frown", "owner": "broad-smile"},
+      {"min": 30, "max": 40, "labor": "slight-frown", "owner": "slight-smile"},
+      {"min": 50, "max": 50, "labor": "neutral", "owner": "neutral"},
+      {"min": 60, "max": 70, "labor": "smile", "owner": "frown"},
+      {"min": 80, "max": 100, "labor": "broad-smile", "owner": "strong-worry"}
+    ],
+    "conceptBeforeEnding": true,
+    "endingIsIndependentParable": true,
+    "postDialogueNarration": false,
+    "endingPairs": [
+      {"daughter": "这么冷，为什么不烧煤？", "father": "家里没钱买煤。"},
+      {"daughter": "为什么没钱？", "father": "我失业了，没了这份工资。"},
+      {"daughter": "为什么失业？", "father": "矿上说煤太多，卖不出去，停了我的活。"}
+    ]
+  },
+  "sharedEnding": [
+    "C01",
+    "C02",
+    "C03",
+    "C04"
+  ],
+  "mainNodesPerRoute": 13,
+  "aiFormalStartRolePosition": 7,
+  "roles": [
+    {
+      "id": "worker",
+      "name": "工厂劳动者",
+      "entrance": "individual",
+      "subtypes": [],
+      "nodes": [
+        {
+          "id": "worker-01",
+          "position": 1,
+          "modules": [
+            "P01",
+            "P02"
+          ]
+        },
+        {
+          "id": "worker-02",
+          "position": 2,
+          "modules": [
+            "P03",
+            "P06",
+            "P07"
+          ]
+        },
+        {
+          "id": "worker-03",
+          "position": 3,
+          "modules": [
+            "P08",
+            "P09"
+          ]
+        },
+        {
+          "id": "worker-04",
+          "position": 4,
+          "modules": [
+            "P10",
+            "P16"
+          ]
+        },
+        {
+          "id": "worker-05",
+          "position": 5,
+          "modules": [
+            "P17"
+          ]
+        },
+        {
+          "id": "worker-06",
+          "position": 6,
+          "modules": [
+            "P19"
+          ]
+        },
+        {
+          "id": "worker-07",
+          "position": 7,
+          "modules": [
+            "P21"
+          ]
+        },
+        {
+          "id": "worker-08",
+          "position": 8,
+          "modules": [
+            "P23",
+            "P25"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "entrant",
+      "name": "求职新人",
+      "entrance": "individual",
+      "subtypes": [],
+      "nodes": [
+        {
+          "id": "entrant-01",
+          "position": 1,
+          "modules": [
+            "P08"
+          ]
+        },
+        {
+          "id": "entrant-02",
+          "position": 2,
+          "modules": [
+            "P01",
+            "P02"
+          ]
+        },
+        {
+          "id": "entrant-03",
+          "position": 3,
+          "modules": [
+            "P06",
+            "P07"
+          ]
+        },
+        {
+          "id": "entrant-04",
+          "position": 4,
+          "modules": [
+            "P09"
+          ]
+        },
+        {
+          "id": "entrant-05",
+          "position": 5,
+          "modules": [
+            "P10",
+            "P16"
+          ]
+        },
+        {
+          "id": "entrant-06",
+          "position": 6,
+          "modules": [
+            "P17",
+            "P19"
+          ]
+        },
+        {
+          "id": "entrant-07",
+          "position": 7,
+          "modules": [
+            "P21"
+          ]
+        },
+        {
+          "id": "entrant-08",
+          "position": 8,
+          "modules": [
+            "P23",
+            "P25"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "platform_worker",
+      "name": "平台劳动者",
+      "entrance": "individual",
+      "subtypes": [],
+      "nodes": [
+        {
+          "id": "platform_worker-01",
+          "position": 1,
+          "modules": [
+            "P01",
+            "P02"
+          ]
+        },
+        {
+          "id": "platform_worker-02",
+          "position": 2,
+          "modules": [
+            "P03",
+            "P06",
+            "P07"
+          ]
+        },
+        {
+          "id": "platform_worker-03",
+          "position": 3,
+          "modules": [
+            "P09"
+          ]
+        },
+        {
+          "id": "platform_worker-04",
+          "position": 4,
+          "modules": [
+            "P10",
+            "P16"
+          ]
+        },
+        {
+          "id": "platform_worker-05",
+          "position": 5,
+          "modules": [
+            "P17"
+          ]
+        },
+        {
+          "id": "platform_worker-06",
+          "position": 6,
+          "modules": [
+            "P19"
+          ]
+        },
+        {
+          "id": "platform_worker-07",
+          "position": 7,
+          "modules": [
+            "P21"
+          ]
+        },
+        {
+          "id": "platform_worker-08",
+          "position": 8,
+          "modules": [
+            "P25"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "household",
+      "name": "承担照护支出的家庭成员",
+      "entrance": "individual",
+      "subtypes": [],
+      "nodes": [
+        {
+          "id": "household-01",
+          "position": 1,
+          "modules": [
+            "P01",
+            "P02"
+          ]
+        },
+        {
+          "id": "household-02",
+          "position": 2,
+          "modules": [
+            "P03",
+            "P07"
+          ]
+        },
+        {
+          "id": "household-03",
+          "position": 3,
+          "modules": [
+            "P09",
+            "P10"
+          ]
+        },
+        {
+          "id": "household-04",
+          "position": 4,
+          "modules": [
+            "P16"
+          ]
+        },
+        {
+          "id": "household-05",
+          "position": 5,
+          "modules": [
+            "P17"
+          ]
+        },
+        {
+          "id": "household-06",
+          "position": 6,
+          "modules": [
+            "P19"
+          ]
+        },
+        {
+          "id": "household-07",
+          "position": 7,
+          "modules": [
+            "P21",
+            "P22"
+          ]
+        },
+        {
+          "id": "household-08",
+          "position": 8,
+          "modules": [
+            "P23",
+            "P25"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "producer",
+      "name": "生产企业经营者",
+      "entrance": "enterprise",
+      "subtypes": [],
+      "nodes": [
+        {
+          "id": "producer-01",
+          "position": 1,
+          "modules": [
+            "P01",
+            "P02",
+            "P04"
+          ]
+        },
+        {
+          "id": "producer-02",
+          "position": 2,
+          "modules": [
+            "P03",
+            "P05",
+            "P08"
+          ]
+        },
+        {
+          "id": "producer-03",
+          "position": 3,
+          "modules": [
+            "P11",
+            "P12",
+            "P13"
+          ]
+        },
+        {
+          "id": "producer-04",
+          "position": 4,
+          "modules": [
+            "P10",
+            "P14",
+            "P16"
+          ]
+        },
+        {
+          "id": "producer-05",
+          "position": 5,
+          "modules": [
+            "P15"
+          ]
+        },
+        {
+          "id": "producer-06",
+          "position": 6,
+          "modules": [
+            "P18",
+            "P19"
+          ]
+        },
+        {
+          "id": "producer-07",
+          "position": 7,
+          "modules": [
+            "P21",
+            "P22"
+          ]
+        },
+        {
+          "id": "producer-08",
+          "position": 8,
+          "modules": [
+            "P23",
+            "P24",
+            "P25"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "platform_firm",
+      "name": "平台或基础设施企业经营位置",
+      "entrance": "enterprise",
+      "subtypes": [],
+      "nodes": [
+        {
+          "id": "platform_firm-01",
+          "position": 1,
+          "modules": [
+            "P01",
+            "P04"
+          ]
+        },
+        {
+          "id": "platform_firm-02",
+          "position": 2,
+          "modules": [
+            "P05",
+            "P26"
+          ]
+        },
+        {
+          "id": "platform_firm-03",
+          "position": 3,
+          "modules": [
+            "P11",
+            "P12",
+            "P13"
+          ]
+        },
+        {
+          "id": "platform_firm-04",
+          "position": 4,
+          "modules": [
+            "P10",
+            "P16"
+          ]
+        },
+        {
+          "id": "platform_firm-05",
+          "position": 5,
+          "modules": [
+            "P15",
+            "P25"
+          ]
+        },
+        {
+          "id": "platform_firm-06",
+          "position": 6,
+          "modules": [
+            "P18",
+            "P19"
+          ]
+        },
+        {
+          "id": "platform_firm-07",
+          "position": 7,
+          "modules": [
+            "P21",
+            "P22"
+          ]
+        },
+        {
+          "id": "platform_firm-08",
+          "position": 8,
+          "modules": [
+            "P23",
+            "P24",
+            "P25"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "public_worker",
+      "name": "政府与公共职务人员",
+      "entrance": "individual",
+      "subtypes": [
+        "administrative",
+        "us_house_representative"
+      ],
+      "nodes": [
+        {
+          "id": "public_worker-01",
+          "position": 1,
+          "modules": [
+            "P16",
+            "P26"
+          ]
+        },
+        {
+          "id": "public_worker-02",
+          "position": 2,
+          "modules": [
+            "P09",
+            "P10"
+          ]
+        },
+        {
+          "id": "public_worker-03",
+          "position": 3,
+          "modules": [
+            "P23",
+            "P25"
+          ]
+        },
+        {
+          "id": "public_worker-04",
+          "position": 4,
+          "modules": [
+            "P17",
+            "P19"
+          ]
+        },
+        {
+          "id": "public_worker-05",
+          "position": 5,
+          "modules": [
+            "P26",
+            "P28"
+          ]
+        },
+        {
+          "id": "public_worker-06",
+          "position": 6,
+          "modules": [
+            "P20"
+          ]
+        },
+        {
+          "id": "public_worker-07",
+          "position": 7,
+          "modules": [
+            "P21"
+          ]
+        },
+        {
+          "id": "public_worker-08",
+          "position": 8,
+          "modules": [
+            "P23",
+            "P25"
+          ]
+        }
+      ]
+    }
+  ],
+  "packs": [
+    {
+      "id": "B01",
+      "name": "角色身份",
+      "priority": "P0",
+      "familyIds": [
+        "A01",
+        "A30"
+      ],
+      "sceneRefs": [
+        "Z00",
+        "roles"
+      ],
+      "existingFiles": [
+        "public/assets/trust/peep_characters.png"
+      ],
+      "missingAssets": [
+        "七个角色标签",
+        "两种公共职务子标签"
+      ],
+      "states": [
+        "未选",
+        "选中",
+        "恢复"
+      ],
+      "format": "HTML labels + PNG atlas",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B02",
+      "name": "四企业四产品",
+      "priority": "P0",
+      "familyIds": [
+        "A03",
+        "A17"
+      ],
+      "sceneRefs": [
+        "Z00"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "汽车",
+        "手机",
+        "鞋",
+        "面包",
+        "四个独立托盘",
+        "四家老板与劳动者五档表情及姿态",
+        "加减按钮与分配条"
+      ],
+      "states": [
+        "单家",
+        "四家",
+        "分配调整",
+        "上下限边界",
+        "表情五档",
+        "社会关系全景"
+      ],
+      "format": "SVG + HTML controls + character layers",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B03",
+      "name": "矿工父女寓言",
+      "priority": "P0",
+      "familyIds": [
+        "A01",
+        "A03",
+        "A27"
+      ],
+      "sceneRefs": [
+        "Z00"
+      ],
+      "existingFiles": [
+        "public/assets/trust/iterated_peep.png"
+      ],
+      "missingAssets": [
+        "煤堆",
+        "空篮",
+        "需要轮廓",
+        "改编署名"
+      ],
+      "states": [
+        "需要",
+        "无支付能力",
+        "堆积对照"
+      ],
+      "format": "PNG atlas + SVG + HTML",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B04",
+      "name": "四关系网络",
+      "priority": "P0",
+      "familyIds": [
+        "A05",
+        "A06",
+        "A26"
+      ],
+      "sceneRefs": [
+        "Z00",
+        "P01",
+        "C02"
+      ],
+      "existingFiles": [
+        "public/assets/workshop-v6/factory-relations.mjs",
+        "public/assets/workshop-v6/factory-relations.css"
+      ],
+      "missingAssets": [
+        "四企业端点",
+        "授权与未知层"
+      ],
+      "states": [
+        "协作",
+        "产权",
+        "控制",
+        "付款",
+        "未知"
+      ],
+      "format": "HTML + CSS + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B05",
+      "name": "钱包与时间",
+      "priority": "P0",
+      "familyIds": [
+        "A04",
+        "A07",
+        "A14"
+      ],
+      "sceneRefs": [
+        "P02",
+        "P03",
+        "roles"
+      ],
+      "existingFiles": [
+        "public/assets/trust/iterated_coin.png"
+      ],
+      "missingAssets": [
+        "毛收入与净额容器",
+        "独立时间条",
+        "生活需要"
+      ],
+      "states": [
+        "选择前",
+        "选择后",
+        "现金不足",
+        "未知"
+      ],
+      "format": "HTML + PNG atlas",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B06",
+      "name": "局部与整体透镜",
+      "priority": "P0",
+      "familyIds": [
+        "A11",
+        "A12",
+        "A17",
+        "A09"
+      ],
+      "sceneRefs": [
+        "Z00",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16",
+        "C01"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "近景与网络转换",
+        "对照基准标签"
+      ],
+      "states": [
+        "预测",
+        "实际",
+        "条件对照"
+      ],
+      "format": "HTML + CSS",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B07",
+      "name": "幕间与导航",
+      "priority": "P0",
+      "familyIds": [
+        "A11",
+        "A30",
+        "A31"
+      ],
+      "sceneRefs": [
+        "all"
+      ],
+      "existingFiles": [
+        "public/assets/trust-source/button_short.png",
+        "public/assets/trust-source/button_long.png"
+      ],
+      "missingAssets": [
+        "13节点进度",
+        "引句出处",
+        "跳过与展开返回"
+      ],
+      "states": [
+        "当前",
+        "完成",
+        "跳过",
+        "示范",
+        "重跑"
+      ],
+      "format": "accessible HTML + CSS",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B08",
+      "name": "节点选择汇总",
+      "priority": "P0",
+      "familyIds": [
+        "A15",
+        "A30"
+      ],
+      "sceneRefs": [
+        "all"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "计数与分母条",
+        "版本与更新时间",
+        "待同步提示"
+      ],
+      "states": [
+        "loading",
+        "empty",
+        "live",
+        "stale",
+        "offline",
+        "error"
+      ],
+      "format": "HTML + optional existing Recharts",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B09",
+      "name": "排产订单库存",
+      "priority": "P0",
+      "familyIds": [
+        "A02",
+        "A03",
+        "A14",
+        "A17"
+      ],
+      "sceneRefs": [
+        "P01",
+        "P02",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16"
+      ],
+      "existingFiles": [
+        "public/assets/workshop-v6/machine-old-v1.png",
+        "public/assets/workshop-v6/machine-new-v1.png"
+      ],
+      "missingAssets": [
+        "计划实产销量库存分栏",
+        "封存方案"
+      ],
+      "states": [
+        "未提交",
+        "封存",
+        "揭示",
+        "滞销",
+        "需求充足"
+      ],
+      "format": "HTML + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B10",
+      "name": "两期借款",
+      "priority": "P1",
+      "familyIds": [
+        "A18",
+        "A14"
+      ],
+      "sceneRefs": [
+        "P17"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "本金与利息容器",
+        "到期线",
+        "未来收入对照"
+      ],
+      "states": [
+        "借",
+        "不借",
+        "还款",
+        "负担上升",
+        "未知"
+      ],
+      "format": "HTML + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B11",
+      "name": "支付链与缓冲",
+      "priority": "P0",
+      "familyIds": [
+        "A16",
+        "A19",
+        "A29"
+      ],
+      "sceneRefs": [
+        "P19",
+        "C01"
+      ],
+      "existingFiles": [
+        "public/assets/trust/iterated_coin.png",
+        "public/assets/workshop-v6/factory-relations.mjs"
+      ],
+      "missingAssets": [
+        "到账欠付状态",
+        "缓冲槽",
+        "替代路径"
+      ],
+      "states": [
+        "正常",
+        "延迟",
+        "传导",
+        "缓冲成功"
+      ],
+      "format": "HTML + CSS + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B12",
+      "name": "数字控制与AI",
+      "priority": "P1",
+      "familyIds": [
+        "A05",
+        "A20",
+        "A08"
+      ],
+      "sceneRefs": [
+        "P21"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "派单定价评分申诉卡",
+        "工具与授权层"
+      ],
+      "states": [
+        "可用",
+        "受控",
+        "可申诉",
+        "权限未知"
+      ],
+      "format": "HTML + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B13",
+      "name": "迁移与退出",
+      "priority": "P1",
+      "familyIds": [
+        "A10",
+        "A21",
+        "A26"
+      ],
+      "sceneRefs": [
+        "P22"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "数据携带包",
+        "迁移门",
+        "兼容费用合同障碍"
+      ],
+      "states": [
+        "可退出",
+        "有条件",
+        "未知",
+        "对照"
+      ],
+      "format": "HTML + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B14",
+      "name": "服务与生态瓶颈",
+      "priority": "P1",
+      "familyIds": [
+        "A22",
+        "A23",
+        "A24"
+      ],
+      "sceneRefs": [
+        "P23",
+        "P24",
+        "P25"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "能力可及资源上限容器"
+      ],
+      "states": [
+        "改善",
+        "瓶颈",
+        "规模反弹",
+        "责任未知"
+      ],
+      "format": "HTML + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B15",
+      "name": "公共权限与选举",
+      "priority": "P1",
+      "familyIds": [
+        "A24",
+        "A25",
+        "A26"
+      ],
+      "sceneRefs": [
+        "P20",
+        "P26",
+        "P28",
+        "public_worker"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "权限审批链",
+        "选票资源预算独立容器"
+      ],
+      "states": [
+        "提出",
+        "审查",
+        "集体决定",
+        "权限不足"
+      ],
+      "format": "HTML + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B16",
+      "name": "历史关系三图",
+      "priority": "P1",
+      "familyIds": [
+        "A05",
+        "A12",
+        "A13",
+        "A27"
+      ],
+      "sceneRefs": [
+        "P31",
+        "C04"
+      ],
+      "existingFiles": [
+        "public/assets/workshop-v6/factory-relations.mjs"
+      ],
+      "missingAssets": [
+        "工场与机器工厂关系图",
+        "数字平台关系图",
+        "AI辅助关系图"
+      ],
+      "states": [
+        "劳动组织",
+        "产权",
+        "控制",
+        "来源展开"
+      ],
+      "format": "SVG + HTML",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B17",
+      "name": "证据与数据图",
+      "priority": "P2",
+      "familyIds": [
+        "A15",
+        "A27",
+        "A28"
+      ],
+      "sceneRefs": [
+        "P09",
+        "P27",
+        "P32",
+        "P33",
+        "P34",
+        "C03",
+        "C04"
+      ],
+      "existingFiles": [
+        "public/evidence/manifest.json",
+        "public/evidence/ai-paper.png",
+        "public/evidence/bls-recalculation.png",
+        "public/evidence/board-paper.png",
+        "public/evidence/cloud-report.png"
+      ],
+      "missingAssets": [
+        "H T E S标签",
+        "数据日期单位范围来源",
+        "可复算图"
+      ],
+      "states": [
+        "已核查",
+        "作者推演",
+        "未测量",
+        "失效口径"
+      ],
+      "format": "HTML + data-driven charts",
+      "status": "planned",
+      "releaseApproved": false
+    },
+    {
+      "id": "B18",
+      "name": "个人回看与结尾",
+      "priority": "P2",
+      "familyIds": [
+        "A12",
+        "A29",
+        "A30"
+      ],
+      "sceneRefs": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "P35"
+      ],
+      "existingFiles": [],
+      "missingAssets": [
+        "选择轨迹",
+        "关键条件重跑",
+        "结论边界"
+      ],
+      "states": [
+        "实际",
+        "跳过",
+        "示范",
+        "对照"
+      ],
+      "format": "HTML + SVG",
+      "status": "planned",
+      "releaseApproved": false
+    }
+  ],
+  "statistics": {
+    "status": "contract-not-implemented",
+    "showAfterChoice": true,
+    "blocksProgress": false,
+    "countLabel": "本班同条件有效首次提交数",
+    "notVerifiedNaturalPersonCount": true,
+    "eventFields": [
+      "classId",
+      "playId",
+      "roleId",
+      "nodeId",
+      "scenarioId",
+      "scenarioVersion",
+      "modelId",
+      "modelVersion",
+      "contentVersion",
+      "baselineId",
+      "choiceId",
+      "eventId",
+      "attemptType"
+    ],
+    "firstSubmissionKey": [
+      "classId",
+      "playId",
+      "roleId",
+      "nodeId",
+      "scenarioId",
+      "scenarioVersion",
+      "modelId",
+      "modelVersion",
+      "contentVersion",
+      "baselineId"
+    ],
+    "groupBy": [
+      "classId",
+      "roleId",
+      "nodeId",
+      "scenarioId",
+      "scenarioVersion",
+      "modelId",
+      "modelVersion",
+      "contentVersion",
+      "baselineId"
+    ],
+    "attemptTypes": [
+      "first",
+      "replay"
+    ],
+    "replayInFirstCounts": false,
+    "noCollectedFields": [
+      "name",
+      "occupation",
+      "income",
+      "property",
+      "location",
+      "freeText"
+    ],
+    "responseContainsIndividualTrajectories": false,
+    "states": [
+      "loading",
+      "empty",
+      "live",
+      "stale",
+      "offline",
+      "error"
+    ],
+    "deploymentReviewRequired": [
+      "notice",
+      "logs",
+      "retention",
+      "access control",
+      "clear class",
+      "retry idempotency",
+      "server validation"
+    ]
+  },
+  "rights": {
+    "originalSourceProvenance": "public/assets/trust-source/provenance.json",
+    "originalCommit": "6ec45d73befdb922bd40654dd1c1c903a953562f",
+    "generatedMachines": [
+      "public/assets/workshop-v6/machine-old-v1.png",
+      "public/assets/workshop-v6/machine-new-v1.png"
+    ],
+    "deprecatedSvgReuse": false,
+    "excludeThirdPartyAudioWithoutReview": true,
+    "prologueAdaptationReviewPending": true,
+    "dataReleaseReviewPending": true
+  },
+  "limitations": [
+    "Prologue and first M1 fragment have browser/viewport QA; no complete-route or real-device QA",
+    "No external service or anonymous counts backend configured",
+    "No new artwork pack marked complete"
+  ]
+}

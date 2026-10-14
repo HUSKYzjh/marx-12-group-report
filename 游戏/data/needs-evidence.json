@@ -1,0 +1,42 @@
+{
+ "checked":"2026-10-05",
+ "method":"Manual extraction of primary-source HTML or clearly marked official indexed excerpts. No microdata or causal regression. Plans are not achievements.",
+ "sources":[
+  {"id":"nasa-base","branch":"space","title":"NASA Moon Base: phased development and collaboration","published":"page updated 2026-09-24","url":"https://www.nasa.gov/reference/moonbase-about/","access":"HTML正文已读取；未来建设阶段属于计划"},
+  {"id":"nasa-2023-contract","branch":"space","title":"NASA selects Blue Origin, historical fixed-price award","published":"2023-05-24","url":"https://www.nasa.gov/centers-and-facilities/marshall/nasa-selects-blue-origin-as-second-artemis-lunar-lander-provider/","access":"HTML正文；历史授标额，不是已支付金额"},
+  {"id":"nasa-artemis2","branch":"space","title":"Artemis II crew return","published":"2026-04-10","url":"https://www.nasa.gov/news-release/nasa-welcomes-record-setting-artemis-ii-moonfarers-back-to-earth/","access":"HTML正文；绕月返回，不是登月城市"},
+  {"id":"oig2026","branch":"space","title":"NASA OIG IG-26-004 landing-system audit summary","published":"2026-03-10","url":"https://oig.nasa.gov/audits/nasas-management-of-the-human-landing-system-contracts/","access":"仅HTML审计摘要；未声称读取PDF全报告"},
+  {"id":"cmse2026","branch":"space","title":"2026年中国载人航天工程任务","published":"2026-02-27","url":"https://www.cmse.gov.cn/xwzx/202602/t20260227_57278.html","access":"HTML正文；2030年前登月是目标"},
+  {"id":"who2025","branch":"services","title":"State of the World’s Nursing 2025 official release","published":"2025-05-12","url":"https://www.who.int/news/item/12-05-2025-nursing-workforce-grows--but-inequities-threaten-global-health-goals","access":"HTML发布说明；194国汇总，不是本作下载的微观样本"},
+  {"id":"ilo-care2025","branch":"services","title":"ILO care economy WSSD2 brief","published":"2025-07-24","url":"https://www.ilo.org/publications/advancing-decent-work-and-care-economy-essential-component-social","access":"HTML研究简报；DOI 10.54394/VZTY3510"},
+  {"id":"nbs-pop2026","branch":"services","title":"2025年人口结构与年末人口","published":"2026-01-19","url":"https://www.stats.gov.cn/sj/zxfbhjd/202601/t20260119_1962338.html","access":"官方搜索索引返回正文；直接打开失败，未声称抓取完整网页"},
+  {"id":"nhc-nursing2026","branch":"services","title":"全国护理工作发展情况","published":"2026-05-11","url":"https://www.nhc.gov.cn/yzygj/c100067/202605/8aafad1f58fa4f3f8be13ac94be061fa.shtml","access":"官方搜索索引返回正文；直接打开失败。8月新统计公报未提取，不能称本条为最新完整公报"},
+  {"id":"ambient-scribe-rct","branch":"services","title":"Lukac et al., Ambient AI Scribes in Clinical Practice: A Randomized Trial","published":"2025-11-26; NEJM AI 2(12), DOI 10.1056/AIoa2501000","url":"https://pubmed.ncbi.nlm.nih.gov/41497288/","access":"PubMed官方索引摘要与PMC索引段落；直接读取遇到验证/403，未声称阅读全文及附录。使用最终期刊版本，不与早期预印本重复计数"}
+ ],
+ "clinicalExample":{
+  "source":"ambient-scribe-rct","population":"238 outpatient physicians in 14 specialties, one academic health system; not nurses or care recipients","trialDates":"2024-11-04 to 2025-01-03","endpoint":"change in writing time-in-note, not total clinical productivity or patient outcomes",
+  "nablaVsControl":{"changePercent":-9.5,"ci95Percent":[-17.2,-1.8],"p":0.02},"daxVsControl":{"changePercent":-1.7,"ci95Percent":[-9.4,5.9],"p":0.66},
+  "limits":"Secondary well-being endpoints need larger multicenter confirmation; occasional clinically significant inaccuracies require clinician vigilance. No direct calibration of game's 2-to-3 service-capacity assumption."
+ },
+ "observations":[
+  {"id":"nasa-award-2023","source":"nasa-2023-contract","year":2023,"kind":"historical-award","measure":"Blue Origin firm-fixed-price award at announcement","value":3.4,"unit":"billion USD; not actual expenditure"},
+  {"id":"artemis2-crew","source":"nasa-artemis2","year":2026,"kind":"observation","measure":"crew completing Artemis II lunar flyby","value":4,"unit":"people"},
+  {"id":"cn-moon-target","source":"cmse2026","year":2026,"kind":"target","measure":"first Chinese crewed Moon landing target: before this year","value":2030,"unit":"calendar year; not achieved"},
+  {"id":"who-nurses-2018","source":"who2025","year":2018,"kind":"estimate","measure":"global nursing workforce","value":27.9,"unit":"million people"},
+  {"id":"who-nurses-2023","source":"who2025","year":2023,"kind":"estimate","measure":"global nursing workforce","value":29.8,"unit":"million people"},
+  {"id":"who-shortage-2020","source":"who2025","year":2020,"kind":"estimate","measure":"global estimated nursing shortage","value":6.2,"unit":"million people"},
+  {"id":"who-shortage-2023","source":"who2025","year":2023,"kind":"estimate","measure":"global estimated nursing shortage","value":5.8,"unit":"million people"},
+  {"id":"who-shortage-2030","source":"who2025","year":2030,"kind":"projection","measure":"projected nursing shortage","value":4.1,"unit":"million people; not an observation"},
+  {"id":"who-nurse-concentration","source":"who2025","year":2023,"kind":"estimate","measure":"nurses in countries representing 49 percent of global population","value":78,"unit":"percent of global nurses"},
+  {"id":"who-pop-concentration","source":"who2025","year":2023,"kind":"estimate","measure":"population of same country group","value":49,"unit":"percent of global population"},
+  {"id":"ilo-out-care","source":"ilo-care2025","year":2023,"kind":"estimate","measure":"outside labour force due to unpaid care","value":748,"unit":"million people"},
+  {"id":"ilo-out-care-women","source":"ilo-care2025","year":2023,"kind":"estimate","measure":"women outside labour force due to unpaid care","value":708,"unit":"million people"},
+  {"id":"ilo-out-care-men","source":"ilo-care2025","year":2023,"kind":"estimate","measure":"men outside labour force due to unpaid care","value":40,"unit":"million people"},
+  {"id":"cn-pop-2025","source":"nbs-pop2026","year":2025,"kind":"observation","measure":"China year-end population","value":140489,"unit":"10000 people; mainland official scope"},
+  {"id":"cn-60plus-2025","source":"nbs-pop2026","year":2025,"kind":"observation","measure":"China age 60 and above population","value":32338,"unit":"10000 people; not care recipients"},
+  {"id":"cn-60plus-increase","source":"nbs-pop2026","year":2025,"kind":"observation","measure":"annual increase in age 60 and above population","value":1307,"unit":"10000 people"},
+  {"id":"cn-nurses-2025","source":"nhc-nursing2026","year":2025,"kind":"observation","measure":"registered nurses at year end","value":606.2,"unit":"10000 people"},
+  {"id":"cn-nurse-density-2020","source":"nhc-nursing2026","year":2020,"kind":"observation","measure":"registered nurses per 1000 population","value":3.34,"unit":"people per 1000 population"},
+  {"id":"cn-nurse-density-2025","source":"nhc-nursing2026","year":2025,"kind":"observation","measure":"registered nurses per 1000 population","value":4.32,"unit":"people per 1000 population"}
+ ]
+}

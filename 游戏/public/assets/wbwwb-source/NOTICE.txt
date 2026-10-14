@@ -1,0 +1,39 @@
+We Become What We Behold — original character artwork and action references
+Author: Nicky Case
+Original game: https://ncase.itch.io/wbwwb
+Source repository: https://github.com/ncase/wbwwb
+Pinned source commit: 7c68c7e44e66b5be95ebd07d22391de707090397
+Retrieved on: 2026-10-03
+
+Nicky Case dedicates author-owned code and art to the public domain under
+Creative Commons Zero 1.0: https://creativecommons.org/publicdomain/zero/1.0/
+The exact author statement and third-party credits are preserved in:
+vendor/ncase-wbwwb/README.md
+
+This character-resource selection excludes third-party audio, libraries,
+the laptop photo, weapons, blood and gore. Reference JS is preserved unchanged
+for study; it is NOT executed or bundled into our game. It can refer to sounds
+and scene assets not included here. Those references do not import those assets
+or extend CC0 to them. Original PNGs/JSON atlases are unchanged. Per-file source
+URLs, pinned Git blob hashes, dimensions and SHA-256 are in provenance.json.
+
+The character-lab preview uses new Canvas crop/render/control code and adapts
+original frame ranges and motion patterns. It is not the original game engine,
+not a complete recreation of the original action timing, and not an official
+Nicky Case project. Preview durations and motion intensity are our parameters.
+Frame-based sequences are distinguished from procedural movement in motions.mjs.
+No camera/news-cycle simulation, violence, audio or original story is executed.
+
+Trust assets displayed alongside these are the pre-existing original assets
+from ncase/trust at commit 6ec45d73befdb922bd40654dd1c1c903a953562f,
+under its original CC0 dedication. The crazy laugh is face frame 10 plus hopping,
+not the dizzy-face sequence 18–22 and not WBWWB's shouting CrazyPeep.
+
+Character shape, clothing and expression do not assign moral value or nationality.
+The full character-lab motion library remains a separate resource preview.
+The bakery introduction now reuses hatguy as its owner and body/face as its driver and baker;
+these are new narrative roles, not the original characters' moral attributes.
+The chef hat, oven, truck and bread are newly authored local SVGs, not WBWWB assets.
+Only the hat is added to the baker's unchanged original head, body and face.
+The earlier full-body baker.svg is retained but no longer loaded by the game.
+Our 16-second loading/payment/wage sequence does not run original WBWWB scripts.

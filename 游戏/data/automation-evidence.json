@@ -1,0 +1,28 @@
+{
+ "checked":"2026-10-04",
+ "method":"Manually transcribed published aggregate observations, not downloaded microdata. No full article copied. Each observation has its own denominator and time period.",
+ "sources":[
+  {"id":"nbs2026","title":"国家统计局：十四五经济社会发展成就系列报告之十","published":"2026-06-04","url":"https://www.stats.gov.cn/sj/sjjd/202606/t20260604_1963888.html","locator":"二（二）、三（二）","access":"2026-10-11复核官方HTML：产量与年均增速；不是机器人安装量或就业替代人数。","kind":"official statistics"},
+  {"id":"ifr2026","title":"IFR: Five Million Robots now Operate in Factories Globally","published":"2026-09-24","url":"https://ifr.org/ifr-press-releases/news/five-million-robots-now-operate-in-factories-globally","locator":"World Robotics 2026; China, United States, Japan paragraphs","access":"2026-10-11复核协会新闻稿，观测年2025；全球在用存量与各国当年新增安装分开，未读取付费统计全库。","kind":"industry association statistics"},
+  {"id":"ilo2025","title":"ILO Working Paper 140: Generative AI and Jobs","published":"2025-05-20","url":"https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure","locator":"Abstract; DOI 10.54394/HETP0387","access":"2026-10-11复核官方摘要的约25%及最高类别3.3%；职业任务暴露不是实际裁员。未自行重做任务评分。","kind":"task exposure estimate"},
+  {"id":"ilo2026","title":"ILO: Gen AI, occupational segregation and gender equality","published":"2026-03-05","url":"https://www.ilo.org/publications/gen-ai-occupational-segregation-and-gender-equality-world-work","locator":"84-country harmonized microdata; numerical summary in companion news item","numericUrl":"https://www.ilo.org/resource/news/new-ilo-data-confirm-women-face-higher-workplace-risks-generative-ai-men","access":"2026-10-11复核官方新闻正文的29%/16%；分母为女性/男性主导职业，不能改写成全部女性/男性失业比例。未下载84国微观数据。","kind":"task exposure estimate"},
+  {"id":"qje2025","title":"Brynjolfsson, Li, Raymond: Generative AI at Work, QJE 140(2), 889–942","published":"2025","url":"https://academic.oup.com/qje/article/140/2/889/7990658","locator":"Abstract；正式发表版本，不采用2023年工作论文数值","access":"2026-10-11复核正式版摘要：5,172位客服，每小时解决问题数平均提高15%；不是省时15%或失业率，未自行复现回归。","kind":"single-firm staggered rollout study"},
+  {"id":"cfps2025","title":"邹艳君、黄凌云、张超、叶丹：工业机器人的应用如何影响劳动时长？","published":"2025-09-03","url":"https://qks.sufe.edu.cn/J/CJYJ/Article/Details/A0fWJ3Fiim-VEsJ-yeDA-zSrI-oQYqw0x3Nz7P/CN","locator":"财经研究51(9):49–63，摘要；DOI 10.16538/j.cnki.jfe.20250515.301","access":"2026-10-11直开失败；期刊官方搜索索引返回摘要与全文摘录，可核对2010—2018样本及0.491小时分解结果。不是当前全国平均工时，未下载微观数据或复现回归。","kind":"CFPS 2010–2018 and regional robot density, Probit; abstract-level extraction"}
+ ],
+ "observations":[
+  {"id":"cn-production-2020","source":"nbs2026","year":2020,"geography":"China","measure":"industrial robot production","value":21.8,"unit":"10000 sets","precision":"rounded to 0.1"},
+  {"id":"cn-production-2025","source":"nbs2026","year":2025,"geography":"China","measure":"industrial robot production","value":77.3,"unit":"10000 sets","precision":"rounded to 0.1"},
+  {"id":"cn-production-cagr","source":"nbs2026","period":"2021–2025","geography":"China","measure":"published annual average industrial robot production growth","value":28.8,"unit":"percent"},
+  {"id":"world-stock","source":"ifr2026","year":2025,"geography":"World","measure":"operational industrial robots","value":5000000,"unit":"robots","precision":"rounded press release figure"},
+  {"id":"cn-install","source":"ifr2026","year":2025,"geography":"China","measure":"new industrial robot installations","value":354000,"unit":"robots"},
+  {"id":"us-install","source":"ifr2026","year":2025,"geography":"United States","measure":"new industrial robot installations","value":38500,"unit":"robots","precision":"almost, approximate"},
+  {"id":"jp-install","source":"ifr2026","year":2025,"geography":"Japan","measure":"new industrial robot installations","value":36219,"unit":"robots"},
+  {"id":"ilo-any","source":"ilo2025","year":2025,"geography":"World","measure":"employment in occupations with some GenAI exposure","value":25,"unit":"percent of employment","precision":"one in four, approximate"},
+  {"id":"ilo-highest","source":"ilo2025","year":2025,"geography":"World","measure":"employment in highest GenAI exposure gradient","value":3.3,"unit":"percent of employment"},
+  {"id":"ilo-female-occupation","source":"ilo2026","period":"harmonized microdata with varying survey years; published 2026","geography":"84-country study","measure":"GenAI exposure in female-dominated occupations","value":29,"unit":"percent, occupation grouping"},
+  {"id":"ilo-male-occupation","source":"ilo2026","period":"harmonized microdata with varying survey years; published 2026","geography":"84-country study","measure":"GenAI exposure in male-dominated occupations","value":16,"unit":"percent, occupation grouping"},
+  {"id":"qje-agents","source":"qje2025","period":"study rollout, published 2025","geography":"one multinational firm","measure":"customer support agents sampled","value":5172,"unit":"agents"},
+  {"id":"qje-productivity","source":"qje2025","period":"study rollout, published 2025","geography":"one multinational firm","measure":"average productivity gain from AI assistance","value":15,"unit":"percent, issues resolved per hour"},
+  {"id":"cfps-gap","source":"cfps2025","period":"2010–2018 sample, published 2025","geography":"China","measure":"reported differential weekly hours, lower versus higher skill","value":0.491,"unit":"hours per week","precision":"abstract's reported model result, NOT a current nationwide mean"}
+ ]
+}

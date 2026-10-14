@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="310" height="260" viewBox="0 0 310 260">
+ <g stroke="#626262" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <path fill="#e4e4de" d="M23 31Q25 19 40 20L270 24Q286 24 287 39L289 225 22 228Z"/>
+  <path fill="#f6f5ef" d="M30 26 31 51 281 53 281 30Z"/>
+  <path data-part="chamber" fill="#53534f" d="M40 67 235 68 237 131 39 131Z M39 148 237 150 235 209 41 210Z"/>
+  <path data-part="empty-rack" fill="#b9b9b0" stroke-width="3" d="M44 115 232 116 232 126 44 126Z M45 194 231 195 231 205 45 205Z"/>
+  <path fill="none" stroke="#a9a9a1" stroke-width="3" d="M54 85 221 86M55 96 221 97M55 163 220 165M55 175 222 177"/>
+  <path fill="none" stroke-width="3" d="M51 77 51 106M52 157 52 187M102 134 176 134M100 214 177 214"/>
+  <circle fill="#faf9f3" cx="260" cy="87" r="12"/><circle fill="#faf9f3" cx="261" cy="165" r="12"/>
+  <path fill="none" stroke-width="3" d="M260 87 264 79M261 165 256 158"/>
+  <circle fill="#a9b09b" cx="260" cy="119" r="4" stroke-width="2"/><circle fill="#a9b09b" cx="260" cy="198" r="4" stroke-width="2"/>
+  <path fill="#b9b9b0" d="M32 228 33 249 58 249 59 228M250 228 250 249 275 250 274 226Z"/>
+ </g>
+</svg>

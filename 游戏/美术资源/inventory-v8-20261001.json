@@ -1,0 +1,421 @@
+{
+  "date": "2026-10-01",
+  "roots": [
+    "public/assets",
+    "public/evidence"
+  ],
+  "files": [
+    {
+      "path": "public/assets/trust-source/bun.png",
+      "bytes": 449,
+      "sha256": "4e7654df0f43e97e921b2e32b134a10280a966fef489c446befdd46cd936c871",
+      "width": 26,
+      "height": 37,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/button_long.png",
+      "bytes": 19331,
+      "sha256": "21846ff21f240b0a3a2b405d1129113cd3b74d76be341b5d239bac411c28fde7",
+      "width": 800,
+      "height": 750,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/button_short.png",
+      "bytes": 10659,
+      "sha256": "e4aba3f3fc4d6903623721280f22f5083cf7caaa2d55879913f8e357551f3634",
+      "width": 300,
+      "height": 750,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/connection_flower.json",
+      "bytes": 972,
+      "sha256": "4524ca4f77c7932f64c0c39b86d650c04844f5079f94035fd9e9627812ba3e2c"
+    },
+    {
+      "path": "public/assets/trust-source/connection_flower.png",
+      "bytes": 30918,
+      "sha256": "e12998a9e9bef6d713443d26f7f03b6dca5aecb7cd2d8c6b4f09ae3d28ff94cc",
+      "width": 1024,
+      "height": 2048,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/connection.json",
+      "bytes": 541,
+      "sha256": "7e8cd92b84f45c059b9ba6f15366430fbcd48af5f95e55d09843d129b54d09c9"
+    },
+    {
+      "path": "public/assets/trust-source/connection.png",
+      "bytes": 205,
+      "sha256": "2f0f0f13161400c459ca3da9ff61b619cc8b2f6873ab3b05723fab857ce8430c",
+      "width": 128,
+      "height": 128,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/iterated_payoffs.json",
+      "bytes": 2153,
+      "sha256": "595eed98e8c7b1e0f030134e53a1c23dce6a6a9b594de2256dd94e23910c26f5"
+    },
+    {
+      "path": "public/assets/trust-source/iterated_payoffs.png",
+      "bytes": 167811,
+      "sha256": "9d66a1d262ca01ccf6f1e43488fa393c3b9fb9569b5d52b3abf07fd9aebe3421",
+      "width": 2048,
+      "height": 4096,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/iterated_scoreboard.png",
+      "bytes": 3165,
+      "sha256": "c55a68de4af04a031c9eefcc6b9171f821be388fd99b1d978510b83b4da36849",
+      "width": 402,
+      "height": 202,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/provenance.json",
+      "bytes": 17873,
+      "sha256": "e3d7ebf6dbe6b9450b135f929c8f0a6c8558a558ce0b36add8b4e252858b1df0"
+    },
+    {
+      "path": "public/assets/trust-source/sandbox_incdec.png",
+      "bytes": 2087,
+      "sha256": "0a0d97e6d9b995f17031f8295ba88162eb29c48a5f5e12385eb817ae600c3cc8",
+      "width": 160,
+      "height": 40,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/scratch.png",
+      "bytes": 703826,
+      "sha256": "33dd5d4cc57ad7a60c9291350f1f2bd3bece572be970c8d84339bf6a657b3548",
+      "width": 1422,
+      "height": 8000,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/slider_bg.png",
+      "bytes": 632,
+      "sha256": "d57e538647c077e140290eaa681b734f0ddb0cb4736a58eccffb36edb36b2ab8",
+      "width": 400,
+      "height": 80,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/slider_knob.png",
+      "bytes": 1710,
+      "sha256": "3a7eb9d17207c2fb40b225d1617436b3e1ba00a4f626f51d0ac48903890be444",
+      "width": 80,
+      "height": 80,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/splash_peep.json",
+      "bytes": 558,
+      "sha256": "59e156701b00e957aba31adeb972359f1e96bef58be22a17efb16fc42fbc1c27"
+    },
+    {
+      "path": "public/assets/trust-source/splash_peep.png",
+      "bytes": 13707,
+      "sha256": "a85e2819950b3eca0c26a036181b656e4370eaa90ea3634de6034dd068b0579f",
+      "width": 512,
+      "height": 1024,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust-source/tournament_peep.json",
+      "bytes": 1715,
+      "sha256": "3616f58908da6fb105c60574a1411523c5773a3b424b78603425a2d5e31414ad"
+    },
+    {
+      "path": "public/assets/trust-source/tournament_peep.png",
+      "bytes": 32094,
+      "sha256": "cd462a275e6ca9a75eae7ebb8838f7c2dfc31c8c6b6195d211864a6267c6dd84",
+      "width": 512,
+      "height": 512,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust/button.png",
+      "bytes": 12155,
+      "sha256": "5201f6fc8b099cb049b5f1524dcd28eb6045f3f69d315ce0ed9e252c735ee622",
+      "width": 500,
+      "height": 750,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust/iterated_coin.json",
+      "bytes": 370,
+      "sha256": "d12809378ceb9449e7a655ccf09c5b39e66911afc0e821b26a548e04b10b0b6f"
+    },
+    {
+      "path": "public/assets/trust/iterated_coin.png",
+      "bytes": 1649,
+      "sha256": "67ac157c701c8bc24ce56347400a2d458329e0e22e1cb74e2a4de0ffe24ec7cf",
+      "width": 128,
+      "height": 128,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust/iterated_machine.json",
+      "bytes": 381,
+      "sha256": "1d623c719967679ff6613d031fd06c626ffccde0ae0acd590f6384eaf79aec6b"
+    },
+    {
+      "path": "public/assets/trust/iterated_machine.png",
+      "bytes": 24555,
+      "sha256": "02a81f0c3362587f44dcb35a53e03daa6ce2594986fd43df5d3b5cca1998e7c5",
+      "width": 2048,
+      "height": 2048,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust/iterated_peep.json",
+      "bytes": 4644,
+      "sha256": "e382b0f9445edcad919af0391793d7125dc8253c30af6dba19da2ca5938778a2"
+    },
+    {
+      "path": "public/assets/trust/iterated_peep.png",
+      "bytes": 95022,
+      "sha256": "c2c069f8c789af2e19f946fa2440bd375e6e9a6fc31b0933641a788296083c3f",
+      "width": 2048,
+      "height": 2048,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust/LICENSE.txt",
+      "bytes": 6554,
+      "sha256": "5537d4d10b76b81b6e8dfd8b644480a4b1efa332fbb0cdb61126c5be781ef7b4"
+    },
+    {
+      "path": "public/assets/trust/peep_characters.png",
+      "bytes": 65845,
+      "sha256": "72ac77f02afc0c310bac7b54a73ba253e6d33c39a15e1863b11e55a59f867832",
+      "width": 2400,
+      "height": 325,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/trust/provenance.json",
+      "bytes": 1394,
+      "sha256": "e8e1059bb312ef6e9a7fd3bbd50e8f0862a73e60fa60d5ec59e7c8bcb16c3ad0"
+    },
+    {
+      "path": "public/assets/workshop-v6/art-kit.css",
+      "bytes": 5001,
+      "sha256": "42755f05f27389864546ff26f2ad77c69a0ef9ac516c50cc59849b35cf59d852"
+    },
+    {
+      "path": "public/assets/workshop-v6/art-kit.mjs",
+      "bytes": 6518,
+      "sha256": "ccb29d07e9422f1e02f5596bba9ebd8c8034bacf4e5cc0ea5c7973b33503de8e"
+    },
+    {
+      "path": "public/assets/workshop-v6/contract.svg",
+      "bytes": 363,
+      "sha256": "79e6ac888cea9f415e30c7b6da57c4e3d335ba3d8c70534df97a41b03c1247ad"
+    },
+    {
+      "path": "public/assets/workshop-v6/DEPRECATED.md",
+      "bytes": 495,
+      "sha256": "d696f873b95e443c6d23bfd90b3d656732f44820d49f914adc8e63cf1a8eff78"
+    },
+    {
+      "path": "public/assets/workshop-v6/factory-relations.css",
+      "bytes": 3812,
+      "sha256": "4aa393fa28cc030bd6f8f94d40f79a1bbbc39006d8020ae1443458f6dfca4c9d"
+    },
+    {
+      "path": "public/assets/workshop-v6/factory-relations.mjs",
+      "bytes": 3669,
+      "sha256": "600bf11bdd3f108f5c7a5a2babe53fd1b2387d04ae8b8fc20f5af9520267e5e5"
+    },
+    {
+      "path": "public/assets/workshop-v6/index.html",
+      "bytes": 4309,
+      "sha256": "b88f1136418ef6642cc4da772d336d871aba2d73c801c9add0206222355d9774"
+    },
+    {
+      "path": "public/assets/workshop-v6/machine-new-v1.png",
+      "bytes": 344669,
+      "sha256": "377e4aab58937fc7d1f5b11b4ea95c74688379d8258a745d5033ead98a5c5f44",
+      "width": 1774,
+      "height": 887,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/workshop-v6/machine-old-v1.png",
+      "bytes": 568220,
+      "sha256": "28000cd58a49d84ea13d8f35feddc5d6aa3557a610adc404ae724ffdcc079779",
+      "width": 1774,
+      "height": 887,
+      "colorType": 6
+    },
+    {
+      "path": "public/assets/workshop-v6/machine-upgrade.svg",
+      "bytes": 247,
+      "sha256": "512cd78650a2136283b7ab323e0c88b48ccba02adf7af596b1651c55a45597d1"
+    },
+    {
+      "path": "public/assets/workshop-v6/marker-actual.svg",
+      "bytes": 232,
+      "sha256": "84ef27d3b94972eabab6913213d07cb79186c40687bae18c8281117591111f57"
+    },
+    {
+      "path": "public/assets/workshop-v6/marker-prediction.svg",
+      "bytes": 217,
+      "sha256": "1b3840ebd189e8d25b0183df85d1c440640440ea87b0f21ad299e424dcb331de"
+    },
+    {
+      "path": "public/assets/workshop-v6/marker-unknown.svg",
+      "bytes": 272,
+      "sha256": "45777649bcbcf2376c1da83d2658c84bc79764fcfb90080de4c632b9ac9b18aa"
+    },
+    {
+      "path": "public/assets/workshop-v6/node-science.svg",
+      "bytes": 384,
+      "sha256": "13d96e5e3c41e02e4598acc11ab67d90ff4e6e86d07c00f9aa978c02b763c12b"
+    },
+    {
+      "path": "public/assets/workshop-v6/node-supply.svg",
+      "bytes": 323,
+      "sha256": "122f88f1719877ae83a27c184bdf853be9ad36a9876797c03d07c197f1780c10"
+    },
+    {
+      "path": "public/assets/workshop-v6/node-transport.svg",
+      "bytes": 384,
+      "sha256": "0f0abfa56889f249bc1f2d2c2b5cb62aee8d0289927b973655a5fccf35d01775"
+    },
+    {
+      "path": "public/assets/workshop-v6/owner-tag.svg",
+      "bytes": 329,
+      "sha256": "fcd0867e56226d8a025504ba28d7c1fc9b10acaa387a8b7b28264fdce826f609"
+    },
+    {
+      "path": "public/assets/workshop-v6/product.svg",
+      "bytes": 265,
+      "sha256": "94442f57d603860ca3aed30470d717fab5589364108b270fe50a11a2477ced87"
+    },
+    {
+      "path": "public/assets/workshop-v6/relation-control.svg",
+      "bytes": 215,
+      "sha256": "2da38b4399572340ead57e55f8a14c500be8f9fc52c709b2630ee03848f45457"
+    },
+    {
+      "path": "public/assets/workshop-v6/relation-cooperation.svg",
+      "bytes": 292,
+      "sha256": "66c0becf28ae7983d383e05a042c3091832cb1815eb9a0f1f78a0ca25bf28231"
+    },
+    {
+      "path": "public/assets/workshop-v6/relation-marks.css",
+      "bytes": 4988,
+      "sha256": "fcd826cf94f3ccbbb14a07a67089e2157b3461d335bebc5d90573a91aa17a23e"
+    },
+    {
+      "path": "public/assets/workshop-v6/relation-ownership.svg",
+      "bytes": 274,
+      "sha256": "805f721367157693123aebd121da8122b96b56676abb66b8128a7e3df443976b"
+    },
+    {
+      "path": "public/assets/workshop-v6/relation-payment.svg",
+      "bytes": 283,
+      "sha256": "17fdd79c4678fc8e98753456533d667191427c3a73a248c1db1c4662dc4285f4"
+    },
+    {
+      "path": "public/assets/workshop-v6/relation-unknown.svg",
+      "bytes": 325,
+      "sha256": "d883896c93f3dacaeccd6682031a39b6d00c4bafebf9cb58f5c8d0d23ac58be0"
+    },
+    {
+      "path": "public/assets/workshop-v6/slot.svg",
+      "bytes": 279,
+      "sha256": "ce0e51663f8f5fbab3499af05226d4ba49f988369df9852d93937207b322f6c4"
+    },
+    {
+      "path": "public/assets/workshop-v6/specimen.css",
+      "bytes": 5302,
+      "sha256": "79f5e31cbbfa45ff8df0fb563ed5324eaa7fd466bbbcc20bd5e0bb408ac52576"
+    },
+    {
+      "path": "public/assets/workshop-v6/specimen.mjs",
+      "bytes": 4173,
+      "sha256": "a5e6a620c100d6abc8af69f023b419adc31b05b7bf65a03b5809f4c452dc45bc"
+    },
+    {
+      "path": "public/assets/workshop-v6/time-ruler.svg",
+      "bytes": 469,
+      "sha256": "8953afd4883023d40b7c8ef178f07cc19ac9b20c001cde5745e5bfe821e9c20a"
+    },
+    {
+      "path": "public/assets/workshop-v6/tray.svg",
+      "bytes": 312,
+      "sha256": "a71d6048114e9b33c6aa0fc87bea52b055db1ec4dcbf47f7fba1398916e4a9ee"
+    },
+    {
+      "path": "public/assets/workshop-v6/trust-frames.mjs",
+      "bytes": 10353,
+      "sha256": "3424ecb0c986fa52ccb75f5e15f642f30667a2bea803eeb41fcfb7f8a464ec4b"
+    },
+    {
+      "path": "public/assets/workshop-v6/trust-kit.css",
+      "bytes": 9960,
+      "sha256": "bd02896fe4e602446b169c40a931e2672cd423d656865eba7253aede793a3794"
+    },
+    {
+      "path": "public/assets/workshop-v6/trust-kit.mjs",
+      "bytes": 7834,
+      "sha256": "f30e2606d1ee23d117d2960b951b3271818a60c371c2c3585feb74ba7eaf7c79"
+    },
+    {
+      "path": "public/assets/workshop-v6/trust-specimen.mjs",
+      "bytes": 5021,
+      "sha256": "809ecacc21bd4f806717e55229e4d2c6496b745bf6d6424f7aa3794d2099745c"
+    },
+    {
+      "path": "public/assets/workshop-v6/wallet.svg",
+      "bytes": 468,
+      "sha256": "c4201472b91146ac4eadddc7722a0371c6245811fa0f9f0329f7bf6faefe16c9"
+    },
+    {
+      "path": "public/evidence/ai-paper.png",
+      "bytes": 3839,
+      "sha256": "c64ea2944be2e08844584d57e1ba929cb387d1066f758b7e927aacbc877de389",
+      "width": 911,
+      "height": 320,
+      "colorType": 3
+    },
+    {
+      "path": "public/evidence/bls-recalculation.png",
+      "bytes": 117795,
+      "sha256": "1275b27f4dfeef5b40171a477172a17e77f83addfad45e3980956c6d034f1b01",
+      "width": 1400,
+      "height": 900,
+      "colorType": 6
+    },
+    {
+      "path": "public/evidence/board-paper.png",
+      "bytes": 4099,
+      "sha256": "ba5e960ab095bb801e13c65fa5a3e4cb47bd14526e4ea981d103891ab5803a63",
+      "width": 693,
+      "height": 397,
+      "colorType": 3
+    },
+    {
+      "path": "public/evidence/cloud-report.png",
+      "bytes": 9112,
+      "sha256": "7fc878983d166df909925728abd88d5d68b8a63a952eec082e4ff15c936e50a8",
+      "width": 1056,
+      "height": 595,
+      "colorType": 3
+    },
+    {
+      "path": "public/evidence/manifest.json",
+      "bytes": 1250,
+      "sha256": "195e1b4fa8ce4b4d94c747522f95aa5b35331297764f3a90390091a71bf11391"
+    }
+  ]
+}

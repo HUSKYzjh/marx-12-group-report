@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createHash} from 'node:crypto';
+import {PLATFORM_MODES,SHARE_MODES,platformAccount,sharingAccount} from '../lib/ownership-experiment.ts';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const evidence=JSON.parse(await fs.readFile(path.join(root,'data/ownership-evidence.json'),'utf8'));
+const get=id=>{const r=evidence.observations.find(o=>o.id===id);if(!r)throw new Error(id);return r.value;};
+const pdf=evidence.sources.find(s=>s.id==='cma-appendix');if(createHash('sha256').update(await fs.readFile(path.join(root,pdf.localFile))).digest('hex')!==pdf.sha256)throw new Error('Source PDF hash mismatch');
+const analysis={checked:evidence.checked,regulatoryChecked:evidence.regulatoryChecked,sourceCount:evidence.sources.length,numericObservationCount:evidence.observations.length,regulatoryEvents:evidence.regulatoryEvents,method:'Descriptive arithmetic of reported aggregates, not causal inference. Bounds and targets are not point observations. Regulatory events are qualitative records, not additional financial observations.',
+ findings:{privateAIInvestmentUSChinaRatio:get('us-private')/get('cn-private'),huaweiReportedNetProfitRevenuePercent:100*get('hw-profit')/get('hw-sales'),huaweiReportedRDRevenuePercent:100*get('hw-rd')/get('hw-sales'),mondragonReportedProfitSalesPercent:100*get('mond-profit')/get('mond-sales'),ukIaaSTwoProviderPublishedBand:get('uk-iaas-two'),ukPaaSTwoProviderPublishedBand:get('uk-paas-two'),publishedBandsMinimumGapPercentagePoints:get('uk-iaas-two')[0]-get('uk-paas-two')[1]},
+ limitations:['Private investment excludes the full Chinese public funding picture.','Disclosure bands are not confidence intervals; a band gap is not an exact share difference.','Only UK IaaS/PaaS, not UK+EEA or global AI; no complete firm shares and no HHI is calculated.','Lower bounds and targets are not used as exact growth endpoints.','Group margins differ in scope and cannot rank ownership institutions.','Beneficiaries including retirees and voting participants have different denominators.','No microdata downloaded or regression reproduced.'],
+ teachingScenarios:{platform:[...Array.from({length:7},(_,fee)=>PLATFORM_MODES.filter(mode=>mode!=='joint').map(mode=>platformAccount(mode,fee,2))).flat(),platformAccount('joint',3,2)],sharing:SHARE_MODES.flatMap(mode=>['divide','invest'].map(ballot=>sharingAccount(mode,ballot)))}};
+const destination=path.join(root,'outputs/ownership-research/analysis.json');
+if(process.argv.includes('--check')){if(JSON.stringify(JSON.parse(await fs.readFile(destination,'utf8')))!==JSON.stringify(analysis))throw new Error('Stale ownership analysis');console.log('Reproducible: source PDF hash, '+evidence.sources.length+' sources, '+evidence.observations.length+' numeric observations, '+evidence.regulatoryEvents.length+' separate regulatory events, 4 ratios plus 3 band comparisons, 21 independent teaching scenarios.');}
+else{await fs.mkdir(path.dirname(destination),{recursive:true});await fs.writeFile(destination,JSON.stringify(analysis,null,2)+'\n');console.log(JSON.stringify(analysis.findings,null,2));}
