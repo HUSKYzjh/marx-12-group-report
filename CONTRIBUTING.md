@@ -4,7 +4,7 @@
 
 ## 第一次加入
 
-1. 本项目仓库为[HUSKYzjh/zhongma-12-group-report](https://github.com/HUSKYzjh/zhongma-12-group-report)，中文名称“中马-12组汇报”。仓库已公开，查看、克隆和下载无需协作者邀请；以含`AGENTS.md`、`.build/`和本文件的目录为工作根目录。
+1. 本项目仓库为[HUSKYzjh/marx-12-group-report](https://github.com/HUSKYzjh/marx-12-group-report)，中文名称“中马-12组汇报”。仓库已公开，查看、克隆和下载无需协作者邀请；以含`AGENTS.md`、`.build/`和本文件的目录为工作根目录。
 2. 若需直接向本仓库推送分支，由所有者在`Settings → Collaborators → Add people`邀请同学；同学登录并接受邀请后获得协作权限。未获写入权限的用户也可以在自己的fork中修改，再提出PR。[官方说明](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository)
 3. 每人克隆到自己的工作目录，再让Codex打开该目录，依次阅读`AGENTS.md`、本文件和`README.md`。
 4. 使用README的依赖说明运行`python .build/project.py doctor`。当前生成器需要Codex自带运行库；只有GitHub网页或普通Node.js环境时，可以修改文本源码和补资料，渲染交给有完整环境的同学，并在PR中说明。
@@ -12,8 +12,8 @@
 首次克隆可直接执行：
 
 ```powershell
-git clone https://github.com/HUSKYzjh/zhongma-12-group-report.git
-Set-Location zhongma-12-group-report
+git clone https://github.com/HUSKYzjh/marx-12-group-report.git
+Set-Location marx-12-group-report
 ```
 
 不要把GitHub登录凭据写入项目文件。`runtime.local.json`是各自的本机配置，已加入忽略规则。

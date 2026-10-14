@@ -1,6 +1,6 @@
 # 中马-12组汇报：项目规则
 
-项目中文名称为“中马-12组汇报”，GitHub仓库为`HUSKYzjh/zhongma-12-group-report`。
+项目中文名称为“中马-12组汇报”，GitHub仓库为`HUSKYzjh/marx-12-group-report`。
 
 ## 目标与当前版本
 
