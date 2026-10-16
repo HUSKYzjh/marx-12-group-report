@@ -10,22 +10,31 @@
   "composition": "Native HTML/CSS places the unchanged deterministic vector QR in the blank center of the generated transparent illustration. No AI redrawing of QR data.",
   "validation": "群像二维码扫码校验.json",
   "artwork_sha256": "2656eea0e3db024062fb292c53c08e4f347982abc8e656a054497498510636a9",
-  "final_file": "试玩二维码-面包工坊群像.png",
-  "final_sha256": "8bf2a3ebd5c0e4de2f8fd0af348d9318e1b088fedef0f2fd75c48adcfbaaa2ba",
+  "final_file": "试玩二维码-群像居中修正版.png",
+  "final_sha256": "c1b3787051abe2f924d7a7d1792df03149d0021e8c430eac0ddd11de56d32de7",
   "skill": "C:/Users/Agent/.codex/skills/.system/imagegen/SKILL.md",
   "layout_alignment": {
     "canvas_px": [
       1440,
-      1580
+      1440
     ],
     "qr_center_px": [
-      770,
+      720,
       720
     ],
     "qr_size_px": [
       760,
       760
     ],
-    "basis": "按外圈人物围出的留白作视觉居中；原画布中心位置使二维码显得偏左，因此向右调整50px。"
-  }
+    "margins_px": {
+      "left": 340,
+      "right": 340,
+      "top": 340,
+      "bottom": 340
+    },
+    "basis": "撤销上一版向右50px的偏移。采用方形图形区域，二维码的水平、垂直中心均与画布重合；标题作为独立页脚，仅在带标题版中导出。",
+    "measurement": "群像二维码居中校验.json"
+  },
+  "captioned_file": "试玩二维码-面包工坊群像.png",
+  "captioned_sha256": "2be8d0a11618427917db6c8543ce693a2f1a20a038f7d9bf62fec8b064d4c419"
 }
