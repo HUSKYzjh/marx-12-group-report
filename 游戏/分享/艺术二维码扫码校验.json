@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-16",
+  "decoder": "zxing-cpp 3.1.1",
+  "resampling": "Pillow BICUBIC",
+  "results": [
+    {
+      "file": "试玩二维码-面包烙印.png",
+      "sha256": "110216eebead477038ac6cb61683922185b00fab8a9b113eb8faec9c579959cc",
+      "width": 1000,
+      "height": 1080,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-面包烙印.png",
+      "sha256": "110216eebead477038ac6cb61683922185b00fab8a9b113eb8faec9c579959cc",
+      "width": 500,
+      "height": 540,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-面包烙印.png",
+      "sha256": "110216eebead477038ac6cb61683922185b00fab8a9b113eb8faec9c579959cc",
+      "width": 360,
+      "height": 389,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-面包烙印.png",
+      "sha256": "110216eebead477038ac6cb61683922185b00fab8a9b113eb8faec9c579959cc",
+      "width": 280,
+      "height": 302,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-金币票据.png",
+      "sha256": "084bd5fecb39ed12fa5bb21388eaba7a153176cd234ad10c182e99f5f1717cae",
+      "width": 1000,
+      "height": 1080,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-金币票据.png",
+      "sha256": "084bd5fecb39ed12fa5bb21388eaba7a153176cd234ad10c182e99f5f1717cae",
+      "width": 500,
+      "height": 540,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-金币票据.png",
+      "sha256": "084bd5fecb39ed12fa5bb21388eaba7a153176cd234ad10c182e99f5f1717cae",
+      "width": 360,
+      "height": 389,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-金币票据.png",
+      "sha256": "084bd5fecb39ed12fa5bb21388eaba7a153176cd234ad10c182e99f5f1717cae",
+      "width": 280,
+      "height": 302,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    }
+  ],
+  "limitation": "软件解码检查；未进行实体手机或微信扫一扫实测。"
+}
