@@ -1,6 +1,6 @@
 {
   "built_at": "2026-10-14T09:07:25.268Z",
-  "bytes": 20545121,
+  "bytes": 20545222,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2150,5 +2150,13 @@
     "components/playable-story.tsx",
     "portable.tsx"
   ],
-  "external_runtime_requests": false
+  "external_runtime_requests": false,
+  "ui_patches": [
+    {
+      "date": "2026-10-16",
+      "change": "hide-prologue-notes",
+      "source": "lib/trust-stage.js",
+      "method": "single runtime statement added to the existing standalone artifact"
+    }
+  ]
 }

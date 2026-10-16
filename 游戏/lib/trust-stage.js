@@ -638,6 +638,7 @@
     if (keyOf(s) !== lastKey) document.getElementById('notes').open = false;
     document.getElementById('notes').hidden = ['opening','bakery'].includes(keyOf(s));
     var currentChapter=STORY_CHAPTERS.find(function(chapter){return chapter.id===(s.section==='machine'?'machine':p.scene==='technology'?'automation':p.scene==='needs-technology'?'needs':p.scene==='ownership-technology'?'ownership':p.scene==='market-rules'?'rules':s.section);})||STORY_CHAPTERS[0];
+    document.getElementById('notes').style.display = currentChapter.id === 'prologue' ? 'none' : '';
     document.getElementById('chapter').textContent=currentChapter.title;
     document.querySelectorAll('#chapter-list button').forEach(function(choice){
       choice.disabled=false;choice.title='';
