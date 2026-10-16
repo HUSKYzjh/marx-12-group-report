@@ -1,7 +1,7 @@
 {
   "date": "2026-10-16",
   "decoder": "zxing-cpp 3.1.1",
-  "sha256": "2be8d0a11618427917db6c8543ce693a2f1a20a038f7d9bf62fec8b064d4c419",
+  "sha256": "8bf2a3ebd5c0e4de2f8fd0af348d9318e1b088fedef0f2fd75c48adcfbaaa2ba",
   "resampling": "Pillow BICUBIC",
   "results": [
     {

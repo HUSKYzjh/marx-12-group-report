@@ -11,6 +11,21 @@
   "validation": "群像二维码扫码校验.json",
   "artwork_sha256": "2656eea0e3db024062fb292c53c08e4f347982abc8e656a054497498510636a9",
   "final_file": "试玩二维码-面包工坊群像.png",
-  "final_sha256": "2be8d0a11618427917db6c8543ce693a2f1a20a038f7d9bf62fec8b064d4c419",
-  "skill": "C:/Users/Agent/.codex/skills/.system/imagegen/SKILL.md"
+  "final_sha256": "8bf2a3ebd5c0e4de2f8fd0af348d9318e1b088fedef0f2fd75c48adcfbaaa2ba",
+  "skill": "C:/Users/Agent/.codex/skills/.system/imagegen/SKILL.md",
+  "layout_alignment": {
+    "canvas_px": [
+      1440,
+      1580
+    ],
+    "qr_center_px": [
+      770,
+      720
+    ],
+    "qr_size_px": [
+      760,
+      760
+    ],
+    "basis": "按外圈人物围出的留白作视觉居中；原画布中心位置使二维码显得偏左，因此向右调整50px。"
+  }
 }
