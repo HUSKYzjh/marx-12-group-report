@@ -10,7 +10,7 @@
 
 [在线试玩《饥馑的盛宴》](https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/) · [二维码与手绘分享卡](游戏/分享/README.md) · [游戏源码与离线包](游戏/README.md)。线上版本供小范围试玩，首次可能出现腾讯云访问提示。
 
-<a href="https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/"><img src="游戏/分享/试玩二维码-面包烙印.png" width="324" alt="饥馑的盛宴面包烙印二维码，扫码打开游戏"></a>
+<a href="https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/"><img src="游戏/分享/试玩二维码-面包工坊群像.png" width="324" alt="饥馑的盛宴面包工坊群像二维码，扫码打开游戏"></a>
 
 本项目用于约30分钟的课程汇报。最新成品为36页，2026-10-13完成d8逻辑链修订；2026-10-14整理可交接项目包。
 

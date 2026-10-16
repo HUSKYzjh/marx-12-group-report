@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-16",
+  "decoder": "zxing-cpp 3.1.1",
+  "sha256": "2be8d0a11618427917db6c8543ce693a2f1a20a038f7d9bf62fec8b064d4c419",
+  "resampling": "Pillow BICUBIC",
+  "results": [
+    {
+      "file": "试玩二维码-面包工坊群像.png",
+      "width": 1440,
+      "height": 1580,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-面包工坊群像.png",
+      "width": 720,
+      "height": 790,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-面包工坊群像.png",
+      "width": 540,
+      "height": 592,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-面包工坊群像.png",
+      "width": 360,
+      "height": 395,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-面包工坊群像.png",
+      "width": 324,
+      "height": 356,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    }
+  ],
+  "limitation": "软件解码检查；未进行实体手机或微信扫一扫实测。"
+}

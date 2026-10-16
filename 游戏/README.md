@@ -8,7 +8,7 @@
 
 首次访问可能出现腾讯云测试域名提示，倒计时后点击“确定访问”。这是用于小范围试玩的测试地址。
 
-<a href="https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/"><img src="分享/试玩二维码-面包烙印.png" width="360" alt="饥馑的盛宴面包烙印二维码"></a>
+<a href="https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/"><img src="分享/试玩二维码-面包工坊群像.png" width="360" alt="饥馑的盛宴面包工坊群像二维码"></a>
 
 ## 离线试玩
 

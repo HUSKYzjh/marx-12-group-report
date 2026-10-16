@@ -50,6 +50,7 @@ def make(mode):
         # Banknote-like engraving remains well outside the QR quiet zone.
         for y in range(116,887,16):
             s += [f'<path d="M96 {y} q14 -11 26 0 M878 {y} q14 11 26 0" fill="none" stroke="#b1a47d" stroke-width="1.1"/>']
+    qr_start = len(s)
     for y, row in enumerate(matrix):
         for x, dark in enumerate(row):
             if not dark or ((x<7 and y<7) or (x>=n-7 and y<7) or (x<7 and y>=n-7)):
@@ -82,6 +83,12 @@ def make(mode):
         s.append(f'<path d="M{cx-20} {cy-39} q-8 -10 -2 -18 M{cx+4} {cy-40} q-8 -10 -2 -18" fill="none" stroke="#8c8e7d" stroke-width="2.5" stroke-linecap="round"/>')
     else:
         s += [f'<circle cx="{cx}" cy="{cy}" r="47" fill="#dbc178" stroke="{ink}" stroke-width="3"/><circle cx="{cx}" cy="{cy}" r="38" fill="none" stroke="#968149" stroke-width="1.6"/>',bread(cx-33,cy-29,66)]
+    if mode == '面包烙印':
+        quiet = 4*u
+        span = size+2*quiet
+        core = f'<svg xmlns="http://www.w3.org/2000/svg" width="{span}" height="{span}" viewBox="{origin-quiet} {top-quiet} {span} {span}"><title>饥馑的盛宴 · 群像版码芯</title>'
+        core += ''.join(s[qr_start:]) + '</svg>'
+        (ROOT/'试玩二维码-群像码芯.svg').write_text(core,encoding='utf-8')
     # Caption is outside the full four-module quiet zone.
     s += [f'<text x="500" y="1014" text-anchor="middle" font-family="KaiTi,serif" font-size="42" fill="{ink}" letter-spacing="5">饥馑的盛宴</text>',
         '<text x="500" y="1054" text-anchor="middle" font-family="KaiTi,serif" font-size="21" fill="#7e806e" letter-spacing="4">扫码 · 从一车面包开始</text></svg>']
