@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-17",
+  "environment_id": "zjh-d0ginayd0c9cbf350",
+  "region": "ap-shanghai",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "status": "deployed_and_mobile_opening_playtest_passed",
+  "uploaded_files": 1,
+  "remote_consistency_verified": true,
+  "remote_backup_prefix": ".cloudbase-backup/1792169693527/",
+  "prune": false,
+  "index_bytes": 20547700,
+  "index_sha256": "82ca4b90a7ec8040853672e85e3aa3c0cda85b856da076783c9a36555b55e9f8",
+  "previous_index_sha256": "3a47cc34d82313c753788eee1a01814be8986acc177a14c68b151677dda3e8e4",
+  "local_viewports": 10,
+  "online_viewports": 5,
+  "focused_unit_tests": {
+    "command": "node --test tests/production-network.test.mjs",
+    "passed": 22,
+    "failed": 0
+  },
+  "offline_zip_integrity": true,
+  "offline_zip_html_matches": true,
+  "scope": "Responsive opening only. First act entry, return home, reload, viewport shrink and rotation; not every branch or physical mobile browser."
+}

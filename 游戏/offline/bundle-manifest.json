@@ -1,6 +1,6 @@
 {
   "built_at": "2026-10-14T09:07:25.268Z",
-  "bytes": 20545222,
+  "bytes": 20547700,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2157,6 +2157,17 @@
       "change": "hide-prologue-notes",
       "source": "lib/trust-stage.js",
       "method": "single runtime statement added to the existing standalone artifact"
+    },
+    {
+      "date": "2026-10-17",
+      "change": "responsive-opening-start-and-decoration",
+      "sources": [
+        "lib/trust-stage.js",
+        "app/trust-stage.css"
+      ],
+      "method": "Exact source block replacements in the existing standalone artifact; no unrelated source rebuild."
     }
-  ]
+  ],
+  "sha256": "82ca4b90a7ec8040853672e85e3aa3c0cda85b856da076783c9a36555b55e9f8",
+  "last_ui_patch_date": "2026-10-17"
 }

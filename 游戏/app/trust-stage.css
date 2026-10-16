@@ -1823,3 +1823,10 @@ body[data-scene=street]:not([data-street-mode=sandbox]) main{width:100%;max-widt
  .remedy-open+.remedy-records { justify-content:flex-start; gap:0 16px; }
  .remedy-open+.remedy-records>details>summary { font-size:13px; }
 }
+
+/* Opening fits the actual visible host screen; decoration yields to the start action. */
+body[data-scene="opening"] main { min-height: 0; padding: 8px 0 12px; }
+body[data-scene="opening"] #heading { top: var(--splash-title-y, 300px); width: var(--splash-title-width, 340px); font-size: var(--splash-title-size, 56px); }
+body[data-scene="opening"] #controls { margin-top: 6px; padding-bottom: env(safe-area-inset-bottom, 0px); }
+body[data-scene="opening"] .production-hint { margin-bottom: 8px; }
+.production-symbol[hidden] { display: none; }
