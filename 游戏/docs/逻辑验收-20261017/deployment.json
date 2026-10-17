@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-17",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "status": "deployed_and_online_playtest_passed",
+  "environment_id": "zjh-d0ginayd0c9cbf350",
+  "region": "ap-shanghai",
+  "uploaded_files": 62,
+  "remote_consistency_verified": true,
+  "backup_prefix": ".cloudbase-backup/1792227244868/",
+  "prune": false,
+  "index_sha256": "46bd142bbeb36e32d5578ee7ebc27e843947ac24214a9f5e2c80e1aff6b4c98c",
+  "javascript": "/runtime-assets/d625a5cca667dde3b74a.js",
+  "standalone_sha256": "950f0e72a7871892d95554447ad79b3f90a832b546f9c2c625bf82bf2e5f82f5",
+  "standalone_bytes": 20560685,
+  "offline_zip_integrity": true,
+  "offline_zip_html_matches": true,
+  "font_mappings": 47449,
+  "targeted_unit_tests": 43,
+  "complete_course_resume_cases": {
+    "local": 2,
+    "online": 2
+  },
+  "offline_mobile_viewports": 10,
+  "scope": "Guide persistence, mid-animation refresh and chapter exit, cancelled animation recovery, undo, replay, complete three-part battle. Edge simulated viewports; no physical-device test."
+}
