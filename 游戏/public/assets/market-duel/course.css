@@ -260,3 +260,7 @@ body[data-rules="3"] .status .equipment-status{display:inline;font:inherit;white
 /* Rival summary shares one line; zero ovens do not need a placeholder. */
 .arena .rival-zone .status p{white-space:nowrap}
 @media(max-width:350px){.arena .rival-zone .status p{font-size:10px}}
+
+/* Capacity and temporary work notices share the heading margin. */
+.status>div:first-child{gap:6px}.shop-meta{display:flex;flex-direction:column;align-items:flex-end;flex:0 0 auto;gap:1px;font-size:11px;line-height:1.4;white-space:nowrap;color:#7b7b71}.status .shop-meta .level,.status .shop-meta .equipment-note{font-size:inherit}.status .shop-meta .equipment-note{color:#66675e}
+@media(max-width:700px){.shop-meta{font-size:9px}}

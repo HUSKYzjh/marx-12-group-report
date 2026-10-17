@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-17",
+  "request": "每天做6个改为明天可做6个，我的面包店也要改。",
+  "change": "两家店名旁统一显示明天可做的数量，复用courseCapacity计算已安排的设备与人手产能；临时安装提示单独保留。",
+  "local_and_online_widths": [
+    320,
+    390,
+    1280
+  ],
+  "expected_capacity_examples": {
+    "initial": [
+      6,
+      6
+    ],
+    "after_firing": 4,
+    "after_one_oven_upgrade": 12,
+    "two_upgraded_ovens_four_workers": 24,
+    "rival_upgraded": 12
+  },
+  "checks": [
+    "before and after advance",
+    "pending purchases and hires",
+    "whole-shop installation",
+    "rival social upgrades",
+    "heading fits",
+    "summary remains one line",
+    "original maximum cash 87"
+  ],
+  "economic_rules_changed": false,
+  "index_sha256": "00fad4e3ed71dea07553b12efaf8b84b175a2e2cb44a2745ba39af1584adfd3e",
+  "offline_sha256": "aa000102808ddd199027c76e5098c08a99e59afca248adfb95f21f0a159516e2",
+  "offline_zip_checked": true,
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792248735842/"
+  },
+  "prune": false
+}
