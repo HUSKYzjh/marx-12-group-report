@@ -262,7 +262,36 @@ body[data-rules="3"] .status .equipment-status{display:inline;font:inherit;white
 @media(max-width:350px){.arena .rival-zone .status p{font-size:10px}}
 
 /* Capacity and temporary work notices share the heading margin. */
-.status>div:first-child{gap:6px}.shop-meta{display:flex;flex-direction:column;align-items:flex-end;flex:0 0 auto;gap:1px;font-size:14px;line-height:1.4;white-space:nowrap;color:#7b7b71}.status .shop-meta .level,.status .shop-meta .equipment-note{font-size:inherit}.status .shop-meta .equipment-note{color:#66675e}
-.status>div:first-child{gap:4px}.status .shop-meta .equipment-note{font-size:10px}
+.status>div:first-child{gap:6px}.shop-meta{display:flex;flex-direction:column;align-items:flex-end;flex:0 0 auto;gap:1px;font-size:16px;line-height:1.4;white-space:nowrap;color:#7b7b71}.status .shop-meta .level,.status .shop-meta .equipment-note{font-size:inherit}.status .shop-meta .equipment-note{color:#66675e}
+.status>div:first-child{gap:4px}.status .shop-meta .equipment-note{font-size:12px}
 @media(max-width:700px){.shop-meta{font-size:11px}}
 .arena .shop-zone .status h2{white-space:nowrap;flex-shrink:0}
+
+/* Readable operating figures; narrow screens give data its own full-width row. */
+.battle-frame .market-signal small{font-size:18px;line-height:1.4}
+.battle-frame .market-signal strong{font-size:36px;line-height:1.2}
+.battle-frame .market-signal span{font-size:14px}
+.battle-frame .schedule{font-size:16px;line-height:1.5}
+.battle-frame .schedule b{font-size:18px}
+.battle-frame .schedule .next{white-space:nowrap}
+@media(max-width:700px){
+ .arena .shop-zone .status>div:first-child{flex-direction:column;align-items:flex-start;gap:2px}
+ .shop-meta{flex-direction:row;align-items:baseline;gap:6px;font-size:14px}
+ .status .shop-meta .equipment-note{font-size:11px}
+ .arena .rival-zone .status{top:10px}
+ .arena .player-zone .status{bottom:12px}
+ .battle-frame .console{grid-template-columns:minmax(0,1fr)}
+ .battle-frame .narration{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:center;padding:12px;min-height:0;border-right:0;border-bottom:1px solid #a4a69c}
+ .battle-frame .market-signal{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:0}
+ .battle-frame .market-signal small{font-size:16px}
+ .battle-frame .market-signal strong{font-size:32px}
+ .battle-frame .schedule{font-size:14px;gap:4px;justify-content:flex-end;margin:0;text-align:right}
+ .battle-frame .schedule b{font-size:16px}
+ .battle-frame .move{min-height:80px;padding:10px}
+ .battle-frame .move strong{font-size:18px}
+ .battle-frame .move small{font-size:12px;line-height:1.5}
+ .battle-frame #round-report h1{font-size:18px}
+ .battle-frame #round-report p{font-size:14px}
+ .battle-frame #preview-copy{font-size:16px}
+ .battle-frame #advance{font-size:16px}
+}

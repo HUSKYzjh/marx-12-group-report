@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T16:37:01.023Z",
-  "bytes": 20568498,
+  "built_at": "2026-10-17T16:50:52.094Z",
+  "bytes": 20570242,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2154,6 +2154,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Enlarge capacity and market figures; put demand and production information above controls on mobile, retaining single-line shop summaries.",
     "Increase both shop capacity labels to 11px on mobile and 14px on desktop, retaining compact summary rows and separate installation notices.",
     "Show next-round configured capacity beside both shop names, reflecting pending equipment and staffing; preserve compact summary rows and temporary installation notices.",
     "Restore the original subdued clothing palette from commit 7c69673; retain the current single-line summaries for both shops.",
@@ -2167,9 +2168,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "dc146fcee6e1f7206b6ad3958432f6056b2940508da35f00fe9533a1ebe78604",
+    "index_sha256": "c8826c4b330ffe17d00a4e13c98023cc27c581f7b1a96787d1a674029381d5b4",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "6b6d94a0828794c57d35e4451516ec2631087f4f8e77eb2e7653a54c8a2630fb"
+  "sha256": "204558d778552df2f5f08443b2e3aedbc34dcf0314036890ffb20ab7e7d26e2d"
 }
