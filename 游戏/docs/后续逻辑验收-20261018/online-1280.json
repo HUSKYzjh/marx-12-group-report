@@ -1,0 +1,46 @@
+{
+  "checkedAt": "2026-10-17T19:19:37.612Z",
+  "buildSHA256": "6b9d110492bb08be3460a504e119ea692221d25263c6ba79ea39da7af597a4ed",
+  "results": [
+    {
+      "width": 1280,
+      "offline": false,
+      "samplePath": false,
+      "freshStart": true,
+      "stateInjection": false,
+      "battleStages": 3,
+      "sixShopRounds": 1,
+      "forcedBankruptcy": false,
+      "openRemedyRoutes": 3,
+      "remedyDaysObserved": 9,
+      "automaticRemedyShock": false,
+      "branches": [
+        "automation",
+        "time",
+        "space",
+        "services",
+        "concentration",
+        "sharing",
+        "policy",
+        "prices"
+      ],
+      "wavesActualReview": true,
+      "summaryThreeChoicesReadOnly": true,
+      "actualReceiptComparisons": 8,
+      "relatedBranchesNavigated": 8,
+      "allReportsOpened": true,
+      "allBranchesRetained": true,
+      "observedBranches": 8,
+      "observationsReadOnly": true,
+      "homeReturn": true,
+      "refresh": true,
+      "incomeBrushMethod": "mouse",
+      "incomeBrushSales": [
+        12,
+        12
+      ]
+    }
+  ],
+  "errors": [],
+  "external": []
+}

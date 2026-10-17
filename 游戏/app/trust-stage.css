@@ -1823,3 +1823,27 @@ body[data-scene=street]:not([data-street-mode=sandbox]) main{width:100%;max-widt
  .remedy-open+.remedy-records { justify-content:flex-start; gap:0 16px; }
  .remedy-open+.remedy-records>details>summary { font-size:13px; }
 }
+
+/* Opening fits the actual visible host screen; decoration yields to the start action. */
+body[data-scene="opening"] main { min-height: 0; padding: 8px 0 12px; }
+body[data-scene="opening"] #heading { top: var(--splash-title-y, 300px); width: var(--splash-title-width, 340px); font-size: var(--splash-title-size, 56px); }
+body[data-scene="opening"] #controls { margin-top: 6px; padding-bottom: env(safe-area-inset-bottom, 0px); }
+body[data-scene="opening"] .production-hint { margin-bottom: 8px; }
+.production-symbol[hidden] { display: none; }
+.branch-review{max-width:540px;margin:8px auto 24px;text-align:left}
+.branch-review table{width:100%;border-collapse:collapse;table-layout:fixed}
+.branch-review caption{font-size:21px;text-align:left;margin-bottom:10px}
+.branch-review th,.branch-review td{padding:9px 8px;border-bottom:1px dashed #bbb;font-weight:normal}
+.branch-review thead th{font-size:16px;color:#666}
+.branch-review tbody th{font-size:17px;text-align:left}
+.branch-review td{font-size:23px;text-align:right;white-space:nowrap}
+.branch-review-conditions{margin-top:10px;font-size:16px}
+.branch-related{width:100%;max-width:600px;margin:18px auto 0;text-align:center}
+.branch-related p{font-size:18px;line-height:1.6;margin:0 0 8px}
+.branch-related button{max-width:100%;min-height:44px;white-space:normal}
+.street-summary-probe{margin:12px auto 18px;padding:12px;border:1px dashed #aaa;border-radius:9px;text-align:left}
+.street-summary-probe>summary{font-size:19px;line-height:1.6;cursor:pointer}
+.summary-probe-choices{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.summary-probe-choices button{font-size:17px;min-height:44px;white-space:normal;flex:1 1 150px}
+.summary-probe-answer{font-size:18px;line-height:1.7;text-align:left}
+@media(max-width:600px){.branch-review caption{font-size:19px}.branch-review th,.branch-review td{padding:9px 4px}.branch-review tbody th{font-size:15px}.branch-review td{font-size:21px}.branch-related p{font-size:17px}.street-summary-probe>summary{font-size:17px}.summary-probe-choices{gap:6px}.summary-probe-choices button{flex-basis:100%}.summary-probe-answer{font-size:17px}}

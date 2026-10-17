@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-17",
+  "baseline": false,
+  "entry": "local",
+  "indexSha256": "14f39aa4d82e2e4c43a7418e6280b7af6e9684070149db0e4c79ec0f808864ff",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "requiredPages": 1,
+      "requiredBodyCharacters": 23,
+      "chooseCharacters": 205,
+      "openingReadWithoutPayment": true,
+      "oneClickStart": true,
+      "priceReferenceAccessible": true,
+      "exitReferenceMidPage": true,
+      "receiptCorrect": true,
+      "reload": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "height": 667,
+      "requiredPages": 1,
+      "requiredBodyCharacters": 23,
+      "chooseCharacters": 205,
+      "openingReadWithoutPayment": true,
+      "oneClickStart": true,
+      "priceReferenceAccessible": true,
+      "exitReferenceMidPage": true,
+      "receiptCorrect": true,
+      "reload": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "requiredPages": 1,
+      "requiredBodyCharacters": 23,
+      "chooseCharacters": 205,
+      "openingReadWithoutPayment": true,
+      "oneClickStart": true,
+      "priceReferenceAccessible": true,
+      "exitReferenceMidPage": true,
+      "receiptCorrect": true,
+      "reload": true,
+      "noOverflow": true
+    }
+  ],
+  "errors": []
+}

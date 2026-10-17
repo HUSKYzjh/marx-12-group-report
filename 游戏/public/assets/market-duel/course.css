@@ -242,3 +242,63 @@ footer{flex-wrap:wrap}
 .opening-shop-crew{position:absolute;left:5px;bottom:0;display:flex;gap:5px}
 .opening-shop-crew .street-person{width:28px;height:43px}
 @media(max-width:700px){#opening-guide[data-opening-step="0"] h2{font-size:25px}#opening-guide [data-opening-page="0"]{font-size:17px}#opening-guide [data-opening-page="0"] .opening-goal{font-size:20px}.opening-shop-scene{height:195px}}
+
+/* Keep repeated counters and empty narration out of the playing view. */
+.player-status .level,#choose-label:empty,#signal-note:empty,#eyebrow:empty,#preview .source-proof:empty,.bubble:empty{display:none}
+
+#steady-goal{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0;padding:7px 9px;font-size:15px;line-height:1.5;border-bottom:1px dashed #c9c6ba}#steady-goal[hidden]{display:none}#steady-goal strong{font-weight:normal;white-space:nowrap}#steady-insight{font-size:15px;line-height:1.6;margin:4px 0 10px}#comparison[data-challenge="true"]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}#comparison[data-challenge="true"] .outcome-figure{min-width:0;font-size:13px}#comparison[data-challenge="true"] b{font-size:23px}@media(max-width:350px){#steady-goal{font-size:13px;padding:7px 4px}#comparison[data-challenge="true"] b{font-size:20px}}
+
+#detail{position:fixed;top:20px;bottom:auto;margin:0 auto;max-height:calc(100dvh - 40px);overflow:auto}
+
+/* Keep the player summary below the shop outline and the crew. */
+.arena .player-zone .status{bottom:22px}
+body[data-rules="3"] .status .equipment-status{display:inline;font:inherit;white-space:normal}
+.status .equipment-status:before{content:" \00b7 "}
+@media(max-width:700px){.arena .player-zone .fighter{height:128px}.arena .player-zone .status{bottom:20px;width:calc(100% - 32px)}.arena .player-zone .status>div{width:calc((100% + 42px)*.53 - 10px)}.arena .player-zone .status p{font-size:11px;line-height:1.6}}
+.player-status .equipment-note{font-size:10px;color:#66675e;white-space:nowrap}
+
+/* Rival summary shares one line; zero ovens do not need a placeholder. */
+.arena .rival-zone .status p{white-space:nowrap}
+@media(max-width:350px){.arena .rival-zone .status p{font-size:10px}}
+
+/* Capacity and temporary work notices share the heading margin. */
+.status>div:first-child{gap:6px}.shop-meta{display:flex;flex-direction:column;align-items:flex-end;flex:0 0 auto;gap:1px;font-size:16px;line-height:1.4;white-space:nowrap;color:#7b7b71}.status .shop-meta .level,.status .shop-meta .equipment-note{font-size:inherit}.status .shop-meta .equipment-note{color:#66675e}
+.status>div:first-child{gap:4px}.status .shop-meta .equipment-note{font-size:12px}
+@media(max-width:700px){.shop-meta{font-size:11px}}
+.arena .shop-zone .status h2{white-space:nowrap;flex-shrink:0}
+
+/* Readable operating figures; narrow screens give data its own full-width row. */
+.battle-frame .market-signal small{font-size:18px;line-height:1.4}
+.battle-frame .market-signal strong{font-size:36px;line-height:1.2}
+.battle-frame .market-signal span{font-size:14px}
+.battle-frame .schedule{font-size:16px;line-height:1.5}
+.battle-frame .schedule b{font-size:18px}
+.battle-frame .schedule .next{white-space:nowrap}
+@media(max-width:700px){
+ .arena .shop-zone .status>div:first-child{flex-direction:column;align-items:flex-start;gap:2px}
+ .shop-meta{flex-direction:row;align-items:baseline;gap:6px;font-size:14px}
+ .status .shop-meta .equipment-note{font-size:11px}
+ .arena .rival-zone .status{top:10px}
+ .arena .player-zone .status{bottom:12px}
+ .battle-frame .console{grid-template-columns:minmax(0,1fr)}
+ .battle-frame .narration{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:center;padding:12px;min-height:0;border-right:0;border-bottom:1px solid #a4a69c}
+ .battle-frame .market-signal{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:0}
+ .battle-frame .market-signal small{font-size:16px}
+ .battle-frame .market-signal strong{font-size:32px}
+ .battle-frame .schedule{font-size:14px;gap:4px;justify-content:flex-end;margin:0;text-align:right}
+ .battle-frame .schedule b{font-size:16px}
+ .battle-frame .move{min-height:80px;padding:10px}
+ .battle-frame .move strong{font-size:18px}
+ .battle-frame .move small{font-size:12px;line-height:1.5}
+ .battle-frame #round-report h1{font-size:18px}
+ .battle-frame #round-report p{font-size:14px}
+ .battle-frame #preview-copy{font-size:16px}
+ .battle-frame #advance{font-size:16px}
+}
+
+#ending #steady-maximum{margin-top:18px;padding-top:14px;border-top:1px dashed #b5b2a5;font-size:20px;line-height:1.6}#steady-maximum strong{font-size:26px;font-weight:normal;display:inline-block;white-space:nowrap}#steady-maximum small{font-size:16px}
+@media(max-width:700px){#ending #steady-maximum{font-size:18px}#steady-maximum strong{font-size:24px}#steady-maximum small{font-size:14px}}
+#comparison[data-review="waves"],#comparison[data-review="social"]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+#comparison[data-review="waves"] .outcome-figure{padding:7px 5px;min-width:0}
+#comparison[data-review="waves"] b{white-space:nowrap}
+@media(max-width:350px){#comparison[data-review="waves"] b{font-size:20px}}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-16",
+  "tool": "image_gen.imagegen (built-in)",
+  "prompt": "Use case: illustration-story. Generate a NEW square decorative illustration FRAME for the Chinese hand-drawn teaching game 饥馑的盛宴. Input image 1 is ONLY a layout/palette reference for the existing bread QR card; input image 2 is ONLY a character/style reference. Do NOT reproduce, redraw, or invent any QR code. Primary request: a charming, more artistic peripheral scene full of tiny bakery people surrounding a completely EMPTY central square. Layout is critical: keep the entire central square from 22% to 78% of canvas width AND 22% to 78% of canvas height fully transparent and completely clear. Place ALL illustration in the outside border, with an additional narrow gap around the clear center. Around 10 small playful stick-figure characters form a loose, irregular circular procession around that empty center: chefs with tall hats carrying bread trays along the top; a worker hugging an oversized loaf on the left; a bowler-hatted owner balancing a stack of gold coins at upper right; two workers pushing a small bread cart along the bottom; one curious worker peeking in from the lower right; one tiny seated tired worker with a bread at lower left. Include a modest small arched oven at the top-left perimeter, a few wheat sprigs, loose bread loaves, a couple of floating gold coins. Tell a funny, gentle little story through gestures; not identical repeated figures. Interconnected flowing pencil gestures at corners, sparse miniature woodcut-like crosshatching, asymmetrical editorial composition, sophisticated handmade bookplate aesthetic. Match the reference game: simple pale circular faces with two dot eyes, slim dark graphite arms/legs, warm oatmeal clothing, off-white chef hats, tiny muted ochre/gold accents. Loose textured graphite outlines, delicate warm ink, mostly gray/cream with a little gold. No photorealism, no 3D, no glossy vector mascot look. No text, no letters, no numbers, no logos, no QR, no barcode, no solid square frame. Do not put anything in the central clear area. Everything fully visible inside square canvas, generous outer breathing room. Transparent background, including center and spaces between characters. This is illustration art to be layered around an exact machine-readable QR added separately.",
+  "artwork": "assets/面包工坊群像外圈.png",
+  "references": [
+    "试玩二维码-面包烙印.png",
+    "assets/面包店插画.png"
+  ],
+  "composition": "Native HTML/CSS places the unchanged deterministic vector QR in the blank center of the generated transparent illustration. No AI redrawing of QR data.",
+  "validation": "群像二维码扫码校验.json",
+  "artwork_sha256": "2656eea0e3db024062fb292c53c08e4f347982abc8e656a054497498510636a9",
+  "final_file": "试玩二维码-群像居中修正版.png",
+  "final_sha256": "c1b3787051abe2f924d7a7d1792df03149d0021e8c430eac0ddd11de56d32de7",
+  "skill": "C:/Users/Agent/.codex/skills/.system/imagegen/SKILL.md",
+  "layout_alignment": {
+    "canvas_px": [
+      1440,
+      1440
+    ],
+    "qr_center_px": [
+      720,
+      720
+    ],
+    "qr_size_px": [
+      760,
+      760
+    ],
+    "margins_px": {
+      "left": 340,
+      "right": 340,
+      "top": 340,
+      "bottom": 340
+    },
+    "basis": "撤销上一版向右50px的偏移。采用方形图形区域，二维码的水平、垂直中心均与画布重合；标题作为独立页脚，仅在带标题版中导出。",
+    "measurement": "群像二维码居中校验.json"
+  },
+  "captioned_file": "试玩二维码-面包工坊群像.png",
+  "captioned_sha256": "2be8d0a11618427917db6c8543ce693a2f1a20a038f7d9bf62fec8b064d4c419"
+}

@@ -1,32 +1,33 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>面包店对决 · 饥馑的盛宴</title><link rel="stylesheet" href="battle.css"><link rel="stylesheet" href="course.css"></head>
 <body><main>
-<header><a href="pressure.html">饥馑的盛宴</a><span id="chapter-title">第一场 · 客人每天都来</span><button id="restart" aria-label="重新开始三场对战">↻</button></header>
+<header><a href="pressure.html">饥馑的盛宴</a><span id="chapter-title">第一场 · 恒定的客流数</span><button id="restart" aria-label="重新开始三场对战">↻</button></header>
 <div class="battle-frame" id="battle-frame">
 <section class="arena" aria-label="两家面包店的对战场景">
   <div class="day"><span id="day">第一天</span><span id="round-dots" aria-hidden="true"></span></div>
   <section class="shop-zone rival-zone" aria-labelledby="rival-shop-title">
   <svg class="shop-outline" viewBox="0 0 1000 230" preserveAspectRatio="none" aria-hidden="true"><path d="M10 14 Q420 4 988 13 L985 143 Q710 149 450 144 L438 217 Q190 224 9 205 Z"/></svg>
-  <article class="status rival-status"><div><h2 id="rival-shop-title">隔壁面包店</h2><span class="level" id="rival-level">普通炉</span></div><div class="cash-line"><span>资金</span><div class="meter"><i id="bar-1"></i></div><b id="cash-1"></b></div><p id="stats-1"></p></article>
+  <article class="status rival-status"><div><h2 id="rival-shop-title">隔壁面包店</h2><span class="shop-meta"><span class="level" id="rival-level">明天可做6个</span><span class="equipment-note" id="rival-equipment-note" hidden></span></span></div><div class="cash-line"><span>资金</span><div class="meter"><i id="bar-1"></i></div><b id="cash-1"></b></div><p id="stats-1"></p></article>
   <div class="fighter rival" id="fighter-1"><div class="bubble" id="speech-1"></div><div class="figures" id="figures-1"></div><div class="platform"></div><div class="crew" id="crew-1"></div><div class="float" id="float-1"></div></div>
   </section>
   <div id="customer-gate" aria-hidden="true"></div>
   <section class="shop-zone player-zone" aria-labelledby="player-shop-title">
   <svg class="shop-outline" viewBox="0 0 1000 230" preserveAspectRatio="none" aria-hidden="true"><path d="M11 78 Q294 87 551 78 L563 13 Q814 5 988 14 L990 211 Q548 224 10 213 Z"/></svg>
   <div class="fighter player" id="fighter-0"><div class="bubble" id="speech-0"></div><div class="figures" id="figures-0"></div><div class="platform"></div><div class="crew" id="crew-0"></div><div class="float" id="float-0"></div></div>
-  <article class="status player-status"><div><h2 id="player-shop-title">你的面包店</h2><span class="level">第 <span id="turn">1</span> 回合</span></div><div class="cash-line"><span>资金</span><div class="meter"><i id="bar-0"></i></div><b id="cash-0"></b></div><p id="stats-0"></p></article>
+  <article class="status player-status"><div><h2 id="player-shop-title">你的面包店</h2><span class="level">第 <span id="turn">1</span> 回合</span><span class="shop-meta"><span id="player-capacity">明天可做6个</span><span class="equipment-note" id="player-equipment-note" hidden></span></span></div><div class="cash-line"><span>资金</span><div class="meter"><i id="bar-0"></i></div><b id="cash-0"></b></div><p id="stats-0"></p></article>
   </section>
   <div class="action-banner" id="banner" aria-live="polite" hidden></div>
 <section class="street" id="street-panel" hidden><div class="street-label"><span>同一条街上的顾客</span><span id="street-summary">每人每天买一个面包</span></div><div id="customers"></div></section>
 </section>
 <section class="console" id="console">
+  <p id="steady-goal" hidden aria-live="polite"></p>
   <div class="narration"><div id="market-signal" class="market-signal"><small id="signal-label">全街需求</small><strong id="signal-value">12 个</strong><span id="signal-note">每天一样</span></div><div id="schedule" class="schedule"></div></div>
   <div class="command-area"><p id="choose-label">你的店，怎么应对？</p><div id="round-report" aria-live="polite" aria-atomic="true" hidden><span class="eyebrow" id="eyebrow"></span><h1 id="message"></h1><p id="subline"></p></div><div class="moves" id="moves"></div><div id="preview" hidden></div><button id="advance" class="primary" hidden>下一回合 →</button></div>
 </section>
-<section id="ending" hidden><span class="eyebrow" id="ending-kicker"></span><h2 id="ending-title"></h2><p id="ending-copy"></p><div id="comparison"></div><div class="ending-actions"><button id="retry">换一套打法 ↻</button><button id="next-scene" class="primary">进入下一场 →</button></div></section>
+<section id="ending" hidden><span class="eyebrow" id="ending-kicker"></span><h2 id="ending-title"></h2><p id="ending-copy"></p><div id="comparison"></div><p id="steady-maximum" hidden></p><div class="ending-actions"><button id="retry">换一套打法 ↻</button><button id="next-scene" class="primary">进入下一场 →</button></div></section>
 <svg id="money-route" aria-hidden="true"></svg>
 </div>
-<footer><button id="undo">↶ 重打上一回合</button><button id="opening-help">开店说明</button><button id="rules-open">这场对决的条件</button><button id="upgrade-course" hidden>使用新版经营策略</button><button id="old-record" hidden>旧版账目</button><span>美术素材：Nicky Case · 自制烤炉</span></footer>
+<footer><button id="undo">↶ 重打上一回合</button><button id="opening-help">开店说明</button><button id="rules-open">本局规则</button><button id="upgrade-course" hidden>使用新版经营策略</button><button id="old-record" hidden>旧版账目</button><span>美术素材：Nicky Case · 自制烤炉</span></footer>
 <style>#detail:has(.oven-receipt) #detail-title{padding-right:44px;font-size:22px}.oven-receipt table{width:100%;border-collapse:collapse;font-size:16px}.oven-receipt th,.oven-receipt td{padding:8px 3px;text-align:right}.oven-receipt td{white-space:nowrap}.oven-receipt th:first-child{text-align:left;font-weight:400}.oven-receipt details{font-size:14px}.oven-receipt summary{min-height:44px;padding:12px 0;cursor:pointer}#preview #oven-report{margin-left:8px;min-height:44px}</style>
 <dialog id="opening-guide" aria-labelledby="opening-title">
  <button class="close" id="opening-close" aria-label="关闭开店说明" hidden>×</button>
@@ -36,7 +37,7 @@
   <section data-opening-page="0" data-title="街上，多了一家面包店。">
    <div id="opening-shop-scene" class="opening-shop-scene" role="group" aria-label="新开的面包店：老板、三位厨师、旧烤炉和货架"></div>
    <p>客人就这么多，生意得两家争。</p>
-   <p class="opening-goal">有了竞争对手，你还能一直扩张下去吗？</p>
+   <p class="opening-goal">每天12位顾客，三天怎样赚得最多？</p>
   </section>
   <section data-opening-page="1" data-title="物品与用工" hidden>
    <table class="opening-price-table">

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "request": "玩家店铺信息适当下移，售价和旧炉两行合并为一行。",
+  "player_only": true,
+  "mobile_title_shift_px": 23.5,
+  "desktop_title_shift_px": 27,
+  "pending_notice": "购置和停工安装提示置于店名旁，保留完整信息。",
+  "checked_viewports": [
+    320,
+    390,
+    1280
+  ],
+  "local_and_online": true,
+  "actual_moves_checked": [
+    "buy",
+    "upgrade"
+  ],
+  "single_summary_line": true,
+  "index_sha256": "55b0f847343a797e2dc61fedad0f30bb3167a51b61b4095596344caaa9cebf82",
+  "offline_sha256": "369b9d0683eaeba9c7880122b5cd8444278e8adf2c73cc5e0c615d9a7cfe7b80",
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792245402430/"
+  },
+  "prune": false
+}

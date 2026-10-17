@@ -1,0 +1,17 @@
+{
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "date": "2026-10-16",
+  "method": "Deterministic QR matrix + native SVG bakery motifs; no raster editing or AI-generated QR modules.",
+  "library": "qrcode 8.2",
+  "error_correction": "H",
+  "data_modules": 45,
+  "module_px": 13,
+  "quiet_zone_modules": 4,
+  "center_medallion_modules": 8.3,
+  "finder_geometry": "7:5:3 nested shapes, rounded corners; decorative internal slits",
+  "variants": [
+    "面包烙印",
+    "金币票据"
+  ],
+  "note": "H is nominal codeword-level recovery, not permission to obscure 30% of the area. Scan validation is separate."
+}

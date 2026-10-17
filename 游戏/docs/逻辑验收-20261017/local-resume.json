@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-17",
+  "url": "http://127.0.0.1:50104/",
+  "results": [
+    {
+      "width": 390,
+      "firstGuideRequired": true,
+      "dayZeroResume": true,
+      "voluntaryGuideClose": true,
+      "midAnimationReload": true,
+      "exactlyOnceSettlement": true,
+      "undo": true,
+      "cancelledAnimationRecovery": true,
+      "chapterLeaveDuringInvestment": true,
+      "replayWithoutRepeatedGuide": true,
+      "completeThreePartBattle": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "firstGuideRequired": true,
+      "dayZeroResume": true,
+      "voluntaryGuideClose": true,
+      "midAnimationReload": true,
+      "exactlyOnceSettlement": true,
+      "undo": true,
+      "cancelledAnimationRecovery": true,
+      "chapterLeaveDuringInvestment": true,
+      "replayWithoutRepeatedGuide": true,
+      "completeThreePartBattle": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

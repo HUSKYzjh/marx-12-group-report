@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-17",
+  "baseline": true,
+  "entry": "local",
+  "indexSha256": "46bd142bbeb36e32d5578ee7ebc27e843947ac24214a9f5e2c80e1aff6b4c98c",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "requiredPages": 5,
+      "requiredBodyCharacters": 427,
+      "chooseCharacters": 241,
+      "openingReadWithoutPayment": true
+    },
+    {
+      "width": 390,
+      "height": 667,
+      "requiredPages": 5,
+      "requiredBodyCharacters": 427,
+      "chooseCharacters": 241,
+      "openingReadWithoutPayment": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "requiredPages": 5,
+      "requiredBodyCharacters": 427,
+      "chooseCharacters": 241,
+      "openingReadWithoutPayment": true
+    }
+  ],
+  "errors": []
+}

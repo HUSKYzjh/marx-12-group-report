@@ -1,0 +1,20 @@
+{
+  "canvas": {
+    "width": 1440,
+    "height": 1440
+  },
+  "qr": {
+    "width": 760,
+    "height": 760
+  },
+  "center_offset": {
+    "x": 0,
+    "y": 0
+  },
+  "margins": {
+    "left": 340,
+    "right": 340,
+    "top": 340,
+    "bottom": 340
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-17",
+  "url": "http://127.0.0.1:56485/",
+  "indexSha256": "dbbea484e65758e76c138c5a58d93f6afa35c836e275152958dc2b8fd30ea7a5",
+  "javascript": "/runtime-assets/226a7ce18bbd25fecf97.js",
+  "results": [
+    {
+      "width": 390,
+      "firstGuideRequired": true,
+      "dayZeroResume": true,
+      "voluntaryGuideClose": true,
+      "midAnimationReload": true,
+      "exactlyOnceSettlement": true,
+      "undo": true,
+      "cancelledAnimationRecovery": true,
+      "chapterLeaveDuringInvestment": true,
+      "replayWithoutRepeatedGuide": true,
+      "completeThreePartBattle": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "firstGuideRequired": true,
+      "dayZeroResume": true,
+      "voluntaryGuideClose": true,
+      "midAnimationReload": true,
+      "exactlyOnceSettlement": true,
+      "undo": true,
+      "cancelledAnimationRecovery": true,
+      "chapterLeaveDuringInvestment": true,
+      "replayWithoutRepeatedGuide": true,
+      "completeThreePartBattle": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

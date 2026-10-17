@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-17",
+  "request": "隔壁面包店仍显示两行，补齐隔壁店铺的单行汇总。",
+  "change": "两家店铺的设备信息统一行内显示；隔壁紧凑标注售价、余货或工资、非零炉子与人数，临时安排显示在店名旁。",
+  "local_and_online_widths": [
+    320,
+    390,
+    1280
+  ],
+  "both_shops_checked": true,
+  "content_fits_own_row": true,
+  "real_gameplay_checks": [
+    "steady",
+    "waves",
+    "source wages",
+    "social wages",
+    "rival installation and fast oven"
+  ],
+  "index_sha256": "0d289db3eba8d9bd545913efe025a6f9d9739f3b7df636d79ab79dd3f8a4ed6a",
+  "offline_sha256": "6db78d56fee9d52a8b36de82ffccd4c0ab7ccb0d024b36629697c93974efbd0c",
+  "offline_zip_checked": true,
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792246954582/"
+  },
+  "prune": false
+}

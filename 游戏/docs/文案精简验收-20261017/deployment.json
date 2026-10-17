@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-17",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "status": "deployed_and_online_playtest_passed",
+  "uploaded_files": 62,
+  "remote_consistency_verified": true,
+  "backup_prefix": ".cloudbase-backup/1792230110952/",
+  "prune": false,
+  "index_sha256": "14f39aa4d82e2e4c43a7418e6280b7af6e9684070149db0e4c79ec0f808864ff",
+  "previous_index_sha256": "46bd142bbeb36e32d5578ee7ebc27e843947ac24214a9f5e2c80e1aff6b4c98c",
+  "javascript": "/runtime-assets/b58e82802e2802c55ba4.js",
+  "standalone_sha256": "286ed63020fa7fc67315d2c1dd61dce662f1f140a58788942014d867f0bb6574",
+  "standalone_bytes": 20560071,
+  "offline_zip_integrity": true,
+  "offline_zip_html_matches": true,
+  "font_mappings": 47449,
+  "targeted_unit_tests": 15,
+  "reading_flow_cases": {
+    "before": 3,
+    "local": 3,
+    "online": 3
+  },
+  "local_complete_battle_resume_cases": 2,
+  "scope": "Short opening, optional reference navigation, decision data, one real turn, receipt, reload and actual viewport fit; complete battle + interruption checks locally. Edge simulated viewports, not physical phones."
+}

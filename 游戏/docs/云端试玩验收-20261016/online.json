@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "width": 1280,
+      "online": true,
+      "prologueNotesRemoved": true,
+      "appendixNotesRetained": true,
+      "entryNotice": true,
+      "platformNotices": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "firstAct": true,
+      "battleFirstTurn": true,
+      "refresh": true,
+      "navigation": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "online": true,
+      "prologueNotesRemoved": true,
+      "appendixNotesRetained": true,
+      "entryNotice": true,
+      "platformNotices": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "firstAct": true,
+      "battleFirstTurn": true,
+      "refresh": true,
+      "navigation": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

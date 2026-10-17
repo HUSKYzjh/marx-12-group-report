@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-17",
+  "entry": "local hosted files",
+  "indexSha256": "08b4143e7651b9af8a2a11bf1d2bd042f804402bf08f58e014ed80b73b7f0a25",
+  "javascript": "/runtime-assets/05fd7598d7443cdec628.js",
+  "sourceFontSha256": "854a98e67135a27a15f41ef2528fd827190793ffae2b5f6ed7b67fd0a28c3000",
+  "completeFontMappings": 47449,
+  "results": [
+    {
+      "width": 390,
+      "firstAct": true,
+      "battleFirstTurn": true,
+      "homeAndChapters": true,
+      "reload": true,
+      "motionToggleDuringTransition": true,
+      "rapidChapterNavigation": true,
+      "noStateInjection": true,
+      "noOverflow": true,
+      "mainFonts": [
+        {
+          "familyName": "Workshop Hand",
+          "postScriptName": "WorkshopHand-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "battleFonts": [
+        {
+          "familyName": "Workshop Hand",
+          "postScriptName": "WorkshopHand-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "rareSampleCodepoint": 19970
+    },
+    {
+      "width": 1280,
+      "firstAct": true,
+      "battleFirstTurn": true,
+      "homeAndChapters": true,
+      "reload": true,
+      "motionToggleDuringTransition": true,
+      "rapidChapterNavigation": true,
+      "noStateInjection": true,
+      "noOverflow": true,
+      "mainFonts": [
+        {
+          "familyName": "Workshop Hand",
+          "postScriptName": "WorkshopHand-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "battleFonts": [
+        {
+          "familyName": "Workshop Hand",
+          "postScriptName": "WorkshopHand-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "rareSampleCodepoint": 19970
+    }
+  ],
+  "errors": []
+}

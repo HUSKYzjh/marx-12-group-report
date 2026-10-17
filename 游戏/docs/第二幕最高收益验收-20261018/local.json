@@ -1,0 +1,32 @@
+{
+  "index_sha256": "ed6355583255ecca48589ce5b4baff4483469cf7d205ac23561ab53d0fdaf678",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "fullActCompletedWithRealClicks": true,
+      "maximum": 51,
+      "endingCash": 87,
+      "scopeFirstThreeDayChallenge": true,
+      "initiallyHidden": true,
+      "reloadPreservesDisclosure": true,
+      "retryHidesDisclosure": true,
+      "continuationButtonsVisible": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "fullActCompletedWithRealClicks": true,
+      "maximum": 51,
+      "endingCash": 87,
+      "scopeFirstThreeDayChallenge": true,
+      "initiallyHidden": true,
+      "reloadPreservesDisclosure": true,
+      "retryHidesDisclosure": true,
+      "continuationButtonsVisible": true,
+      "noOverflow": true
+    }
+  ],
+  "errors": []
+}

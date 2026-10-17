@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-17",
+  "request": "配色太杂乱了。",
+  "change": "服饰收拢为灰绿主色、米白底色、深绿细节与少量暖金配件，移除红紫蓝等跳色。",
+  "shared_clothing_fills": [
+    "#eee9db",
+    "#8eaa98",
+    "#638673",
+    "#c9ad73"
+  ],
+  "unit_tests": {
+    "file": "customer-art.test.mjs",
+    "passed": 5,
+    "failed": 0
+  },
+  "local_and_online_widths": [
+    320,
+    390,
+    1280
+  ],
+  "twelve_outfits_observed": true,
+  "no_overflow": true,
+  "no_page_errors": true,
+  "index_sha256": "532eb7bc96a98927132650bc556dd34ad2e03d44dbbb69c9806bf873c457ae76",
+  "offline_sha256": "43b32ef507dbb49b34b002773e6516f3a01afd7804628d7a03b368fe7bcc4d45",
+  "offline_zip_checked": true,
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792246573603/"
+  },
+  "prune": false
+}

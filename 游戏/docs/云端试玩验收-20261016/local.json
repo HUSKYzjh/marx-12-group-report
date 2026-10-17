@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "width": 1280,
+      "online": false,
+      "prologueNotesRemoved": true,
+      "appendixNotesRetained": true,
+      "entryNotice": false,
+      "platformNotices": [],
+      "firstAct": true,
+      "battleFirstTurn": true,
+      "refresh": true,
+      "navigation": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "online": false,
+      "prologueNotesRemoved": true,
+      "appendixNotesRetained": true,
+      "entryNotice": false,
+      "platformNotices": [],
+      "firstAct": true,
+      "battleFirstTurn": true,
+      "refresh": true,
+      "navigation": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

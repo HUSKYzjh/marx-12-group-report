@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-16",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "qr_generation": {
+    "library": "qrcode 8.2",
+    "error_correction": "M",
+    "matrix_modules_including_quiet_zone": 41,
+    "module_px": 14,
+    "quiet_zone_modules": 4,
+    "data_module_corner_radius_px": 1,
+    "colors": {
+      "data": "#42463f",
+      "background": "#ffffff"
+    },
+    "ai_generates_qr": false
+  },
+  "illustration": {
+    "tool": "image_gen.imagegen (built-in)",
+    "file": "assets/面包店插画.png",
+    "sha256": "2b03df5a83df17005df58b92854d92697ce737bd6eb700b3305603f5792a1ca7",
+    "reference": "2026-10-16线上游戏两店对战截图，作为风格参考；未修改游戏运行素材。",
+    "prompt": "Generate a NEW transparent-background header illustration for a QR sharing card for the Chinese teaching browser game 饥馑的盛宴. The provided screenshot is ONLY a style reference, not an edit target. Match its modest gray graphite hand-drawn outlines, simple playful stick-figure people, oatmeal-gray ovens and tiny muted gold coin highlights. Draw one small arched bread oven, one simple chef wearing a tall chef hat and holding a tray with three breads, and a tiny bowler-hatted shop owner with a coin. Friendly understated humor; charming slightly imperfect drawn lines. This is a small decorative vignette, not a busy scene. Wide horizontal composition roughly 3:1, all subjects fully visible, floating on transparent background with generous empty margins. No text, no letters, no numbers, no QR code, no barcode, no frame, no shadow, no photorealism, no 3D. Keep the palette very restrained, overwhelmingly gray outlines and pale off-white areas with a couple of warm gold dots. Output a crisp illustration suitable for print and a hand-drawn game share card."
+  },
+  "layout": "HTML/CSS and SVG; game Workshop Hand font reused under existing OFL license; exact QR matrix generated separately from illustration.",
+  "artistic_qr_variants": {
+    "method": "Native SVG generated from a deterministic H-level QR matrix; no new AI-generated imagery.",
+    "parameters": "艺术二维码制作参数.json",
+    "validation": "艺术二维码扫码校验.json",
+    "files": [
+      "试玩二维码-面包烙印.png",
+      "试玩二维码-金币票据.png"
+    ]
+  }
+}

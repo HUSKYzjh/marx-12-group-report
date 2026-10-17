@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var state, lastKey, slideshow, stage, busy = false, active = true;
-  var transitioning = false, pendingState, queuedState;
+  var transitioning = false, pendingState, queuedState, chapterAnimation = 0;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var timers = new Set();
   var headings = document.getElementById('slideshow');
@@ -82,6 +82,12 @@
     });
   }
   function loadImage(src) { return new Promise(function (resolve, reject) { var image = new Image(); image.onload = function () { resolve(new PIXI.Texture(new PIXI.BaseTexture(image))); }; image.onerror = reject; image.src = src; }); }
+
+  function openingViewportHeight() {
+    // The host viewport is stable while the iframe grows to fit its content.
+    // visualViewport also follows the phone browser's expanding address bar.
+    return Math.round(parent.visualViewport ? parent.visualViewport.height : parent.innerHeight);
+  }
 
   // Original Slideshow owns one long-lived object. Ordinary forward steps never clear it.
   window.TrustStage = function () {
@@ -175,11 +181,20 @@
     self.buildSplash = function () {
       self.splashLayer.removeChildren().forEach(function (g) { g.destroy({ children: true }); });
       self.splashPeople = []; self.splashTools = []; self.splashNodes = []; self.splashClock = 0;
-      var compact = self.width <= 600;
-      Object.keys(self.productionElements).forEach(function (id) { if (id.indexOf('repeat-') === 0) { self.productionElements[id].remove(); delete self.productionElements[id]; } });
-      // More distinct official links need their full touch targets. Keep all
-      // 72 subjects on narrow phones, giving them paper vertically instead.
-      self.splashHeight = compact ? 760 + Math.max(0, 360 - self.width) * 4 : 600;
+      self.splashViewportHeight = openingViewportHeight();
+      var chapterHeight = document.querySelector('.chapter-navigation').offsetHeight;
+      // Reserve room for the chapter bar, hint, full-size start button and safe space.
+      // Never use the auto-sized iframe's height as an input to its own layout.
+      self.splashHeight = Math.max(100, Math.min(600, self.splashViewportHeight - chapterHeight - 128));
+      var compact = self.width <= 600 || self.splashHeight < 340;
+      Object.keys(self.productionElements).forEach(function (id) {
+        if (id.indexOf('repeat-') === 0) { self.productionElements[id].remove(); delete self.productionElements[id]; }
+        else self.productionElements[id].hidden = true;
+      });
+      var titleHeight = compact ? (self.splashHeight < 260 ? 78 : 96) : 142;
+      headings.style.setProperty('--splash-title-y', (self.splashHeight / 2) + 'px');
+      headings.style.setProperty('--splash-title-size', (compact ? (self.splashHeight < 260 ? 28 : 36) : 56) + 'px');
+      headings.style.setProperty('--splash-title-width', (compact ? 180 : 340) + 'px');
       // All subjects belong to the SAME force simulation, regardless of material.
       // The centre is paper reserved for the title, not a separate icon toolbar.
       self.splashInk = new PIXI.Graphics(); self.splashLayer.addChild(self.splashInk);
@@ -237,22 +252,27 @@
         var item = { kind: kind, graphics: g, radius: kind === 'old' || kind === 'new' ? g.width / 2 + 3 : (compact ? 21 : 24) };
         self.splashTools.push(item); return item;
       }
-      PRODUCTION_LINKS.forEach(function (symbol) {
-        self.splashNodes.push({ id: symbol.id, kind: symbol.id, element: self.productionElements[symbol.id], radius: symbol.href ? 33 : compact ? 18 : 23 });
-      });
+      var targetCount = Math.max(8, Math.min(compact ? 72 : self.width < 900 ? 92 : 136,
+        Math.floor((self.width * self.splashHeight - (compact ? 174 : 326) * titleHeight) / (compact ? 5000 : 4600))));
+      var tools = self.splashHeight < 300 || targetCount < 24 ? ['old', 'new', 'gear'] : ['old', 'new', 'gear', 'conveyor', 'wrench', 'flywheel', 'motor'];
+      if (self.width >= 900 && !compact) tools = tools.concat(['gear', 'old', 'conveyor', 'new']);
+      var count = compact ? Math.max(2, Math.min(6, Math.floor(targetCount / 9))) : self.width < 900 ? 12 : 22;
+      var symbolCount = Math.max(1, Math.min(PRODUCTION_LINKS.length, targetCount - tools.length - count));
+      // Spread the subset across the catalog so tools and contemporary brands both remain.
+      for (var index = 0; index < symbolCount; index++) {
+        var symbol = PRODUCTION_LINKS[symbolCount === 1 ? 0 : Math.floor(index * (PRODUCTION_LINKS.length - 1) / (symbolCount - 1))];
+        var element = self.productionElements[symbol.id]; element.hidden = false;
+        self.splashNodes.push({ id: symbol.id, kind: symbol.id, element: element, radius: symbol.href ? 33 : compact ? 18 : 23 });
+      }
       var repeatPool = PRODUCTION_LINKS.filter(function (symbol) { return !symbol.href; });
-      var tools = ['old', 'new', 'gear', 'conveyor', 'wrench', 'flywheel', 'motor'];
-      if (self.width >= 900) tools = tools.concat(['gear', 'old', 'conveyor', 'new']);
-      var count = compact ? 6 : self.width < 900 ? 12 : 22;
-      var targetCount = compact ? 72 : self.width < 900 ? 92 : 136;
-      var repeatCount = Math.max(0, targetCount - PRODUCTION_LINKS.length - tools.length - count);
+      var repeatCount = Math.max(0, targetCount - symbolCount - tools.length - count);
       for (var repeat = 0; repeat < repeatCount; repeat++) {
         var symbol = repeatPool[repeat % repeatPool.length], id = 'repeat-' + repeat + '-' + symbol.id;
         self.splashNodes.push({ id: id, kind: symbol.id, element: symbolElement(symbol, id), radius: compact ? 18 : 23 });
       }
       tools.forEach(function (kind, index) { var t = tool(kind); t.id = index < 7 ? kind : kind + '-' + index; self.splashNodes.push(t); });
       for (var i = 0; i < count; i++) { var p = person(); p.id = 'person-' + i; self.splashNodes.push(p); }
-      var hole = { x: self.width / 2 - (compact ? 87 : 163), y: compact ? 262 : 229, width: compact ? 174 : 326, height: compact ? 96 : 142 };
+      var hole = { x: self.width / 2 - (compact ? 87 : 163), y: (self.splashHeight - titleHeight) / 2, width: compact ? 174 : 326, height: titleHeight };
       var seed = 3817;
       function random() { seed = (Math.imul(1664525, seed) + 1013904223) >>> 0; return seed / 4294967296; }
       var placed = [];
@@ -261,7 +281,7 @@
       // assigned to a row, ring or region. These are seeds, never spring anchors.
       self.splashNodes.slice().sort(function (a, b) { return b.radius - a.radius; }).forEach(function (item) {
         var best, bestScore = -Infinity, r = item.radius + 12;
-        for (var attempt = 0; attempt < 500; attempt++) {
+        for (var attempt = 0; attempt < 96; attempt++) {
           var x = r + random() * (self.width - r * 2), y = r + random() * (self.splashHeight - r * 2);
           var closestX = Math.max(hole.x, Math.min(x, hole.x + hole.width)), closestY = Math.max(hole.y, Math.min(y, hole.y + hole.height));
           if (Math.hypot(x - closestX, y - closestY) < r) continue;
@@ -308,7 +328,7 @@
         ink.moveTo(sx, sy); ink.quadraticCurveTo((sx + ex) / 2 - dy / distance * bend, (sy + ey) / 2 + dx / distance * bend, ex, ey);
       });
     };
-    self.buildSplash(); self.splashLayer.visible = false;
+    self.splashLayer.visible = false;
     self.people = [];
     // Stable identities: four company workers, four owners, father/daughter,
     // then three upstream jobs. A changed layout never changes a person's role.
@@ -429,9 +449,10 @@
       self.viewportWidth = window.innerWidth;
       var p = s.prologue, key = s.section === 'machine' ? 'machine' : keyOf(s);
       var desiredWidth = key === 'opening' ? window.innerWidth : key==='street'?960:window.innerWidth <= 600 ? 640 : 960;
-      if (self.width !== desiredWidth || (key === 'opening' && self.viewKey !== 'opening')) {
+      if (self.width !== desiredWidth || (key === 'opening' && (self.viewKey !== 'opening' || self.splashViewportHeight !== openingViewportHeight()))) {
         self.width = desiredWidth;
-        if (key === 'opening') self.buildSplash();
+        // Keep the already packed opening when returning from another scene.
+        if (key === 'opening' && (!self.splashNetwork || self.splashNetwork.width !== self.width || self.splashViewportHeight !== openingViewportHeight())) self.buildSplash();
       }
       var w = self.width, center = w / 2;
       var changed = key !== self.viewKey || (key === 'allocation' && self.firmId !== p.activeFirmId);
@@ -583,9 +604,10 @@
       self.drawLinks();
       if (!reduced.matches) {
         self.people.forEach(function (p) { if (p.graphics.visible) p.update(delta); });
-        if (self.splashLayer.visible) {
+        if (self.splashLayer.visible && !transitioning) {
           self.splashClock += delta;
-          self.syncSplashPins(); self.splashNetwork.step(delta / 60);
+          // Decoration must not run catch-up steps ahead of input on a slow frame.
+          self.syncSplashPins(); self.splashNetwork.step(Math.min(delta / 60, 1 / 120));
           self.paintSplash();
         }
       }
@@ -638,6 +660,7 @@
     if (keyOf(s) !== lastKey) document.getElementById('notes').open = false;
     document.getElementById('notes').hidden = ['opening','bakery'].includes(keyOf(s));
     var currentChapter=STORY_CHAPTERS.find(function(chapter){return chapter.id===(s.section==='machine'?'machine':p.scene==='technology'?'automation':p.scene==='needs-technology'?'needs':p.scene==='ownership-technology'?'ownership':p.scene==='market-rules'?'rules':s.section);})||STORY_CHAPTERS[0];
+    document.getElementById('notes').style.display = currentChapter.id === 'prologue' ? 'none' : '';
     document.getElementById('chapter').textContent=currentChapter.title;
     document.querySelectorAll('#chapter-list button').forEach(function(choice){
       choice.disabled=false;choice.title='';
@@ -667,10 +690,10 @@
     if(p.scene==='relief'){document.getElementById('notes').hidden=true;renderReliefExperiment({state:s,reduced:reduced.matches,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
     if(p.scene==='epilogue'){document.getElementById('notes').hidden=false;renderPrologueEnding({state:s,readout:readout,controls:controls,notes:notes,title:setTitle,reduced:reduced.matches,send:function(a){send('prologue',a);}});return;}
     if(p.scene==='assumptions'){document.getElementById('notes').hidden=true;renderPrologueAssumptions({state:s,readout:readout,title:setTitle,send:function(a){send('prologue',a);}});return;}
-    if(p.scene==='technology'){document.getElementById('notes').hidden=true;renderTechnologyExperiment({state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
-    if(p.scene==='needs-technology'){document.getElementById('notes').hidden=true;renderNeedsExperiment({state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
-    if(p.scene==='ownership-technology'){document.getElementById('notes').hidden=true;renderOwnershipExperiment({state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
-    if(p.scene==='market-rules'){document.getElementById('notes').hidden=true;renderMarketRules({state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
+    if(p.scene==='technology'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderTechnologyExperiment(branchContext);renderBranchReview(branchContext,p.technology);return;}
+    if(p.scene==='needs-technology'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderNeedsExperiment(branchContext);renderBranchReview(branchContext,p.needsTechnology);return;}
+    if(p.scene==='ownership-technology'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderOwnershipExperiment(branchContext);renderBranchReview(branchContext,p.ownershipTechnology);return;}
+    if(p.scene==='market-rules'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderMarketRules(branchContext);renderBranchReview(branchContext,p.marketRules);return;}
     if(p.scene==='street-summary'){document.getElementById('notes').hidden=true;renderStreetSummary({readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
     if(p.scene==='street'){
       document.getElementById('notes').hidden=true;
@@ -829,7 +852,8 @@
       quote('不患寡而患不均。', '《论语·季氏》', notes); action('继续 →', 'SHOW_ENDING');
       notes.appendChild(node('p', '你作出的工资、投资、开工决定，改变了别家公司面对的条件；但这些互相依赖的生产活动由各家资本分别作主。需求压力是这种矛盾的一种表现，不是基本矛盾的全部，也不是每期必然滞销。社会主义国家也有分配、需求和技术治理问题，但不能因为现象相似就认定具有同一资本主义基本矛盾。'));
     } else if (p.scene === 'ending') {
-      setTitle('面包很多，家里却没得吃。','第二幕·回家以后');
+      setTitle('面包很多，家里却没得吃。');
+      var storyBoundary=node('p','独立改编故事，非上一局结算。','small');storyBoundary.dataset.testid='family-story-boundary';readout.appendChild(storyBoundary);
       var dialogue = node('div', '', 'dialogue'); readout.appendChild(dialogue);
       var pairs = p.endingViewMode === 'all' ? s.ending : [s.ending[p.endingPairIndex]];
       pairs.forEach(function (pair) { var a = node('p'), b = node('p'); a.appendChild(node('b', '女儿：')); a.appendChild(node('span', pair.daughter)); b.appendChild(node('b', '父亲：')); b.appendChild(node('span', pair.father)); dialogue.appendChild(a); dialogue.appendChild(b); });
@@ -971,18 +995,19 @@
       // Original artwork, with a shorter silent sequence. Cover the old scene
       // before changing it; the second atlas column reveals the new one.
       document.body.dataset.transition = 'chapter';
-      var scratch = document.getElementById('scene-scratch'), frame = 0, uncovering = false;
+      var scratch = document.getElementById('scene-scratch'), uncovering = false;
+      var started = performance.now(), animation = ++chapterAnimation, half = 180;
       scratch.style.backgroundPosition = '0% 0%';
-      function scratchFrame() {
-        frame++;
-        if (frame > 19) {
-          if (uncovering) { finishTransition(); return; }
-          commitState(pendingState); uncovering = true; frame = 0;
-        }
+      function scratchFrame(now) {
+        if (animation !== chapterAnimation || !transitioning || document.body.dataset.transition !== 'chapter') return;
+        var elapsed = now - started;
+        if (elapsed >= half && !uncovering) { commitState(pendingState); uncovering = true; }
+        if (elapsed >= half * 2) { finishTransition(); return; }
+        var frame = Math.min(19, Math.floor((elapsed % half) * 20 / half));
         scratch.style.backgroundPosition = (uncovering ? '100%' : '0%') + ' ' + (frame * 100 / 19) + '%';
-        later(scratchFrame, 16);
+        requestAnimationFrame(scratchFrame);
       }
-      later(scratchFrame, 16);
+      requestAnimationFrame(scratchFrame);
     } else {
       // Keep the canvas visible: the same actors move while the question changes.
       document.body.dataset.transition = 'out';
@@ -1015,7 +1040,7 @@
     bakeryTextures={chefHat:loaded[8],oven:loaded[9],truck:loaded[10],bread:loaded[11],newOven:loaded[15],clothesShop:loaded[18],carFactory:loaded[19],inputsShop:loaded[20],emptyOven:loaded[21]};
     window.addEventListener('message', receive); document.body.dataset.ready = 'true';
     new ResizeObserver(height).observe(document.body);
-    window.addEventListener('resize', function () {
+    function resizeStage() {
       if (!stage || !state) return;
       // Hidden panels and full-page capture can briefly report a 1px iframe.
       // Keep the valid world until real layout returns instead of packing into it.
@@ -1024,7 +1049,7 @@
       var desiredWidth = keyOf(state) === 'opening' ? window.innerWidth : keyOf(state)==='street'?960:window.innerWidth <= 600 ? 640 : 960;
       // Iframe height changes when notes open or the host fits its content.
       // They must not restart a distribution, production animation or face.
-      if (stage.width !== desiredWidth || stage.viewportWidth !== window.innerWidth) {
+      if (stage.width !== desiredWidth || stage.viewportWidth !== window.innerWidth || (keyOf(state) === 'opening' && stage.splashViewportHeight !== openingViewportHeight())) {
         // A shop ledger locks the host scroll. Classic desktop scrollbars then
         // change the iframe width. This is a layout resize, not a scene exit:
         // invalidating the street key would clearScene() and close the ledger
@@ -1034,7 +1059,10 @@
         stage.draw(state);
       }
       height();
-    });
+    }
+    window.addEventListener('resize', resizeStage);
+    parent.addEventListener('resize', resizeStage);
+    if (parent.visualViewport) parent.visualViewport.addEventListener('resize', resizeStage);
     document.addEventListener('visibilitychange', function () { if (stage) document.hidden || !active ? stage.app.stop() : stage.app.start(); });
     reduced.addEventListener('change', function () {
       if (!stage || !state) return;

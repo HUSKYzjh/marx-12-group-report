@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-17",
+  "passed": 43,
+  "failed": 0,
+  "test_files": [
+    "battle-resume.test.mjs",
+    "prologue-battle.test.mjs",
+    "opening-guide.test.mjs",
+    "chapter-navigation.test.mjs",
+    "bakery-expansion.test.mjs",
+    "equipment-course.test.mjs",
+    "equipment-upgrade.test.mjs",
+    "equipment-receipt.test.mjs",
+    "shop-course.test.mjs",
+    "shop-battle.test.mjs"
+  ],
+  "scope": "Targeted state, navigation and economic model checks; includes 100 varied full equipment-course paths. Not the entire historical 804-test suite."
+}

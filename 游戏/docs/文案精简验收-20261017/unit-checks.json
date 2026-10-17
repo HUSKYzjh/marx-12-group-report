@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-17",
+  "passed": 15,
+  "failed": 0,
+  "test_files": [
+    "opening-guide.test.mjs",
+    "battle-resume.test.mjs",
+    "prologue-battle.test.mjs",
+    "chapter-navigation.test.mjs"
+  ],
+  "change_to_existing_test": "Replaced exact old navigation wording with preservation of all five reference sections; browser tests assert direct start, optional rules, mid-page exit and retained prices."
+}
