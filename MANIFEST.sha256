@@ -1010,7 +1010,7 @@ c563efa30009cc9a20f2fd36e68c2f99361bc92b4eda438a98cdcfcbddd097fb  游戏/docs/�
 375e8e46306ff6d2d60ccd59f29486decfeaf58d3309bdcc25ede37acc362bfb  游戏/docs/速度验收-20261017/online-flow.json
 edd1e6e20c9da93ccc29dd89c035540e101787ac4a9da8b4a5ac484343201654  游戏/docs/速度验收-20261017/online-mobile.json
 bbcae4f90db331263108d456cddcecce2f0ce28c424b7c6195c51f887e0967e0  游戏/docs/速度验收-20261017/performance.json
-d5782260d5c291c48c40a732d103876a2a46c885ce1babbb9f4f4e3e61d3d7ee  游戏/docs/速度验收-20261017/web-fonts.json
+4aa7fc8e3ac24e335bbd726b1e2568603c2e08d7350a5837c4cb5f87778ab95f  游戏/docs/速度验收-20261017/web-fonts-summary.json
 b3c185a85cd9bd7cd6bae710a7c310b3e8f2a95f931fa62c87de198b93e0eed2  游戏/scripts/build-hosted.mjs
 713d5fb1e94f1364aeb67f2b60b1d344d7ccba5a00bdc46c7624545c919b4f12  游戏/scripts/hosted-test-server.mjs
 ed52b5843dac182ad8bc9f99690a42fbaee78a73a756c679bbff90b8cd634f00  游戏/scripts/split-web-fonts.py
