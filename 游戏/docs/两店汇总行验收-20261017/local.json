@@ -1,0 +1,454 @@
+{
+  "index_sha256": "0d289db3eba8d9bd545913efe025a6f9d9739f3b7df636d79ab79dd3f8a4ed6a",
+  "results": [
+    {
+      "width": 320,
+      "stage": "steady",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-steady-1",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-steady-2",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-steady-3",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-waves-1",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-waves-2",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-waves-3",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-waves-4",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 3 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余3个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-waves-5",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 3 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余3个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 272.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "source-wages",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 2  · 工资 2 1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 589.40625,
+          "equipmentY": 589.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价1 · 工资11旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 283.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "social-wages",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 2  · 工资 2 1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 589.40625,
+          "equipmentY": 589.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价1 · 工资11旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 283.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-social-2",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 2  · 工资 2 1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 589.40625,
+          "equipmentY": 589.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价1 · 工资11旧炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 283.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-social-3",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 2  · 工资 2 1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 589.40625,
+          "equipmentY": 589.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价1 · 工资11快炉 · 3人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 283.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "rival-fast-oven",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 2  · 工资 2 1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 589.40625,
+          "equipmentY": 589.40625,
+          "contentRight": 239.796875,
+          "right": 292,
+          "contentLeft": 28,
+          "left": 28
+        },
+        {
+          "id": 1,
+          "text": "售价1 · 工资11快炉 · 2人",
+          "height": 16,
+          "priceY": 161,
+          "equipmentY": 161,
+          "contentRight": 283.890625,
+          "right": 292,
+          "contentLeft": 139.828125,
+          "left": 139.828125
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "stage": "steady",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 17.59375,
+          "priceY": 556.40625,
+          "equipmentY": 556.40625,
+          "contentRight": 242.796875,
+          "right": 359,
+          "contentLeft": 31,
+          "left": 31
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 17.59375,
+          "priceY": 164,
+          "equipmentY": 164,
+          "contentRight": 318.140625,
+          "right": 359,
+          "contentLeft": 172.90625,
+          "left": 172.90625
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "stage": "steady",
+      "shops": [
+        {
+          "id": 0,
+          "text": "售价 3  · 剩货 0 个1旧炉 · 0快炉 · 3人",
+          "height": 16,
+          "priceY": 591,
+          "equipmentY": 591,
+          "contentRight": 390.078125,
+          "right": 601.296875,
+          "contentLeft": 157.03125,
+          "left": 157.03125
+        },
+        {
+          "id": 1,
+          "text": "售价3 · 余0个1旧炉 · 3人",
+          "height": 16,
+          "priceY": 185,
+          "equipmentY": 185,
+          "contentRight": 659.140625,
+          "right": 942.96875,
+          "contentLeft": 498.703125,
+          "left": 498.703125
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -110,9 +110,12 @@ function render(){
   const length=LENGTHS[mode]||9;$('day').textContent=isSource?'新一局 · 第一天的真实账单':over?'收摊，回头看看':`第 ${result?w.day:w.day+1} / ${length} 天`;
   $('turn').textContent=Math.min(length,result||isSource||over?w.day:w.day+1);$('round-dots').innerHTML=Array.from({length},(_,i)=>`<i class="${i<w.day?'done':''}"></i>`).join('');
   const shopsForView=result||isSource||state.version===2?w.shops:w.shops.map(f=>{const today=readyShop(f);return {...today,fast:today.fastOvens>0};});
-  $('rival-level').textContent=social()?(shopsForView[1].fast?'快速烤炉':'普通烤炉'):'每天做 6 个';
+  const rivalNote=result&&r.installing?.[1]?'停工安装':shopsForView[1].pending?'有明日安排':'';
+  $('rival-level').textContent=rivalNote||(social()?(shopsForView[1].fast?'快速烤炉':'普通烤炉'):'每天做 6 个');
   for(const f of shopsForView){const id=f.id;$('cash-'+id).innerHTML=f.cash+' '+coin;$('bar-'+id).style.width=Math.min(100,f.cash/60*100)+'%';$('bar-'+id).classList.toggle('low',f.cash<12);
-    $('stats-'+id).innerHTML=`售价 ${f.price} ${coin} · ${social()?'工资 '+f.wage+' '+coin:'剩货 '+f.bread.length+' 个'}`+(state.version===3?`<span class="equipment-status">${f.ovens-f.fastOvens}旧炉 · ${f.fastOvens}快炉 · ${f.workers.length}人${id===0?'':result&&r.installing?.[id]?' · 停工安装':f.pending?' · 有明日安排':''}</span>`:'');
+    const equipment=id===1?[f.ovens>f.fastOvens?`${f.ovens-f.fastOvens}旧炉`:'',f.fastOvens?`${f.fastOvens}快炉`:''].filter(Boolean).join(' · '):`${f.ovens-f.fastOvens}旧炉 · ${f.fastOvens}快炉`;
+    const trade=id===1?`售价${f.price}${coin} · ${social()?'工资'+f.wage+coin:'余'+f.bread.length+'个'}`:`售价 ${f.price} ${coin} · ${social()?'工资 '+f.wage+' '+coin:'剩货 '+f.bread.length+' 个'}`;
+    $('stats-'+id).innerHTML=trade+(state.version===3?`<span class="equipment-status">${equipment} · ${f.workers.length}人</span>`:'');
     if(id===0){
       let note=$('player-equipment-note');
       if(!note){note=document.createElement('span');note.id='player-equipment-note';note.className='equipment-note';$('player-shop-title').parentElement.append(note);}

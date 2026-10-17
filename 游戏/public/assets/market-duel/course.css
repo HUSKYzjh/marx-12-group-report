@@ -252,7 +252,11 @@ footer{flex-wrap:wrap}
 
 /* Keep the player summary below the shop outline and the crew. */
 .arena .player-zone .status{bottom:22px}
-body[data-rules="3"] .player-status .equipment-status{display:inline;font:inherit;white-space:normal}
-.player-status .equipment-status:before{content:" \00b7 "}
+body[data-rules="3"] .status .equipment-status{display:inline;font:inherit;white-space:normal}
+.status .equipment-status:before{content:" \00b7 "}
 @media(max-width:700px){.arena .player-zone .fighter{height:128px}.arena .player-zone .status{bottom:20px;width:calc(100% - 32px)}.arena .player-zone .status>div{width:calc((100% + 42px)*.53 - 10px)}.arena .player-zone .status p{font-size:11px;line-height:1.6}}
 .player-status .equipment-note{font-size:10px;color:#66675e;white-space:nowrap}
+
+/* Rival summary shares one line; zero ovens do not need a placeholder. */
+.arena .rival-zone .status p{white-space:nowrap}
+@media(max-width:350px){.arena .rival-zone .status p{font-size:10px}}

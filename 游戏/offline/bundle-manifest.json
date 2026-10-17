@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T14:14:47.081Z",
-  "bytes": 20567419,
+  "built_at": "2026-10-17T14:20:23.644Z",
+  "bytes": 20567893,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2154,6 +2154,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Keep both shop summaries on one line; compact rival labels and zero-count equipment, retain stock or wage amounts, and move rival pending status beside the title.",
     "Unify pedestrian and supplier clothing with four shared fills: cream, sage green, deep green and muted gold; remove competing pink, purple and blue accents.",
     "Brighten pedestrian clothing and supplier accessories with warm yellow, teal, coral and lilac; preserve ink outlines and white chef uniforms.",
     "Move player shop summary below the outline; merge price, stock, ovens and workers; show pending installation beside the title.",
@@ -2163,9 +2164,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "532eb7bc96a98927132650bc556dd34ad2e03d44dbbb69c9806bf873c457ae76",
+    "index_sha256": "0d289db3eba8d9bd545913efe025a6f9d9739f3b7df636d79ab79dd3f8a4ed6a",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "43b32ef507dbb49b34b002773e6516f3a01afd7804628d7a03b368fe7bcc4d45"
+  "sha256": "6db78d56fee9d52a8b36de82ffccd4c0ab7ccb0d024b36629697c93974efbd0c"
 }
