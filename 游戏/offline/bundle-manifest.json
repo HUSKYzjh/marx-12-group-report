@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T18:06:10.193Z",
-  "bytes": 20571129,
+  "built_at": "2026-10-17T18:19:23.652Z",
+  "bytes": 20571347,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2154,6 +2154,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Clarify that the family dialogue is an independent story, and document the current four-act choices, cash handoffs and open-ended remedy mechanisms without changing economic rules.",
     "At the end of Act II, disclose the first three-day challenge maximum of +51 cash and ending funds of 87, using shared scoring constants and preserving current gameplay.",
     "Enlarge capacity and market figures; put demand and production information above controls on mobile, retaining single-line shop summaries.",
     "Increase both shop capacity labels to 11px on mobile and 14px on desktop, retaining compact summary rows and separate installation notices.",
@@ -2169,9 +2170,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "ed6355583255ecca48589ce5b4baff4483469cf7d205ac23561ab53d0fdaf678",
+    "index_sha256": "46e30cf87cd81dbfc203268f57921b97433f1be33bd4fd438696752721fb1298",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "94e570ecbc1bebe606211250ba4a50fcdf12967e9debc47ba0bab918727c0b3e"
+  "sha256": "aa5f12789724538826ddea6937f395a685c313d1cb82bd11327a23b550dd385b"
 }
