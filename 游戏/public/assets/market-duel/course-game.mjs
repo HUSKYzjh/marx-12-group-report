@@ -114,7 +114,7 @@ function render(){
     const equipment=id===1?[f.ovens>f.fastOvens?`${f.ovens-f.fastOvens}旧炉`:'',f.fastOvens?`${f.fastOvens}快炉`:''].filter(Boolean).join(' · '):`${f.ovens-f.fastOvens}旧炉 · ${f.fastOvens}快炉`;
     const trade=id===1?`售价${f.price}${coin} · ${social()?'工资'+f.wage+coin:'余'+f.bread.length+'个'}`:`售价 ${f.price} ${coin} · ${social()?'工资 '+f.wage+' '+coin:'剩货 '+f.bread.length+' 个'}`;
     $('stats-'+id).innerHTML=trade+(state.version===3?`<span class="equipment-status">${equipment} · ${f.workers.length}人</span>`:'');
-    $(id===0?'player-capacity':'rival-level').textContent=`明天可做 ${courseCapacity(state,w.shops[id])} 个`;
+    $(id===0?'player-capacity':'rival-level').textContent=`明天可做${courseCapacity(state,w.shops[id])}个`;
     const note=$(id===0?'player-equipment-note':'rival-equipment-note');
     note.textContent=result&&r.installing?.[id]?'停工安装':f.pending?'有明日安排':'';note.hidden=!note.textContent;
     $('figures-'+id).innerHTML=ownerMarkup(atlas,id,ownerEmotion(w.history,id),busy&&result)+`<img class="oven" src="${asset(f.fast?'oven-new':'oven-old')}" alt="${f.fast?'快炉':'旧炉'}"><span class="bread-rack" role="img" aria-label="货架：剩余 ${f.bread.length} 个面包" title="剩余 ${f.bread.length} 个面包"><img class="rack-frame" src="${asset('bread-rack')}" alt="">${Array.from({length:Math.min(6,f.bread.length)},(_,i)=>`<img class="rack-loaf" src="${asset('bread')}" alt="" style="left:${19+i%2*34}%;top:${22+Math.floor(i/2)*26}%">`).join('')}</span>`;

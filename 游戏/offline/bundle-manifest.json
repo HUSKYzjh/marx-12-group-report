@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T14:49:44.709Z",
-  "bytes": 20568353,
+  "built_at": "2026-10-17T16:37:01.023Z",
+  "bytes": 20568498,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2154,6 +2154,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Increase both shop capacity labels to 11px on mobile and 14px on desktop, retaining compact summary rows and separate installation notices.",
     "Show next-round configured capacity beside both shop names, reflecting pending equipment and staffing; preserve compact summary rows and temporary installation notices.",
     "Restore the original subdued clothing palette from commit 7c69673; retain the current single-line summaries for both shops.",
     "Keep both shop summaries on one line; compact rival labels and zero-count equipment, retain stock or wage amounts, and move rival pending status beside the title.",
@@ -2166,9 +2167,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "00fad4e3ed71dea07553b12efaf8b84b175a2e2cb44a2745ba39af1584adfd3e",
+    "index_sha256": "dc146fcee6e1f7206b6ad3958432f6056b2940508da35f00fe9533a1ebe78604",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "aa000102808ddd199027c76e5098c08a99e59afca248adfb95f21f0a159516e2"
+  "sha256": "6b6d94a0828794c57d35e4451516ec2631087f4f8e77eb2e7653a54c8a2630fb"
 }
