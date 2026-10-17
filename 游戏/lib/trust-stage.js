@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var state, lastKey, slideshow, stage, busy = false, active = true;
-  var transitioning = false, pendingState, queuedState;
+  var transitioning = false, pendingState, queuedState, chapterAnimation = 0;
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var timers = new Set();
   var headings = document.getElementById('slideshow');
@@ -281,7 +281,7 @@
       // assigned to a row, ring or region. These are seeds, never spring anchors.
       self.splashNodes.slice().sort(function (a, b) { return b.radius - a.radius; }).forEach(function (item) {
         var best, bestScore = -Infinity, r = item.radius + 12;
-        for (var attempt = 0; attempt < 500; attempt++) {
+        for (var attempt = 0; attempt < 96; attempt++) {
           var x = r + random() * (self.width - r * 2), y = r + random() * (self.splashHeight - r * 2);
           var closestX = Math.max(hole.x, Math.min(x, hole.x + hole.width)), closestY = Math.max(hole.y, Math.min(y, hole.y + hole.height));
           if (Math.hypot(x - closestX, y - closestY) < r) continue;
@@ -328,7 +328,7 @@
         ink.moveTo(sx, sy); ink.quadraticCurveTo((sx + ex) / 2 - dy / distance * bend, (sy + ey) / 2 + dx / distance * bend, ex, ey);
       });
     };
-    self.buildSplash(); self.splashLayer.visible = false;
+    self.splashLayer.visible = false;
     self.people = [];
     // Stable identities: four company workers, four owners, father/daughter,
     // then three upstream jobs. A changed layout never changes a person's role.
@@ -451,7 +451,8 @@
       var desiredWidth = key === 'opening' ? window.innerWidth : key==='street'?960:window.innerWidth <= 600 ? 640 : 960;
       if (self.width !== desiredWidth || (key === 'opening' && (self.viewKey !== 'opening' || self.splashViewportHeight !== openingViewportHeight()))) {
         self.width = desiredWidth;
-        if (key === 'opening') self.buildSplash();
+        // Keep the already packed opening when returning from another scene.
+        if (key === 'opening' && (!self.splashNetwork || self.splashNetwork.width !== self.width || self.splashViewportHeight !== openingViewportHeight())) self.buildSplash();
       }
       var w = self.width, center = w / 2;
       var changed = key !== self.viewKey || (key === 'allocation' && self.firmId !== p.activeFirmId);
@@ -603,9 +604,10 @@
       self.drawLinks();
       if (!reduced.matches) {
         self.people.forEach(function (p) { if (p.graphics.visible) p.update(delta); });
-        if (self.splashLayer.visible) {
+        if (self.splashLayer.visible && !transitioning) {
           self.splashClock += delta;
-          self.syncSplashPins(); self.splashNetwork.step(delta / 60);
+          // Decoration must not run catch-up steps ahead of input on a slow frame.
+          self.syncSplashPins(); self.splashNetwork.step(Math.min(delta / 60, 1 / 120));
           self.paintSplash();
         }
       }
@@ -992,18 +994,19 @@
       // Original artwork, with a shorter silent sequence. Cover the old scene
       // before changing it; the second atlas column reveals the new one.
       document.body.dataset.transition = 'chapter';
-      var scratch = document.getElementById('scene-scratch'), frame = 0, uncovering = false;
+      var scratch = document.getElementById('scene-scratch'), uncovering = false;
+      var started = performance.now(), animation = ++chapterAnimation, half = 180;
       scratch.style.backgroundPosition = '0% 0%';
-      function scratchFrame() {
-        frame++;
-        if (frame > 19) {
-          if (uncovering) { finishTransition(); return; }
-          commitState(pendingState); uncovering = true; frame = 0;
-        }
+      function scratchFrame(now) {
+        if (animation !== chapterAnimation || !transitioning || document.body.dataset.transition !== 'chapter') return;
+        var elapsed = now - started;
+        if (elapsed >= half && !uncovering) { commitState(pendingState); uncovering = true; }
+        if (elapsed >= half * 2) { finishTransition(); return; }
+        var frame = Math.min(19, Math.floor((elapsed % half) * 20 / half));
         scratch.style.backgroundPosition = (uncovering ? '100%' : '0%') + ' ' + (frame * 100 / 19) + '%';
-        later(scratchFrame, 16);
+        requestAnimationFrame(scratchFrame);
       }
-      later(scratchFrame, 16);
+      requestAnimationFrame(scratchFrame);
     } else {
       // Keep the canvas visible: the same actors move while the question changes.
       document.body.dataset.transition = 'out';
