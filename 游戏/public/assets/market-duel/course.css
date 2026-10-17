@@ -245,3 +245,7 @@ footer{flex-wrap:wrap}
 
 /* Keep repeated counters and empty narration out of the playing view. */
 .player-status .level,#choose-label:empty,#signal-note:empty,#eyebrow:empty,#preview .source-proof:empty,.bubble:empty{display:none}
+
+#steady-goal{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0;padding:7px 9px;font-size:15px;line-height:1.5;border-bottom:1px dashed #c9c6ba}#steady-goal[hidden]{display:none}#steady-goal strong{font-weight:normal;white-space:nowrap}#steady-insight{font-size:15px;line-height:1.6;margin:4px 0 10px}#comparison[data-challenge="true"]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}#comparison[data-challenge="true"] .outcome-figure{min-width:0;font-size:13px}#comparison[data-challenge="true"] b{font-size:23px}@media(max-width:350px){#steady-goal{font-size:13px;padding:7px 4px}#comparison[data-challenge="true"] b{font-size:20px}}
+
+#detail{position:fixed;top:20px;bottom:auto;margin:0 auto;max-height:calc(100dvh - 40px);overflow:auto}

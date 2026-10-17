@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T10:52:26.509Z",
-  "bytes": 20560167,
+  "built_at": "2026-10-17T13:37:46.775Z",
+  "bytes": 20566456,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2103,6 +2103,7 @@
     "public/assets/market-duel/course-legacy.mjs",
     "public/assets/market-duel/equipment-model.mjs",
     "public/assets/market-duel/course-model.mjs",
+    "public/assets/market-duel/steady-challenge.mjs",
     "lib/battle-session.ts",
     "lib/prologue-state.ts",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\vendor\\ncase-trust\\THIRD_PARTY_NOTICES.txt",
@@ -2151,16 +2152,16 @@
     "portable.tsx"
   ],
   "external_runtime_requests": false,
-  "sha256": "de5a80a9168af5cb036a7448181a17c1bafafd4640cf0e21705998efda99309f",
+  "sha256": "057caa6cd15055743e2b6dab6b7b156c2aca379169eeac005adf39c60e07e140",
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
-    "Restore the original five-page opening and final-page start; retain completed-guide saves.",
+    "Fixed-flow three-day returns challenge, contextual coaching and replay-validated personal records; five-page opening retained.",
     "Remove duplicate counters, narration and prompts; preserve decision costs, timing and receipts."
   ],
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "4110de60fdbeeefa27554da44a9f6b2355c16681e44d1bcd8aecb8c10b109eb6",
+    "index_sha256": "dbbea484e65758e76c138c5a58d93f6afa35c836e275152958dc2b8fd30ea7a5",
     "same_origin_assets": true,
     "font_mappings": 47449
   }

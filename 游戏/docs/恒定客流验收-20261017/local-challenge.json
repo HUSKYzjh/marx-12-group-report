@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-17",
+  "entry": "local",
+  "indexSha256": "dbbea484e65758e76c138c5a58d93f6afa35c836e275152958dc2b8fd30ea7a5",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "fivePageOpening": true,
+      "goalVisible": true,
+      "actualMoveHints": true,
+      "baselineGain": 21,
+      "maximumGain": 51,
+      "sameDailySales": 6,
+      "replayComparison": true,
+      "recordSurvivesReload": true,
+      "lowerRunPreservesBest": true,
+      "nextStageUnblocked": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "height": 667,
+      "fivePageOpening": true,
+      "goalVisible": true,
+      "actualMoveHints": true,
+      "baselineGain": 21,
+      "maximumGain": 51,
+      "sameDailySales": 6,
+      "replayComparison": true,
+      "recordSurvivesReload": true,
+      "lowerRunPreservesBest": true,
+      "nextStageUnblocked": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "fivePageOpening": true,
+      "goalVisible": true,
+      "actualMoveHints": true,
+      "baselineGain": 21,
+      "maximumGain": 51,
+      "sameDailySales": 6,
+      "replayComparison": true,
+      "recordSurvivesReload": true,
+      "lowerRunPreservesBest": true,
+      "nextStageUnblocked": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

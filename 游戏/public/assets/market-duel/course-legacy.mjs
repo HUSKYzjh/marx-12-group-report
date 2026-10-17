@@ -1,7 +1,7 @@
 import {initialBattle, round as wageRound, moves as wageMoves, moveIssue as wageIssue, money} from './battle-model.mjs';
 
 export const MODES = ['steady', 'waves', 'source', 'social', 'done'];
-export const TITLES = {steady:'第一场 · 客人每天都来', waves:'第二场 · 慢了一拍', source:'需求，从哪里来？', social:'第三场 · 顾客也要领工资', done:'两家店，一条街'};
+export const TITLES = {steady:'第一场 · 恒定的客流数', waves:'第二场 · 慢了一拍', source:'需求，从哪里来？', social:'第三场 · 顾客也要领工资', done:'两家店，一条街'};
 export const LENGTHS = {steady:3, waves:5, social:9};
 const clone = s => structuredClone(s);
 function market() {return {day:0, outside:2000, shops:[0,1].map(id => ({id,cash:36,price:3,wage:2,workers:[id*4,id*4+1,id*4+2,id*4+3], quantity:6,nextQuantity:6,bread:[],debt:0})), history:[]};}

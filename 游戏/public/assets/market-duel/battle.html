@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>面包店对决 · 饥馑的盛宴</title><link rel="stylesheet" href="battle.css"><link rel="stylesheet" href="course.css"></head>
 <body><main>
-<header><a href="pressure.html">饥馑的盛宴</a><span id="chapter-title">第一场 · 客人每天都来</span><button id="restart" aria-label="重新开始三场对战">↻</button></header>
+<header><a href="pressure.html">饥馑的盛宴</a><span id="chapter-title">第一场 · 恒定的客流数</span><button id="restart" aria-label="重新开始三场对战">↻</button></header>
 <div class="battle-frame" id="battle-frame">
 <section class="arena" aria-label="两家面包店的对战场景">
   <div class="day"><span id="day">第一天</span><span id="round-dots" aria-hidden="true"></span></div>
@@ -20,6 +20,7 @@
 <section class="street" id="street-panel" hidden><div class="street-label"><span>同一条街上的顾客</span><span id="street-summary">每人每天买一个面包</span></div><div id="customers"></div></section>
 </section>
 <section class="console" id="console">
+  <p id="steady-goal" hidden aria-live="polite"></p>
   <div class="narration"><div id="market-signal" class="market-signal"><small id="signal-label">全街需求</small><strong id="signal-value">12 个</strong><span id="signal-note">每天一样</span></div><div id="schedule" class="schedule"></div></div>
   <div class="command-area"><p id="choose-label">你的店，怎么应对？</p><div id="round-report" aria-live="polite" aria-atomic="true" hidden><span class="eyebrow" id="eyebrow"></span><h1 id="message"></h1><p id="subline"></p></div><div class="moves" id="moves"></div><div id="preview" hidden></div><button id="advance" class="primary" hidden>下一回合 →</button></div>
 </section>
@@ -36,7 +37,7 @@
   <section data-opening-page="0" data-title="街上，多了一家面包店。">
    <div id="opening-shop-scene" class="opening-shop-scene" role="group" aria-label="新开的面包店：老板、三位厨师、旧烤炉和货架"></div>
    <p>客人就这么多，生意得两家争。</p>
-   <p class="opening-goal">有了竞争对手，你还能一直扩张下去吗？</p>
+   <p class="opening-goal">每天12位顾客，三天怎样赚得最多？</p>
   </section>
   <section data-opening-page="1" data-title="物品与用工" hidden>
    <table class="opening-price-table">

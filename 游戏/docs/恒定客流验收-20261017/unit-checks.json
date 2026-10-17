@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-17",
+  "passed": 14,
+  "failed": 0,
+  "files": [
+    "steady-challenge.test.mjs",
+    "opening-guide.test.mjs",
+    "battle-resume.test.mjs",
+    "prologue-battle.test.mjs"
+  ],
+  "exhaustive_legal_three_day_paths": 305,
+  "baseline_gain": 21,
+  "maximum_gain": 51,
+  "maximum_example": [
+    "price-up",
+    "price-up",
+    "hold"
+  ],
+  "daily_sales": [
+    6,
+    6,
+    6
+  ],
+  "scoring": "Three-day cash increase after all recorded outflows; not complete net profit."
+}

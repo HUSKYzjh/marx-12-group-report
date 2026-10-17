@@ -50,7 +50,8 @@ test('background, three-item price table, one-off measures and recurring changes
  const pricing=html.split('<section data-opening-page="1"')[1].split('</section>')[0];
  assert.match(background,/街上，多了一家面包店/);
  assert.match(background,/客人就这么多，生意得两家争/);
- assert.match(background,/还能一直扩张下去吗/);
+ assert.match(background,/每天12位顾客/);
+ assert.match(background,/赚得最多/);
  assert.match(background,/id="opening-shop-scene"/);
  assert.doesNotMatch(background,/opening-picture/,'show the actual rival shop, not two oven pictograms');
  assert.doesNotMatch(background,/coin|工资|原料|生活费|试算|先付/);
