@@ -9,7 +9,7 @@ async function start(){
 const embedded=window.__BATTLE_EMBED__,resources=window.__BATTLE_RESOURCES__;
 const asset=name=>resources?.images[name]||'../bakery/'+name+'.svg';
 const $=id=>document.getElementById(id),key='feast-shop-course-v2',coin='<i class="coin" aria-label="金币"></i>',names=['阿面','小麦','团团','圆圆','阿青','阿蓝','小雨','小风','你','隔壁老板','原料商'];
-let state=initialCourse(),view='choose',selected=null,busy=false,lastTrace=null,openingStep=0,openingSold=6,openingRead=false,openingBrief=false;
+let state=initialCourse(),view='choose',selected=null,busy=false,lastTrace=null,openingStep=0,openingSold=6,openingRead=false;
 try{const save=embedded?embedded.snapshot:JSON.parse(localStorage.getItem(key)),valid=restoreCourse(save?.state);if(valid){state=valid;view=save.view==='result'&&state.world.day?'result':'choose';lastTrace=state.traced.at(-1)??null;openingRead=save.openingRead===true||state.world.day>0||state.mode!=='steady';}}catch{}
 const atlas=resources?.atlases||Object.fromEntries(await Promise.all([...OWNER_ATLASES,'trust'].map(async n=>{const r=await fetch(n==='trust'?'../trust/iterated_peep.json':'../wbwwb-source/'+n+'.json');if(!r.ok)throw new Error('人物素材加载失败');return[n,await r.json()];})));
 function peep(id,worried=false,working=false,world=state.world){return customerMarkup(atlas,id,{worried,working,employer:world.shops.find(f=>f.workers.includes(id))?.id,history:world.history,hat:asset('chef-hat')});}
@@ -47,18 +47,15 @@ function fitOpeningGuide(){
 function renderOpeningGuide(){
   const pages=[...document.querySelectorAll('[data-opening-page]')],last=openingStep===pages.length-1;
   $('opening-guide').dataset.openingStep=String(openingStep);
-  $('opening-guide').dataset.openingBrief=String(openingBrief);
-  $('opening-progress').parentElement.hidden=openingBrief;
   pages.forEach((page,i)=>{page.hidden=i!==openingStep;});
   document.querySelectorAll('.opening-topics li').forEach((topic,i)=>{
     if(i===openingStep)topic.setAttribute('aria-current','step');else topic.removeAttribute('aria-current');
   });
   $('opening-title').textContent=pages[openingStep].dataset.title;
   $('opening-progress').textContent=`${openingStep+1} / ${pages.length}`;
-  $('opening-back').hidden=openingBrief||openingStep===0;$('opening-next').hidden=last;$('opening-start').hidden=false;
-  $('opening-next').textContent=openingBrief?'价目与规则':['看看价目 →','一次性措施 →','日常调整 →','回合规则 →'][openingStep]||'下一页 →';
-  $('opening-next').classList.remove('primary');
-  $('opening-start').textContent=openingBrief?'开店 →':openingRequired()?'开始第一回合 →':'回到店里 →';
+  $('opening-back').hidden=openingStep===0;$('opening-next').hidden=last;$('opening-start').hidden=!last;
+  $('opening-next').textContent=['看看价目 →','看看一次性措施 →','看看日常调整 →','准备营业 →'][openingStep]||'下一页 →';
+  $('opening-start').textContent=openingRequired()?'开始第一回合 →':'回到店里 →';
   $('opening-close').hidden=openingRequired();
   $('opening-guide').scrollTop=0;
   fitOpeningGuide();
@@ -66,7 +63,7 @@ function renderOpeningGuide(){
 function openingGuide(){
   if(needsEquipmentUpdate()){offerUpgrade();return;}
   if(busy||$('opening-guide').open)return;
-  openingBrief=openingRequired();openingStep=0;openingSold=6;renderOpeningExample();renderOpeningGuide();
+  openingStep=0;openingSold=6;renderOpeningExample();renderOpeningGuide();
   const newcomer={mood:'neutral',streak:0,balance:0,label:'准备开门'};
   $('opening-shop-scene').innerHTML='<span class="opening-shop-speech">借过，生意算我一份。</span><div class="opening-shop-props">'+ownerMarkup(atlas,1,newcomer)+`<img class="opening-shop-oven" src="${asset('oven-old')}" alt="旧烤炉"><img class="opening-shop-rack" src="${asset('bread-rack')}" alt="空货架"></div><div class="opening-shop-crew">`+[4,5,6].map(id=>customerMarkup(atlas,id,{working:true,employer:1,hat:asset('chef-hat')})).join('')+'</div>';
   document.querySelectorAll('[data-opening-art]').forEach(image=>{image.src=asset(image.dataset.openingArt);});
@@ -76,7 +73,7 @@ function openingGuide(){
   // not just its autofocus button, when reopening it from the bottom toolbar.
   (window.frameElement||document.querySelector('main')).scrollIntoView({block:'start',behavior:'instant'});
   fitOpeningGuide();
-  $(openingBrief?'opening-start':'opening-next').focus({preventScroll:true});syncStreet();
+  $('opening-next').focus({preventScroll:true});syncStreet();
 }
 function offerUpgrade(){
  showDialog('换炉规则更新了',`<p>整店升级：每台旧炉8金币，停工一天，工资照发。</p><p>旧账不重算。开始新版会重新开局，旧记录另外保留。</p><button id="equipment-start" class="primary">保留旧账，开始新版 →</button>`);
@@ -244,8 +241,8 @@ $('opening-sold-more').onclick=()=>{openingSold++;renderOpeningExample();};
 $('upgrade-course').onclick=offerUpgrade;
 $('old-record').onclick=()=>{const old=state.previousCourse;if(!old)return;showDialog('保留的旧版账目',`<p>${TITLES[old.mode]} · 第${old.world.day}天</p><p>你店里 ${old.world.shops[0].cash} ${coin} · 隔壁 ${old.world.shops[1].cash} ${coin}</p>${old.world.history.map(r=>`<p>第${r.day}天 · ${r.move||r.action} · 卖出${r.sold[0]}个 · 余额${r.after[0]} ${coin}</p>`).join('')}<p>此记录仍按原规则保存，不参与新版结算。</p>`);};
 $('opening-back').onclick=()=>{if(openingStep>0){openingStep--;renderOpeningGuide();$('opening-next').focus({preventScroll:true});}};
-$('opening-next').onclick=()=>{const last=document.querySelectorAll('[data-opening-page]').length-1;if(openingStep<last){openingBrief=false;openingStep++;renderOpeningGuide();$(openingStep===last?'opening-start':'opening-next').focus({preventScroll:true});}};
-$('opening-start').onclick=()=>{openingRead=true;persist();$('opening-guide').close();};
+$('opening-next').onclick=()=>{const last=document.querySelectorAll('[data-opening-page]').length-1;if(openingStep<last){openingStep++;renderOpeningGuide();$(openingStep===last?'opening-start':'opening-next').focus({preventScroll:true});}};
+$('opening-start').onclick=()=>{if(openingStep===document.querySelectorAll('[data-opening-page]').length-1){openingRead=true;persist();$('opening-guide').close();}};
 $('opening-close').onclick=()=>{if(!openingRequired())$('opening-guide').close();};
 $('opening-guide').addEventListener('cancel',event=>{if(openingRequired())event.preventDefault();});
 $('opening-guide').addEventListener('close',()=>{syncStreet();document.querySelector('.move:not(:disabled)')?.focus({preventScroll:true});});

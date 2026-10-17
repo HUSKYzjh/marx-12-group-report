@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-17",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "status": "deployed_and_online_playtest_passed",
+  "uploaded_files": 62,
+  "remote_consistency_verified": true,
+  "backup_prefix": ".cloudbase-backup/1792234464829/",
+  "prune": false,
+  "index_sha256": "4110de60fdbeeefa27554da44a9f6b2355c16681e44d1bcd8aecb8c10b109eb6",
+  "javascript": "/runtime-assets/cb883ddd7ccde27a13e2.js",
+  "standalone_sha256": "de5a80a9168af5cb036a7448181a17c1bafafd4640cf0e21705998efda99309f",
+  "standalone_bytes": 20560167,
+  "offline_zip_integrity": true,
+  "offline_zip_html_matches": true,
+  "font_mappings": 47449,
+  "targeted_unit_tests": 7,
+  "five_page_flow_cases": {
+    "local": 3,
+    "online": 3
+  },
+  "scope": "All five pages, final-page start, reopening and closing rules, zero payment while reading, a real turn, receipt, reload and viewport fit. Edge simulated viewports, not physical phones."
+}

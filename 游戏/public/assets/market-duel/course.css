@@ -245,5 +245,3 @@ footer{flex-wrap:wrap}
 
 /* Keep repeated counters and empty narration out of the playing view. */
 .player-status .level,#choose-label:empty,#signal-note:empty,#eyebrow:empty,#preview .source-proof:empty,.bubble:empty{display:none}
-#opening-guide[data-opening-brief="true"] .opening-pages{min-height:0}
-#opening-guide[data-opening-brief="true"] [data-opening-page="0"]{font-size:16px}

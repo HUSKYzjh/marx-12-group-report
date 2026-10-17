@@ -34,12 +34,18 @@ try{
   if(baseline){
    while(true){guidePages.push(await battle.locator('[data-opening-page]:visible').innerText());if(!await battle.locator('#opening-next').isVisible())break;await press(battle.locator('#opening-next'));}
   }else{
-   assert.equal(await battle.locator('#opening-guide').getAttribute('data-opening-brief'),'true');
-   assert(await battle.locator('#opening-start').isVisible(),'A new player can start on the first screen');
-   assert(await battle.locator('#opening-progress').isHidden(),'No mandatory five-page progress indicator');
-   const box=await battle.locator('#opening-start').boundingBox();
-   assert(box.width>=44&&box.height>=44&&box.y>=0&&box.y+box.height<=height,'Start is inside the real viewport');
-   guidePages.push(await battle.locator('[data-opening-page]:visible').innerText());
+   await page.keyboard.press('Escape');assert(await battle.locator('#opening-guide').evaluate(n=>n.open));
+   for(let step=0;step<5;step++){
+    assert.equal(await battle.locator('[data-opening-page]:visible').count(),1);
+    assert.equal(await battle.locator('#opening-progress').innerText(),`${step+1} / 5`);
+    assert.equal(await battle.locator('#opening-start').isVisible(),step===4,'Start appears only after the fifth page');
+    const button=battle.locator(step===4?'#opening-start':'#opening-next');
+    const box=await button.boundingBox();
+    assert(box.width>=44&&box.height>=44&&box.y>=0&&box.y+box.height<=height,'Navigation is inside the real viewport');
+    guidePages.push(await battle.locator('[data-opening-page]:visible').innerText());
+    await page.screenshot({path:path.join(out,`${width}-guide-${step+1}.png`)});
+    if(step<4)await press(button);
+   }
   }
   await press(battle.locator('#opening-start'));
   await page.waitForFunction(key=>JSON.parse(localStorage.getItem(key)).battle?.openingRead===true,key);
@@ -55,8 +61,8 @@ try{
    await press(battle.locator('#opening-next'));
    assert.match(await battle.locator('[data-opening-rule="upgrade"]').innerText(),/8/);
    assert.match(await battle.locator('[data-opening-rule="fire"]').innerText(),/1/);
-   // Leave the reference guide at a middle page, not only after reading it all.
-   await press(battle.locator('#opening-start'));
+   // A returning player can close the reopened instructions at any page.
+   await press(battle.locator('#opening-close'));
    assert.equal(await battle.locator('#opening-guide').evaluate(n=>n.open),false);
    assert.deepEqual(await saved(),initial,'Consulting a price table never starts a paid turn');
    await press(battle.locator('#opening-help'));
@@ -81,8 +87,8 @@ try{
    const resumedBattle=await(await resumed.locator('#prologue-battle').elementHandle()).contentFrame();
    await resumedBattle.locator('#advance').waitFor();assert.equal(await resumedBattle.locator('#opening-guide').evaluate(n=>n.open),false);
   }
-  results.push({width,height,requiredPages:guidePages.length,requiredBodyCharacters:guidePages.reduce((n,t)=>n+words(t),0),chooseCharacters:chooseWords,openingReadWithoutPayment:true,...(!baseline?{oneClickStart:true,priceReferenceAccessible:true,exitReferenceMidPage:true,receiptCorrect:true,reload:true,noOverflow:true}:{})});
-  console.log(`PASS ${baseline?'baseline':'light reading'} ${width}: ${guidePages.length} required page(s), ${chooseWords} playing-screen characters`);
+  results.push({width,height,requiredPages:guidePages.length,requiredBodyCharacters:guidePages.reduce((n,t)=>n+words(t),0),chooseCharacters:chooseWords,openingReadWithoutPayment:true,...(!baseline?{fivePagesRequired:true,startOnFinalPageOnly:true,priceReferenceAccessible:true,closeReopenedGuide:true,receiptCorrect:true,reload:true,noOverflow:true}:{})});
+  console.log(`PASS ${baseline?'baseline':'five-page opening'} ${width}: ${guidePages.length} required page(s), ${chooseWords} playing-screen characters`);
   await context.close();
  }
  assert.deepEqual(errors,[]);

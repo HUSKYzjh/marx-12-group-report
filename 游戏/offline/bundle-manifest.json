@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T09:38:19.439Z",
-  "bytes": 20560071,
+  "built_at": "2026-10-17T10:52:26.509Z",
+  "bytes": 20560167,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2151,16 +2151,16 @@
     "portable.tsx"
   ],
   "external_runtime_requests": false,
-  "sha256": "286ed63020fa7fc67315d2c1dd61dce662f1f140a58788942014d867f0bb6574",
+  "sha256": "de5a80a9168af5cb036a7448181a17c1bafafd4640cf0e21705998efda99309f",
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
-    "One-screen opening with direct entry; detailed rules stay optional.",
+    "Restore the original five-page opening and final-page start; retain completed-guide saves.",
     "Remove duplicate counters, narration and prompts; preserve decision costs, timing and receipts."
   ],
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "14f39aa4d82e2e4c43a7418e6280b7af6e9684070149db0e4c79ec0f808864ff",
+    "index_sha256": "4110de60fdbeeefa27554da44a9f6b2355c16681e44d1bcd8aecb8c10b109eb6",
     "same_origin_assets": true,
     "font_mappings": 47449
   }

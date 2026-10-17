@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-17",
+  "baseline": false,
+  "entry": "local",
+  "indexSha256": "4110de60fdbeeefa27554da44a9f6b2355c16681e44d1bcd8aecb8c10b109eb6",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "requiredPages": 5,
+      "requiredBodyCharacters": 427,
+      "chooseCharacters": 205,
+      "openingReadWithoutPayment": true,
+      "fivePagesRequired": true,
+      "startOnFinalPageOnly": true,
+      "priceReferenceAccessible": true,
+      "closeReopenedGuide": true,
+      "receiptCorrect": true,
+      "reload": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "height": 667,
+      "requiredPages": 5,
+      "requiredBodyCharacters": 427,
+      "chooseCharacters": 205,
+      "openingReadWithoutPayment": true,
+      "fivePagesRequired": true,
+      "startOnFinalPageOnly": true,
+      "priceReferenceAccessible": true,
+      "closeReopenedGuide": true,
+      "receiptCorrect": true,
+      "reload": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "requiredPages": 5,
+      "requiredBodyCharacters": 427,
+      "chooseCharacters": 205,
+      "openingReadWithoutPayment": true,
+      "fivePagesRequired": true,
+      "startOnFinalPageOnly": true,
+      "priceReferenceAccessible": true,
+      "closeReopenedGuide": true,
+      "receiptCorrect": true,
+      "reload": true,
+      "noOverflow": true
+    }
+  ],
+  "errors": []
+}
