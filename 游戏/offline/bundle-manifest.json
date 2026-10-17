@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-17T14:20:23.644Z",
+  "built_at": "2026-10-17T14:34:43.292Z",
   "bytes": 20567893,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
@@ -2154,6 +2154,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Restore the original subdued clothing palette from commit 7c69673; retain the current single-line summaries for both shops.",
     "Keep both shop summaries on one line; compact rival labels and zero-count equipment, retain stock or wage amounts, and move rival pending status beside the title.",
     "Unify pedestrian and supplier clothing with four shared fills: cream, sage green, deep green and muted gold; remove competing pink, purple and blue accents.",
     "Brighten pedestrian clothing and supplier accessories with warm yellow, teal, coral and lilac; preserve ink outlines and white chef uniforms.",
@@ -2164,9 +2165,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "0d289db3eba8d9bd545913efe025a6f9d9739f3b7df636d79ab79dd3f8a4ed6a",
+    "index_sha256": "642a5f07bc0003ac6f3181e812432f1ecfee7fb297b00b0f3194f0bca1610765",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "6db78d56fee9d52a8b36de82ffccd4c0ab7ccb0d024b36629697c93974efbd0c"
+  "sha256": "070fd5361ee14b2463f669e61c56dff24de91547eaa9f2c935304cb7d75b03e6"
 }

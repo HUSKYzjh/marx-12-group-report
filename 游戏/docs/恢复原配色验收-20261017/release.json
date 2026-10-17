@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "request": "还是改回之前的配色方案吧。",
+  "change": "恢复首次提亮前的原始米灰、灰绿低饱和服饰配色；保留两家店铺的单行汇总布局。",
+  "artwork_restored_from": "7c69673",
+  "artwork_byte_identical": true,
+  "artwork_sha256": "f5e84143b241deae5b63e19160238078707a7ae49511fdae4f0c638e5f027a65",
+  "shop_layout_sources_unchanged": true,
+  "local_and_online_widths": [
+    320,
+    390,
+    1280
+  ],
+  "both_shop_rows_fit": true,
+  "twelve_outfits_observed": true,
+  "no_overflow": true,
+  "no_page_errors": true,
+  "index_sha256": "642a5f07bc0003ac6f3181e812432f1ecfee7fb297b00b0f3194f0bca1610765",
+  "offline_sha256": "070fd5361ee14b2463f669e61c56dff24de91547eaa9f2c935304cb7d75b03e6",
+  "offline_zip_checked": true,
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792247764670/"
+  },
+  "prune": false
+}
