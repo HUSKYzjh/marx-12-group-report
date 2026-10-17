@@ -249,3 +249,10 @@ footer{flex-wrap:wrap}
 #steady-goal{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0;padding:7px 9px;font-size:15px;line-height:1.5;border-bottom:1px dashed #c9c6ba}#steady-goal[hidden]{display:none}#steady-goal strong{font-weight:normal;white-space:nowrap}#steady-insight{font-size:15px;line-height:1.6;margin:4px 0 10px}#comparison[data-challenge="true"]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}#comparison[data-challenge="true"] .outcome-figure{min-width:0;font-size:13px}#comparison[data-challenge="true"] b{font-size:23px}@media(max-width:350px){#steady-goal{font-size:13px;padding:7px 4px}#comparison[data-challenge="true"] b{font-size:20px}}
 
 #detail{position:fixed;top:20px;bottom:auto;margin:0 auto;max-height:calc(100dvh - 40px);overflow:auto}
+
+/* Keep the player summary below the shop outline and the crew. */
+.arena .player-zone .status{bottom:22px}
+body[data-rules="3"] .player-status .equipment-status{display:inline;font:inherit;white-space:normal}
+.player-status .equipment-status:before{content:" \00b7 "}
+@media(max-width:700px){.arena .player-zone .fighter{height:128px}.arena .player-zone .status{bottom:20px;width:calc(100% - 32px)}.arena .player-zone .status>div{width:calc((100% + 42px)*.53 - 10px)}.arena .player-zone .status p{font-size:11px;line-height:1.6}}
+.player-status .equipment-note{font-size:10px;color:#66675e;white-space:nowrap}

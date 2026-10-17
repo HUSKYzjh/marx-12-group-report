@@ -112,7 +112,12 @@ function render(){
   const shopsForView=result||isSource||state.version===2?w.shops:w.shops.map(f=>{const today=readyShop(f);return {...today,fast:today.fastOvens>0};});
   $('rival-level').textContent=social()?(shopsForView[1].fast?'快速烤炉':'普通烤炉'):'每天做 6 个';
   for(const f of shopsForView){const id=f.id;$('cash-'+id).innerHTML=f.cash+' '+coin;$('bar-'+id).style.width=Math.min(100,f.cash/60*100)+'%';$('bar-'+id).classList.toggle('low',f.cash<12);
-    $('stats-'+id).innerHTML=`售价 ${f.price} ${coin} · ${social()?'工资 '+f.wage+' '+coin:'剩货 '+f.bread.length+' 个'}`+(state.version===3?`<span class="equipment-status">${f.ovens-f.fastOvens}旧炉 · ${f.fastOvens}快炉 · ${f.workers.length}人${result&&r.installing?.[id]?' · 停工安装':f.pending?' · 有明日安排':''}</span>`:'');
+    $('stats-'+id).innerHTML=`售价 ${f.price} ${coin} · ${social()?'工资 '+f.wage+' '+coin:'剩货 '+f.bread.length+' 个'}`+(state.version===3?`<span class="equipment-status">${f.ovens-f.fastOvens}旧炉 · ${f.fastOvens}快炉 · ${f.workers.length}人${id===0?'':result&&r.installing?.[id]?' · 停工安装':f.pending?' · 有明日安排':''}</span>`:'');
+    if(id===0){
+      let note=$('player-equipment-note');
+      if(!note){note=document.createElement('span');note.id='player-equipment-note';note.className='equipment-note';$('player-shop-title').parentElement.append(note);}
+      note.textContent=result&&r.installing?.[id]?'停工安装':f.pending?'有明日安排':'';note.hidden=!note.textContent;
+    }
     $('figures-'+id).innerHTML=ownerMarkup(atlas,id,ownerEmotion(w.history,id),busy&&result)+`<img class="oven" src="${asset(f.fast?'oven-new':'oven-old')}" alt="${f.fast?'快炉':'旧炉'}"><span class="bread-rack" role="img" aria-label="货架：剩余 ${f.bread.length} 个面包" title="剩余 ${f.bread.length} 个面包"><img class="rack-frame" src="${asset('bread-rack')}" alt="">${Array.from({length:Math.min(6,f.bread.length)},(_,i)=>`<img class="rack-loaf" src="${asset('bread')}" alt="" style="left:${19+i%2*34}%;top:${22+Math.floor(i/2)*26}%">`).join('')}</span>`;
     $('crew-'+id).innerHTML=f.workers.map(pid=>peep(pid,false,true,{...w,shops:shopsForView})).join('');
     $('crew-'+id).style.setProperty('--crew-count',f.workers.length);$('crew-'+id).classList.toggle('expanded-crew',f.workers.length>4);

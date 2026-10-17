@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T13:37:46.775Z",
-  "bytes": 20566456,
+  "built_at": "2026-10-17T13:55:05.183Z",
+  "bytes": 20567419,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2152,17 +2152,18 @@
     "portable.tsx"
   ],
   "external_runtime_requests": false,
-  "sha256": "057caa6cd15055743e2b6dab6b7b156c2aca379169eeac005adf39c60e07e140",
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Move player shop summary below the outline; merge price, stock, ovens and workers; show pending installation beside the title.",
     "Fixed-flow three-day returns challenge, contextual coaching and replay-validated personal records; five-page opening retained.",
     "Remove duplicate counters, narration and prompts; preserve decision costs, timing and receipts."
   ],
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "dbbea484e65758e76c138c5a58d93f6afa35c836e275152958dc2b8fd30ea7a5",
+    "index_sha256": "55b0f847343a797e2dc61fedad0f30bb3167a51b61b4095596344caaa9cebf82",
     "same_origin_assets": true,
     "font_mappings": 47449
-  }
+  },
+  "sha256": "369b9d0683eaeba9c7880122b5cd8444278e8adf2c73cc5e0c615d9a7cfe7b80"
 }
