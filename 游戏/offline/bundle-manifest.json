@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T08:48:17.774Z",
-  "bytes": 20560685,
+  "built_at": "2026-10-17T09:38:19.439Z",
+  "bytes": 20560071,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2151,16 +2151,16 @@
     "portable.tsx"
   ],
   "external_runtime_requests": false,
-  "sha256": "950f0e72a7871892d95554447ad79b3f90a832b546f9c2c625bf82bf2e5f82f5",
+  "sha256": "286ed63020fa7fc67315d2c1dd61dce662f1f140a58788942014d867f0bb6574",
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
-    "Persist completion of the opening guide without changing economic state.",
-    "Persist a settled move before animation; recover presentation controls after animation cancellation."
+    "One-screen opening with direct entry; detailed rules stay optional.",
+    "Remove duplicate counters, narration and prompts; preserve decision costs, timing and receipts."
   ],
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "46bd142bbeb36e32d5578ee7ebc27e843947ac24214a9f5e2c80e1aff6b4c98c",
+    "index_sha256": "14f39aa4d82e2e4c43a7418e6280b7af6e9684070149db0e4c79ec0f808864ff",
     "same_origin_assets": true,
     "font_mappings": 47449
   }

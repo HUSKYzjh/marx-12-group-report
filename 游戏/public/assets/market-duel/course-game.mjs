@@ -9,7 +9,7 @@ async function start(){
 const embedded=window.__BATTLE_EMBED__,resources=window.__BATTLE_RESOURCES__;
 const asset=name=>resources?.images[name]||'../bakery/'+name+'.svg';
 const $=id=>document.getElementById(id),key='feast-shop-course-v2',coin='<i class="coin" aria-label="金币"></i>',names=['阿面','小麦','团团','圆圆','阿青','阿蓝','小雨','小风','你','隔壁老板','原料商'];
-let state=initialCourse(),view='choose',selected=null,busy=false,lastTrace=null,openingStep=0,openingSold=6,openingRead=false;
+let state=initialCourse(),view='choose',selected=null,busy=false,lastTrace=null,openingStep=0,openingSold=6,openingRead=false,openingBrief=false;
 try{const save=embedded?embedded.snapshot:JSON.parse(localStorage.getItem(key)),valid=restoreCourse(save?.state);if(valid){state=valid;view=save.view==='result'&&state.world.day?'result':'choose';lastTrace=state.traced.at(-1)??null;openingRead=save.openingRead===true||state.world.day>0||state.mode!=='steady';}}catch{}
 const atlas=resources?.atlases||Object.fromEntries(await Promise.all([...OWNER_ATLASES,'trust'].map(async n=>{const r=await fetch(n==='trust'?'../trust/iterated_peep.json':'../wbwwb-source/'+n+'.json');if(!r.ok)throw new Error('人物素材加载失败');return[n,await r.json()];})));
 function peep(id,worried=false,working=false,world=state.world){return customerMarkup(atlas,id,{worried,working,employer:world.shops.find(f=>f.workers.includes(id))?.id,history:world.history,hat:asset('chef-hat')});}
@@ -47,15 +47,18 @@ function fitOpeningGuide(){
 function renderOpeningGuide(){
   const pages=[...document.querySelectorAll('[data-opening-page]')],last=openingStep===pages.length-1;
   $('opening-guide').dataset.openingStep=String(openingStep);
+  $('opening-guide').dataset.openingBrief=String(openingBrief);
+  $('opening-progress').parentElement.hidden=openingBrief;
   pages.forEach((page,i)=>{page.hidden=i!==openingStep;});
   document.querySelectorAll('.opening-topics li').forEach((topic,i)=>{
     if(i===openingStep)topic.setAttribute('aria-current','step');else topic.removeAttribute('aria-current');
   });
   $('opening-title').textContent=pages[openingStep].dataset.title;
   $('opening-progress').textContent=`${openingStep+1} / ${pages.length}`;
-  $('opening-back').hidden=openingStep===0;$('opening-next').hidden=last;$('opening-start').hidden=!last;
-  $('opening-next').textContent=['看看价目 →','看看一次性措施 →','看看日常调整 →','准备营业 →'][openingStep]||'下一页 →';
-  $('opening-start').textContent=openingRequired()?'开始第一回合 →':'回到店里 →';
+  $('opening-back').hidden=openingBrief||openingStep===0;$('opening-next').hidden=last;$('opening-start').hidden=false;
+  $('opening-next').textContent=openingBrief?'价目与规则':['看看价目 →','一次性措施 →','日常调整 →','回合规则 →'][openingStep]||'下一页 →';
+  $('opening-next').classList.remove('primary');
+  $('opening-start').textContent=openingBrief?'开店 →':openingRequired()?'开始第一回合 →':'回到店里 →';
   $('opening-close').hidden=openingRequired();
   $('opening-guide').scrollTop=0;
   fitOpeningGuide();
@@ -63,7 +66,7 @@ function renderOpeningGuide(){
 function openingGuide(){
   if(needsEquipmentUpdate()){offerUpgrade();return;}
   if(busy||$('opening-guide').open)return;
-  openingStep=0;openingSold=6;renderOpeningExample();renderOpeningGuide();
+  openingBrief=openingRequired();openingStep=0;openingSold=6;renderOpeningExample();renderOpeningGuide();
   const newcomer={mood:'neutral',streak:0,balance:0,label:'准备开门'};
   $('opening-shop-scene').innerHTML='<span class="opening-shop-speech">借过，生意算我一份。</span><div class="opening-shop-props">'+ownerMarkup(atlas,1,newcomer)+`<img class="opening-shop-oven" src="${asset('oven-old')}" alt="旧烤炉"><img class="opening-shop-rack" src="${asset('bread-rack')}" alt="空货架"></div><div class="opening-shop-crew">`+[4,5,6].map(id=>customerMarkup(atlas,id,{working:true,employer:1,hat:asset('chef-hat')})).join('')+'</div>';
   document.querySelectorAll('[data-opening-art]').forEach(image=>{image.src=asset(image.dataset.openingArt);});
@@ -73,7 +76,7 @@ function openingGuide(){
   // not just its autofocus button, when reopening it from the bottom toolbar.
   (window.frameElement||document.querySelector('main')).scrollIntoView({block:'start',behavior:'instant'});
   fitOpeningGuide();
-  $('opening-next').focus({preventScroll:true});syncStreet();
+  $(openingBrief?'opening-start':'opening-next').focus({preventScroll:true});syncStreet();
 }
 function offerUpgrade(){
  showDialog('换炉规则更新了',`<p>整店升级：每台旧炉8金币，停工一天，工资照发。</p><p>旧账不重算。开始新版会重新开局，旧记录另外保留。</p><button id="equipment-start" class="primary">保留旧账，开始新版 →</button>`);
@@ -117,22 +120,22 @@ function render(){
   }
   $('schedule').hidden=state.version===2&&social();
   $('schedule').innerHTML=state.version===2&&social()?'':`<span>${result?'出炉':'今天可做'} <b>${result?r.made[0]:courseCapacity(state,w.shops[0])}</b></span>`+(result?` → <span class="next">明天可做 <b>${w.shops[0].nextQuantity}</b></span>`:'');
-  $('signal-label').textContent=isSource?'买家里':social()?'今天买不起':mode==='steady'?'全街需求':result?'今天实际需求':'昨天的需求';
+  $('signal-label').textContent=isSource?'领工资的买家':social()?'今天买不起':mode==='steady'?'每日需求':result?'今日需求':'昨日需求';
   $('signal-value').textContent=isSource?(w.shops.reduce((n,f)=>n+f.workers.length,0)+' / 11'):social()?(r?.poor||0)+' 人':(mode==='steady'?12:r?.demand??12)+' 个';
-  $('signal-note').textContent=isSource?'是领工资的员工':social()?'':mode==='steady'?'每天一样':result?'':'不是明天的保证';
+  $('signal-note').textContent='';
   $('market-signal').classList.toggle('changed',result&&mode==='waves');
   $('speech-1').textContent=isSource?'':social()?result?(r.stopped[1]?'我也开不了炉了。':`今天卖了 ${r.sold[1]} 个！`):courseRival(state).line.replace(/[“”]/g,''):mode==='steady'?'六个就六个。我与烤炉都很佛系。':result?`今天来了 ${r.demand} 个买家。`:'昨天挺好。今天？先照昨天来。';
-  $('speech-0').textContent=isSource?'':result?(r.stopped[0]?'今天先卖旧货。':`卖了 ${r.sold[0]}，剩下 ${r.stock[0]}。`):mode==='steady'?'先赚三天。金山的事，三天后再说。':mode==='waves'?'昨天下的单，今天进了炉。撤回？晚啦。':'';
+  $('speech-0').textContent=isSource?'':result?(r.stopped[0]?'今天先卖旧货。':`卖了 ${r.sold[0]}，剩下 ${r.stock[0]}。`):'';
   renderPeople();syncStreet();$('money-route').replaceChildren();$('ending').hidden=!over;$('console').hidden=!!over;
   $('undo').disabled=busy||isSource||mode==='done'||!w.day||(mode==='social'&&w.day===1);$('restart').disabled=busy;
   $('advance').hidden=true;$('preview').hidden=true;$('moves').hidden=false;$('moves').replaceChildren();
   if(over){checkpoint();return;}
   if(isSource){renderSource();return;}
   if(result){
-    $('eyebrow').textContent='这一回合';$('message').textContent=r.installing?.[0]?'今天停工安装。工资照发，明天可复工。':r.stopped[0]?'钱不够，今天停炉。烤炉被迫放假。':social()&&r.poor?'面包有了。买面包的钱呢？':`你卖了 ${r.sold[0]} · 隔壁卖了 ${r.sold[1]}`;
+    $('eyebrow').textContent='';$('message').textContent=r.installing?.[0]?'今天停工安装。工资照发，明天可复工。':r.stopped[0]?'钱不够，今天停炉。烤炉被迫放假。':social()&&r.poor?'面包有了。买面包的钱呢？':`你卖了 ${r.sold[0]} · 隔壁卖了 ${r.sold[1]}`;
     const change=r.after[0]-r.before[0];$('subline').innerHTML=`店里 ${change>=0?'+':''}${change} ${coin} · 剩货 ${r.stock[0]} 个`;
     if(state.version===3&&w.shops[0].pending){const p=w.shops[0].pending;$('subline').insertAdjacentHTML('beforeend',`<br><small>明天：${p.ovens}台炉（${p.fastOvens}快炉） · ${p.workers.length}人 · 工资${p.wage} ${coin}/人</small>`);}
-    $('eyebrow').textContent=`第 ${w.day} 天 · 已结算`;
+    $('eyebrow').textContent='';
     $('speech-0').textContent='';$('speech-1').textContent='';
     $('moves').hidden=true;$('choose-label').textContent='';$('preview').hidden=false;$('preview').innerHTML='<button id="receipt">账单 ↗</button>';$('receipt').onclick=receipt;
     if(state.version===3&&w.shops[0].fastOvens>0){
@@ -144,7 +147,7 @@ function render(){
   $('message').textContent=mode==='steady'?'每天 12 个，两家来卖。':mode==='waves'?`这批 ${w.shops[0].nextQuantity} 个，已经定了。`:courseRival(state).name;
   $('subline').textContent=mode==='steady'?'':mode==='waves'?'换炉、换人，明天才生效。':'';
   if(embedded&&mode==='steady'&&!w.day)$('subline').textContent='这场重新开账。';
-  $('choose-label').textContent='你的店，怎么应对？';
+  $('choose-label').textContent='';
   let wages;
   for(const m of courseMoves(state)){const b=document.createElement('button'),issue=courseIssue(state,m.id);b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||m.detail;b.innerHTML=`${icon(m.icon)}<strong>${m.name}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;b.onclick=()=>select(m.id);if(m.group==='wages'){if(!wages){wages=document.createElement('details');wages.className='wage-moves';wages.innerHTML='<summary>调整工资</summary><div></div>';$('moves').append(wages);}wages.querySelector('div').append(b);}else $('moves').append(b);}
   $('preview').replaceChildren();
@@ -175,7 +178,7 @@ function renderSource(){
   $('message').textContent=id===null?'需求，从哪里来？':Math.floor(id/4)===0?'你发的工资，给隔壁冲了业绩。':'隔壁发工资，你的柜台收了钱。';
   const r=state.world.history[0];
   if(id!==null){const employer=Math.floor(id/4),v=r.visits.find(v=>v.id===id),salary=r.receipts.find(p=>p.reason==='工资'&&p.to==='p'+id),purchase=r.receipts.find(p=>p.reason==='买面包'&&p.from==='p'+id);$('subline').innerHTML=`${employer===0?'你':'隔壁'}发工资 ${salary.amount} ${coin} → ${v.shop===0?'你的店':'隔壁'}收货款 ${purchase.amount} ${coin}`;}else $('subline').textContent='';
-  $('preview').innerHTML=`<p class="source-proof">${state.traced.length===2?'上班是员工，下班是彼此的顾客。':'点一个人，看看谁给他发钱。'}</p><div class="source-controls">${targets.map(pid=>`<button data-trace="${pid}" class="${state.traced.includes(pid)?'seen':''}">${state.traced.includes(pid)?'✓ ':''}追踪${names[pid]}</button>`).join('')}</div>`;
+  $('preview').innerHTML=`<p class="source-proof">${state.traced.length===2?'上班是员工，下班是彼此的顾客。':''}</p><div class="source-controls">${targets.map(pid=>`<button data-trace="${pid}" class="${state.traced.includes(pid)?'seen':''}">${state.traced.includes(pid)?'✓ ':''}追踪${names[pid]}</button>`).join('')}</div>`;
   document.querySelectorAll('[data-trace]').forEach(b=>b.onclick=()=>customer(Number(b.dataset.trace)));
   $('advance').hidden=state.traced.length!==2;$('advance').textContent='继续对战 →';
   if(id!==null)requestAnimationFrame(()=>drawRoute(id));
@@ -241,8 +244,8 @@ $('opening-sold-more').onclick=()=>{openingSold++;renderOpeningExample();};
 $('upgrade-course').onclick=offerUpgrade;
 $('old-record').onclick=()=>{const old=state.previousCourse;if(!old)return;showDialog('保留的旧版账目',`<p>${TITLES[old.mode]} · 第${old.world.day}天</p><p>你店里 ${old.world.shops[0].cash} ${coin} · 隔壁 ${old.world.shops[1].cash} ${coin}</p>${old.world.history.map(r=>`<p>第${r.day}天 · ${r.move||r.action} · 卖出${r.sold[0]}个 · 余额${r.after[0]} ${coin}</p>`).join('')}<p>此记录仍按原规则保存，不参与新版结算。</p>`);};
 $('opening-back').onclick=()=>{if(openingStep>0){openingStep--;renderOpeningGuide();$('opening-next').focus({preventScroll:true});}};
-$('opening-next').onclick=()=>{const last=document.querySelectorAll('[data-opening-page]').length-1;if(openingStep<last){openingStep++;renderOpeningGuide();$(openingStep===last?'opening-start':'opening-next').focus({preventScroll:true});}};
-$('opening-start').onclick=()=>{if(openingStep===document.querySelectorAll('[data-opening-page]').length-1){openingRead=true;persist();$('opening-guide').close();}};
+$('opening-next').onclick=()=>{const last=document.querySelectorAll('[data-opening-page]').length-1;if(openingStep<last){openingBrief=false;openingStep++;renderOpeningGuide();$(openingStep===last?'opening-start':'opening-next').focus({preventScroll:true});}};
+$('opening-start').onclick=()=>{openingRead=true;persist();$('opening-guide').close();};
 $('opening-close').onclick=()=>{if(!openingRequired())$('opening-guide').close();};
 $('opening-guide').addEventListener('cancel',event=>{if(openingRequired())event.preventDefault();});
 $('opening-guide').addEventListener('close',()=>{syncStreet();document.querySelector('.move:not(:disabled)')?.focus({preventScroll:true});});

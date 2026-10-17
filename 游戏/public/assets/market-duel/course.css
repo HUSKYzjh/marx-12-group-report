@@ -242,3 +242,8 @@ footer{flex-wrap:wrap}
 .opening-shop-crew{position:absolute;left:5px;bottom:0;display:flex;gap:5px}
 .opening-shop-crew .street-person{width:28px;height:43px}
 @media(max-width:700px){#opening-guide[data-opening-step="0"] h2{font-size:25px}#opening-guide [data-opening-page="0"]{font-size:17px}#opening-guide [data-opening-page="0"] .opening-goal{font-size:20px}.opening-shop-scene{height:195px}}
+
+/* Keep repeated counters and empty narration out of the playing view. */
+.player-status .level,#choose-label:empty,#signal-note:empty,#eyebrow:empty,#preview .source-proof:empty,.bubble:empty{display:none}
+#opening-guide[data-opening-brief="true"] .opening-pages{min-height:0}
+#opening-guide[data-opening-brief="true"] [data-opening-page="0"]{font-size:16px}

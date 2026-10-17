@@ -49,8 +49,8 @@ test('background, three-item price table, one-off measures and recurring changes
  const background=html.split('<section data-opening-page="0"')[1].split('</section>')[0];
  const pricing=html.split('<section data-opening-page="1"')[1].split('</section>')[0];
  assert.match(background,/街上，多了一家面包店/);
- assert.match(background,/客人就这么多，生意得两家争/);
- assert.match(background,/还能一直扩张下去吗/);
+ const openingCopy=background.slice(background.indexOf('>')+1).replace(/<[^>]*>/g,'').replace(/\s/g,'');
+ assert(openingCopy.length<35,'the first screen should have one short instruction, not a second introduction');
  assert.match(background,/id="opening-shop-scene"/);
  assert.doesNotMatch(background,/opening-picture/,'show the actual rival shop, not two oven pictograms');
  assert.doesNotMatch(background,/coin|工资|原料|生活费|试算|先付/);
@@ -72,7 +72,7 @@ test('background, three-item price table, one-off measures and recurring changes
  assert.match(rules,/<details class="opening-extra"><summary>试算一天的收支/);
  assert.match(rules,/opening-example/);
  const source=readFileSync(new URL('../public/assets/market-duel/course-game.mjs',import.meta.url),'utf8');
- assert.match(source,/\['看看价目 →','看看一次性措施 →','看看日常调整 →','准备营业 →'/);
+ assert.equal((html.match(/data-opening-page="/g)||[]).length,5,'all five reference sections remain available after the short opening');
  assert.match(source,/querySelectorAll\('\[data-opening-worker\]'\)/);
  assert.match(source,/ownerMarkup\(atlas,1,newcomer\)/);
  assert.match(source,/\[4,5,6\]\.map/);

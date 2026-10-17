@@ -852,7 +852,7 @@
       quote('不患寡而患不均。', '《论语·季氏》', notes); action('继续 →', 'SHOW_ENDING');
       notes.appendChild(node('p', '你作出的工资、投资、开工决定，改变了别家公司面对的条件；但这些互相依赖的生产活动由各家资本分别作主。需求压力是这种矛盾的一种表现，不是基本矛盾的全部，也不是每期必然滞销。社会主义国家也有分配、需求和技术治理问题，但不能因为现象相似就认定具有同一资本主义基本矛盾。'));
     } else if (p.scene === 'ending') {
-      setTitle('面包很多，家里却没得吃。','第二幕·回家以后');
+      setTitle('面包很多，家里却没得吃。');
       var dialogue = node('div', '', 'dialogue'); readout.appendChild(dialogue);
       var pairs = p.endingViewMode === 'all' ? s.ending : [s.ending[p.endingPairIndex]];
       pairs.forEach(function (pair) { var a = node('p'), b = node('p'); a.appendChild(node('b', '女儿：')); a.appendChild(node('span', pair.daughter)); b.appendChild(node('b', '父亲：')); b.appendChild(node('span', pair.father)); dialogue.appendChild(a); dialogue.appendChild(b); });
