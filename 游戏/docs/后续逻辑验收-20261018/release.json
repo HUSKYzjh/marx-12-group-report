@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-18",
+  "goal": "继续一幕一幕理清逻辑。优化后续所有",
+  "scope": [
+    "第二幕三场经营及结尾",
+    "第三幕判断与关系图",
+    "第四幕三条连续经营和尾声衔接",
+    "四章八条后续分支的实际回执与可选相关路线",
+    "章节目录、独立附录与旧记录保持"
+  ],
+  "implemented": [
+    "five-day actual cash/ordinary-business/stock comparison",
+    "social ending driven by actual poor buyers, stock and shutdowns",
+    "visible fresh-account wage and opening cash",
+    "optional read-only purchasing-power judgment",
+    "eight completed-receipt comparisons with actual executed arrangements",
+    "separate sharing production comparison",
+    "eight conclusion-only related-route transitions preserving archives",
+    "automatic reproducible test-data preparation"
+  ],
+  "evidence": {
+    "full_unit_tests": {
+      "passed": 824,
+      "failed": 0
+    },
+    "final_target_tests": {
+      "passed": 68,
+      "failed": 0
+    },
+    "type_check": {
+      "exit_code": 0,
+      "temporary_local_hosting_bindings": {
+        "d1": null,
+        "r2": null
+      },
+      "temporary_file_removed": true
+    },
+    "local_full_story_widths": [
+      1280,
+      390,
+      320
+    ],
+    "online_full_story_widths": [
+      1280,
+      390
+    ],
+    "branches_per_path": 8,
+    "related_routes_per_path": 8,
+    "all_reports_opened": true,
+    "appendix_and_navigation_widths": [
+      1280,
+      390
+    ]
+  },
+  "economic_rules_changed": false,
+  "offline_zip_checked": true,
+  "index_sha256": "d14c383cd595f36973e7790b52d8d854b0b5fe8d9825947475e88921800ce34e",
+  "offline_sha256": "6b9d110492bb08be3460a504e119ea692221d25263c6ba79ea39da7af597a4ed",
+  "font": {
+    "sha256": "854a98e67135a27a15f41ef2528fd827190793ffae2b5f6ed7b67fd0a28c3000",
+    "source_mappings": 47449,
+    "all_mappings_preserved": true
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792264423549/"
+  },
+  "prune": false,
+  "limits": [
+    "路径验收覆盖所列真实操作，不声称穷举八条线全部组合。",
+    "课堂理解程度和幽默感仍须真人试玩反馈。"
+  ],
+  "validation_repairs": [
+    "real browser caught missing host action receiver; fixed before release",
+    "updated tests for current opening and nested folded reports",
+    "wait for completed save before read-only and return assertions",
+    "read accessible coin unit text when verifying actual arrangements"
+  ]
+}

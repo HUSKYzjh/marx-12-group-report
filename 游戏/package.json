@@ -8,7 +8,7 @@
   "scripts": {
     "predev": "node scripts/build-battle-embed.mjs",
     "prebuild": "node scripts/build-battle-embed.mjs",
-    "pretest": "node scripts/build-battle-embed.mjs",
+    "pretest": "node scripts/prepare-tests.mjs",
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",

@@ -1,4 +1,5 @@
 import {TITLES,LENGTHS,initialCourse,adoptEquipmentCourse,finished,courseMoves,courseIssue,courseRound,nextCourse,crossCustomers,traceCustomer,retryScene,undoCourse,restoreCourse,courseRival,courseCapacity} from './course-model.mjs';
+import {wavesReview,socialReview} from './course-review.mjs';
 import {STEADY_CHALLENGE,steadyChallenge,restoreSteadyBest,steadyBestGain,rememberSteadyBest} from './steady-challenge.mjs';
 import {OWNER_ATLASES,ownerEmotion,ownerMarkup} from './owner-art.mjs';
 import {customerMarkup,pedestrianMarkup} from './customer-art.mjs';
@@ -152,7 +153,7 @@ function render(){
   $('eyebrow').textContent=mode==='steady'?'三天，怎样赚得最多？':mode==='waves'?(w.day?'炉子不能跟着客人瞬移':'重新开店 · 钱包还是 36'):'对手的下一招';
   $('message').textContent=mode==='steady'?'每天 12 个，两家来卖。':mode==='waves'?`这批 ${w.shops[0].nextQuantity} 个，已经定了。`:courseRival(state).name;
   $('subline').textContent=mode==='steady'?'':mode==='waves'?'换炉、换人，明天才生效。':'';
-  if(embedded&&mode==='steady'&&!w.day)$('subline').textContent='这场重新开账。';
+  if(embedded&&mode==='steady'&&!w.day)$('subline').textContent='新账本：36枚 · 每人工资'+w.shops[0].wage+'枚。';
   $('choose-label').textContent='';
   let wages;
   for(const m of courseMoves(state)){const b=document.createElement('button'),issue=courseIssue(state,m.id);b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||m.detail;b.innerHTML=`${icon(m.icon)}<strong>${m.name}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;b.onclick=()=>select(m.id);if(m.group==='wages'){if(!wages){wages=document.createElement('details');wages.className='wage-moves';wages.innerHTML='<summary>调整工资</summary><div></div>';$('moves').append(wages);}wages.querySelector('div').append(b);}else $('moves').append(b);}
@@ -166,7 +167,7 @@ function checkpoint(){
    document.querySelector('.ending-actions').prepend(explore);
   }
   const w=state.world,r=w.history.at(-1),mode=state.mode;$('next-scene').hidden=mode==='done'&&!embedded;$('retry').textContent='重打这一场 ↻';
-  const challenge=steadyChallenge(state);$('comparison').dataset.challenge=String(!!challenge);
+  const challenge=steadyChallenge(state);$('comparison').dataset.challenge=String(!!challenge);$('comparison').dataset.review=mode==='waves'?'waves':mode==='done'?'social':'';
   if(mode==='done'&&state.version===3&&batchUpgrade(w)){
     $('steady-maximum').hidden=false;
     $('steady-maximum').innerHTML=`第一场三天最高收益：<strong>+${STEADY_CHALLENGE.maxGain} 金币</strong><br><small>按资金净增计；开局 ${STEADY_CHALLENGE.opening} → 期末 ${STEADY_CHALLENGE.opening+STEADY_CHALLENGE.maxGain} 金币。</small>`;
@@ -185,11 +186,19 @@ function checkpoint(){
     $('ending-copy').textContent=gain>=0?'客人天天来，生意还能稳住。':'卖得多，也可能少赚钱。再试试？';
     $('comparison').innerHTML=`<div class="outcome-figure">开局<b>36 ${coin}</b></div><div class="outcome-figure">三天后<b>${w.shops[0].cash} ${coin}</b></div>`;$('next-scene').textContent='如果客流开始变呢？ →';
   }else if(mode==='waves'){
-    $('ending-kicker').textContent='第二场结束';$('ending-title').textContent='你能换炉子。不能撤回昨天的面包。';$('ending-copy').textContent='';
-    $('comparison').innerHTML=w.history.map(h=>`<div class="outcome-figure">第 ${h.day} 天<b>${h.demand}</b>买家</div>`).join('');$('next-scene').textContent='需求，从哪里来？ →';
+    const review=wavesReview(state);$('ending-kicker').textContent='第二场 · 五天收摊';
+    if(review){
+      $('ending-title').textContent=review.stock?'客人走了，面包还在。':review.spoiled?'账能重算，坏面包回不来。':'这次，节奏跟上了吗？';
+      $('ending-copy').textContent='客流 '+review.demand.join(' → ')+'。'+(review.difference?'比照常营业'+(review.difference>0?'多':'少')+Math.abs(review.difference)+'枚。':'和照常营业的资金净增相同。');
+      $('comparison').innerHTML=[['本次净增',review.gain],['照常净增',review.baselineGain]].map(([label,n])=>`<div class="outcome-figure">${label}<b>${n>=0?'+':''}${n} ${coin}</b></div>`).join('')+`<div class="outcome-figure">期末剩货<b>${review.stock} 个</b></div>`;
+    }else{
+      $('ending-title').textContent='你能换炉子。不能撤回昨天的面包。';$('ending-copy').textContent='';
+      $('comparison').innerHTML=w.history.map(h=>`<div class="outcome-figure">第 ${h.day} 天<b>${h.demand}</b>买家</div>`).join('');
+    }
+    $('next-scene').textContent='需求，从哪里来？ →';
   }else{
-    const stopped=w.history.filter(h=>h.stopped[0]&&!h.installing?.[0]).length,cut=w.history.some(h=>h.wages[0]>0&&h.wages[0]<(state.version===3?6:8));$('ending-kicker').textContent='第三场 · 回头看整条街';$('ending-title').textContent=cut?'我省工资，盼别人发工资。':'隔壁省下的工资，你的顾客也少拿了。';
-    $('ending-copy').textContent=mode==='done'?(cut?'巧了，隔壁也这么盘算。':'隔壁的员工，也是你的顾客。'):`${stopped} 天因资金不足停炉。最后一天，${r.poor} 人有货却买不起。`;
+    const review=socialReview(w),stopped=review.stopped;$('ending-kicker').textContent='第三场 · 回头看整条街';$('ending-title').textContent=review.title;
+    $('ending-copy').textContent=`最后一天，${r.poor} 人有货却买不起。你的店共 ${stopped} 天因资金不足停炉。`;
     $('comparison').innerHTML=`<div class="outcome-figure">两家剩货<b>${r.stock[0]+r.stock[1]} 个</b></div><div class="outcome-figure">当天全街工资<b>${r.wages[0]+r.wages[1]} ${coin}</b></div>`;$('next-scene').textContent=mode==='done'&&embedded?'再看一个小故事 →':'两家店，为什么绕回了这里？ →';
   }
 }

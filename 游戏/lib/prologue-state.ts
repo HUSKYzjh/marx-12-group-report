@@ -236,6 +236,7 @@ export type PrologueAction =
   | { type: 'OPEN_RULES'; branch:RuleBranch }
   | { type: 'RULES'; action:RuleAction }
   | { type: 'BACK_ASSUMPTIONS' }
+  | { type: 'OPEN_RELATED'; branch: AutomationBranch | NeedsBranch | OwnershipBranch | RuleBranch }
   | { type: 'ENTER_ROUTES'; entrance: Entrance }
   | { type: 'FINISH_PROLOGUE' }
   | { type: 'SET_ENTRANCE'; entrance: Entrance }
@@ -410,6 +411,16 @@ export function prologueReducer(s: PrologueState, action: PrologueAction): Prolo
       if(s.scene!=='assumptions'||!researchAccessible(s))return s;
       const assumptionDesk=assumptionDeskReducer(s.assumptionDesk,action.action);
       return assumptionDesk===s.assumptionDesk?s:{...s,assumptionDesk};
+    }
+    case 'OPEN_RELATED':{
+      const current=s.scene==='technology'?s.technology:s.scene==='needs-technology'?s.needsTechnology:s.scene==='ownership-technology'?s.ownershipTechnology:s.scene==='market-rules'?s.marketRules:null;
+      if(!researchAccessible(s)||current?.phase!=='conclusion')return s;
+      const entry={...s,scene:'assumptions' as const};
+      if(AUTOMATION_BRANCHES.includes(action.branch as AutomationBranch))return prologueReducer(entry,{type:'OPEN_TECHNOLOGY',branch:action.branch as AutomationBranch});
+      if(NEEDS_BRANCHES.includes(action.branch as NeedsBranch))return prologueReducer(entry,{type:'OPEN_NEEDS',branch:action.branch as NeedsBranch});
+      if(OWNERSHIP_BRANCHES.includes(action.branch as OwnershipBranch))return prologueReducer(entry,{type:'OPEN_OWNERSHIP',branch:action.branch as OwnershipBranch});
+      if(RULE_BRANCHES.includes(action.branch as RuleBranch))return prologueReducer(entry,{type:'OPEN_RULES',branch:action.branch as RuleBranch});
+      return s;
     }
     case 'OPEN_TECHNOLOGY':{
       if(!['assumptions','technology'].includes(s.scene)||!researchAccessible(s)||!AUTOMATION_BRANCHES.includes(action.branch))return s;

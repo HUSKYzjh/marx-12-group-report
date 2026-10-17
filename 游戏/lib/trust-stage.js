@@ -690,10 +690,10 @@
     if(p.scene==='relief'){document.getElementById('notes').hidden=true;renderReliefExperiment({state:s,reduced:reduced.matches,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
     if(p.scene==='epilogue'){document.getElementById('notes').hidden=false;renderPrologueEnding({state:s,readout:readout,controls:controls,notes:notes,title:setTitle,reduced:reduced.matches,send:function(a){send('prologue',a);}});return;}
     if(p.scene==='assumptions'){document.getElementById('notes').hidden=true;renderPrologueAssumptions({state:s,readout:readout,title:setTitle,send:function(a){send('prologue',a);}});return;}
-    if(p.scene==='technology'){document.getElementById('notes').hidden=true;renderTechnologyExperiment({state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
-    if(p.scene==='needs-technology'){document.getElementById('notes').hidden=true;renderNeedsExperiment({state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
-    if(p.scene==='ownership-technology'){document.getElementById('notes').hidden=true;renderOwnershipExperiment({state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
-    if(p.scene==='market-rules'){document.getElementById('notes').hidden=true;renderMarketRules({state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
+    if(p.scene==='technology'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderTechnologyExperiment(branchContext);renderBranchReview(branchContext,p.technology);return;}
+    if(p.scene==='needs-technology'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderNeedsExperiment(branchContext);renderBranchReview(branchContext,p.needsTechnology);return;}
+    if(p.scene==='ownership-technology'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderOwnershipExperiment(branchContext);renderBranchReview(branchContext,p.ownershipTechnology);return;}
+    if(p.scene==='market-rules'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderMarketRules(branchContext);renderBranchReview(branchContext,p.marketRules);return;}
     if(p.scene==='street-summary'){document.getElementById('notes').hidden=true;renderStreetSummary({readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
     if(p.scene==='street'){
       document.getElementById('notes').hidden=true;

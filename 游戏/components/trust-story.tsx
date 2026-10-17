@@ -10,6 +10,7 @@ import {reliefFrame,EPILOGUE_QUOTE,EPILOGUE_SOURCE,EPILOGUE_DELAYS,PROLOGUE_ASSU
 import {ASSUMPTION_DIALOGUE} from '@/lib/assumption-desk';
 import {assumptionRouteProgress} from '@/lib/assumption-route-progress';
 import {assumptionObservations} from '@/lib/assumption-observations';
+import {branchReviews} from '@/lib/branch-review';
 import assumptionParameters from '../docs/street-model-notes.txt?raw';
 import {automationAccount,automationRunAccount} from '@/lib/automation-experiment';
 import {cannotOpenMatch} from '@/lib/technology-match';
@@ -104,7 +105,7 @@ export default function TrustStory({ onLegacy, active = true }: { onLegacy: () =
       if(data.channel==='prologue'&&a?.type==='ASSUMPTION_DESK')dispatch(a as PrologueAction);
       if(data.channel==='prologue'&&a&&typeof a==='object'&&['OPEN_NEEDS','NEEDS','OPEN_OWNERSHIP','OWNERSHIP','OPEN_RULES','RULES'].includes(a.type))dispatch(a as PrologueAction);
       if (data.channel === 'prologue' && a && typeof a === 'object'
-        && ['STREET','START','CONTINUE_BAKERY','SET_BAKERY_WAGE','CONFIRM_BAKERY_WAGE','RETRY_BAKERY_WAGE','OPEN_ALLOCATION_COMPARE','OPEN_BAKERY_EXPANSION','EXPANSION_CONTINUE','ADJUST_SHARE','SELECT_FIRM','SHOW_MARKET','OTHER_FIRMS_COPY','MARKET_CUT','MARKET_TRY','MARKET_RESTORE','MARKET_CONTINUE','SHOW_NETWORK','SHOW_RELATION','SELECT_CUSTOMER','BACK_TO_ALLOCATION','SHOW_CONCEPT','SHOW_ENDING','SHOW_STREET_SUMMARY','NEXT_PAIR','SHOW_ALL','SHOW_RELIEF','CHOOSE_RELIEF','RELIEF_CONDITION','RELIEF_ADVANCE','RELIEF_COMPLETE','RELIEF_WRAP','RELIEF_MENU','FINISH_RELIEF','FINISH_RELIEF_SAMPLE','EPILOGUE_NEXT','EPILOGUE_REVEAL','SHOW_ASSUMPTIONS','OPEN_TECHNOLOGY','TECHNOLOGY','BACK_ASSUMPTIONS','ENTER_ROUTES','FINISH_PROLOGUE','SET_ENTRANCE','SKIP_PROLOGUE','SHOW_DEMO','LEAVE_DEMO','TOGGLE_WORK'].includes(a.type)) dispatch(a as PrologueAction);
+        && ['STREET','START','CONTINUE_BAKERY','SET_BAKERY_WAGE','CONFIRM_BAKERY_WAGE','RETRY_BAKERY_WAGE','OPEN_ALLOCATION_COMPARE','OPEN_BAKERY_EXPANSION','EXPANSION_CONTINUE','ADJUST_SHARE','SELECT_FIRM','SHOW_MARKET','OTHER_FIRMS_COPY','MARKET_CUT','MARKET_TRY','MARKET_RESTORE','MARKET_CONTINUE','SHOW_NETWORK','SHOW_RELATION','SELECT_CUSTOMER','BACK_TO_ALLOCATION','SHOW_CONCEPT','SHOW_ENDING','SHOW_STREET_SUMMARY','NEXT_PAIR','SHOW_ALL','SHOW_RELIEF','CHOOSE_RELIEF','RELIEF_CONDITION','RELIEF_ADVANCE','RELIEF_COMPLETE','RELIEF_WRAP','RELIEF_MENU','FINISH_RELIEF','FINISH_RELIEF_SAMPLE','EPILOGUE_NEXT','EPILOGUE_REVEAL','SHOW_ASSUMPTIONS','OPEN_TECHNOLOGY','TECHNOLOGY','BACK_ASSUMPTIONS','OPEN_RELATED','ENTER_ROUTES','FINISH_PROLOGUE','SET_ENTRANCE','SKIP_PROLOGUE','SHOW_DEMO','LEAVE_DEMO','TOGGLE_WORK'].includes(a.type)) dispatch(a as PrologueAction);
       if (data.channel === 'machine' && a && typeof a === 'object'
         && ['BEGIN','PREDICT','RUN','COMPARE','CONTRACT','RESTART'].includes(a.type)) machineDispatch(a as MachineAction);
       if (data.channel === 'host' && a?.type === 'EXPERIMENT' && ['individual','enterprise'].includes(a.entrance)) {
@@ -153,7 +154,7 @@ export default function TrustStory({ onLegacy, active = true }: { onLegacy: () =
       remedyMenu:prologue.scene==='relief'&&!prologue.reliefRoute?Object.fromEntries(Object.entries(prologue.remedyLabs).map(([id,lab])=>[id,remedyAccounts(lab)])):null,
       remedySources:REMEDY_SOURCES,
       reliefSampleAvailable:canSampleRelief(prologue),reliefEndingAccessible:reliefEndingAccessible(prologue),
-      epilogueQuote:EPILOGUE_QUOTE,epilogueSource:EPILOGUE_SOURCE,epilogueDelays:EPILOGUE_DELAYS,assumptions:PROLOGUE_ASSUMPTIONS,modelAssumptions:PROLOGUE_MODEL_ASSUMPTIONS,assumptionReasoning:PROLOGUE_REASONING,assumptionDialogue:ASSUMPTION_DIALOGUE,assumptionParameters,assumptionProgress:assumptionRouteProgress(prologue),assumptionObservations:assumptionObservations(prologue),
+      epilogueQuote:EPILOGUE_QUOTE,epilogueSource:EPILOGUE_SOURCE,epilogueDelays:EPILOGUE_DELAYS,assumptions:PROLOGUE_ASSUMPTIONS,modelAssumptions:PROLOGUE_MODEL_ASSUMPTIONS,assumptionReasoning:PROLOGUE_REASONING,assumptionDialogue:ASSUMPTION_DIALOGUE,assumptionParameters,assumptionProgress:assumptionRouteProgress(prologue),assumptionObservations:assumptionObservations(prologue),branchReviews:branchReviews(prologue),
       technologyAccount:prologue.technology?.run?automationRunAccount(prologue.technology.run):null,
       technologyTrials:(prologue.technology?.trials??[]).map(automationRunAccount),
       automationExploration:prologue.technology?automationExploration(prologue.technology):null,

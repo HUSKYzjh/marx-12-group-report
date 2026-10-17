@@ -6,7 +6,7 @@ export async function readOpeningGuide(frame,press=locator=>locator.click()){
  await press(frame.locator('#opening-start'));
 }
 /** Play the actual nested battle; no snapshots or reducer calls are injected. */
-export async function completeBattle(page,frame,key){
+export async function completeBattle(page,frame,key,{onCheckpoint=async()=>{}}={}){
  await frame.locator('#prologue-battle').waitFor();
  const battle=await(await frame.locator('#prologue-battle').elementHandle()).contentFrame();
  const saved=()=>page.evaluate(key=>JSON.parse(localStorage.getItem(key)).battle,key);
@@ -23,9 +23,11 @@ export async function completeBattle(page,frame,key){
  };
  for(let i=0;i<3;i++){await play('hold');await battle.locator('#advance').click();}
  assert.equal((await saved()).state.world.shops[0].cash,57);
+ await onCheckpoint('steady',battle,(await saved()).state);
  await battle.locator('#next-scene').click();
  await page.waitForFunction(key=>JSON.parse(localStorage.getItem(key)).battle.state.mode==='waves',key);
  for(let i=0;i<5;i++){await play(i===2?'upgrade':'hold');await battle.locator('#advance').click();}
+ await onCheckpoint('waves',battle,(await saved()).state);
  await battle.locator('#next-scene').click();
  for(const id of await battle.locator('[data-trace]').evaluateAll(ns=>ns.map(n=>n.dataset.trace)))await battle.locator(`[data-trace="${id}"]`).click();
  await battle.locator('#advance').click();

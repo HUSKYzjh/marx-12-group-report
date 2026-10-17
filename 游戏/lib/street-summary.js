@@ -3,6 +3,10 @@
  root.renderStreetSummary=function(c){
   function el(tag,text,parent){var n=document.createElement(tag);n.textContent=text||'';(parent||c.readout).appendChild(n);StreetArt.decorateMoney(n);return n;}
   c.title('第三幕·卖不掉的面包','');
+  var probe=el('details');probe.className='street-summary-probe';probe.open=true;el('summary','故事里有面包，女儿却饿着。卡在哪里？',probe);
+  var choices=el('div','',probe);choices.className='summary-probe-choices';
+  var answer=el('p');answer.className='summary-probe-answer';answer.setAttribute('role','status');answer.hidden=true;
+  [['needs','已经不需要面包','她仍然想吃。先看看，她能不能付款。'],['payment','没钱付款','故事里的障碍是没钱。有需要，还得付得起。'],['capacity','炉子还不够快','故事里已有面包。多做一些，不直接补上她的钱包。']].forEach(function(item){var b=el('button',item[1],choices);b.type='button';b.className='secondary';b.dataset.summaryChoice=item[0];b.onclick=function(){choices.querySelectorAll('button').forEach(function(other){other.setAttribute('aria-pressed',String(other===b));});answer.textContent=item[2];answer.hidden=false;probe.open=false;};});
   var gains=el('p');gains.className='street-summary-gains';el('strong','劳动分工提高生产效率，市场竞争推动改进，自由贸易扩大交换范围',gains);
   var panels=el('div');panels.className='street-summary-panels';
   function diagram(privateOwnership){

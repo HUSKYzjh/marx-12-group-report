@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T18:19:23.652Z",
-  "bytes": 20571347,
+  "built_at": "2026-10-17T19:04:02.006Z",
+  "bytes": 20585262,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2043,6 +2043,7 @@
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\street-ui.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\street-briefing.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\street-summary.js",
+    "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\branch-review-ui.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\weber-perspective.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\value-journey.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\mortgage-lab-model.js",
@@ -2125,6 +2126,7 @@
     "lib/machine-experiment.ts",
     "lib/assumption-route-progress.ts",
     "lib/assumption-observations.ts",
+    "lib/branch-review.ts",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\docs\\street-model-notes.txt",
     "public/assets/market-duel/pressure-feedback.mjs",
     "lib/automation-exploration.ts",
@@ -2154,6 +2156,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Add actual five-day business comparison, outcome-based social ending, optional purchasing-power question, eight receipt comparisons with executed arrangements and optional related routes that preserve accounts.",
     "Clarify that the family dialogue is an independent story, and document the current four-act choices, cash handoffs and open-ended remedy mechanisms without changing economic rules.",
     "At the end of Act II, disclose the first three-day challenge maximum of +51 cash and ending funds of 87, using shared scoring constants and preserving current gameplay.",
     "Enlarge capacity and market figures; put demand and production information above controls on mobile, retaining single-line shop summaries.",
@@ -2170,9 +2173,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "46e30cf87cd81dbfc203268f57921b97433f1be33bd4fd438696752721fb1298",
+    "index_sha256": "d14c383cd595f36973e7790b52d8d854b0b5fe8d9825947475e88921800ce34e",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "aa5f12789724538826ddea6937f395a685c313d1cb82bd11327a23b550dd385b"
+  "sha256": "6b9d110492bb08be3460a504e119ea692221d25263c6ba79ea39da7af597a4ed"
 }

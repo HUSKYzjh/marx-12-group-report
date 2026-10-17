@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-17T19:10:52.770Z",
+  "buildSHA256": "6b9d110492bb08be3460a504e119ea692221d25263c6ba79ea39da7af597a4ed",
+  "results": [
+    {
+      "width": 1280,
+      "mainChapterOrder": [
+        "prologue",
+        "automation",
+        "needs",
+        "ownership",
+        "rules"
+      ],
+      "appendix": "machine",
+      "refresh": true,
+      "experimentProgressPreserved": true,
+      "appendixTrialPreserved": true,
+      "storyNotFalselyCompleted": true
+    },
+    {
+      "width": 390,
+      "mainChapterOrder": [
+        "prologue",
+        "automation",
+        "needs",
+        "ownership",
+        "rules"
+      ],
+      "appendix": "machine",
+      "refresh": true,
+      "experimentProgressPreserved": true,
+      "appendixTrialPreserved": true,
+      "storyNotFalselyCompleted": true
+    }
+  ],
+  "errors": []
+}

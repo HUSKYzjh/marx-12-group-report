@@ -23,6 +23,7 @@ import streetInspector from './street-inspector.js?raw';
 import streetUI from './street-ui.js?raw';
 import streetBriefing from './street-briefing.js?raw';
 import streetSummary from './street-summary.js?raw';
+import branchReviewUI from './branch-review-ui.js?raw';
 import weberPerspective from './weber-perspective.js?raw';
 import valueJourney from './value-journey.js?raw';
 import mortgageLabModel from './mortgage-lab-model.js?raw';
@@ -101,6 +102,6 @@ export function trustDocument() {
   ${script(`var TRUST_ASSETS=${JSON.stringify(assets)}; var PRODUCTION_LINKS=${JSON.stringify(PRODUCTION_LINKS)}; var STORY_STAGES=${JSON.stringify(PROLOGUE_STAGES)}; var STORY_CHAPTERS=${JSON.stringify(STORY_CHAPTERS)}; var c_={}; var createjs={};`)}
   ${script('var BATTLE_DOCUMENT='+JSON.stringify(battleDocument)+';')}${script(battleStage)}${script(researchReader)}${script(valueJourney)}${script(mortgageLabModel)}${script(mortgageLab)}${script(hiddenWork)}${script(aiRedesign)}${script(productionPurpose)}
   ${script(pixi)}${script(tween)}${script('var Tween=createjs.Tween, Ease=createjs.Ease, Ticker=createjs.Ticker; Ticker.framerate=60; Ticker.paused=true;')}${script(ownershipPermissions)}${script(weberPerspective)}${script(streetSummary)}
-  ${script(pubsub)}${script(helpers)}${script(slideshow)}${script(textbox)}${script(peepSource)}${script(splashSource)}${script(productionNetwork)}${script(bakeryTimeline)}${script(bakeryStage)}${script(bakeryExpansion)}${script(bakeryExpansionStage)}${script(streetArt)}${script(streetPresentation)}${script(streetLedger)}${script(streetInspector)}${script(streetStage)}${script(streetBriefing)}${script(streetUI)}${script(gestureBoard)}${script(remedyUI)}${script(reliefUI)}${script(timeCalendarUI)}${script(competitivePressureUI)}${script(technologyMatchUI)}${script(technologyUI)}${script(spaceFreightUI)}${script(careRoutingUI)}${script(needsUI)}${script(platformNetworkUI)}${script(councilProductionUI)}${script(sharingCouncilUI)}${script(ownershipUI)}${script(publicDemandUI)}${script(preservationUI)}${script(marketRulesUI)}${script(runtime)}
+  ${script(pubsub)}${script(helpers)}${script(slideshow)}${script(textbox)}${script(peepSource)}${script(splashSource)}${script(productionNetwork)}${script(bakeryTimeline)}${script(bakeryStage)}${script(bakeryExpansion)}${script(bakeryExpansionStage)}${script(streetArt)}${script(streetPresentation)}${script(streetLedger)}${script(streetInspector)}${script(streetStage)}${script(streetBriefing)}${script(streetUI)}${script(gestureBoard)}${script(remedyUI)}${script(reliefUI)}${script(timeCalendarUI)}${script(competitivePressureUI)}${script(technologyMatchUI)}${script(technologyUI)}${script(spaceFreightUI)}${script(careRoutingUI)}${script(needsUI)}${script(platformNetworkUI)}${script(councilProductionUI)}${script(sharingCouncilUI)}${script(ownershipUI)}${script(publicDemandUI)}${script(preservationUI)}${script(marketRulesUI)}${script(branchReviewUI)}${script(runtime)}
   </body></html>`.replaceAll('__WORKSHOP_FONT_URL__', fontUri);
 }
