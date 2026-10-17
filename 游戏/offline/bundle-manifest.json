@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-17T14:03:41.158Z",
+  "built_at": "2026-10-17T14:14:47.081Z",
   "bytes": 20567419,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
@@ -2154,6 +2154,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Unify pedestrian and supplier clothing with four shared fills: cream, sage green, deep green and muted gold; remove competing pink, purple and blue accents.",
     "Brighten pedestrian clothing and supplier accessories with warm yellow, teal, coral and lilac; preserve ink outlines and white chef uniforms.",
     "Move player shop summary below the outline; merge price, stock, ovens and workers; show pending installation beside the title.",
     "Fixed-flow three-day returns challenge, contextual coaching and replay-validated personal records; five-page opening retained.",
@@ -2162,9 +2163,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "d9cf36179f8cb4e2007ea4480491e1e33de4682ab303acabcc7a5d8e406fa1b3",
+    "index_sha256": "532eb7bc96a98927132650bc556dd34ad2e03d44dbbb69c9806bf873c457ae76",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "161def99ef3e66ca73e1dc70ed348ed156af6b838eb7cb306cab6de6de87a00b"
+  "sha256": "43b32ef507dbb49b34b002773e6516f3a01afd7804628d7a03b368fe7bcc4d45"
 }
