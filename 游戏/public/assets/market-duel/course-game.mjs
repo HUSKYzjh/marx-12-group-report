@@ -1,5 +1,5 @@
 import {TITLES,LENGTHS,initialCourse,adoptEquipmentCourse,finished,courseMoves,courseIssue,courseRound,nextCourse,crossCustomers,traceCustomer,retryScene,undoCourse,restoreCourse,courseRival,courseCapacity} from './course-model.mjs';
-import {steadyChallenge,restoreSteadyBest,steadyBestGain,rememberSteadyBest} from './steady-challenge.mjs';
+import {STEADY_CHALLENGE,steadyChallenge,restoreSteadyBest,steadyBestGain,rememberSteadyBest} from './steady-challenge.mjs';
 import {OWNER_ATLASES,ownerEmotion,ownerMarkup} from './owner-art.mjs';
 import {customerMarkup,pedestrianMarkup} from './customer-art.mjs';
 import {createStreetCrowd} from './street-crowd.mjs';
@@ -100,6 +100,7 @@ function renderPeople(){
   $('street-summary').textContent=state.mode==='source'?'点虚线框里的人，追一笔钱':`${r.visits.filter(v=>v.bought).length} 人买到${r.poor?' · '+r.poor+' 人钱不够':''}`;
 }
 function render(){
+  $('steady-maximum').hidden=true;$('steady-maximum').replaceChildren();
   const mode=state.mode,w=state.world,r=w.history.at(-1),result=view==='result',over=finished(state)&&!result,isSource=mode==='source';
   $('round-report').hidden=!result&&!isSource;
   const challenge=steadyChallenge(state);$('steady-goal').hidden=!challenge||over;
@@ -166,6 +167,11 @@ function checkpoint(){
   }
   const w=state.world,r=w.history.at(-1),mode=state.mode;$('next-scene').hidden=mode==='done'&&!embedded;$('retry').textContent='重打这一场 ↻';
   const challenge=steadyChallenge(state);$('comparison').dataset.challenge=String(!!challenge);
+  if(mode==='done'&&state.version===3&&batchUpgrade(w)){
+    $('steady-maximum').hidden=false;
+    $('steady-maximum').innerHTML=`第一场三天最高收益：<strong>+${STEADY_CHALLENGE.maxGain} 金币</strong><br><small>按资金净增计；开局 ${STEADY_CHALLENGE.opening} → 期末 ${STEADY_CHALLENGE.opening+STEADY_CHALLENGE.maxGain} 金币。</small>`;
+  }
+
   if(challenge){
     const gain=challenge.gain,best=steadyBestGain(steadyBest)??gain,extra=gain-challenge.baselineGain;
     $('ending-kicker').textContent='第一场 · 三天收摊';

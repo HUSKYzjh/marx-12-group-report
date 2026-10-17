@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-18",
+  "request": "第二幕结束时，说最高收益是多少。",
+  "change": "第二幕三场对决结束后回顾第一场三天最高收益+51金币，并说明按资金净增计、开局36→期末87。",
+  "maximum_source": "STEADY_CHALLENGE shared scoring constants",
+  "scope": "first three-day fixed-flow challenge under current whole-shop rules",
+  "shown_only_after": "done",
+  "unit_tests": {
+    "file": "steady-challenge.test.mjs",
+    "passed": 3,
+    "legal_paths_exhausted": 305,
+    "maximum": 51
+  },
+  "local_and_online_viewports": [
+    [
+      320,
+      568
+    ],
+    [
+      1280,
+      900
+    ]
+  ],
+  "checks": [
+    "complete all three scenes with real clicks",
+    "maximum clearly scoped to first challenge",
+    "amount and currency on one line",
+    "reload retains ending disclosure",
+    "replaying hides ending disclosure",
+    "continuation buttons remain accessible",
+    "no overflow or page errors"
+  ],
+  "economic_rules_changed": false,
+  "index_sha256": "ed6355583255ecca48589ce5b4baff4483469cf7d205ac23561ab53d0fdaf678",
+  "offline_sha256": "94e570ecbc1bebe606211250ba4a50fcdf12967e9debc47ba0bab918727c0b3e",
+  "offline_zip_checked": true,
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792260514794/"
+  },
+  "prune": false
+}

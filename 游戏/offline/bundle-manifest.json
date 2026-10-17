@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T16:50:52.094Z",
-  "bytes": 20570242,
+  "built_at": "2026-10-17T18:06:10.193Z",
+  "bytes": 20571129,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2154,6 +2154,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "At the end of Act II, disclose the first three-day challenge maximum of +51 cash and ending funds of 87, using shared scoring constants and preserving current gameplay.",
     "Enlarge capacity and market figures; put demand and production information above controls on mobile, retaining single-line shop summaries.",
     "Increase both shop capacity labels to 11px on mobile and 14px on desktop, retaining compact summary rows and separate installation notices.",
     "Show next-round configured capacity beside both shop names, reflecting pending equipment and staffing; preserve compact summary rows and temporary installation notices.",
@@ -2168,9 +2169,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "c8826c4b330ffe17d00a4e13c98023cc27c581f7b1a96787d1a674029381d5b4",
+    "index_sha256": "ed6355583255ecca48589ce5b4baff4483469cf7d205ac23561ab53d0fdaf678",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "204558d778552df2f5f08443b2e3aedbc34dcf0314036890ffb20ab7e7d26e2d"
+  "sha256": "94e570ecbc1bebe606211250ba4a50fcdf12967e9debc47ba0bab918727c0b3e"
 }

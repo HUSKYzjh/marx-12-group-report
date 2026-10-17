@@ -295,3 +295,6 @@ body[data-rules="3"] .status .equipment-status{display:inline;font:inherit;white
  .battle-frame #preview-copy{font-size:16px}
  .battle-frame #advance{font-size:16px}
 }
+
+#ending #steady-maximum{margin-top:18px;padding-top:14px;border-top:1px dashed #b5b2a5;font-size:20px;line-height:1.6}#steady-maximum strong{font-size:26px;font-weight:normal;display:inline-block;white-space:nowrap}#steady-maximum small{font-size:16px}
+@media(max-width:700px){#ending #steady-maximum{font-size:18px}#steady-maximum strong{font-size:24px}#steady-maximum small{font-size:14px}}
