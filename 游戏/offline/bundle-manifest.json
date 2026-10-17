@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-17T13:55:05.183Z",
+  "built_at": "2026-10-17T14:03:41.158Z",
   "bytes": 20567419,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
@@ -2154,6 +2154,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Brighten pedestrian clothing and supplier accessories with warm yellow, teal, coral and lilac; preserve ink outlines and white chef uniforms.",
     "Move player shop summary below the outline; merge price, stock, ovens and workers; show pending installation beside the title.",
     "Fixed-flow three-day returns challenge, contextual coaching and replay-validated personal records; five-page opening retained.",
     "Remove duplicate counters, narration and prompts; preserve decision costs, timing and receipts."
@@ -2161,9 +2162,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "55b0f847343a797e2dc61fedad0f30bb3167a51b61b4095596344caaa9cebf82",
+    "index_sha256": "d9cf36179f8cb4e2007ea4480491e1e33de4682ab303acabcc7a5d8e406fa1b3",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "369b9d0683eaeba9c7880122b5cd8444278e8adf2c73cc5e0c615d9a7cfe7b80"
+  "sha256": "161def99ef3e66ca73e1dc70ed348ed156af6b838eb7cb306cab6de6de87a00b"
 }
