@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-18",
+  "request": "为什么没有全屏？",
+  "cause": "首页动画限高600px且首页min-height为0，1920x948下页脚止于841.09px，留下约107px白边；浏览器原生全屏另需用户操作。",
+  "changes": [
+    "首页按稳定的宿主可见窗口高度分配空间，预留页头、开始按钮和页脚高度",
+    "移除600px动画高度上限，页脚贴近窗口底部",
+    "增加明确的全屏与退出按钮；浏览器不支持标准全屏时隐藏入口",
+    "全屏切换不重建舞台，继续保留游戏进度；展开署名时允许正常滚动"
+  ],
+  "source_sha256": "9f556fdc0bd7bd616604ab5bf7ef5c1815df91cef03349c041bd5d89f8e2d6b4",
+  "index_sha256": "0fb034ae3dee46ce483ba1524e517ae5c32c99cd0d23bf79d5386077cc889720",
+  "validation": {
+    "local_viewports": 13,
+    "online_viewports": 6,
+    "actual_fullscreen_local_and_online": true,
+    "button_and_external_exit": true,
+    "saved_progress_preserved": true,
+    "start_visible": true,
+    "no_bottom_white_gap": true,
+    "expanded_credits_scroll": true,
+    "asset_files_verified": 56,
+    "font_mappings_preserved": 47449,
+    "offline_zip_verified": true
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792304735807/"
+  },
+  "prune": false,
+  "scope_limit": "本次为布局与全屏交互修复，未重跑上一版本824项全套模型检查；已重跑本次相关浏览器检查。"
+}

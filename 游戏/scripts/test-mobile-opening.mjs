@@ -25,6 +25,7 @@ async function measure(page,frame){
     return {stageHeight:stage.splashHeight,nodeCount:stage.splashNodes.length,shownSymbols:shown.length,
       modelSymbols:stage.splashNodes.filter(n=>n.element).length,hiddenSymbols:document.querySelectorAll('.production-symbol[hidden]').length,
       iframeNoOverflow:document.documentElement.scrollWidth<=innerWidth+1,
+      footerBottom:document.querySelector('footer').getBoundingClientRect().bottom,
       titleFits:title.top>=canvas.top&&title.bottom<=canvas.bottom,
       linkedTargets:shown.filter(e=>e.tagName==='A').every(e=>{const b=e.getBoundingClientRect();return b.width>=44&&b.height>=44;}),
       buttonHeight:b.height,buttonDisabled:button.disabled,scene:document.body.dataset.scene};
@@ -34,6 +35,8 @@ async function measure(page,frame){
   assert(box&&box.y>=0&&box.y+box.height<=viewport.height-8,'Start button must be fully within the first screen: '+JSON.stringify({viewport,box}));
   assert(box.x>=0&&box.x+box.width<=viewport.width,'Start button must fit horizontally');
   assert(metrics.buttonHeight>=44&&!metrics.buttonDisabled,'Start action retains its touch target');
+  assert(metrics.footerBottom>=viewport.height-1,'Footer must reach the viewport bottom without a white gap');
+  if(viewport.height>=390)assert(metrics.footerBottom<=viewport.height+1,'Opening and navigation fit one screen');
   assert.equal(metrics.shownSymbols,metrics.modelSymbols,'Hidden symbols must not remain in the simulation');
   assert(metrics.iframeNoOverflow&&metrics.titleFits&&metrics.linkedTargets,'Title, links and frame fit');
   // Reload can restore the browser's previous offset. The real viewport bounds
@@ -42,8 +45,8 @@ async function measure(page,frame){
   return {...metrics,button:box,viewport};
 }
 try{
-  const viewports=online?[[320,568],[390,667],[390,844],[844,390],[1280,720]]:
-    [[320,568],[360,640],[390,667],[390,844],[430,932],[844,390],[568,320],[568,280],[1280,720],[1280,1000]];
+  const viewports=online?[[320,568],[390,667],[390,844],[844,390],[1280,720],[1920,948]]:
+    [[320,568],[360,640],[390,667],[390,844],[430,932],[844,390],[568,320],[568,280],[1280,720],[1280,1000],[1366,768],[1920,948],[1920,1080]];
   for(const [width,height] of viewports){
     const context=await browser.newContext({viewport:{width,height},hasTouch:width<1000,reducedMotion:width===390&&height===667?'no-preference':'reduce'});
     const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
@@ -87,5 +90,5 @@ try{
   assert.deepEqual(errors,[]);
   const narrow=results.find(r=>r.viewport.width===320),tall=results.find(r=>r.viewport.height===844);
   assert(narrow.nodeCount<tall.nodeCount,'Smaller phones display fewer subjects');
-  await fs.writeFile(path.join(out,'report.json'),JSON.stringify({date:'2026-10-17',entry:online?'CloudBase':'standalone',results,errors},null,2)+'\n');
+  await fs.writeFile(path.join(out,'report.json'),JSON.stringify({date:'2026-10-18',entry:online?'CloudBase':'standalone',results,errors},null,2)+'\n');
 }finally{await browser.close();}

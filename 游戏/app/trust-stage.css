@@ -1074,7 +1074,10 @@ button.preservation-person{min-width:44px;min-height:130px;padding:5px;backgroun
 button:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
 header { display: none; }
 .chapter-navigation { position: relative; z-index: 20; width: 100%; max-width: 1040px; height: 64px; margin: 0 auto; padding: 10px 40px; text-align: left; font-family: var(--hand-font); font-size: 18px; }
-#chapter-menu { position: relative; width: fit-content; max-width: 100%; }
+#chapter-menu { position: relative; width: fit-content; max-width: calc(100% - 100px); }
+#fullscreen-toggle { position: absolute; right: 18px; top: 10px; min-width: 80px; min-height: 44px; padding: 6px 8px; border: 0; background: transparent; color: #666; font: 16px var(--hand-font); }
+#fullscreen-toggle:hover { color: var(--ink); }
+#fullscreen-status { position: absolute; right: 18px; top: 54px; background: #fff; font-size: 14px; }
 #chapter-toggle { display: flex; align-items: center; gap: 10px; min-height: 44px; width: fit-content; max-width: 100%; cursor: pointer; list-style: none; color: #666; }
 #chapter-toggle::-webkit-details-marker { display: none; }
 #chapter-toggle:hover, #chapter-menu[open] #chapter-toggle { color: var(--ink); }
@@ -1825,7 +1828,7 @@ body[data-scene=street]:not([data-street-mode=sandbox]) main{width:100%;max-widt
 }
 
 /* Opening fits the actual visible host screen; decoration yields to the start action. */
-body[data-scene="opening"] main { min-height: 0; padding: 8px 0 12px; }
+body[data-scene="opening"] main { min-height: var(--screen-main-height, 0px); padding: 8px 0 12px; }
 body[data-scene="opening"] #heading { top: var(--splash-title-y, 300px); width: var(--splash-title-width, 340px); font-size: var(--splash-title-size, 56px); }
 body[data-scene="opening"] #controls { margin-top: 6px; padding-bottom: env(safe-area-inset-bottom, 0px); }
 body[data-scene="opening"] .production-hint { margin-bottom: 8px; }

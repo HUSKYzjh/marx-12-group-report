@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-18",
+  "entry": "CloudBase",
+  "results": [
+    {
+      "stageHeight": 274,
+      "nodeCount": 14,
+      "shownSymbols": 9,
+      "modelSymbols": 9,
+      "hiddenSymbols": 37,
+      "iframeNoOverflow": true,
+      "footerBottom": 568,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 37,
+        "y": 391.046875,
+        "width": 246,
+        "height": 55
+      },
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 373,
+      "nodeCount": 25,
+      "shownSymbols": 16,
+      "modelSymbols": 16,
+      "hiddenSymbols": 30,
+      "iframeNoOverflow": true,
+      "footerBottom": 667,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 37,
+        "y": 490.046875,
+        "width": 316,
+        "height": 55
+      },
+      "viewport": {
+        "width": 390,
+        "height": 667
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 550,
+      "nodeCount": 39,
+      "shownSymbols": 28,
+      "modelSymbols": 28,
+      "hiddenSymbols": 18,
+      "iframeNoOverflow": true,
+      "footerBottom": 844,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 37,
+        "y": 667.046875,
+        "width": 316,
+        "height": 55
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "resizingAndRotation": true,
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 133,
+      "nodeCount": 19,
+      "shownSymbols": 14,
+      "modelSymbols": 14,
+      "hiddenSymbols": 32,
+      "iframeNoOverflow": true,
+      "footerBottom": 390,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 249.5,
+        "y": 250.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 463,
+      "nodeCount": 118,
+      "shownSymbols": 85,
+      "modelSymbols": 85,
+      "hiddenSymbols": 0,
+      "iframeNoOverflow": true,
+      "footerBottom": 720,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 467.5,
+        "y": 580.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 691,
+      "nodeCount": 136,
+      "shownSymbols": 103,
+      "modelSymbols": 103,
+      "hiddenSymbols": 0,
+      "iframeNoOverflow": true,
+      "footerBottom": 948,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 787.5,
+        "y": 808.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 1920,
+        "height": 948
+      },
+      "startAndHome": true,
+      "reload": true
+    }
+  ],
+  "errors": []
+}

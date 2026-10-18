@@ -1,0 +1,346 @@
+{
+  "date": "2026-10-18",
+  "entry": "standalone",
+  "results": [
+    {
+      "stageHeight": 274,
+      "nodeCount": 14,
+      "shownSymbols": 9,
+      "modelSymbols": 9,
+      "hiddenSymbols": 37,
+      "iframeNoOverflow": true,
+      "footerBottom": 568,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 37,
+        "y": 391.046875,
+        "width": 246,
+        "height": 55
+      },
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 346,
+      "nodeCount": 21,
+      "shownSymbols": 16,
+      "modelSymbols": 16,
+      "hiddenSymbols": 30,
+      "iframeNoOverflow": true,
+      "footerBottom": 640,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 37,
+        "y": 463.046875,
+        "width": 286,
+        "height": 55
+      },
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 373,
+      "nodeCount": 25,
+      "shownSymbols": 16,
+      "modelSymbols": 16,
+      "hiddenSymbols": 30,
+      "iframeNoOverflow": true,
+      "footerBottom": 667,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 37,
+        "y": 490.046875,
+        "width": 316,
+        "height": 55
+      },
+      "viewport": {
+        "width": 390,
+        "height": 667
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 550,
+      "nodeCount": 39,
+      "shownSymbols": 28,
+      "modelSymbols": 28,
+      "hiddenSymbols": 18,
+      "iframeNoOverflow": true,
+      "footerBottom": 844,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 37,
+        "y": 667.046875,
+        "width": 316,
+        "height": 55
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "resizingAndRotation": true,
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 638,
+      "nodeCount": 51,
+      "shownSymbols": 39,
+      "modelSymbols": 39,
+      "hiddenSymbols": 7,
+      "iframeNoOverflow": true,
+      "footerBottom": 932,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 42.5,
+        "y": 755.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 133,
+      "nodeCount": 19,
+      "shownSymbols": 14,
+      "modelSymbols": 14,
+      "hiddenSymbols": 32,
+      "iframeNoOverflow": true,
+      "footerBottom": 390,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 249.5,
+        "y": 250.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 100,
+      "nodeCount": 8,
+      "shownSymbols": 3,
+      "modelSymbols": 3,
+      "hiddenSymbols": 43,
+      "iframeNoOverflow": true,
+      "footerBottom": 378.09375,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 111.5,
+        "y": 209.09375,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 568,
+        "height": 320
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 100,
+      "nodeCount": 8,
+      "shownSymbols": 3,
+      "modelSymbols": 3,
+      "hiddenSymbols": 43,
+      "iframeNoOverflow": true,
+      "footerBottom": 378.09375,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 111.5,
+        "y": 209.09375,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 568,
+        "height": 280
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 463,
+      "nodeCount": 118,
+      "shownSymbols": 85,
+      "modelSymbols": 85,
+      "hiddenSymbols": 0,
+      "iframeNoOverflow": true,
+      "footerBottom": 720,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 467.5,
+        "y": 580.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 743,
+      "nodeCount": 136,
+      "shownSymbols": 103,
+      "modelSymbols": 103,
+      "hiddenSymbols": 0,
+      "iframeNoOverflow": true,
+      "footerBottom": 1000,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 467.5,
+        "y": 860.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 511,
+      "nodeCount": 136,
+      "shownSymbols": 103,
+      "modelSymbols": 103,
+      "hiddenSymbols": 0,
+      "iframeNoOverflow": true,
+      "footerBottom": 768,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 510.5,
+        "y": 628.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 691,
+      "nodeCount": 136,
+      "shownSymbols": 103,
+      "modelSymbols": 103,
+      "hiddenSymbols": 0,
+      "iframeNoOverflow": true,
+      "footerBottom": 948,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 787.5,
+        "y": 808.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 1920,
+        "height": 948
+      },
+      "startAndHome": true,
+      "reload": true
+    },
+    {
+      "stageHeight": 823,
+      "nodeCount": 136,
+      "shownSymbols": 103,
+      "modelSymbols": 103,
+      "hiddenSymbols": 0,
+      "iframeNoOverflow": true,
+      "footerBottom": 1080,
+      "titleFits": true,
+      "linkedTargets": true,
+      "buttonHeight": 55,
+      "buttonDisabled": false,
+      "scene": "opening",
+      "button": {
+        "x": 787.5,
+        "y": 940.046875,
+        "width": 345,
+        "height": 55
+      },
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "startAndHome": true,
+      "reload": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-18",
+  "entry": "standalone",
+  "actualFullscreen": true,
+  "buttonExit": true,
+  "externalExit": true,
+  "progressPreserved": true,
+  "creditsScroll": true,
+  "footerFits": true,
+  "errors": []
+}

@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-17T19:04:02.006Z",
-  "bytes": 20585262,
+  "built_at": "2026-10-18T06:22:16.829Z",
+  "bytes": 20587116,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2156,6 +2156,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Fill the opening viewport without a 600px cap; reserve navigation space and add explicit fullscreen entry/exit while preserving game state.",
     "Add actual five-day business comparison, outcome-based social ending, optional purchasing-power question, eight receipt comparisons with executed arrangements and optional related routes that preserve accounts.",
     "Clarify that the family dialogue is an independent story, and document the current four-act choices, cash handoffs and open-ended remedy mechanisms without changing economic rules.",
     "At the end of Act II, disclose the first three-day challenge maximum of +51 cash and ending funds of 87, using shared scoring constants and preserving current gameplay.",
@@ -2173,9 +2174,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "d14c383cd595f36973e7790b52d8d854b0b5fe8d9825947475e88921800ce34e",
+    "index_sha256": "0fb034ae3dee46ce483ba1524e517ae5c32c99cd0d23bf79d5386077cc889720",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "6b9d110492bb08be3460a504e119ea692221d25263c6ba79ea39da7af597a4ed"
+  "sha256": "9f556fdc0bd7bd616604ab5bf7ef5c1815df91cef03349c041bd5d89f8e2d6b4"
 }

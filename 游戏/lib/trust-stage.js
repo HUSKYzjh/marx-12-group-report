@@ -83,6 +83,28 @@
   }
   function loadImage(src) { return new Promise(function (resolve, reject) { var image = new Image(); image.onload = function () { resolve(new PIXI.Texture(new PIXI.BaseTexture(image))); }; image.onerror = reject; image.src = src; }); }
 
+  // Request the host element inside the click gesture; the iframe and saved game stay mounted.
+  var fullscreenButton = document.getElementById('fullscreen-toggle');
+  var fullscreenDocument = parent.document;
+  function syncFullscreen() {
+    var expanded = !!fullscreenDocument.fullscreenElement;
+    fullscreenButton.hidden = !fullscreenDocument.fullscreenEnabled;
+    fullscreenButton.textContent = expanded ? '退出全屏 ⛶' : '全屏 ⛶';
+    fullscreenButton.setAttribute('aria-pressed', String(expanded));
+  }
+  fullscreenButton.onclick = function () {
+    document.getElementById('fullscreen-status').textContent = '';
+    var request = fullscreenDocument.fullscreenElement ? fullscreenDocument.exitFullscreen() : fullscreenDocument.documentElement.requestFullscreen();
+    request.catch(function () { document.getElementById('fullscreen-status').textContent = '未能进入全屏，请重试。'; });
+  };
+  fullscreenDocument.addEventListener('fullscreenchange', syncFullscreen);
+  syncFullscreen();
+  function footerNavigationHeight() {
+    var footer = document.querySelector('footer'), style = getComputedStyle(footer);
+    // Expanded credits may scroll, but must not shrink the stage above them.
+    return Math.max(44, document.getElementById('stage-navigation').offsetHeight,
+      footer.querySelector('summary').getBoundingClientRect().height) + parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
+  }
   function openingViewportHeight() {
     // The host viewport is stable while the iframe grows to fit its content.
     // visualViewport also follows the phone browser's expanding address bar.
@@ -185,7 +207,7 @@
       var chapterHeight = document.querySelector('.chapter-navigation').offsetHeight;
       // Reserve room for the chapter bar, hint, full-size start button and safe space.
       // Never use the auto-sized iframe's height as an input to its own layout.
-      self.splashHeight = Math.max(100, Math.min(600, self.splashViewportHeight - chapterHeight - 128));
+      self.splashHeight = Math.max(100, self.splashViewportHeight - chapterHeight - footerNavigationHeight() - 128);
       var compact = self.width <= 600 || self.splashHeight < 340;
       Object.keys(self.productionElements).forEach(function (id) {
         if (id.indexOf('repeat-') === 0) { self.productionElements[id].remove(); delete self.productionElements[id]; }
@@ -633,11 +655,9 @@
   }
   function setTitle(words, situation) { slideshow.objects.heading.setText(words); slideshow.objects.situation.setText(situation || ''); }
   function fitMainHeight() {
-    var footerStyle=getComputedStyle(document.querySelector('footer'));
-    var navigationHeight=Math.max(44,document.getElementById('stage-navigation').offsetHeight);
-    var footerHeight=navigationHeight+parseFloat(footerStyle.paddingTop)+parseFloat(footerStyle.paddingBottom);
     var chapterHeight=document.querySelector('.chapter-navigation').offsetHeight;
-    document.documentElement.style.setProperty('--screen-main-height',Math.max(496,parent.innerHeight-footerHeight-chapterHeight)+'px');
+    var minimum=document.body.dataset.scene==='opening'?0:496;
+    document.documentElement.style.setProperty('--screen-main-height',Math.max(minimum,openingViewportHeight()-footerNavigationHeight()-chapterHeight)+'px');
   }
   function updateUI() {
     var s = state, p = s.prologue;
