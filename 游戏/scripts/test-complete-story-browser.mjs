@@ -81,7 +81,7 @@ try{for(const spec of specs){
   assert.match(await b.locator('#ending-copy').innerText(),/12 → 20 → 20 → 6 → 12/);assert.equal(JSON.stringify(await saved(page)),before);
   await b.locator('#ending').scrollIntoViewIfNeeded();await page.screenshot({path:path.join(out,spec.width+'-waves-review.png'),fullPage:true});await fits(b);
  }}),battleRecord=(await saved(page)).battle;
- assert.match(await battle.locator('#steady-maximum').innerText(),/\+51/);assert.equal(await battle.locator('#ending-title').innerText(),(battleRecord.state.profitChallenge?'少发、多卖，赚到了吗？':socialReview(battleRecord.state.world).title));assert.equal((await saved(page)).bakeryWage,4);assert.equal(battleRecord.state.archive.steady.shops[0].wage,2);
+ assert.match(await battle.locator('#steady-maximum').innerText(),/\+51/);assert.equal(await battle.locator('#ending-title').innerText(),(battleRecord.state.splitActs?'这次，省下的钱留住了吗？':battleRecord.state.profitChallenge?'少发、多卖，赚到了吗？':socialReview(battleRecord.state.world).title));assert.equal((await saved(page)).bakeryWage,4);assert.equal(battleRecord.state.archive.steady.shops[0].wage,2);
  await page.screenshot({path:path.join(out,spec.width+'-battle.png'),fullPage:true});
  await battle.locator('#open-six').click();await f.locator('body[data-street-mode="sandbox"]').waitFor();
  let g=await game(f);assert.equal(g.world.round,0);assert(g.world.firms.every(x=>x.stock===0));assert.equal(g.world.people.length,20);

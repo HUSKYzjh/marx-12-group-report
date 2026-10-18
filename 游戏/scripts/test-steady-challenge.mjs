@@ -34,7 +34,7 @@ try{
   assert.match(await battle.locator('#chapter-title').innerText(),/恒定的客流数/);
   await battle.locator('#opening-guide[open]').waitFor();assert(await battle.locator('#opening-start').isHidden());
   await readOpeningGuide(battle);
-  assert.match(await battle.locator('#steady-goal').innerText(),/赚得最多/);
+  assert.match(await battle.locator('#steady-goal').innerText(),/赚钱的算盘/);
   assert.doesNotMatch(await battle.locator('#steady-goal').innerText(),/51/,'Do not reveal the optimal score before experimentation');
   await page.screenshot({path:path.join(out,`${width}-goal.png`)});
   const saved=()=>page.evaluate(key=>JSON.parse(localStorage.getItem(key)).battle,key);

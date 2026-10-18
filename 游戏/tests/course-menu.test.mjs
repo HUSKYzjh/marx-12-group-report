@@ -4,7 +4,7 @@ import {courseMenu,shortMoveLabel} from '../public/assets/market-duel/course-men
 import {initialCourse,courseMoves,courseRound} from '../public/assets/market-duel/course-model.mjs';
 test('all business decisions remain available once, grouped without changing accounts',()=>{
  for(const social of [false,true]){
-  const state=initialCourse();if(social)state.mode='social';
+  const state=initialCourse(true,false);if(social)state.mode='social';
   const before=structuredClone(state),moves=courseMoves(state),menu=courseMenu(moves);
   assert.deepEqual(state,before);
   assert.deepEqual([...menu.groups.flatMap(g=>g.moves),...menu.direct].map(m=>m.id).sort(),moves.map(m=>m.id).sort());

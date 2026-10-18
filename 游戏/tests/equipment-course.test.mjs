@@ -6,7 +6,7 @@ import {equipmentWorld,equipmentRound,equippedCapacity,readyShop,vacantWorkers,e
 function waves(){let s=c.initialCourse(true,false);for(let i=0;i<3;i++)s=c.courseRound(s,'hold');return c.nextCourse(s);}
 function source(){let s=waves();for(let i=0;i<5;i++)s=c.courseRound(s,'hold');return c.nextCourse(s);}
 test('explicit business strategies replace abstract output changes',()=>{
- assert.deepEqual(c.courseMoves(c.initialCourse()).map(m=>m.id),['price-down','price-up','buy','upgrade','hire','fire','hold']);
+ assert.deepEqual(c.courseMoves(c.initialCourse()).map(m=>m.id),['price-down','price-up','buy','upgrade','hire','fire','wage-down','wage-up','hold']);
  let s=c.initialCourse();for(let i=1;i<=3;i++){s=c.courseRound(s,'hold');assert.equal(s.world.shops[0].cash,36+7*i);}assert.deepEqual(c.restoreCourse(s),s);
 });
 test('new oven is paid now, delivered tomorrow, and needs extra hands',()=>{

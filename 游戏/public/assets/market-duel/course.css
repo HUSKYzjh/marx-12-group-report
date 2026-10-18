@@ -320,3 +320,9 @@ body[data-rules] .battle-frame .simplified-moves>.move[data-move="hold"]{grid-co
 .profit-more-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .profit-more .move-group[open]{grid-column:1/-1}
 .profit-moves>.move small{display:block!important}
+
+.course-parts{padding:8px 0 14px;border-bottom:1px dashed #bbb;margin-bottom:12px;color:#6b6c63}
+.course-parts>div{display:flex;justify-content:center;align-items:center;gap:16px;font-size:17px}
+.course-parts [aria-current="step"]{color:#333;text-decoration:underline;text-underline-offset:5px}
+#part-context{font-size:14px;line-height:1.6;margin:12px auto 0;max-width:650px;text-align:center}
+@media(max-width:700px){.course-parts>div{gap:10px;font-size:15px}#part-context{font-size:13px;text-align:left}.course-parts{padding:4px 5px 12px}}

@@ -25,15 +25,16 @@ try{
   const battle=await(await host.locator('#prologue-battle').elementHandle()).contentFrame();await battle.locator('#opening-guide[open]').waitFor();
   assert.equal(await battle.locator('[data-opening-page]').count(),5);await readOpeningGuide(battle);
   const saved=()=>page.evaluate(key=>JSON.parse(localStorage.getItem(key)).battle,key);
-  async function fits(){assert(await battle.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert(await battle.locator('#moves summary,#moves button:visible').evaluateAll(ns=>ns.every(n=>{const b=n.getBoundingClientRect();return b.width>=44&&b.height>=44;})));}
+  async function fits(){assert(await battle.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));assert(await battle.locator('#moves summary:visible,#moves button:visible').evaluateAll(ns=>ns.every(n=>{const b=n.getBoundingClientRect();return b.width>=44&&b.height>=44;})));}
   async function inspectMenu(mode){
    await battle.locator('body[data-mode="'+mode+'"]').waitFor();
    await page.waitForFunction(({key,mode})=>{const s=JSON.parse(localStorage.getItem(key)).battle;return s.state.mode===mode&&s.view==='choose';},{key,mode});
    assert.equal(await battle.locator('.move-group').count(),3);assert.equal(await battle.locator('.move-group[open]').count(),0);
-   assert.deepEqual(await battle.locator('#moves [data-move]:visible').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['hold']);
+   assert.deepEqual(await battle.locator('#moves [data-move]:visible').evaluateAll(ns=>ns.map(n=>n.dataset.move)),mode==='steady'?['wage-down','price-down','hold']:['hold']);
    const before=await saved(),all=courseMoves(before.state).map(m=>m.id).sort();
    assert.deepEqual(await battle.locator('#moves [data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move).sort()),all);
    await fits();await battle.locator(".console").screenshot({path:path.join(out,`${width}-${mode}-simple.png`)});
+   if(mode==='steady')await battle.locator('.profit-more>summary').click();
    for(const group of ['price','equipment','staff']){
     await battle.locator(`[data-move-group="${group}"]>summary`).click();
     await battle.waitForFunction(()=>document.querySelectorAll('.move-group[open]').length===1);
@@ -45,6 +46,7 @@ try{
     await battle.locator(".console").screenshot({path:path.join(out,`${width}-wages.png`)});
    }
    await battle.locator('.move-group[open]>summary').click();
+   if(mode==='steady')await battle.locator('.profit-more>summary').click();
    assert.deepEqual(await saved(),before);
   }
   async function play(move){
@@ -64,7 +66,7 @@ try{
   await play('wage-up');const record=await saved();
   await page.reload();const restored=await(await page.getByTestId('trust-frame').elementHandle()).contentFrame();await restored.locator('#prologue-battle').waitFor();
   assert.deepEqual(await saved(),record,'Reload retains the selected business decision and actual receipt');
-  results.push({width,categories:3,directActions:1,allMovesReachable:true,openingCategoriesReadOnly:true,exclusiveDisclosure:true,shortLabels:true,threeSceneMenus:true,wagesReachable:true,fivePageOpening:true,maximumCash:87,financialRulesPreserved:true,refresh:true,noOverflow:true});
+  results.push({width,categories:3,directActions:{steady:3,waves:1,social:3},allMovesReachable:true,openingCategoriesReadOnly:true,exclusiveDisclosure:true,shortLabels:true,threeSceneMenus:true,wagesReachable:true,fivePageOpening:true,maximumCash:87,financialRulesPreserved:true,refresh:true,noOverflow:true});
   console.log(`PASS simplified second act ${width}: three categories, direct business, all actions and accounts preserved`);await context.close();
  }
  assert.deepEqual(errors,[]);await fs.writeFile(path.join(out,'report.json'),JSON.stringify({date:'2026-10-18',entry:remote?'CloudBase':'standalone',sourceSHA256:createHash('sha256').update(source).digest('hex'),indexSHA256:manifest.index_sha256,results,errors},null,2)+'\n');

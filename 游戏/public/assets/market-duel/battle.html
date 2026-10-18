@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>面包店对决 · 饥馑的盛宴</title><link rel="stylesheet" href="battle.css"><link rel="stylesheet" href="course.css"></head>
 <body><main>
-<header><a href="pressure.html">饥馑的盛宴</a><span id="chapter-title">第一场 · 恒定的客流数</span><button id="restart" aria-label="重新开始三场对战">↻</button></header>
+<header><a href="pressure.html">饥馑的盛宴</a><span id="chapter-title">第一场 · 恒定的客流数</span><button id="restart" aria-label="重新开始第二幕上下篇">↻</button></header>
+<section id="course-parts" class="course-parts" aria-label="第二幕上下篇" hidden><div><span data-course-part="upper">上幕 · 需求固定</span><span aria-hidden="true">→</span><span data-course-part="lower">下幕 · 需求不确定</span></div><p id="part-context" aria-live="polite"></p></section>
 <div class="battle-frame" id="battle-frame">
 <section class="arena" aria-label="两家面包店的对战场景">
   <div class="day"><span id="day">第一天</span><span id="round-dots" aria-hidden="true"></span></div>
@@ -27,7 +28,7 @@
 <section id="ending" hidden><span class="eyebrow" id="ending-kicker"></span><h2 id="ending-title"></h2><p id="ending-copy"></p><div id="comparison"></div><p id="steady-maximum" hidden></p><div class="ending-actions"><button id="retry">换一套打法 ↻</button><button id="next-scene" class="primary">进入下一场 →</button></div></section>
 <svg id="money-route" aria-hidden="true"></svg>
 </div>
-<footer><button id="undo">↶ 重打上一回合</button><button id="opening-help">开店说明</button><button id="rules-open">本局规则</button><button id="upgrade-course" hidden>使用新版经营策略</button><button id="old-record" hidden>旧版账目</button><span>美术素材：Nicky Case · 自制烤炉</span></footer>
+<footer><button id="undo">↶ 重打上一回合</button><button id="opening-help">开店说明</button><button id="rules-open">本局规则</button><button id="upgrade-course" hidden>切换上下幕版</button><button id="old-record" hidden>旧版账目</button><span>美术素材：Nicky Case · 自制烤炉</span></footer>
 <style>#detail:has(.oven-receipt) #detail-title{padding-right:44px;font-size:22px}.oven-receipt table{width:100%;border-collapse:collapse;font-size:16px}.oven-receipt th,.oven-receipt td{padding:8px 3px;text-align:right}.oven-receipt td{white-space:nowrap}.oven-receipt th:first-child{text-align:left;font-weight:400}.oven-receipt details{font-size:14px}.oven-receipt summary{min-height:44px;padding:12px 0;cursor:pointer}#preview #oven-report{margin-left:8px;min-height:44px}</style>
 <dialog id="opening-guide" aria-labelledby="opening-title">
  <button class="close" id="opening-close" aria-label="关闭开店说明" hidden>×</button>
@@ -36,8 +37,8 @@
  <div class="opening-pages">
   <section data-opening-page="0" data-title="街上，多了一家面包店。">
    <div id="opening-shop-scene" class="opening-shop-scene" role="group" aria-label="新开的面包店：老板、三位厨师、旧烤炉和货架"></div>
-   <p>客人就这么多，生意得两家争。</p>
-   <p class="opening-goal">每天12位顾客，三天怎样赚得最多？</p>
+   <p>第二幕分上下篇。先在上幕算清本店的账，再到下幕面对变化。</p>
+   <p class="opening-goal">上幕每天12位顾客，先试少发工资、调整售价和产能。</p>
   </section>
   <section data-opening-page="1" data-title="物品与用工" hidden>
    <table class="opening-price-table">
@@ -70,7 +71,7 @@
      <tr data-opening-rule="wage"><th scope="row"><span class="opening-price-item"><span data-opening-worker></span><span>提高／降低工资</span></span></th><td>±1 <i class="coin" aria-label="金币"></i><small>每人每天 · 明天生效</small></td></tr>
     </tbody>
    </table>
-   <p class="opening-note">这是改价、改工资的幅度，不是另外收一笔手续费。</p>
+   <p class="opening-note">上幕的购买资金来自固定外部账户。改工资不会改变每天12位顾客；下幕再看收入怎样影响购买。</p>
   </section>
   <section data-opening-page="4" data-title="每回合，只出一招。" hidden>
    <p class="opening-turn-rule">回合制对决：1 回合 = 1 天。不用抢时间。</p>

@@ -35,7 +35,7 @@ try{
   const start=await saved();assert.equal(start.state.profitChallenge,true);assert.equal(start.state.world.shops[0].cash,36);assert.equal(start.state.world.history.length,0);
   assert.equal(await battle.locator('[data-trace]').count(),0);assert.doesNotMatch(await battle.locator('body').innerText(),/需求，从哪里来|追一笔钱|追踪阿/);
   assert.deepEqual(await battle.locator('#moves>[data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['wage-down','price-down','hold']);
-  assert(await battle.locator('.profit-more').evaluate(e=>!e.open));assert(await battle.locator('#steady-goal').isVisible());assert.match(await battle.locator('#steady-goal').innerText(),/少发工资，多卖产品/);
+  assert(await battle.locator('.profit-more').evaluate(e=>!e.open));assert(await battle.locator('#steady-goal').isVisible());assert.match(await battle.locator('#steady-goal').innerText(),/同样省工资，还能多赚吗/);
   await battle.locator('#console').screenshot({path:path.join(out,`${width}-choices.png`)});
   await battle.locator('.profit-more>summary').click();await battle.locator('[data-move-group="staff"]>summary').click();assert(await battle.locator('[data-move="wage-up"]').isVisible());assert.deepEqual(await saved(),start,'Exploring other adjustments is read-only');await battle.locator('.profit-more>summary').click();
   await play('wage-down');assert.equal((await saved()).state.world.history[0].wages[0],6);assert.equal((await saved()).state.world.shops[0].pending.wage,1);

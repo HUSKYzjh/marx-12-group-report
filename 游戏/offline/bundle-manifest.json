@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-18T07:29:39.807Z",
-  "bytes": 20591172,
+  "built_at": "2026-10-18T11:23:02.632Z",
+  "bytes": 20595707,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2156,6 +2156,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Split Act II into fixed-demand upper act with wage decisions, and uncertain-demand lower act introducing traffic fluctuations then income feedback; archive previous course on explicit opt-in; publish centered artistic QR.",
     "Replace wage tracing with a fresh nine-day profit challenge: wage cuts, price competition and real payroll/sales/cash comparison; archive old tracing accounts on explicit opt-in.",
     "Simplify act-two business choices into three exclusive categories and one direct action; shorten labels while preserving every business decision and its existing financial rules.",
     "Fill the opening viewport without a 600px cap; reserve navigation space and add explicit fullscreen entry/exit while preserving game state.",
@@ -2176,9 +2177,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "e486a0aeb0e2bb467940c224f3fd4336c696707a67f9be05d8e2af069c9c24aa",
+    "index_sha256": "d1179e40e20c093b9c92041db5a9eedce05676c98cd3b03096d70867dd7a0359",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "d8d2053cf4b4f78832113fd8229391e86f864747b41a658fe0d715cdb11e4e06"
+  "sha256": "0e3bbf882505ebead9f1140522ec4b1e26c3ebb13243eefbb871173ba2d6e7d3"
 }

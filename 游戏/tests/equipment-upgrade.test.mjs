@@ -65,6 +65,6 @@ test('UI states the cost formula, downtime and old-account opt-in',()=>{
  const ui=readFileSync(new URL('../public/assets/market-duel/course-game.mjs',import.meta.url),'utf8');
  assert.match(html,/8 × 旧炉数/);assert.match(html,/一次性投资 · 停工1天/);
  assert.match(ui,/r\.installing\?\.\[0\]\?'今天停工安装。工资照发，明天可复工。'/);
- assert.match(ui,/保留旧账，开始新版/);assert.match(ui,/needsEquipmentUpdate\(\)/);
+ assert.match(ui,/保留旧账，开始上下幕/);assert.match(ui,/needsEquipmentUpdate\(\)/);
  assert.match(ui,/w\.shops\.map\(f=>\{const today=readyShop\(f\)/);
 });

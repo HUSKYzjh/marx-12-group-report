@@ -2,6 +2,7 @@ import {TITLES,LENGTHS,initialCourse,adoptEquipmentCourse,finished,courseMoves,c
 import {wavesReview,socialReview} from './course-review.mjs';
 import {courseMenu,shortMoveLabel} from './course-menu.mjs';
 import {profitReview} from './profit-challenge.mjs';
+import {coursePart} from './course-parts.mjs';
 import {STEADY_CHALLENGE,steadyChallenge,restoreSteadyBest,steadyBestGain,rememberSteadyBest} from './steady-challenge.mjs';
 import {OWNER_ATLASES,ownerEmotion,ownerMarkup} from './owner-art.mjs';
 import {customerMarkup,pedestrianMarkup} from './customer-art.mjs';
@@ -30,7 +31,7 @@ function syncStreet(){
 }
 function showDialog(title,html){$('detail-title').textContent=title;$('detail-copy').innerHTML=html;$('detail').scrollTop=0;$('detail').showModal();(window.frameElement||document.querySelector('main')).scrollIntoView({block:'start',behavior:'instant'});fitOpeningGuide();$('detail-close').focus({preventScroll:true});syncStreet();}
 const openingRequired=()=>!openingRead&&state.mode==='steady'&&!state.world.day;
-const needsEquipmentUpdate=()=>state.version===2||!batchUpgrade(state.world);
+const needsEquipmentUpdate=()=>state.version===2||!batchUpgrade(state.world)||!state.splitActs;
 function renderOpeningExample(){
  const sample=openingTradeExample(openingSold);
  openingSold=sample.sold;$('opening-sold').textContent=sample.sold;
@@ -80,7 +81,7 @@ function openingGuide(){
   $('opening-next').focus({preventScroll:true});syncStreet();
 }
 function offerUpgrade(){
- showDialog('换炉规则更新了',`<p>整店升级：每台旧炉8金币，停工一天，工资照发。</p><p>旧账不重算。开始新版会重新开局，旧记录另外保留。</p><button id="equipment-start" class="primary">保留旧账，开始新版 →</button>`);
+ showDialog('第二幕分成上下篇了',`<p>上幕：需求固定，先算本店怎样多赚。</p><p>下幕：客流不确定，再看顾客的钱如何变化。</p><p>旧账另存，新局从36枚开始。</p><button id="equipment-start" class="primary">保留旧账，开始上下幕 →</button>`);
  $('equipment-start').onclick=()=>{state=adoptEquipmentCourse(state);openingRead=false;view='choose';selected=null;lastTrace=null;$('detail').close();render();persist();openingGuide();};
 }
 function customer(id){
@@ -103,19 +104,22 @@ function renderPeople(){
 }
 function render(){
   $('steady-maximum').hidden=true;$('steady-maximum').replaceChildren();
-  const mode=state.mode,w=state.world,r=w.history.at(-1),result=view==='result',over=finished(state)&&!result,isSource=mode==='source',isProfit=!!state.profitChallenge&&mode==='social';
+  const mode=state.mode,w=state.world,r=w.history.at(-1),result=view==='result',over=finished(state)&&!result,isSource=mode==='source',isUpper=!!state.splitActs&&mode==='steady',isProfit=!!state.profitChallenge&&mode==='social'||isUpper;
+  const part=coursePart(state);$('course-parts').hidden=!state.splitActs;
+  document.querySelectorAll('[data-course-part]').forEach(el=>{if(el.dataset.coursePart===part.id)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current');});
+  $('part-context').textContent=part.phase+' · '+part.note;
   $('round-report').hidden=!result&&!isSource;
   const challenge=steadyChallenge(state);$('steady-goal').hidden=(!challenge&&!isProfit)||over;
-  $('steady-goal').innerHTML=challenge?`<span>三天，怎样赚得最多？</span><strong>本局 ${challenge.gain>=0?'+':''}${challenge.gain} ${coin}</strong>`:isProfit?`<span>少发工资，多卖产品。</span><strong>本局净增 ${w.shops[0].cash>=36?'+':''}${w.shops[0].cash-36} ${coin}</strong>`:'';
+  $('steady-goal').innerHTML=challenge?`<span>${isUpper?'赚钱的算盘：少发工资，多卖产品。':'三天，怎样赚得最多？'}</span><strong>本局 ${challenge.gain>=0?'+':''}${challenge.gain} ${coin}</strong>`:isProfit?`<span>${state.splitActs?'同样省工资，还能多赚吗？':'少发工资，多卖产品。'}</span><strong>本局净增 ${w.shops[0].cash>=36?'+':''}${w.shops[0].cash-36} ${coin}</strong>`:'';
   document.body.dataset.mode=mode;$('battle-frame').classList.toggle('source-mode',isSource);$('battle-frame').classList.toggle('has-crowd',social());
   document.body.dataset.rules=String(state.version);$('upgrade-course').hidden=!needsEquipmentUpdate();$('old-record').hidden=!state.previousCourse;
-  $('chapter-title').textContent=isProfit||isSource?'第三场 · 赚钱的算盘':mode==='done'&&state.profitChallenge?'少发、多卖，赚到了吗？':TITLES[mode];
+  $('chapter-title').textContent=state.splitActs?part.title:isProfit||isSource?'第三场 · 赚钱的算盘':mode==='done'&&state.profitChallenge?'少发、多卖，赚到了吗？':TITLES[mode];
   const length=LENGTHS[mode]||9;$('day').textContent=isSource?'新一局 · 第一天的真实账单':over?'收摊，回头看看':`第 ${result?w.day:w.day+1} / ${length} 天`;
   $('turn').textContent=Math.min(length,result||isSource||over?w.day:w.day+1);$('round-dots').innerHTML=Array.from({length},(_,i)=>`<i class="${i<w.day?'done':''}"></i>`).join('');
   const shopsForView=result||isSource||state.version===2?w.shops:w.shops.map(f=>{const today=readyShop(f);return {...today,fast:today.fastOvens>0};});
   for(const f of shopsForView){const id=f.id;$('cash-'+id).innerHTML=f.cash+' '+coin;$('bar-'+id).style.width=Math.min(100,f.cash/60*100)+'%';$('bar-'+id).classList.toggle('low',f.cash<12);
     const equipment=id===1?[f.ovens>f.fastOvens?`${f.ovens-f.fastOvens}旧炉`:'',f.fastOvens?`${f.fastOvens}快炉`:''].filter(Boolean).join(' · '):`${f.ovens-f.fastOvens}旧炉 · ${f.fastOvens}快炉`;
-    const trade=id===1?`售价${f.price}${coin} · ${social()?'工资'+f.wage+coin:'余'+f.bread.length+'个'}`:`售价 ${f.price} ${coin} · ${social()?'工资 '+f.wage+' '+coin:'剩货 '+f.bread.length+' 个'}`;
+    const trade=id===1?`售价${f.price}${coin} · ${social()||isUpper?'工资'+f.wage+coin:'余'+f.bread.length+'个'}`:`售价 ${f.price} ${coin} · ${social()||isUpper?'工资 '+f.wage+' '+coin:'剩货 '+f.bread.length+' 个'}`;
     $('stats-'+id).innerHTML=trade+(state.version===3?`<span class="equipment-status">${equipment} · ${f.workers.length}人</span>`:'');
     $(id===0?'player-capacity':'rival-level').textContent=`明天可做${courseCapacity(state,w.shops[id])}个`;
     const note=$(id===0?'player-equipment-note':'rival-equipment-note');
@@ -167,7 +171,7 @@ function render(){
   }
   function moveButton(m,parent){
     const b=document.createElement('button'),issue=courseIssue(state,m.id);
-    b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||m.detail;
+    b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||(isUpper&&m.id.startsWith('wage-')?'上幕的购买资金来自固定外部账户；改工资不改变这12位顾客。工资调整明天生效。':m.detail);
     b.innerHTML=`${icon(m.icon)}<strong>${isProfit&&m.id==='wage-down'?'少发工资':isProfit&&m.id==='price-down'?'降价抢客':shortMoveLabel(m)}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;
     b.onclick=()=>select(m.id);parent.append(b);
   }
@@ -191,25 +195,26 @@ function checkpoint(){
   }
   const w=state.world,r=w.history.at(-1),mode=state.mode;$('next-scene').hidden=mode==='done'&&!embedded;$('retry').textContent='重打这一场 ↻';
   const challenge=steadyChallenge(state);$('comparison').dataset.challenge=String(!!challenge);$('comparison').dataset.review=mode==='waves'?'waves':mode==='done'?'social':'';
-  if(mode==='done'&&state.version===3&&batchUpgrade(w)){
+  if((mode==='done'||state.splitActs&&mode==='steady')&&state.version===3&&batchUpgrade(w)){
     $('steady-maximum').hidden=false;
-    $('steady-maximum').innerHTML=`第一场三天最高收益：<strong>+${STEADY_CHALLENGE.maxGain} 金币</strong><br><small>按资金净增计；开局 ${STEADY_CHALLENGE.opening} → 期末 ${STEADY_CHALLENGE.opening+STEADY_CHALLENGE.maxGain} 金币。</small>`;
+    $('steady-maximum').innerHTML=`${state.splitActs?'上幕':'第一场'}三天最高收益：<strong>+${STEADY_CHALLENGE.maxGain} 金币</strong><br><small>按资金净增计；开局 ${STEADY_CHALLENGE.opening} → 期末 ${STEADY_CHALLENGE.opening+STEADY_CHALLENGE.maxGain} 金币。</small>`;
   }
 
   if(challenge){
     const gain=challenge.gain,best=steadyBestGain(steadyBest)??gain,extra=gain-challenge.baselineGain;
-    $('ending-kicker').textContent='第一场 · 三天收摊';
+    $('ending-kicker').textContent=state.splitActs?'上幕结束 · 固定需求':'第一场 · 三天收摊';
     $('ending-title').textContent=challenge.atMaximum?'本局最高收益，做到了！':gain===challenge.baselineGain?'稳稳赚了21枚，还能更多吗？':gain<0?`这次少了${-gain}枚，换个赚法？`:`这次赚了${gain}枚，还能再多一点？`;
     $('ending-copy').textContent=challenge.atMaximum?'客流没变，你让每个面包多带回了钱。':`比三天照常营业${extra>=0?'多赚':'少赚'}${Math.abs(extra)}枚。换一项策略，再比一比。`;
     $('comparison').innerHTML=[['本次收益',gain],['照常营业',challenge.baselineGain],['个人纪录',best]].map(([label,n])=>`<div class="outcome-figure">${label}<b>${n>=0?'+':''}${n} ${coin}</b></div>`).join('');
     $('retry').textContent=challenge.atMaximum?'再试一种赚法 ↻':'再试一次，赚更多 ↻';
-    $('next-scene').textContent='客流变了呢？ →';
+    $('next-scene').textContent=state.splitActs?'进入下幕：需求不确定 →':'客流变了呢？ →';
+    if(state.splitActs)$('ending-copy').textContent+=' 刚才客流固定。下幕，再看看客流和钱包怎么变。';
   }else if(mode==='steady'){
     const gain=w.shops[0].cash-36;$('ending-kicker').textContent='第一场结束';$('ending-title').textContent=gain>=0?'老板，钱包挺住了！':'开了三天，钱包瘦了。';
     $('ending-copy').textContent=gain>=0?'客人天天来，生意还能稳住。':'卖得多，也可能少赚钱。再试试？';
     $('comparison').innerHTML=`<div class="outcome-figure">开局<b>36 ${coin}</b></div><div class="outcome-figure">三天后<b>${w.shops[0].cash} ${coin}</b></div>`;$('next-scene').textContent='如果客流开始变呢？ →';
   }else if(mode==='waves'){
-    const review=wavesReview(state);$('ending-kicker').textContent='第二场 · 五天收摊';
+    const review=wavesReview(state);$('ending-kicker').textContent=state.splitActs?'下幕 · 客流波动之后':'第二场 · 五天收摊';
     if(review){
       $('ending-title').textContent=review.stock?'客人走了，面包还在。':review.spoiled?'账能重算，坏面包回不来。':'这次，节奏跟上了吗？';
       $('ending-copy').textContent='客流 '+review.demand.join(' → ')+'。'+(review.difference?'比照常营业'+(review.difference>0?'多':'少')+Math.abs(review.difference)+'枚。':'和照常营业的资金净增相同。');
@@ -218,10 +223,10 @@ function checkpoint(){
       $('ending-title').textContent='你能换炉子。不能撤回昨天的面包。';$('ending-copy').textContent='';
       $('comparison').innerHTML=w.history.map(h=>`<div class="outcome-figure">第 ${h.day} 天<b>${h.demand}</b>买家</div>`).join('');
     }
-    $('next-scene').textContent='怎么把钱留在店里？ →';
+    $('next-scene').textContent=state.splitActs?'再看：买家的钱也会变 →':'怎么把钱留在店里？ →';
   }else if(state.profitChallenge){
     const review=profitReview(w),a=review.actual;
-    $('ending-kicker').textContent='第三场 · 经营结果';$('ending-title').textContent='少发、多卖，赚到了吗？';
+    $('ending-kicker').textContent=state.splitActs?'下幕结束 · 收入与购买力':'第三场 · 经营结果';$('ending-title').textContent=state.splitActs?'这次，省下的钱留住了吗？':'少发、多卖，赚到了吗？';
     $('ending-copy').textContent=`比同样开局照常营业，资金净增${review.difference>=0?'多':'少'} ${Math.abs(review.difference)} 枚。`;
     $('comparison').innerHTML=`<div class="outcome-figure">工资支出<b>${a.wages} ${coin}</b></div><div class="outcome-figure">累计卖出<b>${a.sold} 个</b></div><div class="outcome-figure">本局净增<b>${a.gain>=0?'+':''}${a.gain} ${coin}</b></div>`;
     $('next-scene').textContent='再看一个小故事 →';
@@ -307,7 +312,7 @@ try{
 if(needsEquipmentUpdate()||openingRequired())openingGuide();
 if(embedded){
  document.body.classList.add('embedded');
- document.querySelector('header a').replaceWith(Object.assign(document.createElement('span'),{textContent:'第二幕 · 面包店对决'}));
+ document.querySelector('header a').replaceWith(Object.assign(document.createElement('span'),{textContent:'饥馑的盛宴'}));
  const report=()=>parent.postMessage({app:'feast-battle',type:'height',height:Math.ceil(document.querySelector('main').getBoundingClientRect().height)+8},'*');
  new ResizeObserver(report).observe(document.querySelector('main'));report();
 }

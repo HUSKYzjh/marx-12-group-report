@@ -34,6 +34,8 @@ export function steadyChallenge(s){
    upgrade:'换炉先花钱，还剩几天回本？',
    hire:'多一位厨师，能多卖几个？',
    fire:'省下的工资，抵得上少卖的面包吗？',
+   'wage-down':'明天少付工资，销量会跟着变吗？',
+   'wage-up':'明天多付工资，先看看本店的成本。',
    hold:s.world.shops[0].price===5?'售价已到上限，看看销量和开销。':r.sold[0]===(s.world.history.at(-2)?.sold[0]??6)?'销量没变，换个售价会怎样？':'多卖的钱，扣掉新增开销还剩多少？',
   };hint=hints[r.action]||hint;
  }
