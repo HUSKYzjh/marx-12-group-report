@@ -60,11 +60,11 @@ test('pre-change v3 records replay exactly; new rules archive old accounts rathe
  const forged=structuredClone(fresh);forged.world.upgradeRule='invented';assert.equal(restoreCourse(forged),null);
 });
 
-test('UI states the cost formula, downtime and old-account opt-in',()=>{
+test('UI states the cost formula and downtime while compatibility stays in loading',()=>{
  const html=readFileSync(new URL('../public/assets/market-duel/battle.html',import.meta.url),'utf8');
  const ui=readFileSync(new URL('../public/assets/market-duel/course-game.mjs',import.meta.url),'utf8');
  assert.match(html,/8 × 旧炉数/);assert.match(html,/一次性投资 · 停工1天/);
  assert.match(ui,/r\.installing\?\.\[0\]\?'今天停工安装。工资照发，明天可复工。'/);
- assert.match(ui,/保留旧账，开始上下幕/);assert.match(ui,/needsEquipmentUpdate\(\)/);
+ assert.doesNotMatch(ui,/offerUpgrade|equipment-start|第二幕分成上下篇了/);assert.match(ui,/state=adoptEquipmentCourse\(state\)/);assert.doesNotMatch(html,/upgrade-course/);
  assert.match(ui,/w\.shops\.map\(f=>\{const today=readyShop\(f\)/);
 });

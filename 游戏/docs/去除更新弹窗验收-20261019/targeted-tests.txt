@@ -1,0 +1,20 @@
+✔ reading the guide is saved without completing or changing any economic turn (6.1967ms)
+✔ legacy saves still restore, while guide metadata cannot forge a ledger or completion (5.178ms)
+✔ a settled move survives restoration exactly once, and undo restores its initial accounts (1.0633ms)
+✔ upper act uses fixed external demand, permitting next-day wage cuts without reducing the order book (15.1049ms)
+✔ payroll controls do not apply the lower-act raw-material discount to upper-act affordability (1.2436ms)
+✔ lower act introduces external fluctuations first and income feedback second, with separate accounts (28.6432ms)
+✔ previous profit-only and original tracing records replay unchanged until an explicit archive-and-restart (6.3444ms)
+✔ whole-shop investment scales with old ovens, pauses one day and pays wages (11.5806ms)
+✔ already upgraded ovens are not charged twice; funding includes idle-day wages and arrears (2.1061ms)
+✔ installation can sell existing bread but never bakes a new batch; rival obeys the same pause (4.2849ms)
+✔ pre-change v3 records replay exactly; new rules archive old accounts rather than rewriting them (69.8026ms)
+✔ UI states the cost formula and downtime while compatibility stays in loading (2.3186ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 618.8867

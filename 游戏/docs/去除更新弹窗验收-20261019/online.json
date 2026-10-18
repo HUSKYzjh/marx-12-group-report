@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-19",
+  "entry": "CloudBase",
+  "sourceSHA256": "bc41e33808bc1c09165ca19b875880076732902049885c483044405fa494c861",
+  "indexSHA256": "4f860c1a69498dbb4f845efddd8520f37100095081e95b3aaf687c51f916b3a4",
+  "results": [
+    {
+      "kind": "fresh-and-refresh",
+      "width": 390,
+      "normalOpeningPages": 5,
+      "noUpdatePrompt": true,
+      "oneRealDayPlayed": true,
+      "currentLedgerPreserved": true,
+      "helpReadOnly": true
+    },
+    {
+      "kind": "fresh-and-refresh",
+      "width": 1280,
+      "normalOpeningPages": 5,
+      "noUpdatePrompt": true,
+      "oneRealDayPlayed": true,
+      "currentLedgerPreserved": true,
+      "helpReadOnly": true
+    }
+  ],
+  "errors": []
+}
