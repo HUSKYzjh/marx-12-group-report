@@ -1,3 +1,4 @@
+import {chooseBattleMove} from './prologue-battle-browser-gestures.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -38,7 +39,7 @@ try{
   await page.screenshot({path:path.join(out,`${width}-goal.png`)});
   const saved=()=>page.evaluate(key=>JSON.parse(localStorage.getItem(key)).battle,key);
   const play=async(move,day)=>{
-   await battle.locator(`[data-move="${move}"]`).click();
+   await chooseBattleMove(battle,move);
    await page.waitForFunction(({key,day})=>JSON.parse(localStorage.getItem(key)).battle.state.world.day===day,{key,day});
    await battle.waitForFunction(()=>!document.querySelector('#restart').disabled);
    assert(await battle.locator('#steady-insight').isVisible());

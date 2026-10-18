@@ -1,5 +1,6 @@
 import {TITLES,LENGTHS,initialCourse,adoptEquipmentCourse,finished,courseMoves,courseIssue,courseRound,nextCourse,crossCustomers,traceCustomer,retryScene,undoCourse,restoreCourse,courseRival,courseCapacity} from './course-model.mjs';
 import {wavesReview,socialReview} from './course-review.mjs';
+import {courseMenu,shortMoveLabel} from './course-menu.mjs';
 import {STEADY_CHALLENGE,steadyChallenge,restoreSteadyBest,steadyBestGain,rememberSteadyBest} from './steady-challenge.mjs';
 import {OWNER_ATLASES,ownerEmotion,ownerMarkup} from './owner-art.mjs';
 import {customerMarkup,pedestrianMarkup} from './customer-art.mjs';
@@ -155,8 +156,23 @@ function render(){
   $('subline').textContent=mode==='steady'?'':mode==='waves'?'换炉、换人，明天才生效。':'';
   if(embedded&&mode==='steady'&&!w.day)$('subline').textContent='新账本：36枚 · 每人工资'+w.shops[0].wage+'枚。';
   $('choose-label').textContent='';
-  let wages;
-  for(const m of courseMoves(state)){const b=document.createElement('button'),issue=courseIssue(state,m.id);b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||m.detail;b.innerHTML=`${icon(m.icon)}<strong>${m.name}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;b.onclick=()=>select(m.id);if(m.group==='wages'){if(!wages){wages=document.createElement('details');wages.className='wage-moves';wages.innerHTML='<summary>调整工资</summary><div></div>';$('moves').append(wages);}wages.querySelector('div').append(b);}else $('moves').append(b);}
+  $('choose-label').textContent='每天选一招，随后营业。';
+  $('moves').classList.add('simplified-moves');
+  const menu=courseMenu(courseMoves(state)),groups=[];
+  function moveButton(m,parent){
+    const b=document.createElement('button'),issue=courseIssue(state,m.id);
+    b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||m.detail;
+    b.innerHTML=`${icon(m.icon)}<strong>${shortMoveLabel(m)}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;
+    b.onclick=()=>select(m.id);parent.append(b);
+  }
+  for(const group of menu.groups){
+    const detail=document.createElement('details');detail.className='move-group';detail.dataset.moveGroup=group.id;
+    const summary=document.createElement('summary');summary.textContent=group.label;detail.append(summary);
+    const choices=document.createElement('div');choices.className='move-group-choices';detail.append(choices);
+    group.moves.forEach(m=>moveButton(m,choices));groups.push(detail);$('moves').append(detail);
+    detail.ontoggle=()=>{if(detail.open)groups.forEach(other=>{if(other!==detail)other.open=false;});};
+  }
+  menu.direct.forEach(m=>moveButton(m,$('moves')));
   $('preview').replaceChildren();
 }
 function checkpoint(){

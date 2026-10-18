@@ -302,3 +302,14 @@ body[data-rules="3"] .status .equipment-status{display:inline;font:inherit;white
 #comparison[data-review="waves"] .outcome-figure{padding:7px 5px;min-width:0}
 #comparison[data-review="waves"] b{white-space:nowrap}
 @media(max-width:350px){#comparison[data-review="waves"] b{font-size:20px}}
+
+/* Daily choices start with three categories and one direct business action. */
+body[data-rules] .battle-frame .simplified-moves{min-height:0;gap:8px;border:0;overflow:visible;align-items:start}
+.move-group{min-width:0;border:1px solid #bbbcb2;border-radius:5px;background:#fffef6}
+.move-group>summary{cursor:pointer;min-height:54px;padding:13px 10px;font-size:19px;line-height:1.4}
+.move-group[open]{grid-column:1/-1}
+.move-group-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px dashed #ccc}
+body[data-rules] .battle-frame .simplified-moves>.move[data-move="hold"]{grid-column:auto;min-height:54px;border:1px solid #777;border-radius:5px;background:#f0f1e7;padding:10px}
+.simplified-moves>.move[data-move="hold"] small{display:none}
+.move-group .move:disabled{opacity:.65}
+@media(max-width:700px){.move-group>summary{min-height:52px;font-size:18px;padding:12px 9px}body[data-rules] .battle-frame .simplified-moves>.move[data-move="hold"]{min-height:52px}.move-group-choices .move{min-height:74px}}

@@ -1,4 +1,10 @@
 import assert from 'node:assert/strict';
+/** Open only the category containing the requested action, using its real control. */
+export async function chooseBattleMove(frame,id,press=locator=>locator.click()){
+ const move=frame.locator(`[data-move="${id}"]`);
+ if(!await move.isVisible())await press(move.locator('xpath=ancestor::details[1]').locator('summary').first());
+ await press(move);
+}
 /** Read every opening guide page using its real navigation controls. */
 export async function readOpeningGuide(frame,press=locator=>locator.click()){
  await frame.locator('#opening-guide[open]').waitFor();
@@ -17,7 +23,7 @@ export async function completeBattle(page,frame,key,{onCheckpoint=async()=>{}}={
   const turn=Number(await battle.locator('#turn').innerText()),mode=await battle.locator('body').getAttribute('data-mode');
   await page.waitForFunction(({key,turn,mode})=>{const s=JSON.parse(localStorage.getItem(key)).battle.state;return s.mode===mode&&s.world.day===turn-1;},{key,turn,mode});
   const day=turn-1;
-  await battle.locator(`[data-move="${move}"]`).click();
+  await chooseBattleMove(battle,move);
   await page.waitForFunction(({key,day})=>JSON.parse(localStorage.getItem(key)).battle.state.world.day===day+1,{key,day});
   await battle.waitForFunction(()=>!document.querySelector('#restart').disabled);
  };

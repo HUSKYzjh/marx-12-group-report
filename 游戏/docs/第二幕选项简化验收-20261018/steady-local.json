@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-17",
+  "entry": "local",
+  "indexSha256": "74c4e9c5e46d7d11e8d4b5d85d417772dddb530522a1fb9030b457f399e4d898",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "fivePageOpening": true,
+      "goalVisible": true,
+      "actualMoveHints": true,
+      "baselineGain": 21,
+      "maximumGain": 51,
+      "sameDailySales": 6,
+      "replayComparison": true,
+      "recordSurvivesReload": true,
+      "lowerRunPreservesBest": true,
+      "nextStageUnblocked": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "height": 667,
+      "fivePageOpening": true,
+      "goalVisible": true,
+      "actualMoveHints": true,
+      "baselineGain": 21,
+      "maximumGain": 51,
+      "sameDailySales": 6,
+      "replayComparison": true,
+      "recordSurvivesReload": true,
+      "lowerRunPreservesBest": true,
+      "nextStageUnblocked": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "fivePageOpening": true,
+      "goalVisible": true,
+      "actualMoveHints": true,
+      "baselineGain": 21,
+      "maximumGain": 51,
+      "sameDailySales": 6,
+      "replayComparison": true,
+      "recordSurvivesReload": true,
+      "lowerRunPreservesBest": true,
+      "nextStageUnblocked": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

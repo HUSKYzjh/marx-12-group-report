@@ -1,3 +1,4 @@
+import {chooseBattleMove} from './prologue-battle-browser-gestures.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -76,7 +77,7 @@ try{
   assert.equal((await saved(page)).state.world.history.length,1);
   await battle.locator('#undo').click();await waitSaved(page,0);
 
-  await battle.locator('[data-move="buy"]').click();await waitSaved(page,1);
+  await chooseBattleMove(battle,'buy');await waitSaved(page,1);
   const investment=await saved(page);
   await frame.getByRole('button',{name:'返回首页',exact:true}).click();
   await frame.locator('body[data-scene="opening"]').waitFor();
