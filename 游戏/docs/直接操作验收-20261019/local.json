@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-19",
+  "entry": "standalone",
+  "sourceSHA256": "538766ef8a7f67822a5bf0de8b98bda43d44874dae4994775430cf0770509fdc",
+  "indexSHA256": "d91d12abab588aac6f1b3e6a66e0f869131465e9002f76b6b85e5f981c4b37be",
+  "results": [
+    {
+      "width": 320,
+      "categories": 3,
+      "directActions": {
+        "steady": 1,
+        "waves": 1,
+        "social": 1
+      },
+      "allMovesReachable": true,
+      "allActionsVisibleWithoutDisclosure": true,
+      "shortLabels": true,
+      "threeSceneMenus": true,
+      "wagesReachable": true,
+      "fivePageOpening": true,
+      "maximumCash": 87,
+      "financialRulesPreserved": true,
+      "refresh": true,
+      "noOverflow": true
+    },
+    {
+      "width": 390,
+      "categories": 3,
+      "directActions": {
+        "steady": 1,
+        "waves": 1,
+        "social": 1
+      },
+      "allMovesReachable": true,
+      "allActionsVisibleWithoutDisclosure": true,
+      "shortLabels": true,
+      "threeSceneMenus": true,
+      "wagesReachable": true,
+      "fivePageOpening": true,
+      "maximumCash": 87,
+      "financialRulesPreserved": true,
+      "refresh": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1280,
+      "categories": 3,
+      "directActions": {
+        "steady": 1,
+        "waves": 1,
+        "social": 1
+      },
+      "allMovesReachable": true,
+      "allActionsVisibleWithoutDisclosure": true,
+      "shortLabels": true,
+      "threeSceneMenus": true,
+      "wagesReachable": true,
+      "fivePageOpening": true,
+      "maximumCash": 87,
+      "financialRulesPreserved": true,
+      "refresh": true,
+      "noOverflow": true
+    }
+  ],
+  "errors": []
+}

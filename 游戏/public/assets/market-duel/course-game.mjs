@@ -159,7 +159,7 @@ function render(){
   $('choose-label').textContent='';
   $('choose-label').textContent=isProfit?'每天选一招，看看能多赚多少。':'每天选一招，随后营业。';
   $('moves').classList.add('simplified-moves');
-  const menu=courseMenu(courseMoves(state)),groups=[];
+  const menu=courseMenu(courseMoves(state));
   function moveButton(m,parent){
     const b=document.createElement('button'),issue=courseIssue(state,m.id);
     b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||(isUpper&&m.id.startsWith('wage-')?'上幕的购买资金来自固定外部账户；改工资不改变这12位顾客。工资调整明天生效。':m.detail);
@@ -167,11 +167,10 @@ function render(){
     b.onclick=()=>select(m.id);parent.append(b);
   }
   for(const group of menu.groups){
-    const detail=document.createElement('details');detail.className='move-group';detail.dataset.moveGroup=group.id;
-    const summary=document.createElement('summary');summary.textContent=group.label;detail.append(summary);
+    const detail=document.createElement('section');detail.className='move-group';detail.dataset.moveGroup=group.id;
+    const heading=document.createElement('h3');heading.textContent=group.label;detail.append(heading);
     const choices=document.createElement('div');choices.className='move-group-choices';detail.append(choices);
-    group.moves.forEach(m=>moveButton(m,choices));groups.push(detail);$('moves').append(detail);
-    detail.ontoggle=()=>{if(detail.open)groups.forEach(other=>{if(other!==detail)other.open=false;});};
+    group.moves.forEach(m=>moveButton(m,choices));$('moves').append(detail);
   }
   menu.direct.forEach(m=>moveButton(m,$('moves')));
   $('preview').replaceChildren();

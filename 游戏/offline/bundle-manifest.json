@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-18T16:23:09.885Z",
-  "bytes": 20593719,
+  "built_at": "2026-10-18T16:37:11.132Z",
+  "bytes": 20593586,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2156,6 +2156,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Show every available Act II action directly under static group labels; remove category disclosure controls without changing game rules.",
     "Restore three category menus plus ordinary business throughout Act II; remove shortcut duplicates and the extra adjustment disclosure without changing financial rules.",
     "Remove the developer-facing update modal and upgrade button; handle older saves automatically at load while preserving archived accounts and current-release progress.",
     "Split Act II into fixed-demand upper act with wage decisions, and uncertain-demand lower act introducing traffic fluctuations then income feedback; archive previous course on explicit opt-in; publish centered artistic QR.",
@@ -2179,9 +2180,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "49fabb2cc950b58e35685a10ac97d1f124da49a4645e68b479d45c521afaa750",
+    "index_sha256": "d91d12abab588aac6f1b3e6a66e0f869131465e9002f76b6b85e5f981c4b37be",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "b8b412552b5b4440b3da2f5064ec3e686b42a2b1111dd192a7cc68506ea3dd33"
+  "sha256": "538766ef8a7f67822a5bf0de8b98bda43d44874dae4994775430cf0770509fdc"
 }

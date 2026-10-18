@@ -37,7 +37,7 @@ try{
   assert.deepEqual(await battle.locator('#moves>[data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['hold']);
   assert.equal(await battle.locator('.profit-more').count(),0);assert(await battle.locator('#steady-goal').isVisible());assert.match(await battle.locator('#steady-goal').innerText(),/同样省工资，还能多赚吗/);
   await battle.locator('#console').screenshot({path:path.join(out,`${width}-choices.png`)});
-  await battle.locator('[data-move-group="staff"]>summary').click();assert(await battle.locator('[data-move="wage-up"]').isVisible());assert.deepEqual(await saved(),start,'Exploring other adjustments is read-only');await battle.locator('[data-move-group="staff"]>summary').click();
+  assert(await battle.locator('[data-move="wage-up"]').isVisible());assert.deepEqual(await saved(),start,'Reading the available adjustments is read-only');
   await play('wage-down');assert.equal((await saved()).state.world.history[0].wages[0],6);assert.equal((await saved()).state.world.shops[0].pending.wage,1);
   await play('price-down');const record=await saved();assert.equal(record.state.world.history[1].wages[0],3);
   await page.reload();host=await(await page.getByTestId('trust-frame').elementHandle()).contentFrame();await host.locator('#prologue-battle').waitFor();battle=await(await host.locator('#prologue-battle').elementHandle()).contentFrame();await battle.locator('body[data-mode="social"]').waitFor();assert.deepEqual(await saved(),record,'Refresh preserves wage plan, cash and actual receipts');
