@@ -1,6 +1,7 @@
-import {TITLES,LENGTHS,initialCourse,adoptEquipmentCourse,finished,courseMoves,courseIssue,courseRound,nextCourse,crossCustomers,traceCustomer,retryScene,undoCourse,restoreCourse,courseRival,courseCapacity} from './course-model.mjs';
+import {TITLES,LENGTHS,initialCourse,adoptEquipmentCourse,finished,courseMoves,courseIssue,courseRound,nextCourse,beginProfitChallenge,retryScene,undoCourse,restoreCourse,courseRival,courseCapacity} from './course-model.mjs';
 import {wavesReview,socialReview} from './course-review.mjs';
 import {courseMenu,shortMoveLabel} from './course-menu.mjs';
+import {profitReview} from './profit-challenge.mjs';
 import {STEADY_CHALLENGE,steadyChallenge,restoreSteadyBest,steadyBestGain,rememberSteadyBest} from './steady-challenge.mjs';
 import {OWNER_ATLASES,ownerEmotion,ownerMarkup} from './owner-art.mjs';
 import {customerMarkup,pedestrianMarkup} from './customer-art.mjs';
@@ -83,7 +84,6 @@ function offerUpgrade(){
  $('equipment-start').onclick=()=>{state=adoptEquipmentCourse(state);openingRead=false;view='choose';selected=null;lastTrace=null;$('detail').close();render();persist();openingGuide();};
 }
 function customer(id){
-  if(state.mode==='source'&&crossCustomers(state).includes(id)){state=traceCustomer(state,id);lastTrace=id;render();persist();return;}
   const v=state.world.history.at(-1)?.visits.find(v=>v.id===id);
   const thought=id<8?(employed(id)?(state.world.shops[0].workers.includes(id)?'我给你做面包，下班去街上花工资。':'我给隔壁做面包。买哪家的？看价钱。'):'今天没班上，肚子照常上班。'):id===10?'我卖原料，也得买成品。总不能生啃面粉吧。':'我也要吃饭。金币不能当面包嚼。';
   const visit=v?.bought?`今天买了${v.shop===0?'你家':'隔壁'}的。`:v?.reason==='钱不够'?'面包在，钱不够。今天空手回去。':v?.reason==='卖完了'?'来晚一步，架子比我的袋子还空。':'';
@@ -93,23 +93,23 @@ function renderPeople(){
   // One visible visitor per unit of observed demand; tomorrow is revealed only after choosing.
   crowd.setCount(social()?0:state.world.history.at(-1)?.demand??12);
   $('street-panel').hidden=!social();$('customers').replaceChildren();if(!social())return;
-  const r=state.world.history.at(-1),targets=state.mode==='source'?crossCustomers(state):[];
+  const r=state.world.history.at(-1),targets=[];
   for(let id=0;id<11;id++){
     const visit=r?.visits.find(v=>v.id===id),b=document.createElement('button');b.dataset.person=id;b.className='customer'+(visit&&!visit.bought?' hungry':'')+(targets.includes(id)?' traceable':'')+(state.traced.includes(id)&&state.mode==='source'?' traced':'');
     b.setAttribute('aria-label',names[id]+(targets.includes(id)?'：追踪工资和购物':'的钱包'));
     b.innerHTML=peep(id,visit&&!visit.bought,id<8&&employed(id))+`<small>${wallet(id)} ${coin}</small>`+(visit?.bought?'<img class="purchase" src="'+asset('bread')+'" alt="买到了面包">':'');b.onclick=()=>customer(id);$('customers').append(b);
   }
-  $('street-summary').textContent=state.mode==='source'?'点虚线框里的人，追一笔钱':`${r.visits.filter(v=>v.bought).length} 人买到${r.poor?' · '+r.poor+' 人钱不够':''}`;
+  $('street-summary').textContent=r?`${r.visits.filter(v=>v.bought).length} 人买到${r.poor?' · '+r.poor+' 人钱不够':''}`:'还没开门，先选一招。';
 }
 function render(){
   $('steady-maximum').hidden=true;$('steady-maximum').replaceChildren();
-  const mode=state.mode,w=state.world,r=w.history.at(-1),result=view==='result',over=finished(state)&&!result,isSource=mode==='source';
+  const mode=state.mode,w=state.world,r=w.history.at(-1),result=view==='result',over=finished(state)&&!result,isSource=mode==='source',isProfit=!!state.profitChallenge&&mode==='social';
   $('round-report').hidden=!result&&!isSource;
-  const challenge=steadyChallenge(state);$('steady-goal').hidden=!challenge||over;
-  $('steady-goal').innerHTML=challenge?`<span>三天，怎样赚得最多？</span><strong>本局 ${challenge.gain>=0?'+':''}${challenge.gain} ${coin}</strong>`:'';
+  const challenge=steadyChallenge(state);$('steady-goal').hidden=(!challenge&&!isProfit)||over;
+  $('steady-goal').innerHTML=challenge?`<span>三天，怎样赚得最多？</span><strong>本局 ${challenge.gain>=0?'+':''}${challenge.gain} ${coin}</strong>`:isProfit?`<span>少发工资，多卖产品。</span><strong>本局净增 ${w.shops[0].cash>=36?'+':''}${w.shops[0].cash-36} ${coin}</strong>`:'';
   document.body.dataset.mode=mode;$('battle-frame').classList.toggle('source-mode',isSource);$('battle-frame').classList.toggle('has-crowd',social());
   document.body.dataset.rules=String(state.version);$('upgrade-course').hidden=!needsEquipmentUpdate();$('old-record').hidden=!state.previousCourse;
-  $('chapter-title').textContent=TITLES[mode];
+  $('chapter-title').textContent=isProfit||isSource?'第三场 · 赚钱的算盘':mode==='done'&&state.profitChallenge?'少发、多卖，赚到了吗？':TITLES[mode];
   const length=LENGTHS[mode]||9;$('day').textContent=isSource?'新一局 · 第一天的真实账单':over?'收摊，回头看看':`第 ${result?w.day:w.day+1} / ${length} 天`;
   $('turn').textContent=Math.min(length,result||isSource||over?w.day:w.day+1);$('round-dots').innerHTML=Array.from({length},(_,i)=>`<i class="${i<w.day?'done':''}"></i>`).join('');
   const shopsForView=result||isSource||state.version===2?w.shops:w.shops.map(f=>{const today=readyShop(f);return {...today,fast:today.fastOvens>0};});
@@ -127,14 +127,14 @@ function render(){
   }
   $('schedule').hidden=state.version===2&&social();
   $('schedule').innerHTML=state.version===2&&social()?'':`<span>${result?'出炉':'今天可做'} <b>${result?r.made[0]:courseCapacity(state,w.shops[0])}</b></span>`+(result?` → <span class="next">明天可做 <b>${w.shops[0].nextQuantity}</b></span>`:'');
-  $('signal-label').textContent=isSource?'领工资的买家':social()?'今天买不起':mode==='steady'?'每日需求':result?'今日需求':'昨日需求';
-  $('signal-value').textContent=isSource?(w.shops.reduce((n,f)=>n+f.workers.length,0)+' / 11'):social()?(r?.poor||0)+' 人':(mode==='steady'?12:r?.demand??12)+' 个';
+  $('signal-label').textContent=isSource?'新挑战开局':isProfit?(result?'今日实付工资':'今日预计工资'):social()?'今天买不起':mode==='steady'?'每日需求':result?'今日需求':'昨日需求';
+  $('signal-value').textContent=isSource?'36 枚':isProfit?String(result?r.wages[0]:readyShop(w.shops[0]).workers.length*readyShop(w.shops[0]).wage)+' 枚':social()?(r?.poor||0)+' 人':(mode==='steady'?12:r?.demand??12)+' 个';
   $('signal-note').textContent='';
   $('market-signal').classList.toggle('changed',result&&mode==='waves');
   $('speech-1').textContent=isSource?'':social()?result?(r.stopped[1]?'我也开不了炉了。':`今天卖了 ${r.sold[1]} 个！`):courseRival(state).line.replace(/[“”]/g,''):mode==='steady'?'六个就六个。我与烤炉都很佛系。':result?`今天来了 ${r.demand} 个买家。`:'昨天挺好。今天？先照昨天来。';
   $('speech-0').textContent=isSource?'':result?(r.stopped[0]?'今天先卖旧货。':`卖了 ${r.sold[0]}，剩下 ${r.stock[0]}。`):'';
   renderPeople();syncStreet();$('money-route').replaceChildren();$('ending').hidden=!over;$('console').hidden=!!over;
-  $('undo').disabled=busy||isSource||mode==='done'||!w.day||(mode==='social'&&w.day===1);$('restart').disabled=busy;
+  $('undo').disabled=busy||isSource||mode==='done'||!w.day||(mode==='social'&&w.day===1&&!state.profitChallenge);$('restart').disabled=busy;
   $('advance').hidden=true;$('preview').hidden=true;$('moves').hidden=false;$('moves').replaceChildren();
   if(over){checkpoint();return;}
   if(isSource){renderSource();return;}
@@ -145,6 +145,7 @@ function render(){
     $('eyebrow').textContent='';
     $('speech-0').textContent='';$('speech-1').textContent='';
     $('moves').hidden=true;$('choose-label').textContent='';$('preview').hidden=false;$('preview').innerHTML='<button id="receipt">账单 ↗</button>';$('receipt').onclick=receipt;
+    if(isProfit)$('message').textContent=`工资支出 ${r.wages[0]} 枚 · 卖出 ${r.sold[0]} 个`;
     if(challenge)$('preview').insertAdjacentHTML('afterbegin',`<p id="steady-insight">${challenge.hint}</p>`);
     if(state.version===3&&w.shops[0].fastOvens>0){
       const compare=document.createElement('button');compare.id='oven-report';compare.textContent=ovenReport(w).installed?'换炉前后 ↗':'烤炉与账单 ↗';compare.onclick=ovenReceipt;$('preview').append(compare);
@@ -156,23 +157,29 @@ function render(){
   $('subline').textContent=mode==='steady'?'':mode==='waves'?'换炉、换人，明天才生效。':'';
   if(embedded&&mode==='steady'&&!w.day)$('subline').textContent='新账本：36枚 · 每人工资'+w.shops[0].wage+'枚。';
   $('choose-label').textContent='';
-  $('choose-label').textContent='每天选一招，随后营业。';
+  $('choose-label').textContent=isProfit?'每天选一招，看看能多赚多少。':'每天选一招，随后营业。';
   $('moves').classList.add('simplified-moves');
-  const menu=courseMenu(courseMoves(state)),groups=[];
+  const menu=courseMenu(courseMoves(state),isProfit),groups=[];
+  let menuRoot=$('moves');
+  if(isProfit){
+    const more=document.createElement('details');more.className='profit-more';more.innerHTML='<summary>其他调整</summary><div class="profit-more-groups"></div>';
+    $('moves').append(more);menuRoot=more.querySelector('div');
+  }
   function moveButton(m,parent){
     const b=document.createElement('button'),issue=courseIssue(state,m.id);
     b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||m.detail;
-    b.innerHTML=`${icon(m.icon)}<strong>${shortMoveLabel(m)}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;
+    b.innerHTML=`${icon(m.icon)}<strong>${isProfit&&m.id==='wage-down'?'少发工资':isProfit&&m.id==='price-down'?'降价抢客':shortMoveLabel(m)}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;
     b.onclick=()=>select(m.id);parent.append(b);
   }
   for(const group of menu.groups){
     const detail=document.createElement('details');detail.className='move-group';detail.dataset.moveGroup=group.id;
     const summary=document.createElement('summary');summary.textContent=group.label;detail.append(summary);
     const choices=document.createElement('div');choices.className='move-group-choices';detail.append(choices);
-    group.moves.forEach(m=>moveButton(m,choices));groups.push(detail);$('moves').append(detail);
+    group.moves.forEach(m=>moveButton(m,choices));groups.push(detail);menuRoot.append(detail);
     detail.ontoggle=()=>{if(detail.open)groups.forEach(other=>{if(other!==detail)other.open=false;});};
   }
   menu.direct.forEach(m=>moveButton(m,$('moves')));
+  if(isProfit){$('moves').append($('moves').querySelector('.profit-more'));$('moves').classList.add('profit-moves');}else $('moves').classList.remove('profit-moves');
   $('preview').replaceChildren();
 }
 function checkpoint(){
@@ -211,7 +218,13 @@ function checkpoint(){
       $('ending-title').textContent='你能换炉子。不能撤回昨天的面包。';$('ending-copy').textContent='';
       $('comparison').innerHTML=w.history.map(h=>`<div class="outcome-figure">第 ${h.day} 天<b>${h.demand}</b>买家</div>`).join('');
     }
-    $('next-scene').textContent='需求，从哪里来？ →';
+    $('next-scene').textContent='怎么把钱留在店里？ →';
+  }else if(state.profitChallenge){
+    const review=profitReview(w),a=review.actual;
+    $('ending-kicker').textContent='第三场 · 经营结果';$('ending-title').textContent='少发、多卖，赚到了吗？';
+    $('ending-copy').textContent=`比同样开局照常营业，资金净增${review.difference>=0?'多':'少'} ${Math.abs(review.difference)} 枚。`;
+    $('comparison').innerHTML=`<div class="outcome-figure">工资支出<b>${a.wages} ${coin}</b></div><div class="outcome-figure">累计卖出<b>${a.sold} 个</b></div><div class="outcome-figure">本局净增<b>${a.gain>=0?'+':''}${a.gain} ${coin}</b></div>`;
+    $('next-scene').textContent='再看一个小故事 →';
   }else{
     const review=socialReview(w),stopped=review.stopped;$('ending-kicker').textContent='第三场 · 回头看整条街';$('ending-title').textContent=review.title;
     $('ending-copy').textContent=`最后一天，${r.poor} 人有货却买不起。你的店共 ${stopped} 天因资金不足停炉。`;
@@ -219,22 +232,11 @@ function checkpoint(){
   }
 }
 function renderSource(){
-  const targets=crossCustomers(state),id=lastTrace??null;$('moves').hidden=true;$('preview').hidden=false;$('choose-label').textContent='';$('eyebrow').textContent='新一局 · 已发薪、已购物';
-  $('message').textContent=id===null?'需求，从哪里来？':Math.floor(id/4)===0?'你发的工资，给隔壁冲了业绩。':'隔壁发工资，你的柜台收了钱。';
-  const r=state.world.history[0];
-  if(id!==null){const employer=Math.floor(id/4),v=r.visits.find(v=>v.id===id),salary=r.receipts.find(p=>p.reason==='工资'&&p.to==='p'+id),purchase=r.receipts.find(p=>p.reason==='买面包'&&p.from==='p'+id);$('subline').innerHTML=`${employer===0?'你':'隔壁'}发工资 ${salary.amount} ${coin} → ${v.shop===0?'你的店':'隔壁'}收货款 ${purchase.amount} ${coin}`;}else $('subline').textContent='';
-  $('preview').innerHTML=`<p class="source-proof">${state.traced.length===2?'上班是员工，下班是彼此的顾客。':''}</p><div class="source-controls">${targets.map(pid=>`<button data-trace="${pid}" class="${state.traced.includes(pid)?'seen':''}">${state.traced.includes(pid)?'✓ ':''}追踪${names[pid]}</button>`).join('')}</div>`;
-  document.querySelectorAll('[data-trace]').forEach(b=>b.onclick=()=>customer(Number(b.dataset.trace)));
-  $('advance').hidden=state.traced.length!==2;$('advance').textContent='继续对战 →';
-  if(id!==null)requestAnimationFrame(()=>drawRoute(id));
-}
-function drawRoute(id){
-  if(state.mode!=='source')return;const root=$('battle-frame').getBoundingClientRect(),origin=$('figures-'+Math.floor(id/4)).getBoundingClientRect(),person=document.querySelector(`[data-person="${id}"]`).getBoundingClientRect(),v=state.world.history[0].visits.find(v=>v.id===id),shop=$('figures-'+v.shop).getBoundingClientRect();
-  const p={x:person.left+person.width/2-root.left,y:person.top+12-root.top},a={x:origin.left+origin.width/2-root.left,y:origin.bottom-root.top},b={x:shop.left+shop.width/2-root.left,y:shop.bottom-root.top};
-  const salaryLeft=a.x<root.width/2,shopLeft=b.x<root.width/2;
-  const left=salaryLeft?4:root.width-8,right=shopLeft?7:root.width-5;
-  const route=(from,to,edge)=>{const dir=Math.sign(to.y-from.y)||1;return `M${from.x},${from.y} Q${edge},${from.y} ${edge},${from.y+12*dir} L${edge},${to.y-12*dir} Q${edge},${to.y} ${to.x},${to.y}`;};
-  $('money-route').innerHTML=`<defs><marker id="salary-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" style="fill:none;stroke:#637d67;stroke-dasharray:none"/></marker></defs><path class="salary" marker-end="url(#salary-arrow)" d="${route(a,p,left)}"/><path class="shopping" marker-end="url(#salary-arrow)" d="${route(p,b,right)}"/><text x="${salaryLeft?16:root.width-52}" y="${(a.y+p.y)/2}">发工资</text><text x="${shopLeft?19:root.width-54}" y="${(b.y+p.y)/2}">买面包</text><circle class="node" cx="${p.x}" cy="${p.y}" r="5"/>`;
+  $('moves').hidden=true;$('preview').hidden=false;$('choose-label').textContent='';
+  $('eyebrow').textContent='另开挑战 · 原账目保留';$('message').textContent='少发工资，多卖产品。';
+  $('subline').textContent='从36枚开始，看看店里最后多了多少钱。';
+  $('preview').innerHTML='<button id="start-profit" class="primary">开始赚钱挑战 →</button>';
+  $('start-profit').onclick=()=>{state=beginProfitChallenge(state);view='choose';selected=null;lastTrace=null;render();persist();};
 }
 function select(id){if(busy||$('opening-guide').open||view!=='choose'||courseIssue(state,id))return;selected=id;syncStreet();play();}
 function receipt(){const r=state.world.history.at(-1),totals={};for(const p of r.receipts.filter(p=>p.from==='f0'))totals[p.reason]=(totals[p.reason]||0)+p.amount;showDialog(`第 ${r.day} 天 · 你的账`, `<p>开门前 ${r.before[0]} ${coin}</p><p>营业收入 +${r.receipts.filter(p=>p.to==='f0').reduce((n,p)=>n+p.amount,0)} ${coin}</p>${Object.entries(totals).map(([k,n])=>`<p>${k} −${n} ${coin}</p>`).join('')}<p>收摊后 ${r.after[0]} ${coin}</p>${steadyChallenge(state)?'<p class="small">本局收益按三天资金净增加计分，设备款和老板生活费也扣除；未估算设备余值、折旧和库存价值，不是完整净利润。</p>':''}<p>本轮出炉 ${r.made[0]}，剩下 ${r.stock[0]}。</p>`);}
@@ -276,13 +278,13 @@ async function play(){
   syncStreet();
 }
 function transition(){if(busy)return;state=nextCourse(state);view='choose';selected=null;lastTrace=null;document.body.classList.add('body-transition');render();persist();setTimeout(()=>document.body.classList.remove('body-transition'),500);}
-$('advance').onclick=()=>{if(busy)return;if(state.mode==='source')transition();else{view='choose';selected=null;render();persist();}};
+$('advance').onclick=()=>{if(busy)return;if(state.mode==='source'){state=beginProfitChallenge(state);view='choose';render();persist();}else{if(state.profitChallenge&&state.mode==='social'&&finished(state))state=nextCourse(state);view='choose';selected=null;render();persist();}};
 $('next-scene').onclick=()=>{if(embedded&&state.mode==='done'){persist();parent.postMessage({app:'feast-battle',type:'complete'},'*');}else transition();};
 $('retry').onclick=()=>{if(busy)return;state=retryScene(state);view='choose';selected=null;render();persist();if(openingRequired())openingGuide();};
 $('restart').onclick=()=>{if(busy)return;const upgrading=needsEquipmentUpdate();if(upgrading)openingRead=false;state=upgrading?adoptEquipmentCourse(state):{...initialCourse(),...(state.previousCourse?{previousCourse:state.previousCourse}:{})};view='choose';selected=null;lastTrace=null;render();persist();if(openingRequired())openingGuide();};
 $('undo').onclick=()=>{if(busy)return;state=undoCourse(state);view='choose';selected=null;render();persist();};
 $('rules-open').onclick=()=>showDialog('这个实验，改了哪些条件？',state.version===2?'<p>这是保留的旧规则记录：四位员工、四项策略。可通过“使用新版经营策略”另开一局，旧账不会重算。</p>':`<p>第一场挑战三天内赚得最多，以资金净增加计分，设备款也扣除，不等于完整净利润。顾客每天12位，对手固定售价和产量；买家没有单独的保留价格，提价上限是本局设定。前两场各重新开账：两店各36金币、3位员工，工资每人2；普通炉3人做6个，快炉2人做12个。照常营业，在固定需求12个时每天净增7，不必降薪。</p><p>价签当天改；添炉、升级、招工、解聘与工资调整次日生效。新增普通炉10金币。${batchUpgrade(state.world)?'整店升级费用为8金币乘以尚未升级的旧炉数；当天停炉安装，工资和老板生活费照付，不买生产原料，已有面包仍可出售，次日复工。':'本存档沿用旧规则：每次8金币升级一台，当天不停工。'}解聘另付一日工资补偿。店内最多3炉、6人；8位劳动者最初6人在职、2人待业，招聘不增加人口。</p><p>第二场只把需求改为12、20、20、6、12。前两场买家预算来自外部账户，工资流出后不追踪去向；这不是一个封闭社会。第三场重新开局，11人共享120金币，每人每天尝试买一个面包，所有支付从现有钱包转出。对手起初已降薪降价，随后也需付钱订炉和解聘；整店升级时也遵守停工规则。</p><p>前两场每2个面包需1金币原料，第三场每4个需1金币，向原料商实际支付；每店每天另转给老板2金币生活费。剩货每6个收1金币保管费，不足6个也收，留到第三天会坏。现金不够时停炉；不是自动清零或破产。</p><p>生产社会化在这里表现为相互依赖的生产与交换。生产资料的资本主义私人占有，体现在老板控制机器、雇佣和经营安排。这是基本矛盾在一个简化场景中的表现，不是基本矛盾的全部。</p><p>家庭消费还有经营、财产、转移收入和信贷等来源；投资、政府购买和外部市场也会形成需求。本实验没模拟全部渠道，不能据此证明压工资必然获胜、商品必然过剩或资本主义必然自动崩溃。机器的效果也取决于就业、分配和市场。</p><p>布局借鉴宝可梦的对战界面；人物素材：Nicky Case；烤炉：本项目。</p>`);
-$('detail-close').onclick=()=>$('detail').close();$('detail').addEventListener('close',syncStreet);document.addEventListener('visibilitychange',syncStreet);window.addEventListener('resize',()=>{if(lastTrace!==null)drawRoute(lastTrace);});render();persist();
+$('detail-close').onclick=()=>$('detail').close();$('detail').addEventListener('close',syncStreet);document.addEventListener('visibilitychange',syncStreet);window.addEventListener('resize',()=>{});render();persist();
 $('opening-help').onclick=openingGuide;
 $('opening-sold-less').onclick=()=>{openingSold--;renderOpeningExample();};
 $('opening-sold-more').onclick=()=>{openingSold++;renderOpeningExample();};

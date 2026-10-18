@@ -47,8 +47,8 @@ test('installation can sell existing bread but never bakes a new batch; rival ob
 });
 
 test('pre-change v3 records replay exactly; new rules archive old accounts rather than rewriting them',()=>{
- let old=courseRound(initialCourse(false),'upgrade');assert.equal(old.world.history[0].made[0],6);assert(!('upgradeRule' in old.world));
- assert.deepEqual(restoreCourse(old),old);assert.deepEqual(undoCourse(old),initialCourse(false));assert(!('upgradeRule' in retryScene(old).world));
+ let old=courseRound(initialCourse(false,false),'upgrade');assert.equal(old.world.history[0].made[0],6);assert(!('upgradeRule' in old.world));
+ assert.deepEqual(restoreCourse(old),old);assert.deepEqual(undoCourse(old),initialCourse(false,false));assert(!('upgradeRule' in retryScene(old).world));
  let fresh=adoptEquipmentCourse(old);assert.equal(fresh.world.upgradeRule,'whole-shop-v1');assert.deepEqual(fresh.previousCourse,old);
  fresh=courseRound(fresh,'upgrade');assert.equal(fresh.world.history[0].made[0],0);assert.deepEqual(restoreCourse(fresh),fresh);
  assert.deepEqual(undoCourse(fresh).previousCourse,old);

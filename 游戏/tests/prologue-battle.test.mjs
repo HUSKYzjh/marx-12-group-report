@@ -1,13 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {initialPrologue,prologueReducer as reduce,restorePrologue} from '../lib/prologue-state.ts';
-import {initialCourse,courseRound,nextCourse,traceCustomer,crossCustomers} from '../public/assets/market-duel/course-model.mjs';
+import {initialCourse,courseRound,nextCourse} from '../public/assets/market-duel/course-model.mjs';
 const snapshot=state=>({state,view:'result'});
 function completedCourse(){
  let c=initialCourse();for(let i=0;i<3;i++)c=courseRound(c,'hold');c=nextCourse(c);
  for(let i=0;i<5;i++)c=courseRound(c,'hold');c=nextCourse(c);
- for(const id of crossCustomers(c))c=traceCustomer(c,id);c=nextCourse(c);
- for(let i=0;i<8;i++)c=courseRound(c,'hold');return nextCourse(c);
+ for(let i=0;i<9;i++)c=courseRound(c,'hold');return nextCourse(c);
 }
 
 test('optional six-shop ledger opens after the duel, remains independent and survives return',()=>{
@@ -43,8 +42,7 @@ test('second-act save, refresh and navigation preserve progress; invalid data ca
 test('only a completed three-part battle reaches the story, summary and remedies',()=>{
  let course=initialCourse();for(let i=0;i<3;i++)course=courseRound(course,'hold');course=nextCourse(course);
  for(let i=0;i<5;i++)course=courseRound(course,'hold');course=nextCourse(course);
- for(const id of crossCustomers(course))course=traceCustomer(course,id);course=nextCourse(course);
- for(let i=0;i<8;i++)course=courseRound(course,'hold');course=nextCourse(course);
+ for(let i=0;i<9;i++)course=courseRound(course,'hold');course=nextCourse(course);
  let s=reduce(initialPrologue(),{type:'JUMP_STAGE',stage:2});s=reduce(s,{type:'SAVE_BATTLE',snapshot:snapshot(course)});s=reduce(s,{type:'FINISH_BATTLE'});
  assert.equal(s.scene,'ending');assert.deepEqual(restorePrologue(s),s);
  s=reduce(s,{type:'SHOW_ALL'});s=reduce(s,{type:'SHOW_STREET_SUMMARY'});assert.equal(s.scene,'street-summary');s=reduce(s,{type:'SHOW_RELIEF'});assert.equal(s.scene,'relief');

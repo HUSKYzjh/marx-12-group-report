@@ -59,9 +59,8 @@ try{
   await inspectMenu('steady');for(const move of ['price-up','price-up','hold'])await play(move);
   assert.equal((await saved()).state.world.shops[0].cash,87);
   await battle.locator('#next-scene').click();await inspectMenu('waves');for(let day=0;day<5;day++)await play('hold');
-  await battle.locator('#next-scene').click();await battle.locator('body[data-mode="source"]').waitFor();
-  for(const id of await battle.locator('[data-trace]').evaluateAll(ns=>ns.map(n=>n.dataset.trace)))await battle.locator(`[data-trace="${id}"]`).click();
-  await battle.locator('#advance').click();await inspectMenu('social');
+  await battle.locator('#next-scene').click();await battle.locator('body[data-mode="social"]').waitFor();
+  assert.deepEqual(await battle.locator('#moves>[data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['wage-down','price-down','hold']);
   await play('wage-up');const record=await saved();
   await page.reload();const restored=await(await page.getByTestId('trust-frame').elementHandle()).contentFrame();await restored.locator('#prologue-battle').waitFor();
   assert.deepEqual(await saved(),record,'Reload retains the selected business decision and actual receipt');

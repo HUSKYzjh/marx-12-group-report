@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-18T06:47:02.404Z",
-  "bytes": 20589430,
+  "built_at": "2026-10-18T07:29:39.807Z",
+  "bytes": 20591172,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2156,6 +2156,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Replace wage tracing with a fresh nine-day profit challenge: wage cuts, price competition and real payroll/sales/cash comparison; archive old tracing accounts on explicit opt-in.",
     "Simplify act-two business choices into three exclusive categories and one direct action; shorten labels while preserving every business decision and its existing financial rules.",
     "Fill the opening viewport without a 600px cap; reserve navigation space and add explicit fullscreen entry/exit while preserving game state.",
     "Add actual five-day business comparison, outcome-based social ending, optional purchasing-power question, eight receipt comparisons with executed arrangements and optional related routes that preserve accounts.",
@@ -2175,9 +2176,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "74c4e9c5e46d7d11e8d4b5d85d417772dddb530522a1fb9030b457f399e4d898",
+    "index_sha256": "e486a0aeb0e2bb467940c224f3fd4336c696707a67f9be05d8e2af069c9c24aa",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "7182161f5bb265ef9a5a0591e165b8c3c97b9da94533ba05ef44293f615b5277"
+  "sha256": "d8d2053cf4b4f78832113fd8229391e86f864747b41a658fe0d715cdb11e4e06"
 }

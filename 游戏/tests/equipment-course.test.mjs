@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import * as c from '../public/assets/market-duel/course-model.mjs';
 import * as old from '../public/assets/market-duel/course-legacy.mjs';
 import {equipmentWorld,equipmentRound,equippedCapacity,readyShop,vacantWorkers,equipmentIssue} from '../public/assets/market-duel/equipment-model.mjs';
-function waves(){let s=c.initialCourse();for(let i=0;i<3;i++)s=c.courseRound(s,'hold');return c.nextCourse(s);}
+function waves(){let s=c.initialCourse(true,false);for(let i=0;i<3;i++)s=c.courseRound(s,'hold');return c.nextCourse(s);}
 function source(){let s=waves();for(let i=0;i<5;i++)s=c.courseRound(s,'hold');return c.nextCourse(s);}
 test('explicit business strategies replace abstract output changes',()=>{
  assert.deepEqual(c.courseMoves(c.initialCourse()).map(m=>m.id),['price-down','price-up','buy','upgrade','hire','fire','hold']);
@@ -32,7 +32,7 @@ test('source follows actually paid salaries, not unemployed characters',()=>{
 });
 test('100 varied full paths conserve money, validate records and survive replay',()=>{
  for(let seed=1;seed<=100;seed++){
-  let s=c.initialCourse(),rng=seed;
+  let s=c.initialCourse(true,false),rng=seed;
   const play=()=>{const moves=c.courseMoves(s).filter(m=>!c.courseIssue(s,m.id));rng=(Math.imul(rng,1664525)+1013904223)>>>0;s=c.courseRound(s,moves[rng%moves.length].id);
    const w=s.world,total=w.shops.reduce((n,f)=>n+f.cash,0)+(w.outside??w.supplier+w.people.reduce((n,p)=>n+p.cash,0));assert.equal(total,s.mode==='social'?120:2072);
    for(const f of w.shops){assert(Number.isInteger(f.cash)&&f.cash>=0);assert(equippedCapacity(readyShop(f))>=0);}assert.deepEqual(c.restoreCourse(s),s);

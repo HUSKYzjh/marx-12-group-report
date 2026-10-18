@@ -1,12 +1,13 @@
 // Presentation only: opening a category never submits a business decision.
-export function courseMenu(moves){
+export function courseMenu(moves,profitChallenge=false){
  const groups=[{id:'price',label:'改售价',moves:[]},{id:'equipment',label:'换烤炉',moves:[]},{id:'staff',label:'调人手',moves:[]}],direct=[];
  for(const move of moves){
-  if(move.id==='hold'){direct.push(move);continue;}
+  if(move.id==='hold'||profitChallenge&&['wage-down','price-down'].includes(move.id)){direct.push(move);continue;}
   const group=move.id.startsWith('price-')?groups[0]:['buy','upgrade','more','less'].includes(move.id)?groups[1]:groups[2];
   group.moves.push(move);
  }
  if(groups[2].moves.some(m=>m.id.startsWith('wage-')))groups[2].label='人手与工资';
+ if(profitChallenge)direct.sort((a,b)=>['wage-down','price-down','hold'].indexOf(a.id)-['wage-down','price-down','hold'].indexOf(b.id));
  return {groups:groups.filter(g=>g.moves.length),direct};
 }
 export function shortMoveLabel(move){

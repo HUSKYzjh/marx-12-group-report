@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 /** Open only the category containing the requested action, using its real control. */
 export async function chooseBattleMove(frame,id,press=locator=>locator.click()){
  const move=frame.locator(`[data-move="${id}"]`);
- if(!await move.isVisible())await press(move.locator('xpath=ancestor::details[1]').locator('summary').first());
+ for(const detail of await move.locator('xpath=ancestor::details').all())if(await detail.getAttribute('open')===null)await press(detail.locator(':scope>summary'));
  await press(move);
 }
 /** Read every opening guide page using its real navigation controls. */
@@ -35,11 +35,9 @@ export async function completeBattle(page,frame,key,{onCheckpoint=async()=>{}}={
  for(let i=0;i<5;i++){await play(i===2?'upgrade':'hold');await battle.locator('#advance').click();}
  await onCheckpoint('waves',battle,(await saved()).state);
  await battle.locator('#next-scene').click();
- for(const id of await battle.locator('[data-trace]').evaluateAll(ns=>ns.map(n=>n.dataset.trace)))await battle.locator(`[data-trace="${id}"]`).click();
- await battle.locator('#advance').click();
  await page.waitForFunction(key=>JSON.parse(localStorage.getItem(key)).battle.state.mode==='social',key);
- for(const move of ['price-down','hold','hold','hold','hold','hold','hold','hold']){await play(move);await battle.locator('#advance').click();}
- await battle.locator('#next-scene').click();
+ for(const move of ['wage-down','price-down','hold','hold','hold','hold','hold','hold','hold']){await play(move);await battle.locator('#advance').click();}
+ if(await battle.locator('body').getAttribute('data-mode')!=='done')await battle.locator('#next-scene').click();
  await page.waitForFunction(key=>JSON.parse(localStorage.getItem(key)).battle.state.mode==='done',key);
  return battle;
 }

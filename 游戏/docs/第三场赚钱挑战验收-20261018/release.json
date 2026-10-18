@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-18",
+  "request": "删去需求从哪来的追踪部分，凸显少发工资、多卖产品的老板赚钱目标",
+  "changes": [
+    "新开局从第二场直接进入第三场，36枚起步、尚未营业",
+    "第三场只直接呈现少发工资／降价抢客／照常营业，其他原措施折叠",
+    "工资次日生效，逐日显示实付工资、实际销量和资金变化",
+    "九次经营后只结算一次，显示累计工资、销量和资金净增，并与同样开局照常营业比较",
+    "旧追踪存档可选择进入新挑战，原存档另留完整账目，前两场记录保留"
+  ],
+  "first_two_scene_rules_unchanged": true,
+  "unit_wage_price_equipment_rules_unchanged": true,
+  "third_scene_has_new_day_zero": true,
+  "source_sha256": "d8d2053cf4b4f78832113fd8229391e86f864747b41a658fe0d715cdb11e4e06",
+  "index_sha256": "e486a0aeb0e2bb467940c224f3fd4336c696707a67f9be05d8e2af069c9c24aa",
+  "validation": {
+    "model_tests_passed": 37,
+    "model_tests_failed": 0,
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "actual_old_build_played_before_migration": true,
+    "old_migration_source_sha256": "7182161f5bb265ef9a5a0591e165b8c3c97b9da94533ba05ef44293f615b5277",
+    "no_browser_state_injection": true,
+    "actual_review_compared": true,
+    "no_tracing_gate": true,
+    "refresh_and_retry": true,
+    "first_scene_maximum_51_retained": true,
+    "offline_zip_checked": true,
+    "font_mappings_preserved": 47449
+  },
+  "sample": {
+    "actual": {
+      "wages": 30,
+      "sold": 54,
+      "gain": -14
+    },
+    "ordinary": {
+      "wages": 30,
+      "sold": 12,
+      "gain": -33
+    },
+    "difference": 19
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792308790561/"
+  },
+  "prune": false,
+  "limits": [
+    "少发工资、多卖产品是这一场的经营目标，不强行设定每个方案获利；降价会改变单价，工资也会影响钱包。",
+    "对照的是完整方案，不把多项措施的差额单独归因给降工资。",
+    "本次未重跑后续八条技术分支的完整历史验收。"
+  ]
+}

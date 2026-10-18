@@ -313,3 +313,10 @@ body[data-rules] .battle-frame .simplified-moves>.move[data-move="hold"]{grid-co
 .simplified-moves>.move[data-move="hold"] small{display:none}
 .move-group .move:disabled{opacity:.65}
 @media(max-width:700px){.move-group>summary{min-height:52px;font-size:18px;padding:12px 9px}body[data-rules] .battle-frame .simplified-moves>.move[data-move="hold"]{min-height:52px}.move-group-choices .move{min-height:74px}}
+
+.profit-moves>.move{grid-column:1/-1!important;min-height:64px!important;border:1px solid #bbb!important;border-radius:5px!important;padding:10px!important}
+.profit-more{grid-column:1/-1;border:0;font-size:16px}
+.profit-more>summary{min-height:44px;padding:12px;cursor:pointer}
+.profit-more-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.profit-more .move-group[open]{grid-column:1/-1}
+.profit-moves>.move small{display:block!important}
