@@ -1,15 +1,16 @@
-import {equipmentWorld} from './equipment-model.mjs';
+import {equipmentWorld,vacantWorkers} from './equipment-model.mjs';
 
 export const SIMPLE_RULE='immediate-consequences-v1';
 export const simpleRules=world=>world?.ruleSet===SIMPLE_RULE;
-export const simpleCapacity=shop=>shop.fastOvens?12:6;
+export const simpleCapacity=shop=>6*(shop.ovens+shop.fastOvens);
 export function simpleWorld(social=false){return {...equipmentWorld(social),ruleSet:SIMPLE_RULE};}
 export const simpleRival=()=>({name:'照常营业',line:'“我照常卖。看看你这一步会怎样。”'});
 export function simpleMoves(world,allowWages=false){
  const shop=world.shops[0],moves=[
   {id:'price-down',name:'降低售价',icon:'tag',hint:`${shop.price} → ${Math.max(1,shop.price-1)} 金币 · 当天`,detail:'每个面包少收1枚；顾客优先买便宜的。'},
   {id:'price-up',name:'提高售价',icon:'tag',hint:`${shop.price} → ${Math.min(5,shop.price+1)} 金币 · 当天`,detail:'每个面包多收1枚；顾客优先买便宜的。'},
-  {id:'upgrade',name:'换成快炉',icon:'oven',hint:'付8枚 · 每天6 → 12个 · 当天',detail:'一次付8枚，当天产能从6个变12个，不停工；人数和工资不变。'},
+  {id:'expand',name:'添炉＋招工',icon:'oven',hint:`付10枚 · 产能+6／天 · 工资+${shop.wage}枚／天`,detail:`一次添1台普通炉并招1人，当天产能增加6个，每天工资增加${shop.wage}枚；没有招聘费或额外等待。`},
+  {id:'upgrade',name:'换成快炉',icon:'oven',hint:`付8枚 · ${simpleCapacity(shop)} → ${simpleCapacity(shop)+6}个／天 · 当天`,detail:'一次付8枚，将1台旧炉换成快炉，当天产能增加6个，不停工；人数和工资不变。'},
  ];
  if(allowWages)moves.push(
   {id:'wage-down',name:'降低工资',icon:'people',hint:`每人 ${shop.wage} → ${Math.max(1,shop.wage-1)} 金币 · 当天`,detail:'每人当天少领1枚。人数和产量不变；下幕中，顾客的钱包也会受影响。'},
@@ -25,9 +26,11 @@ export function simpleIssue(world,action,social=false,allowWages=social){
  if(action==='price-up'&&shop.price>=5)return '售价最高5枚。';
  if(action==='wage-down'&&shop.wage<=1)return '每人工资最低1枚。';
  if(action==='wage-up'&&shop.wage>=4)return '每人工资最高4枚。';
- if(action==='upgrade'&&shop.fastOvens)return '已经是快炉。';
+ if(action==='expand'&&(shop.ovens>=3||!vacantWorkers(world).length))return shop.ovens>=3?'最多3台炉。':'街上没有待业厨师。';
+ if(action==='upgrade'&&shop.fastOvens>=shop.ovens)return '已经全是快炉。';
  const wage=shop.wage+(action==='wage-up'?1:action==='wage-down'?-1:0);
- const operating=shop.workers.length*wage+5;
+ const operating=(shop.workers.length+(action==='expand'?1:0))*wage+5;
+ if(action==='expand'&&shop.cash<10+operating)return `需${10+operating}枚：扩产10枚，加今天${shop.workers.length+1}人工资和固定开支${operating}枚。`;
  if(action==='upgrade'&&shop.cash<8+operating)return `需${8+operating}枚：换炉8枚，加今天开支${operating}枚。`;
  return '';
 }
@@ -42,7 +45,10 @@ export function simpleRound(input,action,mode,allowWages=mode==='social'){
  if(action==='wage-down')shop.wage--;
  if(action==='wage-up')shop.wage++;
  if(action==='upgrade'){
-  pay('f0',seller,8,'升级快炉');round.changes.push({shop:0,old:1,fast:0,workers:3,next:{ovens:1,fastOvens:1,workers:shop.workers.slice(),wage:shop.wage}});shop.fastOvens=1;shop.fast=true;
+  pay('f0',seller,8,'升级快炉');round.changes.push({shop:0,old:shop.ovens,fast:shop.fastOvens,workers:shop.workers.length,next:{ovens:shop.ovens,fastOvens:shop.fastOvens+1,workers:shop.workers.slice(),wage:shop.wage}});shop.fastOvens++;shop.fast=true;
+ }
+ if(action==='expand'){
+  const person=vacantWorkers(world)[0];pay('f0',seller,10,'订购普通炉');shop.ovens++;shop.workers.push(person);round.hired.push(person);
  }
  for(const current of world.shops){
   const id=current.id,capacity=simpleCapacity(current),raw=3,payroll=current.workers.length*current.wage;

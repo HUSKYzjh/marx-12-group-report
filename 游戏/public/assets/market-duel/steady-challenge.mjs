@@ -42,7 +42,7 @@ export function steadyChallenge(s){
    'wage-down':'明天少付工资，销量会跟着变吗？',
    'wage-up':'明天多付工资，先看看本店的成本。',
    hold:s.world.shops[0].price===5?'售价已到上限，看看销量和开销。':r.sold[0]===(s.world.history.at(-2)?.sold[0]??6)?'销量没变，换个售价会怎样？':'多卖的钱，扣掉新增开销还剩多少？',
-  };hint=simpleRules(s.world)?({'wage-down':'工资今天就少付了，销量变了吗？','wage-up':'工资今天就多付了，销量变了吗？',upgrade:'快炉当天增产，卖出了多少？'}[r.action]||hints[r.action]||hint):hints[r.action]||hint;
+  };hint=simpleRules(s.world)?({expand:'扩产多付多少工资，多卖多少？','wage-down':'工资今天就少付了，销量变了吗？','wage-up':'工资今天就多付了，销量变了吗？',upgrade:'快炉当天增产，卖出了多少？'}[r.action]||hints[r.action]||hint):hints[r.action]||hint;
  }
  return {gain,hint,baselineGain:rules.baselineGain,maxGain:rules.maxGain,
   complete:s.world.day===3,atMaximum:gain===rules.maxGain};

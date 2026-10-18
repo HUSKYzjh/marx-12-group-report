@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-19",
+  "oldSHA256": "b17cf4fc0bf62597176c8acf52fb036121004554a2927d3211818745bfbfe466",
+  "sourceSHA256": "24303b778d8477b48ac6e459c7faf3baf960f65370b2d9aacc814666156758ba",
+  "actualPreviousBuildPlayed": true,
+  "previousSimpleSaveContinuesExactly": true,
+  "noReset": true,
+  "noRepeatedGuide": true,
+  "noUpdatePrompt": true,
+  "newExpansionUsable": true,
+  "oldPerPersonWagePreserved": true,
+  "refresh": true,
+  "noStateInjection": true,
+  "errors": []
+}

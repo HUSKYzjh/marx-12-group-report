@@ -10,8 +10,8 @@ const fresh=()=>initialCourse(true,true,true,true);
 const go=actions=>actions.reduce((s,a)=>courseRound(s,a),fresh());
 const total=w=>w.shops.reduce((n,s)=>n+s.cash,0)+(w.people?w.supplier+w.people.reduce((n,p)=>n+p.cash,0):w.outside);
 const next=s=>{while(!finished(s))s=courseRound(s,'hold');return nextCourse(s);};
-test('new actions alter the named parameter today; no recruitment or delayed plan is exposed',()=>{
- assert.deepEqual(courseMoves(fresh()).map(m=>m.id),['price-down','price-up','upgrade','wage-down','wage-up','hold']);
+test('new actions alter the named parameter today; no separate recruitment or delayed plan is exposed',()=>{
+ assert.deepEqual(courseMoves(fresh()).map(m=>m.id),['price-down','price-up','expand','upgrade','wage-down','wage-up','hold']);
  for(const [action,wage,payroll,cash] of [['wage-down',1,3,46],['wage-up',3,9,40]]){
   const s=go([action]);assert.equal(s.world.shops[0].wage,wage);assert.equal(s.world.history[0].wages[0],payroll);assert.equal(s.world.shops[0].cash,cash);assert.equal(s.world.history[0].made[0],6);assert.equal(s.world.shops[0].workers.length,3);assert.equal(s.world.shops[0].pending,null);assert.deepEqual(restoreCourse(s),s);assert.deepEqual(undoCourse(s),fresh());
  }
@@ -31,7 +31,7 @@ test('unsold bread carries without storage fees, debt or ageing; it never become
 test('upper-act maximum is re-enumerated for immediate consequences, rather than retaining the old 51',()=>{
  let maximum=-Infinity,count=0,best;
  function visit(s){if(finished(s)){count++;const gain=s.world.shops[0].cash-36;if(gain>maximum){maximum=gain;best=s;}assert.deepEqual(restoreCourse(s),s);return;}for(const m of courseMoves(s))if(!courseIssue(s,m.id))visit(courseRound(s,m.id));}
- visit(fresh());assert.equal(count,183);assert.equal(maximum,54);assert.equal(challengeRules(best).maxGain,54);assert(steadyChallenge(best).atMaximum);assert.equal(go(['hold','hold','hold']).world.shops[0].cash,57);assert.equal(best.world.shops[0].cash,90);
+ visit(fresh());assert.equal(count,305);assert.equal(maximum,54);assert.equal(challengeRules(best).maxGain,54);assert(steadyChallenge(best).atMaximum);assert.equal(go(['hold','hold','hold']).world.shops[0].cash,57);assert.equal(best.world.shops[0].cash,90);
  const record=rememberSteadyBest(null,best);assert.equal(record.version,2);assert.equal(steadyBestGain(record),54);assert.deepEqual(restoreSteadyBest(record),record);assert.deepEqual(restoreBattleSnapshot({state:best,view:'choose',steadyBest:record}),{state:best,view:'choose',steadyBest:record});
  assert.equal(steadyBestGain({version:1,actions:['price-up','price-up','hold']}),51);
 });
@@ -46,7 +46,7 @@ test('varied complete runs conserve money, undo, refresh, retry and reject forge
  for(let seed=1;seed<=20;seed++){
   let s=fresh(),rng=seed;
   for(const mode of ['steady','waves','social']){
-   while(!finished(s)){rng=(Math.imul(rng,1664525)+1013904223)>>>0;const choices=courseMoves(s).filter(m=>!courseIssue(s,m.id));const before=structuredClone(s);s=courseRound(s,choices[rng%choices.length].id);assert.deepEqual(undoCourse(s),before);assert.deepEqual(restoreCourse(s),s);assert.equal(total(s.world),mode==='social'?120:2072);assert(s.world.shops.every(shop=>shop.workers.length===3&&shop.pending===null));}
+   while(!finished(s)){rng=(Math.imul(rng,1664525)+1013904223)>>>0;const choices=courseMoves(s).filter(m=>!courseIssue(s,m.id));const before=structuredClone(s);s=courseRound(s,choices[rng%choices.length].id);assert.deepEqual(undoCourse(s),before);assert.deepEqual(restoreCourse(s),s);assert.equal(total(s.world),mode==='social'?120:2072);assert(s.world.shops.every(shop=>shop.workers.length===shop.ovens+2&&shop.pending===null));assert.equal(new Set(s.world.shops.flatMap(shop=>shop.workers)).size,s.world.shops.reduce((n,shop)=>n+shop.workers.length,0));}
    s=nextCourse(s);
   }
   assert.equal(s.mode,'done');assert.deepEqual(restoreCourse(s),s);const replay=retryScene(s);assert.equal(replay.world.day,0);assert.equal(replay.world.ruleSet,SIMPLE_RULE);assert.equal(replay.world.shops[0].cash,36);

@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-18T17:30:27.720Z",
-  "bytes": 20600337,
+  "built_at": "2026-10-18T17:46:46.370Z",
+  "bytes": 20603685,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2157,6 +2157,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Add one combined expansion: ten coins, one ordinary oven and one existing worker, six more daily capacity and one extra daily wage, all effective today. Preserve previous immediate-rule saves and the 54-coin upper maximum.",
     "Simplify actual consequences: same-day price and wage adjustments, an eight-coin immediate oven upgrade, three fixed workers and fixed five-coin overhead, no installation downtime, inventory fees, spoilage or severance; recompute the upper maximum as 54 and archive original-rule ledgers exactly.",
     "Show every available Act II action directly under static group labels; remove category disclosure controls without changing game rules.",
     "Restore three category menus plus ordinary business throughout Act II; remove shortcut duplicates and the extra adjustment disclosure without changing financial rules.",
@@ -2182,9 +2183,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "9a29f932697c1076d222e5b7432d342fe3c893e10a2330130fcf840ca09098ad",
+    "index_sha256": "e437f8a1df200cd1a26dc339c83452a422818f60fbf4c07c5ba6f4209d8e994f",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "b17cf4fc0bf62597176c8acf52fb036121004554a2927d3211818745bfbfe466"
+  "sha256": "24303b778d8477b48ac6e459c7faf3baf960f65370b2d9aacc814666156758ba"
 }

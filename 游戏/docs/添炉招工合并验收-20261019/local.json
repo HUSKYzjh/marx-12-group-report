@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-19",
+  "entry": "standalone",
+  "sourceSHA256": "24303b778d8477b48ac6e459c7faf3baf960f65370b2d9aacc814666156758ba",
+  "indexSHA256": "e437f8a1df200cd1a26dc339c83452a422818f60fbf4c07c5ba6f4209d8e994f",
+  "results": [
+    {
+      "width": 320,
+      "splitActs": true,
+      "fixedUpper": {
+        "demand": 12,
+        "wages": [
+          6,
+          6,
+          3
+        ],
+        "sold": [
+          6,
+          6,
+          6
+        ],
+        "cash": 90,
+        "maximumGain": 54
+      },
+      "lowerTraffic": [
+        12,
+        20,
+        20,
+        6,
+        12
+      ],
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "categoriesPerStage": {
+        "upper": 3,
+        "traffic": 2,
+        "income": 3
+      },
+      "directChoices": 1,
+      "optionalToolsReadOnly": true,
+      "bundledExpansion": {
+        "cost": 10,
+        "workers": [
+          3,
+          4,
+          5
+        ],
+        "capacities": [
+          6,
+          12,
+          18
+        ],
+        "payroll": [
+          6,
+          8,
+          10
+        ],
+        "socialNewWorkerPaid": true
+      },
+      "payrollToday": 8,
+      "payrollTomorrow": 4,
+      "instantUpgrade": true,
+      "noDowntime": true,
+      "noStorageFees": true,
+      "noCompensation": true,
+      "actualReview": {
+        "actual": {
+          "wages": 40,
+          "sold": 41,
+          "gain": -21
+        },
+        "ordinary": {
+          "wages": 54,
+          "sold": 41,
+          "gain": -17
+        },
+        "difference": -4
+      },
+      "refresh": true,
+      "retry": true,
+      "storyContinues": false,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "splitActs": true,
+      "fixedUpper": {
+        "demand": 12,
+        "wages": [
+          6,
+          6,
+          3
+        ],
+        "sold": [
+          6,
+          6,
+          6
+        ],
+        "cash": 90,
+        "maximumGain": 54
+      },
+      "lowerTraffic": [
+        12,
+        20,
+        20,
+        6,
+        12
+      ],
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "categoriesPerStage": {
+        "upper": 3,
+        "traffic": 2,
+        "income": 3
+      },
+      "directChoices": 1,
+      "optionalToolsReadOnly": true,
+      "bundledExpansion": {
+        "cost": 10,
+        "workers": [
+          3,
+          4,
+          5
+        ],
+        "capacities": [
+          6,
+          12,
+          18
+        ],
+        "payroll": [
+          6,
+          8,
+          10
+        ],
+        "socialNewWorkerPaid": true
+      },
+      "payrollToday": 8,
+      "payrollTomorrow": 4,
+      "instantUpgrade": true,
+      "noDowntime": true,
+      "noStorageFees": true,
+      "noCompensation": true,
+      "actualReview": {
+        "actual": {
+          "wages": 40,
+          "sold": 41,
+          "gain": -21
+        },
+        "ordinary": {
+          "wages": 54,
+          "sold": 41,
+          "gain": -17
+        },
+        "difference": -4
+      },
+      "refresh": true,
+      "retry": true,
+      "storyContinues": false,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "splitActs": true,
+      "fixedUpper": {
+        "demand": 12,
+        "wages": [
+          6,
+          6,
+          3
+        ],
+        "sold": [
+          6,
+          6,
+          6
+        ],
+        "cash": 90,
+        "maximumGain": 54
+      },
+      "lowerTraffic": [
+        12,
+        20,
+        20,
+        6,
+        12
+      ],
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "categoriesPerStage": {
+        "upper": 3,
+        "traffic": 2,
+        "income": 3
+      },
+      "directChoices": 1,
+      "optionalToolsReadOnly": true,
+      "bundledExpansion": {
+        "cost": 10,
+        "workers": [
+          3,
+          4,
+          5
+        ],
+        "capacities": [
+          6,
+          12,
+          18
+        ],
+        "payroll": [
+          6,
+          8,
+          10
+        ],
+        "socialNewWorkerPaid": true
+      },
+      "payrollToday": 8,
+      "payrollTomorrow": 4,
+      "instantUpgrade": true,
+      "noDowntime": true,
+      "noStorageFees": true,
+      "noCompensation": true,
+      "actualReview": {
+        "actual": {
+          "wages": 40,
+          "sold": 41,
+          "gain": -21
+        },
+        "ordinary": {
+          "wages": 54,
+          "sold": 41,
+          "gain": -17
+        },
+        "difference": -4
+      },
+      "refresh": true,
+      "retry": true,
+      "storyContinues": false,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

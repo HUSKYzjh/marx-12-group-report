@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-19",
+  "request": "添炉招工可以合在一起",
+  "changes": [
+    "增加添炉＋招工单一扩产选项：一次10枚，产能当天+6，新增1位现有待业者，每天工资+当前1人工资",
+    "费用、产能和新增工资在按钮上直接显示，无需先添炉再招人",
+    "每店最多3炉5人，从现有8位劳动者中招聘，不重复雇佣",
+    "每次换1台快炉仍为8枚、产能+6、不增人和工资；可逐台升级",
+    "保留当天生效、无停工、无保管费坏损等简化规则",
+    "已有简化规则进度原样续玩，不重开、不重复引导"
+  ],
+  "source_sha256": "24303b778d8477b48ac6e459c7faf3baf960f65370b2d9aacc814666156758ba",
+  "index_sha256": "e437f8a1df200cd1a26dc339c83452a422818f60fbf4c07c5ba6f4209d8e994f",
+  "validation": {
+    "tests_passed": 42,
+    "tests_failed": 0,
+    "upper_legal_paths_enumerated": 305,
+    "upper_maximum_gain": 54,
+    "normal_upper_gain": 21,
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "expansion_to_four_and_five_workers_played": true,
+    "capacity_12_and_18_verified": true,
+    "same_day_payroll_8_and_10_verified": true,
+    "new_worker_receives_real_wages": true,
+    "same_day_wage_cut_after_expansion_verified": true,
+    "funding_includes_added_payroll": true,
+    "refresh_and_replay": true,
+    "online_story_continuation": true,
+    "actual_previous_build_save_continues_exactly": true,
+    "offline_zip_verified": true,
+    "font_mappings_preserved": 47449,
+    "deployment_files_verified": 62
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792345761918/"
+  },
+  "limits": [
+    "一台新增炉只配1位厨师、固定5枚非工资费用是教学简化，不模拟真实岗位、耗材与维护成本。",
+    "扩产是完整组合，与换快炉的开支、工资结构不同，不把整套差额单独归因给机器或招聘。",
+    "最高54只适用于上幕本局条件，资金净增不是完整净利润。",
+    "本次未重跑后续八条分支的完整历史流程。"
+  ]
+}
