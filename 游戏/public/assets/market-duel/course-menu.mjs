@@ -6,7 +6,7 @@ export function courseMenu(moves){
   const group=move.id.startsWith('price-')?groups[0]:['buy','upgrade','more','less'].includes(move.id)?groups[1]:groups[2];
   group.moves.push(move);
  }
- if(groups[2].moves.some(m=>m.id.startsWith('wage-')))groups[2].label='人手与工资';
+ if(groups[2].moves.some(m=>m.id.startsWith('wage-')))groups[2].label=groups[2].moves.some(m=>['hire','fire'].includes(m.id))?'人手与工资':'调工资';
  return {groups:groups.filter(g=>g.moves.length),direct};
 }
 export function shortMoveLabel(move){

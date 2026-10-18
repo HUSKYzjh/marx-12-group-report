@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-18T16:37:11.132Z",
-  "bytes": 20593586,
+  "built_at": "2026-10-18T17:30:27.720Z",
+  "bytes": 20600337,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2103,6 +2103,7 @@
     "public/assets/market-duel/battle-model.mjs",
     "public/assets/market-duel/course-legacy.mjs",
     "public/assets/market-duel/equipment-model.mjs",
+    "public/assets/market-duel/simple-consequences.mjs",
     "public/assets/market-duel/course-model.mjs",
     "public/assets/market-duel/steady-challenge.mjs",
     "lib/battle-session.ts",
@@ -2156,6 +2157,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Simplify actual consequences: same-day price and wage adjustments, an eight-coin immediate oven upgrade, three fixed workers and fixed five-coin overhead, no installation downtime, inventory fees, spoilage or severance; recompute the upper maximum as 54 and archive original-rule ledgers exactly.",
     "Show every available Act II action directly under static group labels; remove category disclosure controls without changing game rules.",
     "Restore three category menus plus ordinary business throughout Act II; remove shortcut duplicates and the extra adjustment disclosure without changing financial rules.",
     "Remove the developer-facing update modal and upgrade button; handle older saves automatically at load while preserving archived accounts and current-release progress.",
@@ -2180,9 +2182,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "d91d12abab588aac6f1b3e6a66e0f869131465e9002f76b6b85e5f981c4b37be",
+    "index_sha256": "9a29f932697c1076d222e5b7432d342fe3c893e10a2330130fcf840ca09098ad",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "538766ef8a7f67822a5bf0de8b98bda43d44874dae4994775430cf0770509fdc"
+  "sha256": "b17cf4fc0bf62597176c8acf52fb036121004554a2927d3211818745bfbfe466"
 }

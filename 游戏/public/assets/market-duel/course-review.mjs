@@ -1,11 +1,12 @@
 import {initialCourse,courseRound,nextCourse,finished} from './course-model.mjs';
 import {batchUpgrade} from './equipment-model.mjs';
+import {simpleRules} from './simple-consequences.mjs';
 
 // Compare the same five demand days and equipment rule. Do not replay the
 // player's actions as a counterfactual or mix the three independent accounts.
 export function wavesReview(state){
  if(state.version!==3||state.mode!=='waves'||!finished(state))return null;
- let baseline=initialCourse(batchUpgrade(state.world));
+ let baseline=initialCourse(batchUpgrade(state.world),true,true,simpleRules(state.world));
  while(!finished(baseline))baseline=courseRound(baseline,'hold');
  baseline=nextCourse(baseline);
  while(!finished(baseline))baseline=courseRound(baseline,'hold');

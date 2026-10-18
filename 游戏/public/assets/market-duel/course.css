@@ -319,3 +319,5 @@ body[data-rules] .battle-frame .simplified-moves>.move[data-move="hold"]{grid-co
 .course-parts [aria-current="step"]{color:#333;text-decoration:underline;text-underline-offset:5px}
 #part-context{font-size:14px;line-height:1.6;margin:12px auto 0;max-width:650px;text-align:center}
 @media(max-width:700px){.course-parts>div{gap:10px;font-size:15px}#part-context{font-size:13px;text-align:left}.course-parts{padding:4px 5px 12px}}
+
+.move-group-choices>.move:only-child{grid-column:1/-1}
