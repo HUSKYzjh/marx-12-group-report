@@ -30,7 +30,7 @@ test('old tracing accounts remain restorable; opting into the replacement archiv
  const fresh=beginProfitChallenge(old);assert.equal(fresh.mode,'social');assert.equal(fresh.world.day,0);assert.deepEqual(fresh.archive,old.archive);assert.deepEqual(fresh.previousCourse,old);assert.deepEqual(restoreCourse(fresh),fresh);
  const forged=structuredClone(fresh);forged.profitChallenge=false;assert.equal(restoreCourse(forged),null);
 });
-test('third scene offers three direct actions without losing the original adjustment tools',async()=>{
- const {courseMoves}=await import('../public/assets/market-duel/course-model.mjs');const moves=courseMoves(third()),menu=courseMenu(moves,true);
- assert.deepEqual(menu.direct.map(m=>m.id),['wage-down','price-down','hold']);assert.deepEqual([...menu.direct,...menu.groups.flatMap(g=>g.moves)].map(m=>m.id).sort(),moves.map(m=>m.id).sort());
+test('third scene uses three categories and direct ordinary business without losing any adjustment',async()=>{
+ const {courseMoves}=await import('../public/assets/market-duel/course-model.mjs');const moves=courseMoves(third()),menu=courseMenu(moves);
+ assert.deepEqual(menu.direct.map(m=>m.id),['hold']);assert.deepEqual(menu.groups.map(g=>g.label),['改售价','换烤炉','人手与工资']);assert.deepEqual([...menu.direct,...menu.groups.flatMap(g=>g.moves)].map(m=>m.id).sort(),moves.map(m=>m.id).sort());
 });

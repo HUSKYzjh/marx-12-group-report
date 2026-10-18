@@ -1,0 +1,21 @@
+✔ all business decisions remain available once, grouped without changing accounts (4.2199ms)
+✔ grouping preserves the three-day maximum and normal-business accounts (8.0746ms)
+✔ old and additional actions retain an accessible fallback (0.4158ms)
+✔ upper act uses fixed external demand, permitting next-day wage cuts without reducing the order book (12.5852ms)
+✔ payroll controls do not apply the lower-act raw-material discount to upper-act affordability (0.9086ms)
+✔ lower act introduces external fluctuations first and income feedback second, with separate accounts (18.6726ms)
+✔ previous profit-only and original tracing records replay unchanged until an explicit archive-and-restart (3.4547ms)
+✔ new third scene has no tracing gate or hidden first-day transaction (22.9362ms)
+✔ wage cut is a decision for tomorrow, with an actual payroll reduction on the following day (21.6759ms)
+✔ review uses sold goods and real wages, compares the entire plan and cannot invent profit from production (23.7553ms)
+✔ all nine days, retries, undo and tamper rejection retain audited finances (2060.1145ms)
+✔ old tracing accounts remain restorable; opting into the replacement archives them and keeps first two scenes (58.1095ms)
+✔ third scene uses three categories and direct ordinary business without losing any adjustment (7.692ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2760.5472

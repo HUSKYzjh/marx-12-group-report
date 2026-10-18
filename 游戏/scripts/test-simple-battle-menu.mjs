@@ -30,11 +30,10 @@ try{
    await battle.locator('body[data-mode="'+mode+'"]').waitFor();
    await page.waitForFunction(({key,mode})=>{const s=JSON.parse(localStorage.getItem(key)).battle;return s.state.mode===mode&&s.view==='choose';},{key,mode});
    assert.equal(await battle.locator('.move-group').count(),3);assert.equal(await battle.locator('.move-group[open]').count(),0);
-   assert.deepEqual(await battle.locator('#moves [data-move]:visible').evaluateAll(ns=>ns.map(n=>n.dataset.move)),mode==='steady'?['wage-down','price-down','hold']:['hold']);
+   assert.deepEqual(await battle.locator('#moves [data-move]:visible').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['hold']);
    const before=await saved(),all=courseMoves(before.state).map(m=>m.id).sort();
    assert.deepEqual(await battle.locator('#moves [data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move).sort()),all);
    await fits();await battle.locator(".console").screenshot({path:path.join(out,`${width}-${mode}-simple.png`)});
-   if(mode==='steady')await battle.locator('.profit-more>summary').click();
    for(const group of ['price','equipment','staff']){
     await battle.locator(`[data-move-group="${group}"]>summary`).click();
     await battle.waitForFunction(()=>document.querySelectorAll('.move-group[open]').length===1);
@@ -46,7 +45,6 @@ try{
     await battle.locator(".console").screenshot({path:path.join(out,`${width}-wages.png`)});
    }
    await battle.locator('.move-group[open]>summary').click();
-   if(mode==='steady')await battle.locator('.profit-more>summary').click();
    assert.deepEqual(await saved(),before);
   }
   async function play(move){
@@ -62,12 +60,12 @@ try{
   assert.equal((await saved()).state.world.shops[0].cash,87);
   await battle.locator('#next-scene').click();await inspectMenu('waves');for(let day=0;day<5;day++)await play('hold');
   await battle.locator('#next-scene').click();await battle.locator('body[data-mode="social"]').waitFor();
-  assert.deepEqual(await battle.locator('#moves>[data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['wage-down','price-down','hold']);
+  await inspectMenu('social');
   await play('wage-up');const record=await saved();
   await page.reload();const restored=await(await page.getByTestId('trust-frame').elementHandle()).contentFrame();await restored.locator('#prologue-battle').waitFor();
   assert.deepEqual(await saved(),record,'Reload retains the selected business decision and actual receipt');
-  results.push({width,categories:3,directActions:{steady:3,waves:1,social:3},allMovesReachable:true,openingCategoriesReadOnly:true,exclusiveDisclosure:true,shortLabels:true,threeSceneMenus:true,wagesReachable:true,fivePageOpening:true,maximumCash:87,financialRulesPreserved:true,refresh:true,noOverflow:true});
+  results.push({width,categories:3,directActions:{steady:1,waves:1,social:1},allMovesReachable:true,openingCategoriesReadOnly:true,exclusiveDisclosure:true,shortLabels:true,threeSceneMenus:true,wagesReachable:true,fivePageOpening:true,maximumCash:87,financialRulesPreserved:true,refresh:true,noOverflow:true});
   console.log(`PASS simplified second act ${width}: three categories, direct business, all actions and accounts preserved`);await context.close();
  }
- assert.deepEqual(errors,[]);await fs.writeFile(path.join(out,'report.json'),JSON.stringify({date:'2026-10-18',entry:remote?'CloudBase':'standalone',sourceSHA256:createHash('sha256').update(source).digest('hex'),indexSHA256:manifest.index_sha256,results,errors},null,2)+'\n');
+ assert.deepEqual(errors,[]);await fs.writeFile(path.join(out,'report.json'),JSON.stringify({date:'2026-10-19',entry:remote?'CloudBase':'standalone',sourceSHA256:createHash('sha256').update(source).digest('hex'),indexSHA256:manifest.index_sha256,results,errors},null,2)+'\n');
 }finally{await browser.close();}

@@ -159,27 +159,21 @@ function render(){
   $('choose-label').textContent='';
   $('choose-label').textContent=isProfit?'每天选一招，看看能多赚多少。':'每天选一招，随后营业。';
   $('moves').classList.add('simplified-moves');
-  const menu=courseMenu(courseMoves(state),isProfit),groups=[];
-  let menuRoot=$('moves');
-  if(isProfit){
-    const more=document.createElement('details');more.className='profit-more';more.innerHTML='<summary>其他调整</summary><div class="profit-more-groups"></div>';
-    $('moves').append(more);menuRoot=more.querySelector('div');
-  }
+  const menu=courseMenu(courseMoves(state)),groups=[];
   function moveButton(m,parent){
     const b=document.createElement('button'),issue=courseIssue(state,m.id);
     b.className='move'+(issue?' locked':'');b.dataset.move=m.id;b.disabled=!!issue;b.title=issue||(isUpper&&m.id.startsWith('wage-')?'上幕的购买资金来自固定外部账户；改工资不改变这12位顾客。工资调整明天生效。':m.detail);
-    b.innerHTML=`${icon(m.icon)}<strong>${isProfit&&m.id==='wage-down'?'少发工资':isProfit&&m.id==='price-down'?'降价抢客':shortMoveLabel(m)}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;
+    b.innerHTML=`${icon(m.icon)}<strong>${shortMoveLabel(m)}</strong><small>${(issue||m.hint).replace('每天可做','日产').replaceAll('金币',coin)}</small>`;
     b.onclick=()=>select(m.id);parent.append(b);
   }
   for(const group of menu.groups){
     const detail=document.createElement('details');detail.className='move-group';detail.dataset.moveGroup=group.id;
     const summary=document.createElement('summary');summary.textContent=group.label;detail.append(summary);
     const choices=document.createElement('div');choices.className='move-group-choices';detail.append(choices);
-    group.moves.forEach(m=>moveButton(m,choices));groups.push(detail);menuRoot.append(detail);
+    group.moves.forEach(m=>moveButton(m,choices));groups.push(detail);$('moves').append(detail);
     detail.ontoggle=()=>{if(detail.open)groups.forEach(other=>{if(other!==detail)other.open=false;});};
   }
   menu.direct.forEach(m=>moveButton(m,$('moves')));
-  if(isProfit){$('moves').append($('moves').querySelector('.profit-more'));$('moves').classList.add('profit-moves');}else $('moves').classList.remove('profit-moves');
   $('preview').replaceChildren();
 }
 function checkpoint(){

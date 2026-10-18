@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-18T16:15:03.291Z",
-  "bytes": 20594833,
+  "built_at": "2026-10-18T16:23:09.885Z",
+  "bytes": 20593719,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2156,6 +2156,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Restore three category menus plus ordinary business throughout Act II; remove shortcut duplicates and the extra adjustment disclosure without changing financial rules.",
     "Remove the developer-facing update modal and upgrade button; handle older saves automatically at load while preserving archived accounts and current-release progress.",
     "Split Act II into fixed-demand upper act with wage decisions, and uncertain-demand lower act introducing traffic fluctuations then income feedback; archive previous course on explicit opt-in; publish centered artistic QR.",
     "Replace wage tracing with a fresh nine-day profit challenge: wage cuts, price competition and real payroll/sales/cash comparison; archive old tracing accounts on explicit opt-in.",
@@ -2178,9 +2179,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "4f860c1a69498dbb4f845efddd8520f37100095081e95b3aaf687c51f916b3a4",
+    "index_sha256": "49fabb2cc950b58e35685a10ac97d1f124da49a4645e68b479d45c521afaa750",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "bc41e33808bc1c09165ca19b875880076732902049885c483044405fa494c861"
+  "sha256": "b8b412552b5b4440b3da2f5064ec3e686b42a2b1111dd192a7cc68506ea3dd33"
 }

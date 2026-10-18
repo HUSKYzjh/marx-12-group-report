@@ -35,7 +35,7 @@ try{
   assert.match(await battle.locator('#course-parts').innerText(),/上幕 · 需求固定/);
   assert.equal(await battle.locator('[data-course-part=upper]').getAttribute('aria-current'),'step');
   assert.match(await battle.locator('#part-context').innerText(),/每天12位顾客/);
-  assert.deepEqual(await battle.locator('#moves>[data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['wage-down','price-down','hold']);
+  assert.deepEqual(await battle.locator('#moves>[data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['hold']);
   await battle.locator('#console').screenshot({path:path.join(out,`${width}-upper-choices.png`)});
   for(const move of ['wage-down','hold','hold'])await play(move);
   const upper=(await saved()).state.world;
@@ -59,10 +59,10 @@ try{
   assert.match(await battle.locator('#part-context').innerText(),/第二步 · 收入与购买力/);
   const start=await saved();assert.equal(start.state.profitChallenge,true);assert.equal(start.state.world.shops[0].cash,36);assert.equal(start.state.world.history.length,0);
   assert.equal(await battle.locator('[data-trace]').count(),0);assert.doesNotMatch(await battle.locator('body').innerText(),/需求，从哪里来|追一笔钱|追踪阿/);
-  assert.deepEqual(await battle.locator('#moves>[data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['wage-down','price-down','hold']);
-  assert(await battle.locator('.profit-more').evaluate(e=>!e.open));assert(await battle.locator('#steady-goal').isVisible());assert.match(await battle.locator('#steady-goal').innerText(),/同样省工资，还能多赚吗/);
+  assert.deepEqual(await battle.locator('#moves>[data-move]').evaluateAll(ns=>ns.map(n=>n.dataset.move)),['hold']);
+  assert.equal(await battle.locator('.profit-more').count(),0);assert(await battle.locator('#steady-goal').isVisible());assert.match(await battle.locator('#steady-goal').innerText(),/同样省工资，还能多赚吗/);
   await battle.locator('#console').screenshot({path:path.join(out,`${width}-choices.png`)});
-  await battle.locator('.profit-more>summary').click();await battle.locator('[data-move-group="staff"]>summary').click();assert(await battle.locator('[data-move="wage-up"]').isVisible());assert.deepEqual(await saved(),start,'Exploring other adjustments is read-only');await battle.locator('.profit-more>summary').click();
+  await battle.locator('[data-move-group="staff"]>summary').click();assert(await battle.locator('[data-move="wage-up"]').isVisible());assert.deepEqual(await saved(),start,'Exploring other adjustments is read-only');await battle.locator('[data-move-group="staff"]>summary').click();
   await play('wage-down');assert.equal((await saved()).state.world.history[0].wages[0],6);assert.equal((await saved()).state.world.shops[0].pending.wage,1);
   await play('price-down');const record=await saved();assert.equal(record.state.world.history[1].wages[0],3);
   await page.reload();host=await(await page.getByTestId('trust-frame').elementHandle()).contentFrame();await host.locator('#prologue-battle').waitFor();battle=await(await host.locator('#prologue-battle').elementHandle()).contentFrame();await battle.locator('body[data-mode="social"]').waitFor();assert.deepEqual(await saved(),record,'Refresh preserves wage plan, cash and actual receipts');
@@ -73,7 +73,7 @@ try{
   assert.match(await battle.locator('#ending h2').innerText(),/这次，省下的钱留住了吗/);
   for(const f of [page,host,battle])assert(await f.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   await battle.locator('#retry').click();await ready('social',0);assert.equal((await saved()).state.world.shops[0].cash,36);assert.equal(await battle.locator('[data-trace]').count(),0);
-  results.push({width,splitActs:true,fixedUpper:{demand:12,wages:[6,3,3],sold:[6,6,6],cash:63,maximumGain:51},lowerTraffic:[12,20,20,6,12],sourcePageRemoved:true,freshOpeningCash:36,noAutomaticTrade:true,directChoices:3,optionalToolsReadOnly:true,payrollToday:6,payrollTomorrow:3,actualReview:review,refresh:true,retry:true,noOverflow:true,noStateInjection:true});console.log(`PASS upper/lower acts ${width}: no tracing, 3 decisions, payroll 6 -> 3, actual review and fresh replay`);await context.close();
+  results.push({width,splitActs:true,fixedUpper:{demand:12,wages:[6,3,3],sold:[6,6,6],cash:63,maximumGain:51},lowerTraffic:[12,20,20,6,12],sourcePageRemoved:true,freshOpeningCash:36,noAutomaticTrade:true,categories:3,directChoices:1,optionalToolsReadOnly:true,payrollToday:6,payrollTomorrow:3,actualReview:review,refresh:true,retry:true,noOverflow:true,noStateInjection:true});console.log(`PASS upper/lower acts ${width}: no tracing, 3 categories and direct business, payroll 6 -> 3, actual review and fresh replay`);await context.close();
  }
- assert.deepEqual(errors,[]);await fs.writeFile(path.join(out,'report.json'),JSON.stringify({date:'2026-10-18',entry:remote?'CloudBase':'standalone',sourceSHA256:manifest.source_sha256,indexSHA256:manifest.index_sha256,results,errors},null,2)+'\n');
+ assert.deepEqual(errors,[]);await fs.writeFile(path.join(out,'report.json'),JSON.stringify({date:'2026-10-19',entry:remote?'CloudBase':'standalone',sourceSHA256:manifest.source_sha256,indexSHA256:manifest.index_sha256,results,errors},null,2)+'\n');
 }catch(error){for(const c of browser.contexts())for(const page of c.pages())await page.screenshot({path:path.join(out,'failure.png'),fullPage:true}).catch(()=>{});throw error;}finally{await browser.close();}

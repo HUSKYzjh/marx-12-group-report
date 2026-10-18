@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-19",
+  "request": "把第二幕操作改回之前的分类菜单",
+  "changes": [
+    "改售价／换烤炉／人手与工资三个直接可见的分类，另保留照常营业",
+    "客流波动阶段仍为调人手，工资只在原本允许的阶段出现",
+    "去掉三项快捷操作与其他调整外层，具体动作只出现一次",
+    "各分类默认收起，同一时刻仅展开一类，展开不提交经营选择"
+  ],
+  "source_sha256": "b8b412552b5b4440b3da2f5064ec3e686b42a2b1111dd192a7cc68506ea3dd33",
+  "index_sha256": "49fabb2cc950b58e35685a10ac97d1f124da49a4645e68b479d45c521afaa750",
+  "validation": {
+    "targeted_tests_passed": 13,
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "all_three_phases_checked": true,
+    "actions_reachable_exactly_once": true,
+    "touch_targets_minimum_44px": true,
+    "category_opening_read_only": true,
+    "real_decisions_compared_to_model": true,
+    "three_day_maximum_cash_87": true,
+    "refresh_preserves_decision_and_receipt": true,
+    "offline_zip_verified": true,
+    "deployment_verified": true
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792340687897/"
+  },
+  "limits": [
+    "只改菜单呈现，未改变经济模型和旧存档兼容逻辑。",
+    "本轮未重跑八条后续分支的历史完整验收。"
+  ]
+}
