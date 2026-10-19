@@ -91,6 +91,8 @@ export type PrologueState = {
   reliefCompleted: ReliefRoute[];
   /** Explicitly choosing the shorter story path never completes unplayed remedies. */
   reliefSampled: boolean;
+  /** Narrative reading is separate from old remedy experiments. */
+  reliefReadingFinished: boolean;
   remedyLabs: Partial<Record<ReliefRoute,RemedyLab>>;
   epilogueBeat: 0 | 1 | 2 | 3;
   assumptionDesk: AssumptionDesk;
@@ -129,7 +131,7 @@ export function initialPrologue(): PrologueState {
     prologueStatus: 'notStarted', demoActive: false, demoLaborShare: 20, workPaused: false, entrance: null,
     marketMode: 'single', marketCuts: 0, marketDemoShare: null,
     reliefRoute: null, reliefSustained: false, reliefVisited: [],
-    reliefPhase:'ready',reliefTested:0,reliefCompleted:[],reliefSampled:false,remedyLabs:{},epilogueBeat:0,assumptionDesk:initialAssumptionDesk(),chapterBrowsing:false,technology:null,needsTechnology:null,ownershipTechnology:null,marketRules:null,branchArchive:{},
+    reliefPhase:'ready',reliefTested:0,reliefCompleted:[],reliefSampled:false,reliefReadingFinished:false,remedyLabs:{},epilogueBeat:0,assumptionDesk:initialAssumptionDesk(),chapterBrowsing:false,technology:null,needsTechnology:null,ownershipTechnology:null,marketRules:null,branchArchive:{},
     bakeryWage: 5, bakeryComplaintIndex: null, bakeryCommitted: false,
     bakeryBoundary: null, bakeryBoundarySerial: 0, bakeryBossQuoteIndex: null,
     bakeryUpperLocked: false, bakeryPreviousWage: null, street: null, battle: null, streetMode:'battle',
@@ -224,6 +226,7 @@ export type PrologueAction =
   | { type: 'RELIEF_MENU' }
   | { type: 'FINISH_RELIEF' }
   | { type: 'FINISH_RELIEF_SAMPLE' }
+  | { type: 'FINISH_RELIEF_READING' }
   | { type: 'EPILOGUE_NEXT'; expectedBeat: number }
   | { type: 'EPILOGUE_REVEAL' }
   | { type: 'SHOW_ASSUMPTIONS' }
@@ -408,6 +411,8 @@ export function prologueReducer(s: PrologueState, action: PrologueAction): Prolo
     }
     case 'RELIEF_MENU': return s.scene === 'relief'
       ? { ...s, reliefRoute: null, reliefSustained: false,reliefPhase:'ready',reliefTested:0 } : s;
+    case 'FINISH_RELIEF_READING': return s.scene==='relief'
+      ? {...s,scene:'epilogue',reliefReadingFinished:true,reliefRoute:null,reliefSustained:false,reliefPhase:'ready',reliefTested:0,epilogueBeat:0,entrance:null,prologueStatus:'observed'}:s;
     case 'FINISH_RELIEF': return s.scene === 'relief' && s.reliefCompleted.length===3
       ? { ...s, scene: 'epilogue',reliefRoute:null,reliefSustained:false,reliefPhase:'ready',reliefTested:0,epilogueBeat:0,entrance: null, prologueStatus: 'observed' } : s;
     case 'FINISH_RELIEF_SAMPLE': return s.scene==='relief'&&s.reliefRoute===null&&canSampleRelief(s)
@@ -478,8 +483,8 @@ export function canSampleRelief(s: Pick<PrologueState,'reliefCompleted'|'remedyL
     return !!lab&&remedyAccounts(lab).canContinue;
   });
 }
-export function reliefEndingAccessible(s: Pick<PrologueState,'reliefCompleted'|'remedyLabs'|'reliefSampled'>): boolean {
-  return s.reliefCompleted.length===3 || s.reliefSampled&&canSampleRelief(s);
+export function reliefEndingAccessible(s: Pick<PrologueState,'reliefCompleted'|'remedyLabs'|'reliefSampled'> & {reliefReadingFinished?:boolean}): boolean {
+  return s.reliefReadingFinished===true || s.reliefCompleted.length===3 || s.reliefSampled&&canSampleRelief(s);
 }
 function researchAccessible(s: PrologueState): boolean {
   return s.chapterBrowsing || reliefEndingAccessible(s) && s.epilogueBeat===3;
@@ -514,6 +519,7 @@ export function restorePrologue(snapshot: unknown): PrologueState {
       || (has('reliefTested')&&![0,1,3].includes(v.reliefTested))
       || (has('reliefCompleted')&&(!Array.isArray(v.reliefCompleted)||v.reliefCompleted.some((r:ReliefRoute)=>!RELIEF_ROUTES.includes(r))||new Set(v.reliefCompleted).size!==v.reliefCompleted.length))
       || (has('reliefSampled')&&typeof v.reliefSampled!=='boolean')
+      || (has('reliefReadingFinished')&&typeof v.reliefReadingFinished!=='boolean')
       || (has('epilogueBeat')&&![0,1,2,3].includes(v.epilogueBeat))
       || (has('chapterBrowsing')&&typeof v.chapterBrowsing!=='boolean')
       || (has('bakeryWage')&&(!Number.isInteger(v.bakeryWage)||v.bakeryWage<0||v.bakeryWage>15))
@@ -542,7 +548,7 @@ export function restorePrologue(snapshot: unknown): PrologueState {
     const reliefSustained = has('reliefPhase')?(v.reliefSustained ?? false):false;
     const reliefVisited = [...new Set(v.reliefVisited ?? [])] as ReliefRoute[];
     const reliefPhase:ReliefPhase=v.reliefPhase??'ready',reliefTested=v.reliefTested??0;
-    const reliefCompleted:ReliefRoute[]=v.reliefCompleted??[],reliefSampled=v.reliefSampled??false,epilogueBeat=v.epilogueBeat??0;
+    const reliefCompleted:ReliefRoute[]=v.reliefCompleted??[],reliefSampled=v.reliefSampled??false,reliefReadingFinished=v.reliefReadingFinished??false,epilogueBeat=v.epilogueBeat??0;
     const remedyLabs:Partial<Record<ReliefRoute,RemedyLab>>={};
     if(has('remedyLabs')){
       if(!v.remedyLabs||typeof v.remedyLabs!=='object'||Array.isArray(v.remedyLabs)||Object.keys(v.remedyLabs).some(k=>!RELIEF_ROUTES.includes(k as ReliefRoute)))return initialPrologue();
@@ -557,7 +563,7 @@ export function restorePrologue(snapshot: unknown): PrologueState {
     if(reliefPhase==='compare'&&!([1,3].includes(reliefTested)))return initialPrologue();
     if(reliefPhase==='done'&&(reliefTested!==3||reliefSustained||reliefRoute===null||!reliefCompleted.includes(reliefRoute)))return initialPrologue();
     if(reliefSampled&&!canSampleRelief({reliefCompleted,remedyLabs}))return initialPrologue();
-    if(['epilogue',...researchScenes].includes(v.scene)&&!reliefEndingAccessible({reliefCompleted,remedyLabs,reliefSampled})&&!browsingResearch)return initialPrologue();
+    if(['epilogue',...researchScenes].includes(v.scene)&&!reliefEndingAccessible({reliefCompleted,remedyLabs,reliefSampled,reliefReadingFinished})&&!browsingResearch)return initialPrologue();
     if(researchScenes.includes(v.scene)&&epilogueBeat!==3&&!browsingResearch)return initialPrologue();
     const technology=v.technology==null?null:restoreAutomation(v.technology);
     if(v.technology!=null&&!technology||v.scene==='technology'&&!technology)return initialPrologue();
@@ -585,7 +591,7 @@ export function restorePrologue(snapshot: unknown): PrologueState {
       prologueStatus: v.prologueStatus, demoActive: v.demoActive && v.scene === 'network' && v.relationFocus === 'customers',
       demoLaborShare: v.demoLaborShare ?? 20,
       workPaused: v.workPaused === true && v.scene === 'network' && v.relationFocus === 'cooperation',
-      marketMode, marketCuts, marketDemoShare, reliefRoute, reliefSustained, reliefVisited,reliefPhase,reliefTested,reliefCompleted,reliefSampled,remedyLabs,epilogueBeat,assumptionDesk,branchArchive,chapterBrowsing,technology,needsTechnology,ownershipTechnology,marketRules,
+      marketMode, marketCuts, marketDemoShare, reliefRoute, reliefSustained, reliefVisited,reliefPhase,reliefTested,reliefCompleted,reliefSampled,reliefReadingFinished,remedyLabs,epilogueBeat,assumptionDesk,branchArchive,chapterBrowsing,technology,needsTechnology,ownershipTechnology,marketRules,
       bakeryWage,bakeryCommitted:migrated?false:(v.bakeryCommitted??false),
       bakeryComplaintIndex:bakeryWage<5?(v.bakeryComplaintIndex??null):null,
       bakeryBoundary:migrated?null:(v.bakeryBoundary??null),bakeryBoundarySerial:v.bakeryBoundarySerial??0,

@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20",
+  "sourceSHA256": "5133976aac9d9a5f3e5bb56574d7842f0ad157fc77bcde98321abfa0b875563c",
+  "indexSHA256": "d9cc98b05c2d7a860d2c9153c0a99dcb8200b13104c2e08721780d2c2070fbc5",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "threeDistinctExplanationDialogs": true,
+      "noPolicyGameControls": true,
+      "readingDoesNotChangeState": true,
+      "allThreeCloseMethods": true,
+      "modalWithinViewport": true,
+      "refresh": true,
+      "continuationWithoutTrials": true,
+      "noInventedAccounts": true,
+      "researchAndReturn": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "threeDistinctExplanationDialogs": true,
+      "noPolicyGameControls": true,
+      "readingDoesNotChangeState": true,
+      "allThreeCloseMethods": true,
+      "modalWithinViewport": true,
+      "refresh": true,
+      "continuationWithoutTrials": true,
+      "noInventedAccounts": true,
+      "researchAndReturn": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "threeDistinctExplanationDialogs": true,
+      "noPolicyGameControls": true,
+      "readingDoesNotChangeState": true,
+      "allThreeCloseMethods": true,
+      "modalWithinViewport": true,
+      "refresh": true,
+      "continuationWithoutTrials": true,
+      "noInventedAccounts": true,
+      "researchAndReturn": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-20",
+  "request": "第四幕三张药方卡点进去只显示解释性弹窗，不出现游戏性内容",
+  "changes": [
+    "保留增加消费、增加投资、增加出口三张卡与人物画风，点击只打开对应只读弹窗",
+    "解释作用过程、资金来源或购买力来源、必要条件、局限，以及与生产资料占有关系的区别",
+    "不挂载回合、试招、猜结果、分量或条件调节、账本计分、信贷小游戏；不要求完成试验或逐张解锁",
+    "继续故事单独记录阅读路径，接通父窗口动作白名单；不写入旧试验的完成数或经营记录",
+    "旧进行中的药方进度显示解释入口，实际历史账保留；关闭、返回、刷新及后续条件桌正常"
+  ],
+  "source_sha256": "5133976aac9d9a5f3e5bb56574d7842f0ad157fc77bcde98321abfa0b875563c",
+  "index_sha256": "d9cc98b05c2d7a860d2c9153c0a99dcb8200b13104c2e08721780d2c2070fbc5",
+  "validation": {
+    "full_tests_before_final_message_allowlist_fix": 860,
+    "final_local_and_online_viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        1280,
+        900
+      ]
+    ],
+    "all_three_modal_contents_checked": true,
+    "two_close_buttons_only": true,
+    "escape_close_and_return_checked": true,
+    "reading_preserves_entire_state": true,
+    "no_experiment_needed_to_continue": true,
+    "epilogue_and_research_refresh": true,
+    "actual_previous_build_policy_save": true,
+    "offline_zip_verified": true,
+    "font_mappings": 47449
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792437500332/"
+  },
+  "limits": [
+    "860项全套检查完成后，实走发现并补上父窗口对新继续动作的白名单；最终版重新完成三种尺寸全部弹窗、继续故事、尾声刷新、条件桌与返回，以及真实旧版存档升级检查。",
+    "旧政策模型和记录保留用于兼容；当前第四幕的正常入口不再挂载这些游戏。",
+    "本次未重新人工完成后续八条分支；其独立玩法保留。"
+  ]
+}

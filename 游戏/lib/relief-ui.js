@@ -4,7 +4,7 @@
  function el(tag,words,parent,cls){const n=document.createElement(tag);n.textContent=words||'';n.className=cls||'';parent.appendChild(n);StreetArt.decorateMoney(n);return n;}
  function button(c,words,type,extra,cls){const b=el('button',words,c.controls,cls||'primary');b.type='button';b.onclick=function(){c.send(Object.assign({type:type},extra||{}));};return b;}
  root.renderReliefExperiment=function(c){
-  return root.renderRemedyLab(c);
+  return root.renderReliefReading(c);
  };
  root.cancelPrologueEnding=function(){if(timer!==null){clearTimeout(timer);timer=null;}};
  root.renderPrologueEnding=function(c){

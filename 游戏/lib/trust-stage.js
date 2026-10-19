@@ -665,6 +665,7 @@
     GestureBoard.cancel();
     if(window.clearPreservationGeometry)window.clearPreservationGeometry();
     cancelPrologueEnding();
+    if(window.closeReliefReading)window.closeReliefReading();
     // Parent viewport is stable; using the iframe's own height would create a
     // resize feedback loop. Taller scenes and expanded notes may scroll naturally.
     document.body.dataset.scene = s.section === 'machine' ? 'machine' : p.scene;
@@ -699,7 +700,7 @@
       dot.setAttribute('aria-label', i === 0 ? '返回首页' : '转到' + chapter.label);
       dot.onclick = function () { navigate(i); };
       var locked=chapter.scene==='epilogue'&&!s.reliefEndingAccessible||chapter.scene==='assumptions'&&!p.chapterBrowsing&&(!s.reliefEndingAccessible||p.epilogueBeat!==3);
-      dot.disabled=locked;if(locked)dot.title=chapter.scene==='epilogue'?'试完三张，或在处方页选择先继续':'先看完序章尾声';
+      dot.disabled=locked;if(locked)dot.title=chapter.scene==='epilogue'?'在药方页选择继续故事':'先看完序章尾声';
       if (i === step) dot.setAttribute('aria-current', 'step');
       dots.appendChild(dot);
     });

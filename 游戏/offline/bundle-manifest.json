@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-19T18:05:59.697Z",
-  "bytes": 20629258,
+  "built_at": "2026-10-19T19:14:51.066Z",
+  "bytes": 20643498,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2055,6 +2055,7 @@
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\mortgage-lab.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\ownership-permissions.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\relief-ui.js",
+    "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\relief-reading.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\remedy-ui.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\gesture-board.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\technology-ui.js",
@@ -2159,6 +2160,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Replace the fourth-act consumption, investment and export entries with explanatory modals, without rounds, predictions, sliders or policy games. Separate narrative continuation from old experiment completion; preserve all old records and refresh progress.",
     "Remove the redundant post-story multiple-choice question and its feedback and styling. Preserve the story, conceptual diagrams, economic model, saved accounts and onward transition.",
     "Explain only the current second-act phase, order rules by choice then settlement, compare recurring versus one-off investment costs, and calculate the daily-cost example from actual staff and wages. Preserve the economic model and saved history.",
     "Make the third-act recap a focused modal: actual production, sales, end stock including prior stock, and unmet purchasing power; distinguish social production from capitalist private ownership. Keep detailed accounts optional, preserve progress, support refresh and keyboard return.",
@@ -2192,9 +2194,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "cbb4212d178d7843edfe84fd1b1a7f8aa78daa7afb5ce3cdbb52ad191d8ea671",
+    "index_sha256": "d9cc98b05c2d7a860d2c9153c0a99dcb8200b13104c2e08721780d2c2070fbc5",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "4652689fc3b99d5ff645a781f5c50f6eab88db77c630a21eb237c540cd9bb15a"
+  "sha256": "5133976aac9d9a5f3e5bb56574d7842f0ad157fc77bcde98321abfa0b875563c"
 }
