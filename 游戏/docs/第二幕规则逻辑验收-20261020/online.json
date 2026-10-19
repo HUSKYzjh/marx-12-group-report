@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-20",
+  "sourceSHA256": "9b3b4165969b2dce43fef91d89fb247d2a9ad1f7459843dd50267dca16cecacb",
+  "indexSHA256": "d86bb7d7aab5a11120bccce53eb4751a65acf4d56933a7b61ec2958d30992328",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "contextualRules": true,
+      "actualDailyCosts": [
+        11,
+        8,
+        9,
+        11
+      ],
+      "upgradeKeepsPayroll": true,
+      "readingDoesNotMutateState": true,
+      "refreshPreservesState": true,
+      "modalWithinViewport": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "contextualRules": true,
+      "actualDailyCosts": [
+        11,
+        8,
+        9,
+        11
+      ],
+      "upgradeKeepsPayroll": true,
+      "readingDoesNotMutateState": true,
+      "refreshPreservesState": true,
+      "modalWithinViewport": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "contextualRules": true,
+      "actualDailyCosts": [
+        11,
+        8,
+        9,
+        11
+      ],
+      "upgradeKeepsPayroll": true,
+      "readingDoesNotMutateState": true,
+      "refreshPreservesState": true,
+      "modalWithinViewport": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

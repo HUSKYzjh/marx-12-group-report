@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-19T03:01:48.330Z",
-  "bytes": 20628230,
+  "built_at": "2026-10-19T17:38:36.988Z",
+  "bytes": 20631114,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2159,6 +2159,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Explain only the current second-act phase, order rules by choice then settlement, compare recurring versus one-off investment costs, and calculate the daily-cost example from actual staff and wages. Preserve the economic model and saved history.",
     "Make the third-act recap a focused modal: actual production, sales, end stock including prior stock, and unmet purchasing power; distinguish social production from capitalist private ownership. Keep detailed accounts optional, preserve progress, support refresh and keyboard return.",
     "Expose funded own expansion and conditional peer investment, actual unsold goods and unmet purchasing power, matched wage-response comparisons, and a review distinguishing social production from separate capitalist ownership. Preserve accounts and alternative outcomes.",
     "Scale the six-firm artwork and spacing progressively on narrow screens, retain 44px person targets and readable labels, compact the story illustration, preserve desktop geometry and all accounts.",
@@ -2190,9 +2191,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "f0817d0efdfb060a4919d90d692171cbeec372485a70a08038aab35bedac50aa",
+    "index_sha256": "d86bb7d7aab5a11120bccce53eb4751a65acf4d56933a7b61ec2958d30992328",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "71e046dabfe1832dbbd780cb23c4a3112e19ba5fa6f85fff5da61c7144a1f22a"
+  "sha256": "9b3b4165969b2dce43fef91d89fb247d2a9ad1f7459843dd50267dca16cecacb"
 }

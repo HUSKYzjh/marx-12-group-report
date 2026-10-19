@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-20",
+  "request": "优化截图中第二幕本局规则的逻辑",
+  "changes": [
+    "规则按当前固定客流／波动客流分别显示，避免混入已移到第三幕的两店11人120枚旧设定",
+    "顺序改为目标、每天选择、选项后果、营业结算；说明12位顾客由两店共同争取",
+    "并列添炉招工10枚、多6产能及1人工资，与换快炉8枚、多6产能但人数工资不变",
+    "收入只按实际销量，日常开支与一次购机分开；按当前真实人数和工资计算日常开支示例",
+    "上幕可调每人工资，下幕每人工资不调；第二幕外部顾客购买力不受工资影响，第三幕再讨论工资消费反馈",
+    "边界、剩货与资金不足处理可展开；模型与既有账本均未修改"
+  ],
+  "source_sha256": "9b3b4165969b2dce43fef91d89fb247d2a9ad1f7459843dd50267dca16cecacb",
+  "index_sha256": "d86bb7d7aab5a11120bccce53eb4751a65acf4d56933a7b61ec2958d30992328",
+  "validation": {
+    "targeted_tests": 11,
+    "local_and_online_viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        1280,
+        900
+      ]
+    ],
+    "realDailyCostSequence": [
+      11,
+      8,
+      9,
+      11
+    ],
+    "paidExpansionAndUpgrade": true,
+    "readOnlyRulesAndRefresh": true,
+    "offlineZipVerified": true,
+    "fontMappings": 47449
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792431701961/"
+  },
+  "limits": [
+    "本次没有重跑历史856项全套检查或后续全部支线。",
+    "初次本地自动检查在读取开场说明已读状态时遇到消息落盘先后差异；改为等待已读存档完成，最终检查未注入或修改存档。"
+  ]
+}

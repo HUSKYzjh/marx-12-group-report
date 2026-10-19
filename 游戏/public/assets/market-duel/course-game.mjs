@@ -274,7 +274,21 @@ $('next-scene').onclick=()=>{if(embedded&&state.mode==='done'){persist();parent.
 $('retry').onclick=()=>{if(busy)return;state=retryScene(state);view='choose';selected=null;render();persist();if(openingRequired())openingGuide();};
 $('restart').onclick=()=>{if(busy)return;state={...initialCourse(true,true,true,true,true),...(state.previousCourse?{previousCourse:state.previousCourse}:{})};view='choose';selected=null;lastTrace=null;render();persist();if(openingRequired())openingGuide();};
 $('undo').onclick=()=>{if(busy)return;state=undoCourse(state);view='choose';selected=null;render();persist();};
-$('rules-open').onclick=()=>showDialog('本局规则',`<p>每回合选一项，当天生效。每店开局3位厨师。添炉和招工是同一个扩产选项，不必分两步安排。</p><p>售价每次加减1枚，范围1—5；每人工资每次加减1枚，范围1—4。扩产一次付10枚，添1台旧炉、招1人，产能当天增加6个、每天工资增加当前1人工资。换快炉一次8枚，升级1台旧炉，产能当天增加6个，人数与工资不变。两者都不停工，每店最多3炉。</p><p>每日开支＝现有人数×每人工资＋固定5枚（原料3、其他2）。扩产增加1份工资，换快炉不增加日常开支。只为实际卖出的面包收款；没卖完的免费留存，不坏损、不欠保管费。现金付不起当天生产开支时不生产，仍可卖已有面包。</p><p>上幕每天12个需求，买家资金来自外部账户；工资调整不影响这12个需求。下幕只改变客流，五天后进入第三幕。第三幕另开六家厂商、20人的有限钱包账本，观察工资、采购和消费的流转；不继承本幕现金与设备。本幕对手照常营业。</p><p>这是有意省略现实成本与用工变化的教学模型。少付工资不改变本幕生产能力与外部客流。第三幕再观察工资与购买力的联系。期末资金净增不是完整净利润。</p>`);
+function showRules(){
+ const shop=state.world.shops[0],upper=state.mode==='steady',wages=courseMoves(state).some(move=>move.id==='wage-down'),daily=shop.workers.length*shop.wage+5;
+ const context=upper?'上幕 · 固定客流 · 3天':'下幕 · 波动客流 · 5天';
+ const demand=upper?'每天12位顾客，两店争同一批生意。让3天的资金净增尽量多。':'客流每天变化，两店争同一批顾客。开门后才知道今天来了多少人。';
+ const wage=wages?'<p><b>调工资：</b>每人每天加减1枚，只改变本店开支；本幕顾客的钱来自外部，不随工资减少。</p>':'<p>本场每人工资不调，先观察调价和设备怎样应对客流变化。</p>';
+ showDialog('本局规则',`<div class="course-rules" data-testid="course-rules">
+  <p class="rules-context">${context}</p><p class="rules-goal">${demand}</p>
+  <section><h3>先选一项，再营业一天</h3><p>选择当天生效，之后沿用。隔壁始终照常营业。</p><p><b>调价：</b>降价更容易先卖出；提价每个收得多，但可能少卖。</p>${wage}
+   <div class="rules-investments"><div><h4>添炉＋招工 · 付10枚</h4><p>每天多做6个<br>每天多付1人工资</p></div><div><h4>换快炉 · 付8枚</h4><p>每天多做6个<br>人数、工资不变</p></div></div>
+  </section>
+  <section><h3>先付生产开支，再卖面包收钱</h3><p class="rules-equation">收入＝实际卖出 × 售价<br>每日开支＝员工数 × 每人工资＋5枚<br>资金净增＝收入－每日开支－当天购炉款</p><p class="rules-current">按你当前配置：${shop.workers.length}人 × ${shop.wage}枚＋5枚＝${daily}枚／天。</p></section>
+  <details><summary>卖不完、钱不够和其他限制</summary><p>顾客每人最多买1个，先买便宜的，同价轮流优先。做得多不保证卖得多；剩货以后继续卖，免费留存、不坏损。</p><p>现金付不起当天全部生产开支，就不生产、不付该天生产开支，仍可卖已有面包。购炉前须同时付得起购炉款与当天开支。</p><p>售价范围1—5枚；${wages?'每人工资范围1—4枚；':''}每店开局3人，最多3台炉。添炉招工合在一次操作；换快炉每次升级1台旧炉，两者都不停工。固定5枚包含原料3枚、其他2枚。</p><p>上下幕各从36枚另开账。第二幕只看外部客流，工资与购买力的联系放到第三幕的六家厂商、20人账本观察。期末资金净增不等于完整净利润。</p></details>
+ </div>`);
+}
+$('rules-open').onclick=showRules;
 $('detail-close').onclick=()=>$('detail').close();$('detail').addEventListener('close',syncStreet);document.addEventListener('visibilitychange',syncStreet);window.addEventListener('resize',()=>{});render();persist();
 $('opening-help').onclick=openingGuide;
 $('opening-sold-less').onclick=()=>{openingSold--;renderOpeningExample();};
