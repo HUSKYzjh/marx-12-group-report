@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-19T02:40:38.566Z",
-  "bytes": 20622791,
+  "built_at": "2026-10-19T03:01:48.330Z",
+  "bytes": 20628230,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2159,6 +2159,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Make the third-act recap a focused modal: actual production, sales, end stock including prior stock, and unmet purchasing power; distinguish social production from capitalist private ownership. Keep detailed accounts optional, preserve progress, support refresh and keyboard return.",
     "Expose funded own expansion and conditional peer investment, actual unsold goods and unmet purchasing power, matched wage-response comparisons, and a review distinguishing social production from separate capitalist ownership. Preserve accounts and alternative outcomes.",
     "Scale the six-firm artwork and spacing progressively on narrow screens, retain 44px person targets and readable labels, compact the story illustration, preserve desktop geometry and all accounts.",
     "Remove the introductory disclaimer line above the father-daughter dialogue. Preserve the dialogue and its navigation.",
@@ -2189,9 +2190,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "fdb8a4fc92ffce00d465e1778a281f163a22ee33f4f056bf3811f3d73c2c5636",
+    "index_sha256": "f0817d0efdfb060a4919d90d692171cbeec372485a70a08038aab35bedac50aa",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "fd819cf8f7568876661f54cd6a053edd604d0f9daaf2cbb9740b13f9a4dd884f"
+  "sha256": "71e046dabfe1832dbbd780cb23c4a3112e19ba5fa6f85fff5da61c7144a1f22a"
 }

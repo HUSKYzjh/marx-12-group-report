@@ -675,6 +675,7 @@
     document.body.dataset.relation = p.relationFocus;
     document.body.dataset.marketMode = p.marketMode; document.body.dataset.marketCuts = p.marketCuts;
     document.body.dataset.reliefRoute = p.reliefRoute || 'menu';
+    if(stage.street.closeBriefing)stage.street.closeBriefing();
     controls.innerHTML = ''; readout.innerHTML = ''; notes.innerHTML = '';
     var previousDialogue=document.getElementById('bakery-dialogue');if(previousDialogue)previousDialogue.remove();
     ['expansion-question','expansion-thought'].forEach(function(id){var previous=document.getElementById(id);if(previous)previous.remove();});
@@ -1080,7 +1081,7 @@
         // invalidating the street key would clearScene() and close the ledger
         // immediately after the user clicked it. StreetScene.update relayouts
         // its own geometry while preserving the open inspector and game state.
-        if (keyOf(state) !== 'street') stage.viewKey = '';
+        if (!['street','street-economy'].includes(keyOf(state))) stage.viewKey = '';
         stage.draw(state);
       }
       height();

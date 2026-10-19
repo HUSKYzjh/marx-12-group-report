@@ -2033,6 +2033,7 @@ function SplashEdge(config){\r
     document.body.dataset.relation = p.relationFocus;
     document.body.dataset.marketMode = p.marketMode; document.body.dataset.marketCuts = p.marketCuts;
     document.body.dataset.reliefRoute = p.reliefRoute || 'menu';
+    if(stage.street.closeBriefing)stage.street.closeBriefing();\r
     controls.innerHTML = ''; readout.innerHTML = ''; notes.innerHTML = '';
     var previousDialogue=document.getElementById('bakery-dialogue');if(previousDialogue)previousDialogue.remove();
     ['expansion-question','expansion-thought'].forEach(function(id){var previous=document.getElementById(id);if(previous)previous.remove();});
@@ -2438,7 +2439,7 @@ function SplashEdge(config){\r
         // invalidating the street key would clearScene() and close the ledger
         // immediately after the user clicked it. StreetScene.update relayouts
         // its own geometry while preserving the open inspector and game state.
-        if (keyOf(state) !== 'street') stage.viewKey = '';
+        if (!['street','street-economy'].includes(keyOf(state))) stage.viewKey = '';
         stage.draw(state);
       }
       height();
@@ -4257,13 +4258,16 @@ body.embedded{background:#fff}body.embedded main{padding-top:0}body.embedded foo
  root.renderStreetContradiction=function(c){
   c.scene.auto=false;c.scene.autoPending=false;c.title();
   var e=c.evidence,a=e&&e.actual;
-  el('h2','\u5404\u5BB6\u5404\u7B97\u5404\u7684\uFF0C\u751F\u610F\u5374\u8FDE\u5728\u4E00\u8D77\u3002',c.readout,'street-review-heading');evidence(c,c.readout);
+  var heading=el('h2','\u6BCF\u5BB6\u90FD\u60F3\u591A\u8D5A\uFF0C\u4E3A\u4EC0\u4E48\u8FD8\u4F1A\u5356\u4E0D\u6389\uFF1F',c.readout,'street-review-heading');heading.id='street-review-title';\r
+  el('p','\u5BF9\u4E00\u5BB6\u5E97\uFF0C\u5C11\u53D1\u5DE5\u8D44\u80FD\u7701\u94B1\uFF0C\u591A\u751F\u4EA7\u80FD\u4E89\u53D6\u6536\u5165\u3002\u4F46\u4E00\u5BB6\u4ED8\u51FA\u7684\u5DE5\u8D44\uFF0C\u4E5F\u662F\u522B\u5BB6\u987E\u5BA2\u7684\u8D2D\u4E70\u529B\u3002',c.readout,'street-review-lead');
+  if(a)el('p','\u672C\u8F6E\u9762\u5305\uFF1A\u51FA\u7089 '+a.produced+' \u4E2A\uFF0C\u5356\u51FA '+a.sold+' \u4E2A\uFF1B\u671F\u672B\u5E93\u5B58 '+a.breadStock+' \u4E2A\uFF08\u542B\u65E7\u8D27\uFF09\u3002'+(a.breadUnaffordable?'\u53E6\u6709 '+a.breadUnaffordable+' \u4EBA\u60F3\u4E70\u57FA\u672C\u9762\u5305\uFF0C\u5374\u4ED8\u4E0D\u8D77\u3002':'\u672C\u8F6E\u6CA1\u4EBA\u56E0\u7F3A\u94B1\u4E70\u4E0D\u5230\u57FA\u672C\u9762\u5305\u3002'),c.readout,'street-review-fact');\r
   var pair=el('div','',c.readout,'street-structure');
   [['\u751F\u4EA7\u793E\u4F1A\u5316','\u539F\u6599\u3001\u673A\u5668\u3001\u534F\u4F5C\u548C\u6D88\u8D39\u4E92\u76F8\u4F9D\u8D56\u3002\u4E00\u5BB6\u7684\u652F\u51FA\uFF0C\u662F\u522B\u5BB6\u7684\u6536\u5165\u3002'],['\u751F\u4EA7\u8D44\u6599\u7684\u8D44\u672C\u4E3B\u4E49\u79C1\u4EBA\u5360\u6709','\u5E97\u548C\u673A\u5668\u5F52\u5404\u5BB6\u8001\u677F\uFF1B\u6295\u8D44\u3001\u5DE5\u8D44\u548C\u5F00\u5DE5\u7531\u5404\u5BB6\u5206\u522B\u51B3\u5B9A\uFF0C\u6536\u76CA\u4E5F\u5206\u522B\u6838\u7B97\u3002']].forEach(function(v){var block=el('section','',pair);el('h3',v[0],block);el('p',v[1],block);});
   el('h3','\u8D44\u672C\u4E3B\u4E49\u57FA\u672C\u77DB\u76FE',c.readout);
-  el('p','\u751F\u4EA7\u76F8\u4E92\u4F9D\u8D56\uFF0C\u6295\u8D44\u548C\u5206\u914D\u5374\u7531\u5404\u5BB6\u8D44\u672C\u5206\u522B\u51B3\u5B9A\uFF0C\u6309\u5404\u81EA\u6536\u76CA\u7ECF\u8425\u3002\u4E2A\u522B\u5408\u7406\u7684\u7B97\u76D8\uFF0C\u53EF\u80FD\u9020\u6210\u5168\u8857\u4EA7\u9500\u5931\u8861\u3002',c.readout,'street-core-contradiction');
+  el('p','\u751F\u4EA7\u793E\u4F1A\u5316\uFF0C\u4E0E\u751F\u4EA7\u8D44\u6599\u7684\u8D44\u672C\u4E3B\u4E49\u79C1\u4EBA\u5360\u6709\u4E4B\u95F4\u7684\u77DB\u76FE\u3002\u751F\u4EA7\u4F9D\u9760\u793E\u4F1A\u534F\u4F5C\uFF0C\u6295\u8D44\u3001\u7528\u5DE5\u548C\u6536\u76CA\u5206\u914D\u5374\u7531\u5404\u5BB6\u8D44\u672C\u5206\u522B\u652F\u914D\u3002',c.readout,'street-core-contradiction');
   el('h3',a&&a.breadStock?'\u9762\u5305\u5269\u4E0B\uFF0C\u8C01\u8FD8\u4E70\u5F97\u8D77\uFF1F':'\u8FD9\u6B21\u6CA1\u6709\u9762\u5305\u79EF\u538B\uFF0C\u77DB\u76FE\u5C31\u6D88\u5931\u4E86\u5417\uFF1F',c.readout);
   el('p',a&&a.breadStock?'\u6309\u73B0\u4EF7\u5356\u4E0D\u6389\u7684\u5546\u54C1\uFF0C\u662F\u76F8\u5BF9\u6709\u652F\u4ED8\u80FD\u529B\u9700\u6C42\u7684\u8FC7\u5269\uFF1B\u4E0D\u7B49\u4E8E\u4EBA\u4EBA\u7684\u9700\u8981\u90FD\u6EE1\u8DB3\u3002':'\u672C\u5C40\u53EF\u80FD\u5356\u5B8C\u3002\u57FA\u672C\u77DB\u76FE\u662F\u751F\u4EA7\u5173\u7CFB\u7684\u7ED3\u6784\uFF0C\u4E0D\u80FD\u7528\u4E00\u6B21\u5269\u8D27\u6216\u4E00\u6B21\u5356\u5B8C\u4EE3\u66FF\u5224\u65AD\u3002',c.readout,'street-surplus-explanation');
+  var rootReadout=c.readout,detail=el('details','',rootReadout,'street-review-details');el('summary','\u5C55\u5F00\u672C\u5C40\u8D26\u76EE\u4E0E\u964D\u85AA\u5BF9\u7167',detail);c.readout=detail;detail.appendChild(pair);evidence(c,detail);\r
   if(e&&e.repeatedOwnStock)el('p','\u4F60\u7684\u5E97\u5DF2\u8FDE\u7EED\u4E24\u671F\u6709\u5269\u8D27\u3002\u770B\u770B\u4EA7\u91CF\u3001\u552E\u4EF7\u548C\u987E\u5BA2\u94B1\u5305\u5404\u53D8\u4E86\u591A\u5C11\u3002',c.readout,'street-hint');
   var compare=e&&e.comparison;
   if(compare&&compare.own&&compare.follow){
@@ -4274,8 +4278,23 @@ body.embedded{background:#fff}body.embedded main{padding-top:0}body.embedded foo
    el('p','\u8FD9\u662F\u4ECE\u540C\u4E00\u8D77\u70B9\u505A\u7684\u6761\u4EF6\u5BF9\u7167\uFF0C\u4E0D\u6539\u5DF2\u53D1\u751F\u7684\u8D26\uFF0C\u4E5F\u4E0D\u5047\u5B9A\u6240\u6709\u8001\u677F\u5FC5\u7136\u964D\u85AA\u3002',section,'small');
   }
   el('p','\u6269\u4EA7\u4E5F\u4F1A\u521B\u9020\u8BBE\u5907\u8BA2\u5355\u548C\u5DE5\u8D44\uFF1B\u6D88\u8D39\u3001\u6295\u8D44\u3001\u964D\u4EF7\u7B49\u53EF\u80FD\u5438\u6536\u4EA7\u54C1\u3002\u4E00\u6B21\u79EF\u538B\u4E0D\u8DB3\u4EE5\u8BC1\u660E\u5168\u9762\u5371\u673A\u3002',c.readout,'street-review-limit');
+  c.readout=rootReadout;\r
   var back=el('button','\u56DE\u5230\u8857\u4E0A\uFF0C\u6362\u4E2A\u529E\u6CD5',c.controls,'secondary');back.type='button';back.onclick=function(){c.send({type:'MANAGE'});};
-  if(e&&e.reviewReady&&a)c.ending('\u7EE7\u7EED\u770B\u6545\u4E8B \u2192');
+  if(e&&e.reviewReady&&a)c.ending('\u7EE7\u7EED\u770B\u6545\u4E8B \u2192');\r
+  // The review is the popup itself, rather than a second notice before it.\r
+  var dialog=document.createElement('dialog');dialog.className='street-review-dialog';dialog.setAttribute('aria-labelledby',heading.id);\r
+  var body=el('div','',dialog,'street-review-body');while(rootReadout.firstChild)body.appendChild(rootReadout.firstChild);\r
+  var actions=el('div','',dialog,'street-review-actions');while(c.controls.firstChild)actions.appendChild(c.controls.firstChild);rootReadout.appendChild(dialog);\r
+  requestAnimationFrame(function(){\r
+  if(!dialog.isConnected)return;\r
+  var previousFocus=document.activeElement,hostOverflow,disposed=false;\r
+  try{rootReadout.style.minHeight=Math.max(320,parent.innerHeight-150)+'px';hostOverflow=parent.document.body.style.overflow;parent.document.body.style.overflow='hidden';}catch(err){}\r
+  function place(){if(disposed)return;var offset=0,available=innerHeight;try{if(frameElement){var rect=frameElement.getBoundingClientRect();offset=Math.max(0,-rect.top);available=Math.max(120,Math.min(innerHeight-offset,parent.innerHeight-Math.max(0,rect.top)));}}catch(err){}dialog.style.maxHeight=Math.max(96,available-24)+'px';dialog.style.top=offset+Math.max(12,(available-dialog.offsetHeight)/2)+'px';}\r
+  function cleanup(){if(disposed)return;disposed=true;dialog.close();dialog.remove();rootReadout.style.minHeight='';try{if(hostOverflow!==undefined)parent.document.body.style.overflow=hostOverflow;parent.removeEventListener('resize',place);parent.removeEventListener('scroll',place);}catch(err){}window.removeEventListener('resize',place);if(c.scene.closeBriefing===cleanup)c.scene.closeBriefing=null;if(previousFocus&&previousFocus.isConnected)previousFocus.focus({preventScroll:true});}\r
+  c.scene.closeBriefing=cleanup;dialog.addEventListener('cancel',function(event){event.preventDefault();c.send({type:'MANAGE'});});\r
+  dialog.showModal();heading.tabIndex=-1;heading.focus({preventScroll:true});window.addEventListener('resize',place);try{parent.addEventListener('resize',place);parent.addEventListener('scroll',place,{passive:true});}catch(err){}place();requestAnimationFrame(place);\r
+  dialog.addEventListener('toggle',place);detail.addEventListener('toggle',place);\r
+  });
  };
 })(window);
 `;var Xk=`(function(root){
@@ -9790,6 +9809,12 @@ body[data-scene="opening"] .production-hint { margin-bottom: 8px; }
 @media(max-width:600px){.street-evidence{padding:9px 6px}.street-evidence-grid{gap:4px}.street-evidence-grid span{font-size:12px}.street-evidence-grid strong{font-size:19px}#readout .street-bread-flow{font-size:17px}#readout .street-evidence :is(.street-stock-line,.street-affordability,.street-flow-link){font-size:14px}.street-investment-actions{gap:6px}.street-investment-actions button,.street-response-choice button{font-size:15px;min-height:44px;padding:8px}.street-structure{grid-template-columns:1fr;gap:10px}.street-review-heading{font-size:21px}#readout .street-structure h3{font-size:19px}#readout .street-structure p{font-size:16px}#readout .street-core-contradiction,#readout .street-surplus-explanation{font-size:17px}.street-wage-comparison table{font-size:17px}.street-wage-comparison :is(th,td){padding:8px 4px}.street-wage-comparison tbody th{font-size:13px}}\r
 \r
 body[data-street-review=true] .stage-object{display:none}\r
+\r
+/* Third-act recap: the contradiction leads, optional accounts follow. */\r
+.street-review-dialog{position:fixed;left:50%;transform:translateX(-50%);margin:0;box-sizing:border-box;width:min(740px,calc(100% - 24px));padding:20px;background:#fffefb;color:#444;border:2px solid #666;border-radius:6px 10px 5px 8px;display:flex;flex-direction:column;gap:12px;font-family:WorkshopHand,"Microsoft YaHei",sans-serif;text-align:left;box-shadow:5px 6px 0 #4442}.street-review-dialog:not([open]){display:none}.street-review-dialog::backdrop{background:#28282866}.street-review-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 5px}.street-review-actions{display:flex;flex-wrap:wrap;gap:10px;flex:none}.street-review-actions button{flex:1;min-height:44px;font:inherit;font-size:18px}.street-review-dialog h2{margin:0 0 14px;font-size:26px}.street-review-dialog h3{font-size:20px;margin:16px 0 8px}#readout .street-review-lead{font-size:20px;line-height:1.7;margin:0 0 12px}#readout .street-review-fact{border-left:4px solid #80a58b;padding:10px 12px;background:#edf0e8;font-size:18px;line-height:1.6}#readout .street-review-dialog .street-core-contradiction{border:2px solid #747c6d;padding:12px;font-size:19px}.street-review-details summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-size:17px}.street-review-details summary::before{content:"\u25B8 ";margin-right:6px}.street-review-details[open] summary::before{content:"\u25BE "}.street-review-dialog .street-structure{gap:10px}.street-review-dialog .street-structure section{padding:9px}\r
+@media(max-width:600px){.street-review-dialog{padding:14px 10px;gap:8px}.street-review-dialog h2{font-size:23px}#readout .street-review-lead{font-size:18px}#readout .street-review-dialog .street-core-contradiction{font-size:17px;padding:9px}.street-review-dialog .street-structure{grid-template-columns:1fr}.street-review-actions button{font-size:16px;padding:9px 5px}}\r
+\r
+.street-review-heading:focus{outline:none}\r
 `;function mo(e){return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 72" fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="presentation" aria-hidden="true">${e}</svg>`}var xS=[{id:"computer",label:"\u7535\u8111",description:"\u6570\u5B57\u5DE5\u5177",svgMarkup:mo(`
       <path d="M15 10 80 9 81 44 14 45Z"/>
       <path d="M20 15 75 15 76 37 20 38Z"/>
