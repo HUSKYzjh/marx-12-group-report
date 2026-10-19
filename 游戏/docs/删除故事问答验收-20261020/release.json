@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-20",
+  "request": "删掉或优化截图中的故事后问答",
+  "changes": [
+    "删除故事里有面包女儿却饿着的提问、三个选项及答案反馈",
+    "清理只服务该问答的样式，并将已有完整故事检查改为确认问答缺席",
+    "保留父女故事、社会化生产与私人占有图解、相对过剩说明和第四幕入口"
+  ],
+  "source_sha256": "4652689fc3b99d5ff645a781f5c50f6eab88db77c630a21eb237c540cd9bb15a",
+  "index_sha256": "cbb4212d178d7843edfe84fd1b1a7f8aa78daa7afb5ce3cdbb52ad191d8ea671",
+  "validation": {
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "actual_two_rounds_story_summary_and_fourth_act": true,
+    "refresh_and_actual_ledger_preserved": true,
+    "font_mappings": 47449,
+    "zip_verified": true
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792433395457/"
+  },
+  "limits": [
+    "本次是局部删除，没有重跑历史全套检查或完整故事脚本的全部支线。"
+  ]
+}

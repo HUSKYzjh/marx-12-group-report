@@ -4193,10 +4193,6 @@ body.embedded{background:#fff}body.embedded main{padding-top:0}body.embedded foo
  root.renderStreetSummary=function(c){
   function el(tag,text,parent){var n=document.createElement(tag);n.textContent=text||'';(parent||c.readout).appendChild(n);StreetArt.decorateMoney(n);return n;}
   c.title('\u7B2C\u4E09\u5E55\xB7\u5356\u4E0D\u6389\u7684\u9762\u5305','');
-  var probe=el('details');probe.className='street-summary-probe';probe.open=true;el('summary','\u6545\u4E8B\u91CC\u6709\u9762\u5305\uFF0C\u5973\u513F\u5374\u997F\u7740\u3002\u5361\u5728\u54EA\u91CC\uFF1F',probe);
-  var choices=el('div','',probe);choices.className='summary-probe-choices';
-  var answer=el('p');answer.className='summary-probe-answer';answer.setAttribute('role','status');answer.hidden=true;
-  [['needs','\u5DF2\u7ECF\u4E0D\u9700\u8981\u9762\u5305','\u5979\u4ECD\u7136\u60F3\u5403\u3002\u5148\u770B\u770B\uFF0C\u5979\u80FD\u4E0D\u80FD\u4ED8\u6B3E\u3002'],['payment','\u6CA1\u94B1\u4ED8\u6B3E','\u6545\u4E8B\u91CC\u7684\u969C\u788D\u662F\u6CA1\u94B1\u3002\u6709\u9700\u8981\uFF0C\u8FD8\u5F97\u4ED8\u5F97\u8D77\u3002'],['capacity','\u7089\u5B50\u8FD8\u4E0D\u591F\u5FEB','\u6545\u4E8B\u91CC\u5DF2\u6709\u9762\u5305\u3002\u591A\u505A\u4E00\u4E9B\uFF0C\u4E0D\u76F4\u63A5\u8865\u4E0A\u5979\u7684\u94B1\u5305\u3002']].forEach(function(item){var b=el('button',item[1],choices);b.type='button';b.className='secondary';b.dataset.summaryChoice=item[0];b.onclick=function(){choices.querySelectorAll('button').forEach(function(other){other.setAttribute('aria-pressed',String(other===b));});answer.textContent=item[2];answer.hidden=false;probe.open=false;};});
   var gains=el('p');gains.className='street-summary-gains';el('strong','\u52B3\u52A8\u5206\u5DE5\u63D0\u9AD8\u751F\u4EA7\u6548\u7387\uFF0C\u5E02\u573A\u7ADE\u4E89\u63A8\u52A8\u6539\u8FDB\uFF0C\u81EA\u7531\u8D38\u6613\u6269\u5927\u4EA4\u6362\u8303\u56F4',gains);
   var panels=el('div');panels.className='street-summary-panels';
   function diagram(privateOwnership){
@@ -9790,12 +9786,7 @@ body[data-scene="opening"] .production-hint { margin-bottom: 8px; }
 .branch-related{width:100%;max-width:600px;margin:18px auto 0;text-align:center}
 .branch-related p{font-size:18px;line-height:1.6;margin:0 0 8px}
 .branch-related button{max-width:100%;min-height:44px;white-space:normal}
-.street-summary-probe{margin:12px auto 18px;padding:12px;border:1px dashed #aaa;border-radius:9px;text-align:left}
-.street-summary-probe>summary{font-size:19px;line-height:1.6;cursor:pointer}
-.summary-probe-choices{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.summary-probe-choices button{font-size:17px;min-height:44px;white-space:normal;flex:1 1 150px}
-.summary-probe-answer{font-size:18px;line-height:1.7;text-align:left}
-@media(max-width:600px){.branch-review caption{font-size:19px}.branch-review th,.branch-review td{padding:9px 4px}.branch-review tbody th{font-size:15px}.branch-review td{font-size:21px}.branch-related p{font-size:17px}.street-summary-probe>summary{font-size:17px}.summary-probe-choices{gap:6px}.summary-probe-choices button{flex-basis:100%}.summary-probe-answer{font-size:17px}}
+@media(max-width:600px){.branch-review caption{font-size:19px}.branch-review th,.branch-review td{padding:9px 4px}.branch-review tbody th{font-size:15px}.branch-review td{font-size:21px}.branch-related p{font-size:17px}}
 
 /* Narrow illustrations scale with the viewport, while text and hit areas stay readable. */
 @media(max-width:600px){
