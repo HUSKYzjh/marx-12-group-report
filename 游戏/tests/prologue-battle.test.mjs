@@ -21,8 +21,8 @@ test('legacy six-shop shortcut now opens the third act and preserves both ledger
  assert.deepEqual(restorePrologue(s),s);const street=structuredClone(s.street);
  s=reduce(s,{type:'JUMP_STAGE',stage:2});assert.equal(s.streetMode,'battle');assert.deepEqual(s.street,street);
  s=reduce(s,{type:'OPEN_STREET_SANDBOX'});assert.deepEqual(s.street,street);
- assert.equal(reduce(s,{type:'FINISH_STREET_ECONOMY'}).scene,'ending');
- const migrated=restorePrologue({...s,scene:'street',streetMode:'sandbox'});assert.equal(migrated.scene,'street-economy');assert.deepEqual(migrated.street,street);
+ s=reduce(s,{type:'STREET',action:{type:'ROUND',expectedRound:1}});s=reduce(s,{type:'STREET',action:{type:'EXPLAIN'}});assert.equal(reduce(s,{type:'FINISH_STREET_ECONOMY'}).scene,'ending');
+ const migrated=restorePrologue({...s,scene:'street',streetMode:'sandbox'});assert.equal(migrated.scene,'street-economy');assert.deepEqual(migrated.street,s.street);
  assert.equal(restorePrologue({...s,street:null}).streetMode,'battle');
 });
 test('first act hands off to a fresh battle without inheriting its demonstration cash',()=>{

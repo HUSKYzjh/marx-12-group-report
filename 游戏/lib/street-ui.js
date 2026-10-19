@@ -88,6 +88,7 @@
     pause.hidden=skip.hidden=sample.complete;pause.textContent=sample.playing?'暂停':'继续播放';
    };
   }
+  if(c.economyAct&&explaining){renderStreetContradiction(c);return;}
   if(g.campaign&&!explaining){campaign();return;}
   if(g.story&&!explaining){guided();decisions();if(g.tutorial)installStreetBriefing(c);return;}
   c.title('第二幕·面包卖给谁？',explaining?'':g.phase==='intro'?'做出来了，就得卖出去。':g.phase==='own'?'我家的钱，要靠外面的客人来。':g.phase==='neighbors'?'别家也看见了你的办法。':'想多赚一点，你会怎么做？');
@@ -107,6 +108,7 @@
    }else button('再看一层 →','NEXT',{},c.controls,'primary');
    button('重试上一轮','RETRY');return;
   }
+  if(c.economyAct)renderStreetEvidence(c);
   var metrics=el('div','','street-metrics street-icon-key',c.readout);metrics.id='street-metrics';
   if(!c.economyAct){var begin=button('重新开门','BEGIN_CAMPAIGN',{},c.controls,'primary');begin.onclick=function(){if(!g.world.round||root.confirm('重新开始第二幕？本幕营业记录会重开，其他幕的选择保留。'))send('BEGIN_CAMPAIGN');};}
   [['bread','库存'],['person','员工'],['cash','余额']].forEach(function(item){var cell=el('span','','',metrics);cell.innerHTML=StreetArt.icon(item[0]);el('span',item[1],'',cell);});
@@ -117,6 +119,13 @@
   var knobs=el('div','','street-knobs');
   function knob(label,value,type,step,min,max){var group=el('div','','street-knob',knobs);el('span',type==='WAGE'?'工资':'售价','',group);var minus=button('−',type,{delta:-step},group);minus.setAttribute('aria-label','减少'+label);minus.disabled=value<=min;el('output',String(value)+' 枚','',group);var plus=button('＋',type,{delta:step},group);plus.setAttribute('aria-label','增加'+label);plus.disabled=value>=max;}
   knob('每人每轮工资',g.wage,'WAGE',1,3,7);knob('每个面包售价',g.price,'PRICE',1,1,Math.min(4,g.wage));
+  if(c.economyAct){
+   var invest=el('div','','street-investment-actions');
+   var expand=button('添炉＋招工','EXPAND_STREET',{},invest);expand.disabled=g.world.round<1||f.machines>=4;expand.dataset.disabled=String(expand.disabled);expand.title='自付烤炉款，招一位街上的待业者；下次营业多一个班次。';
+   var follow=button('如果同行也扩产','FOLLOW_EXPANSION',{},invest);follow.disabled=g.world.round<1;follow.dataset.disabled=String(follow.disabled);follow.title='条件实验：同行按各自资金与现有人手投资，不替他们垫钱。';
+   var response=el('div','','street-response-choice');el('span','降薪的对照条件','',response);
+   [['none','只改本店'],['cut','如果别家也降薪']].forEach(function(pair){var b=button(pair[1],'RESPONSE',{value:pair[0]},response);b.setAttribute('aria-pressed',String(g.response===pair[0]));});
+  }
   var businessActions=el('div','','street-business-actions');
   var run=button('营业一轮 →','ROUND',{expectedRound:g.world.round},businessActions,'primary');run.id='street-run';
   var continuous=el('button',c.scene.auto?'停止营业':'持续营业','primary',businessActions);continuous.type='button';continuous.id='street-continuous';continuous.setAttribute('aria-pressed',String(c.scene.auto));
@@ -135,13 +144,14 @@
    // Expansion and dismissal remain in their specific guided story steps.
    if(g.message.indexOf('这轮工资和原料还差')===0&&g.shifts>0)button('少开一班，再试试','SHIFTS',{delta:-1});
    if(f.stock)el('p','剩 '+f.stock+' 个。调一调售价，再看看。','street-hint',c.readout);
-   button('回看这条街 →','EXPLAIN',{},c.controls,'primary');
+   if(!c.economyAct||g.world.round>=2&&r&&!r.management)button(c.economyAct?'收摊：看看矛盾在哪里 →':'回看这条街 →','EXPLAIN',{},c.controls,'primary');
+   else el('p','再开一天，比较各家怎样互相影响。','street-hint',c.readout);
   }
   decisions();
   if(g.checkpoint)button('重试上一轮','RETRY');
   c.scene.onChange=function(sample){
    continuous.textContent=c.scene.auto?'停止营业':'持续营业';continuous.setAttribute('aria-pressed',String(c.scene.auto));
-   c.controls.querySelectorAll('[data-street-action]').forEach(function(b){if(sample.complete){var type=b.dataset.streetAction,delta=Number(b.dataset.delta);b.disabled=type==='WAGE'?(delta<0?g.wage<=3:g.wage>=7):type==='PRICE'?(delta<0?g.price<=1:g.price>=Math.min(4,g.wage)):false;}else b.disabled=true;});
+   c.controls.querySelectorAll('[data-street-action]').forEach(function(b){if(sample.complete){if(b.dataset.disabled==='true'){b.disabled=true;return;}var type=b.dataset.streetAction,delta=Number(b.dataset.delta);b.disabled=type==='WAGE'?(delta<0?g.wage<=3:g.wage>=7):type==='PRICE'?(delta<0?g.price<=1:g.price>=Math.min(4,g.wage)):false;}else b.disabled=true;});
    pause.hidden=skip.hidden=sample.complete;pause.textContent=sample.playing?'暂停':'继续播放';
   };
   if(g.tutorial)installStreetBriefing(c);

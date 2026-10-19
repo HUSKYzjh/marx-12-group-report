@@ -48,7 +48,7 @@ try{
   assert.equal(await host.locator('.street-shop-hit').count(),6);assert.equal(await host.locator('.street-person').count(),20);
   assert.equal(await host.locator('#dots button[aria-current=step]').getAttribute('data-stage'),'3');
   assert.equal(await host.locator('[data-street-action=BEGIN_CAMPAIGN]').count(),0);
-  assert.match(await host.locator('#slideshow').innerText(),/第三幕.*有限的钱包/);
+  assert.match(await host.locator('#slideshow').innerText(),/第三幕.*各家的算盘/);
   await host.locator('main').screenshot({path:path.join(out,`${width}-six-firms.png`)});
   const money=w=>w.firms.reduce((n,f)=>n+f.cash,0)+w.people.reduce((n,p)=>n+p.cash,0);
   const initialMoney=s.street.world.initialMoney;assert.equal(initialMoney,76800);assert.equal(money(s.street.world),initialMoney);
@@ -68,11 +68,12 @@ try{
   await host.locator('#dots button[data-stage="3"]').click();await host.locator('body[data-scene="street-economy"]').waitFor();assert.deepEqual((await saved()).street,street);
   const overflow=await host.evaluate(()=>document.documentElement.scrollWidth>innerWidth+2);assert.equal(overflow,false);
   await host.locator('main').screenshot({path:path.join(out,`${width}-finite-wallet-round-two.png`)});
+  await host.getByRole('button',{name:'收摊：看看矛盾在哪里 →',exact:true}).click();
   await host.getByRole('button',{name:'继续看故事 →',exact:true}).click();await host.locator('body[data-scene="ending"]').waitFor();
   assert.equal(await host.locator('#dots button[aria-current=step]').getAttribute('data-stage'),'3');
   assert.equal(await host.getByTestId('family-story-boundary').count(),0);
   await host.getByRole('button',{name:'继续听 →',exact:true}).click();await host.getByRole('button',{name:'继续听 →',exact:true}).click();await host.getByRole('button',{name:'再看看这条街 →',exact:true}).click();await host.locator('body[data-scene="street-summary"]').waitFor();
-  await host.locator('#dots button[data-stage="4"]').click();await host.locator('body[data-scene="relief"]').waitFor();assert.deepEqual((await saved()).street,street);
+  await host.locator('#dots button[data-stage="4"]').click();await host.locator('body[data-scene="relief"]').waitFor();assert.deepEqual((await saved()).street.world,street.world);
   results.push({width,secondActDays:[3,5],noTwoShopWalletRound:true,upperMaximum:54,thirdActFirms:6,thirdActPeople:20,initialMoney,completedStreetRounds:2,fundedPayroll:true,fundedSupplierPayment:true,moneyConserved:true,duelPreserved:true,refresh:true,actNavigationPreservesLedger:true,storyAndFourthActContinue:true,noHorizontalOverflow:true,noStateInjection:true});
   console.log(`PASS ${width}: 3+5 days → third-act six firms; actual wages, supply, two conserved rounds, refresh, story and fourth act`);await context.close();
  }

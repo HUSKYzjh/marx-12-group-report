@@ -1,4 +1,5 @@
 'use client';
+import {streetContradiction} from '../lib/street-contradiction.ts';
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { trustDocument } from '@/lib/trust-document';
 import { initialPrologue, prologueReducer, restorePrologue, visiblePlans, canSampleRelief, reliefEndingAccessible, FIRMS,
@@ -143,6 +144,7 @@ export default function TrustStory({ onLegacy, active = true }: { onLegacy: () =
   useEffect(() => {
     if (!ready || !loaded) return;
     frame.current?.contentWindow?.postMessage({ app: 'trust-adaptation', type: 'state', payload: {
+      streetContradiction:prologue.scene==='street-economy'&&prologue.street?streetContradiction(prologue.street):null,
       prologue, machine, entrance, section, canSave, firms: FIRMS, plans: visiblePlans(prologue),
       account: machineAccount(machine), oldAccount: OLD_MACHINE, questions: PREDICTION_QUESTIONS,
       market: marketAccount(prologue.marketDemoShare ?? prologue.allocationPlans[prologue.activeFirmId].laborShare,

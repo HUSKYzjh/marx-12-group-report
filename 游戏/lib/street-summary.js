@@ -41,7 +41,7 @@
   root.WeberPerspective.mount(extra,'summary');
   root.ValueJourney.mount(extra);
   var limits=el('details','',extra);limits.className='street-bounds';el('summary','这局的条件',limits);
-  ['前两场先让客人带着预算来，观察客流和“慢一拍”；每场重新开账。','第三场换成8位劳动者、2位老板和1位原料商。新版最初6人在职、2人待业；工资和货款在现有钱包之间流动。','老板和原料商也要吃饭；每人每天尝试买1个。','降薪、裁员是可试的招数。也可以不选，游戏会照样算账。','这条街暂时没有政府采购、借钱和国外客人。一次剩货不能证明全面危机，更不能证明必然崩溃。','本局描绘私人雇佣企业，不能直接用来解释社会主义国家。'].forEach(function(words){el('p',words,limits);});
+  ['第二幕观察固定与波动客流，第三幕另开六家厂商的相互依赖实验。','第三幕有6家厂商、20人；厂商自行投资和用工，工资、采购和消费在真实账户间流转。','老板、工人和待业者都尝试购买基本面包；额外购买有上限，不能靠“无限想买”清空库存。','降薪、裁员是可试的招数。也可以不选，游戏会照样算账。','这条街暂时没有政府采购、借钱和国外客人。一次剩货不能证明全面危机，更不能证明必然崩溃。','本局描绘私人雇佣企业，不能直接用来解释社会主义国家。'].forEach(function(words){el('p',words,limits);});
   var source=el('p','情节依据遨游之舟的回答改编；原文作者保留著作权。',limits);var link=el('a','原文 ↗',source);link.href='https://www.zhihu.com/question/264895929/answer/1906437501';link.target='_blank';link.rel='noreferrer';
   var concepts=el('details','',limits);el('summary','分工、交换、积累：不是同一件事',concepts);var conceptsMounted=false;
   concepts.ontoggle=function(){if(concepts.open&&!conceptsMounted){conceptsMounted=true;root.ResearchReader.mount(concepts,'',{topics:[

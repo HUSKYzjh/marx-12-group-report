@@ -267,7 +267,7 @@ export function prologueReducer(s: PrologueState, action: PrologueAction): Prolo
       if(s.battle.state.externalOnly)return {...s,scene:'street-economy',streetMode:'battle',street:s.street??sixFirmEconomy()};
       return {...s,scene:'ending',streetMode:'battle',definitionShown:true,endingPairIndex:0,endingViewMode:'pairs'};
     }
-    case 'FINISH_STREET_ECONOMY': return s.scene==='street-economy'&&s.street&&s.street.world.round>0
+    case 'FINISH_STREET_ECONOMY': return s.scene==='street-economy'&&s.street&&s.street.world.round>=2&&s.street.report&&!s.street.report.management&&['social','private','overproduction','limits'].includes(s.street.phase)
       ?{...s,scene:'ending',definitionShown:true,endingPairIndex:0,endingViewMode:'pairs'}:s;
     case 'RESTORE': return restorePrologue(action.snapshot);
     case 'STREET': return ['street','street-economy','street-summary'].includes(s.scene)&&action.action&&typeof action.action.type==='string'

@@ -48,7 +48,7 @@ test('third act opens the established six-firm, twenty-person finite-wallet econ
  const street=structuredClone(s.street);
  s=reduce(reduce(s,{type:'JUMP_STAGE',stage:2}),{type:'JUMP_STAGE',stage:3});
  assert.deepEqual(s.street,street);assert.deepEqual(s.battle,battle);
- s=reduce(s,{type:'FINISH_STREET_ECONOMY'});assert.equal(s.scene,'ending');
+ assert.equal(reduce(s,{type:'FINISH_STREET_ECONOMY'}),s);s=reduce(s,{type:'STREET',action:{type:'EXPLAIN'}});s=reduce(s,{type:'FINISH_STREET_ECONOMY'});assert.equal(s.scene,'ending');
  assert.deepEqual(restorePrologue(s),s);
  s=reduce(reduce(s,{type:'SHOW_ALL'}),{type:'SHOW_STREET_SUMMARY'});
  assert.equal(s.scene,'street-summary');s=reduce(s,{type:'SHOW_RELIEF'});assert.equal(s.scene,'relief');

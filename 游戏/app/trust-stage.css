@@ -1861,3 +1861,17 @@ body[data-scene="opening"] .production-hint { margin-bottom: 8px; }
  body[data-scene="street-economy"] .street-icon-key{margin:6px 0}
  body[data-scene="street-economy"] .street-inspect-hint{margin:4px 0 6px}
 }
+
+.street-evidence{width:100%;max-width:780px;margin:10px auto;padding:10px 14px;border:1px dashed #aaa;border-radius:8px 13px 9px 7px;text-align:center}
+#readout .street-bread-flow{font-size:20px;margin:0 0 8px}.street-evidence-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.street-evidence-grid span{display:block;font-size:14px}.street-evidence-grid strong{display:block;font-size:22px;font-weight:normal}
+#readout .street-evidence :is(.street-stock-line,.street-affordability,.street-flow-link){font-size:15px;margin:6px 0}.street-evidence small{font-size:13px}
+.street-investment-actions,.street-response-choice{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 16px;width:100%;margin:6px auto}.street-response-choice>span{flex-basis:100%;font-size:15px;color:#777}.street-response-choice button[aria-pressed=true]{border:2px solid #666;background:#f5f4ef}
+.street-structure{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:800px;margin:14px auto}.street-structure section{border:1px dashed #aaa;border-radius:9px;padding:12px}
+#readout .street-structure h3{font-size:21px;margin:0 0 8px}#readout .street-structure p{font-size:17px;text-align:left;line-height:1.7;margin:0}
+.street-review-heading{font-size:24px;font-weight:normal}#readout .street-core-contradiction,#readout .street-surplus-explanation{max-width:760px;font-size:19px;margin:14px auto;line-height:1.7}
+.street-wage-comparison{max-width:780px;margin:18px auto}.street-wage-comparison table{border-collapse:collapse;width:100%;font-size:18px}.street-wage-comparison :is(th,td){padding:9px 8px;border-bottom:1px dashed #bbb;font-weight:normal}.street-wage-comparison tbody th{text-align:left;font-size:16px}
+#readout .street-review-limit{font-size:15px;color:#777;max-width:760px;margin:16px auto}
+@media(max-width:600px){.street-evidence{padding:9px 6px}.street-evidence-grid{gap:4px}.street-evidence-grid span{font-size:12px}.street-evidence-grid strong{font-size:19px}#readout .street-bread-flow{font-size:17px}#readout .street-evidence :is(.street-stock-line,.street-affordability,.street-flow-link){font-size:14px}.street-investment-actions{gap:6px}.street-investment-actions button,.street-response-choice button{font-size:15px;min-height:44px;padding:8px}.street-structure{grid-template-columns:1fr;gap:10px}.street-review-heading{font-size:21px}#readout .street-structure h3{font-size:19px}#readout .street-structure p{font-size:16px}#readout .street-core-contradiction,#readout .street-surplus-explanation{font-size:17px}.street-wage-comparison table{font-size:17px}.street-wage-comparison :is(th,td){padding:8px 4px}.street-wage-comparison tbody th{font-size:13px}}
+
+body[data-street-review=true] .stage-object{display:none}

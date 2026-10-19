@@ -1,0 +1,9 @@
+{
+  "sourceSHA256": "fd819cf8f7568876661f54cd6a053edd604d0f9daaf2cbb9740b13f9a4dd884f",
+  "actualPreviousBuildPlayed": true,
+  "completeOldLedgerPreserved": true,
+  "newExpansionFundedFromOldCash": true,
+  "noReset": true,
+  "refreshPreservesNewInvestment": true,
+  "errors": []
+}

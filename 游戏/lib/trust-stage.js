@@ -669,6 +669,7 @@
     // resize feedback loop. Taller scenes and expanded notes may scroll naturally.
     document.body.dataset.scene = s.section === 'machine' ? 'machine' : p.scene;
     document.body.dataset.streetMode=p.streetMode||'battle';
+    document.body.dataset.streetReview=String(p.scene==='street-economy'&&['social','private','overproduction','limits'].includes(p.street.phase));
     document.body.dataset.firm = p.activeFirmId; document.body.dataset.machinePhase = s.machine.phase;
     document.body.dataset.role = s.entrance === 'individual' ? 'worker' : 'producer';
     document.body.dataset.relation = p.relationFocus;
@@ -716,10 +717,7 @@
     if(p.scene==='market-rules'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderMarketRules(branchContext);renderBranchReview(branchContext,p.marketRules);return;}
     if(p.scene==='street-economy'){
       document.getElementById('notes').hidden=true;
-      renderStreetUI({game:p.street,economyAct:true,scene:stage.street,controls:controls,readout:readout,notes:document.getElementById('notes'),notesContent:notes,title:function(){setTitle('第三幕·有限的钱包',p.street.world.round?'钱没有凭空消失，看看它到了谁手里。':'六家厂商，同一条街。调工资、定售价，再营业一轮。');},send:function(a){send('prologue',{type:'STREET',action:a});},ending:function(words){return action(words,'FINISH_STREET_ECONOMY');}});
-      if(p.street.world.round>0&&!['social','private','overproduction','limits'].includes(p.street.phase)){
-        var onward=action('继续看故事 →','FINISH_STREET_ECONOMY');onward.dataset.streetAction='CONTINUE';
-      }
+      renderStreetUI({game:p.street,economyAct:true,evidence:s.streetContradiction,scene:stage.street,controls:controls,readout:readout,notes:document.getElementById('notes'),notesContent:notes,title:function(){var review=['social','private','overproduction','limits'].includes(p.street.phase);setTitle(review?'第三幕·全街的结果':'第三幕·各家的算盘',review?'':p.street.world.round?'本店省下的钱，会怎样改变别家的销路？':'六家厂商各自作主，生产和生意却连在一起。先开一天。');},send:function(a){send('prologue',{type:'STREET',action:a});},ending:function(words){return action(words,'FINISH_STREET_ECONOMY');}});
       return;
     }
     if(p.scene==='street-summary'){document.getElementById('notes').hidden=true;renderStreetSummary({readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}

@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-19T01:45:29.768Z",
-  "bytes": 20607555,
+  "built_at": "2026-10-19T02:40:38.566Z",
+  "bytes": 20622791,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2019,6 +2019,10 @@
     "components/playful-scenes.tsx",
     "components/trust-game.tsx",
     "components/factory-story.tsx",
+    "lib/street-accounts.ts",
+    "lib/street-campaign.ts",
+    "lib/street-game.ts",
+    "lib/street-contradiction.ts",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\vendor\\ncase-trust\\js\\lib\\pixi.min.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\vendor\\ncase-trust\\js\\lib\\tweenjs-0.6.2.min.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\vendor\\ncase-trust\\js\\lib\\minpubsub.src.js",
@@ -2043,6 +2047,7 @@
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\street-ui.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\street-briefing.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\street-summary.js",
+    "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\street-contradiction-ui.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\branch-review-ui.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\weber-perspective.js",
     "raw-source:D:\\马克思主义\\仓库提交\\marx-12-group-report\\游戏\\lib\\value-journey.js",
@@ -2078,9 +2083,6 @@
     "lib/production-extra-symbols.ts",
     "lib/production-links.ts",
     "lib/crisis-model.ts",
-    "lib/street-accounts.ts",
-    "lib/street-campaign.ts",
-    "lib/street-game.ts",
     "lib/relief-experiment.ts",
     "lib/time-calendar.ts",
     "public/assets/market-duel/model.mjs",
@@ -2157,6 +2159,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Expose funded own expansion and conditional peer investment, actual unsold goods and unmet purchasing power, matched wage-response comparisons, and a review distinguishing social production from separate capitalist ownership. Preserve accounts and alternative outcomes.",
     "Scale the six-firm artwork and spacing progressively on narrow screens, retain 44px person targets and readable labels, compact the story illustration, preserve desktop geometry and all accounts.",
     "Remove the introductory disclaimer line above the father-daughter dialogue. Preserve the dialogue and its navigation.",
     "End Act II after three fixed-demand and five variable-demand days. Move finite wallets into Act III using the original six firms and twenty residents. Preserve both completed duel accounts and existing six-firm ledgers, with no forced bankruptcy.",
@@ -2186,9 +2189,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "1bdc67380b98918741141c02e92c24530e4a13987df8be57224c17236028ab67",
+    "index_sha256": "fdb8a4fc92ffce00d465e1778a281f163a22ee33f4f056bf3811f3d73c2c5636",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "45e16a1aa5c8b9697dd43a8f1721b3ef0819fa7768b2ddd45764ae4d73903e36"
+  "sha256": "fd819cf8f7568876661f54cd6a053edd604d0f9daaf2cbb9740b13f9a4dd884f"
 }
