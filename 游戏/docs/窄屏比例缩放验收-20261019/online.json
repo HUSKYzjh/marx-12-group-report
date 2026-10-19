@@ -1,0 +1,683 @@
+{
+  "sourceSHA256": "45e16a1aa5c8b9697dd43a8f1721b3ef0819fa7768b2ddd45764ae4d73903e36",
+  "indexSHA256": "1bdc67380b98918741141c02e92c24530e4a13987df8be57224c17236028ab67",
+  "results": [
+    {
+      "width": 320,
+      "before": null,
+      "after": {
+        "canvasHeight": 574.75,
+        "canvasWidth": 304,
+        "mainHeight": 1109.015625,
+        "hitSizes": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "overflow": false,
+        "zones": [
+          {
+            "firm": "clothes",
+            "kind": "street-zone street-shop",
+            "height": 93.59375
+          },
+          {
+            "firm": "clothes",
+            "kind": "street-zone street-team",
+            "height": 109.4375
+          },
+          {
+            "firm": "ovens",
+            "kind": "street-zone street-shop",
+            "height": 93.59375
+          },
+          {
+            "firm": "ovens",
+            "kind": "street-zone street-team",
+            "height": 109.4375
+          },
+          {
+            "firm": "cars",
+            "kind": "street-zone street-shop",
+            "height": 93.59375
+          },
+          {
+            "firm": "cars",
+            "kind": "street-zone street-team",
+            "height": 109.4375
+          },
+          {
+            "firm": "bakery",
+            "kind": "street-zone street-shop street-own",
+            "height": 104.390625
+          },
+          {
+            "firm": "bakery",
+            "kind": "street-zone street-team street-own",
+            "height": 64.796875
+          },
+          {
+            "firm": "rival",
+            "kind": "street-zone street-shop",
+            "height": 93.59375
+          },
+          {
+            "firm": "rival",
+            "kind": "street-zone street-team",
+            "height": 109.4375
+          },
+          {
+            "firm": "inputs",
+            "kind": "street-zone street-shop",
+            "height": 93.59375
+          },
+          {
+            "firm": "inputs",
+            "kind": "street-zone street-team",
+            "height": 109.4375
+          },
+          {
+            "kind": "street-zone street-waiting",
+            "height": 56.171875
+          }
+        ],
+        "density": "0.720"
+      },
+      "streetHeightReduction": null,
+      "storyWidth": 249.59375,
+      "people": 20,
+      "firms": 6,
+      "hitTargetsAtLeast44": true,
+      "shopAndPersonClick": true,
+      "actualRoundPlayed": true,
+      "resizePreservesLedger": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "before": null,
+      "after": {
+        "canvasHeight": 533.328125,
+        "canvasWidth": 374,
+        "mainHeight": 1067.59375,
+        "hitSizes": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "overflow": false,
+        "zones": [
+          {
+            "firm": "clothes",
+            "kind": "street-zone street-shop",
+            "height": 100.609375
+          },
+          {
+            "firm": "clothes",
+            "kind": "street-zone street-team",
+            "height": 69.65625
+          },
+          {
+            "firm": "ovens",
+            "kind": "street-zone street-shop",
+            "height": 100.609375
+          },
+          {
+            "firm": "ovens",
+            "kind": "street-zone street-team",
+            "height": 69.65625
+          },
+          {
+            "firm": "cars",
+            "kind": "street-zone street-shop",
+            "height": 100.609375
+          },
+          {
+            "firm": "cars",
+            "kind": "street-zone street-team",
+            "height": 69.65625
+          },
+          {
+            "firm": "bakery",
+            "kind": "street-zone street-shop street-own",
+            "height": 112.21875
+          },
+          {
+            "firm": "bakery",
+            "kind": "street-zone street-team street-own",
+            "height": 69.65625
+          },
+          {
+            "firm": "rival",
+            "kind": "street-zone street-shop",
+            "height": 100.609375
+          },
+          {
+            "firm": "rival",
+            "kind": "street-zone street-team",
+            "height": 69.65625
+          },
+          {
+            "firm": "inputs",
+            "kind": "street-zone street-shop",
+            "height": 100.609375
+          },
+          {
+            "firm": "inputs",
+            "kind": "street-zone street-team",
+            "height": 69.65625
+          },
+          {
+            "kind": "street-zone street-waiting",
+            "height": 60.375
+          }
+        ],
+        "density": "0.774"
+      },
+      "streetHeightReduction": null,
+      "storyWidth": 304.1875,
+      "people": 20,
+      "firms": 6,
+      "hitTargetsAtLeast44": true,
+      "shopAndPersonClick": true,
+      "actualRoundPlayed": true,
+      "resizePreservesLedger": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 600,
+      "before": null,
+      "after": {
+        "canvasHeight": 678.28125,
+        "canvasWidth": 584,
+        "mainHeight": 1136.15625,
+        "hitSizes": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "overflow": false,
+        "zones": [
+          {
+            "firm": "clothes",
+            "kind": "street-zone street-shop",
+            "height": 127.90625
+          },
+          {
+            "firm": "clothes",
+            "kind": "street-zone street-team",
+            "height": 88.546875
+          },
+          {
+            "firm": "ovens",
+            "kind": "street-zone street-shop",
+            "height": 127.90625
+          },
+          {
+            "firm": "ovens",
+            "kind": "street-zone street-team",
+            "height": 88.546875
+          },
+          {
+            "firm": "cars",
+            "kind": "street-zone street-shop",
+            "height": 127.90625
+          },
+          {
+            "firm": "cars",
+            "kind": "street-zone street-team",
+            "height": 88.546875
+          },
+          {
+            "firm": "bakery",
+            "kind": "street-zone street-shop street-own",
+            "height": 142.671875
+          },
+          {
+            "firm": "bakery",
+            "kind": "street-zone street-team street-own",
+            "height": 88.546875
+          },
+          {
+            "firm": "rival",
+            "kind": "street-zone street-shop",
+            "height": 127.90625
+          },
+          {
+            "firm": "rival",
+            "kind": "street-zone street-team",
+            "height": 88.546875
+          },
+          {
+            "firm": "inputs",
+            "kind": "street-zone street-shop",
+            "height": 127.90625
+          },
+          {
+            "firm": "inputs",
+            "kind": "street-zone street-team",
+            "height": 88.546875
+          },
+          {
+            "kind": "street-zone street-waiting",
+            "height": 76.78125
+          }
+        ],
+        "density": "0.984"
+      },
+      "streetHeightReduction": null,
+      "storyWidth": 400,
+      "people": 20,
+      "firms": 6,
+      "hitTargetsAtLeast44": true,
+      "shopAndPersonClick": true,
+      "actualRoundPlayed": true,
+      "resizePreservesLedger": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "before": null,
+      "after": {
+        "canvasHeight": 719.9375,
+        "canvasWidth": 1232,
+        "mainHeight": 1134.921875,
+        "hitSizes": [
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          },
+          {
+            "width": 44,
+            "height": 44
+          }
+        ],
+        "overflow": false,
+        "zones": [
+          {
+            "firm": "clothes",
+            "kind": "street-zone street-shop",
+            "height": 139.984375
+          },
+          {
+            "firm": "clothes",
+            "kind": "street-zone street-team",
+            "height": 89.984375
+          },
+          {
+            "firm": "ovens",
+            "kind": "street-zone street-shop",
+            "height": 139.984375
+          },
+          {
+            "firm": "ovens",
+            "kind": "street-zone street-team",
+            "height": 89.984375
+          },
+          {
+            "firm": "cars",
+            "kind": "street-zone street-shop",
+            "height": 139.984375
+          },
+          {
+            "firm": "cars",
+            "kind": "street-zone street-team",
+            "height": 89.984375
+          },
+          {
+            "firm": "bakery",
+            "kind": "street-zone street-shop street-own",
+            "height": 164.984375
+          },
+          {
+            "firm": "bakery",
+            "kind": "street-zone street-team street-own",
+            "height": 89.984375
+          },
+          {
+            "firm": "rival",
+            "kind": "street-zone street-shop",
+            "height": 139.984375
+          },
+          {
+            "firm": "rival",
+            "kind": "street-zone street-team",
+            "height": 89.984375
+          },
+          {
+            "firm": "inputs",
+            "kind": "street-zone street-shop",
+            "height": 139.984375
+          },
+          {
+            "firm": "inputs",
+            "kind": "street-zone street-team",
+            "height": 89.984375
+          },
+          {
+            "kind": "street-zone street-waiting",
+            "height": 78.09375
+          }
+        ],
+        "density": "1.000"
+      },
+      "streetHeightReduction": null,
+      "storyWidth": 960,
+      "people": 20,
+      "firms": 6,
+      "hitTargetsAtLeast44": true,
+      "shopAndPersonClick": true,
+      "actualRoundPlayed": true,
+      "resizePreservesLedger": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

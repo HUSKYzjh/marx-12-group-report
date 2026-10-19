@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-19T01:37:39.366Z",
-  "bytes": 20606262,
+  "built_at": "2026-10-19T01:45:29.768Z",
+  "bytes": 20607555,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2157,6 +2157,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Scale the six-firm artwork and spacing progressively on narrow screens, retain 44px person targets and readable labels, compact the story illustration, preserve desktop geometry and all accounts.",
     "Remove the introductory disclaimer line above the father-daughter dialogue. Preserve the dialogue and its navigation.",
     "End Act II after three fixed-demand and five variable-demand days. Move finite wallets into Act III using the original six firms and twenty residents. Preserve both completed duel accounts and existing six-firm ledgers, with no forced bankruptcy.",
     "Add one combined expansion: ten coins, one ordinary oven and one existing worker, six more daily capacity and one extra daily wage, all effective today. Preserve previous immediate-rule saves and the 54-coin upper maximum.",
@@ -2185,9 +2186,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "f101158d24f1f39b67723fdf32141b04533af712d8bfc83d9ea74b1f503790d1",
+    "index_sha256": "1bdc67380b98918741141c02e92c24530e4a13987df8be57224c17236028ab67",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "109791c684bad2eddf1879ab1f5b2828ac1b52e7bd233968e3c5102fb9e71ee9"
+  "sha256": "45e16a1aa5c8b9697dd43a8f1721b3ef0819fa7768b2ddd45764ae4d73903e36"
 }

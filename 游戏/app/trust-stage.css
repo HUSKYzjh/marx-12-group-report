@@ -1852,3 +1852,12 @@ body[data-scene="opening"] .production-hint { margin-bottom: 8px; }
 .summary-probe-choices button{font-size:17px;min-height:44px;white-space:normal;flex:1 1 150px}
 .summary-probe-answer{font-size:18px;line-height:1.7;text-align:left}
 @media(max-width:600px){.branch-review caption{font-size:19px}.branch-review th,.branch-review td{padding:9px 4px}.branch-review tbody th{font-size:15px}.branch-review td{font-size:21px}.branch-related p{font-size:17px}.street-summary-probe>summary{font-size:17px}.summary-probe-choices{gap:6px}.summary-probe-choices button{flex-basis:100%}.summary-probe-answer{font-size:17px}}
+
+/* Narrow illustrations scale with the viewport, while text and hit areas stay readable. */
+@media(max-width:600px){
+ body[data-scene="ending"] .stage-object{width:clamp(220px,78vw,400px);max-width:100%;margin-top:4px}
+ body[data-scene="street-economy"] #controls{gap:10px}
+ body[data-scene="street-economy"] .street-knobs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px}
+ body[data-scene="street-economy"] .street-icon-key{margin:6px 0}
+ body[data-scene="street-economy"] .street-inspect-hint{margin:4px 0 6px}
+}
