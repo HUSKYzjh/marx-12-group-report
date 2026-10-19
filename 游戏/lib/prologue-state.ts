@@ -19,7 +19,7 @@ export const FIRMS = [
   { id: 'D', name: '面包公司', product: '面包', color: '#588675', hat: 12 },
 ] as const;
 export type FirmId = typeof FIRMS[number]['id'];
-export type Scene = 'opening' | 'bakery' | 'bakery-upgrade' | 'bakery-expansion' | 'street' | 'street-summary' | 'allocation' | 'market' | 'network' | 'concept' | 'ending' | 'relief' | 'epilogue' | 'assumptions' | 'technology' | 'needs-technology' | 'ownership-technology' | 'market-rules' | 'routes';
+export type Scene = 'opening' | 'bakery' | 'bakery-upgrade' | 'bakery-expansion' | 'street' | 'street-economy' | 'street-summary' | 'allocation' | 'market' | 'network' | 'concept' | 'ending' | 'relief' | 'epilogue' | 'assumptions' | 'technology' | 'needs-technology' | 'ownership-technology' | 'market-rules' | 'routes';
 export const GAME_TITLE = '饥馑的盛宴';
 export const PROLOGUE_TITLE = '序章：厨房内外';
 // Chapter navigation is separate from the acts within each chapter.
@@ -38,7 +38,7 @@ export const PROLOGUE_STAGES = [
   { label: '首页', scene: 'opening' },
   { label: '第一幕·更大的烤炉', scene: 'bakery' },
   { label: '第二幕·面包店对决', scene: 'street' },
-  { label: '第三幕·卖不掉的面包', scene: 'street-summary' },
+  { label: '第三幕·有限的钱包', scene: 'street-economy' },
   { label: '第四幕·三条出路', scene: 'relief' },
   { label: '序章·尾声', scene: 'epilogue' },
   { label: '如果换个条件？', scene: 'assumptions' },
@@ -181,6 +181,7 @@ export function expressions(share: number) {
 export type PrologueAction =
   | { type: 'SAVE_BATTLE'; snapshot: unknown }
   | { type: 'FINISH_BATTLE' }
+  | { type: 'FINISH_STREET_ECONOMY' }
   | { type: 'OPEN_STREET_SANDBOX' }
   | { type: 'BACK_BATTLE' }
   | { type: 'STREET'; action: StreetAction }
@@ -244,15 +245,16 @@ export type PrologueAction =
   | { type: 'SHOW_DEMO'; laborShare?: 20 | 80 }
   | { type: 'TOGGLE_WORK' }
   | { type: 'LEAVE_DEMO' };
+function sixFirmEconomy():StreetGame{
+  const game=createStreetGame();
+  delete game.campaign;delete game.tutorial;
+  return {...game,phase:'manage'};
+}
 export function prologueReducer(s: PrologueState, action: PrologueAction): PrologueState {
   switch (action.type) {
     case 'OPEN_STREET_SANDBOX': {
       if(s.scene!=='street'||s.battle?.state.mode!=='done')return s;
-      const sandbox=createStreetGame();
-      // Keep the established capital allocation and accounts, not forced story beats.
-      delete sandbox.campaign;
-      delete sandbox.tutorial;
-      return {...s,streetMode:'sandbox',street:s.street??{...sandbox,phase:'manage'}};
+      return {...s,scene:'street-economy',streetMode:'battle',street:s.street??sixFirmEconomy()};
     }
     case 'BACK_BATTLE': return s.scene==='street'&&s.streetMode==='sandbox'?{...s,streetMode:'battle'}:s;
     case 'SAVE_BATTLE': {
@@ -260,11 +262,16 @@ export function prologueReducer(s: PrologueState, action: PrologueAction): Prolo
       const battle=restoreBattleSnapshot(action.snapshot);
       return battle?{...s,battle}:s;
     }
-    case 'FINISH_BATTLE': return s.scene==='street'&&s.battle?.state.mode==='done'
-      ?{...s,scene:'ending',streetMode:'battle',definitionShown:true,endingPairIndex:0,endingViewMode:'pairs'}:s;
+    case 'FINISH_BATTLE': {
+      if(s.scene!=='street'||s.battle?.state.mode!=='done')return s;
+      if(s.battle.state.externalOnly)return {...s,scene:'street-economy',streetMode:'battle',street:s.street??sixFirmEconomy()};
+      return {...s,scene:'ending',streetMode:'battle',definitionShown:true,endingPairIndex:0,endingViewMode:'pairs'};
+    }
+    case 'FINISH_STREET_ECONOMY': return s.scene==='street-economy'&&s.street&&s.street.world.round>0
+      ?{...s,scene:'ending',definitionShown:true,endingPairIndex:0,endingViewMode:'pairs'}:s;
     case 'RESTORE': return restorePrologue(action.snapshot);
-    case 'STREET': return ['street','street-summary'].includes(s.scene)&&action.action&&typeof action.action.type==='string'
-      ? {...s,street:streetReducer(s.street??createStreetGame(),action.action)}:s;
+    case 'STREET': return ['street','street-economy','street-summary'].includes(s.scene)&&action.action&&typeof action.action.type==='string'
+      ? {...s,street:streetReducer(s.street??(s.scene==='street-economy'?sixFirmEconomy():createStreetGame()),action.action)}:s;
     case 'SHOW_HOME': return { ...s, scene: 'opening', chapterBrowsing:false };
     case 'NAVIGATE_CHAPTER': {
       // The menu is an independent entry point for classroom demonstrations.
@@ -287,6 +294,7 @@ export function prologueReducer(s: PrologueState, action: PrologueAction): Prolo
       // Chapter browsing resumes the second act; only an explicit replay or
       // advancing again from the first-act expansion starts a fresh battle.
       if(next.scene==='street')return {...next,battle:s.battle};
+      if(next.scene==='street-economy')return {...next,street:s.street??sixFirmEconomy()};
       if(next.scene==='street-summary')return {...next,definitionShown:true};
       if (next.scene === 'relief') return { ...next, definitionShown: true, endingViewMode: 'all',
         reliefRoute: null, reliefSustained: false,reliefPhase:'ready',reliefTested:0 };
@@ -486,7 +494,7 @@ export function restorePrologue(snapshot: unknown): PrologueState {
     const v = typeof snapshot === 'string' ? JSON.parse(snapshot) : snapshot;
     if (!v || v.version !== PROLOGUE_VERSION) return initialPrologue();
     const has = (key: string) => Object.prototype.hasOwnProperty.call(v, key);
-    if (!['opening', 'bakery', 'bakery-upgrade', 'bakery-expansion', 'street', 'street-summary', 'allocation', 'market', 'network', 'concept', 'ending', 'relief', 'epilogue','assumptions','technology','needs-technology','ownership-technology','market-rules','routes'].includes(v.scene)
+    if (!['opening', 'bakery', 'bakery-upgrade', 'bakery-expansion', 'street', 'street-economy', 'street-summary', 'allocation', 'market', 'network', 'concept', 'ending', 'relief', 'epilogue','assumptions','technology','needs-technology','ownership-technology','market-rules','routes'].includes(v.scene)
       || !firmIds.includes(v.activeFirmId) || !firmIds.includes(v.customerFirmId)
       || !RELATIONS.includes(v.relationFocus)
       || !['notStarted', 'observed', 'demo', 'skipped'].includes(v.prologueStatus)
@@ -569,7 +577,8 @@ export function restorePrologue(snapshot: unknown): PrologueState {
     if ((reliefRoute !== null && !reliefVisited.includes(reliefRoute)) || (reliefRoute === null && reliefSustained))
       return initialPrologue();
     const oldWage=v.bakeryWage??5, bakeryWage=Math.max(3,Math.min(7,oldWage)), migrated=bakeryWage!==oldWage;
-    return { ...initialPrologue(), scene: v.scene, activeFirmId: v.activeFirmId, customerFirmId: v.customerFirmId,
+    const promotedSandbox=v.scene==='street'&&v.streetMode==='sandbox'&&v.street&&restoreBattleSnapshot(v.battle)?.state.mode==='done';
+    return { ...initialPrologue(), scene: promotedSandbox?'street-economy':v.scene, activeFirmId: v.activeFirmId, customerFirmId: v.customerFirmId,
       allocationPlans: plans, adjustedFirmIds: [...new Set(v.adjustedFirmIds)] as FirmId[],
       relationFocus: v.relationFocus, definitionShown: v.definitionShown,
       endingPairIndex: v.endingPairIndex, endingViewMode: v.endingViewMode,
@@ -582,9 +591,9 @@ export function restorePrologue(snapshot: unknown): PrologueState {
       bakeryBoundary:migrated?null:(v.bakeryBoundary??null),bakeryBoundarySerial:v.bakeryBoundarySerial??0,
       bakeryBossQuoteIndex:migrated?null:(v.bakeryBossQuoteIndex??null),bakeryUpperLocked:false,
       bakeryPreviousWage:migrated?oldWage:(v.bakeryPreviousWage??null),
-      street:v.street?restoreStreetGame(v.street):null,
+      street:v.street?restoreStreetGame(v.street):v.scene==='street-economy'?sixFirmEconomy():null,
       battle:restoreBattleSnapshot(v.battle),
-      streetMode:v.streetMode==='sandbox'&&v.street&&restoreStreetGame(v.street)&&restoreBattleSnapshot(v.battle)?.state.mode==='done'?'sandbox':'battle',
+      streetMode:'battle',
       entrance: v.entrance };
   } catch { return initialPrologue(); }
 }

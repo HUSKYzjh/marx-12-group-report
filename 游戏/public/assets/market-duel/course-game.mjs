@@ -1,4 +1,4 @@
-import {TITLES,LENGTHS,initialCourse,adoptEquipmentCourse,finished,courseMoves,courseIssue,courseRound,nextCourse,beginProfitChallenge,retryScene,undoCourse,restoreCourse,courseRival,courseCapacity} from './course-model.mjs';
+import {TITLES,LENGTHS,initialCourse,adoptEquipmentCourse,externalDemandCourse,finished,courseMoves,courseIssue,courseRound,nextCourse,beginProfitChallenge,retryScene,undoCourse,restoreCourse,courseRival,courseCapacity} from './course-model.mjs';
 import {wavesReview,socialReview} from './course-review.mjs';
 import {courseMenu,shortMoveLabel} from './course-menu.mjs';
 import {profitReview} from './profit-challenge.mjs';
@@ -15,15 +15,16 @@ async function start(){
 const embedded=window.__BATTLE_EMBED__,resources=window.__BATTLE_RESOURCES__;
 const asset=name=>resources?.images[name]||'../bakery/'+name+'.svg';
 const $=id=>document.getElementById(id),key='feast-shop-course-v2',coin='<i class="coin" aria-label="金币"></i>',names=['阿面','小麦','团团','圆圆','阿青','阿蓝','小雨','小风','你','隔壁老板','原料商'];
-let state=initialCourse(true,true,true,true),view='choose',selected=null,busy=false,lastTrace=null,openingStep=0,openingSold=6,openingRead=false,steadyBest=null;
+let state=initialCourse(true,true,true,true,true),view='choose',selected=null,busy=false,lastTrace=null,openingStep=0,openingSold=6,openingRead=false,steadyBest=null;
 try{const save=embedded?embedded.snapshot:JSON.parse(localStorage.getItem(key)),valid=restoreCourse(save?.state);if(valid){state=valid;view=save.view==='result'&&state.world.day?'result':'choose';lastTrace=state.traced.at(-1)??null;openingRead=save.openingRead===true||state.world.day>0||state.mode!=='steady';steadyBest=restoreSteadyBest(save.steadyBest);}}catch{}
 // Compatibility belongs to loading, not to the player's opening dialogue.
-if(!simpleRules(state.world)){state=adoptEquipmentCourse(state,true,true,true,true);view='choose';lastTrace=null;openingRead=false;steadyBest=null;}
+if(!simpleRules(state.world)){state=adoptEquipmentCourse(state,true,true,true,true,true);view='choose';lastTrace=null;openingRead=false;steadyBest=null;}
+if(!state.externalOnly){state=externalDemandCourse(state);if(state.mode==='done')view='choose';lastTrace=null;}
 const atlas=resources?.atlases||Object.fromEntries(await Promise.all([...OWNER_ATLASES,'trust'].map(async n=>{const r=await fetch(n==='trust'?'../trust/iterated_peep.json':'../wbwwb-source/'+n+'.json');if(!r.ok)throw new Error('人物素材加载失败');return[n,await r.json()];})));
 function peep(id,worried=false,working=false,world=state.world){return customerMarkup(atlas,id,{worried,working,employer:world.shops.find(f=>f.workers.includes(id))?.id,history:world.history,hat:asset('chef-hat')});}
 const crowd=createStreetCrowd($('customer-gate'),id=>pedestrianMarkup(atlas,id),()=>matchMedia('(prefers-reduced-motion:reduce)').matches);
 function icon(type){if(['oven','bread'].includes(type))return `<img src="${asset(type==='oven'?'oven-new':'bread')}" alt="">`;return type==='tag'?'<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 5L21 4 29 16 17 28 4 16Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="2" fill="currentColor"/></svg>':'<svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="9" r="5"/><path d="M4 28L7 16 15 16 18 28M21 5A5 5 0 0 1 21 15M22 18L25 28"/></g></svg>';}
-const social=()=>['source','social','done'].includes(state.mode);
+const social=()=>!state.externalOnly&&['source','social','done'].includes(state.mode);
 const employed=(id,w=state.world)=>w.shops.some(f=>f.workers.includes(id));
 const wallet=id=>id===10?state.world.supplier:state.world.people[id].cash;
 function persist(snapshot={state,view,openingRead}){steadyBest=rememberSteadyBest(steadyBest,snapshot.state);if(steadyBest)snapshot={...snapshot,steadyBest};if(embedded){parent.postMessage({app:'feast-battle',type:'save',snapshot},'*');return;}try{localStorage.setItem(key,JSON.stringify(snapshot));}catch{$('subline').textContent+='（进度暂时无法保存。）';}}
@@ -111,7 +112,7 @@ function render(){
   document.body.dataset.mode=mode;$('battle-frame').classList.toggle('source-mode',isSource);$('battle-frame').classList.toggle('has-crowd',social());
   document.body.dataset.rules=String(state.version);$('old-record').hidden=!state.previousCourse;
   $('chapter-title').textContent=state.splitActs?part.title:isProfit||isSource?'第三场 · 赚钱的算盘':mode==='done'&&state.profitChallenge?'少发、多卖，赚到了吗？':TITLES[mode];
-  const length=LENGTHS[mode]||9;$('day').textContent=isSource?'新一局 · 第一天的真实账单':over?'收摊，回头看看':`第 ${result?w.day:w.day+1} / ${length} 天`;
+  const length=LENGTHS[mode]||(state.externalOnly?5:9);$('day').textContent=isSource?'新一局 · 第一天的真实账单':over?'收摊，回头看看':`第 ${result?w.day:w.day+1} / ${length} 天`;
   $('turn').textContent=Math.min(length,result||isSource||over?w.day:w.day+1);$('round-dots').innerHTML=Array.from({length},(_,i)=>`<i class="${i<w.day?'done':''}"></i>`).join('');
   const shopsForView=result||isSource||state.version===2?w.shops:w.shops.map(f=>{const today=readyShop(f);return {...today,fast:today.fastOvens>0};});
   for(const f of shopsForView){const id=f.id;$('cash-'+id).innerHTML=f.cash+' '+coin;$('bar-'+id).style.width=Math.min(100,f.cash/60*100)+'%';$('bar-'+id).classList.toggle('low',f.cash<12);
@@ -178,14 +179,9 @@ function render(){
 }
 function checkpoint(){
   $('open-six')?.remove();
-  if(embedded&&state.mode==='done'){
-   const explore=document.createElement('button');explore.id='open-six';explore.textContent='把镜头拉远：六家店 →';
-   explore.onclick=()=>{persist();parent.postMessage({app:'feast-battle',type:'sandbox'},'*');};
-   document.querySelector('.ending-actions').prepend(explore);
-  }
-  const w=state.world,r=w.history.at(-1),mode=state.mode,limits=challengeRules(state);$('next-scene').hidden=mode==='done'&&!embedded;$('retry').textContent='重打这一场 ↻';
+  const w=state.world,r=w.history.at(-1),mode=state.externalOnly&&state.mode==='done'?'waves':state.mode,limits=challengeRules(state);$('next-scene').hidden=state.mode==='done'&&!embedded;$('retry').textContent='重打这一场 ↻';
   const challenge=steadyChallenge(state);$('comparison').dataset.challenge=String(!!challenge);$('comparison').dataset.review=mode==='waves'?'waves':mode==='done'?'social':'';
-  if((mode==='done'||state.splitActs&&mode==='steady')&&state.version===3&&batchUpgrade(w)){
+  if((state.mode==='done'||state.splitActs&&mode==='steady')&&state.version===3&&batchUpgrade(w)){
     $('steady-maximum').hidden=false;
     $('steady-maximum').innerHTML=`${state.splitActs?'上幕':'第一场'}三天最高收益：<strong>+${limits.maxGain} 金币</strong><br><small>按资金净增计；开局 ${limits.opening} → 期末 ${limits.opening+limits.maxGain} 金币。</small>`;
   }
@@ -198,13 +194,13 @@ function checkpoint(){
     $('comparison').innerHTML=[['本次收益',gain],['照常营业',challenge.baselineGain],['个人纪录',best]].map(([label,n])=>`<div class="outcome-figure">${label}<b>${n>=0?'+':''}${n} ${coin}</b></div>`).join('');
     $('retry').textContent=challenge.atMaximum?'再试一种赚法 ↻':'再试一次，赚更多 ↻';
     $('next-scene').textContent=state.splitActs?'进入下幕：需求不确定 →':'客流变了呢？ →';
-    if(state.splitActs)$('ending-copy').textContent+=' 刚才客流固定。下幕，再看看客流和钱包怎么变。';
+    if(state.splitActs)$('ending-copy').textContent+=' 刚才客流固定。下幕，再看看客流怎么变。';
   }else if(mode==='steady'){
     const gain=w.shops[0].cash-36;$('ending-kicker').textContent='第一场结束';$('ending-title').textContent=gain>=0?'老板，钱包挺住了！':'开了三天，钱包瘦了。';
     $('ending-copy').textContent=gain>=0?'客人天天来，生意还能稳住。':'卖得多，也可能少赚钱。再试试？';
     $('comparison').innerHTML=`<div class="outcome-figure">开局<b>36 ${coin}</b></div><div class="outcome-figure">三天后<b>${w.shops[0].cash} ${coin}</b></div>`;$('next-scene').textContent='如果客流开始变呢？ →';
   }else if(mode==='waves'){
-    const review=wavesReview(state);$('ending-kicker').textContent=state.splitActs?'下幕 · 客流波动之后':'第二场 · 五天收摊';
+    const review=wavesReview({...state,mode:'waves'});$('ending-kicker').textContent=state.splitActs?'下幕 · 客流波动之后':'第二场 · 五天收摊';
     if(review){
       $('ending-title').textContent=review.stock?'客人走了，面包还在。':review.spoiled?'账能重算，坏面包回不来。':'这次，节奏跟上了吗？';
       $('ending-copy').textContent='客流 '+review.demand.join(' → ')+'。'+(review.difference?'比照常营业'+(review.difference>0?'多':'少')+Math.abs(review.difference)+'枚。':'和照常营业的资金净增相同。');
@@ -213,7 +209,7 @@ function checkpoint(){
       $('ending-title').textContent='你能换炉子。不能撤回昨天的面包。';$('ending-copy').textContent='';
       $('comparison').innerHTML=w.history.map(h=>`<div class="outcome-figure">第 ${h.day} 天<b>${h.demand}</b>买家</div>`).join('');
     }
-    $('next-scene').textContent=state.splitActs?'再看：买家的钱也会变 →':'怎么把钱留在店里？ →';
+    $('next-scene').textContent=state.externalOnly?'进入第三幕：六家厂商 →':state.splitActs?'再看：买家的钱也会变 →':'怎么把钱留在店里？ →';
   }else if(state.profitChallenge){
     const review=profitReview(w),a=review.actual;
     $('ending-kicker').textContent=state.splitActs?'下幕结束 · 收入与购买力':'第三场 · 经营结果';$('ending-title').textContent=state.splitActs?'这次，省下的钱留住了吗？':'少发、多卖，赚到了吗？';
@@ -273,12 +269,12 @@ async function play(){
   syncStreet();
 }
 function transition(){if(busy)return;state=nextCourse(state);view='choose';selected=null;lastTrace=null;document.body.classList.add('body-transition');render();persist();setTimeout(()=>document.body.classList.remove('body-transition'),500);}
-$('advance').onclick=()=>{if(busy)return;if(state.mode==='source'){state=beginProfitChallenge(state);view='choose';render();persist();}else{if(state.profitChallenge&&state.mode==='social'&&finished(state))state=nextCourse(state);view='choose';selected=null;render();persist();}};
+$('advance').onclick=()=>{if(busy)return;if(state.mode==='source'){state=beginProfitChallenge(state);view='choose';render();persist();}else{if((state.profitChallenge&&state.mode==='social'||state.externalOnly&&state.mode==='waves')&&finished(state))state=nextCourse(state);view='choose';selected=null;render();persist();}};
 $('next-scene').onclick=()=>{if(embedded&&state.mode==='done'){persist();parent.postMessage({app:'feast-battle',type:'complete'},'*');}else transition();};
 $('retry').onclick=()=>{if(busy)return;state=retryScene(state);view='choose';selected=null;render();persist();if(openingRequired())openingGuide();};
-$('restart').onclick=()=>{if(busy)return;state={...initialCourse(true,true,true,true),...(state.previousCourse?{previousCourse:state.previousCourse}:{})};view='choose';selected=null;lastTrace=null;render();persist();if(openingRequired())openingGuide();};
+$('restart').onclick=()=>{if(busy)return;state={...initialCourse(true,true,true,true,true),...(state.previousCourse?{previousCourse:state.previousCourse}:{})};view='choose';selected=null;lastTrace=null;render();persist();if(openingRequired())openingGuide();};
 $('undo').onclick=()=>{if(busy)return;state=undoCourse(state);view='choose';selected=null;render();persist();};
-$('rules-open').onclick=()=>showDialog('本局规则',`<p>每回合选一项，当天生效。每店开局3位厨师。添炉和招工是同一个扩产选项，不必分两步安排。</p><p>售价每次加减1枚，范围1—5；每人工资每次加减1枚，范围1—4。扩产一次付10枚，添1台旧炉、招1人，产能当天增加6个、每天工资增加当前1人工资。换快炉一次8枚，升级1台旧炉，产能当天增加6个，人数与工资不变。两者都不停工，每店最多3炉。</p><p>每日开支＝现有人数×每人工资＋固定5枚（原料3、其他2）。扩产增加1份工资，换快炉不增加日常开支。只为实际卖出的面包收款；没卖完的免费留存，不坏损、不欠保管费。现金付不起当天生产开支时不生产，仍可卖已有面包。</p><p>上幕每天12个需求，买家资金来自外部账户；工资调整不影响这12个需求。下幕先看客流变化，再换成有限钱包：工资付给工人，采购付给原料商，固定开支付给老板；11人共享120枚，每人每天尝试买1个，优先买便宜的。对手照常营业。</p><p>这是有意省略现实成本与用工变化的教学模型。少付工资不改变生产能力，只在下幕通过钱包影响购买。期末资金净增不是完整净利润。</p>`);
+$('rules-open').onclick=()=>showDialog('本局规则',`<p>每回合选一项，当天生效。每店开局3位厨师。添炉和招工是同一个扩产选项，不必分两步安排。</p><p>售价每次加减1枚，范围1—5；每人工资每次加减1枚，范围1—4。扩产一次付10枚，添1台旧炉、招1人，产能当天增加6个、每天工资增加当前1人工资。换快炉一次8枚，升级1台旧炉，产能当天增加6个，人数与工资不变。两者都不停工，每店最多3炉。</p><p>每日开支＝现有人数×每人工资＋固定5枚（原料3、其他2）。扩产增加1份工资，换快炉不增加日常开支。只为实际卖出的面包收款；没卖完的免费留存，不坏损、不欠保管费。现金付不起当天生产开支时不生产，仍可卖已有面包。</p><p>上幕每天12个需求，买家资金来自外部账户；工资调整不影响这12个需求。下幕只改变客流，五天后进入第三幕。第三幕另开六家厂商、20人的有限钱包账本，观察工资、采购和消费的流转；不继承本幕现金与设备。本幕对手照常营业。</p><p>这是有意省略现实成本与用工变化的教学模型。少付工资不改变本幕生产能力与外部客流。第三幕再观察工资与购买力的联系。期末资金净增不是完整净利润。</p>`);
 $('detail-close').onclick=()=>$('detail').close();$('detail').addEventListener('close',syncStreet);document.addEventListener('visibilitychange',syncStreet);window.addEventListener('resize',()=>{});render();persist();
 $('opening-help').onclick=openingGuide;
 $('opening-sold-less').onclick=()=>{openingSold--;renderOpeningExample();};

@@ -1110,6 +1110,7 @@ header { display: none; }
 #upgrade-result { flex-basis: 100%; }
 [hidden] { display: none !important; }
 main { display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1040px; min-height: var(--screen-main-height, 660px); margin: 0 auto; padding: 24px 40px 20px; text-align: center; }
+body[data-scene="street-economy"] main,
 body[data-scene="street"] main { max-width: 1280px; padding: 20px 24px 18px; }
 #slideshow { position: relative; width: 100%; }
 .textbox { position: relative; }
@@ -1215,7 +1216,8 @@ body[data-transition="street-camera"] .street-hotspots { pointer-events: none; }
  .street-guided-actions button.primary { min-width: 200px; font-size: 18px; }
 }
 @media (max-width:600px) {
- body[data-scene="street"] main { padding: 12px 8px 18px; }
+ body[data-scene="street-economy"] main,
+body[data-scene="street"] main { padding: 12px 8px 18px; }
  .street-knobs { gap: 5px; }
  .street-knob { font-size: 16px; gap: 4px; }
  .street-metrics { gap: 14px; font-size: 16px; }

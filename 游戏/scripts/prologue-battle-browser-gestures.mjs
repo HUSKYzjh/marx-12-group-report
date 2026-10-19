@@ -34,6 +34,7 @@ export async function completeBattle(page,frame,key,{onCheckpoint=async()=>{}}={
  await page.waitForFunction(key=>JSON.parse(localStorage.getItem(key)).battle.state.mode==='waves',key);
  for(let i=0;i<5;i++){await play(i===2?'upgrade':'hold');await battle.locator('#advance').click();}
  await onCheckpoint('waves',battle,(await saved()).state);
+ if((await saved()).state.externalOnly)return battle;
  await battle.locator('#next-scene').click();
  await page.waitForFunction(key=>JSON.parse(localStorage.getItem(key)).battle.state.mode==='social',key);
  for(const move of ['wage-down','price-down','hold','hold','hold','hold','hold','hold','hold']){await play(move);await battle.locator('#advance').click();}

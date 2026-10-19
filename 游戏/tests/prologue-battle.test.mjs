@@ -9,19 +9,20 @@ function completedCourse(){
  for(let i=0;i<9;i++)c=courseRound(c,'hold');return nextCourse(c);
 }
 
-test('optional six-shop ledger opens after the duel, remains independent and survives return',()=>{
+test('legacy six-shop shortcut now opens the third act and preserves both ledgers',()=>{
  let s=reduce(initialPrologue(),{type:'JUMP_STAGE',stage:2});
  assert.strictEqual(reduce(s,{type:'OPEN_STREET_SANDBOX'}),s);
  s=reduce(s,{type:'SAVE_BATTLE',snapshot:snapshot(completedCourse())});const battle=structuredClone(s.battle);
- s=reduce(s,{type:'OPEN_STREET_SANDBOX'});assert.equal(s.streetMode,'sandbox');
+ s=reduce(s,{type:'OPEN_STREET_SANDBOX'});assert.equal(s.scene,'street-economy');assert.equal(s.streetMode,'battle');
  assert.equal(s.street.world.people.length,20);assert.equal(s.street.world.firms.length,6);assert.equal(s.street.world.round,0);
  assert.equal(s.street.world.firms.find(f=>f.id==='cars').cash,20400);assert.equal(s.street.world.firms[0].cash,7200);
  assert(s.street.books);assert.equal(s.street.campaign,undefined);assert.equal(s.street.tutorial,undefined);
  s=reduce(s,{type:'STREET',action:{type:'ROUND',expectedRound:0}});assert.equal(s.street.world.round,1);assert.deepEqual(s.battle,battle);
  assert.deepEqual(restorePrologue(s),s);const street=structuredClone(s.street);
- s=reduce(s,{type:'BACK_BATTLE'});assert.equal(s.streetMode,'battle');assert.deepEqual(s.street,street);
+ s=reduce(s,{type:'JUMP_STAGE',stage:2});assert.equal(s.streetMode,'battle');assert.deepEqual(s.street,street);
  s=reduce(s,{type:'OPEN_STREET_SANDBOX'});assert.deepEqual(s.street,street);
- assert.equal(reduce(s,{type:'FINISH_BATTLE'}).scene,'ending');
+ assert.equal(reduce(s,{type:'FINISH_STREET_ECONOMY'}).scene,'ending');
+ const migrated=restorePrologue({...s,scene:'street',streetMode:'sandbox'});assert.equal(migrated.scene,'street-economy');assert.deepEqual(migrated.street,street);
  assert.equal(restorePrologue({...s,street:null}).streetMode,'battle');
 });
 test('first act hands off to a fresh battle without inheriting its demonstration cash',()=>{

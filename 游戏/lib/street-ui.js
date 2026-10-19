@@ -108,7 +108,7 @@
    button('重试上一轮','RETRY');return;
   }
   var metrics=el('div','','street-metrics street-icon-key',c.readout);metrics.id='street-metrics';
-  var begin=button('重新开门','BEGIN_CAMPAIGN',{},c.controls,'primary');begin.onclick=function(){if(!g.world.round||root.confirm('重新开始第二幕？本幕营业记录会重开，其他幕的选择保留。'))send('BEGIN_CAMPAIGN');};
+  if(!c.economyAct){var begin=button('重新开门','BEGIN_CAMPAIGN',{},c.controls,'primary');begin.onclick=function(){if(!g.world.round||root.confirm('重新开始第二幕？本幕营业记录会重开，其他幕的选择保留。'))send('BEGIN_CAMPAIGN');};}
   [['bread','库存'],['person','员工'],['cash','余额']].forEach(function(item){var cell=el('span','','',metrics);cell.innerHTML=StreetArt.icon(item[0]);el('span',item[1],'',cell);});
   metrics.title='产品数字是尚未卖出的库存，人数是在册员工；余额是公司现金，不是利润。';
   if(g.message)el('p',g.message,'street-message',c.readout);

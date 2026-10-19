@@ -470,7 +470,7 @@
       var beforeCoins = self.coins.map(function (coin) { return coin.visible ? { x: coin.x, y: coin.y } : null; });
       self.viewportWidth = window.innerWidth;
       var p = s.prologue, key = s.section === 'machine' ? 'machine' : keyOf(s);
-      var desiredWidth = key === 'opening' ? window.innerWidth : key==='street'?960:window.innerWidth <= 600 ? 640 : 960;
+      var desiredWidth = key === 'opening' ? window.innerWidth : ['street','street-economy'].includes(key)?960:window.innerWidth <= 600 ? 640 : 960;
       if (self.width !== desiredWidth || (key === 'opening' && (self.viewKey !== 'opening' || self.splashViewportHeight !== openingViewportHeight()))) {
         self.width = desiredWidth;
         // Keep the already packed opening when returning from another scene.
@@ -478,11 +478,11 @@
       }
       var w = self.width, center = w / 2;
       var changed = key !== self.viewKey || (key === 'allocation' && self.firmId !== p.activeFirmId);
-      if (changed || !['allocation','bakery','bakery-upgrade','bakery-expansion','street'].includes(key)) self.clearScene();
+      if (changed || !['allocation','bakery','bakery-upgrade','bakery-expansion','street','street-economy'].includes(key)) self.clearScene();
       self.viewKey = key;
       self.firmId = p.activeFirmId;
-      var stageHeight = key.indexOf('relief/')===0||['street','street-summary','epilogue','assumptions','technology','needs-technology','ownership-technology','market-rules'].includes(key)?1:key === 'opening' ? self.splashHeight :['bakery','bakery-upgrade','bakery-expansion'].includes(key) ? 425 : 340;
-      if(key==='street'&&p.streetMode==='sandbox')stageHeight=self.street.heightFor(w,p.street);
+      var stageHeight = key.indexOf('relief/')===0||['street','street-economy','street-summary','epilogue','assumptions','technology','needs-technology','ownership-technology','market-rules'].includes(key)?1:key === 'opening' ? self.splashHeight :['bakery','bakery-upgrade','bakery-expansion'].includes(key) ? 425 : 340;
+      if(key==='street-economy'||key==='street'&&p.streetMode==='sandbox')stageHeight=self.street.heightFor(w,p.street);
       self.dom.dataset.expansion=String(key==='bakery-expansion');
       if(key!=='bakery-expansion')self.dom.style.removeProperty('--expansion-blur');
       if (self.height !== stageHeight || previousWidth !== w) { self.height = stageHeight; self.app.renderer.resize(w, stageHeight); }
@@ -501,8 +501,8 @@
         self.app.view.setAttribute('aria-label','第一幕的扩张过程：左侧厨师与烤炉从1组倍增到64组，镜头拉远。右侧老板旁的金山增长，最后画面模糊并提出能否持续的问题。');
         if(changed&&!continuingExpansion)self.expansion.open(w,reduced.matches,p.bakeryWage);
         else {self.expansion.time=expansionTime;self.expansion.playing=expansionPlaying;self.expansion.graphics.visible=true;self.expansion.resize(w);}
-      } else if(key==='street'){
-        if(p.streetMode==='sandbox')self.street.update(p.street,w,reduced.matches);else self.street.close();
+      } else if(key==='street'||key==='street-economy'){
+        if(key==='street-economy'||p.streetMode==='sandbox')self.street.update(p.street,w,reduced.matches);else self.street.close();
       } else if (key === 'allocation') {
         var firm = s.firms.find(function (f) { return f.id === p.activeFirmId; });
         var share = p.allocationPlans[firm.id].laborShare;
@@ -638,7 +638,7 @@
     self.remove = function () { self.clearScene(); self.productionHint.remove(); self.app.destroy(true, { children: true, texture: false, baseTexture: false }); _remove(self); };
   };
   var machineTextures = {}, bakeryTextures = {}, changedMachineResult = false;
-  var ids = ['opening','bakery','bakery-upgrade','bakery-expansion','street','street-summary','allocation','market/single','market/all','network/customers','network/cooperation','network/ownership','network/control','network/payment','concept','ending','relief/menu','relief/consumption','relief/investment','relief/exports','epilogue','assumptions','technology','needs-technology','ownership-technology','market-rules','routes','machine/quote','machine/predict','machine/ready','machine/result','machine/compare'];
+  var ids = ['opening','bakery','bakery-upgrade','bakery-expansion','street','street-economy','street-summary','allocation','market/single','market/all','network/customers','network/cooperation','network/ownership','network/control','network/payment','concept','ending','relief/menu','relief/consumption','relief/investment','relief/exports','epilogue','assumptions','technology','needs-technology','ownership-technology','market-rules','routes','machine/quote','machine/predict','machine/ready','machine/result','machine/compare'];
   function drawCurrent() { updateUI(); stage.draw(state); }
   function bootSlides() {
     var slides = ids.map(function (id) { return { id: id, onstart: function (self) {
@@ -686,7 +686,7 @@
       choice.disabled=false;choice.title='';
       if(choice.dataset.chapter===currentChapter.id)choice.setAttribute('aria-current','page');else choice.removeAttribute('aria-current');
     });
-    var navScene=['bakery-upgrade','bakery-expansion'].includes(p.scene)?'bakery':p.scene==='ending'?'street':p.scene==='concept'||p.scene==='network'||p.scene==='market'?'street-summary':p.scene==='routes'?'relief':['technology','needs-technology','ownership-technology','market-rules'].includes(p.scene)?'assumptions':p.scene;
+    var navScene=['bakery-upgrade','bakery-expansion'].includes(p.scene)?'bakery':['ending','street-summary','concept','network','market'].includes(p.scene)?'street-economy':p.scene==='routes'?'relief':['technology','needs-technology','ownership-technology','market-rules'].includes(p.scene)?'assumptions':p.scene;
     var step=s.section==='machine'?STORY_STAGES.length-1:STORY_STAGES.findIndex(function(act){return act.scene===navScene;});
     var dots = document.getElementById('dots'); dots.innerHTML = '';
     function navigate(target) { post('action', { channel: 'host', action: { type: 'NAVIGATE_STAGE', stage: target } }); }
@@ -714,6 +714,14 @@
     if(p.scene==='needs-technology'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderNeedsExperiment(branchContext);renderBranchReview(branchContext,p.needsTechnology);return;}
     if(p.scene==='ownership-technology'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderOwnershipExperiment(branchContext);renderBranchReview(branchContext,p.ownershipTechnology);return;}
     if(p.scene==='market-rules'){document.getElementById('notes').hidden=true;var branchContext={state:s,readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}};renderMarketRules(branchContext);renderBranchReview(branchContext,p.marketRules);return;}
+    if(p.scene==='street-economy'){
+      document.getElementById('notes').hidden=true;
+      renderStreetUI({game:p.street,economyAct:true,scene:stage.street,controls:controls,readout:readout,notes:document.getElementById('notes'),notesContent:notes,title:function(){setTitle('第三幕·有限的钱包',p.street.world.round?'钱没有凭空消失，看看它到了谁手里。':'六家厂商，同一条街。调工资、定售价，再营业一轮。');},send:function(a){send('prologue',{type:'STREET',action:a});},ending:function(words){return action(words,'FINISH_STREET_ECONOMY');}});
+      if(p.street.world.round>0&&!['social','private','overproduction','limits'].includes(p.street.phase)){
+        var onward=action('继续看故事 →','FINISH_STREET_ECONOMY');onward.dataset.streetAction='CONTINUE';
+      }
+      return;
+    }
     if(p.scene==='street-summary'){document.getElementById('notes').hidden=true;renderStreetSummary({readout:readout,controls:controls,title:setTitle,send:function(a){send('prologue',a);}});return;}
     if(p.scene==='street'){
       document.getElementById('notes').hidden=true;

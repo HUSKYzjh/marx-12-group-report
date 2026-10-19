@@ -4,8 +4,8 @@ import {equipmentWorld,equipmentMoves,equipmentIssue,equipmentRound,equippedCapa
 import {rivalMove,capacity,money} from './battle-model.mjs';
 export const {MODES,TITLES,LENGTHS}=legacy;
 const old=s=>s.version===2,copy=s=>structuredClone(s);
-export const initialCourse=(batch=true,profitChallenge=true,splitActs=profitChallenge,simplified=false)=>({version:3,mode:'steady',world:simplified?simpleWorld():equipmentWorld(false,batch),archive:{},traced:[],...(profitChallenge?{profitChallenge:true}:{}),...(splitActs?{splitActs:true}:{})});
-export function adoptEquipmentCourse(previous,batch=true,profitChallenge=true,splitActs=profitChallenge,simplified=false){const valid=previous?.version===2?legacy.restoreCourse(previous):restoreCourse(previous);if(!valid)throw Error('Invalid previous course');return {...initialCourse(batch,profitChallenge,splitActs,simplified),previousCourse:valid};}
+export const initialCourse=(batch=true,profitChallenge=true,splitActs=profitChallenge,simplified=false,externalOnly=false)=>({version:3,mode:'steady',world:simplified?simpleWorld():equipmentWorld(false,batch),archive:{},traced:[],...(profitChallenge?{profitChallenge:true}:{}),...(splitActs?{splitActs:true}:{}),...(externalOnly?{externalOnly:true}:{})});
+export function adoptEquipmentCourse(previous,batch=true,profitChallenge=true,splitActs=profitChallenge,simplified=false,externalOnly=false){const valid=previous?.version===2?legacy.restoreCourse(previous):restoreCourse(previous);if(!valid)throw Error('Invalid previous course');return {...initialCourse(batch,profitChallenge,splitActs,simplified,externalOnly),previousCourse:valid};}
 export const finished=s=>legacy.finished(s);
 const wagesAllowed=s=>s.mode==='social'||s.splitActs&&s.mode==='steady';
 const worldFor=(s,social=false)=>simpleRules(s.world)?simpleWorld(social):equipmentWorld(social,batchUpgrade(s.world));
@@ -23,7 +23,7 @@ export function nextCourse(s){
  if(old(s))return legacy.nextCourse(s);
  const out=copy(s);
  if(s.mode==='steady'&&finished(s)){out.archive.steady=copy(s.world);out.mode='waves';out.world=worldFor(s);}
- else if(s.mode==='waves'&&finished(s)){out.archive.waves=copy(s.world);out.mode=s.profitChallenge?'social':'source';out.world=s.profitChallenge?worldFor(s,true):equipmentRound(equipmentWorld(true,batchUpgrade(s.world)),'hold','social');out.traced=[];}
+ else if(s.mode==='waves'&&finished(s)){out.archive.waves=copy(s.world);out.mode=s.externalOnly?'done':s.profitChallenge?'social':'source';if(!s.externalOnly)out.world=s.profitChallenge?worldFor(s,true):equipmentRound(equipmentWorld(true,batchUpgrade(s.world)),'hold','social');out.traced=[];}
  else if(s.mode==='source'&&s.traced.length===2)out.mode='social';
  else if(s.mode==='social'&&finished(s))out.mode='done';
  else throw Error('Not ready for next scene');return out;
@@ -47,7 +47,8 @@ export function traceCustomer(s,id){if(old(s))return legacy.traceCustomer(s,id);
 export function retryScene(s){
  if(old(s))return legacy.retryScene(s);
  const out=copy(s);
- if(s.mode==='steady'||s.mode==='waves')out.world=worldFor(s);
+ if(s.externalOnly&&s.mode==='done'){out.mode='waves';out.world=worldFor(s);delete out.archive.waves;}
+ else if(s.mode==='steady'||s.mode==='waves')out.world=worldFor(s);
  else if(['social','done'].includes(s.mode)){out.mode='social';out.world=s.profitChallenge?worldFor(s,true):equipmentRound(equipmentWorld(true,batchUpgrade(s.world)),'hold','social');}
  return out;
 }
@@ -60,16 +61,29 @@ export function restoreCourse(saved){
  if(saved?.version===2)return legacy.restoreCourse(saved);
  try{
   if(saved?.version!==3||!MODES.includes(saved.mode))return null;
+  if(saved.externalOnly!==undefined&&(saved.externalOnly!==true||!saved.splitActs||!simpleRules(saved.world)||!['steady','waves','done'].includes(saved.mode)))return null;
   if(saved.profitChallenge!==undefined&&saved.profitChallenge!==true)return null;
   if(saved.splitActs!==undefined&&(saved.splitActs!==true||!saved.profitChallenge))return null;
   if(saved.world?.upgradeRule!==undefined&&saved.world.upgradeRule!=='whole-shop-v1')return null;
   if(saved.world?.ruleSet!==undefined&&saved.world.ruleSet!==SIMPLE_RULE)return null;
   const batch=batchUpgrade(saved.world),simplified=simpleRules(saved.world);
-  let s=saved.previousCourse?adoptEquipmentCourse(saved.previousCourse,batch,!!saved.profitChallenge,!!saved.splitActs,simplified):initialCourse(batch,!!saved.profitChallenge,!!saved.splitActs,simplified);
+  let s=saved.previousCourse?adoptEquipmentCourse(saved.previousCourse,batch,!!saved.profitChallenge,!!saved.splitActs,simplified,!!saved.externalOnly):initialCourse(batch,!!saved.profitChallenge,!!saved.splitActs,simplified,!!saved.externalOnly);
   const play=world=>{for(const r of world.history)s=courseRound(s,r.action);};
   if(saved.mode==='steady')play(saved.world);
-  else{play(saved.archive.steady);s=nextCourse(s);if(saved.mode==='waves')play(saved.world);else{play(saved.archive.waves);s=nextCourse(s);if(saved.profitChallenge){if(saved.mode==='source')return null;play(saved.world);if(saved.mode==='done')s=nextCourse(s);}else{for(const id of saved.traced)s=traceCustomer(s,id);if(saved.mode!=='source'){s=nextCourse(s);for(const r of saved.world.history.slice(1))s=courseRound(s,r.action);if(saved.mode==='done')s=nextCourse(s);}}}}
+  else{play(saved.archive.steady);s=nextCourse(s);if(saved.mode==='waves')play(saved.world);else{play(saved.archive.waves);s=nextCourse(s);if(saved.externalOnly){if(saved.mode!=='done')return null;}else if(saved.profitChallenge){if(saved.mode==='source')return null;play(saved.world);if(saved.mode==='done')s=nextCourse(s);}else{for(const id of saved.traced)s=traceCustomer(s,id);if(saved.mode!=='source'){s=nextCourse(s);for(const r of saved.world.history.slice(1))s=courseRound(s,r.action);if(saved.mode==='done')s=nextCourse(s);}}}}
   return JSON.stringify(s)===JSON.stringify(saved)?s:null;
  }catch{return null;}
 }
-export function auditCourse(s){if(['source','social','done'].includes(s.mode)&&money(s.world)!==120)throw Error('Social ledger mismatch');return s;}
+export function auditCourse(s){if(!s.externalOnly&&['source','social','done'].includes(s.mode)&&money(s.world)!==120)throw Error('Social ledger mismatch');return s;}
+
+// Preserve every old ledger, while continuing the external-demand acts in place.
+// The finite-wallet experiment now has its own six-firm scene in the parent.
+export function externalDemandCourse(saved){
+ if(saved.externalOnly)return saved;
+ if(!simpleRules(saved.world))throw Error('Expected immediate-rule course');
+ let s=adoptEquipmentCourse(saved,true,true,true,true,true);
+ const play=world=>{for(const r of world.history)s=courseRound(s,r.action);};
+ if(saved.mode==='steady')play(saved.world);
+ else{play(saved.archive.steady);s=nextCourse(s);play(saved.mode==='waves'?saved.world:saved.archive.waves);if(saved.mode!=='waves')s=nextCourse(s);}
+ return s;
+}

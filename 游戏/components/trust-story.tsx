@@ -100,7 +100,7 @@ export default function TrustStory({ onLegacy, active = true }: { onLegacy: () =
       if (data.type === 'height' && Number.isFinite(data.height)) { setHeight(Math.max(400, Math.min(12000, data.height))); return; }
       if (data.type !== 'action' || !latest.current) return;
       const a = data.action;
-      if(data.channel==='prologue'&&a&&['SAVE_BATTLE','FINISH_BATTLE','OPEN_STREET_SANDBOX','BACK_BATTLE'].includes(a.type))dispatch(a as PrologueAction);
+      if(data.channel==='prologue'&&a&&['SAVE_BATTLE','FINISH_BATTLE','FINISH_STREET_ECONOMY','OPEN_STREET_SANDBOX','BACK_BATTLE'].includes(a.type))dispatch(a as PrologueAction);
       if(data.channel==='prologue'&&a?.type==='REMEDY')dispatch(a as PrologueAction);
       if(data.channel==='prologue'&&a?.type==='ASSUMPTION_DESK')dispatch(a as PrologueAction);
       if(data.channel==='prologue'&&a&&typeof a==='object'&&['OPEN_NEEDS','NEEDS','OPEN_OWNERSHIP','OWNERSHIP','OPEN_RULES','RULES'].includes(a.type))dispatch(a as PrologueAction);

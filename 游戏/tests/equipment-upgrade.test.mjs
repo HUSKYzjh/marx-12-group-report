@@ -64,6 +64,6 @@ test('current guide states an immediate upgrade while old rules stay replayable'
  const html=readFileSync(new URL('../public/assets/market-duel/battle.html',import.meta.url),'utf8');
  const ui=readFileSync(new URL('../public/assets/market-duel/course-game.mjs',import.meta.url),'utf8');
  assert.match(html,/一次付8枚/);assert.match(html,/当天生效、不停工/);
- assert.doesNotMatch(ui,/offerUpgrade|equipment-start|第二幕分成上下篇了/);assert.match(ui,/state=adoptEquipmentCourse\(state,true,true,true,true\)/);assert.doesNotMatch(html,/upgrade-course/);
+ assert.doesNotMatch(ui,/offerUpgrade|equipment-start|第二幕分成上下篇了/);assert.match(ui,/state=adoptEquipmentCourse\(state,true,true,true,true,true\)/);assert.doesNotMatch(html,/upgrade-course/);
  assert.match(ui,/w\.shops\.map\(f=>\{const today=readyShop\(f\)/);
 });
