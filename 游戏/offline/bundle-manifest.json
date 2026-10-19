@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-19T01:29:14.292Z",
-  "bytes": 20606480,
+  "built_at": "2026-10-19T01:37:39.366Z",
+  "bytes": 20606262,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2157,6 +2157,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Remove the introductory disclaimer line above the father-daughter dialogue. Preserve the dialogue and its navigation.",
     "End Act II after three fixed-demand and five variable-demand days. Move finite wallets into Act III using the original six firms and twenty residents. Preserve both completed duel accounts and existing six-firm ledgers, with no forced bankruptcy.",
     "Add one combined expansion: ten coins, one ordinary oven and one existing worker, six more daily capacity and one extra daily wage, all effective today. Preserve previous immediate-rule saves and the 54-coin upper maximum.",
     "Simplify actual consequences: same-day price and wage adjustments, an eight-coin immediate oven upgrade, three fixed workers and fixed five-coin overhead, no installation downtime, inventory fees, spoilage or severance; recompute the upper maximum as 54 and archive original-rule ledgers exactly.",
@@ -2184,9 +2185,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "e92beb4723ca256bc07dd0248bbac7315265ec077c1d5721c23aa70413dd548c",
+    "index_sha256": "f101158d24f1f39b67723fdf32141b04533af712d8bfc83d9ea74b1f503790d1",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "a167bae322c7e408eeb1fb783c6926f63d7cf4af740718cb459582bc1d1cc962"
+  "sha256": "109791c684bad2eddf1879ab1f5b2828ac1b52e7bd233968e3c5102fb9e71ee9"
 }

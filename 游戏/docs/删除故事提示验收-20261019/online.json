@@ -1,0 +1,21 @@
+{
+  "sourceSHA256": "109791c684bad2eddf1879ab1f5b2828ac1b52e7bd233968e3c5102fb9e71ee9",
+  "indexSHA256": "f101158d24f1f39b67723fdf32141b04533af712d8bfc83d9ea74b1f503790d1",
+  "results": [
+    {
+      "width": 390,
+      "promptAbsent": true,
+      "dialoguePresent": true,
+      "storyNavigationWorks": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "promptAbsent": true,
+      "dialoguePresent": true,
+      "storyNavigationWorks": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

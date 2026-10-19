@@ -70,7 +70,7 @@ try{
   await host.locator('main').screenshot({path:path.join(out,`${width}-finite-wallet-round-two.png`)});
   await host.getByRole('button',{name:'继续看故事 →',exact:true}).click();await host.locator('body[data-scene="ending"]').waitFor();
   assert.equal(await host.locator('#dots button[aria-current=step]').getAttribute('data-stage'),'3');
-  assert.match(await host.getByTestId('family-story-boundary').innerText(),/独立改编故事/);
+  assert.equal(await host.getByTestId('family-story-boundary').count(),0);
   await host.getByRole('button',{name:'继续听 →',exact:true}).click();await host.getByRole('button',{name:'继续听 →',exact:true}).click();await host.getByRole('button',{name:'再看看这条街 →',exact:true}).click();await host.locator('body[data-scene="street-summary"]').waitFor();
   await host.locator('#dots button[data-stage="4"]').click();await host.locator('body[data-scene="relief"]').waitFor();assert.deepEqual((await saved()).street,street);
   results.push({width,secondActDays:[3,5],noTwoShopWalletRound:true,upperMaximum:54,thirdActFirms:6,thirdActPeople:20,initialMoney,completedStreetRounds:2,fundedPayroll:true,fundedSupplierPayment:true,moneyConserved:true,duelPreserved:true,refresh:true,actNavigationPreservesLedger:true,storyAndFourthActContinue:true,noHorizontalOverflow:true,noStateInjection:true});
