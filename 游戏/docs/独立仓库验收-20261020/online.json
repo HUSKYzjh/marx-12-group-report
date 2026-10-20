@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-20",
+  "sourceSHA256": "89fbc31861d5343e2cb09053c24efc101cf5ed13291f859b51e3bfe9b90fde4e",
+  "indexSHA256": "c7891e17de97b3651d436e3af7d343e3565465338c284052eccc447f256a97e5",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "exactButtonAndDialogCopy": true,
+      "noAutomaticNavigation": true,
+      "noNewTabUntilGithubClicked": true,
+      "githubProfileAndStandaloneRepository": true,
+      "avatarMatchesOriginalBytes": true,
+      "threeCloseMethods": true,
+      "focusRestored": true,
+      "modalWithinViewport": true,
+      "fullStateUnchanged": true,
+      "refreshPreservesEnding": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "exactButtonAndDialogCopy": true,
+      "noAutomaticNavigation": true,
+      "noNewTabUntilGithubClicked": true,
+      "githubProfileAndStandaloneRepository": true,
+      "avatarMatchesOriginalBytes": true,
+      "threeCloseMethods": true,
+      "focusRestored": true,
+      "modalWithinViewport": true,
+      "fullStateUnchanged": true,
+      "refreshPreservesEnding": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "exactButtonAndDialogCopy": true,
+      "noAutomaticNavigation": true,
+      "noNewTabUntilGithubClicked": true,
+      "githubProfileAndStandaloneRepository": true,
+      "avatarMatchesOriginalBytes": true,
+      "threeCloseMethods": true,
+      "focusRestored": true,
+      "modalWithinViewport": true,
+      "fullStateUnchanged": true,
+      "refreshPreservesEnding": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

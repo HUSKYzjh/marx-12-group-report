@@ -12,7 +12,10 @@
   const dialog=el('dialog','',document.body,'relief-explanation-dialog epilogue-future-dialog');dialog.dataset.testid='epilogue-future-dialog';dialog.setAttribute('aria-labelledby','epilogue-future-title');
   const top=el('div','',dialog,'relief-explanation-top'),heading=el('h2','后续真没有啦。实在做不完啦TAT',top);heading.id='epilogue-future-title';
   const close=el('button','×',top,'relief-explanation-close');close.type='button';close.setAttribute('aria-label','关闭提示');
-  const body=el('div','',dialog,'relief-explanation-body'),message=el('p','可以关注我的',body),github=el('a','github',message);github.href='https://github.com/HUSKYzjh/marx-12-group-report';github.target='_blank';github.rel='noopener noreferrer';message.appendChild(document.createTextNode('：后续感兴趣可以继续提PR'));
+  const body=el('div','',dialog,'relief-explanation-body'),message=el('p','可以关注我的',body),github=el('a','github',message);github.href=TRUST_ASSETS.author.profile;github.target='_blank';github.rel='noopener noreferrer';message.appendChild(document.createTextNode('：后续感兴趣可以继续提PR'));
+  const author=el('a','',body,'epilogue-author');author.href=TRUST_ASSETS.author.profile;author.target='_blank';author.rel='noopener noreferrer';author.setAttribute('aria-label','HUSKYzjh 的 GitHub 主页');
+  const avatar=el('img','',author);avatar.src=TRUST_ASSETS.author.avatar;avatar.alt='HUSKYzjh 的 GitHub 头像';avatar.width=avatar.height=56;el('span','HUSKYzjh ↗',author);
+  const repository=el('a','开源仓库：feast-of-hunger ↗',body,'epilogue-repository');repository.setAttribute('aria-label','游戏开源仓库：feast-of-hunger ↗');repository.href=TRUST_ASSETS.author.repository;repository.target='_blank';repository.rel='noopener noreferrer';
   const back=el('button','好吧 TAT',dialog,'primary');back.type='button';let hostOverflow,disposed=false;
   try{hostOverflow=parent.document.body.style.overflow;parent.document.body.style.overflow='hidden';}catch(err){}
   function place(){if(disposed)return;let offset=0,available=innerHeight;try{if(frameElement){const rect=frameElement.getBoundingClientRect();offset=Math.max(0,-rect.top);available=Math.max(120,Math.min(innerHeight-offset,parent.innerHeight-Math.max(0,rect.top)));}}catch(err){}dialog.style.maxHeight=Math.max(96,available-24)+'px';dialog.style.top=offset+Math.max(12,(available-dialog.offsetHeight)/2)+'px';}

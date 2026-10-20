@@ -6,7 +6,8 @@ import {fileURLToPath,pathToFileURL} from 'node:url';
 import {createRequire} from 'node:module';
 const {loadPlaywright,browserLaunchOptions}=createRequire(import.meta.url)('./playwright-runtime.cjs');
 const root=fileURLToPath(new URL('../',import.meta.url)),remote=process.env.GAME_TEST_URL,out=process.env.GAME_TEST_OUTPUT||path.join(root,'outputs/epilogue-invitation');
-const m=JSON.parse(await fs.readFile(path.join(root,'build/hosted/hosting-manifest.json'),'utf8')),key='technology-dividend:prologue:v1',repo='https://github.com/HUSKYzjh/marx-12-group-report',results=[],errors=[];
+const m=JSON.parse(await fs.readFile(path.join(root,'build/hosted/hosting-manifest.json'),'utf8')),key='technology-dividend:prologue:v1',repo='https://github.com/HUSKYzjh/feast-of-hunger',profile='https://github.com/HUSKYzjh',results=[],errors=[];
+const avatarManifest=JSON.parse(await fs.readFile(path.join(root,'public/assets/author/provenance.json'),'utf8'));
 assert.equal(createHash('sha256').update(await fs.readFile(path.join(root,'offline/技术红利去了哪里.html'))).digest('hex'),m.source_sha256);
 await fs.mkdir(out,{recursive:true});const browser=await loadPlaywright().chromium.launch(browserLaunchOptions());
 try{
@@ -24,7 +25,8 @@ try{
   for(const method of ['escape','close','confirm','github']){
    await trigger.click();const dialog=host.getByTestId('epilogue-future-dialog');await dialog.waitFor();
    assert.equal(await dialog.locator('h2').innerText(),'后续真没有啦。实在做不完啦TAT');assert.equal(await dialog.locator('p').innerText(),'可以关注我的github：后续感兴趣可以继续提PR');
-   const link=dialog.getByRole('link',{name:'github',exact:true});assert.equal(await link.getAttribute('href'),repo);assert.equal(await link.getAttribute('target'),'_blank');
+   const link=dialog.getByRole('link',{name:'github',exact:true}),repository=dialog.getByRole('link',{name:'游戏开源仓库：feast-of-hunger ↗',exact:true});assert.equal(await link.getAttribute('href'),profile);assert.equal(await link.getAttribute('target'),'_blank');assert.equal(await repository.getAttribute('href'),repo);assert.equal(await repository.getAttribute('target'),'_blank');
+   const avatar=dialog.getByRole('img',{name:'HUSKYzjh 的 GitHub 头像',exact:true});await avatar.evaluate(img=>img.decode());const src=await avatar.getAttribute('src');let avatarBytes;if(remote){const url=new URL(src,remote);assert.equal(url.origin,new URL(remote).origin);const response=await ctx.request.get(url.href);assert(response.ok());avatarBytes=await response.body();}else{assert.match(src,/^data:image\/png;base64,/);avatarBytes=Buffer.from(src.split(',')[1],'base64');}assert.equal(createHash('sha256').update(avatarBytes).digest('hex'),avatarManifest.sha256);
    assert.equal(page.url(),url);assert.deepEqual(await saved(),before);assert.equal(await host.locator('body').getAttribute('data-scene'),'epilogue');assert.equal(ctx.pages().length,1);
    await page.waitForTimeout(100);const box=await dialog.boundingBox();assert(box.x>=0&&box.y>=0&&box.x+box.width<=width+1&&box.y+box.height<=height+2);
    assert.equal(await dialog.locator('.relief-explanation-body').evaluate(n=>n.scrollHeight>n.clientHeight+2),false);
@@ -33,14 +35,14 @@ try{
    if(method==='close')await dialog.getByRole('button',{name:'关闭提示',exact:true}).click();
    if(method==='confirm')await dialog.getByRole('button',{name:'好吧 TAT',exact:true}).click();
    if(method==='github'){
-    await ctx.route(repo+'**',route=>route.fulfill({status:200,contentType:'text/html',body:'<title>Repository link destination verified</title>'}));
-    const popupPromise=ctx.waitForEvent('page');await link.click();const popup=await popupPromise;await popup.waitForLoadState('domcontentloaded');assert.equal(popup.url(),repo);await popup.close();
+    await ctx.route(profile+'**',route=>route.fulfill({status:200,contentType:'text/html',body:'<title>GitHub link destination verified</title>'}));
+    for(const [target,destination] of [[link,profile],[repository,repo]]){const popupPromise=ctx.waitForEvent('page');await target.click();const popup=await popupPromise;await popup.waitForLoadState('domcontentloaded');assert.equal(popup.url(),destination);await popup.close();}
     assert.equal(page.url(),url);assert.deepEqual(await saved(),before);await dialog.getByRole('button',{name:'好吧 TAT',exact:true}).click();
    }
    await dialog.waitFor({state:'detached'});assert.deepEqual(await saved(),before);assert.equal(await trigger.evaluate(n=>document.activeElement===n),true);assert.equal(await page.evaluate(()=>document.body.style.overflow==='hidden'),false);
   }
   await page.reload({waitUntil:'domcontentloaded'});host=await frame();await host.getByRole('button',{name,exact:true}).waitFor();assert.deepEqual(await saved(),before);
-  results.push({width,height,exactButtonAndDialogCopy:true,noAutomaticNavigation:true,noNewTabUntilGithubClicked:true,githubOpensCorrectRepository:true,threeCloseMethods:true,focusRestored:true,modalWithinViewport:true,fullStateUnchanged:true,refreshPreservesEnding:true,noStateInjection:true});console.log(`PASS ${width}: epilogue invitation → modal only → close/reopen → GitHub → refresh`);await ctx.close();
+  results.push({width,height,exactButtonAndDialogCopy:true,noAutomaticNavigation:true,noNewTabUntilGithubClicked:true,githubProfileAndStandaloneRepository:true,avatarMatchesOriginalBytes:true,threeCloseMethods:true,focusRestored:true,modalWithinViewport:true,fullStateUnchanged:true,refreshPreservesEnding:true,noStateInjection:true});console.log(`PASS ${width}: avatar → profile / standalone repository → close → refresh`);await ctx.close();
  }
  assert.deepEqual(errors,[]);await fs.writeFile(path.join(out,'report.json'),JSON.stringify({date:'2026-10-20',sourceSHA256:m.source_sha256,indexSHA256:m.index_sha256,results,errors},null,2)+'\n');
 }catch(e){for(const c of browser.contexts())for(const p of c.pages())await p.screenshot({path:path.join(out,'failure.png'),fullPage:true}).catch(()=>{});throw e;}finally{await browser.close();}

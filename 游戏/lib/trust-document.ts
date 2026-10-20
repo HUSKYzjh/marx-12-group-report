@@ -73,6 +73,7 @@ import bakeryNervousAtlas from '../public/assets/wbwwb-source/face_nervous.json'
 import wbNotice from '../public/assets/wbwwb-source/NOTICE.txt?raw';
 
 const assets = {
+  author: {avatar:'/assets/author/huskyzjh.png',profile:'https://github.com/HUSKYzjh',repository:'https://github.com/HUSKYzjh/feast-of-hunger'},
   history: {"consumption-relief":"/assets/history/consumption-relief.jpg","consumption-market":"/assets/history/consumption-market.jpg","consumption-credit":"/assets/history/consumption-credit.jpg","investment-power":"/assets/history/investment-power.jpg","investment-ford":"/assets/history/investment-ford.jpg","investment-housing":"/assets/history/investment-housing.jpg","exports-grain":"/assets/history/exports-grain.jpg","exports-loading":"/assets/history/exports-loading.jpg","exports-port":"/assets/history/exports-port.jpg"},
   peep: '/assets/trust/iterated_peep.png', coin: '/assets/trust/iterated_coin.png',
   old: '/assets/workshop-v6/machine-old-v1.png', new: '/assets/workshop-v6/machine-new-v1.png',

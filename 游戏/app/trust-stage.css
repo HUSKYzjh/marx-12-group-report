@@ -1884,3 +1884,5 @@ body[data-street-review=true] .stage-object{display:none}
 .epilogue-future-dialog{width:min(560px,calc(100% - 24px))}.epilogue-future-dialog .relief-explanation-top{align-items:flex-start}.epilogue-future-dialog h2{line-height:1.6}.epilogue-future-dialog a{color:inherit;text-underline-offset:4px}.epilogue-future-dialog>.primary{width:100%;min-height:44px;margin:8px 0 0;font:inherit;font-size:18px}#controls>.epilogue-future-button{width:min(500px,calc(100% - 24px));max-width:100%;white-space:normal;line-height:1.6;padding:12px 18px}
 #controls>.epilogue-future-button::before{height:230%;aspect-ratio:auto}
 #controls>.epilogue-future-button>span{display:inline-block;white-space:nowrap}
+
+.epilogue-author{display:flex;align-items:center;gap:14px;min-height:64px;margin:16px 0 10px;text-decoration:none;font-size:20px}.epilogue-author img{display:block;flex:none;border:1px solid #aaa;border-radius:50%;object-fit:cover}.epilogue-repository{display:block;margin:8px 0;min-height:44px;font-size:16px;line-height:1.65;overflow-wrap:anywhere}

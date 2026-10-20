@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-20",
+  "results": [
+    {
+      "kind": "development",
+      "actualFreshDependencies": true,
+      "gameLoads": true,
+      "epilogueAndAvatar": true,
+      "correctLinks": true,
+      "refresh": true
+    },
+    {
+      "kind": "production",
+      "actualFreshDependencies": true,
+      "gameLoads": true,
+      "epilogueAndAvatar": true,
+      "correctLinks": true,
+      "refresh": true
+    }
+  ],
+  "errors": []
+}

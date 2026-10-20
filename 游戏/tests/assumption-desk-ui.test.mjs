@@ -15,7 +15,7 @@ class Element{
  find(cls){return [...(this.className===cls?[this]:[]),...this.children.flatMap(n=>n.find(cls))];}
 }
 function render(selected=null,observations={}){
- const root={},atlas={frames:Object.fromEntries(['body0000','face0000','face0006'].map(k=>[k,{frame:{x:0,y:0}}])),meta:{size:{w:100,h:140}}},bindings=[];
+ const root={addEventListener(){}},atlas={frames:Object.fromEntries(['body0000','face0000','face0006'].map(k=>[k,{frame:{x:0,y:0}}])),meta:{size:{w:100,h:140}}},bindings=[];
  const context={window:root,document:{createElement:tag=>new Element(tag),createTextNode:text=>Object.assign(new Element('#text'),{textContent:text})},StreetArt:{decorateMoney(){}},TRUST_ASSETS:{bakery:{body:'body.png',face:'face.png',bodyAtlas:atlas,faceAtlas:atlas}},GestureBoard:{bind(n,c){bindings.push(c);}}};
  vm.runInNewContext(fs.readFileSync(new URL('../lib/research-reader.js',import.meta.url),'utf8'),context);
  vm.runInNewContext(fs.readFileSync(new URL('../lib/relief-ui.js',import.meta.url),'utf8'),context);

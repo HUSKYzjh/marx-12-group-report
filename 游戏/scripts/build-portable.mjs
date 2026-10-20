@@ -19,7 +19,7 @@ let css=(await transform(compiled.css,{loader:'css',minify:true})).code;
 const fontCoverage=await checkFontCoverage(js+'\n'+css);
 console.log(`Handwriting coverage checked: ${fontCoverage.codepoints} characters.`);
 // Embed explicitly referenced local artwork and the complete licensed handwriting font.
-const assetPattern=/\/(?:(?:assets\/(?:trust|trust-source|workshop-v6|wbwwb-source)|evidence)\/[A-Za-z0-9_.-]+\.png|assets\/(?:bakery|street)\/[A-Za-z0-9_.-]+\.svg|assets\/history\/[A-Za-z0-9_.-]+\.jpg|assets\/fonts\/[A-Za-z0-9_.-]+\.woff2)/g;
+const assetPattern=/\/(?:(?:assets\/(?:trust|trust-source|workshop-v6|wbwwb-source|author)|evidence)\/[A-Za-z0-9_.-]+\.png|assets\/(?:bakery|street)\/[A-Za-z0-9_.-]+\.svg|assets\/history\/[A-Za-z0-9_.-]+\.jpg|assets\/fonts\/[A-Za-z0-9_.-]+\.woff2)/g;
 const assetPaths=new Set([...js.matchAll(assetPattern),...css.matchAll(assetPattern)].map(m=>m[0]));
 let sharedFont=null;
 for(const assetPath of assetPaths){const mime=assetPath.endsWith('.woff2')?'font/woff2':assetPath.endsWith('.svg')?'image/svg+xml':assetPath.endsWith('.jpg')?'image/jpeg':'image/png';const data=`data:${mime};base64,`+(await fs.readFile(path.join(root,'public',assetPath))).toString('base64');if(assetPath.endsWith('/workshop-hand.woff2')){sharedFont=data;js=js.replaceAll(assetPath,'__WORKSHOP_FONT_URL__');}else js=js.replaceAll(assetPath,data);css=css.replaceAll(assetPath,data);}

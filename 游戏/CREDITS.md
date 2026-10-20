@@ -134,3 +134,7 @@ workshop-v6新增的互扣圆环、钥匙、调节杆杆身和连线端点由本
 - 新奥尔良港，Traveller号船舶装载粮食；between 1900 and 1906；Detroit Publishing Co., publisher；[LOC 2016803158](https://www.loc.gov/item/2016803158/)。
 - 新奥尔良Poydras街码头装船；1943 Mar.；John Vachon；[LOC 2017850498](https://www.loc.gov/item/2017850498/)。
 - 佛罗里达州彭萨科拉港码头；between 1905 and 1915；Detroit Publishing Co., publisher；[LOC 2016815340](https://www.loc.gov/item/2016815340/)。
+
+## 2026-10-20 作者头像
+
+尾声的HUSKYzjh头像来自作者本人GitHub公开账号，原PNG内嵌离线页并由同源托管提供，用于作者身份识别。来源、日期及SHA-256见[作者头像记录](public/assets/author/provenance.json)。头像不归入游戏源码的MIT授权。
