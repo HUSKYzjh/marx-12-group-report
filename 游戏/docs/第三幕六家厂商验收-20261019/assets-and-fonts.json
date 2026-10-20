@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-17",
+  "index_sha256": "e92beb4723ca256bc07dd0248bbac7315265ec077c1d5721c23aa70413dd548c",
+  "assets_checked": 56,
+  "source_font_sha256": "854a98e67135a27a15f41ef2528fd827190793ffae2b5f6ed7b67fd0a28c3000",
+  "source_mappings": 47449,
+  "published_mappings": 47449,
+  "actual_font_files_inspected": 24,
+  "used_han_checked": 1407,
+  "missing_han": [],
+  "all_font_mappings_preserved": true,
+  "current_han_in_core": true,
+  "canonical_font_unchanged": true
+}

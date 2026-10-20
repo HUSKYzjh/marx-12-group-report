@@ -1,0 +1,17 @@
+{
+  "sourceSHA256": "45e16a1aa5c8b9697dd43a8f1721b3ef0819fa7768b2ddd45764ae4d73903e36",
+  "results": [
+    {
+      "edition": "previous",
+      "walk": false,
+      "animationStarted": true,
+      "events": 105
+    },
+    {
+      "edition": "current",
+      "walk": false,
+      "animationStarted": true,
+      "events": 105
+    }
+  ]
+}

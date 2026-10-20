@@ -717,6 +717,7 @@
   const bounds=el('details','',records,'street-bounds');el('summary','这个实验说明什么？',bounds);
   const explanation=el('div','',bounds,'technology-report-body');root.ResearchReader.mount(explanation,'',{topics:openNotes(route),sources:c.state.remedySources});
  }
+ root.renderRemedyAdviser=adviserCharacter;
  root.renderRemedyLab=function(c){
   cancelPeek();cancelInspection();cancelFeedback();
   const p=c.state.prologue,route=p.reliefRoute;

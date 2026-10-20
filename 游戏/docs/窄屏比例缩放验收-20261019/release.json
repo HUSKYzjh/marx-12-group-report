@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-19",
+  "request": "窄屏按比例缩小元素",
+  "changes": [
+    "街区人物、店铺插画和各区间距随可见宽度平滑缩放，320px最低约72%的原视觉比例，600px以上恢复原比例",
+    "员工按可用宽度排布，保留原20人与6家厂商；待业区与员工区间距同步缩小",
+    "44px人物点击区域、工资售价文字和店铺账本入口保持可操作",
+    "父女故事插画在窄屏下收窄至78vw，上限400px，保留对话和按钮字号",
+    "不改经济结算，刷新及横竖屏切换不重开账本"
+  ],
+  "source_sha256": "45e16a1aa5c8b9697dd43a8f1721b3ef0819fa7768b2ddd45764ae4d73903e36",
+  "index_sha256": "1bdc67380b98918741141c02e92c24530e4a13987df8be57224c17236028ab67",
+  "validation": {
+    "related_tests_passed": 11,
+    "local_and_online_widths": [
+      320,
+      390,
+      600,
+      1280
+    ],
+    "local_street_height_comparison": [
+      {
+        "width": 320,
+        "before": 798,
+        "after": 574.75,
+        "reduction": 0.27976190476190477
+      },
+      {
+        "width": 390,
+        "before": 798.25,
+        "after": 533.328125,
+        "reduction": 0.3318783275916066
+      },
+      {
+        "width": 600,
+        "before": 689.234375,
+        "after": 678.28125,
+        "reduction": 0.015891727686971557
+      },
+      {
+        "width": 1280,
+        "before": 719.9375,
+        "after": 719.9375,
+        "reduction": 0
+      }
+    ],
+    "all_person_targets_at_least_44px": true,
+    "actual_trade_and_inspection": true,
+    "resize_preserves_ledger": true,
+    "desktop_geometry_unchanged": true,
+    "offline_zip_verified": true,
+    "font_mappings_preserved": 47449
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792374462914/"
+  },
+  "limits": [
+    "普通动态模式下，旧版与新版都可开始并完成营业；两版均未捕获到人物步行状态，未将人物步行验收列为通过。本次缩放不修改营业时钟或交易路径。"
+  ]
+}

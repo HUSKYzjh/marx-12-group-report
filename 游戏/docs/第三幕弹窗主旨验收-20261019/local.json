@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-19",
+  "sourceSHA256": "71e046dabfe1832dbbd780cb23c4a3112e19ba5fa6f85fff5da61c7144a1f22a",
+  "indexSHA256": "f0817d0efdfb060a4919d90d692171cbeec372485a70a08038aab35bedac50aa",
+  "results": [
+    {
+      "width": 320,
+      "realInitialSale": 12,
+      "realExpandedSale": 18,
+      "followedProduction": 36,
+      "followedSales": 33,
+      "followedStock": 3,
+      "unaffordableBread": 2,
+      "matchedWages": [
+        38,
+        33
+      ],
+      "matchedOwnCashChanges": [
+        20,
+        17
+      ],
+      "matchedStocks": [
+        6,
+        7
+      ],
+      "people": 20,
+      "money": 76800,
+      "refresh": true,
+      "comparisonDoesNotMutateLedger": true,
+      "canReturnToManagement": true,
+      "storyAndFourthActContinue": true,
+      "noUpdateDisclaimer": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "realInitialSale": 12,
+      "realExpandedSale": 18,
+      "followedProduction": 36,
+      "followedSales": 33,
+      "followedStock": 3,
+      "unaffordableBread": 2,
+      "matchedWages": [
+        38,
+        33
+      ],
+      "matchedOwnCashChanges": [
+        20,
+        17
+      ],
+      "matchedStocks": [
+        6,
+        7
+      ],
+      "people": 20,
+      "money": 76800,
+      "refresh": true,
+      "comparisonDoesNotMutateLedger": true,
+      "canReturnToManagement": true,
+      "storyAndFourthActContinue": true,
+      "noUpdateDisclaimer": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "realInitialSale": 12,
+      "realExpandedSale": 18,
+      "followedProduction": 36,
+      "followedSales": 33,
+      "followedStock": 3,
+      "unaffordableBread": 2,
+      "matchedWages": [
+        38,
+        33
+      ],
+      "matchedOwnCashChanges": [
+        20,
+        17
+      ],
+      "matchedStocks": [
+        6,
+        7
+      ],
+      "people": 20,
+      "money": 76800,
+      "refresh": true,
+      "comparisonDoesNotMutateLedger": true,
+      "canReturnToManagement": true,
+      "storyAndFourthActContinue": true,
+      "noUpdateDisclaimer": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

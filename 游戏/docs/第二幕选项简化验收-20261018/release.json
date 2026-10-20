@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-18",
+  "request": "选项更简单；用户明确先做第二幕",
+  "scope": "第二幕三场经营的操作菜单与短标签",
+  "before": "默认同时摊开6项调整和照常营业，第三场另有工资调整",
+  "after": "3个按用途展开的分类＋1个照常营业动作；同时只展开一类，具体措施改用短标签",
+  "menu": [
+    "改售价",
+    "换烤炉",
+    "调人手／人手与工资",
+    "照常营业"
+  ],
+  "economic_rules_changed": false,
+  "opening_guide_pages": 5,
+  "source_sha256": "7182161f5bb265ef9a5a0591e165b8c3c97b9da94533ba05ef44293f615b5277",
+  "index_sha256": "74c4e9c5e46d7d11e8d4b5d85d417772dddb530522a1fb9030b457f399e4d898",
+  "validation": {
+    "target_tests_passed": 58,
+    "target_tests_failed": 0,
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "all_three_scene_menus": true,
+    "disclosure_is_read_only": true,
+    "all_original_moves_reachable": true,
+    "cash_after_best_three_days": 87,
+    "saved_decision_survives_reload": true,
+    "offline_zip_verified": true,
+    "font_mappings": 47449
+  },
+  "additional_equipment_geometry_check": {
+    "existing_before_change": true,
+    "baseline_source_sha256": "9f556fdc0bd7bd616604ab5bf7ef5c1815df91cef03349c041bd5d89f8e2d6b4",
+    "results": {
+      "baseline": {
+        "status": "failed",
+        "log": "equipment-baseline.txt"
+      },
+      "current": {
+        "status": "failed",
+        "log": "equipment-current.txt"
+      }
+    }
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792306550714/"
+  },
+  "prune": false,
+  "limits": [
+    "本轮只调整第二幕，后续八个技术实验未改。",
+    "额外旧五人店铺边界检查在修改前与修改后均因同一店铺状态框边界断言失败，单独记录；本次只改菜单，未处理该已有布局问题。"
+  ]
+}

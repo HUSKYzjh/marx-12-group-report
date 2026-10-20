@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-18",
+  "oldSHA256": "7182161f5bb265ef9a5a0591e165b8c3c97b9da94533ba05ef44293f615b5277",
+  "sourceSHA256": "d8d2053cf4b4f78832113fd8229391e86f864747b41a658fe0d715cdb11e4e06",
+  "oldPageActuallyPlayed": true,
+  "noStateInjection": true,
+  "oldLedgerUnchangedUntilChoice": true,
+  "oldLedgerArchived": true,
+  "firstTwoScenesPreserved": true,
+  "newOpeningCash": 36,
+  "refresh": true,
+  "oldRecordOpened": true,
+  "errors": []
+}

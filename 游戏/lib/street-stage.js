@@ -86,26 +86,33 @@
    if(trace){var entries=(self.game.report?self.game.report.transactions:[]).filter(function(t){return t.from===id||t.to===id;});var list=document.createElement('p');list.className='street-wallet-lines';list.textContent=entries.length?entries.map(function(t){return (t.to===id?'＋':'−')+money.amount(t.amount)+' '+({wage:'工资',bread:'面包',clothes:'衣服',car:'汽车',severance:'安置款','owner-budget':'消费预算','owner-purchase':'店内代付'}[t.kind]||t.kind);}).join(' · '):'本轮还没有付款记录。';bubble.appendChild(list);}
    var close=document.createElement('button');close.type='button';close.className='street-close';close.textContent='×';close.setAttribute('aria-label','关闭心声');close.onclick=function(){bubble.hidden=true;self.selected=null;self.trace=false;};bubble.appendChild(close);StreetArt.decorateMoney(bubble);bubble.hidden=false;positionBubble();
   };
-  function geometry(width,game){var ratio=(dom.clientWidth||width)/width,k=Math.min(1,ratio),business=Math.max(130,140*k),ownBusiness=Math.max(145,165*k),otherCount=game?Math.max.apply(null,game.world.firms.filter(function(f){return f.id!=='bakery';}).map(function(f){return f.workers.length;})):1,ownCount=game?game.world.firms[0].workers.length:2;
-   var team=Math.max(90,Math.ceil(otherCount/Math.max(1,Math.floor(250*ratio/52)))*64+24),ownTeam=Math.max(90,Math.ceil(ownCount/Math.max(1,Math.floor(350*ratio/52)))*64+24),second=20+business+22+team+42;
-   var waiting=game?game.world.people.filter(function(p){return !p.job&&!p.owner;}).length:2,cols=Math.max(1,Math.floor(((dom.clientWidth||width)-32)/50)),bottom=second+Math.max(ownBusiness+22+ownTeam,business+22+team);
-   return {ratio:ratio,business:business,ownBusiness:ownBusiness,team:team,ownTeam:ownTeam,second:second,bottom:bottom,cols:cols,height:bottom+40+Math.max(1,Math.ceil(waiting/cols))*64+24};
+  function geometry(width,game){
+   var visible=dom.clientWidth||width,ratio=visible/width,k=Math.min(1,ratio);
+   // Shrink the drawing and its spacing together; touch targets stay 44px.
+   var density=.72+.28*Math.max(0,Math.min(1,(visible-320)/280)),pitch=Math.max(44,52*density),step=64*density;
+   var business=Math.max(130,140*k)*density,ownBusiness=Math.max(145,165*k)*density;
+   var otherCount=game?Math.max.apply(null,game.world.firms.filter(function(f){return f.id!=='bakery';}).map(function(f){return f.workers.length;})):1,ownCount=game?game.world.firms[0].workers.length:2;
+   var team=Math.max(90*density,Math.ceil(otherCount/Math.max(1,Math.floor(250*ratio/pitch)))*step+24*density),ownTeam=Math.max(90*density,Math.ceil(ownCount/Math.max(1,Math.floor(350*ratio/pitch)))*step+24*density),second=20*density+business+22*density+team+42*density;
+   var waiting=game?game.world.people.filter(function(p){return !p.job&&!p.owner;}).length:2,cols=Math.max(1,Math.floor((visible-32)/Math.max(44,50*density))),bottom=second+Math.max(ownBusiness+22*density+ownTeam,business+22*density+team);
+   return {ratio:ratio,density:density,pitch:pitch,step:step,business:business,ownBusiness:ownBusiness,team:team,ownTeam:ownTeam,second:second,bottom:bottom,cols:cols,height:bottom+40*density+Math.max(1,Math.ceil(waiting/cols))*step+24*density};
   }
   self.heightFor=function(width,game){var geo=geometry(width,game||self.game);return Math.ceil(geo.height/geo.ratio);};
   function layout(){
    self.stockSerial=null;
    var w=self.width,geo=geometry(w,self.game),h=self.heightFor(w),ratio=geo.ratio,stretch=1/ratio,compact=ratio<.7;
-   self.ratio=ratio;self.stretch=stretch;self.artScale=ratio>1?1/ratio:Math.max(1,Math.min(1.6,.55/ratio));self.actorBoost=ratio>1?1/ratio:Math.max(1,Math.min(1.8,.48/ratio));
+   self.ratio=ratio;self.stretch=stretch;self.density=geo.density;self.personPitch=geo.pitch;self.waitingStep=geo.step;self.artScale=ratio>1?1/ratio:Math.max(1,Math.min(1.6,.55/ratio));self.actorBoost=ratio>1?1/ratio:Math.max(1,Math.min(1.8,.48/ratio));
+   self.artScale*=geo.density;self.actorBoost*=geo.density;
+   self.overlay.dataset.density=geo.density.toFixed(3);
    self.overlay.classList.toggle('street-compact',compact);
    self.overlay.style.setProperty('--street-data-size',ratio<.5?'11px':compact?'12px':'14px');
    self.overlay.style.setProperty('--street-icon-size',ratio<.5?'14px':compact?'17px':'21px');
    self.overlay.style.setProperty('--street-title-size',ratio<.5?'11px':compact?'13px':'15px');
-   var boxes={clothes:[20,20,250,0],ovens:[355,20,250,0],cars:[690,20,250,0],bakery:[305,geo.second,350,0],rival:[20,geo.second,250,0],inputs:[690,geo.second,250,0]};
-   Object.keys(boxes).forEach(function(id){boxes[id][1]*=stretch;boxes[id][3]=((id==='bakery'?geo.ownBusiness:geo.business)+22+(id==='bakery'?geo.ownTeam:geo.team))*stretch;});
+   var boxes={clothes:[20,20*geo.density,250,0],ovens:[355,20*geo.density,250,0],cars:[690,20*geo.density,250,0],bakery:[305,geo.second,350,0],rival:[20,geo.second,250,0],inputs:[690,geo.second,250,0]};
+   Object.keys(boxes).forEach(function(id){boxes[id][1]*=stretch;boxes[id][3]=((id==='bakery'?geo.ownBusiness:geo.business)+22*geo.density+(id==='bakery'?geo.ownTeam:geo.team))*stretch;});
    positions={};frameLayer.innerHTML='';panels={};
    shops.removeChildren().forEach(function(c){c.destroy({children:true});});ovenCounts={};shopArt={};background.clear();background.lineStyle(1.5,0xdddddd,.6);
-   Object.keys(boxes).forEach(function(id){var b=boxes[id],own=id==='bakery',business=(own?geo.ownBusiness:geo.business)*stretch,teamTop=b[1]+business+22*stretch;
-    positions[id]={x:b[0]+b[2]*(own?.32:.42),y:b[1]+(own?geo.ownBusiness*.57:geo.business*.57)*stretch,box:b,shopHeight:business,teamTop:teamTop,teamHeight:b[3]-business-22*stretch};
+   Object.keys(boxes).forEach(function(id){var b=boxes[id],own=id==='bakery',business=(own?geo.ownBusiness:geo.business)*stretch,teamTop=b[1]+business+22*geo.density*stretch;
+    positions[id]={x:b[0]+b[2]*(own?.32:.42),y:b[1]+(own?geo.ownBusiness*.57:geo.business*.57)*stretch,box:b,shopHeight:business,teamTop:teamTop,teamHeight:b[3]-business-22*geo.density*stretch};
     function frame(kind,y,height){var n=document.createElement('div');n.className='street-zone '+kind+(own?' street-own':'');n.dataset.firm=id;n.style.cssText='left:'+b[0]/w*100+'%;top:'+y/h*100+'%;width:'+b[2]/w*100+'%;height:'+height/h*100+'%;';frameLayer.appendChild(n);return n;}
     var store=frame('street-shop',b[1],business),caption=document.createElement('span');caption.className='street-zone-title';caption.textContent={bakery:'我们的面包店',rival:'另一家面包店',clothes:'服装店',cars:'车厂',ovens:'烤炉厂',inputs:'原料和仓储'}[id];store.appendChild(caption);labels[id]=caption;
     var inspect=document.createElement('button');inspect.type='button';inspect.className='street-shop-hit';inspect.dataset.firm=id;inspect.setAttribute('aria-label','查看'+caption.textContent+'的经营账本');inspect.title='点店看经营账本';inspect.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>';inspect.onclick=function(){self.inspector.open(id,inspect);};store.appendChild(inspect);
@@ -113,8 +120,8 @@
     var values=[];[id==='bakery'||id==='rival'?'bread':id,'person','cash'].forEach(function(icon,index){var cell=document.createElement('span');cell.innerHTML=StreetArt.icon(icon);cell.title=id==='inputs'&&index===0?'待售原料（份），4份一包':['待售库存，含之前未卖出的产品','在册员工人数','公司现金余额，不是利润'][index];var output=document.createElement('output');cell.appendChild(output);metric.appendChild(cell);values.push(output);});store.appendChild(metric);panels[id]=values;
     var team=frame('street-team',teamTop,positions[id].teamHeight),tag=document.createElement('span');tag.className='street-zone-title';tag.textContent=own?'我们的厨师':'员工';team.appendChild(tag);teamLabels[id]=tag;
    });
-   var waitingFrame=document.createElement('div');waitingFrame.className='street-zone street-waiting';waitingFrame.style.cssText='left:2%;width:96%;top:'+(geo.bottom+40)/geo.height*100+'%;height:'+(geo.height-geo.bottom-50)/geo.height*100+'%;';frameLayer.appendChild(waitingFrame);
-   var waitingTag=document.createElement('span');waitingTag.className='street-zone-title';waitingFrame.appendChild(waitingTag);self.waitingTag=waitingTag;self.waitingTop=(geo.bottom+40)/ratio;self.waitingCols=geo.cols;
+   var waitingFrame=document.createElement('div');waitingFrame.className='street-zone street-waiting';waitingFrame.style.cssText='left:2%;width:96%;top:'+(geo.bottom+40*geo.density)/geo.height*100+'%;height:'+(geo.height-geo.bottom-50*geo.density)/geo.height*100+'%;';frameLayer.appendChild(waitingFrame);
+   var waitingTag=document.createElement('span');waitingTag.className='street-zone-title';waitingFrame.appendChild(waitingTag);self.waitingTag=waitingTag;self.waitingTop=(geo.bottom+40*geo.density)/ratio;self.waitingCols=geo.cols;
    Object.keys(positions).forEach(function(id){var p=positions[id],group=new PIXI.Container();group.name='street-shop-'+id;shopArt[id]=group;shops.addChild(group);
     var texture=id==='bakery'||id==='rival'?textures.newOven:id==='ovens'?textures.emptyOven:id==='clothes'?textures.clothesShop:id==='cars'?textures.carFactory:textures.inputsShop;
     var s=sprite(texture,group);s.name=id==='ovens'?'empty-oven':id==='bakery'||id==='rival'?'working-oven':id+'-detail';
@@ -167,11 +174,11 @@
    labels.bakery.textContent='我们的面包店';oven.alpha=f.working===0&&game.world.round?.55:1;
    var displayed=t>=8?game.world:oldWorld;displayed.firms.forEach(function(firm){if(ovenCounts[firm.id])ovenCounts[firm.id].text='×'+firm.machines;var values=[firm.stock,firm.workers.length,money.whole(firm.cash)];panels[firm.id].forEach(function(node,i){if(node.textContent!==String(values[i]))node.textContent=String(values[i]);node.setAttribute('aria-label',['待售库存','在册员工','可用整枚金币'][i]+' '+values[i]);if(i===2)node.title=firm.cash%100?'旧存档零钱保留；这里只计可用整枚金币。':'可用整枚金币，不是利润。';});});
    var homeCells={};
-   game.world.firms.forEach(function(firm){var p=positions[firm.id],b=p.box,cols=Math.max(1,Math.min(firm.workers.length,Math.floor(b[2]*self.ratio/52))),rows=Math.ceil(firm.workers.length/cols);
+   game.world.firms.forEach(function(firm){var p=positions[firm.id],b=p.box,cols=Math.max(1,Math.min(firm.workers.length,Math.floor(b[2]*self.ratio/self.personPitch))),rows=Math.ceil(firm.workers.length/cols);
     teamLabels[firm.id].textContent=(firm.id==='bakery'?'我们的厨师':'员工')+' · '+firm.workers.length+'人';teamLabels[firm.id].title='每个小人对应一名在册员工；可分别点开钱包。';
     firm.workers.forEach(function(id,index){var count=Math.min(cols,firm.workers.length-Math.floor(index/cols)*cols);
-     var rowHeight=(p.teamHeight-24/self.ratio)/rows;
-     homeCells[id]={x:b[0]+b[2]*(index%cols)/count+6/self.ratio,y:p.teamTop+16/self.ratio+Math.floor(index/cols)*rowHeight,width:b[2]/count-12/self.ratio,height:rowHeight};
+     var rowHeight=(p.teamHeight-24*self.density/self.ratio)/rows;
+     homeCells[id]={x:b[0]+b[2]*(index%cols)/count+6/self.ratio,y:p.teamTop+16*self.density/self.ratio+Math.floor(index/cols)*rowHeight,width:b[2]/count-12/self.ratio,height:rowHeight};
      var actor=people[id];actor.button.dataset.firm=firm.id;actor.button.dataset.person=id;
      if(actor.hat===undefined&&(firm.id==='bakery'||firm.id==='rival')&&!id.endsWith('-owner')){actor.hat=sprite(textures.chefHat,actor.c);actor.hat.position.set(0,-84);}
     });
@@ -195,7 +202,7 @@
     var portrait=portraitBounds(o),footOffset=portrait.y+portrait.height,centerOffset=portrait.x+portrait.width/2;
     var idleCell=null;
     if(fired){var idleIndex=waiting.findIndex(function(p){return p.id===id;}),idleCount=Math.min(self.waitingCols,waiting.length-Math.floor(idleIndex/self.waitingCols)*self.waitingCols),idleWidth=self.width*.96/idleCount;
-     idleCell={x:self.width*.02+idleWidth*(idleIndex%self.waitingCols)+6/self.ratio,y:self.waitingTop+(16+Math.floor(idleIndex/self.waitingCols)*64)/self.ratio,width:idleWidth-12/self.ratio,height:54/self.ratio};}
+     idleCell={x:self.width*.02+idleWidth*(idleIndex%self.waitingCols)+6/self.ratio,y:self.waitingTop+(16*self.density+Math.floor(idleIndex/self.waitingCols)*self.waitingStep)/self.ratio,width:idleWidth-12/self.ratio,height:54*self.density/self.ratio};}
     var cell=homeCells[id]||idleCell;
     if(cell){var fit=money.fitPerson(portrait,cell,.49*self.actorBoost);o.c.scale.set(fit.scale);if(homeCells[id])base=self.base[id]={x:fit.x,y:fit.y};}
     o.c.x=base.x;o.c.y=base.y;o.c.rotation=0;

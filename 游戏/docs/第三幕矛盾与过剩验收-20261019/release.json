@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-19",
+  "request": "第三幕更好体现资本主义基本矛盾和生产过剩",
+  "changes": [
+    "保留六家厂商20人和768枚有限资金，实际添炉招工、向供应商付款和条件性同行扩产",
+    "逐期并列本店工资及资金变化、全街工资、面包出炉/售出/剩货、不同商品库存和有需要却钱不够的人",
+    "展示实际原料采购和跨店工资消费，区分生产社会化与生产资料资本主义私人占有",
+    "降薪后从真实开门账重算同一天，保持本店工资、价格、实际开工、资金、设备及库存一致，只改变同行是否跟进降薪",
+    "两轮实际经营后收摊回顾；不得用投资管理回执冒充生产成交，回顾可返回经营，保留故事与第四幕",
+    "保留卖完和改善的可能，不凭空添加库存、人口或货币，不强制降薪、失业、倒闭或宣称必然危机"
+  ],
+  "source_sha256": "fd819cf8f7568876661f54cd6a053edd604d0f9daaf2cbb9740b13f9a4dd884f",
+  "index_sha256": "fdb8a4fc92ffce00d465e1778a281f163a22ee33f4f056bf3811f3d73c2c5636",
+  "validation": {
+    "all_tests_passed": 856,
+    "final_guard_and_comparison_tests_passed": 13,
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "actual_paid_investments": true,
+    "actual_production_sales_stock": [
+      36,
+      33,
+      3
+    ],
+    "actual_unaffordable_basic_bread_buyers": 2,
+    "matched_wages": [
+      38,
+      33
+    ],
+    "matched_bread_stock": [
+      6,
+      7
+    ],
+    "matched_own_cash_change": [
+      20,
+      17
+    ],
+    "comparison_preserves_actual_history": true,
+    "actual_previous_build_resume": true,
+    "offline_zip_verified": true,
+    "published_font_mappings": 47449
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792377781292/"
+  },
+  "limits": [
+    "对照是给定工资、价格、人员、购买意愿等条件下的教学结果，不是现实统计或所有企业必然跟进的预测。",
+    "资本主义基本矛盾是社会化生产与生产资料资本主义私人占有的结构关系，不能由工资差额、利润或一次库存直接推出危机。",
+    "全套检查完成后补强了投资管理回执不能越过经营结算的入口检查及回顾排版；最终源补跑13项相关检查和三种尺寸本地与线上实走。",
+    "本次没有重新人工完成后续八条独立分支。"
+  ]
+}

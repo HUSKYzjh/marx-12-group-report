@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "environment_id": "zjh-d0ginayd0c9cbf350",
+  "region": "ap-shanghai",
+  "status": "deployed_and_online_playtest_passed",
+  "uploaded_files": 62,
+  "remote_consistency_verified": true,
+  "backup_prefix": ".cloudbase-backup/1792222400973/",
+  "prune": false,
+  "previous_index_sha256": "82ca4b90a7ec8040853672e85e3aa3c0cda85b856da076783c9a36555b55e9f8",
+  "index_sha256": "08b4143e7651b9af8a2a11bf1d2bd042f804402bf08f58e014ed80b73b7f0a25",
+  "index_bytes": 1148,
+  "javascript": "/runtime-assets/05fd7598d7443cdec628.js",
+  "standalone_html_sha256": "db12f5950f1f98e4453978e3f50137e0ca012eec089637e5a71488a802315cc5",
+  "standalone_bytes": 20548338,
+  "offline_zip_integrity": true,
+  "offline_zip_html_matches": true,
+  "static_upload_zip_integrity": true,
+  "full_source_font_sha256": "854a98e67135a27a15f41ef2528fd827190793ffae2b5f6ed7b67fd0a28c3000",
+  "complete_font_mappings": 47449,
+  "flow_cases": {
+    "local": 2,
+    "online": 2
+  },
+  "mobile_viewports": {
+    "offline": 10,
+    "online": 5
+  },
+  "scope": "Loading, opening, first act, first battle turn, return home, chapter navigation, reload, motion preference and phone sizing. Not every ending or physical phone."
+}

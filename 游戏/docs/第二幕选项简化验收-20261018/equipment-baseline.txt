@@ -1,0 +1,28 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   'status player-status',
++   'status player-status',
++   'status player-status'
++ ]
+- []
+
+    at file:///D:/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4/marx-12-group-report/%E6%B8%B8%E6%88%8F/scripts/test-equipment-course-browser.mjs:33:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    'status player-status',
+    'status player-status',
+    'status player-status'
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

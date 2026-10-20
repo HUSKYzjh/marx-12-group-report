@@ -1,28 +1,28 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {initialPrologue,prologueReducer as reduce,restorePrologue} from '../lib/prologue-state.ts';
-import {initialCourse,courseRound,nextCourse,traceCustomer,crossCustomers} from '../public/assets/market-duel/course-model.mjs';
+import {initialCourse,courseRound,nextCourse} from '../public/assets/market-duel/course-model.mjs';
 const snapshot=state=>({state,view:'result'});
 function completedCourse(){
  let c=initialCourse();for(let i=0;i<3;i++)c=courseRound(c,'hold');c=nextCourse(c);
  for(let i=0;i<5;i++)c=courseRound(c,'hold');c=nextCourse(c);
- for(const id of crossCustomers(c))c=traceCustomer(c,id);c=nextCourse(c);
- for(let i=0;i<8;i++)c=courseRound(c,'hold');return nextCourse(c);
+ for(let i=0;i<9;i++)c=courseRound(c,'hold');return nextCourse(c);
 }
 
-test('optional six-shop ledger opens after the duel, remains independent and survives return',()=>{
+test('legacy six-shop shortcut now opens the third act and preserves both ledgers',()=>{
  let s=reduce(initialPrologue(),{type:'JUMP_STAGE',stage:2});
  assert.strictEqual(reduce(s,{type:'OPEN_STREET_SANDBOX'}),s);
  s=reduce(s,{type:'SAVE_BATTLE',snapshot:snapshot(completedCourse())});const battle=structuredClone(s.battle);
- s=reduce(s,{type:'OPEN_STREET_SANDBOX'});assert.equal(s.streetMode,'sandbox');
+ s=reduce(s,{type:'OPEN_STREET_SANDBOX'});assert.equal(s.scene,'street-economy');assert.equal(s.streetMode,'battle');
  assert.equal(s.street.world.people.length,20);assert.equal(s.street.world.firms.length,6);assert.equal(s.street.world.round,0);
  assert.equal(s.street.world.firms.find(f=>f.id==='cars').cash,20400);assert.equal(s.street.world.firms[0].cash,7200);
  assert(s.street.books);assert.equal(s.street.campaign,undefined);assert.equal(s.street.tutorial,undefined);
  s=reduce(s,{type:'STREET',action:{type:'ROUND',expectedRound:0}});assert.equal(s.street.world.round,1);assert.deepEqual(s.battle,battle);
  assert.deepEqual(restorePrologue(s),s);const street=structuredClone(s.street);
- s=reduce(s,{type:'BACK_BATTLE'});assert.equal(s.streetMode,'battle');assert.deepEqual(s.street,street);
+ s=reduce(s,{type:'JUMP_STAGE',stage:2});assert.equal(s.streetMode,'battle');assert.deepEqual(s.street,street);
  s=reduce(s,{type:'OPEN_STREET_SANDBOX'});assert.deepEqual(s.street,street);
- assert.equal(reduce(s,{type:'FINISH_BATTLE'}).scene,'ending');
+ s=reduce(s,{type:'STREET',action:{type:'ROUND',expectedRound:1}});s=reduce(s,{type:'STREET',action:{type:'EXPLAIN'}});assert.equal(reduce(s,{type:'FINISH_STREET_ECONOMY'}).scene,'ending');
+ const migrated=restorePrologue({...s,scene:'street',streetMode:'sandbox'});assert.equal(migrated.scene,'street-economy');assert.deepEqual(migrated.street,s.street);
  assert.equal(restorePrologue({...s,street:null}).streetMode,'battle');
 });
 test('first act hands off to a fresh battle without inheriting its demonstration cash',()=>{
@@ -43,8 +43,7 @@ test('second-act save, refresh and navigation preserve progress; invalid data ca
 test('only a completed three-part battle reaches the story, summary and remedies',()=>{
  let course=initialCourse();for(let i=0;i<3;i++)course=courseRound(course,'hold');course=nextCourse(course);
  for(let i=0;i<5;i++)course=courseRound(course,'hold');course=nextCourse(course);
- for(const id of crossCustomers(course))course=traceCustomer(course,id);course=nextCourse(course);
- for(let i=0;i<8;i++)course=courseRound(course,'hold');course=nextCourse(course);
+ for(let i=0;i<9;i++)course=courseRound(course,'hold');course=nextCourse(course);
  let s=reduce(initialPrologue(),{type:'JUMP_STAGE',stage:2});s=reduce(s,{type:'SAVE_BATTLE',snapshot:snapshot(course)});s=reduce(s,{type:'FINISH_BATTLE'});
  assert.equal(s.scene,'ending');assert.deepEqual(restorePrologue(s),s);
  s=reduce(s,{type:'SHOW_ALL'});s=reduce(s,{type:'SHOW_STREET_SUMMARY'});assert.equal(s.scene,'street-summary');s=reduce(s,{type:'SHOW_RELIEF'});assert.equal(s.scene,'relief');

@@ -1,0 +1,842 @@
+{
+  "index_sha256": "00fad4e3ed71dea07553b12efaf8b84b175a2e2cb44a2745ba39af1584adfd3e",
+  "results": [
+    {
+      "width": 320,
+      "stage": "initial",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-fire-1",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 4 个",
+          "note": "有明日安排",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-fire-1",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 4 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-upgrade-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 12 个",
+          "note": "停工安装",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-upgrade-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 12 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-hire-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 12 个",
+          "note": "有明日安排",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-hire-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 12 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "waves-initial",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-hold-1",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-hold-1",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-hold-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-hold-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-hold-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-hold-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-hold-4",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-hold-4",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-hold-5",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-hold-5",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "source",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "social-initial",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-hold-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 12 个",
+          "note": "停工安装",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-hold-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 12 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "result-hold-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 12 个",
+          "note": "有明日安排",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "stage": "next-hold-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 12 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "stage": "initial",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "stage": "result-buy-1",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "有明日安排",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "stage": "next-buy-1",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "stage": "result-hire-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 8 个",
+          "note": "有明日安排",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "stage": "next-hire-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 8 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "stage": "result-upgrade-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 24 个",
+          "note": "停工安装",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "stage": "next-upgrade-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 24 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 17.59375,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "stage": "initial",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "stage": "result-price-up-1",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "stage": "next-price-up-1",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "stage": "result-price-up-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "stage": "next-price-up-2",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "stage": "result-hold-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "stage": "next-hold-3",
+      "shops": [
+        {
+          "id": 0,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        },
+        {
+          "id": 1,
+          "capacity": "明天可做 6 个",
+          "note": "",
+          "metaFits": true,
+          "rowHeight": 16,
+          "rowFits": true
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

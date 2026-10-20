@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "request": "小人服饰可以稍微鲜艳些。",
+  "change": "将行人的12套衣服及原料商配件改为暖黄、青绿、珊瑚红、淡紫等配色；保留手绘描边和白色厨师服。",
+  "unit_tests": {
+    "file": "customer-art.test.mjs",
+    "passed": 5,
+    "failed": 0
+  },
+  "local_and_online_widths": [
+    320,
+    390,
+    1280
+  ],
+  "twelve_outfits_observed": true,
+  "no_overflow": true,
+  "no_page_errors": true,
+  "index_sha256": "d9cf36179f8cb4e2007ea4480491e1e33de4682ab303acabcc7a5d8e406fa1b3",
+  "offline_sha256": "161def99ef3e66ca73e1dc70ed348ed156af6b838eb7cb306cab6de6de87a00b",
+  "offline_zip_checked": true,
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792245904098/"
+  },
+  "prune": false
+}

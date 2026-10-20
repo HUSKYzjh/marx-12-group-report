@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-17",
+  "indexSha256": "08b4143e7651b9af8a2a11bf1d2bd042f804402bf08f58e014ed80b73b7f0a25",
+  "indexBytes": 1148,
+  "resources": [
+    {
+      "file": "/runtime-assets/05fd7598d7443cdec628.js",
+      "status": 200,
+      "cacheControl": "public, max-age=300, s-maxage=600",
+      "etag": "\"b8f0384e76c24cc104f9015898b3ef00\"",
+      "contentType": "application/javascript"
+    },
+    {
+      "file": "/runtime-assets/3e62c8d376ab8304b0cd.css",
+      "status": 200,
+      "cacheControl": "public, max-age=300, s-maxage=600",
+      "etag": "\"3b4255aff8c150ea0bf035b8257ca6f3\"",
+      "contentType": "text/css"
+    },
+    {
+      "file": "/runtime-assets/font-c11ae2bb37470ea38925.woff2",
+      "status": 200,
+      "cacheControl": "public, max-age=300, s-maxage=600",
+      "etag": "\"a9f56699566d050a6cb8c707c9b96545\"",
+      "contentType": "font/woff2"
+    }
+  ],
+  "geometry": [
+    {
+      "width": 390,
+      "height": 475,
+      "nodes": 33,
+      "minGap": 4.326198992945166,
+      "allWithinCanvas": true
+    },
+    {
+      "width": 1280,
+      "height": 600,
+      "nodes": 136,
+      "minGap": 5.000024832730702,
+      "allWithinCanvas": true
+    }
+  ]
+}

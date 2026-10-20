@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-17",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "indexSha256": "46bd142bbeb36e32d5578ee7ebc27e843947ac24214a9f5e2c80e1aff6b4c98c",
+  "javascript": "/runtime-assets/d625a5cca667dde3b74a.js",
+  "results": [
+    {
+      "width": 390,
+      "firstGuideRequired": true,
+      "dayZeroResume": true,
+      "voluntaryGuideClose": true,
+      "midAnimationReload": true,
+      "exactlyOnceSettlement": true,
+      "undo": true,
+      "cancelledAnimationRecovery": true,
+      "chapterLeaveDuringInvestment": true,
+      "replayWithoutRepeatedGuide": true,
+      "completeThreePartBattle": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "firstGuideRequired": true,
+      "dayZeroResume": true,
+      "voluntaryGuideClose": true,
+      "midAnimationReload": true,
+      "exactlyOnceSettlement": true,
+      "undo": true,
+      "cancelledAnimationRecovery": true,
+      "chapterLeaveDuringInvestment": true,
+      "replayWithoutRepeatedGuide": true,
+      "completeThreePartBattle": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

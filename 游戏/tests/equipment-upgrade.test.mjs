@@ -47,8 +47,8 @@ test('installation can sell existing bread but never bakes a new batch; rival ob
 });
 
 test('pre-change v3 records replay exactly; new rules archive old accounts rather than rewriting them',()=>{
- let old=courseRound(initialCourse(false),'upgrade');assert.equal(old.world.history[0].made[0],6);assert(!('upgradeRule' in old.world));
- assert.deepEqual(restoreCourse(old),old);assert.deepEqual(undoCourse(old),initialCourse(false));assert(!('upgradeRule' in retryScene(old).world));
+ let old=courseRound(initialCourse(false,false),'upgrade');assert.equal(old.world.history[0].made[0],6);assert(!('upgradeRule' in old.world));
+ assert.deepEqual(restoreCourse(old),old);assert.deepEqual(undoCourse(old),initialCourse(false,false));assert(!('upgradeRule' in retryScene(old).world));
  let fresh=adoptEquipmentCourse(old);assert.equal(fresh.world.upgradeRule,'whole-shop-v1');assert.deepEqual(fresh.previousCourse,old);
  fresh=courseRound(fresh,'upgrade');assert.equal(fresh.world.history[0].made[0],0);assert.deepEqual(restoreCourse(fresh),fresh);
  assert.deepEqual(undoCourse(fresh).previousCourse,old);
@@ -60,11 +60,10 @@ test('pre-change v3 records replay exactly; new rules archive old accounts rathe
  const forged=structuredClone(fresh);forged.world.upgradeRule='invented';assert.equal(restoreCourse(forged),null);
 });
 
-test('UI states the cost formula, downtime and old-account opt-in',()=>{
+test('current guide states an immediate upgrade while old rules stay replayable',()=>{
  const html=readFileSync(new URL('../public/assets/market-duel/battle.html',import.meta.url),'utf8');
  const ui=readFileSync(new URL('../public/assets/market-duel/course-game.mjs',import.meta.url),'utf8');
- assert.match(html,/8 × 旧炉数/);assert.match(html,/一次性投资 · 停工1天/);
- assert.match(ui,/r\.installing\?\.\[0\]\?'今天停工安装。工资照发，明天可复工。'/);
- assert.match(ui,/保留旧账，开始新版/);assert.match(ui,/needsEquipmentUpdate\(\)/);
+ assert.match(html,/一次付8枚/);assert.match(html,/当天生效、不停工/);
+ assert.doesNotMatch(ui,/offerUpgrade|equipment-start|第二幕分成上下篇了/);assert.match(ui,/state=adoptEquipmentCourse\(state,true,true,true,true,true\)/);assert.doesNotMatch(html,/upgrade-course/);
  assert.match(ui,/w\.shops\.map\(f=>\{const today=readyShop\(f\)/);
 });

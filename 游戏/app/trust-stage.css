@@ -1074,7 +1074,10 @@ button.preservation-person{min-width:44px;min-height:130px;padding:5px;backgroun
 button:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
 header { display: none; }
 .chapter-navigation { position: relative; z-index: 20; width: 100%; max-width: 1040px; height: 64px; margin: 0 auto; padding: 10px 40px; text-align: left; font-family: var(--hand-font); font-size: 18px; }
-#chapter-menu { position: relative; width: fit-content; max-width: 100%; }
+#chapter-menu { position: relative; width: fit-content; max-width: calc(100% - 100px); }
+#fullscreen-toggle { position: absolute; right: 18px; top: 10px; min-width: 80px; min-height: 44px; padding: 6px 8px; border: 0; background: transparent; color: #666; font: 16px var(--hand-font); }
+#fullscreen-toggle:hover { color: var(--ink); }
+#fullscreen-status { position: absolute; right: 18px; top: 54px; background: #fff; font-size: 14px; }
 #chapter-toggle { display: flex; align-items: center; gap: 10px; min-height: 44px; width: fit-content; max-width: 100%; cursor: pointer; list-style: none; color: #666; }
 #chapter-toggle::-webkit-details-marker { display: none; }
 #chapter-toggle:hover, #chapter-menu[open] #chapter-toggle { color: var(--ink); }
@@ -1107,6 +1110,7 @@ header { display: none; }
 #upgrade-result { flex-basis: 100%; }
 [hidden] { display: none !important; }
 main { display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 1040px; min-height: var(--screen-main-height, 660px); margin: 0 auto; padding: 24px 40px 20px; text-align: center; }
+body[data-scene="street-economy"] main,
 body[data-scene="street"] main { max-width: 1280px; padding: 20px 24px 18px; }
 #slideshow { position: relative; width: 100%; }
 .textbox { position: relative; }
@@ -1212,7 +1216,8 @@ body[data-transition="street-camera"] .street-hotspots { pointer-events: none; }
  .street-guided-actions button.primary { min-width: 200px; font-size: 18px; }
 }
 @media (max-width:600px) {
- body[data-scene="street"] main { padding: 12px 8px 18px; }
+ body[data-scene="street-economy"] main,
+body[data-scene="street"] main { padding: 12px 8px 18px; }
  .street-knobs { gap: 5px; }
  .street-knob { font-size: 16px; gap: 4px; }
  .street-metrics { gap: 14px; font-size: 16px; }
@@ -1823,3 +1828,61 @@ body[data-scene=street]:not([data-street-mode=sandbox]) main{width:100%;max-widt
  .remedy-open+.remedy-records { justify-content:flex-start; gap:0 16px; }
  .remedy-open+.remedy-records>details>summary { font-size:13px; }
 }
+
+/* Opening fits the actual visible host screen; decoration yields to the start action. */
+body[data-scene="opening"] main { min-height: var(--screen-main-height, 0px); padding: 8px 0 12px; }
+body[data-scene="opening"] #heading { top: var(--splash-title-y, 300px); width: var(--splash-title-width, 340px); font-size: var(--splash-title-size, 56px); }
+body[data-scene="opening"] #controls { margin-top: 6px; padding-bottom: env(safe-area-inset-bottom, 0px); }
+body[data-scene="opening"] .production-hint { margin-bottom: 8px; }
+.production-symbol[hidden] { display: none; }
+.branch-review{max-width:540px;margin:8px auto 24px;text-align:left}
+.branch-review table{width:100%;border-collapse:collapse;table-layout:fixed}
+.branch-review caption{font-size:21px;text-align:left;margin-bottom:10px}
+.branch-review th,.branch-review td{padding:9px 8px;border-bottom:1px dashed #bbb;font-weight:normal}
+.branch-review thead th{font-size:16px;color:#666}
+.branch-review tbody th{font-size:17px;text-align:left}
+.branch-review td{font-size:23px;text-align:right;white-space:nowrap}
+.branch-review-conditions{margin-top:10px;font-size:16px}
+.branch-related{width:100%;max-width:600px;margin:18px auto 0;text-align:center}
+.branch-related p{font-size:18px;line-height:1.6;margin:0 0 8px}
+.branch-related button{max-width:100%;min-height:44px;white-space:normal}
+@media(max-width:600px){.branch-review caption{font-size:19px}.branch-review th,.branch-review td{padding:9px 4px}.branch-review tbody th{font-size:15px}.branch-review td{font-size:21px}.branch-related p{font-size:17px}}
+
+/* Narrow illustrations scale with the viewport, while text and hit areas stay readable. */
+@media(max-width:600px){
+ body[data-scene="ending"] .stage-object{width:clamp(220px,78vw,400px);max-width:100%;margin-top:4px}
+ body[data-scene="street-economy"] #controls{gap:10px}
+ body[data-scene="street-economy"] .street-knobs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px}
+ body[data-scene="street-economy"] .street-icon-key{margin:6px 0}
+ body[data-scene="street-economy"] .street-inspect-hint{margin:4px 0 6px}
+}
+
+.street-evidence{width:100%;max-width:780px;margin:10px auto;padding:10px 14px;border:1px dashed #aaa;border-radius:8px 13px 9px 7px;text-align:center}
+#readout .street-bread-flow{font-size:20px;margin:0 0 8px}.street-evidence-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.street-evidence-grid span{display:block;font-size:14px}.street-evidence-grid strong{display:block;font-size:22px;font-weight:normal}
+#readout .street-evidence :is(.street-stock-line,.street-affordability,.street-flow-link){font-size:15px;margin:6px 0}.street-evidence small{font-size:13px}
+.street-investment-actions,.street-response-choice{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 16px;width:100%;margin:6px auto}.street-response-choice>span{flex-basis:100%;font-size:15px;color:#777}.street-response-choice button[aria-pressed=true]{border:2px solid #666;background:#f5f4ef}
+.street-structure{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:800px;margin:14px auto}.street-structure section{border:1px dashed #aaa;border-radius:9px;padding:12px}
+#readout .street-structure h3{font-size:21px;margin:0 0 8px}#readout .street-structure p{font-size:17px;text-align:left;line-height:1.7;margin:0}
+.street-review-heading{font-size:24px;font-weight:normal}#readout .street-core-contradiction,#readout .street-surplus-explanation{max-width:760px;font-size:19px;margin:14px auto;line-height:1.7}
+.street-wage-comparison{max-width:780px;margin:18px auto}.street-wage-comparison table{border-collapse:collapse;width:100%;font-size:18px}.street-wage-comparison :is(th,td){padding:9px 8px;border-bottom:1px dashed #bbb;font-weight:normal}.street-wage-comparison tbody th{text-align:left;font-size:16px}
+#readout .street-review-limit{font-size:15px;color:#777;max-width:760px;margin:16px auto}
+@media(max-width:600px){.street-evidence{padding:9px 6px}.street-evidence-grid{gap:4px}.street-evidence-grid span{font-size:12px}.street-evidence-grid strong{font-size:19px}#readout .street-bread-flow{font-size:17px}#readout .street-evidence :is(.street-stock-line,.street-affordability,.street-flow-link){font-size:14px}.street-investment-actions{gap:6px}.street-investment-actions button,.street-response-choice button{font-size:15px;min-height:44px;padding:8px}.street-structure{grid-template-columns:1fr;gap:10px}.street-review-heading{font-size:21px}#readout .street-structure h3{font-size:19px}#readout .street-structure p{font-size:16px}#readout .street-core-contradiction,#readout .street-surplus-explanation{font-size:17px}.street-wage-comparison table{font-size:17px}.street-wage-comparison :is(th,td){padding:8px 4px}.street-wage-comparison tbody th{font-size:13px}}
+
+body[data-street-review=true] .stage-object{display:none}
+
+/* Third-act recap: the contradiction leads, optional accounts follow. */
+.street-review-dialog{position:fixed;left:50%;transform:translateX(-50%);margin:0;box-sizing:border-box;width:min(740px,calc(100% - 24px));padding:20px;background:#fffefb;color:#444;border:2px solid #666;border-radius:6px 10px 5px 8px;display:flex;flex-direction:column;gap:12px;font-family:WorkshopHand,"Microsoft YaHei",sans-serif;text-align:left;box-shadow:5px 6px 0 #4442}.street-review-dialog:not([open]){display:none}.street-review-dialog::backdrop{background:#28282866}.street-review-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:0 5px}.street-review-actions{display:flex;flex-wrap:wrap;gap:10px;flex:none}.street-review-actions button{flex:1;min-height:44px;font:inherit;font-size:18px}.street-review-dialog h2{margin:0 0 14px;font-size:26px}.street-review-dialog h3{font-size:20px;margin:16px 0 8px}#readout .street-review-lead{font-size:20px;line-height:1.7;margin:0 0 12px}#readout .street-review-fact{border-left:4px solid #80a58b;padding:10px 12px;background:#edf0e8;font-size:18px;line-height:1.6}#readout .street-review-dialog .street-core-contradiction{border:2px solid #747c6d;padding:12px;font-size:19px}.street-review-details summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-size:17px}.street-review-details summary::before{content:"▸ ";margin-right:6px}.street-review-details[open] summary::before{content:"▾ "}.street-review-dialog .street-structure{gap:10px}.street-review-dialog .street-structure section{padding:9px}
+@media(max-width:600px){.street-review-dialog{padding:14px 10px;gap:8px}.street-review-dialog h2{font-size:23px}#readout .street-review-lead{font-size:18px}#readout .street-review-dialog .street-core-contradiction{font-size:17px;padding:9px}.street-review-dialog .street-structure{grid-template-columns:1fr}.street-review-actions button{font-size:16px;padding:9px 5px}}
+
+.street-review-heading:focus{outline:none}
+
+/* Fourth-act photo explanations: one short card is visible at a time. */
+.relief-explanation-dialog{position:fixed;left:50%;top:12px;transform:translateX(-50%);margin:0;box-sizing:border-box;width:min(680px,calc(100% - 24px));padding:16px 20px;display:flex;flex-direction:column;gap:12px;background:#fffefb;color:#444;border:2px solid #666;border-radius:7px 11px 5px 9px;box-shadow:5px 6px 0 #4442;font-family:WorkshopHand,"Microsoft YaHei",sans-serif;text-align:left}.relief-explanation-dialog:not([open]){display:none}.relief-explanation-dialog::backdrop{background:#28282866}.relief-explanation-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex:none}.relief-explanation-context{display:flex;align-items:center;gap:12px}.relief-explanation-top h2{font-size:24px;font-weight:normal;margin:0}.relief-explanation-progress{font-size:15px;color:#777;white-space:nowrap}.relief-explanation-close{border:0;background:none;font:inherit;color:inherit;font-size:28px;min-width:44px;min-height:44px;padding:0}.relief-explanation-body{overflow-y:auto;overscroll-behavior:contain;min-height:0;padding-right:2px}.relief-history-figure{margin:0}.relief-history-photo{display:block;width:100%;height:220px;object-fit:contain;background:#f2f0e8;border:1px solid #ddd}.relief-history-figure figcaption{font-size:13px;line-height:1.5;color:#777;margin-top:6px}.relief-history-figure a{color:inherit;white-space:nowrap;text-underline-offset:3px;margin-left:6px}.relief-explanation-body h3{font-size:24px;line-height:1.45;font-weight:normal;margin:12px 0 6px}.relief-explanation-body p{font-size:19px;line-height:1.7;margin:0;text-align:left}.relief-explanation-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:none}.relief-explanation-navigation button{min-height:44px;font:inherit;font-size:18px}.relief-explanation-navigation .primary{flex:1;max-width:350px}.relief-explanation-previous{background:none;border:0;color:#666;min-width:90px}.relief-explanation-previous:disabled{opacity:.3;cursor:default}.relief-explanation-dialog button:focus-visible{outline:2px solid #739884;outline-offset:3px}@media(max-width:600px){.relief-explanation-dialog{padding:10px;gap:9px}.relief-explanation-top h2{font-size:21px}.relief-explanation-context{gap:10px}.relief-explanation-body h3{font-size:22px;margin-top:10px}.relief-explanation-body p{font-size:17px;line-height:1.65}.relief-history-figure figcaption{font-size:12px}.relief-explanation-navigation{gap:5px}.relief-explanation-navigation button{font-size:16px;padding:8px 5px}.relief-explanation-previous{min-width:78px}}
+
+/* Epilogue invitation stays on the ending page. */
+.epilogue-future-dialog{width:min(560px,calc(100% - 24px))}.epilogue-future-dialog .relief-explanation-top{align-items:flex-start}.epilogue-future-dialog h2{line-height:1.6}.epilogue-future-dialog a{color:inherit;text-underline-offset:4px}.epilogue-future-dialog>.primary{width:100%;min-height:44px;margin:8px 0 0;font:inherit;font-size:18px}#controls>.epilogue-future-button{width:min(500px,calc(100% - 24px));max-width:100%;white-space:normal;line-height:1.6;padding:12px 18px}
+#controls>.epilogue-future-button::before{height:230%;aspect-ratio:auto}
+#controls>.epilogue-future-button>span{display:inline-block;white-space:nowrap}
+
+.epilogue-author{display:flex;align-items:center;gap:14px;min-height:64px;margin:16px 0 10px;text-decoration:none;font-size:20px}.epilogue-author img{display:block;flex:none;border:1px solid #aaa;border-radius:50%;object-fit:cover}.epilogue-repository{display:block;margin:8px 0;min-height:44px;font-size:16px;line-height:1.65;overflow-wrap:anywhere}

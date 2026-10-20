@@ -1,0 +1,17 @@
+✔ whole-shop investment scales with old ovens, pauses one day and pays wages (19.3011ms)
+✔ already upgraded ovens are not charged twice; funding includes idle-day wages and arrears (5.3043ms)
+✔ installation can sell existing bread but never bakes a new batch; rival obeys the same pause (5.925ms)
+✔ pre-change v3 records replay exactly; new rules archive old accounts rather than rewriting them (134.5215ms)
+✔ current guide states an immediate upgrade while old rules stay replayable (3.477ms)
+✔ second act stops after three fixed and five variable demand days, with no wallet round (101.3544ms)
+✔ old fixed, variable and wallet histories remain archived without changing their actual transactions (196.568ms)
+✔ third act opens the established six-firm, twenty-person finite-wallet economy and preserves the duel (274.9114ms)
+✔ chapter browsing can enter six firms directly without inventing a completed second act (4.2687ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1579.0976

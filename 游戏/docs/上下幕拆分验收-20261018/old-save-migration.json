@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-18",
+  "oldSHA256": "d8d2053cf4b4f78832113fd8229391e86f864747b41a658fe0d715cdb11e4e06",
+  "sourceSHA256": "0e3bbf882505ebead9f1140522ec4b1e26c3ebb13243eefbb871173ba2d6e7d3",
+  "oldPageActuallyPlayed": true,
+  "noStateInjection": true,
+  "oldLedgerUnchangedUntilChoice": true,
+  "oldLedgerArchived": true,
+  "previousFullCoursePreserved": true,
+  "newCourseStartsUpper": true,
+  "newOpeningCash": 36,
+  "refresh": true,
+  "oldRecordOpened": true,
+  "errors": []
+}

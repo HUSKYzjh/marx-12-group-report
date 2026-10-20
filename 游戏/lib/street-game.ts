@@ -34,12 +34,13 @@ export type StreetPhase = 'intro'|'own'|'neighbors'|'manage'|'social'|'private'|
 export const STREET_STORY_BEATS = ['opening','expand','lead','rival','pressure','adjust','layoff','review'] as const;
 export type StreetStory = {beat:typeof STREET_STORY_BEATS[number];comparison:StreetReport|null;dismissed:string[];neighborCuts:boolean;pressureRounds:number};
 export type StreetNotice={id:'first-day'|'first-oven'|'first-stock';round:number;rows:[string,number][]};
-export type StreetGame = {version:number;world:StreetWorld;phase:StreetPhase;wage:number;price:number;shifts:number;response:'none'|'rival'|'some'|'all';report:StreetReport|null;checkpoint:StreetWorld|null;serial:number;message:string;layoffPreview:boolean;history:StreetReport[];story?:StreetStory;storyCheckpoint?:StreetStory;campaign?:StreetCampaign;campaignCheckpoint?:StreetCampaign;books?:BakeryBooks;booksCheckpoint?:BakeryBooks;tutorial?:{seen:string[];pending:StreetNotice[]}};
+export type StreetGame = {version:number;world:StreetWorld;phase:StreetPhase;wage:number;price:number;shifts:number;response:'none'|'rival'|'some'|'all'|'cut';report:StreetReport|null;checkpoint:StreetWorld|null;serial:number;message:string;layoffPreview:boolean;history:StreetReport[];story?:StreetStory;storyCheckpoint?:StreetStory;campaign?:StreetCampaign;campaignCheckpoint?:StreetCampaign;books?:BakeryBooks;booksCheckpoint?:BakeryBooks;tutorial?:{seen:string[];pending:StreetNotice[]}};
 export type StreetAction =
  | {type:'WAGE';delta:number}|{type:'PRICE';delta:number}|{type:'SHIFTS';delta:number}
  | {type:'ROUND';expectedRound:number}|{type:'NEXT'}|{type:'RETRY'}
  | {type:'RESPONSE';value:StreetGame['response']}|{type:'BUY_OVEN'}|{type:'HIRE'}
  | {type:'PREVIEW_LAYOFF'}|{type:'CANCEL_LAYOFF'}|{type:'LAYOFF'}|{type:'OTHER_LAYOFFS'}|{type:'EXPLAIN'}|{type:'RESTART'}
+ | {type:'EXPAND_STREET'}|{type:'FOLLOW_EXPANSION'}|{type:'MANAGE'}
  | {type:'BEGIN_STORY'}|{type:'STORY_EXPAND'}|{type:'STORY_COMPETE'}|{type:'STORY_REPEAT'}|{type:'STORY_SANDBOX'}|{type:'BEGIN_CAMPAIGN'}|{type:'ACK_NOTICE';id:StreetNotice['id']}|{type:'OTHERS_FOLLOW'}|{type:'CLOSE_SHOP'};
 const cents=(n:number)=>Math.round(n*100);
 export const streetFirm=(w:StreetWorld,id:Industry)=>w.firms.find(f=>f.id===id)!;
@@ -212,6 +213,7 @@ export function runStreetPeriod(g:StreetGame):{world:StreetWorld;report:StreetRe
  const bases:Record<Industry,number>={bakery:5,rival:4,clothes:6,cars:7,ovens:5,inputs:5};
  for(const f of w.firms){if(f===ours)continue;
   if(g.response==='rival'&&f===rival)f.wage=cents(Math.max(3,g.wage<=5?g.wage:3));
+  if(g.response==='cut')f.wage=Math.min(f.wage,cents(Math.max(3,Math.round(bases[f.id]*Math.min(5,g.wage)/5))));
   if(g.response==='some'&&['rival','clothes'].includes(f.id)||g.response==='all')f.wage=cents(Math.max(3,Math.min(7,Math.round(bases[f.id]*g.wage/5))));
  }
  const rivalDecision=respondToRivalStock(w,tx);
@@ -305,7 +307,7 @@ export function streetReducer(g:StreetGame,a:StreetAction):StreetGame{
  if(g.campaign&&['insolvent','closed'].includes(g.campaign.beat)&&!['CLOSE_SHOP','EXPLAIN','RETRY','NEXT'].includes(a.type))return g;
  if(a.type==='STORY_SANDBOX'&&g.story){const {story,storyCheckpoint,...free}=g;return {...free,phase:'manage',layoffPreview:false,message:''};}
  if(a.type==='STORY_REPEAT'&&g.story?.beat==='review')return {...g,phase:'manage',story:{...g.story,beat:'adjust',comparison:g.report},layoffPreview:false,message:''};
- if(a.type==='STORY_EXPAND'&&(g.story?.beat==='expand'||g.campaign?.beat==='expand')){
+ if(a.type==='STORY_EXPAND'&&(g.story?.beat==='expand'||g.campaign?.beat==='expand')||a.type==='EXPAND_STREET'&&managed){
   // Combine an actual purchase and an actual hire into one guided decision.
   // Failure leaves the original world intact, rather than a half-paid scene.
   const bought=streetReducer({...g,phase:'manage',story:undefined,campaign:undefined,tutorial:undefined},{type:'BUY_OVEN'});
@@ -313,7 +315,7 @@ export function streetReducer(g:StreetGame,a:StreetAction):StreetGame{
   const hired=streetReducer(bought,{type:'HIRE'});
   if(!hired.report?.hired.length)return {...g,message:hired.message};
   const r=report(hired.world,bought.report!.transactions,streetFirm(g.world,'bakery').cash,0,true);r.hired=hired.report.hired;r.investment=bought.report!.investment;
-  return bookAndBrief(g,{...g,world:hired.world,phase:'own',report:r,serial:g.serial+1,shifts:3,...(g.story?{story:{...g.story,beat:'lead' as const}}:{}),...(g.campaign?{campaign:{...g.campaign,beat:'lead' as const}}:{}),message:r.investment+'枚付给烤炉厂。一位街上的待业者来当厨师，下一轮开始领工资。'},true);
+  return bookAndBrief(g,{...g,world:hired.world,phase:a.type==='EXPAND_STREET'?'manage':'own',report:r,serial:g.serial+1,shifts:a.type==='EXPAND_STREET'?Math.min(streetFirm(hired.world,'bakery').workers.length,streetFirm(hired.world,'bakery').machines):3,...(g.story?{story:{...g.story,beat:'lead' as const}}:{}),...(g.campaign?{campaign:{...g.campaign,beat:'lead' as const}}:{}),message:r.investment+'枚付给烤炉厂。一位街上的待业者来当厨师，下一轮开始领工资。'},true);
  }
  if(a.type==='STORY_COMPETE'&&(g.story?.beat==='rival'||g.campaign?.beat==='rival')){
   const w=structuredClone(g.world),rival=streetFirm(w,'rival'),maker=streetFirm(w,'ovens'),person=w.people.find(p=>!p.job&&!p.owner),cost=maker.price*2;
@@ -323,17 +325,26 @@ export function streetReducer(g:StreetGame,a:StreetAction):StreetGame{
   assertStreetWorld(w);const r=report(w,tx,streetFirm(g.world,'bakery').cash,0,true);r.hired=[person.id];
   return {...g,world:w,phase:'neighbors',report:r,serial:g.serial+1,...(g.story?{story:{...g.story,beat:'pressure' as const}}:{}),...(g.campaign?{campaign:{...g.campaign,beat:'others' as const}}:{}),message:'邻店花'+cost/100+'枚买了更快的炉，又招了一位街上的待业者。全街仍是'+w.people.length+'人。'};
  }
- if(a.type==='OTHERS_FOLLOW'&&g.campaign?.beat==='others'){
+ if(a.type==='OTHERS_FOLLOW'&&g.campaign?.beat==='others'||a.type==='FOLLOW_EXPANSION'&&managed){
   const w=structuredClone(g.world),supplier=streetFirm(w,'inputs'),tx:StreetTransfer[]=[],decisions:FirmDecision[]=[],followed:Industry[]=[];
+  if(a.type==='FOLLOW_EXPANSION'){
+   const rival=streetFirm(w,'rival'),maker=streetFirm(w,'ovens'),person=w.people.find(p=>!p.job&&!p.owner),cost=maker.price*2;
+   if(rival.machines<2&&person&&maker.stock&&rival.cash>=cost+rival.wage*(rival.workers.length+1)*3){
+    pay(rival,maker,cost,'new-oven',tx,1);maker.stock--;maker.sold++;
+    rival.ovenCapacities=[...Array.from({length:rival.machines},(_,i)=>rival.ovenCapacities?.[i]??6),12];rival.machines++;rival.ovenAges.push(0);person.job='rival';rival.workers.push(person.id);followed.push('rival');
+    decisions.push({firm:'rival',kind:'expand',round:w.round,stock:rival.stock,oldValue:rival.machines-1,value:rival.machines,person:person.id,reason:'同行跟进的条件实验：自付快炉款与工资准备金，招用一位现有待业者。'});
+   }
+  }
   for(const id of ['clothes','cars','ovens'] as const){const f=streetFirm(w,id),candidate=w.people.find(p=>!p.job&&!p.owner),parts=16,cost=2400;
    const reserve=f.wage*(f.workers.length+(candidate?1:0));
+   if(a.type==='FOLLOW_EXPANSION'&&f.machines>STREET_INITIAL_WORKERS[id])continue;
    if(f.machines>=4||f.cash<cost+reserve||supplier.stock<parts)continue;
    const old=f.machines;pay(f,supplier,cost,'equipment',tx,parts);supplier.stock-=parts;supplier.sold+=parts;f.machines++;f.ovenAges.push(0);
    if(candidate){candidate.job=id;f.workers.push(candidate.id);}else f.productivity=2;
    followed.push(id);decisions.push({firm:id,kind:'expand',round:w.round,stock:f.stock,oldValue:old,value:f.machines,reason:candidate?'购买设备材料与安装服务，招用街上的待业者。':'人手不足，购置省工设备，提高每人产量。',...(candidate?{person:candidate.id}:{})});
   }
   assertStreetWorld(w);const r=report(w,tx,streetFirm(g.world,'bakery').cash,0,true);r.firmDecisions=decisions;r.hired=decisions.flatMap(d=>d.person?[d.person]:[]);
-  return {...g,world:w,phase:'manage',report:r,serial:g.serial+1,campaign:{...g.campaign,beat:'pressure',followed},message:followed.length?'别家也添了设备。钱付给原料和仓储店。':'别家暂时付不起扩产的钱。'};
+  return {...g,world:w,phase:'manage',report:r,serial:g.serial+1,...(g.campaign?{campaign:{...g.campaign,beat:'pressure' as const,followed}}:{}),message:followed.length?'别家也添了设备。钱付给原料和仓储店。':'别家暂时付不起扩产的钱。'};
  }
  if(a.type==='CLOSE_SHOP'&&g.campaign?.beat==='insolvent'&&streetSolvency(g).shortfall>0){
   const w=structuredClone(g.world),f=streetFirm(w,'bakery'),buyer=streetFirm(w,'inputs'),tx:StreetTransfer[]=[],bid=streetSolvency(g).resale,dismissed=[...f.workers];
@@ -349,6 +360,7 @@ export function streetReducer(g:StreetGame,a:StreetAction):StreetGame{
   if(g.phase==='own'&&!g.report)return g;
   return next[g.phase]?{...g,phase:next[g.phase]!,message:'',layoffPreview:false}:g;
  }
+ if(a.type==='MANAGE')return {...g,phase:'manage',message:''};
  if(a.type==='EXPLAIN')return g.report?{...g,phase:'social',layoffPreview:false,message:''}:g;
  if(a.type==='CANCEL_LAYOFF')return {...g,layoffPreview:false};
  if(a.type==='RETRY'&&g.checkpoint){const {storyCheckpoint,campaignCheckpoint,...rest}=g;return {...rest,...(storyCheckpoint?{story:structuredClone(storyCheckpoint)}:{}),...(campaignCheckpoint?{campaign:structuredClone(campaignCheckpoint)}:{}),...(g.booksCheckpoint?{books:structuredClone(g.booksCheckpoint)}:{}),phase:explaining?'manage':g.phase,world:structuredClone(g.checkpoint),report:null,checkpoint:null,serial:g.serial+1,message:'回到上一轮开门前。改一个条件再试；这不是现实中的撤销。',history:g.history.slice(0,-1)};}
@@ -357,7 +369,7 @@ export function streetReducer(g:StreetGame,a:StreetAction):StreetGame{
  if(a.type==='PRICE'&&[-1,1].includes(a.delta))return {...g,price:Math.max(1,Math.min(4,g.wage,g.price+a.delta)),message:''};
  const f=streetFirm(g.world,'bakery');
  if(a.type==='SHIFTS'&&managed&&[-1,1].includes(a.delta))return {...g,shifts:Math.max(0,Math.min(f.workers.length,f.machines,g.shifts+a.delta)),message:'按班次付工资：少排一班，这轮少领一份。岗位仍保留。'};
- if(a.type==='RESPONSE'&&['neighbors','manage'].includes(g.phase)&&['none','rival','some','all'].includes(a.value))return {...g,response:a.value,message:''};
+ if(a.type==='RESPONSE'&&['neighbors','manage'].includes(g.phase)&&['none','rival','some','all','cut'].includes(a.value))return {...g,response:a.value,message:''};
  if(a.type==='ROUND'&&Number.isInteger(a.expectedRound)&&a.expectedRound===g.world.round){
   const rivalPolicy=streetFirm(g.world,'rival').rivalPolicy;
   const observeRival=g.report?.rivalDecision?.kind==='wage-cut'||Boolean(rivalPolicy?.pressureDays&&!rivalPolicy?.laidOff)||!g.report&&rivalPolicy?.cutRound===g.world.round&&!rivalPolicy?.laidOff;
@@ -424,7 +436,7 @@ export function assertStreetWorld(w:StreetWorld,legacyPrices=false){
 export function restoreStreetGame(value:unknown,wage=5):StreetGame{
  try{
   const g=value as StreetGame;
-  if(!g||![1,2,3,4,5,6,7,8,9,10,11,12,STREET_VERSION].includes(g.version)||!['intro','own','neighbors','manage','social','private','overproduction','limits'].includes(g.phase)||!Number.isInteger(g.wage)||g.wage<3||g.wage>7||!Number.isFinite(g.price)||g.price<1||g.price>4||(g.version===1?g.price*2%1:!Number.isInteger(g.price))||!Number.isInteger(g.shifts)||g.shifts<0||g.shifts>4||!['none','rival','some','all'].includes(g.response)||!Number.isSafeInteger(g.serial)||g.serial<0||typeof g.message!=='string'||typeof g.layoffPreview!=='boolean'||!Array.isArray(g.history)||g.history.length>12)throw new Error('Bad game');
+  if(!g||![1,2,3,4,5,6,7,8,9,10,11,12,STREET_VERSION].includes(g.version)||!['intro','own','neighbors','manage','social','private','overproduction','limits'].includes(g.phase)||!Number.isInteger(g.wage)||g.wage<3||g.wage>7||!Number.isFinite(g.price)||g.price<1||g.price>4||(g.version===1?g.price*2%1:!Number.isInteger(g.price))||!Number.isInteger(g.shifts)||g.shifts<0||g.shifts>4||!['none','rival','some','all','cut'].includes(g.response)||!Number.isSafeInteger(g.serial)||g.serial<0||typeof g.message!=='string'||typeof g.layoffPreview!=='boolean'||!Array.isArray(g.history)||g.history.length>12)throw new Error('Bad game');
   for(const c of [g.campaign,g.campaignCheckpoint].filter(Boolean) as StreetCampaign[]){if(!CAMPAIGN_BEATS.includes(c.beat)||!Array.isArray(c.followed)||new Set(c.followed).size!==c.followed.length||c.followed.some(id=>!['clothes','cars','ovens'].includes(id))||![c.attempts,c.pressureDays].every(n=>Number.isInteger(n)&&n>=0&&n<=48)||c.solvency&&Object.values(c.solvency).some(n=>!Number.isInteger(n)||n<0))throw new Error('Bad campaign');}
   if(g.campaign&&(g.story||!g.books||!g.tutorial||g.world.rentPerDay!==4)||g.campaignCheckpoint&&!g.campaign)throw new Error('Incomplete campaign');
   for(const s of [g.story,g.storyCheckpoint].filter(Boolean) as StreetStory[])if(!STREET_STORY_BEATS.includes(s.beat)||!Array.isArray(s.dismissed)||s.dismissed.some(id=>!g.world.people.some(p=>p.id===id))||typeof s.neighborCuts!=='boolean'||!Number.isInteger(s.pressureRounds)||s.pressureRounds<0||s.pressureRounds>2||s.comparison&&(!Number.isInteger(s.comparison.round)||!Number.isFinite(s.comparison.stock)))throw new Error('Bad story');

@@ -1,0 +1,5 @@
+Prepared build-battle-embed
+Prepared analyze-automation-evidence
+Prepared analyze-needs-evidence
+Prepared analyze-ownership-evidence
+Prepared analyze-market-rules-evidence

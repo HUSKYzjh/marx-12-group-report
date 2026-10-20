@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-18",
+  "request": "还是太小了，每日需求与今天可做这里也要调大。",
+  "change": "明显放大产能、需求标签与数量；手机将需求/生产信息改为操作区上方整行，店名下显示产能；操作按钮和说明也相应放大。",
+  "font_pixels": {
+    "capacity_mobile": 14,
+    "capacity_desktop": 16,
+    "demand_label_mobile": 16,
+    "demand_label_desktop": 18,
+    "demand_value_mobile": 32,
+    "demand_value_desktop": 36,
+    "schedule_mobile": 14,
+    "schedule_desktop": 16,
+    "mobile_move_title": 18,
+    "mobile_move_hint": 12
+  },
+  "local_and_online_widths": [
+    320,
+    390,
+    1280
+  ],
+  "render_states_checked": {
+    "local": 38,
+    "online": 38
+  },
+  "initial_computed_styles": [
+    {
+      "width": 320,
+      "figures": {
+        "label": "16px",
+        "value": "32px",
+        "schedule": "14px",
+        "consoleVisible": true,
+        "stacked": true
+      }
+    },
+    {
+      "width": 390,
+      "figures": {
+        "label": "16px",
+        "value": "32px",
+        "schedule": "14px",
+        "consoleVisible": true,
+        "stacked": true
+      }
+    },
+    {
+      "width": 1280,
+      "figures": {
+        "label": "18px",
+        "value": "36px",
+        "schedule": "16px",
+        "consoleVisible": true,
+        "stacked": false
+      }
+    }
+  ],
+  "checks": [
+    "shop titles and summaries remain one line",
+    "two-digit pending capacity",
+    "source wages and rival upgrade",
+    "market data above controls on mobile",
+    "no horizontal overflow",
+    "no page errors",
+    "original maximum cash 87"
+  ],
+  "economic_rules_changed": false,
+  "index_sha256": "c8826c4b330ffe17d00a4e13c98023cc27c581f7b1a96787d1a674029381d5b4",
+  "offline_sha256": "204558d778552df2f5f08443b2e3aedbc34dcf0314036890ffb20ab7e7d26e2d",
+  "offline_zip_checked": true,
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792255979107/"
+  },
+  "prune": false
+}

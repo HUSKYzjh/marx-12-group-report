@@ -1,0 +1,45 @@
+✔ reading the guide is saved without completing or changing any economic turn (12.8887ms)
+✔ legacy saves still restore, while guide metadata cannot forge a ledger or completion (13.9733ms)
+✔ a settled move survives restoration exactly once, and undo restores its initial accounts (2.9473ms)
+✔ all business decisions remain available once, grouped without changing accounts (13.6376ms)
+✔ grouping preserves the three-day maximum and normal-business accounts (16.2669ms)
+✔ old and additional actions retain an accessible fallback (0.736ms)
+✔ five-day review uses its own opening and the same ordinary-business baseline (376.885ms)
+✔ unfinished rounds and other independent scenes do not disclose a five-day result (33.0729ms)
+✔ social ending distinguishes unsold goods, unaffordable goods and no remaining goods without inventing sales (2.2269ms)
+✔ explicit business strategies replace abstract output changes (27.1037ms)
+✔ new oven is paid now, delivered tomorrow, and needs extra hands (16.9909ms)
+✔ upgrade and dismissal have distinct delayed physical effects (5.5775ms)
+✔ price changes today; recruitment cannot create people or duplicate hires (4.6874ms)
+✔ source follows actually paid salaries, not unemployed characters (73.9425ms)
+✔ 100 varied full paths conserve money, validate records and survive replay (26206.7388ms)
+✔ old accounts retained with exact rules, never silently recalculated (6.5139ms)
+✔ recorded ordering costs stay on the day paid, not on delivery day (14.2321ms)
+✔ diffusion is shown only once both actual installations exist, not when rival merely orders (4.6837ms)
+✔ every payment remains classified, and reports cannot alter saved paths (29.3127ms)
+✔ whole-shop investment scales with old ovens, pauses one day and pays wages (29.3353ms)
+✔ already upgraded ovens are not charged twice; funding includes idle-day wages and arrears (2.3964ms)
+✔ installation can sell existing bread but never bakes a new batch; rival obeys the same pause (16.3957ms)
+✔ pre-change v3 records replay exactly; new rules archive old accounts rather than rewriting them (169.4121ms)
+✔ UI states the cost formula, downtime and old-account opt-in (2.891ms)
+✔ new third scene has no tracing gate or hidden first-day transaction (62.8634ms)
+✔ wage cut is a decision for tomorrow, with an actual payroll reduction on the following day (67.2068ms)
+✔ review uses sold goods and real wages, compares the entire plan and cannot invent profit from production (82.9508ms)
+✔ all nine days, retries, undo and tamper rejection retain audited finances (4548.6838ms)
+✔ old tracing accounts remain restorable; opting into the replacement archives them and keeps first two scenes (66.276ms)
+✔ third scene offers three direct actions without losing the original adjustment tools (8.5758ms)
+✔ optional six-shop ledger opens after the duel, remains independent and survives return (436.9963ms)
+✔ first act hands off to a fresh battle without inheriting its demonstration cash (1.694ms)
+✔ second-act save, refresh and navigation preserve progress; invalid data cannot finish (9.8022ms)
+✔ only a completed three-part battle reaches the story, summary and remedies (200.5868ms)
+✔ every legal three-day path is bounded by the advertised maximum; holding is the reference (522.3015ms)
+✔ coaching follows the actual move and never mutates accounts or recommends a forced action (12.4751ms)
+✔ best result is reconstructed from moves, survives replay and cannot be inflated with a score field (52.7622ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27164.5042

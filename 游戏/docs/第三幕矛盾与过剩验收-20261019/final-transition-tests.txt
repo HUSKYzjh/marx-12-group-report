@@ -1,0 +1,21 @@
+✔ legacy six-shop shortcut now opens the third act and preserves both ledgers (519.4152ms)
+✔ first act hands off to a fresh battle without inheriting its demonstration cash (1.7263ms)
+✔ second-act save, refresh and navigation preserve progress; invalid data cannot finish (11.0765ms)
+✔ only a completed three-part battle reaches the story, summary and remedies (275.6457ms)
+✔ funded expansion raises own output, creates actual supplier income and recruits existing residents (86.9595ms)
+✔ independent funded follow-up produces actual stocks alongside unmet needs without inventing people or goods (21.5742ms)
+✔ matched wage response comparison changes only the declared condition, reconciles ledgers and never rewrites the actual day (43.5419ms)
+✔ selling out remains possible; unbought stock, no-stock refusals and money refusals are distinct (18.6659ms)
+✔ the story follows actual trading and a review, not a paid investment receipt or a one-day skip (10.8188ms)
+✔ second act stops after three fixed and five variable demand days, with no wallet round (81.4838ms)
+✔ old fixed, variable and wallet histories remain archived without changing their actual transactions (188.1015ms)
+✔ third act opens the established six-firm, twenty-person finite-wallet economy and preserves the duel (315.0239ms)
+✔ chapter browsing can enter six firms directly without inventing a completed second act (3.1185ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1886.4213

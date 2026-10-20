@@ -1,0 +1,106 @@
+{
+  "index_sha256": "46e30cf87cd81dbfc203268f57921b97433f1be33bd4fd438696752721fb1298",
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "homeThroughAllFourActs": true,
+      "firstWage4BattleWage2": true,
+      "independentFamilyNoticeVisible": true,
+      "prologueNotesRemainHidden": true,
+      "summaryRolesDoNotChangeLedger": true,
+      "routes": [
+        {
+          "route": "consumption",
+          "days": 2,
+          "outlooks": [
+            "normal",
+            "normal"
+          ],
+          "cash": 58,
+          "stock": 12,
+          "debt": 0
+        },
+        {
+          "route": "investment",
+          "days": 3,
+          "outlooks": [
+            "normal",
+            "adverse",
+            "normal"
+          ],
+          "cash": 85,
+          "stock": 22,
+          "debt": 0
+        },
+        {
+          "route": "exports",
+          "days": 2,
+          "outlooks": [
+            "normal",
+            "normal"
+          ],
+          "cash": 74,
+          "stock": 0,
+          "debt": 0
+        }
+      ],
+      "threeRoutesComplete": true,
+      "shorterStoryPathAvailable": true,
+      "epilogueAndAssumptionsReachable": true,
+      "noStateInjection": true,
+      "noOverflow": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "homeThroughAllFourActs": true,
+      "firstWage4BattleWage2": true,
+      "independentFamilyNoticeVisible": true,
+      "prologueNotesRemainHidden": true,
+      "summaryRolesDoNotChangeLedger": true,
+      "routes": [
+        {
+          "route": "consumption",
+          "days": 2,
+          "outlooks": [
+            "normal",
+            "normal"
+          ],
+          "cash": 58,
+          "stock": 12,
+          "debt": 0
+        },
+        {
+          "route": "investment",
+          "days": 3,
+          "outlooks": [
+            "normal",
+            "adverse",
+            "normal"
+          ],
+          "cash": 85,
+          "stock": 22,
+          "debt": 0
+        },
+        {
+          "route": "exports",
+          "days": 2,
+          "outlooks": [
+            "normal",
+            "normal"
+          ],
+          "cash": 74,
+          "stock": 0,
+          "debt": 0
+        }
+      ],
+      "threeRoutesComplete": true,
+      "shorterStoryPathAvailable": true,
+      "epilogueAndAssumptionsReachable": true,
+      "noStateInjection": true,
+      "noOverflow": true
+    }
+  ],
+  "errors": []
+}

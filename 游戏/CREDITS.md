@@ -107,3 +107,34 @@ workshop-v6新增的互扣圆环、钥匙、调节杆杆身和连线端点由本
 - `bls-recalculation.png`：本研究根据BLS公开API快照所作的复算图，来源快照为2026-09-08。不是论文或新闻原图；不能将图中差额全部归为劳动份额变化或AI的因果效应。
 
 原文地址、PDF页码、截取范围和原文件哈希记录在 `public/evidence/manifest.json`；截取脚本为 `scripts/capture-evidence.py`。截图仅用于识别所引用资料，核心结论须结合原文口径核验，不能仅凭标题判定。资料作者与机构不为游戏参数背书。
+
+
+## 2026-10-16 分享卡
+
+分享卡新增的厨师、老板和烤炉插画由内置 imagegen 工具按游戏截图的风格参考生成，仅用于分享材料，不标为 Nicky Case 原作素材。二维码矩阵独立生成，HTML/CSS 负责排版，继续使用已署名的 OFL 文楷字体。提示词、来源和文件哈希见[分享卡制作记录](分享/制作与来源.json)，扫码检查见[校验记录](分享/扫码校验.json)。
+
+群像二维码外圈的厨师、工人、老板、面包车及麦穗插画同样由内置 imagegen 生成，以已有分享卡插画作风格参考，仅用于分享材料。中央码芯独立生成。完整提示词、素材哈希及制作方式见[群像制作来源](分享/群像二维码制作与来源.json)。
+
+## 2026-10-17 联网版字体与缓存
+
+联网版按 `unicode-range` 分片加载同一文楷字库，全部47,449个字符映射保留；源码中的完整字库及单文件离线版保持完整。分片继续使用 OFL-1.1，保留字体内部署名、许可与字形；托管包附 `runtime-assets/OFL.txt`。来源与完整字库记录仍见 `public/assets/fonts/provenance.json`、`coverage.json` 及 `OFL.txt`。脚本与图像仅拆分为可缓存资源，图像内容未重绘。
+
+## 2026-10-20 第四幕历史照片
+
+九张照片均取自美国国会图书馆版画与照片部，按各条馆藏记录的权利说明使用。FSA/OWI馆藏注明为公有领域；其余选用条目注明无已知发表限制。保留下载JPEG原始字节与原片边框，未进行AI生成、修补、上色或重绘。每页只以照片说明历史场景，不把照片当作政策效果、因果关系或具体出口目的地的证明。
+
+作者、原题、年代范围、权利原文、原始下载URL与SHA-256见[历史照片清单](public/assets/history/manifest.json)。图注与机制解释分别编写；包括TVA的图片明确标为公共工程，不混同于私人厂商。
+
+- 纽约警察向有需要的人发放鸡蛋和面包；1930；New York World-Telegram staff photographer；[LOC 95514429](https://www.loc.gov/item/95514429/)。
+- 得州韦科市场的一次付款交易；1939 Nov.；Russell Lee；[LOC 2017741319](https://www.loc.gov/item/2017741319/)。
+- 圣安东尼奥赊销服装店店主；1939 Mar.；Russell Lee；[LOC 2017739420](https://www.loc.gov/item/2017739420/)。
+- 诺里斯大坝变电场，TVA公共工程；1942 June；Arthur Rothstein；[LOC 2017832651](https://www.loc.gov/item/2017832651/)。
+- 福特高地公园工厂的汽车装配线；ca. 1913；Not identified in catalog record；[LOC 2011661021](https://www.loc.gov/item/2011661021/)。
+- TVA诺里斯公共工程配套工人住宅区；between 1933 and 1945；Tennessee Valley Authority; photographer not identified in catalog record；[LOC 2017871885](https://www.loc.gov/item/2017871885/)。
+- 新奥尔良港，Traveller号船舶装载粮食；between 1900 and 1906；Detroit Publishing Co., publisher；[LOC 2016803158](https://www.loc.gov/item/2016803158/)。
+- 新奥尔良Poydras街码头装船；1943 Mar.；John Vachon；[LOC 2017850498](https://www.loc.gov/item/2017850498/)。
+- 佛罗里达州彭萨科拉港码头；between 1905 and 1915；Detroit Publishing Co., publisher；[LOC 2016815340](https://www.loc.gov/item/2016815340/)。
+
+## 2026-10-20 作者头像
+
+尾声的HUSKYzjh头像来自作者本人GitHub公开账号，原PNG内嵌离线页并由同源托管提供，用于作者身份识别。来源、日期及SHA-256见[作者头像记录](public/assets/author/provenance.json)。头像不归入游戏源码的MIT授权。

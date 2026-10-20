@@ -1,0 +1,19 @@
+✔ industry artwork is self-contained pencil SVG with product-specific detail (4.8643ms)
+✔ street uses empty oven products but baking ovens keep their original working image (5.1021ms)
+✔ complete portraits including tall hats fit their cells, with negative sprite origins (2.4558ms)
+✔ whole-coin readout is spendable balance, not rounded fictional wealth (0.5957ms)
+✔ trips stop exactly on each shop border, then return home without overshoot (0.9748ms)
+✔ all desired shops are visited, including failed purchases, and both bread shops if actually used (46.5458ms)
+✔ money failure changes the face at the counter, cancels further browsing and returns home (2.9504ms)
+✔ second act stops after three fixed and five variable demand days, with no wallet round (32.7627ms)
+✔ old fixed, variable and wallet histories remain archived without changing their actual transactions (84.7721ms)
+✔ third act opens the established six-firm, twenty-person finite-wallet economy and preserves the duel (114.5347ms)
+✔ chapter browsing can enter six firms directly without inventing a completed second act (3.3998ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1143.9249

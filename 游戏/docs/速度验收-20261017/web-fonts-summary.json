@@ -1,0 +1,159 @@
+{
+  "build_key": "4ed6136c52313fa71cdbe8a5c74dba44a44ca9bdf6b1074c574aabc95403b20a",
+  "source_sha256": "854a98e67135a27a15f41ef2528fd827190793ffae2b5f6ed7b67fd0a28c3000",
+  "source_bytes": 10851784,
+  "source_codepoints": 47449,
+  "covered_codepoints": 47449,
+  "all_mappings_preserved": true,
+  "source_font_unchanged": true,
+  "generator": "fontTools 4.66.1",
+  "license": "OFL-1.1",
+  "parts": [
+    {
+      "file": "runtime-assets/font-c11ae2bb37470ea38925.woff2",
+      "bytes": 415708,
+      "sha256": "c11ae2bb37470ea389252dad3783bee07d110954660cf65db3f0292e3d922115",
+      "codepoints": 1870
+    },
+    {
+      "file": "runtime-assets/font-1da42a090a1c81d49f03.woff2",
+      "bytes": 117244,
+      "sha256": "1da42a090a1c81d49f036a08707d9d14a141390cc0375147a493c4ed6bd62617",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-f49fe0696701b132b340.woff2",
+      "bytes": 260144,
+      "sha256": "f49fe0696701b132b3407e70409e3bf8557830db5cda16593500e5cfa6dfa5b4",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-eec48d67c0458e22ef23.woff2",
+      "bytes": 754112,
+      "sha256": "eec48d67c0458e22ef2386b673e7338cb38161ac9feda5873bc111a7f1cc8682",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-108c2ce28d0c3e9f84d3.woff2",
+      "bytes": 814128,
+      "sha256": "108c2ce28d0c3e9f84d3ff511eb7bba09f146449086c235ad2923e101d34d5c0",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-36d191f58f41afa46e31.woff2",
+      "bytes": 886060,
+      "sha256": "36d191f58f41afa46e31afcf366975000f89b7738fe6bbe2e7adbf3f8c7f6417",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-e49845fc0876dd497a7b.woff2",
+      "bytes": 659848,
+      "sha256": "e49845fc0876dd497a7b46060600bdd8c0de2dc688f5af7c77b4a6ad176dd690",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-760914036e060fa15d1c.woff2",
+      "bytes": 678356,
+      "sha256": "760914036e060fa15d1ce7553d5e0265317bb9d56da22eacd3ff94ee600060de",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-4122796188f5f5fc6077.woff2",
+      "bytes": 693788,
+      "sha256": "4122796188f5f5fc607784efdcb842d22e4ef5ab23ffaa639fdaca7109d4299b",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-6b2a6ea1621fe6cd1a8b.woff2",
+      "bytes": 699396,
+      "sha256": "6b2a6ea1621fe6cd1a8bbcec5cd2cbef216c95aed5daf45e982bf8803195ca4b",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-2cca7a9bf3dcb64bde97.woff2",
+      "bytes": 721040,
+      "sha256": "2cca7a9bf3dcb64bde97fbe9efefe7d40880ca4e6c5e723b8989362c5baadba6",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-e44b769ae78bc9850ad6.woff2",
+      "bytes": 740124,
+      "sha256": "e44b769ae78bc9850ad663a08ff18f83a21d8431ed24263327d5430cc32e3a05",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-1363a163e0e005c5e426.woff2",
+      "bytes": 740568,
+      "sha256": "1363a163e0e005c5e426d0783eebd200c48f06e20a4fc97e801975f1283848ae",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-387da7d5fc5c0bd31ca5.woff2",
+      "bytes": 727188,
+      "sha256": "387da7d5fc5c0bd31ca5e0a17fd81fc7e3a606798615a681f45a30434013139c",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-7cb597966daa569b061e.woff2",
+      "bytes": 779324,
+      "sha256": "7cb597966daa569b061e0a83dd3051f93f59782c5e06bec3ee7236738defd2f2",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-21bdf32498664b6d6326.woff2",
+      "bytes": 721944,
+      "sha256": "21bdf32498664b6d6326fbae79a624b8df98de0ab6593a5a386e94bb356f1b0f",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-5d659ea61e9abd2edea5.woff2",
+      "bytes": 79788,
+      "sha256": "5d659ea61e9abd2edea59edb8439643568c041d97ff7f9371cd407eb4bd59fc9",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-def5671835f661ace259.woff2",
+      "bytes": 90460,
+      "sha256": "def5671835f661ace259af9678caa80e794f4d7a35a9e5773de37f4f44f8079f",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-3ba9b5a524f00fb38482.woff2",
+      "bytes": 77504,
+      "sha256": "3ba9b5a524f00fb384823893fa36be583f54c73b1a5b1d0e7740838a7c05ed79",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-6a7edbf22c096823f04b.woff2",
+      "bytes": 86160,
+      "sha256": "6a7edbf22c096823f04bd10582bdeecf8bd9702582f74fe2a58d68563740b718",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-acfac91f881683f9feab.woff2",
+      "bytes": 82572,
+      "sha256": "acfac91f881683f9feab2751257156b48c2454884082c97bb493d001fcf40a35",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-91ee72ad1e668ee98386.woff2",
+      "bytes": 300272,
+      "sha256": "91ee72ad1e668ee98386a3f721fbd5af3cd8739390b2ebcbac69acb1b2ca3f0e",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-92d061ef7d2dc4def9b7.woff2",
+      "bytes": 873744,
+      "sha256": "92d061ef7d2dc4def9b7a107418293d448318aa3cafb03f9d47d84c731cde76c",
+      "codepoints": 2048
+    },
+    {
+      "file": "runtime-assets/font-fd1eddfd42f2670e39d3.woff2",
+      "bytes": 194168,
+      "sha256": "fd1eddfd42f2670e39d30a6d67f1b6631d4aa58cb46f6a1932acb98e79daa76d",
+      "codepoints": 523
+    }
+  ],
+  "full_ranges_generated_at": "build/hosted/web-fonts.json",
+  "actual_cmap_verification": "font-and-assets.json"
+}

@@ -48,8 +48,8 @@ export function equipmentMoves(w,social=false){
   {id:'wage-up',name:'提高工资',icon:'people',hint:`每人 ${f.wage} → ${Math.min(4,f.wage+1)} 金币 · 明天`,detail:'明天每人多领一块。钱从你的店里出去，随后可能去隔壁买面包。',group:'wages'});
  moves.push({id:'hold',name:'照常营业',icon:'bread',hint:'今天照旧',detail:'今天不加新安排。昨天订的炉子、说好的用工调整，还是会来。'});return moves;
 }
-export function equipmentIssue(w,action,social=false){
- if(!equipmentMoves(w,social).some(m=>m.id===action))return '没有这项策略。';
+export function equipmentIssue(w,action,social=false,allowWages=social){
+ if(!equipmentMoves(w,allowWages).some(m=>m.id===action))return '没有这项策略。';
  const f=readyShop(w.shops[0]);
  if(action==='price-down'&&f.price<=1)return '售价最低1金币。';
  if(action==='price-up'&&f.price>=5)return '本实验售价最高5金币。';
@@ -71,10 +71,10 @@ export function equipmentRival(w){
  return {name:'继续低价',line:'“一块一个！薄利多销，多销，多销……”'};
 }
 const random=(w,id)=>{let n=(w.seed+w.day*104729+id*7919)>>>0;n^=n<<13;n^=n>>>17;n^=n<<5;return(n>>>0)/4294967296;};
-export function equipmentRound(input,action,mode){
+export function equipmentRound(input,action,mode,allowWages=mode==='social'){
  const social=mode==='social',w=structuredClone(input),f=w.shops[0];
- if(equipmentIssue(input,action,social))throw Error('Unavailable equipment move');
- const r={day:++w.day,action,move:equipmentMoves(input,social).find(m=>m.id===action).name,rival:social?equipmentRival(input).name:'按原计划开炉',before:input.shops.map(f=>f.cash),receipts:[],made:[0,0],sold:[0,0],wages:[0,0],spoiled:[0,0],stopped:[false,false],fired:[],hired:[],visits:[],changes:[]};
+ if(equipmentIssue(input,action,social,allowWages))throw Error('Unavailable equipment move');
+ const r={day:++w.day,action,move:equipmentMoves(input,allowWages).find(m=>m.id===action).name,rival:social?equipmentRival(input).name:'按原计划开炉',before:input.shops.map(f=>f.cash),receipts:[],made:[0,0],sold:[0,0],wages:[0,0],spoiled:[0,0],stopped:[false,false],fired:[],hired:[],visits:[],changes:[]};
  if(batchUpgrade(w))r.installing=[false,false];
  const purse=k=>k==='outside'?{get cash(){return w.outside;},set cash(v){w.outside=v;}}:k==='supplier'?{get cash(){return w.supplier;},set cash(v){w.supplier=v;}}:k[0]==='f'?w.shops[+k[1]]:w.people[+k.slice(1)];
  const pay=(from,to,n,reason)=>{if(!Number.isInteger(n)||n<0||purse(from).cash<n)throw Error('Unfunded equipment payment');if(!n)return;purse(from).cash-=n;purse(to).cash+=n;r.receipts.push({from,to,amount:n,reason});};

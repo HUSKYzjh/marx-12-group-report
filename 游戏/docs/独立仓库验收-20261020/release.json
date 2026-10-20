@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-20",
+  "request": "尾声补充本人GitHub头像和仓库链接，单独打包开源游戏仓库",
+  "repository": "https://github.com/HUSKYzjh/feast-of-hunger",
+  "profile": "https://github.com/HUSKYzjh",
+  "changes": [
+    "尾声保留原留言，加入作者本人GitHub头像、个人主页及独立游戏仓库入口",
+    "头像保留GitHub原PNG字节，内嵌离线、线上同源加载",
+    "独立仓库以游戏为根目录，移除PPT规划和专用托管配置，使用普通Vite入口及公开npm依赖",
+    "提供MIT代码许可、第三方素材及头像例外说明、中文README、贡献指南、PR模板、AGENTS和校验工具",
+    "提供当前离线HTML和ZIP，以及整套独立源码ZIP；不含node_modules、登录信息或构建缓存"
+  ],
+  "source_sha256": "89fbc31861d5343e2cb09053c24efc101cf5ed13291f859b51e3bfe9b90fde4e",
+  "index_sha256": "c7891e17de97b3651d436e3af7d343e3565465338c284052eccc447f256a97e5",
+  "validation": {
+    "fresh_npm_ci": true,
+    "independent_node_modules_is_real_directory": true,
+    "private_plugin_dependency_removed": true,
+    "normal_vite_build": true,
+    "development_and_production_real_browser": true,
+    "full_tests": 861,
+    "failed": 0,
+    "independent_offline_build_byte_identical": true,
+    "independent_hosted_build_byte_identical": true,
+    "profile_repository_and_avatar_checked_on_three_viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        1280,
+        900
+      ]
+    ],
+    "whole_saved_state_preserved": true,
+    "zip_crc_and_contents_verified": true,
+    "font_mappings": 47449,
+    "hosted_asset_count": 66
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 72,
+    "successCount": 72,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792461376385/"
+  },
+  "limits": [
+    "独立托管构建复用了同字库、同字形集合的字体分片缓存；源码依赖为独立目录内全新npm ci安装。",
+    "初次全量检查暴露4项测试的浏览器事件模拟缺项，补齐测试环境后重新执行全部861项并通过。",
+    "Vite对原项目的public素材导入会输出提示，开发和成品均已实测可运行；普通构建另有大文件体积提示。",
+    "资产校验器date沿用固定的2026-10-17，本轮实际执行日期为2026-10-20。"
+  ]
+}

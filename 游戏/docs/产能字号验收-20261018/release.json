@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-18",
+  "request": "字号大些。",
+  "scope": "两家店名旁的明日产能提示",
+  "font_pixels": {
+    "mobile": {
+      "before": 9,
+      "after": 11
+    },
+    "desktop": {
+      "before": 11,
+      "after": 14
+    },
+    "installation_notice": 10
+  },
+  "spacing": "提示改为明天可做24个，去掉额外空格；标题保持一行。",
+  "local_and_online_widths": [
+    320,
+    390,
+    1280
+  ],
+  "checked_render_states": {
+    "local": 38,
+    "online": 38
+  },
+  "checks": [
+    "computed font size",
+    "320px two-digit capacity with installation notice",
+    "shop names stay one line",
+    "summary rows stay one line",
+    "heading fits own area",
+    "staff changes and rival upgrade",
+    "cash maximum unchanged at 87"
+  ],
+  "economic_rules_changed": false,
+  "index_sha256": "dc146fcee6e1f7206b6ad3958432f6056b2940508da35f00fe9533a1ebe78604",
+  "offline_sha256": "6b6d94a0828794c57d35e4451516ec2631087f4f8e77eb2e7653a54c8a2630fb",
+  "offline_zip_checked": true,
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792255447876/"
+  },
+  "prune": false
+}

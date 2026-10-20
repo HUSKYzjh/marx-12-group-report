@@ -1,0 +1,22 @@
+{
+  "executed_during_this_review": true,
+  "passed": 59,
+  "failed": 0,
+  "test_files": [
+    "bakery.test.mjs",
+    "bakery-expansion.test.mjs",
+    "prologue-battle.test.mjs",
+    "steady-challenge.test.mjs",
+    "consumption-open.test.mjs",
+    "production-open.test.mjs",
+    "production-open-feedback.test.mjs",
+    "assumption-route-progress.test.mjs"
+  ],
+  "coverage": [
+    "first-act limits and expansion",
+    "first fixed-flow maximum across 305 legal paths",
+    "open consumption and production flows without forced ending",
+    "real money, stock, debt and restored records",
+    "route completion requires actual trading"
+  ]
+}

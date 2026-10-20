@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-18",
+  "entry": "standalone",
+  "sourceSHA256": "d8d2053cf4b4f78832113fd8229391e86f864747b41a658fe0d715cdb11e4e06",
+  "indexSHA256": "e486a0aeb0e2bb467940c224f3fd4336c696707a67f9be05d8e2af069c9c24aa",
+  "results": [
+    {
+      "width": 320,
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "directChoices": 3,
+      "optionalToolsReadOnly": true,
+      "payrollToday": 6,
+      "payrollTomorrow": 3,
+      "actualReview": {
+        "actual": {
+          "wages": 30,
+          "sold": 54,
+          "gain": -14
+        },
+        "ordinary": {
+          "wages": 30,
+          "sold": 12,
+          "gain": -33
+        },
+        "difference": 19
+      },
+      "refresh": true,
+      "retry": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "directChoices": 3,
+      "optionalToolsReadOnly": true,
+      "payrollToday": 6,
+      "payrollTomorrow": 3,
+      "actualReview": {
+        "actual": {
+          "wages": 30,
+          "sold": 54,
+          "gain": -14
+        },
+        "ordinary": {
+          "wages": 30,
+          "sold": 12,
+          "gain": -33
+        },
+        "difference": 19
+      },
+      "refresh": true,
+      "retry": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "directChoices": 3,
+      "optionalToolsReadOnly": true,
+      "payrollToday": 6,
+      "payrollTomorrow": 3,
+      "actualReview": {
+        "actual": {
+          "wages": 30,
+          "sold": 54,
+          "gain": -14
+        },
+        "ordinary": {
+          "wages": 30,
+          "sold": 12,
+          "gain": -33
+        },
+        "difference": 19
+      },
+      "refresh": true,
+      "retry": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

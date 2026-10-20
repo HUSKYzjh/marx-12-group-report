@@ -1,0 +1,19 @@
+✔ new actions alter the named parameter today; no separate recruitment or delayed plan is exposed (6.5074ms)
+✔ one eight-coin upgrade doubles capacity immediately without downtime or wage changes (1.1132ms)
+✔ unsold bread carries without storage fees, debt or ageing; it never becomes sales income (2.6988ms)
+✔ upper-act maximum is re-enumerated for immediate consequences, rather than retaining the old 51 (678.0348ms)
+✔ lower stages use the same simple costs, fresh ledgers and matching baselines (20.4702ms)
+✔ varied complete runs conserve money, undo, refresh, retry and reject forged cash (6932.6746ms)
+✔ original ledgers retain exact old consequences and archive without being recalculated (2.9831ms)
+✔ second act stops after three fixed and five variable demand days, with no wallet round (49.5698ms)
+✔ old fixed, variable and wallet histories remain archived without changing their actual transactions (101.4905ms)
+✔ third act opens the established six-firm, twenty-person finite-wallet economy and preserves the duel (125.8681ms)
+✔ chapter browsing can enter six firms directly without inventing a completed second act (1.6172ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8208.6212

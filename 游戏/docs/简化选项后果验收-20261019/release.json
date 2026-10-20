@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-19",
+  "request": "简化选项实际后果；用户已确认固定人数、当天调价调薪换炉、取消叠加惩罚的方向",
+  "changes": [
+    "每次调价或每人工资±1枚，当天生效；人数和产量不随工资调整改变",
+    "每店固定3人，取消添炉后再招人的组合与解聘补偿",
+    "换快炉一次8枚，当天产能6→12，不停工，不增加日常开支",
+    "每天3人工资＋固定5枚；剩货免费留存，不坏损、不收保管费、不积欠费",
+    "新上幕最高净增54，照常21，183条合法三天路线枚举；个人纪录分开新旧规则",
+    "对手照常营业；下幕保留工资流入买家钱包的实际反馈",
+    "原规则完整旧账另存，不重算；无版本更新弹窗，正常五页开店引导保留"
+  ],
+  "source_sha256": "b17cf4fc0bf62597176c8acf52fb036121004554a2927d3211818745bfbfe466",
+  "index_sha256": "9a29f932697c1076d222e5b7432d342fe3c893e10a2330130fcf840ca09098ad",
+  "validation": {
+    "tests_passed": 52,
+    "tests_failed": 0,
+    "new_varied_complete_runs": 20,
+    "legacy_varied_complete_runs": 100,
+    "upper_legal_paths": 183,
+    "upper_maximum_gain": 54,
+    "upper_maximum_closing_cash": 90,
+    "ordinary_upper_gain": 21,
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "instant_wage_and_upgrade_verified_in_browser": true,
+    "actual_review_matches_model": true,
+    "refresh_and_replay": true,
+    "online_story_continuation": true,
+    "actual_old_delayed_wage_ledger_preserved": true,
+    "offline_zip_verified": true,
+    "font_mappings_preserved": 47449,
+    "deployment_files_verified": 62
+  },
+  "sample": {
+    "actual": {
+      "wages": 27,
+      "sold": 78,
+      "gain": 3
+    },
+    "ordinary": {
+      "wages": 54,
+      "sold": 41,
+      "gain": -17
+    },
+    "difference": 20
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792344920233/"
+  },
+  "limits": [
+    "固定人数与固定5枚非工资费用是教学简化，省略了真实雇佣、耗材与维护的变化；不代表现实换设备没有这些后果。",
+    "上幕需求来自外部账户，不能据此推断现实提价或降薪不会减少销量。",
+    "下幕仍只模拟有限的钱包和交易渠道；不保证某一选择必胜，不证明必然危机。",
+    "新规则资金净增不等于完整净利润；旧规则51分不参与新规则54分的纪录比较。",
+    "后续各章仍用独立规则，本轮未重跑八条分支的全部历史流程。"
+  ]
+}

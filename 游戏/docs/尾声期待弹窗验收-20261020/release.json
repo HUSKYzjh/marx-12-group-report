@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-20",
+  "request": "尾声按钮改为敬请期待后续章节，或者现实...；点击不跳转，弹出后续真没有啦及GitHub提PR邀请",
+  "button": "敬请期待后续章节，或者现实...",
+  "modal_title": "后续真没有啦。实在做不完啦TAT",
+  "modal_message": "可以关注我的github：后续感兴趣可以继续提PR",
+  "github_url": "https://github.com/HUSKYzjh/marx-12-group-report",
+  "changes": [
+    "尾声按钮只打开原地弹窗，不发送SHOW_ASSUMPTIONS动作",
+    "GitHub链接仅在明确点击后打开新标签页，原页仍在尾声",
+    "支持关闭按钮、好吧TAT和Esc，退出后焦点回到尾声按钮",
+    "窄屏按短语换行，手绘边框适应按钮高度",
+    "保留所有原存档和原章节导航；更新离线HTML与ZIP"
+  ],
+  "source_sha256": "e2efe35c33d4621c0623d21ef2447803c31508be4c7a77b4d22795620db04fe6",
+  "index_sha256": "ec6eca099052cae2ae58bc06fab4e0f5214c0ee9e12dcab088d6b66db2febb63",
+  "validation": {
+    "targeted_unit_tests": 9,
+    "failed": 0,
+    "local_and_online_viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        1280,
+        900
+      ]
+    ],
+    "exact_copy_checked": true,
+    "no_automatic_navigation_or_new_tab": true,
+    "saved_state_unchanged_after_every_click_and_close": true,
+    "github_new_tab_destination_checked_with_stubbed_response": true,
+    "focus_and_refresh_checked": true,
+    "offline_zip_verified": true,
+    "font_mappings": 47449,
+    "hosted_files": 71,
+    "asset_verifier_run_on": "2026-10-20"
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 71,
+    "successCount": 71,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792460267953/"
+  },
+  "limits": [
+    "本轮执行9项相关自动检查和三种尺寸的本地、线上尾声实走；未重跑全套861项检查。",
+    "GitHub链接的目标、打开方式与原页保留通过浏览器拦截响应验证，不依赖GitHub外站加载。",
+    "资产校验器报告中的date仍是原固定日期2026-10-17，本轮实际执行日期为2026-10-20。"
+  ]
+}

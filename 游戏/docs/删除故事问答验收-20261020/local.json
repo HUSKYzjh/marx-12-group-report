@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-20",
+  "sourceSHA256": "4652689fc3b99d5ff645a781f5c50f6eab88db77c630a21eb237c540cd9bb15a",
+  "indexSHA256": "cbb4212d178d7843edfe84fd1b1a7f8aa78daa7afb5ce3cdbb52ad191d8ea671",
+  "results": [
+    {
+      "width": 320,
+      "questionAndAnswersRemoved": true,
+      "conceptDiagramsPreserved": true,
+      "ledgerPreserved": true,
+      "refresh": true,
+      "onwardTransition": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "questionAndAnswersRemoved": true,
+      "conceptDiagramsPreserved": true,
+      "ledgerPreserved": true,
+      "refresh": true,
+      "onwardTransition": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "questionAndAnswersRemoved": true,
+      "conceptDiagramsPreserved": true,
+      "ledgerPreserved": true,
+      "refresh": true,
+      "onwardTransition": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

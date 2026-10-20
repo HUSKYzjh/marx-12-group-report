@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-19",
+  "request": "删除面向制作人的第二幕版本更新弹窗，游戏面向新玩家",
+  "changes": [
+    "完全删除更新弹窗和切换上下幕版按钮",
+    "载入时自动处理更早的旧存档，完整旧账另存",
+    "已支持上下幕的进度原样续玩，不重开、不重复开店说明",
+    "保留正常五页开店说明和可选历史账本"
+  ],
+  "source_sha256": "bc41e33808bc1c09165ca19b875880076732902049885c483044405fa494c861",
+  "index_sha256": "4f860c1a69498dbb4f845efddd8520f37100095081e95b3aaf687c51f916b3a4",
+  "validation": {
+    "targeted_tests_passed": 12,
+    "targeted_tests_failed": 0,
+    "local_and_online_widths": [
+      390,
+      1280
+    ],
+    "fresh_entry_and_refresh": true,
+    "normal_opening_pages": 5,
+    "actually_played_previous_release_progress_preserved": true,
+    "actually_played_legacy_build_archived_automatically": true,
+    "no_state_injection": true,
+    "offline_zip_verified": true,
+    "deployment_verified": true
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792340255504/"
+  },
+  "limits": [
+    "本轮仅验证入口、兼容与续玩相关范围，未重跑八条后续分支。",
+    "旧版账目单独保存不重算；更早的非上下篇版本会从当前上幕重新开始，已有上下篇记录不重置。"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-18",
+  "file": "试玩二维码-上下幕版.png",
+  "sha256": "c1b3787051abe2f924d7a7d1792df03149d0021e8c430eac0ddd11de56d32de7",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "style": "用户选定的群像居中修正版，码芯与外圈保持原样；指向更新后的上下幕游戏。",
+  "results": [
+    {
+      "width": 1440,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "width": 720,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "width": 540,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "width": 360,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "width": 324,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    }
+  ],
+  "limitation": "软件解码验证，未做实体手机或微信扫一扫实测。"
+}

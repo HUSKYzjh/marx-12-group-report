@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-19",
+  "request": "有限钱包切为第三幕，复用原来的六家厂商",
+  "changes": [
+    "第二幕只保留固定客流3天与波动客流5天，结尾进入第三幕",
+    "第三幕复用两家面包店、服装厂、汽车厂、烤炉厂、原料商与20人的既有有限资金模型",
+    "六店成为主线，使用原资金分布与账本，取消强制剧情倒闭和首次核算提示",
+    "工资、采购与消费均为现有账户间实际付款，初始资金768枚守恒",
+    "第二幕成绩保留，与第三幕现金和设备分开；旧两店阶段与六店老账可接续",
+    "父女独立故事与归纳留在第三幕后段，第四幕仍可继续",
+    "保留第二幕直接显示选项、当天生效、添炉招工合并及最高净增54"
+  ],
+  "source_sha256": "a167bae322c7e408eeb1fb783c6926f63d7cf4af740718cb459582bc1d1cc962",
+  "index_sha256": "e92beb4723ca256bc07dd0248bbac7315265ec077c1d5721c23aa70413dd548c",
+  "validation": {
+    "all_tests_passed": 852,
+    "all_tests_failed": 0,
+    "final_copy_transition_tests_passed": 9,
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "six_firms_and_twenty_people_visible": true,
+    "funded_payroll_and_procurement": true,
+    "finite_money_conserved": true,
+    "two_street_rounds_per_width": true,
+    "refresh_and_act_navigation_preserve_both_ledgers": true,
+    "story_and_fourth_act_continue": true,
+    "actual_previous_build_scenarios": [
+      "fixed-day-one",
+      "wallet-day-one",
+      "six-firm-sandbox"
+    ],
+    "offline_zip_verified": true,
+    "font_mappings_preserved": 47449,
+    "deployment_files_verified": 62
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792373425809/"
+  },
+  "limits": [
+    "第三幕沿用独立六店模型的核算和条件，不把第二幕固定5枚开支等参数直接移植。",
+    "本局有限资金与企业应对规则是教学设定，不能由一次积压推出必然全面危机。",
+    "852项全套检查之后只修订第二幕规则说明的两句文案，最终构建补跑9项相关检查、三种尺寸本地与线上全线及真实旧版本续玩。",
+    "本次未重新人工实走后续八条分支的完整历史流程。"
+  ]
+}

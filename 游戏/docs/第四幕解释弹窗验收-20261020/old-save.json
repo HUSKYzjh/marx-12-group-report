@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-20",
+  "sourceSHA256": "5133976aac9d9a5f3e5bb56574d7842f0ad157fc77bcde98321abfa0b875563c",
+  "previousSHA256": "4652689fc3b99d5ff645a781f5c50f6eab88db77c630a21eb237c540cd9bb15a",
+  "actualOldBuildPlayed": true,
+  "actualOnePolicyRoundPreserved": true,
+  "oldActiveGameReplacedByReadingMenu": true,
+  "threeCardsWithoutGameControls": true,
+  "readingDoesNotChangeOldLedger": true,
+  "continuationDoesNotCompleteOldTrials": true,
+  "refresh": true,
+  "noStateInjection": true,
+  "errors": []
+}

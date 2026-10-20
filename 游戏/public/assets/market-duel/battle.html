@@ -1,32 +1,34 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>面包店对决 · 饥馑的盛宴</title><link rel="stylesheet" href="battle.css"><link rel="stylesheet" href="course.css"></head>
 <body><main>
-<header><a href="pressure.html">饥馑的盛宴</a><span id="chapter-title">第一场 · 客人每天都来</span><button id="restart" aria-label="重新开始三场对战">↻</button></header>
+<header><a href="pressure.html">饥馑的盛宴</a><span id="chapter-title">第一场 · 恒定的客流数</span><button id="restart" aria-label="重新开始第二幕上下篇">↻</button></header>
+<section id="course-parts" class="course-parts" aria-label="第二幕上下篇" hidden><div><span data-course-part="upper">上幕 · 需求固定</span><span aria-hidden="true">→</span><span data-course-part="lower">下幕 · 需求不确定</span></div><p id="part-context" aria-live="polite"></p></section>
 <div class="battle-frame" id="battle-frame">
 <section class="arena" aria-label="两家面包店的对战场景">
   <div class="day"><span id="day">第一天</span><span id="round-dots" aria-hidden="true"></span></div>
   <section class="shop-zone rival-zone" aria-labelledby="rival-shop-title">
   <svg class="shop-outline" viewBox="0 0 1000 230" preserveAspectRatio="none" aria-hidden="true"><path d="M10 14 Q420 4 988 13 L985 143 Q710 149 450 144 L438 217 Q190 224 9 205 Z"/></svg>
-  <article class="status rival-status"><div><h2 id="rival-shop-title">隔壁面包店</h2><span class="level" id="rival-level">普通炉</span></div><div class="cash-line"><span>资金</span><div class="meter"><i id="bar-1"></i></div><b id="cash-1"></b></div><p id="stats-1"></p></article>
+  <article class="status rival-status"><div><h2 id="rival-shop-title">隔壁面包店</h2><span class="shop-meta"><span class="level" id="rival-level">明天可做6个</span><span class="equipment-note" id="rival-equipment-note" hidden></span></span></div><div class="cash-line"><span>资金</span><div class="meter"><i id="bar-1"></i></div><b id="cash-1"></b></div><p id="stats-1"></p></article>
   <div class="fighter rival" id="fighter-1"><div class="bubble" id="speech-1"></div><div class="figures" id="figures-1"></div><div class="platform"></div><div class="crew" id="crew-1"></div><div class="float" id="float-1"></div></div>
   </section>
   <div id="customer-gate" aria-hidden="true"></div>
   <section class="shop-zone player-zone" aria-labelledby="player-shop-title">
   <svg class="shop-outline" viewBox="0 0 1000 230" preserveAspectRatio="none" aria-hidden="true"><path d="M11 78 Q294 87 551 78 L563 13 Q814 5 988 14 L990 211 Q548 224 10 213 Z"/></svg>
   <div class="fighter player" id="fighter-0"><div class="bubble" id="speech-0"></div><div class="figures" id="figures-0"></div><div class="platform"></div><div class="crew" id="crew-0"></div><div class="float" id="float-0"></div></div>
-  <article class="status player-status"><div><h2 id="player-shop-title">你的面包店</h2><span class="level">第 <span id="turn">1</span> 回合</span></div><div class="cash-line"><span>资金</span><div class="meter"><i id="bar-0"></i></div><b id="cash-0"></b></div><p id="stats-0"></p></article>
+  <article class="status player-status"><div><h2 id="player-shop-title">你的面包店</h2><span class="level">第 <span id="turn">1</span> 回合</span><span class="shop-meta"><span id="player-capacity">明天可做6个</span><span class="equipment-note" id="player-equipment-note" hidden></span></span></div><div class="cash-line"><span>资金</span><div class="meter"><i id="bar-0"></i></div><b id="cash-0"></b></div><p id="stats-0"></p></article>
   </section>
   <div class="action-banner" id="banner" aria-live="polite" hidden></div>
 <section class="street" id="street-panel" hidden><div class="street-label"><span>同一条街上的顾客</span><span id="street-summary">每人每天买一个面包</span></div><div id="customers"></div></section>
 </section>
 <section class="console" id="console">
+  <p id="steady-goal" hidden aria-live="polite"></p>
   <div class="narration"><div id="market-signal" class="market-signal"><small id="signal-label">全街需求</small><strong id="signal-value">12 个</strong><span id="signal-note">每天一样</span></div><div id="schedule" class="schedule"></div></div>
   <div class="command-area"><p id="choose-label">你的店，怎么应对？</p><div id="round-report" aria-live="polite" aria-atomic="true" hidden><span class="eyebrow" id="eyebrow"></span><h1 id="message"></h1><p id="subline"></p></div><div class="moves" id="moves"></div><div id="preview" hidden></div><button id="advance" class="primary" hidden>下一回合 →</button></div>
 </section>
-<section id="ending" hidden><span class="eyebrow" id="ending-kicker"></span><h2 id="ending-title"></h2><p id="ending-copy"></p><div id="comparison"></div><div class="ending-actions"><button id="retry">换一套打法 ↻</button><button id="next-scene" class="primary">进入下一场 →</button></div></section>
+<section id="ending" hidden><span class="eyebrow" id="ending-kicker"></span><h2 id="ending-title"></h2><p id="ending-copy"></p><div id="comparison"></div><p id="steady-maximum" hidden></p><div class="ending-actions"><button id="retry">换一套打法 ↻</button><button id="next-scene" class="primary">进入下一场 →</button></div></section>
 <svg id="money-route" aria-hidden="true"></svg>
 </div>
-<footer><button id="undo">↶ 重打上一回合</button><button id="opening-help">开店说明</button><button id="rules-open">这场对决的条件</button><button id="upgrade-course" hidden>使用新版经营策略</button><button id="old-record" hidden>旧版账目</button><span>美术素材：Nicky Case · 自制烤炉</span></footer>
+<footer><button id="undo">↶ 重打上一回合</button><button id="opening-help">开店说明</button><button id="rules-open">本局规则</button><button id="old-record" hidden>历史账本</button><span>美术素材：Nicky Case · 自制烤炉</span></footer>
 <style>#detail:has(.oven-receipt) #detail-title{padding-right:44px;font-size:22px}.oven-receipt table{width:100%;border-collapse:collapse;font-size:16px}.oven-receipt th,.oven-receipt td{padding:8px 3px;text-align:right}.oven-receipt td{white-space:nowrap}.oven-receipt th:first-child{text-align:left;font-weight:400}.oven-receipt details{font-size:14px}.oven-receipt summary{min-height:44px;padding:12px 0;cursor:pointer}#preview #oven-report{margin-left:8px;min-height:44px}</style>
 <dialog id="opening-guide" aria-labelledby="opening-title">
  <button class="close" id="opening-close" aria-label="关闭开店说明" hidden>×</button>
@@ -35,41 +37,24 @@
  <div class="opening-pages">
   <section data-opening-page="0" data-title="街上，多了一家面包店。">
    <div id="opening-shop-scene" class="opening-shop-scene" role="group" aria-label="新开的面包店：老板、三位厨师、旧烤炉和货架"></div>
-   <p>客人就这么多，生意得两家争。</p>
-   <p class="opening-goal">有了竞争对手，你还能一直扩张下去吗？</p>
+   <p>第二幕分上下篇。先在上幕算清本店的账，再到下幕面对变化。</p>
+   <p class="opening-goal">上幕每天12位顾客，先试少发工资、调整售价和产能。</p>
   </section>
-  <section data-opening-page="1" data-title="物品与用工" hidden>
-   <table class="opening-price-table">
-    <caption>以下为开局价格。</caption>
-    <thead><tr><th scope="col">物品／用工</th><th scope="col">价格</th></tr></thead>
-    <tbody>
-     <tr data-opening-rule="bread"><th scope="row"><span class="opening-price-item"><img data-opening-art="bread" alt=""><span>面包</span></span></th><td>3 <i class="coin" aria-label="金币"></i><small>每个 · 售价</small></td></tr>
-     <tr data-opening-rule="buy"><th scope="row"><span class="opening-price-item"><img data-opening-art="oven-old" alt=""><span>购置烤炉</span></span></th><td>10 <i class="coin" aria-label="金币"></i><small>每台 · 一次性</small></td></tr>
-     <tr data-opening-rule="hire"><th scope="row"><span class="opening-price-item"><span data-opening-worker></span><span>招募一名工人<small>无招聘费；明天上班</small></span></span></th><td>2 <i class="coin" aria-label="金币"></i><small>每人每天 · 工资</small></td></tr>
-    </tbody>
-   </table>
+  <section data-opening-page="1" data-title="看清费用和产能" hidden>
+   <p>每店开局3位厨师。先看售价、每人工资和产能。</p>
+   <table class="opening-price-table"><thead><tr><th scope="col">开局</th><th scope="col">数值</th></tr></thead><tbody>
+    <tr><th scope="row">面包售价</th><td>3 枚／个</td></tr><tr><th scope="row">每人工资</th><td>2 枚／天</td></tr><tr><th scope="row">普通炉产能</th><td>6 个／天</td></tr>
+   </tbody></table>
   </section>
-  <section data-opening-page="2" data-title="一次性措施" hidden>
-   <table class="opening-price-table">
-    <thead><tr><th scope="col">措施</th><th scope="col">一次性费用</th></tr></thead>
-    <tbody>
-     <tr data-opening-rule="upgrade"><th scope="row"><span class="opening-price-item"><img data-opening-art="oven-new" alt=""><span>整店升级新烤炉</span></span></th><td>8 × 旧炉数 <i class="coin" aria-label="金币"></i><small>一次性投资 · 停工1天</small></td></tr>
-     <tr data-opening-rule="fire"><th scope="row"><span class="opening-price-item"><span data-opening-worker></span><span>解聘一名工人</span></span></th><td>1 天工资<small>初始 2 <i class="coin" aria-label="金币"></i> · 一次性补偿</small></td></tr>
-    </tbody>
-   </table>
-   <p class="opening-note">普通炉：3 人做 6 个。快炉：2 人做 12 个。</p>
-   <p class="opening-note">升级全部旧炉，今天停炉安装，工资照发；已有面包仍可卖，明天可复工。</p>
-   <p class="opening-note">解聘当天照发工资，另付一天工资补偿。</p>
+  <section data-opening-page="2" data-title="换炉：当天增产" hidden>
+   <p>换快炉：一次付8枚，1台旧炉变快炉，产能当天增加6个。</p><p>添炉＋招工：一次付10枚，添1台旧炉、招1人，产能当天增加6个，每天多付1人工资。</p>
+   <p>都在当天生效、不停工。换快炉不改人数；扩产把炉和人一起安排好。</p>
+   <p class="opening-note">能多做，不等于一定能多卖。</p>
   </section>
-  <section data-opening-page="3" data-title="日常调整" hidden>
-   <table class="opening-price-table">
-    <thead><tr><th scope="col">措施</th><th scope="col">调整幅度</th></tr></thead>
-    <tbody>
-     <tr data-opening-rule="price"><th scope="row"><span class="opening-price-item"><img data-opening-art="bread" alt=""><span>调高／调低售价</span></span></th><td>±1 <i class="coin" aria-label="金币"></i><small>每次 · 当天生效</small></td></tr>
-     <tr data-opening-rule="wage"><th scope="row"><span class="opening-price-item"><span data-opening-worker></span><span>提高／降低工资</span></span></th><td>±1 <i class="coin" aria-label="金币"></i><small>每人每天 · 明天生效</small></td></tr>
-    </tbody>
-   </table>
-   <p class="opening-note">这是改价、改工资的幅度，不是另外收一笔手续费。</p>
+  <section data-opening-page="3" data-title="改价、改工资：当天生效" hidden>
+   <p>改售价：每次加减1枚，每卖1个就多收或少收1枚。</p>
+   <p>改工资：每人加减1枚。当前几位厨师，工资单就加减几枚；产量不变。</p>
+   <p class="opening-note">上幕需求固定；下幕再看工资如何影响购买力。</p>
   </section>
   <section data-opening-page="4" data-title="每回合，只出一招。" hidden>
    <p class="opening-turn-rule">回合制对决：1 回合 = 1 天。不用抢时间。</p>
@@ -79,15 +64,15 @@
     <li><b>查看结果</b><span>看看赚亏、剩货，也可打开账单。</span></li>
     <li><b>进入下一回合</b><span>由你点击继续，再作决定。</span></li>
    </ol>
-   <div class="opening-timing"><div><b>本回合</b><span>改价；付设备款或补偿，升级时停工。</span></div><div><b>下回合</b><span>新炉到位，人员和工资调整生效。</span></div></div>
-   <details class="opening-extra"><summary>开局与每日开销</summary><p>两家各有 36 <i class="coin" aria-label="金币"></i>，各有 1 台普通炉、3 位厨师，每天做 6 个。每天先付 11 <i class="coin" aria-label="金币"></i>：工资 6、原料 3、老板生活费 2。</p><p>前三天每天 12 位顾客，先买便宜的；同价，两家轮流接客。</p></details>
+   <div class="opening-timing"><div><b>当天生效</b><span>改价、改工资、换炉，都在选完后生效。</span></div><div><b>每天的账</b><span>卖货收入减当天工资、固定5枚和当次设备费。</span></div></div>
+   <details class="opening-extra"><summary>开局与每日开销</summary><p>两家各有 36 <i class="coin" aria-label="金币"></i>，各有 1 台普通炉、3 位厨师，每天做 6 个。开局每天先付 11 <i class="coin" aria-label="金币"></i>：工资6、原料3、固定开支2。</p><p>前三天每天 12 位顾客，先买便宜的；同价，两家轮流接客。</p></details>
    <details class="opening-extra"><summary>试算一天的收支</summary>
     <div class="opening-example" aria-label="试算一天的收支">
      <div class="opening-example-controls"><span>如果卖出</span><button id="opening-sold-less" aria-label="试算少卖一个面包">−</button><b id="opening-sold">6</b><button id="opening-sold-more" aria-label="试算多卖一个面包">＋</button><span>个</span></div>
      <div id="opening-example-result" role="status" aria-live="polite" aria-atomic="true"></div>
     </div>
    </details>
-   <details class="opening-extra"><summary>没卖完呢？</summary><p>每 6 个收 1 <i class="coin" aria-label="金币"></i> 保管费，不足 6 个也收。第三天坏掉。</p></details>
+   <details class="opening-extra"><summary>没卖完呢？</summary><p>免费留到以后继续卖，不收保管费，也不坏损。</p></details>
   </section>
  </div>
  <div class="opening-bottom"><button id="opening-back" hidden>← 上一页</button><div class="opening-forward"><button id="opening-next" class="primary" autofocus>看看价目 →</button><button id="opening-start" class="primary" hidden>开始第一回合 →</button></div></div>

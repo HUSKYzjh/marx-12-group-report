@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-18",
+  "entry": "standalone",
+  "sourceSHA256": "0e3bbf882505ebead9f1140522ec4b1e26c3ebb13243eefbb871173ba2d6e7d3",
+  "indexSHA256": "d1179e40e20c093b9c92041db5a9eedce05676c98cd3b03096d70867dd7a0359",
+  "results": [
+    {
+      "width": 320,
+      "splitActs": true,
+      "fixedUpper": {
+        "demand": 12,
+        "wages": [
+          6,
+          3,
+          3
+        ],
+        "sold": [
+          6,
+          6,
+          6
+        ],
+        "cash": 63,
+        "maximumGain": 51
+      },
+      "lowerTraffic": [
+        12,
+        20,
+        20,
+        6,
+        12
+      ],
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "directChoices": 3,
+      "optionalToolsReadOnly": true,
+      "payrollToday": 6,
+      "payrollTomorrow": 3,
+      "actualReview": {
+        "actual": {
+          "wages": 30,
+          "sold": 54,
+          "gain": -14
+        },
+        "ordinary": {
+          "wages": 30,
+          "sold": 12,
+          "gain": -33
+        },
+        "difference": 19
+      },
+      "refresh": true,
+      "retry": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 390,
+      "splitActs": true,
+      "fixedUpper": {
+        "demand": 12,
+        "wages": [
+          6,
+          3,
+          3
+        ],
+        "sold": [
+          6,
+          6,
+          6
+        ],
+        "cash": 63,
+        "maximumGain": 51
+      },
+      "lowerTraffic": [
+        12,
+        20,
+        20,
+        6,
+        12
+      ],
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "directChoices": 3,
+      "optionalToolsReadOnly": true,
+      "payrollToday": 6,
+      "payrollTomorrow": 3,
+      "actualReview": {
+        "actual": {
+          "wages": 30,
+          "sold": 54,
+          "gain": -14
+        },
+        "ordinary": {
+          "wages": 30,
+          "sold": 12,
+          "gain": -33
+        },
+        "difference": 19
+      },
+      "refresh": true,
+      "retry": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    },
+    {
+      "width": 1280,
+      "splitActs": true,
+      "fixedUpper": {
+        "demand": 12,
+        "wages": [
+          6,
+          3,
+          3
+        ],
+        "sold": [
+          6,
+          6,
+          6
+        ],
+        "cash": 63,
+        "maximumGain": 51
+      },
+      "lowerTraffic": [
+        12,
+        20,
+        20,
+        6,
+        12
+      ],
+      "sourcePageRemoved": true,
+      "freshOpeningCash": 36,
+      "noAutomaticTrade": true,
+      "directChoices": 3,
+      "optionalToolsReadOnly": true,
+      "payrollToday": 6,
+      "payrollTomorrow": 3,
+      "actualReview": {
+        "actual": {
+          "wages": 30,
+          "sold": 54,
+          "gain": -14
+        },
+        "ordinary": {
+          "wages": 30,
+          "sold": 12,
+          "gain": -33
+        },
+        "difference": 19
+      },
+      "refresh": true,
+      "retry": true,
+      "noOverflow": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

@@ -1,3 +1,4 @@
+import {chooseBattleMove} from './prologue-battle-browser-gestures.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import http from 'node:http';
@@ -31,7 +32,7 @@ try{
   await f.getByRole('button',{name:'再买些烤炉 →',exact:true}).click();await f.locator('body[data-scene=bakery-expansion]').waitFor();await f.waitForFunction(()=>!document.body.dataset.transition);await f.locator('#expansion-skip').click();await f.locator('#expansion-next').click();await f.locator('body[data-scene=street]').waitFor();
   const battle=await(await f.locator('#prologue-battle').elementHandle()).contentFrame();await battle.locator('#opening-guide[open]').waitFor();
   for(let i=0;i<4;i++)await battle.locator('#opening-next').click();await battle.locator('#opening-start').click();
-  await battle.locator('[data-move=upgrade]').click();await battle.locator('#receipt').waitFor();assert.equal(await battle.locator('#oven-report').count(),0,'paying is not delivery');await battle.locator('#advance').click();await battle.locator('[data-move=hold]').click();await battle.locator('#oven-report').waitFor();
+  await chooseBattleMove(battle,'upgrade');await battle.locator('#receipt').waitFor();assert.equal(await battle.locator('#oven-report').count(),0,'paying is not delivery');await battle.locator('#advance').click();await battle.locator('[data-move=hold]').click();await battle.locator('#oven-report').waitFor();
   const account=await saved(p);await battle.locator('#oven-report').press('Enter');const report=battle.getByTestId('oven-receipt');await report.waitFor();assert.match(await report.textContent(),/6 个.*12 个/s);assert.match(await report.textContent(),/相邻两天/);assert.equal(await saved(p),account);assert(await battle.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
   assert(await battle.evaluate(()=>{const h=document.getElementById('detail-title'),b=document.getElementById('detail-close').getBoundingClientRect(),r=document.createRange();r.selectNodeContents(h);return [...r.getClientRects()].every(a=>a.right<=b.left||a.left>=b.right||a.bottom<=b.top||a.top>=b.bottom);}), 'title text must avoid close button');
   await p.screenshot({path:path.join(out,'oven-report-'+width+'.png'),fullPage:true});await battle.locator('#detail-close').click();

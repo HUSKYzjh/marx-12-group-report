@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-16",
+  "decoder": "zxing-cpp 3.1.1",
+  "results": [
+    {
+      "file": "试玩二维码.png",
+      "width": 574,
+      "height": 574,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码.png",
+      "width": 287,
+      "height": 287,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-手绘配色.png",
+      "width": 574,
+      "height": 574,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩二维码-手绘配色.png",
+      "width": 287,
+      "height": 287,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩分享卡.png",
+      "width": 1080,
+      "height": 1540,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩分享卡.png",
+      "width": 540,
+      "height": 770,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    },
+    {
+      "file": "试玩分享卡.png",
+      "width": 324,
+      "height": 462,
+      "decoded_url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+      "passed": true
+    }
+  ],
+  "note": "软件解码校验通过，尚未用实体手机或微信扫一扫实测。"
+}

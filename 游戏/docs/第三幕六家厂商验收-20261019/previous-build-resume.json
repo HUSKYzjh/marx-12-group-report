@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-19",
+  "oldSHA256": "24303b778d8477b48ac6e459c7faf3baf960f65370b2d9aacc814666156758ba",
+  "sourceSHA256": "a167bae322c7e408eeb1fb783c6926f63d7cf4af740718cb459582bc1d1cc962",
+  "results": [
+    {
+      "scenario": "fixed-day-one",
+      "actualPreviousBuildPlayed": true,
+      "transactionsPreserved": true,
+      "refresh": true,
+      "noStateInjection": true
+    },
+    {
+      "scenario": "wallet-day-one",
+      "actualPreviousBuildPlayed": true,
+      "transactionsPreserved": true,
+      "refresh": true,
+      "noStateInjection": true
+    },
+    {
+      "scenario": "six-firm-sandbox",
+      "actualPreviousBuildPlayed": true,
+      "transactionsPreserved": true,
+      "refresh": true,
+      "noStateInjection": true
+    }
+  ],
+  "errors": []
+}

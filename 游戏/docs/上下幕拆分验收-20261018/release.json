@@ -1,0 +1,113 @@
+{
+  "date": "2026-10-18",
+  "request": "将第二幕拆为需求固定与需求不确定上下幕，并把二维码上传GitHub",
+  "changes": [
+    "上幕三天固定外部需求12个，允许次日调整工资，先体验少发工资、多卖产品的经营目标",
+    "下幕分两步：五天客流波动，再进入九天收入与购买力反馈；每步36枚独立开账",
+    "上幕与下幕购买力阶段默认少发工资／降价抢客／照常营业，其余措施折叠；五页开场保留",
+    "工资开放权限与购买力模型独立，固定需求阶段仍按原外部账户和原料成本结算",
+    "上幕结尾及下幕总回顾显示固定需求三天最高净增51枚",
+    "旧版存档在明确选择前保持原样，选择后完整旧账归档、新上幕从头开始",
+    "新增当前艺术二维码PNG与五尺寸扫码报告，README可直接下载"
+  ],
+  "source_sha256": "0e3bbf882505ebead9f1140522ec4b1e26c3ebb13243eefbb871173ba2d6e7d3",
+  "index_sha256": "d1179e40e20c093b9c92041db5a9eedce05676c98cd3b03096d70867dd7a0359",
+  "validation": {
+    "model_tests_passed": 41,
+    "model_tests_failed": 0,
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "actual_old_build_played_before_migration": true,
+    "old_migration_source_sha256": "d8d2053cf4b4f78832113fd8229391e86f864747b41a658fe0d715cdb11e4e06",
+    "no_browser_state_injection": true,
+    "actual_review_compared": true,
+    "five_page_opening": true,
+    "all_menus_reachable_and_touch_targets_checked": true,
+    "refresh_and_retry": true,
+    "upper_maximum_51_enumerated": true,
+    "offline_zip_checked": true,
+    "font_mappings_preserved": 47449,
+    "qr_software_decode_widths": [
+      1440,
+      720,
+      540,
+      360,
+      324
+    ]
+  },
+  "sample": {
+    "width": 320,
+    "splitActs": true,
+    "fixedUpper": {
+      "demand": 12,
+      "wages": [
+        6,
+        3,
+        3
+      ],
+      "sold": [
+        6,
+        6,
+        6
+      ],
+      "cash": 63,
+      "maximumGain": 51
+    },
+    "lowerTraffic": [
+      12,
+      20,
+      20,
+      6,
+      12
+    ],
+    "sourcePageRemoved": true,
+    "freshOpeningCash": 36,
+    "noAutomaticTrade": true,
+    "directChoices": 3,
+    "optionalToolsReadOnly": true,
+    "payrollToday": 6,
+    "payrollTomorrow": 3,
+    "actualReview": {
+      "actual": {
+        "wages": 30,
+        "sold": 54,
+        "gain": -14
+      },
+      "ordinary": {
+        "wages": 30,
+        "sold": 12,
+        "gain": -33
+      },
+      "difference": 19
+    },
+    "refresh": true,
+    "retry": true,
+    "noOverflow": true,
+    "noStateInjection": true
+  },
+  "qr": {
+    "file": "../../分享/试玩二维码-上下幕版.png",
+    "sha256": "c1b3787051abe2f924d7a7d1792df03149d0021e8c430eac0ddd11de56d32de7",
+    "report": "../../分享/上下幕二维码扫码校验.json"
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792323077152/"
+  },
+  "prune": false,
+  "limits": [
+    "上幕固定需求、外部购买资金是教学条件，不由此推断现实降薪或涨价不会减少销量。",
+    "下幕的客流变化和工资影响购买力是不同机制，且两步的成本、对手、钱包等条件也不同；不将跨阶段差额单独归因于工资。",
+    "对照的是完整方案，不把多项措施的差额单独归因给降工资。",
+    "本次未重跑后续八条技术分支的完整历史验收，历史五人店铺状态框边界问题仍见菜单验收记录。",
+    "二维码仅软件解码验证，未进行实体手机或微信扫码实测。"
+  ]
+}

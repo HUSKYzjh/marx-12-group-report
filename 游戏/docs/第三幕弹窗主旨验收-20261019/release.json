@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-19",
+  "request": "第三幕的弹窗应凸显资本主义基本矛盾与生产过剩",
+  "changes": [
+    "收摊回顾作为一个弹窗，主旨、实际账目与后续选择在同一处，不叠加版本提示",
+    "强调一家省下的工资也是别家顾客购买力，区分社会化生产与生产资料资本主义私人占有",
+    "先显示本轮产销、期末库存（含旧货）和基本面包付不起人数，再解释相对有支付能力需求的过剩",
+    "结构细解、完整账目、降薪条件对照及实验边界可展开，保留实际卖完的不同结果",
+    "键盘退出、窄屏内部滚动、固定操作区、刷新与尺寸变化正常；模型、真实历史和各幕账本不变"
+  ],
+  "source_sha256": "71e046dabfe1832dbbd780cb23c4a3112e19ba5fa6f85fff5da61c7144a1f22a",
+  "index_sha256": "f0817d0efdfb060a4919d90d692171cbeec372485a70a08038aab35bedac50aa",
+  "validation": {
+    "targeted_tests": 13,
+    "local_widths": [
+      320,
+      390,
+      1280
+    ],
+    "online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "online_short_viewport": [
+      320,
+      660
+    ],
+    "keyboard_return": true,
+    "actual_world_preserved": true,
+    "assets_and_fonts_checked": true,
+    "offline_zip_verified": true
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792379005375/"
+  },
+  "limits": [
+    "条件模型不是现实统计，也不由一次剩货推出全面危机。",
+    "本次未重新执行全套856项检查或后续八条独立分支；历史验收仅证明各自旧基线。"
+  ]
+}

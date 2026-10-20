@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-19",
+  "oldSHA256": "538766ef8a7f67822a5bf0de8b98bda43d44874dae4994775430cf0770509fdc",
+  "sourceSHA256": "b17cf4fc0bf62597176c8acf52fb036121004554a2927d3211818745bfbfe466",
+  "actualPreviousBuildPlayed": true,
+  "oldPayrollSixPreserved": true,
+  "oldPendingWagePreserved": true,
+  "oldLedgerArchivedExactly": true,
+  "newSimpleCourseStartsAtDayZero": true,
+  "newOpeningCash": 36,
+  "noUpdatePrompt": true,
+  "normalGuideRetained": true,
+  "refresh": true,
+  "oldRecordOpened": true,
+  "noStateInjection": true,
+  "errors": []
+}

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-19",
+  "request": "无需点开分类再选，直接显示具体操作",
+  "changes": [
+    "所有可用操作直接显示，静态标题按售价、烤炉、人手与工资标注",
+    "没有折叠按钮、分类箭头或其他调整外层，点击具体动作即可经营",
+    "动作不重复，禁用动作与原因仍显示，照常营业单列"
+  ],
+  "source_sha256": "538766ef8a7f67822a5bf0de8b98bda43d44874dae4994775430cf0770509fdc",
+  "index_sha256": "d91d12abab588aac6f1b3e6a66e0f869131465e9002f76b6b85e5f981c4b37be",
+  "validation": {
+    "local_and_online_widths": [
+      320,
+      390,
+      1280
+    ],
+    "all_three_phases_checked": true,
+    "all_actions_visible_exactly_once": true,
+    "no_details_or_summary_controls_in_moves": true,
+    "touch_targets_minimum_44px": true,
+    "real_decisions_compared_to_model": true,
+    "three_day_maximum_cash_87": true,
+    "refresh_preserves_decision_and_receipt": true,
+    "offline_zip_verified": true,
+    "deployment_verified": true
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 62,
+    "successCount": 62,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792341517150/"
+  },
+  "limits": [
+    "仅修改菜单呈现，经济结算和旧进度兼容逻辑保持。",
+    "本次验证实际操作与结算，不重复运行未修改的模型单元测试或八条后续分支。"
+  ]
+}

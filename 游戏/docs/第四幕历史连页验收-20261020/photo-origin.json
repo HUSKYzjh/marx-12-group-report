@@ -1,0 +1,78 @@
+{
+  "verified_on": "2026-10-20",
+  "images": [
+    {
+      "id": "consumption-relief",
+      "catalog": "https://www.loc.gov/item/95514429/",
+      "official_download": "https://cdn.loc.gov/service/pnp/cph/3c10000/3c15000/3c15000/3c15090v.jpg",
+      "sha256": "77965a463846a6099f159fb8915951f964fcaa0cbdd493410627a3cac68906a6",
+      "bytes": 109760,
+      "unchanged": true
+    },
+    {
+      "id": "consumption-market",
+      "catalog": "https://www.loc.gov/item/2017741319/",
+      "official_download": "https://cdn.loc.gov/service/pnp/fsa/8a27000/8a27500/8a27532v.jpg",
+      "sha256": "0e91d104d30f8a041e9a266189a8833167430f6500a39d87ef8e08b87d1f5584",
+      "bytes": 197697,
+      "unchanged": true
+    },
+    {
+      "id": "consumption-credit",
+      "catalog": "https://www.loc.gov/item/2017739420/",
+      "official_download": "https://cdn.loc.gov/service/pnp/fsa/8a25000/8a25600/8a25632v.jpg",
+      "sha256": "51c0b99640f1130c16b6e776e7e94e42762185f483e76b1e625818c566c8a3a9",
+      "bytes": 211451,
+      "unchanged": true
+    },
+    {
+      "id": "investment-power",
+      "catalog": "https://www.loc.gov/item/2017832651/",
+      "official_download": "https://cdn.loc.gov/service/pnp/fsa/8d05000/8d05500/8d05555v.jpg",
+      "sha256": "31a32fcc6e6a37ac523af7f5016cf86a399e07d260db8d117279864a8f58853b",
+      "bytes": 459454,
+      "unchanged": true
+    },
+    {
+      "id": "investment-ford",
+      "catalog": "https://www.loc.gov/item/2011661021/",
+      "official_download": "https://cdn.loc.gov/service/pnp/cph/3a20000/3a20000/3a20500/3a20510r.jpg",
+      "sha256": "1eeaac9760e26ae558742f52507d825cf227a2353797d82de44230c30541a1ad",
+      "bytes": 44557,
+      "unchanged": true
+    },
+    {
+      "id": "investment-housing",
+      "catalog": "https://www.loc.gov/item/2017871885/",
+      "official_download": "https://cdn.loc.gov/service/pnp/fsa/8e00000/8e00600/8e00687v.jpg",
+      "sha256": "5f0f131163e054450363827c5c06e4d80dc8df8f82c3ad8e2eeaddc3a67ad6b3",
+      "bytes": 280927,
+      "unchanged": true
+    },
+    {
+      "id": "exports-grain",
+      "catalog": "https://www.loc.gov/item/2016803158/",
+      "official_download": "https://cdn.loc.gov/service/pnp/det/4a10000/4a10000/4a10800/4a10818v.jpg",
+      "sha256": "1adfe6830f8532f182a005cb8ead2d68eac23d3b2e6559206257554bd6178670",
+      "bytes": 123448,
+      "unchanged": true
+    },
+    {
+      "id": "exports-loading",
+      "catalog": "https://www.loc.gov/item/2017850498/",
+      "official_download": "https://cdn.loc.gov/service/pnp/fsa/8d16000/8d16300/8d16318v.jpg",
+      "sha256": "9acf206e56d0f15e74505f31de1a17f8363dad231a42311fb0a41e0693dc75b2",
+      "bytes": 304879,
+      "unchanged": true
+    },
+    {
+      "id": "exports-port",
+      "catalog": "https://www.loc.gov/item/2016815340/",
+      "official_download": "https://cdn.loc.gov/service/pnp/det/4a20000/4a23000/4a23600/4a23659v.jpg",
+      "sha256": "b02d9b09e4389394a8c87394ddbafdc12ebfb39f4b1b8891e2c75ebe7a1a8a1c",
+      "bytes": 161927,
+      "unchanged": true
+    }
+  ],
+  "all_nine_match_official_LOC_downloads": true
+}

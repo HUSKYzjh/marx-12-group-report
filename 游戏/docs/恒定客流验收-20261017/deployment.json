@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-17",
+  "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+  "status": "deployed_and_online_playtest_passed",
+  "uploaded_files": 62,
+  "remote_consistency_verified": true,
+  "backup_prefix": ".cloudbase-backup/1792244492765/",
+  "prune": false,
+  "index_sha256": "dbbea484e65758e76c138c5a58d93f6afa35c836e275152958dc2b8fd30ea7a5",
+  "javascript": "/runtime-assets/226a7ce18bbd25fecf97.js",
+  "standalone_sha256": "057caa6cd15055743e2b6dab6b7b156c2aca379169eeac005adf39c60e07e140",
+  "standalone_bytes": 20566456,
+  "offline_zip_integrity": true,
+  "offline_zip_html_matches": true,
+  "font_mappings": 47449,
+  "targeted_unit_tests": 14,
+  "exhaustive_legal_paths": 305,
+  "challenge_cases": {
+    "local": 3,
+    "online": 3
+  },
+  "complete_battle_resume_local": 2,
+  "receipt_close_button_viewport_check": true,
+  "scope": "Real UI: baseline and maximum three-day returns, contextual hints, five-page opening, best-record preservation across refresh, lower replay and next stage. Local full-course interruption checks. Edge simulated viewports."
+}

@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-17",
+  "scope": "Same-machine local HTTP comparison; no mobile network or hardware speed claim.",
+  "samples": [
+    {
+      "width": 390,
+      "edition": "baseline",
+      "readyMs": 6522.5487,
+      "startToActMs": 3759.8428999999996,
+      "returnHomeMs": 2151.0699999999997,
+      "warmReadyMs": 6081.7672999999995,
+      "coldBytes": 20548061,
+      "warmBytes": 20548061,
+      "initialLayouts": [
+        113.10000014305115,
+        81.10000014305115
+      ],
+      "layoutsAfterReturn": [
+        113.10000014305115,
+        81.10000014305115,
+        34.90000009536743
+      ]
+    },
+    {
+      "width": 390,
+      "edition": "hosted",
+      "readyMs": 2018.7877999999982,
+      "startToActMs": 1257.4861999999994,
+      "returnHomeMs": 1189.3765999999996,
+      "warmReadyMs": 1550.9906999999985,
+      "coldBytes": 4792060,
+      "warmBytes": 362,
+      "initialLayouts": [
+        40.90000009536743
+      ],
+      "layoutsAfterReturn": [
+        40.90000009536743
+      ]
+    },
+    {
+      "width": 1280,
+      "edition": "baseline",
+      "readyMs": 6570.094000000005,
+      "startToActMs": 5821.002199999995,
+      "returnHomeMs": 2337.202299999997,
+      "warmReadyMs": 5420.9172000000035,
+      "coldBytes": 20548061,
+      "warmBytes": 20548061,
+      "initialLayouts": [
+        596.5999999046326,
+        532.5
+      ],
+      "layoutsAfterReturn": [
+        596.5999999046326,
+        532.5,
+        427.5
+      ]
+    },
+    {
+      "width": 1280,
+      "edition": "hosted",
+      "readyMs": 3563.046699999999,
+      "startToActMs": 2712.5518999999986,
+      "returnHomeMs": 1809.9341000000059,
+      "warmReadyMs": 2763.041100000002,
+      "coldBytes": 4792060,
+      "warmBytes": 362,
+      "initialLayouts": [
+        191.89999985694885
+      ],
+      "layoutsAfterReturn": [
+        191.89999985694885
+      ]
+    }
+  ],
+  "errors": [],
+  "baseline_standalone_sha256": "82ca4b90a7ec8040853672e85e3aa3c0cda85b856da076783c9a36555b55e9f8",
+  "hosted_index_sha256": "08b4143e7651b9af8a2a11bf1d2bd042f804402bf08f58e014ed80b73b7f0a25",
+  "hosted_javascript": "/runtime-assets/05fd7598d7443cdec628.js"
+}
