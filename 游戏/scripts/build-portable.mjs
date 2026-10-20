@@ -19,11 +19,12 @@ let css=(await transform(compiled.css,{loader:'css',minify:true})).code;
 const fontCoverage=await checkFontCoverage(js+'\n'+css);
 console.log(`Handwriting coverage checked: ${fontCoverage.codepoints} characters.`);
 // Embed explicitly referenced local artwork and the complete licensed handwriting font.
-const assetPattern=/\/(?:(?:assets\/(?:trust|trust-source|workshop-v6|wbwwb-source)|evidence)\/[A-Za-z0-9_.-]+\.png|assets\/(?:bakery|street)\/[A-Za-z0-9_.-]+\.svg|assets\/fonts\/[A-Za-z0-9_.-]+\.woff2)/g;
+const assetPattern=/\/(?:(?:assets\/(?:trust|trust-source|workshop-v6|wbwwb-source)|evidence)\/[A-Za-z0-9_.-]+\.png|assets\/(?:bakery|street)\/[A-Za-z0-9_.-]+\.svg|assets\/history\/[A-Za-z0-9_.-]+\.jpg|assets\/fonts\/[A-Za-z0-9_.-]+\.woff2)/g;
 const assetPaths=new Set([...js.matchAll(assetPattern),...css.matchAll(assetPattern)].map(m=>m[0]));
 let sharedFont=null;
-for(const assetPath of assetPaths){const mime=assetPath.endsWith('.woff2')?'font/woff2':assetPath.endsWith('.svg')?'image/svg+xml':'image/png';const data=`data:${mime};base64,`+(await fs.readFile(path.join(root,'public',assetPath))).toString('base64');if(assetPath.endsWith('/workshop-hand.woff2')){sharedFont=data;js=js.replaceAll(assetPath,'__WORKSHOP_FONT_URL__');}else js=js.replaceAll(assetPath,data);css=css.replaceAll(assetPath,data);}
+for(const assetPath of assetPaths){const mime=assetPath.endsWith('.woff2')?'font/woff2':assetPath.endsWith('.svg')?'image/svg+xml':assetPath.endsWith('.jpg')?'image/jpeg':'image/png';const data=`data:${mime};base64,`+(await fs.readFile(path.join(root,'public',assetPath))).toString('base64');if(assetPath.endsWith('/workshop-hand.woff2')){sharedFont=data;js=js.replaceAll(assetPath,'__WORKSHOP_FONT_URL__');}else js=js.replaceAll(assetPath,data);css=css.replaceAll(assetPath,data);}
 if(!sharedFont)throw new Error('Shared handwriting font is missing');
+if(/\/assets\/history\/[A-Za-z0-9_.-]+\.jpg/.test(js+css))throw new Error('Unembedded historical photograph');
 js=sharedFontBootstrap(sharedFont)+js;
 if(/@import\s/.test(css))throw new Error('Unresolved CSS import');
 const document=`<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="饥馑的盛宴：从面包店出发，观察人、生产与分配。序章：厨房内外。故事按章与幕展开。教学模型不替代现实证据。"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; frame-src 'self'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; font-src data: blob:; connect-src 'none'; base-uri 'none'; form-action 'none'"><title>饥馑的盛宴｜序章：厨房内外</title><style>${css.replaceAll('</style','<\\/style')}</style></head><body><div id="root"></div><noscript>请在浏览器启用JavaScript以进行实验。本作品不上传你的选择。</noscript><script>${js.replaceAll('</script','<\\/script')}</script></body></html>`;

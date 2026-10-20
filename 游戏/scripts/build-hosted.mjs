@@ -39,9 +39,9 @@ document=document.replace(/@font-face\s*\{[^{}]*__WORKSHOP_FONT_URL__[^{}]*\}/g,
   }).join('');
 });
 assert.equal(faces,2,'Both the main stage and battle stage must use the complete partitioned font');
-const matches=[...document.matchAll(/data:(image\/(?:png|svg\+xml));base64,([A-Za-z0-9+/=]+)/g)];
+const matches=[...document.matchAll(/data:(image\/(?:png|jpeg|svg\+xml));base64,([A-Za-z0-9+/=]+)/g)];
 const imageURLs=new Map();
-for(const [uri,mime,encoded] of matches)if(!imageURLs.has(uri))imageURLs.set(uri,await asset(Buffer.from(encoded,'base64'),mime==='image/png'?'png':'svg'));
+for(const [uri,mime,encoded] of matches)if(!imageURLs.has(uri))imageURLs.set(uri,await asset(Buffer.from(encoded,'base64'),mime==='image/png'?'png':mime==='image/jpeg'?'jpg':'svg'));
 for(const [uri,url] of imageURLs)document=document.replaceAll(uri,url);
 // Every runtime resource stays on the site's origin; no analytics or third-party fetches.
 for(const [old,replacement] of [["script-src 'unsafe-inline'","script-src 'self' 'unsafe-inline'"],["style-src 'unsafe-inline'","style-src 'self' 'unsafe-inline'"],["img-src data:","img-src 'self' data:"],["font-src data: blob:","font-src 'self' data: blob:"]]){

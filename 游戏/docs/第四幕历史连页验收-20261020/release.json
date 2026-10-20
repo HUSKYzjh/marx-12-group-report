@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-20",
+  "request": "太复杂了，可以改成多个弹窗次序出现，带有真实历史照片",
+  "changes": [
+    "消费、投资、出口各三页短弹窗，同一时间仅显示一页",
+    "每页一张真实历史照片、一个标题、一小段说明，附原始年代与LOC档案链接",
+    "可上一步、下一步，最后返回卡片菜单；任意页可关闭或Esc退出",
+    "按当前可见窗口缩放照片，完整展示原图，保留原画风的边框与按钮",
+    "九张JPEG保留官方原始字节，包含作者、原题、日期、权利说明、下载URL与SHA-256",
+    "离线内嵌照片，线上同源加载；离线ZIP同步当前HTML、CREDITS及照片来源清单",
+    "无政策游戏、计分或必读门槛，不改变旧账与旧试验完成数；尾声及后续章节衔接保留"
+  ],
+  "source_sha256": "a4f61c36cf94f2cb5e97839bbe46de78275aa6c60de52fbb37e6b0cba87a03ae",
+  "index_sha256": "13523d23a15d5e2bf08a7778d2de84952510237c57d0e28c034b6e8fc997b7f5",
+  "validation": {
+    "full_tests": 861,
+    "failed": 0,
+    "local_and_online_viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        1280,
+        900
+      ]
+    ],
+    "nine_photos_and_pages_per_viewport": true,
+    "photo_bytes_independently_match_official_LOC_downloads": true,
+    "photos_and_text_fit_together": true,
+    "navigation_buttons_at_least_44px_high": true,
+    "all_three_close_methods_and_return": true,
+    "reading_preserves_entire_saved_state": true,
+    "actual_legacy_policy_round_preserved": true,
+    "continuation_and_refresh": true,
+    "epilogue_research_and_return": true,
+    "offline_zip_html_credits_and_provenance_verified": true,
+    "font_mappings": 47449,
+    "asset_count": 65,
+    "asset_verifier_run_on": "2026-10-20",
+    "visual_review": "All nine 320px pages and the desktop investment page inspected."
+  },
+  "deployment": {
+    "message": "上传完成",
+    "url": "https://zjh-d0ginayd0c9cbf350-1345006689.tcloudbaseapp.com/",
+    "totalFiles": 71,
+    "successCount": 71,
+    "failedCount": 0,
+    "verified": true,
+    "backupPrefix": ".cloudbase-backup/1792459537117/"
+  },
+  "limits": [
+    "照片用于说明历史场景，不能单凭画面证明政策成败或具体外贸目的地。",
+    "本轮未人工重走后续八条独立分支；全套自动检查包含其独立模型。",
+    "assets-and-fonts.json的date字段沿用原校验器固定日期2026-10-17；本轮实际执行日期为2026-10-20。"
+  ]
+}
