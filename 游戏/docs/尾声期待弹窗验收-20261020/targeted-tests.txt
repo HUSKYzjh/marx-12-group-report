@@ -1,0 +1,17 @@
+✔ chapter menu opens any chapter from a fresh game, without completing prior experiments (56.1851ms)
+✔ research browsing supports the alternate experiments and refresh, preserving chapter results (14.072ms)
+✔ chapter browsing does not unlock unfinished story beats or weaken old save validation (21.6692ms)
+✔ opening chapters leaves the existing street accounts and wage decisions intact (154.5857ms)
+✔ explanation continuation reaches the epilogue and research without fabricating trials or accounts (22.1845ms)
+✔ old saved policy games retain their actual records when continuing through explanations (9.9273ms)
+✔ reading progress validates its type and never invents it while restoring old saves (2.6272ms)
+✔ every imported classic stage helper is installed, rather than only imported as text (5.9485ms)
+✔ the emitted street briefing script exposes the function used on first street entry (18.0542ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1225.7337

@@ -83,7 +83,7 @@
 对应代码：lib/relief-reading.js、lib/relief-reading-data.json；照片与元数据：public/assets/history/；lib/relief-ui.js 的 renderReliefExperiment；components/trust-story.tsx 的动作转发；lib/prologue-state.ts 的 FINISH_RELIEF_READING 和存档恢复。
 
 尾声与后续章节
-尾声的诗句和“这就是结束了，吗？”是叙事，不是经济模型推出的必然终结。可以逐句看或直接看完，再进入“如果换个条件？”。
+尾声的诗句和“这就是结束了，吗？”是叙事，不是经济模型推出的必然终结。可以逐句看或直接看完。尾声按钮为“敬请期待后续章节，或者现实...”，点击只打开作者留言弹窗，不进入条件桌。弹窗提示“后续真没有啦。实在做不完啦TAT”，并以GitHub仓库链接邀请后续提PR；任意关闭方式都留在尾声，不改存档。
 后续按劳动/工时、需要、所有权、交易规则等条件进入独立章节，各分支保存各自的实际实验记录。
 章节菜单可以直接演示后续章节，但浏览不冒充已完成前面的故事或处方。这些是新的章节，不是本序章的第五幕。
 对应代码：lib/relief-ui.js；lib/assumption-desk.ts；lib/prologue-state.ts 的尾声、研究入口和章节浏览控制。

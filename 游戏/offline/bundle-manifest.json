@@ -1,6 +1,6 @@
 {
-  "built_at": "2026-10-20T01:18:13.730Z",
-  "bytes": 23169551,
+  "built_at": "2026-10-20T01:36:18.836Z",
+  "bytes": 23173331,
   "source_modules": [
     "node_modules/scheduler/cjs/scheduler.production.js",
     "node_modules/scheduler/index.js",
@@ -2161,6 +2161,7 @@
   "external_runtime_requests": false,
   "build_method": "Full portable build from this repository; existing local node_modules reused via a junction, without importing authoring-project source.",
   "release_changes": [
+    "Replace the epilogue continuation button with an on-page invitation modal. Preserve the requested Chinese copy, link to the GitHub repository in a new tab only on explicit click, and leave all saved progress unchanged.",
     "Split each fourth-act explanation into three sequential short photo dialogs. Embed nine unchanged, attributed Library of Congress archival JPEGs offline and host them on the same origin. Preserve old accounts, optional reading and onward story progress.",
     "Replace the fourth-act consumption, investment and export entries with explanatory modals, without rounds, predictions, sliders or policy games. Separate narrative continuation from old experiment completion; preserve all old records and refresh progress.",
     "Remove the redundant post-story multiple-choice question and its feedback and styling. Preserve the story, conceptual diagrams, economic model, saved accounts and onward transition.",
@@ -2196,9 +2197,9 @@
   "hosted_delivery": {
     "entry": "build/hosted/index.html",
     "manifest": "build/hosted/hosting-manifest.json",
-    "index_sha256": "13523d23a15d5e2bf08a7778d2de84952510237c57d0e28c034b6e8fc997b7f5",
+    "index_sha256": "ec6eca099052cae2ae58bc06fab4e0f5214c0ee9e12dcab088d6b66db2febb63",
     "same_origin_assets": true,
     "font_mappings": 47449
   },
-  "sha256": "a4f61c36cf94f2cb5e97839bbe46de78275aa6c60de52fbb37e6b0cba87a03ae"
+  "sha256": "e2efe35c33d4621c0623d21ef2447803c31508be4c7a77b4d22795620db04fe6"
 }

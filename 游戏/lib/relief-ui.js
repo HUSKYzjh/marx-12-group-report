@@ -1,19 +1,33 @@
 (function(root){
  'use strict';
- let timer=null,deskFocus=null,landedGroup=null;
+ let timer=null,deskFocus=null,landedGroup=null,closeFuture=null;
  function el(tag,words,parent,cls){const n=document.createElement(tag);n.textContent=words||'';n.className=cls||'';parent.appendChild(n);StreetArt.decorateMoney(n);return n;}
  function button(c,words,type,extra,cls){const b=el('button',words,c.controls,cls||'primary');b.type='button';b.onclick=function(){c.send(Object.assign({type:type},extra||{}));};return b;}
  root.renderReliefExperiment=function(c){
   return root.renderReliefReading(c);
  };
- root.cancelPrologueEnding=function(){if(timer!==null){clearTimeout(timer);timer=null;}};
+ root.cancelPrologueEnding=function(){if(timer!==null){clearTimeout(timer);timer=null;}if(closeFuture)closeFuture();};
+ function showFuture(opener){
+  if(closeFuture)closeFuture();
+  const dialog=el('dialog','',document.body,'relief-explanation-dialog epilogue-future-dialog');dialog.dataset.testid='epilogue-future-dialog';dialog.setAttribute('aria-labelledby','epilogue-future-title');
+  const top=el('div','',dialog,'relief-explanation-top'),heading=el('h2','后续真没有啦。实在做不完啦TAT',top);heading.id='epilogue-future-title';
+  const close=el('button','×',top,'relief-explanation-close');close.type='button';close.setAttribute('aria-label','关闭提示');
+  const body=el('div','',dialog,'relief-explanation-body'),message=el('p','可以关注我的',body),github=el('a','github',message);github.href='https://github.com/HUSKYzjh/marx-12-group-report';github.target='_blank';github.rel='noopener noreferrer';message.appendChild(document.createTextNode('：后续感兴趣可以继续提PR'));
+  const back=el('button','好吧 TAT',dialog,'primary');back.type='button';let hostOverflow,disposed=false;
+  try{hostOverflow=parent.document.body.style.overflow;parent.document.body.style.overflow='hidden';}catch(err){}
+  function place(){if(disposed)return;let offset=0,available=innerHeight;try{if(frameElement){const rect=frameElement.getBoundingClientRect();offset=Math.max(0,-rect.top);available=Math.max(120,Math.min(innerHeight-offset,parent.innerHeight-Math.max(0,rect.top)));}}catch(err){}dialog.style.maxHeight=Math.max(96,available-24)+'px';dialog.style.top=offset+Math.max(12,(available-dialog.offsetHeight)/2)+'px';}
+  function cleanup(){if(disposed)return;disposed=true;dialog.close();dialog.remove();try{if(hostOverflow!==undefined)parent.document.body.style.overflow=hostOverflow;parent.removeEventListener('scroll',place);parent.removeEventListener('resize',place);}catch(err){}window.removeEventListener('resize',place);if(closeFuture===cleanup)closeFuture=null;if(opener.isConnected)opener.focus({preventScroll:true});}
+  closeFuture=cleanup;close.onclick=back.onclick=cleanup;dialog.addEventListener('cancel',function(e){e.preventDefault();cleanup();});dialog.addEventListener('click',function(e){const rect=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom))cleanup();});
+  dialog.showModal();close.focus({preventScroll:true});window.addEventListener('resize',place);try{parent.addEventListener('scroll',place,{passive:true});parent.addEventListener('resize',place);}catch(err){}place();requestAnimationFrame(place);
+ }
+ window.addEventListener('pagehide',root.cancelPrologueEnding);
  root.renderPrologueEnding=function(c){
   const p=c.state.prologue,beat=p.epilogueBeat;
   c.title('序章·尾声','');
   const scene=el('div','',c.readout,'prologue-epilogue');scene.dataset.beat=String(beat);
   const q=el('blockquote',c.state.epilogueQuote,scene,'epilogue-quote');el('cite',c.state.epilogueSource.title,q);
   const question=el('p','',scene,'epilogue-question');el('span','这就是结束了',question).hidden=beat<1;el('span','，吗？',question,'epilogue-doubt').hidden=beat<2;
-  if(beat===3){button(c,'换个条件，会怎样？ →','SHOW_ASSUMPTIONS');}
+  if(beat===3){const future=el('button','',c.controls,'primary epilogue-future-button');el('span','敬请期待后续章节，',future);el('span','或者现实...',future);future.type='button';future.setAttribute('aria-label','敬请期待后续章节，或者现实...');future.setAttribute('aria-haspopup','dialog');future.onclick=function(){showFuture(future);};}
   else{
    if(c.reduced)button(c,'下一句 →','EPILOGUE_NEXT',{expectedBeat:beat},'secondary');
    else timer=setTimeout(function(){timer=null;c.send({type:'EPILOGUE_NEXT',expectedBeat:beat});},c.state.epilogueDelays[beat]);

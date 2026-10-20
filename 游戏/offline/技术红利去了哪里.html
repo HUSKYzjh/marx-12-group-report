@@ -4796,20 +4796,34 @@ body.embedded{background:#fff}body.embedded main{padding-top:0}body.embedded foo
 })(window);
 `;var Jk=`(function(root){
  'use strict';
- let timer=null,deskFocus=null,landedGroup=null;
+ let timer=null,deskFocus=null,landedGroup=null,closeFuture=null;
  function el(tag,words,parent,cls){const n=document.createElement(tag);n.textContent=words||'';n.className=cls||'';parent.appendChild(n);StreetArt.decorateMoney(n);return n;}
  function button(c,words,type,extra,cls){const b=el('button',words,c.controls,cls||'primary');b.type='button';b.onclick=function(){c.send(Object.assign({type:type},extra||{}));};return b;}
  root.renderReliefExperiment=function(c){
   return root.renderReliefReading(c);
  };
- root.cancelPrologueEnding=function(){if(timer!==null){clearTimeout(timer);timer=null;}};
+ root.cancelPrologueEnding=function(){if(timer!==null){clearTimeout(timer);timer=null;}if(closeFuture)closeFuture();};
+ function showFuture(opener){
+  if(closeFuture)closeFuture();
+  const dialog=el('dialog','',document.body,'relief-explanation-dialog epilogue-future-dialog');dialog.dataset.testid='epilogue-future-dialog';dialog.setAttribute('aria-labelledby','epilogue-future-title');
+  const top=el('div','',dialog,'relief-explanation-top'),heading=el('h2','\u540E\u7EED\u771F\u6CA1\u6709\u5566\u3002\u5B9E\u5728\u505A\u4E0D\u5B8C\u5566TAT',top);heading.id='epilogue-future-title';
+  const close=el('button','\xD7',top,'relief-explanation-close');close.type='button';close.setAttribute('aria-label','\u5173\u95ED\u63D0\u793A');
+  const body=el('div','',dialog,'relief-explanation-body'),message=el('p','\u53EF\u4EE5\u5173\u6CE8\u6211\u7684',body),github=el('a','github',message);github.href='https://github.com/HUSKYzjh/marx-12-group-report';github.target='_blank';github.rel='noopener noreferrer';message.appendChild(document.createTextNode('\uFF1A\u540E\u7EED\u611F\u5174\u8DA3\u53EF\u4EE5\u7EE7\u7EED\u63D0PR'));
+  const back=el('button','\u597D\u5427 TAT',dialog,'primary');back.type='button';let hostOverflow,disposed=false;
+  try{hostOverflow=parent.document.body.style.overflow;parent.document.body.style.overflow='hidden';}catch(err){}
+  function place(){if(disposed)return;let offset=0,available=innerHeight;try{if(frameElement){const rect=frameElement.getBoundingClientRect();offset=Math.max(0,-rect.top);available=Math.max(120,Math.min(innerHeight-offset,parent.innerHeight-Math.max(0,rect.top)));}}catch(err){}dialog.style.maxHeight=Math.max(96,available-24)+'px';dialog.style.top=offset+Math.max(12,(available-dialog.offsetHeight)/2)+'px';}
+  function cleanup(){if(disposed)return;disposed=true;dialog.close();dialog.remove();try{if(hostOverflow!==undefined)parent.document.body.style.overflow=hostOverflow;parent.removeEventListener('scroll',place);parent.removeEventListener('resize',place);}catch(err){}window.removeEventListener('resize',place);if(closeFuture===cleanup)closeFuture=null;if(opener.isConnected)opener.focus({preventScroll:true});}
+  closeFuture=cleanup;close.onclick=back.onclick=cleanup;dialog.addEventListener('cancel',function(e){e.preventDefault();cleanup();});dialog.addEventListener('click',function(e){const rect=dialog.getBoundingClientRect();if(e.target===dialog&&(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom))cleanup();});
+  dialog.showModal();close.focus({preventScroll:true});window.addEventListener('resize',place);try{parent.addEventListener('scroll',place,{passive:true});parent.addEventListener('resize',place);}catch(err){}place();requestAnimationFrame(place);
+ }
+ window.addEventListener('pagehide',root.cancelPrologueEnding);
  root.renderPrologueEnding=function(c){
   const p=c.state.prologue,beat=p.epilogueBeat;
   c.title('\u5E8F\u7AE0\xB7\u5C3E\u58F0','');
   const scene=el('div','',c.readout,'prologue-epilogue');scene.dataset.beat=String(beat);
   const q=el('blockquote',c.state.epilogueQuote,scene,'epilogue-quote');el('cite',c.state.epilogueSource.title,q);
   const question=el('p','',scene,'epilogue-question');el('span','\u8FD9\u5C31\u662F\u7ED3\u675F\u4E86',question).hidden=beat<1;el('span','\uFF0C\u5417\uFF1F',question,'epilogue-doubt').hidden=beat<2;
-  if(beat===3){button(c,'\u6362\u4E2A\u6761\u4EF6\uFF0C\u4F1A\u600E\u6837\uFF1F \u2192','SHOW_ASSUMPTIONS');}
+  if(beat===3){const future=el('button','',c.controls,'primary epilogue-future-button');el('span','\u656C\u8BF7\u671F\u5F85\u540E\u7EED\u7AE0\u8282\uFF0C',future);el('span','\u6216\u8005\u73B0\u5B9E...',future);future.type='button';future.setAttribute('aria-label','\u656C\u8BF7\u671F\u5F85\u540E\u7EED\u7AE0\u8282\uFF0C\u6216\u8005\u73B0\u5B9E...');future.setAttribute('aria-haspopup','dialog');future.onclick=function(){showFuture(future);};}
   else{
    if(c.reduced)button(c,'\u4E0B\u4E00\u53E5 \u2192','EPILOGUE_NEXT',{expectedBeat:beat},'secondary');
    else timer=setTimeout(function(){timer=null;c.send({type:'EPILOGUE_NEXT',expectedBeat:beat});},c.state.epilogueDelays[beat]);
@@ -9858,6 +9872,11 @@ body[data-street-review=true] .stage-object{display:none}\r
 \r
 /* Fourth-act photo explanations: one short card is visible at a time. */\r
 .relief-explanation-dialog{position:fixed;left:50%;top:12px;transform:translateX(-50%);margin:0;box-sizing:border-box;width:min(680px,calc(100% - 24px));padding:16px 20px;display:flex;flex-direction:column;gap:12px;background:#fffefb;color:#444;border:2px solid #666;border-radius:7px 11px 5px 9px;box-shadow:5px 6px 0 #4442;font-family:WorkshopHand,"Microsoft YaHei",sans-serif;text-align:left}.relief-explanation-dialog:not([open]){display:none}.relief-explanation-dialog::backdrop{background:#28282866}.relief-explanation-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex:none}.relief-explanation-context{display:flex;align-items:center;gap:12px}.relief-explanation-top h2{font-size:24px;font-weight:normal;margin:0}.relief-explanation-progress{font-size:15px;color:#777;white-space:nowrap}.relief-explanation-close{border:0;background:none;font:inherit;color:inherit;font-size:28px;min-width:44px;min-height:44px;padding:0}.relief-explanation-body{overflow-y:auto;overscroll-behavior:contain;min-height:0;padding-right:2px}.relief-history-figure{margin:0}.relief-history-photo{display:block;width:100%;height:220px;object-fit:contain;background:#f2f0e8;border:1px solid #ddd}.relief-history-figure figcaption{font-size:13px;line-height:1.5;color:#777;margin-top:6px}.relief-history-figure a{color:inherit;white-space:nowrap;text-underline-offset:3px;margin-left:6px}.relief-explanation-body h3{font-size:24px;line-height:1.45;font-weight:normal;margin:12px 0 6px}.relief-explanation-body p{font-size:19px;line-height:1.7;margin:0;text-align:left}.relief-explanation-navigation{display:flex;align-items:center;justify-content:space-between;gap:10px;flex:none}.relief-explanation-navigation button{min-height:44px;font:inherit;font-size:18px}.relief-explanation-navigation .primary{flex:1;max-width:350px}.relief-explanation-previous{background:none;border:0;color:#666;min-width:90px}.relief-explanation-previous:disabled{opacity:.3;cursor:default}.relief-explanation-dialog button:focus-visible{outline:2px solid #739884;outline-offset:3px}@media(max-width:600px){.relief-explanation-dialog{padding:10px;gap:9px}.relief-explanation-top h2{font-size:21px}.relief-explanation-context{gap:10px}.relief-explanation-body h3{font-size:22px;margin-top:10px}.relief-explanation-body p{font-size:17px;line-height:1.65}.relief-history-figure figcaption{font-size:12px}.relief-explanation-navigation{gap:5px}.relief-explanation-navigation button{font-size:16px;padding:8px 5px}.relief-explanation-previous{min-width:78px}}\r
+\r
+/* Epilogue invitation stays on the ending page. */\r
+.epilogue-future-dialog{width:min(560px,calc(100% - 24px))}.epilogue-future-dialog .relief-explanation-top{align-items:flex-start}.epilogue-future-dialog h2{line-height:1.6}.epilogue-future-dialog a{color:inherit;text-underline-offset:4px}.epilogue-future-dialog>.primary{width:100%;min-height:44px;margin:8px 0 0;font:inherit;font-size:18px}#controls>.epilogue-future-button{width:min(500px,calc(100% - 24px));max-width:100%;white-space:normal;line-height:1.6;padding:12px 18px}\r
+#controls>.epilogue-future-button::before{height:230%;aspect-ratio:auto}\r
+#controls>.epilogue-future-button>span{display:inline-block;white-space:nowrap}\r
 `;function mo(e){return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 72" fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="presentation" aria-hidden="true">${e}</svg>`}var wS=[{id:"computer",label:"\u7535\u8111",description:"\u6570\u5B57\u5DE5\u5177",svgMarkup:mo(`
       <path d="M15 10 80 9 81 44 14 45Z"/>
       <path d="M20 15 75 15 76 37 20 38Z"/>
